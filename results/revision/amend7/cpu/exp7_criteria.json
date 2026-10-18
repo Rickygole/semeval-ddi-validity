@@ -1,0 +1,37 @@
+{
+ "status": "written before any experiment 7 statistic was computed; exploratory, post hoc, changes no preregistered decision",
+ "written": "2026-10-16",
+ "already_known_when_written": "results/revision/eval: b2mixed Older-clean within-drug AUROC 0.452 (tier A) and 0.397 (tier B); exploratory additive residual 0.405; DrugBank lookup Older-clean within-drug 0.641 (tier A). No feature-level statistic below had been computed.",
+ "primary_system": "b2mixed-biomedbert names-only input (oodold_empty), P(interaction) averaged over seeds 42, 1, 2, 3, 4, used as logit",
+ "secondary_systems": ["b1names-biomedbert (seed-averaged, oodold_names)", "llm-qwen-names (oodold)", "DrugBank lookup (listed = 1)"],
+ "cohort": "Older-clean (1,832 pairs, 128 drugs); Novel reported alongside where stated",
+ "tiers": "tier A (FDA labels) and tier B (FDA and DrugBank agree) are co-primary; a cause is confirmed only if the rule holds on both tiers, and is reported as tier-specific if it holds on one",
+ "statistics": {
+  "feature_auroc": "within-drug AUROC of the feature against the label, two-way cluster bootstrap over OOD drugs and partners (1,000 draws, seed 42), 95% percentile interval",
+  "score_feature_association": "within-drug Spearman: score and feature ranked within each drug, demeaned within drug, pooled Pearson correlation; 95% interval from a drug-cluster bootstrap (1,000 draws, seed 42)",
+  "partialling": "within-drug OLS slope of the demeaned model logit on the demeaned feature; the model's within-drug AUROC is recomputed on logit minus slope times feature; the gap is |AUROC - 0.5|"
+ },
+ "generic_rule_for_features_a_b_c_e": {
+  "C1": "the feature's within-drug AUROC 95% interval excludes 0.5",
+  "C2": "the score-feature association 95% interval excludes 0, with the sign that pushes the model below chance: sign(association) x (feature AUROC - 0.5) < 0",
+  "C3": "partialling out the feature moves the model's within-drug AUROC toward 0.5 by at least half of its gap",
+  "confirmed": "C1, C2 and C3 all hold",
+  "partial": "C1 and C2 hold but C3 does not",
+  "rejected": "C1 or C2 fails"
+ },
+ "causes": {
+  "a": {"name": "partner frequency in SemEval train", "feature": "log(1 + number of SemEval train pairs that contain the partner); partner SemEval train positive rate is reported beside it as a secondary feature without a decision", "expected_if_true": "feature within-drug AUROC below 0.5 and model score positively associated with it", "rule": "generic rule, with C1 requiring the interval to lie below 0.5"},
+  "b": {"name": "popularity of each partner among other drugs' positives", "feature": "leave-one-drug-out count of positive pairs for the partner in the same cohort; the leave-one-drug-out positive rate is the partner-only prior of item (iii)", "expected_if_true": "feature within-drug AUROC below 0.5 (negatives reuse partners that are positives for other drugs) and model score positively associated with it", "rule": "generic rule, with C1 requiring the interval to lie below 0.5"},
+  "c": {"name": "partner token count and tokenization", "feature": "number of BiomedBERT WordPiece tokens in the partner name (primary); whitespace word count reported beside it", "expected_if_true": "feature AUROC away from 0.5 and model association in the direction that pushes it below chance", "rule": "generic rule"},
+  "d": {"name": "label-noise asymmetry", "test": "model within-drug AUROC on tier B versus tier A; also the within-drug AUROC of the model separating DrugBank-contradicted FDA negatives (DrugBank lists them) from DrugBank-confirmed FDA negatives", "confirmed": "tier B point estimate is closer to 0.5 than tier A by at least half of the tier A gap AND the tier B 95% interval contains 0.5", "rejected": "tier B point estimate is as far from 0.5 as tier A or further", "partial": "otherwise"},
+  "e": {"name": "shared name stem or suffix (exploratory)", "feature": "1 if the OOD drug and the partner share a class stem from a fixed list (azole, statin, tinib, navir, olol, pril, sartan, mab, cillin, cycline, floxacin, prazole, dipine, triptan, setron, gliptin, gliflozin, parin, vir, profen, oxetine, afil, caine, barbital, azepam, conazole, mycin) or a common suffix of 4 or more characters after salt words are removed", "rule": "generic rule, labelled exploratory"}
+ },
+ "other_items": {
+  "i": "paired within-drug differences, b2mixed minus Qwen names-only and b2mixed minus DrugBank lookup, Older-clean and Novel, tiers A and B, shared two-way draws (Novel seed 1042, Older seed 42 as in evaluate2); DrugBank on tier B is circular by construction",
+  "ii": "knowledge ceiling: within-drug AUROC of a scorer that outputs DrugBank listing exactly (ties kept), tier A, with the analytic pooled value 0.5 x (1 + c - r), c = share of FDA positives DrugBank lists, r = share of FDA negatives DrugBank lists",
+  "iii": "partner-only prior: leave-one-drug-out partner positive rate within Older-clean, within-drug AUROC, tiers A and B",
+  "iv": "confidently wrong: share of negatives with P(interaction) above 0.5 and above 0.9, OOD versus SemEval test; ECE with 10 equal-width bins beside it",
+  "year": "descriptive only: per-drug within-drug AUROC on continuous first approval year, weighted by the drug's number of pairs, Novel and Older-clean drugs together, drug bootstrap (1,000, seed 42); slope per decade; the 2013 to 2019 gap and the label-format difference between cohorts make it weak"
+ },
+ "dropped": "same-ATC class and pair co-mention in SemEval train are not tested as causes (outside the constrained list; OOD drugs are absent from SemEval by construction, so co-mention is zero for every non-leaked pair); calibration slope, intercept and max-probability OOD detection are replaced by item iv"
+}

@@ -1,0 +1,49 @@
+{
+ "status": "sensitivity analysis, post hoc; the amend7 exp5 output is not changed",
+ "method": "DrugBank lookup with the preregistered resolution of ddiood.drugbank.validate on the 2,810 SemEval 2013 test pairs; score 1 if DrugBank lists the pair; pooled AUROC against the binary SemEval label with a bootstrap over sentences; a self pair names the same drug on both sides (case and space normalised)",
+ "boot": 1000,
+ "seed": 42,
+ "n_self_pairs": 289,
+ "n_self_pairs_exact_string": 289,
+ "self_pairs_positive": 0,
+ "self_pairs_listed": 0,
+ "rows": [
+  {
+   "subset": "all pairs, unresolvable counted as not listed",
+   "n": 2810,
+   "n_pos": 371,
+   "listed": 1872,
+   "auroc": 0.524599,
+   "ci95": [
+    0.483536,
+    0.569571
+   ]
+  },
+  {
+   "subset": "excluding self pairs",
+   "n": 2521,
+   "n_pos": 371,
+   "listed": 1872,
+   "auroc": 0.480261,
+   "ci95": [
+    0.438568,
+    0.52081
+   ]
+  },
+  {
+   "subset": "self pairs only",
+   "n": 289,
+   "n_pos": 0,
+   "listed": 0,
+   "auroc": null,
+   "ci95": [
+    null,
+    null
+   ]
+  }
+ ],
+ "agrees_with_exp5": {
+  "all pairs, unresolvable counted as not listed": true,
+  "excluding self pairs": true
+ }
+}

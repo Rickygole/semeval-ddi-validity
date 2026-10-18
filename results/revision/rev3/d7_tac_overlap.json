@@ -1,0 +1,45 @@
+{
+ "plan_sha256": "7fe118a2793a11eaf7a4f1bd405e9f7335f64e3d4d97419dc24ff35a0e18d817",
+ "status": "post hoc and descriptive; plan in docs/POSTHOC_REV3_PLAN.md was written before computing; changes no preregistered decision",
+ "minimum_overlapping_drugs": 5,
+ "minimum_labels_for_cluster_bootstrap": 10,
+ "match_rule": "TAC label drug and OOD drug equal after lowercase and whitespace collapse (`rev3_tac.norm`); first-word overlap is a count only",
+ "tac_labels_with_di_section": {
+  "test1": 31,
+  "test2": 40
+ },
+ "cohorts": {
+  "novel": {
+   "cohort_drugs": 48,
+   "exact_overlap": 0,
+   "exact_overlap_by_tac_set": {
+    "test1": 0,
+    "test2": 0
+   },
+   "first_word_overlap_count_only": 0,
+   "check_possible": false
+  },
+  "older_clean": {
+   "cohort_drugs": 128,
+   "exact_overlap": 4,
+   "exact_overlap_by_tac_set": {
+    "test1": 0,
+    "test2": 4
+   },
+   "first_word_overlap_count_only": 5,
+   "check_possible": false
+  },
+  "older_primary": {
+   "cohort_drugs": 121,
+   "exact_overlap": 4,
+   "exact_overlap_by_tac_set": {
+    "test1": 0,
+    "test2": 4
+   },
+   "first_word_overlap_count_only": 5,
+   "check_possible": false
+  }
+ },
+ "check_possible": false,
+ "note": "No cohort has at least the minimum number of overlapping drugs under the exact-name rule, so the check is not possible; no agreement figure was computed."
+}

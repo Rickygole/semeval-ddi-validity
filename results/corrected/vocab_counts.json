@@ -1,0 +1,24 @@
+{
+ "raw_entities": 9929,
+ "unique_normalized": 1284,
+ "reject_removed": {
+  "aluminum": 1,
+  "bismuth": 1,
+  "calcium": 1,
+  "dopamine": 1,
+  "ethanol": 1,
+  "glucose": 1,
+  "histamine": 1,
+  "iron": 1,
+  "magnesium": 1,
+  "phosphate": 1
+ },
+ "rxnorm_pass": 992,
+ "rxnorm_fail": 282,
+ "type_counts": {
+  "brand": 1437,
+  "drug": 9425,
+  "group": 3399,
+  "drug_n": 504
+ }
+}

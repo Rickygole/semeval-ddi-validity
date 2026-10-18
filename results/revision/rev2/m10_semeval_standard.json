@@ -1,0 +1,1353 @@
+{
+ "status": "post hoc and descriptive; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "criteria": {
+  "metric": "SemEval 2013 DDI standard: micro-averaged F1 over the four positive classes mechanism, effect, advise, int (sklearn f1_score labels [1, 2, 3, 4], average micro) on test_sentence 5-class argmax predictions",
+  "models": "b2sentence and b2mixed for biomedbert, bertbase (seeds 42, 1, 2, 3, 4) and biobert (seed 42 only); also the 20 panel checkpoints (test_sentence) as a secondary table",
+  "aggregation": "per seed, then mean, SD (ddof 1), min and max over seeds; sentence-cluster bootstrap 95% interval for each seed (1000, seed 42)",
+  "official_set_bound": "a second column treats the 2906 official test pairs that the repository does not score (entity types brand and group) as predicted false, which gives the score these predictions would receive on the 5716-pair official set; it is a lower bound for a model that scored those pairs, not an estimate",
+  "published": "Gu et al. 2021 (ACM HEALTH, arXiv 2007.15779) Table 6: PubMedBERT 82.36, BioBERT 80.88, BERT uncased 80.04, micro F1, BLURB DDI test 5716 pairs; the comparison is stated as not like-for-like (different train split, entity types, preprocessing)"
+ },
+ "five_class_predictions_stored": true,
+ "test": {
+  "n_scored": 2810,
+  "positives_scored": 371,
+  "n_official": 5716,
+  "positives_official": 979,
+  "unscored_positives": 608
+ },
+ "rows": [
+  {
+   "system": "b2sentence",
+   "model": "biomedbert",
+   "seed": 42,
+   "micro_f1_4class": 0.633987,
+   "sklearn_micro_f1": 0.633987,
+   "ci95": [
+    0.565558,
+    0.698257
+   ],
+   "micro_f1_official_set_bound": 0.381389,
+   "ci95_official_set_bound": [
+    0.32127,
+    0.438526
+   ],
+   "precision": 0.531993,
+   "recall": 0.784367,
+   "tp": 291,
+   "predicted_positive": 547,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.647619,
+    "effect": 0.680328,
+    "advise": 0.57732,
+    "int": 0.533333
+   },
+   "binary_f1": 0.705882
+  },
+  {
+   "system": "b2sentence",
+   "model": "biomedbert",
+   "seed": 1,
+   "micro_f1_4class": 0.668958,
+   "sklearn_micro_f1": 0.668958,
+   "ci95": [
+    0.604677,
+    0.731482
+   ],
+   "micro_f1_official_set_bound": 0.394328,
+   "ci95_official_set_bound": [
+    0.331481,
+    0.451187
+   ],
+   "precision": 0.581673,
+   "recall": 0.787062,
+   "tp": 292,
+   "predicted_positive": 502,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.664935,
+    "effect": 0.723404,
+    "advise": 0.630435,
+    "int": 0.608696
+   },
+   "binary_f1": 0.717068
+  },
+  {
+   "system": "b2sentence",
+   "model": "biomedbert",
+   "seed": 2,
+   "micro_f1_4class": 0.673031,
+   "sklearn_micro_f1": 0.673031,
+   "ci95": [
+    0.583725,
+    0.752734
+   ],
+   "micro_f1_official_set_bound": 0.390041,
+   "ci95_official_set_bound": [
+    0.328529,
+    0.453027
+   ],
+   "precision": 0.603854,
+   "recall": 0.760108,
+   "tp": 282,
+   "predicted_positive": 467,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.606061,
+    "effect": 0.738956,
+    "advise": 0.764228,
+    "int": 0.657143
+   },
+   "binary_f1": 0.742243
+  },
+  {
+   "system": "b2sentence",
+   "model": "biomedbert",
+   "seed": 3,
+   "micro_f1_4class": 0.64938,
+   "sklearn_micro_f1": 0.64938,
+   "ci95": [
+    0.559003,
+    0.735919
+   ],
+   "micro_f1_official_set_bound": 0.385284,
+   "ci95_official_set_bound": [
+    0.321458,
+    0.453737
+   ],
+   "precision": 0.55814,
+   "recall": 0.77628,
+   "tp": 288,
+   "predicted_positive": 516,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.613139,
+    "effect": 0.713725,
+    "advise": 0.61745,
+    "int": 0.694444
+   },
+   "binary_f1": 0.721533
+  },
+  {
+   "system": "b2sentence",
+   "model": "biomedbert",
+   "seed": 4,
+   "micro_f1_4class": 0.64554,
+   "sklearn_micro_f1": 0.64554,
+   "ci95": [
+    0.549892,
+    0.734847
+   ],
+   "micro_f1_official_set_bound": 0.376712,
+   "ci95_official_set_bound": [
+    0.308715,
+    0.446384
+   ],
+   "precision": 0.571726,
+   "recall": 0.74124,
+   "tp": 275,
+   "predicted_positive": 481,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.613861,
+    "effect": 0.716157,
+    "advise": 0.612245,
+    "int": 0.666667
+   },
+   "binary_f1": 0.71831
+  },
+  {
+   "system": "b2mixed",
+   "model": "biomedbert",
+   "seed": 42,
+   "micro_f1_4class": 0.610918,
+   "sklearn_micro_f1": 0.610918,
+   "ci95": [
+    0.52231,
+    0.701341
+   ],
+   "micro_f1_official_set_bound": 0.358067,
+   "ci95_official_set_bound": [
+    0.294144,
+    0.427958
+   ],
+   "precision": 0.536735,
+   "recall": 0.708895,
+   "tp": 263,
+   "predicted_positive": 490,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.576441,
+    "effect": 0.650407,
+    "advise": 0.614379,
+    "int": 0.666667
+   },
+   "binary_f1": 0.703833
+  },
+  {
+   "system": "b2mixed",
+   "model": "biomedbert",
+   "seed": 1,
+   "micro_f1_4class": 0.681212,
+   "sklearn_micro_f1": 0.681212,
+   "ci95": [
+    0.627784,
+    0.72991
+   ],
+   "micro_f1_official_set_bound": 0.392184,
+   "ci95_official_set_bound": [
+    0.340829,
+    0.445281
+   ],
+   "precision": 0.618943,
+   "recall": 0.757412,
+   "tp": 281,
+   "predicted_positive": 454,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.664835,
+    "effect": 0.686695,
+    "advise": 0.723926,
+    "int": 0.646154
+   },
+   "binary_f1": 0.712727
+  },
+  {
+   "system": "b2mixed",
+   "model": "biomedbert",
+   "seed": 2,
+   "micro_f1_4class": 0.657718,
+   "sklearn_micro_f1": 0.657718,
+   "ci95": [
+    0.594169,
+    0.718361
+   ],
+   "micro_f1_official_set_bound": 0.391478,
+   "ci95_official_set_bound": [
+    0.330893,
+    0.448095
+   ],
+   "precision": 0.562141,
+   "recall": 0.792453,
+   "tp": 294,
+   "predicted_positive": 523,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.66838,
+    "effect": 0.674797,
+    "advise": 0.614525,
+    "int": 0.65
+   },
+   "binary_f1": 0.711409
+  },
+  {
+   "system": "b2mixed",
+   "model": "biomedbert",
+   "seed": 3,
+   "micro_f1_4class": 0.636927,
+   "sklearn_micro_f1": 0.636927,
+   "ci95": [
+    0.574057,
+    0.702108
+   ],
+   "micro_f1_official_set_bound": 0.363251,
+   "ci95_official_set_bound": [
+    0.304044,
+    0.420788
+   ],
+   "precision": 0.58945,
+   "recall": 0.692722,
+   "tp": 257,
+   "predicted_positive": 436,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.628571,
+    "effect": 0.644351,
+    "advise": 0.640449,
+    "int": 0.64
+   },
+   "binary_f1": 0.674102
+  },
+  {
+   "system": "b2mixed",
+   "model": "biomedbert",
+   "seed": 4,
+   "micro_f1_4class": 0.643172,
+   "sklearn_micro_f1": 0.643172,
+   "ci95": [
+    0.580189,
+    0.701733
+   ],
+   "micro_f1_official_set_bound": 0.385224,
+   "ci95_official_set_bound": [
+    0.327172,
+    0.440078
+   ],
+   "precision": 0.543762,
+   "recall": 0.787062,
+   "tp": 292,
+   "predicted_positive": 537,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.639618,
+    "effect": 0.680498,
+    "advise": 0.622222,
+    "int": 0.588235
+   },
+   "binary_f1": 0.693833
+  },
+  {
+   "system": "b2sentence",
+   "model": "bertbase",
+   "seed": 42,
+   "micro_f1_4class": 0.601418,
+   "sklearn_micro_f1": 0.601418,
+   "ci95": [
+    0.537274,
+    0.668998
+   ],
+   "micro_f1_official_set_bound": 0.322925,
+   "ci95_official_set_bound": [
+    0.268841,
+    0.382969
+   ],
+   "precision": 0.634731,
+   "recall": 0.571429,
+   "tp": 212,
+   "predicted_positive": 334,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.52921,
+    "effect": 0.697479,
+    "advise": 0.605505,
+    "int": 0.567164
+   },
+   "binary_f1": 0.62695
+  },
+  {
+   "system": "b2sentence",
+   "model": "bertbase",
+   "seed": 1,
+   "micro_f1_4class": 0.638889,
+   "sklearn_micro_f1": 0.638889,
+   "ci95": [
+    0.580888,
+    0.698202
+   ],
+   "micro_f1_official_set_bound": 0.361429,
+   "ci95_official_set_bound": [
+    0.307598,
+    0.416028
+   ],
+   "precision": 0.60095,
+   "recall": 0.681941,
+   "tp": 253,
+   "predicted_positive": 421,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.61126,
+    "effect": 0.683544,
+    "advise": 0.636364,
+    "int": 0.638889
+   },
+   "binary_f1": 0.671717
+  },
+  {
+   "system": "b2sentence",
+   "model": "bertbase",
+   "seed": 2,
+   "micro_f1_4class": 0.605355,
+   "sklearn_micro_f1": 0.605355,
+   "ci95": [
+    0.524305,
+    0.681659
+   ],
+   "micro_f1_official_set_bound": 0.354465,
+   "ci95_official_set_bound": [
+    0.298785,
+    0.413673
+   ],
+   "precision": 0.532787,
+   "recall": 0.700809,
+   "tp": 260,
+   "predicted_positive": 488,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.546341,
+    "effect": 0.681481,
+    "advise": 0.672566,
+    "int": 0.545455
+   },
+   "binary_f1": 0.675204
+  },
+  {
+   "system": "b2sentence",
+   "model": "bertbase",
+   "seed": 3,
+   "micro_f1_4class": 0.626866,
+   "sklearn_micro_f1": 0.626866,
+   "ci95": [
+    0.560394,
+    0.690732
+   ],
+   "micro_f1_official_set_bound": 0.356941,
+   "ci95_official_set_bound": [
+    0.297361,
+    0.415667
+   ],
+   "precision": 0.581986,
+   "recall": 0.679245,
+   "tp": 252,
+   "predicted_positive": 433,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.591549,
+    "effect": 0.716049,
+    "advise": 0.677966,
+    "int": 0.454545
+   },
+   "binary_f1": 0.671642
+  },
+  {
+   "system": "b2sentence",
+   "model": "bertbase",
+   "seed": 4,
+   "micro_f1_4class": 0.64539,
+   "sklearn_micro_f1": 0.64539,
+   "ci95": [
+    0.592588,
+    0.701276
+   ],
+   "micro_f1_official_set_bound": 0.375516,
+   "ci95_official_set_bound": [
+    0.322733,
+    0.426859
+   ],
+   "precision": 0.574737,
+   "recall": 0.735849,
+   "tp": 273,
+   "predicted_positive": 475,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.59893,
+    "effect": 0.697872,
+    "advise": 0.678363,
+    "int": 0.636364
+   },
+   "binary_f1": 0.683215
+  },
+  {
+   "system": "b2mixed",
+   "model": "bertbase",
+   "seed": 42,
+   "micro_f1_4class": 0.577406,
+   "sklearn_micro_f1": 0.577406,
+   "ci95": [
+    0.514925,
+    0.64517
+   ],
+   "micro_f1_official_set_bound": 0.312453,
+   "ci95_official_set_bound": [
+    0.261844,
+    0.366907
+   ],
+   "precision": 0.598266,
+   "recall": 0.557951,
+   "tp": 207,
+   "predicted_positive": 346,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.504673,
+    "effect": 0.636771,
+    "advise": 0.615385,
+    "int": 0.666667
+   },
+   "binary_f1": 0.608089
+  },
+  {
+   "system": "b2mixed",
+   "model": "bertbase",
+   "seed": 1,
+   "micro_f1_4class": 0.579515,
+   "sklearn_micro_f1": 0.579515,
+   "ci95": [
+    0.51155,
+    0.647003
+   ],
+   "micro_f1_official_set_bound": 0.318519,
+   "ci95_official_set_bound": [
+    0.266495,
+    0.375129
+   ],
+   "precision": 0.579515,
+   "recall": 0.579515,
+   "tp": 215,
+   "predicted_positive": 371,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.453674,
+    "effect": 0.724138,
+    "advise": 0.610687,
+    "int": 0.606061
+   },
+   "binary_f1": 0.614555
+  },
+  {
+   "system": "b2mixed",
+   "model": "bertbase",
+   "seed": 2,
+   "micro_f1_4class": 0.586599,
+   "sklearn_micro_f1": 0.586599,
+   "ci95": [
+    0.515011,
+    0.655776
+   ],
+   "micro_f1_official_set_bound": 0.331665,
+   "ci95_official_set_bound": [
+    0.277892,
+    0.387839
+   ],
+   "precision": 0.552381,
+   "recall": 0.625337,
+   "tp": 232,
+   "predicted_positive": 420,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.536145,
+    "effect": 0.682353,
+    "advise": 0.615385,
+    "int": 0.45977
+   },
+   "binary_f1": 0.637168
+  },
+  {
+   "system": "b2mixed",
+   "model": "bertbase",
+   "seed": 3,
+   "micro_f1_4class": 0.572347,
+   "sklearn_micro_f1": 0.572347,
+   "ci95": [
+    0.505296,
+    0.64701
+   ],
+   "micro_f1_official_set_bound": 0.289431,
+   "ci95_official_set_bound": [
+    0.238977,
+    0.348459
+   ],
+   "precision": 0.709163,
+   "recall": 0.479784,
+   "tp": 178,
+   "predicted_positive": 251,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.512397,
+    "effect": 0.599078,
+    "advise": 0.647059,
+    "int": 0.590164
+   },
+   "binary_f1": 0.620579
+  },
+  {
+   "system": "b2mixed",
+   "model": "bertbase",
+   "seed": 4,
+   "micro_f1_4class": 0.587264,
+   "sklearn_micro_f1": 0.587264,
+   "ci95": [
+    0.534433,
+    0.648461
+   ],
+   "micro_f1_official_set_bound": 0.342033,
+   "ci95_official_set_bound": [
+    0.292635,
+    0.393863
+   ],
+   "precision": 0.522013,
+   "recall": 0.671159,
+   "tp": 249,
+   "predicted_positive": 477,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.568528,
+    "effect": 0.620408,
+    "advise": 0.586667,
+    "int": 0.576271
+   },
+   "binary_f1": 0.639151
+  },
+  {
+   "system": "b2sentence",
+   "model": "biobert",
+   "seed": 42,
+   "micro_f1_4class": 0.609499,
+   "sklearn_micro_f1": 0.609499,
+   "ci95": [
+    0.512205,
+    0.698588
+   ],
+   "micro_f1_official_set_bound": 0.338214,
+   "ci95_official_set_bound": [
+    0.277834,
+    0.399931
+   ],
+   "precision": 0.596899,
+   "recall": 0.622642,
+   "tp": 231,
+   "predicted_positive": 387,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.538244,
+    "effect": 0.663636,
+    "advise": 0.704,
+    "int": 0.633333
+   },
+   "binary_f1": 0.675462
+  },
+  {
+   "system": "b2mixed",
+   "model": "biobert",
+   "seed": 42,
+   "micro_f1_4class": 0.625698,
+   "sklearn_micro_f1": 0.625698,
+   "ci95": [
+    0.562968,
+    0.686703
+   ],
+   "micro_f1_official_set_bound": 0.338369,
+   "ci95_official_set_bound": [
+    0.282489,
+    0.395461
+   ],
+   "precision": 0.649275,
+   "recall": 0.603774,
+   "tp": 224,
+   "predicted_positive": 345,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.559486,
+    "effect": 0.669604,
+    "advise": 0.690265,
+    "int": 0.676923
+   },
+   "binary_f1": 0.662011
+  }
+ ],
+ "summary": [
+  {
+   "system": "b2sentence",
+   "model": "biomedbert",
+   "repo": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+   "micro_f1_4class": {
+    "mean": 0.654179,
+    "sd": 0.016426,
+    "min": 0.633987,
+    "max": 0.673031,
+    "n_seeds": 5
+   },
+   "micro_f1_official_set_bound": {
+    "mean": 0.385551,
+    "sd": 0.006941,
+    "min": 0.376712,
+    "max": 0.394328,
+    "n_seeds": 5
+   },
+   "binary_f1": {
+    "mean": 0.721007,
+    "sd": 0.013255,
+    "min": 0.705882,
+    "max": 0.742243,
+    "n_seeds": 5
+   }
+  },
+  {
+   "system": "b2mixed",
+   "model": "biomedbert",
+   "repo": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+   "micro_f1_4class": {
+    "mean": 0.645989,
+    "sd": 0.025973,
+    "min": 0.610918,
+    "max": 0.681212,
+    "n_seeds": 5
+   },
+   "micro_f1_official_set_bound": {
+    "mean": 0.378041,
+    "sd": 0.016201,
+    "min": 0.358067,
+    "max": 0.392184,
+    "n_seeds": 5
+   },
+   "binary_f1": {
+    "mean": 0.699181,
+    "sd": 0.015908,
+    "min": 0.674102,
+    "max": 0.712727,
+    "n_seeds": 5
+   }
+  },
+  {
+   "system": "b2sentence",
+   "model": "bertbase",
+   "repo": "bert-base-uncased",
+   "micro_f1_4class": {
+    "mean": 0.623584,
+    "sd": 0.019648,
+    "min": 0.601418,
+    "max": 0.64539,
+    "n_seeds": 5
+   },
+   "micro_f1_official_set_bound": {
+    "mean": 0.354255,
+    "sd": 0.019315,
+    "min": 0.322925,
+    "max": 0.375516,
+    "n_seeds": 5
+   },
+   "binary_f1": {
+    "mean": 0.665746,
+    "sd": 0.022193,
+    "min": 0.62695,
+    "max": 0.683215,
+    "n_seeds": 5
+   }
+  },
+  {
+   "system": "b2mixed",
+   "model": "bertbase",
+   "repo": "bert-base-uncased",
+   "micro_f1_4class": {
+    "mean": 0.580626,
+    "sd": 0.006322,
+    "min": 0.572347,
+    "max": 0.587264,
+    "n_seeds": 5
+   },
+   "micro_f1_official_set_bound": {
+    "mean": 0.31882,
+    "sd": 0.020051,
+    "min": 0.289431,
+    "max": 0.342033,
+    "n_seeds": 5
+   },
+   "binary_f1": {
+    "mean": 0.623908,
+    "sd": 0.013757,
+    "min": 0.608089,
+    "max": 0.639151,
+    "n_seeds": 5
+   }
+  },
+  {
+   "system": "b2sentence",
+   "model": "biobert",
+   "repo": "dmis-lab/biobert-base-cased-v1.2",
+   "micro_f1_4class": {
+    "mean": 0.609499,
+    "sd": null,
+    "min": 0.609499,
+    "max": 0.609499,
+    "n_seeds": 1
+   },
+   "micro_f1_official_set_bound": {
+    "mean": 0.338214,
+    "sd": null,
+    "min": 0.338214,
+    "max": 0.338214,
+    "n_seeds": 1
+   },
+   "binary_f1": {
+    "mean": 0.675462,
+    "sd": null,
+    "min": 0.675462,
+    "max": 0.675462,
+    "n_seeds": 1
+   }
+  },
+  {
+   "system": "b2mixed",
+   "model": "biobert",
+   "repo": "dmis-lab/biobert-base-cased-v1.2",
+   "micro_f1_4class": {
+    "mean": 0.625698,
+    "sd": null,
+    "min": 0.625698,
+    "max": 0.625698,
+    "n_seeds": 1
+   },
+   "micro_f1_official_set_bound": {
+    "mean": 0.338369,
+    "sd": null,
+    "min": 0.338369,
+    "max": 0.338369,
+    "n_seeds": 1
+   },
+   "binary_f1": {
+    "mean": 0.662011,
+    "sd": null,
+    "min": 0.662011,
+    "max": 0.662011,
+    "n_seeds": 1
+   }
+  }
+ ],
+ "panel": [
+  {
+   "name": "a7-panel-bertbase-marker",
+   "repo": "bert-base-uncased",
+   "micro_f1_4class": 0.735502,
+   "sklearn_micro_f1": 0.735502,
+   "ci95": [
+    0.675365,
+    0.7889
+   ],
+   "micro_f1_official_set_bound": 0.395437,
+   "ci95_official_set_bound": [
+    0.339314,
+    0.450689
+   ],
+   "precision": 0.77381,
+   "recall": 0.700809,
+   "tp": 260,
+   "predicted_positive": 336,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.767213,
+    "effect": 0.742081,
+    "advise": 0.761062,
+    "int": 0.529412
+   },
+   "binary_f1": 0.777935
+  },
+  {
+   "name": "a7-panel-bertbase-pair",
+   "repo": "bert-base-uncased",
+   "micro_f1_4class": 0.58046,
+   "sklearn_micro_f1": 0.58046,
+   "ci95": [
+    0.510897,
+    0.648815
+   ],
+   "micro_f1_official_set_bound": 0.309816,
+   "ci95_official_set_bound": [
+    0.25607,
+    0.366727
+   ],
+   "precision": 0.621538,
+   "recall": 0.544474,
+   "tp": 202,
+   "predicted_positive": 325,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.491349,
+    "effect": 0.675676,
+    "advise": 0.643478,
+    "int": 0.542857
+   },
+   "binary_f1": 0.623563
+  },
+  {
+   "name": "a7-panel-biobert-marker",
+   "repo": "dmis-lab/biobert-base-cased-v1.2",
+   "micro_f1_4class": 0.810512,
+   "sklearn_micro_f1": 0.810512,
+   "ci95": [
+    0.75689,
+    0.855806
+   ],
+   "micro_f1_official_set_bound": 0.44027,
+   "ci95_official_set_bound": [
+    0.378722,
+    0.496789
+   ],
+   "precision": 0.832386,
+   "recall": 0.789757,
+   "tp": 293,
+   "predicted_positive": 352,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.781759,
+    "effect": 0.849558,
+    "advise": 0.857143,
+    "int": 0.71875
+   },
+   "binary_f1": 0.835408
+  },
+  {
+   "name": "a7-panel-biobert-pair",
+   "repo": "dmis-lab/biobert-base-cased-v1.2",
+   "micro_f1_4class": 0.635,
+   "sklearn_micro_f1": 0.635,
+   "ci95": [
+    0.542031,
+    0.715932
+   ],
+   "micro_f1_official_set_bound": 0.360795,
+   "ci95_official_set_bound": [
+    0.302375,
+    0.422144
+   ],
+   "precision": 0.592075,
+   "recall": 0.684636,
+   "tp": 254,
+   "predicted_positive": 429,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.602041,
+    "effect": 0.666667,
+    "advise": 0.666667,
+    "int": 0.666667
+   },
+   "binary_f1": 0.7
+  },
+  {
+   "name": "a7-panel-biolinkbert-marker",
+   "repo": "michiyasunaga/BioLinkBERT-base",
+   "micro_f1_4class": 0.815427,
+   "sklearn_micro_f1": 0.815427,
+   "ci95": [
+    0.75543,
+    0.864563
+   ],
+   "micro_f1_official_set_bound": 0.443778,
+   "ci95_official_set_bound": [
+    0.384226,
+    0.503643
+   ],
+   "precision": 0.833803,
+   "recall": 0.797844,
+   "tp": 296,
+   "predicted_positive": 355,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.85623,
+    "effect": 0.813853,
+    "advise": 0.779661,
+    "int": 0.6875
+   },
+   "binary_f1": 0.870523
+  },
+  {
+   "name": "a7-panel-biolinkbert-pair",
+   "repo": "michiyasunaga/BioLinkBERT-base",
+   "micro_f1_4class": 0.673861,
+   "sklearn_micro_f1": 0.673861,
+   "ci95": [
+    0.595225,
+    0.746005
+   ],
+   "micro_f1_official_set_bound": 0.389736,
+   "ci95_official_set_bound": [
+    0.321423,
+    0.456463
+   ],
+   "precision": 0.606911,
+   "recall": 0.757412,
+   "tp": 281,
+   "predicted_positive": 463,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.664835,
+    "effect": 0.74477,
+    "advise": 0.576923,
+    "int": 0.693333
+   },
+   "binary_f1": 0.726619
+  },
+  {
+   "name": "a7-panel-biomedbert_abs-marker",
+   "repo": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract",
+   "micro_f1_4class": 0.82663,
+   "sklearn_micro_f1": 0.82663,
+   "ci95": [
+    0.77637,
+    0.874517
+   ],
+   "micro_f1_official_set_bound": 0.448457,
+   "ci95_official_set_bound": [
+    0.386952,
+    0.509368
+   ],
+   "precision": 0.851429,
+   "recall": 0.803235,
+   "tp": 298,
+   "predicted_positive": 350,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.852665,
+    "effect": 0.840183,
+    "advise": 0.789916,
+    "int": 0.71875
+   },
+   "binary_f1": 0.865465
+  },
+  {
+   "name": "a7-panel-biomedbert_abs-pair",
+   "repo": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract",
+   "micro_f1_4class": 0.640569,
+   "sklearn_micro_f1": 0.640569,
+   "ci95": [
+    0.58533,
+    0.698115
+   ],
+   "micro_f1_official_set_bound": 0.372157,
+   "ci95_official_set_bound": [
+    0.315056,
+    0.43052
+   ],
+   "precision": 0.572034,
+   "recall": 0.727763,
+   "tp": 270,
+   "predicted_positive": 472,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.637306,
+    "effect": 0.642857,
+    "advise": 0.657534,
+    "int": 0.610169
+   },
+   "binary_f1": 0.697509
+  },
+  {
+   "name": "a7-panel-biomedbert_full-marker",
+   "repo": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+   "micro_f1_4class": 0.813656,
+   "sklearn_micro_f1": 0.813656,
+   "ci95": [
+    0.761503,
+    0.859629
+   ],
+   "micro_f1_official_set_bound": 0.436308,
+   "ci95_official_set_bound": [
+    0.376275,
+    0.492872
+   ],
+   "precision": 0.861446,
+   "recall": 0.770889,
+   "tp": 286,
+   "predicted_positive": 332,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.832215,
+    "effect": 0.780952,
+    "advise": 0.88189,
+    "int": 0.705882
+   },
+   "binary_f1": 0.85633
+  },
+  {
+   "name": "a7-panel-biomedbert_full-pair",
+   "repo": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+   "micro_f1_4class": 0.679389,
+   "sklearn_micro_f1": 0.679389,
+   "ci95": [
+    0.614064,
+    0.740752
+   ],
+   "micro_f1_official_set_bound": 0.38307,
+   "ci95_official_set_bound": [
+    0.32508,
+    0.439388
+   ],
+   "precision": 0.643373,
+   "recall": 0.719677,
+   "tp": 267,
+   "predicted_positive": 415,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.636364,
+    "effect": 0.728033,
+    "advise": 0.731343,
+    "int": 0.626506
+   },
+   "binary_f1": 0.725191
+  },
+  {
+   "name": "a7-panel-clinicalbert-marker",
+   "repo": "emilyalsentzer/Bio_ClinicalBERT",
+   "micro_f1_4class": 0.695652,
+   "sklearn_micro_f1": 0.695652,
+   "ci95": [
+    0.621555,
+    0.766898
+   ],
+   "micro_f1_official_set_bound": 0.380952,
+   "ci95_official_set_bound": [
+    0.317901,
+    0.446237
+   ],
+   "precision": 0.70137,
+   "recall": 0.690027,
+   "tp": 256,
+   "predicted_positive": 365,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.711974,
+    "effect": 0.735849,
+    "advise": 0.762712,
+    "int": 0.474227
+   },
+   "binary_f1": 0.75
+  },
+  {
+   "name": "a7-panel-clinicalbert-pair",
+   "repo": "emilyalsentzer/Bio_ClinicalBERT",
+   "micro_f1_4class": 0.535817,
+   "sklearn_micro_f1": 0.535817,
+   "ci95": [
+    0.465257,
+    0.613799
+   ],
+   "micro_f1_official_set_bound": 0.286371,
+   "ci95_official_set_bound": [
+    0.231376,
+    0.345949
+   ],
+   "precision": 0.571865,
+   "recall": 0.504043,
+   "tp": 187,
+   "predicted_positive": 327,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.487273,
+    "effect": 0.579439,
+    "advise": 0.661017,
+    "int": 0.417582
+   },
+   "binary_f1": 0.570201
+  },
+  {
+   "name": "a7-panel-deberta-marker",
+   "repo": "microsoft/deberta-v3-base",
+   "micro_f1_4class": 0.761506,
+   "sklearn_micro_f1": 0.761506,
+   "ci95": [
+    0.703048,
+    0.813654
+   ],
+   "micro_f1_official_set_bound": 0.412075,
+   "ci95_official_set_bound": [
+    0.353973,
+    0.471234
+   ],
+   "precision": 0.789017,
+   "recall": 0.735849,
+   "tp": 273,
+   "predicted_positive": 346,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.802508,
+    "effect": 0.76555,
+    "advise": 0.717949,
+    "int": 0.638889
+   },
+   "binary_f1": 0.820084
+  },
+  {
+   "name": "a7-panel-deberta-pair",
+   "repo": "microsoft/deberta-v3-base",
+   "micro_f1_4class": 0.64106,
+   "sklearn_micro_f1": 0.64106,
+   "ci95": [
+    0.568321,
+    0.710021
+   ],
+   "micro_f1_official_set_bound": 0.355099,
+   "ci95_official_set_bound": [
+    0.302631,
+    0.413177
+   ],
+   "precision": 0.630208,
+   "recall": 0.652291,
+   "tp": 242,
+   "predicted_positive": 384,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.595376,
+    "effect": 0.679612,
+    "advise": 0.725806,
+    "int": 0.607595
+   },
+   "binary_f1": 0.696689
+  },
+  {
+   "name": "a7-panel-electra-marker",
+   "repo": "google/electra-base-discriminator",
+   "micro_f1_4class": 0.695652,
+   "sklearn_micro_f1": 0.695652,
+   "ci95": [
+    0.609846,
+    0.779565
+   ],
+   "micro_f1_official_set_bound": 0.380952,
+   "ci95_official_set_bound": [
+    0.320224,
+    0.444704
+   ],
+   "precision": 0.70137,
+   "recall": 0.690027,
+   "tp": 256,
+   "predicted_positive": 365,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.648318,
+    "effect": 0.731278,
+    "advise": 0.741379,
+    "int": 0.727273
+   },
+   "binary_f1": 0.747283
+  },
+  {
+   "name": "a7-panel-electra-pair",
+   "repo": "google/electra-base-discriminator",
+   "micro_f1_4class": 0.664112,
+   "sklearn_micro_f1": 0.664112,
+   "ci95": [
+    0.600789,
+    0.72705
+   ],
+   "micro_f1_official_set_bound": 0.373832,
+   "ci95_official_set_bound": [
+    0.320666,
+    0.432934
+   ],
+   "precision": 0.631068,
+   "recall": 0.700809,
+   "tp": 260,
+   "predicted_positive": 412,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.635569,
+    "effect": 0.691358,
+    "advise": 0.770492,
+    "int": 0.533333
+   },
+   "binary_f1": 0.712644
+  },
+  {
+   "name": "a7-panel-roberta-marker",
+   "repo": "FacebookAI/roberta-base",
+   "micro_f1_4class": 0.711354,
+   "sklearn_micro_f1": 0.711354,
+   "ci95": [
+    0.645245,
+    0.777811
+   ],
+   "micro_f1_official_set_bound": 0.38835,
+   "ci95_official_set_bound": [
+    0.33176,
+    0.451745
+   ],
+   "precision": 0.722222,
+   "recall": 0.700809,
+   "tp": 260,
+   "predicted_positive": 360,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.696697,
+    "effect": 0.738318,
+    "advise": 0.717949,
+    "int": 0.686567
+   },
+   "binary_f1": 0.766074
+  },
+  {
+   "name": "a7-panel-roberta-pair",
+   "repo": "FacebookAI/roberta-base",
+   "micro_f1_4class": 0.626832,
+   "sklearn_micro_f1": 0.626832,
+   "ci95": [
+    0.545861,
+    0.702268
+   ],
+   "micro_f1_official_set_bound": 0.371906,
+   "ci95_official_set_bound": [
+    0.314143,
+    0.433827
+   ],
+   "precision": 0.53876,
+   "recall": 0.749326,
+   "tp": 278,
+   "predicted_positive": 516,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.568075,
+    "effect": 0.689394,
+    "advise": 0.687023,
+    "int": 0.636364
+   },
+   "binary_f1": 0.708005
+  },
+  {
+   "name": "a7-panel-scibert-marker",
+   "repo": "allenai/scibert_scivocab_uncased",
+   "micro_f1_4class": 0.749263,
+   "sklearn_micro_f1": 0.749263,
+   "ci95": [
+    0.690209,
+    0.802643
+   ],
+   "micro_f1_official_set_bound": 0.395023,
+   "ci95_official_set_bound": [
+    0.336796,
+    0.452808
+   ],
+   "precision": 0.827362,
+   "recall": 0.684636,
+   "tp": 254,
+   "predicted_positive": 307,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.737931,
+    "effect": 0.766355,
+    "advise": 0.8,
+    "int": 0.644068
+   },
+   "binary_f1": 0.79056
+  },
+  {
+   "name": "a7-panel-scibert-pair",
+   "repo": "allenai/scibert_scivocab_uncased",
+   "micro_f1_4class": 0.644664,
+   "sklearn_micro_f1": 0.644664,
+   "ci95": [
+    0.561902,
+    0.727947
+   ],
+   "micro_f1_official_set_bound": 0.386289,
+   "ci95_official_set_bound": [
+    0.324888,
+    0.450787
+   ],
+   "precision": 0.54461,
+   "recall": 0.789757,
+   "tp": 293,
+   "predicted_positive": 538,
+   "gold_positive": 371,
+   "per_class_f1": {
+    "mechanism": 0.630137,
+    "effect": 0.680162,
+    "advise": 0.62585,
+    "int": 0.649351
+   },
+   "binary_f1": 0.723872
+  }
+ ],
+ "published": {
+  "source": "Gu et al. 2021, Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing, arXiv 2007.15779 (published in ACM Transactions on Computing for Healthcare), Table 6 (read from the arXiv PDF on 2026-10-17)",
+  "metric": "micro F1 (Table 3 lists DDI: relation extraction, train 25296, dev 2496, test 5716, micro F1)",
+  "split": "the original DDI 2013 corpus with a train/dev/test split of 624/90/191 files",
+  "rows": {
+   "PubMedBERT (uncased)": 82.36,
+   "BioBERT (cased)": 80.88,
+   "BERT (uncased)": 80.04,
+   "BERT (cased)": 79.34,
+   "RoBERTa (cased)": 79.52,
+   "SciBERT (uncased)": 81.06,
+   "SciBERT (cased)": 81.22,
+   "ClinicalBERT (cased)": 78.2,
+   "BlueBERT (cased)": 77.78
+  },
+  "not_verified": "The BioBERT paper (Lee et al. 2020) itself was not checked for a DDI figure"
+ }
+}

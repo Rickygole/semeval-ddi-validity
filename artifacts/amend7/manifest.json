@@ -1,0 +1,68 @@
+{
+ "ood_hash": "61928b6d9f311ae902b468e11cbc77150c88850e20268431d8ba286773bbad0b",
+ "ood_old_hash": "b663dd650f3d836e6440b9edf2b6cb0af0e9a34a7fb2266edfe492b87577e872",
+ "train_hash": "608e68f05826abc4c4e109e168b32a40167f1dce403679cb6d6e5c40d76db98a",
+ "prompts_sha256": "24f7ba2559aec7e09293092cc1d1a470ec6c3566858ba7f78ef72272321fdfdb",
+ "panel_revisions": {
+  "bert-base-uncased": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "dmis-lab/biobert-base-cased-v1.2": "67c9c25b46986521ca33df05d8540da1210b3256",
+  "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract": "d673b8835373c6fa116d6d8006b33d48734e305d",
+  "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext": "e1354b7a3a09615f6aba48dfad4b7a613eef7062",
+  "michiyasunaga/BioLinkBERT-base": "b71f5d70f063d1c8f1124070ce86f1ee463ca1fe",
+  "allenai/scibert_scivocab_uncased": "24f92d32b1bfb0bcaf9ab193ff3ad01e87732fc1",
+  "emilyalsentzer/Bio_ClinicalBERT": "d5892b39a4adaed74b92212a44081509db72f87b",
+  "FacebookAI/roberta-base": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "microsoft/deberta-v3-base": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+  "google/electra-base-discriminator": "1ae76a97c7e84a4e640876a07453fccd636f0667"
+ },
+ "panel_lowercase": {
+  "bert-base-uncased": true,
+  "dmis-lab/biobert-base-cased-v1.2": false,
+  "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract": true,
+  "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext": true,
+  "michiyasunaga/BioLinkBERT-base": true,
+  "allenai/scibert_scivocab_uncased": true,
+  "emilyalsentzer/Bio_ClinicalBERT": false,
+  "FacebookAI/roberta-base": null,
+  "microsoft/deberta-v3-base": null,
+  "google/electra-base-discriminator": true
+ },
+ "qwen_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+ "external_facts": {
+  "wesin/pubmedbert-relation-extraction": {
+   "train_corpora": [
+    "chemprot",
+    "bc5cdr",
+    "gad",
+    "biored",
+    "ddi"
+   ],
+   "input_format_documented": true,
+   "negative_label": true
+  }
+ },
+ "panel_verified_on": "2026-10-16",
+ "external_revisions": {
+  "wesin/pubmedbert-relation-extraction": "3616405c9fbb882ed2a0b9cf95da3f6405e3110a"
+ },
+ "hub_searched_on": "2026-10-16",
+ "e7b_rule": {
+  "R_novel": 1.0,
+  "R_older_primary": 1.0,
+  "threshold_novel": 0.9,
+  "threshold_older_primary": 0.9,
+  "R_floor": 0.95,
+  "assertion_R_at_least_floor": true,
+  "lower_bound_floor": 0.7
+ },
+ "label_snapshot_ood": {
+  "files": 183,
+  "missing": 0,
+  "earliest": "2026-10-15",
+  "latest": "2026-10-16",
+  "by_date": {
+   "2026-10-15": 48,
+   "2026-10-16": 135
+  }
+ }
+}

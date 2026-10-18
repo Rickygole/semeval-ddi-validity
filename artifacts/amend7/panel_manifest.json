@@ -1,0 +1,117 @@
+{
+ "bert-base-uncased": {
+  "id": "bertbase",
+  "sha": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "gated": false,
+  "private": false,
+  "has_safetensors": true,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": 0.0,
+  "wordpiece": true,
+  "do_lower_case": true
+ },
+ "dmis-lab/biobert-base-cased-v1.2": {
+  "id": "biobert",
+  "sha": "67c9c25b46986521ca33df05d8540da1210b3256",
+  "gated": false,
+  "private": false,
+  "has_safetensors": false,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": 0.2817,
+  "wordpiece": true,
+  "do_lower_case": false
+ },
+ "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract": {
+  "id": "biomedbert_abs",
+  "sha": "d673b8835373c6fa116d6d8006b33d48734e305d",
+  "gated": false,
+  "private": false,
+  "has_safetensors": false,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": 0.0,
+  "wordpiece": true,
+  "do_lower_case": true
+ },
+ "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext": {
+  "id": "biomedbert_full",
+  "sha": "e1354b7a3a09615f6aba48dfad4b7a613eef7062",
+  "gated": false,
+  "private": false,
+  "has_safetensors": false,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": 0.0,
+  "wordpiece": true,
+  "do_lower_case": true
+ },
+ "michiyasunaga/BioLinkBERT-base": {
+  "id": "biolinkbert",
+  "sha": "b71f5d70f063d1c8f1124070ce86f1ee463ca1fe",
+  "gated": false,
+  "private": false,
+  "has_safetensors": false,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": 0.0,
+  "wordpiece": true,
+  "do_lower_case": true
+ },
+ "allenai/scibert_scivocab_uncased": {
+  "id": "scibert",
+  "sha": "24f92d32b1bfb0bcaf9ab193ff3ad01e87732fc1",
+  "gated": false,
+  "private": false,
+  "has_safetensors": false,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": 0.0012,
+  "wordpiece": true,
+  "do_lower_case": true
+ },
+ "emilyalsentzer/Bio_ClinicalBERT": {
+  "id": "clinicalbert",
+  "sha": "d5892b39a4adaed74b92212a44081509db72f87b",
+  "gated": false,
+  "private": false,
+  "has_safetensors": false,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": 0.2817,
+  "wordpiece": true,
+  "do_lower_case": false
+ },
+ "FacebookAI/roberta-base": {
+  "id": "roberta",
+  "sha": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "gated": false,
+  "private": false,
+  "has_safetensors": true,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": null,
+  "wordpiece": false,
+  "do_lower_case": null
+ },
+ "microsoft/deberta-v3-base": {
+  "id": "deberta",
+  "sha": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+  "gated": false,
+  "private": false,
+  "has_safetensors": false,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": null,
+  "wordpiece": false,
+  "do_lower_case": null
+ },
+ "google/electra-base-discriminator": {
+  "id": "electra",
+  "sha": "1ae76a97c7e84a4e640876a07453fccd636f0667",
+  "gated": false,
+  "private": false,
+  "has_safetensors": false,
+  "has_pytorch_bin": true,
+  "vocab_upper_share": 0.0,
+  "wordpiece": true,
+  "do_lower_case": true
+ },
+ "_qwen": {
+  "repo": "Qwen/Qwen2.5-7B-Instruct",
+  "sha": "a09a35458c702b33eeacc393d103063234e8bc28"
+ },
+ "_verified_on": "2026-10-16"
+}

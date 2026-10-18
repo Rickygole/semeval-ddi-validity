@@ -1,0 +1,709 @@
+{
+ "status": "Amendment 7 experiment 5, exploratory, post hoc",
+ "method": "DrugBank lookup as in ddiood.drugbank.validate (names and RxNorm normalized forms from artifacts/vocab/drug_lookup.json; listed if either drug's DrugBank interaction list names the other) applied to the 2,810 SemEval 2013 test pairs; unresolvable means neither drug was found; AUROC intervals resample sentences (1,000 draws); co-mention means the unordered pair also occurs in a SemEval train sentence (every test pair co-occurs in its own test sentence by construction)",
+ "drugbank_source": "drugbank_all_full_database.xml.zip",
+ "headline": {
+  "n_test_pairs": 2810,
+  "n_negative": 2439,
+  "n_positive": 371,
+  "unresolvable": 71,
+  "one_side_resolved": 157,
+  "both_resolved": 2582,
+  "self_pairs": 289,
+  "negatives_listed": 1609,
+  "negatives_resolvable": 2377,
+  "negatives_listed_share_of_resolvable": 0.676904,
+  "negatives_listed_share_of_both_resolved": 0.711632,
+  "positives_listed_share_of_resolvable": 0.726519,
+  "positives_listed_share_of_both_resolved": 0.819315
+ },
+ "by_class": [
+  {
+   "subset": "all",
+   "label": "false",
+   "n": 2439,
+   "unresolvable": 62,
+   "one_side_resolved": 116,
+   "both_resolved": 2261,
+   "listed": 1609,
+   "listed_share_of_resolvable": 0.676904,
+   "listed_share_of_both_resolved": 0.711632,
+   "n_pairs_comentioned_in_train": 969
+  },
+  {
+   "subset": "all",
+   "label": "mechanism",
+   "n": 157,
+   "unresolvable": 0,
+   "one_side_resolved": 20,
+   "both_resolved": 137,
+   "listed": 119,
+   "listed_share_of_resolvable": 0.757962,
+   "listed_share_of_both_resolved": 0.868613,
+   "n_pairs_comentioned_in_train": 27
+  },
+  {
+   "subset": "all",
+   "label": "effect",
+   "n": 113,
+   "unresolvable": 9,
+   "one_side_resolved": 7,
+   "both_resolved": 97,
+   "listed": 71,
+   "listed_share_of_resolvable": 0.682692,
+   "listed_share_of_both_resolved": 0.731959,
+   "n_pairs_comentioned_in_train": 19
+  },
+  {
+   "subset": "all",
+   "label": "advise",
+   "n": 63,
+   "unresolvable": 0,
+   "one_side_resolved": 5,
+   "both_resolved": 58,
+   "listed": 58,
+   "listed_share_of_resolvable": 0.920635,
+   "listed_share_of_both_resolved": 1.0,
+   "n_pairs_comentioned_in_train": 8
+  },
+  {
+   "subset": "all",
+   "label": "int",
+   "n": 38,
+   "unresolvable": 0,
+   "one_side_resolved": 9,
+   "both_resolved": 29,
+   "listed": 15,
+   "listed_share_of_resolvable": 0.394737,
+   "listed_share_of_both_resolved": 0.517241,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "all",
+   "label": "any positive",
+   "n": 371,
+   "unresolvable": 9,
+   "one_side_resolved": 41,
+   "both_resolved": 321,
+   "listed": 263,
+   "listed_share_of_resolvable": 0.726519,
+   "listed_share_of_both_resolved": 0.819315,
+   "n_pairs_comentioned_in_train": 54
+  },
+  {
+   "subset": "pair co-mentioned in a SemEval train sentence",
+   "label": "false",
+   "n": 969,
+   "unresolvable": 0,
+   "one_side_resolved": 2,
+   "both_resolved": 967,
+   "listed": 702,
+   "listed_share_of_resolvable": 0.724458,
+   "listed_share_of_both_resolved": 0.725957,
+   "n_pairs_comentioned_in_train": 969
+  },
+  {
+   "subset": "pair co-mentioned in a SemEval train sentence",
+   "label": "mechanism",
+   "n": 27,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 27,
+   "listed": 26,
+   "listed_share_of_resolvable": 0.962963,
+   "listed_share_of_both_resolved": 0.962963,
+   "n_pairs_comentioned_in_train": 27
+  },
+  {
+   "subset": "pair co-mentioned in a SemEval train sentence",
+   "label": "effect",
+   "n": 19,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 19,
+   "listed": 16,
+   "listed_share_of_resolvable": 0.842105,
+   "listed_share_of_both_resolved": 0.842105,
+   "n_pairs_comentioned_in_train": 19
+  },
+  {
+   "subset": "pair co-mentioned in a SemEval train sentence",
+   "label": "advise",
+   "n": 8,
+   "unresolvable": 0,
+   "one_side_resolved": 1,
+   "both_resolved": 7,
+   "listed": 7,
+   "listed_share_of_resolvable": 0.875,
+   "listed_share_of_both_resolved": 1.0,
+   "n_pairs_comentioned_in_train": 8
+  },
+  {
+   "subset": "pair co-mentioned in a SemEval train sentence",
+   "label": "int",
+   "n": 0,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 0,
+   "listed": 0,
+   "listed_share_of_resolvable": null,
+   "listed_share_of_both_resolved": null,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "pair co-mentioned in a SemEval train sentence",
+   "label": "any positive",
+   "n": 54,
+   "unresolvable": 0,
+   "one_side_resolved": 1,
+   "both_resolved": 53,
+   "listed": 49,
+   "listed_share_of_resolvable": 0.907407,
+   "listed_share_of_both_resolved": 0.924528,
+   "n_pairs_comentioned_in_train": 54
+  },
+  {
+   "subset": "pair not co-mentioned in SemEval train",
+   "label": "false",
+   "n": 1470,
+   "unresolvable": 62,
+   "one_side_resolved": 114,
+   "both_resolved": 1294,
+   "listed": 907,
+   "listed_share_of_resolvable": 0.644176,
+   "listed_share_of_both_resolved": 0.700927,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "pair not co-mentioned in SemEval train",
+   "label": "mechanism",
+   "n": 130,
+   "unresolvable": 0,
+   "one_side_resolved": 20,
+   "both_resolved": 110,
+   "listed": 93,
+   "listed_share_of_resolvable": 0.715385,
+   "listed_share_of_both_resolved": 0.845455,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "pair not co-mentioned in SemEval train",
+   "label": "effect",
+   "n": 94,
+   "unresolvable": 9,
+   "one_side_resolved": 7,
+   "both_resolved": 78,
+   "listed": 55,
+   "listed_share_of_resolvable": 0.647059,
+   "listed_share_of_both_resolved": 0.705128,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "pair not co-mentioned in SemEval train",
+   "label": "advise",
+   "n": 55,
+   "unresolvable": 0,
+   "one_side_resolved": 4,
+   "both_resolved": 51,
+   "listed": 51,
+   "listed_share_of_resolvable": 0.927273,
+   "listed_share_of_both_resolved": 1.0,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "pair not co-mentioned in SemEval train",
+   "label": "int",
+   "n": 38,
+   "unresolvable": 0,
+   "one_side_resolved": 9,
+   "both_resolved": 29,
+   "listed": 15,
+   "listed_share_of_resolvable": 0.394737,
+   "listed_share_of_both_resolved": 0.517241,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "pair not co-mentioned in SemEval train",
+   "label": "any positive",
+   "n": 317,
+   "unresolvable": 9,
+   "one_side_resolved": 40,
+   "both_resolved": 268,
+   "listed": 214,
+   "listed_share_of_resolvable": 0.694805,
+   "listed_share_of_both_resolved": 0.798507,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "both drugs resolved in DrugBank",
+   "label": "false",
+   "n": 2261,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 2261,
+   "listed": 1609,
+   "listed_share_of_resolvable": 0.711632,
+   "listed_share_of_both_resolved": 0.711632,
+   "n_pairs_comentioned_in_train": 967
+  },
+  {
+   "subset": "both drugs resolved in DrugBank",
+   "label": "mechanism",
+   "n": 137,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 137,
+   "listed": 119,
+   "listed_share_of_resolvable": 0.868613,
+   "listed_share_of_both_resolved": 0.868613,
+   "n_pairs_comentioned_in_train": 27
+  },
+  {
+   "subset": "both drugs resolved in DrugBank",
+   "label": "effect",
+   "n": 97,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 97,
+   "listed": 71,
+   "listed_share_of_resolvable": 0.731959,
+   "listed_share_of_both_resolved": 0.731959,
+   "n_pairs_comentioned_in_train": 19
+  },
+  {
+   "subset": "both drugs resolved in DrugBank",
+   "label": "advise",
+   "n": 58,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 58,
+   "listed": 58,
+   "listed_share_of_resolvable": 1.0,
+   "listed_share_of_both_resolved": 1.0,
+   "n_pairs_comentioned_in_train": 7
+  },
+  {
+   "subset": "both drugs resolved in DrugBank",
+   "label": "int",
+   "n": 29,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 29,
+   "listed": 15,
+   "listed_share_of_resolvable": 0.517241,
+   "listed_share_of_both_resolved": 0.517241,
+   "n_pairs_comentioned_in_train": 0
+  },
+  {
+   "subset": "both drugs resolved in DrugBank",
+   "label": "any positive",
+   "n": 321,
+   "unresolvable": 0,
+   "one_side_resolved": 0,
+   "both_resolved": 321,
+   "listed": 263,
+   "listed_share_of_resolvable": 0.819315,
+   "listed_share_of_both_resolved": 0.819315,
+   "n_pairs_comentioned_in_train": 53
+  }
+ ],
+ "auroc": [
+  {
+   "subset": "all pairs, unresolvable counted as not listed",
+   "n": 2810,
+   "n_pos": 371,
+   "auroc": 0.524599,
+   "ci95": [
+    0.483536,
+    0.569571
+   ]
+  },
+  {
+   "subset": "both drugs resolved",
+   "n": 2582,
+   "n_pos": 321,
+   "auroc": 0.553841,
+   "ci95": [
+    0.520966,
+    0.591076
+   ]
+  },
+  {
+   "subset": "co-mentioned in SemEval train",
+   "n": 1023,
+   "n_pos": 54,
+   "auroc": 0.591475,
+   "ci95": [
+    0.539866,
+    0.649103
+   ]
+  },
+  {
+   "subset": "not co-mentioned in SemEval train",
+   "n": 1787,
+   "n_pos": 317,
+   "auroc": 0.529036,
+   "ci95": [
+    0.481783,
+    0.582511
+   ]
+  },
+  {
+   "subset": "both resolved and co-mentioned in train",
+   "n": 1020,
+   "n_pos": 53,
+   "auroc": 0.599286,
+   "ci95": [
+    0.549927,
+    0.651634
+   ]
+  },
+  {
+   "subset": "both resolved and not co-mentioned in train",
+   "n": 1562,
+   "n_pos": 268,
+   "auroc": 0.54879,
+   "ci95": [
+    0.513646,
+    0.588228
+   ]
+  },
+  {
+   "subset": "excluding self pairs",
+   "n": 2521,
+   "n_pos": 371,
+   "auroc": 0.480261,
+   "ci95": [
+    0.438568,
+    0.52081
+   ]
+  }
+ ],
+ "distinct_pairs": {
+  "n_distinct_pairs": 1844,
+  "n_pairs_with_repeat_instances": 426,
+  "n_repeat_pairs_with_conflicting_labels": 126,
+  "distinct_negative_only_pairs_resolvable": 1513,
+  "distinct_negative_only_listed_share": 0.692003,
+  "distinct_positive_only_pairs_resolvable": 171,
+  "distinct_positive_only_listed_share": 0.619883
+ },
+ "grid_2x2": [
+  {
+   "system": "DrugBank lookup",
+   "labels": "SemEval 2013 test (sentence-level)",
+   "tier": "A",
+   "statistic": "pooled AUROC",
+   "n": 2810,
+   "n_drugs": null,
+   "value": 0.524599,
+   "ci95": [
+    0.483536,
+    0.569571
+   ],
+   "n_seeds": null,
+   "interval": "sentence-cluster bootstrap"
+  },
+  {
+   "system": "b1names-biomedbert (names only)",
+   "labels": "SemEval 2013 test (sentence-level)",
+   "tier": "A",
+   "statistic": "pooled AUROC",
+   "n": 2810,
+   "n_drugs": null,
+   "value": 0.671187,
+   "ci95": [
+    0.637333,
+    0.710234
+   ],
+   "n_seeds": 5,
+   "interval": "sentence-cluster bootstrap"
+  },
+  {
+   "system": "llm-qwen-names (names only)",
+   "labels": "SemEval 2013 test (sentence-level)",
+   "tier": "A",
+   "statistic": "pooled AUROC",
+   "n": 2810,
+   "n_drugs": null,
+   "value": 0.495191,
+   "ci95": [
+    0.436792,
+    0.551921
+   ],
+   "n_seeds": 1,
+   "interval": "sentence-cluster bootstrap"
+  },
+  {
+   "system": "b2sentence-biomedbert (sentence model; OOD has no sentence)",
+   "labels": "SemEval 2013 test (sentence-level)",
+   "tier": "A",
+   "statistic": "pooled AUROC",
+   "n": 2810,
+   "n_drugs": null,
+   "value": 0.967771,
+   "ci95": [
+    0.95499,
+    0.978211
+   ],
+   "n_seeds": 5,
+   "interval": "sentence-cluster bootstrap"
+  },
+  {
+   "system": "DrugBank lookup",
+   "labels": "novel pair labels",
+   "tier": "A",
+   "statistic": "within-drug AUROC",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.728534,
+   "ci95": [
+    0.642152,
+    0.808313
+   ],
+   "n_seeds": null,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "b1names-biomedbert (names only)",
+   "labels": "novel pair labels",
+   "tier": "A",
+   "statistic": "within-drug AUROC",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.513871,
+   "ci95": [
+    0.383902,
+    0.635302
+   ],
+   "n_seeds": 5,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "llm-qwen-names (names only)",
+   "labels": "novel pair labels",
+   "tier": "A",
+   "statistic": "within-drug AUROC",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.5786,
+   "ci95": [
+    0.439976,
+    0.713106
+   ],
+   "n_seeds": 1,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "b2sentence-biomedbert (sentence model; OOD has no sentence)",
+   "labels": "novel pair labels",
+   "tier": "A",
+   "statistic": "within-drug AUROC",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.490092,
+   "ci95": [
+    0.369719,
+    0.612369
+   ],
+   "n_seeds": 5,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "DrugBank lookup",
+   "labels": "novel pair labels",
+   "tier": "B",
+   "statistic": "within-drug AUROC",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n_seeds": null,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": "circular: tier B is defined by DrugBank agreement"
+  },
+  {
+   "system": "b1names-biomedbert (names only)",
+   "labels": "novel pair labels",
+   "tier": "B",
+   "statistic": "within-drug AUROC",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.530055,
+   "ci95": [
+    0.341348,
+    0.724378
+   ],
+   "n_seeds": 5,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "llm-qwen-names (names only)",
+   "labels": "novel pair labels",
+   "tier": "B",
+   "statistic": "within-drug AUROC",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.576503,
+   "ci95": [
+    0.39691,
+    0.736012
+   ],
+   "n_seeds": 1,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "b2sentence-biomedbert (sentence model; OOD has no sentence)",
+   "labels": "novel pair labels",
+   "tier": "B",
+   "statistic": "within-drug AUROC",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.47541,
+   "ci95": [
+    0.308071,
+    0.644081
+   ],
+   "n_seeds": 5,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "DrugBank lookup",
+   "labels": "older_clean pair labels",
+   "tier": "A",
+   "statistic": "within-drug AUROC",
+   "n": 1832,
+   "n_drugs": 128,
+   "value": 0.641224,
+   "ci95": [
+    0.595375,
+    0.688846
+   ],
+   "n_seeds": null,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "b1names-biomedbert (names only)",
+   "labels": "older_clean pair labels",
+   "tier": "A",
+   "statistic": "within-drug AUROC",
+   "n": 1832,
+   "n_drugs": 128,
+   "value": 0.462805,
+   "ci95": [
+    0.397921,
+    0.520716
+   ],
+   "n_seeds": 5,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "llm-qwen-names (names only)",
+   "labels": "older_clean pair labels",
+   "tier": "A",
+   "statistic": "within-drug AUROC",
+   "n": 1832,
+   "n_drugs": 128,
+   "value": 0.601898,
+   "ci95": [
+    0.532709,
+    0.666601
+   ],
+   "n_seeds": 1,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "b2sentence-biomedbert (sentence model; OOD has no sentence)",
+   "labels": "older_clean pair labels",
+   "tier": "A",
+   "statistic": "within-drug AUROC",
+   "n": 1832,
+   "n_drugs": 128,
+   "value": 0.453119,
+   "ci95": [
+    0.390759,
+    0.518153
+   ],
+   "n_seeds": 5,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "DrugBank lookup",
+   "labels": "older_clean pair labels",
+   "tier": "B",
+   "statistic": "within-drug AUROC",
+   "n": 1191,
+   "n_drugs": 128,
+   "value": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n_seeds": null,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": "circular: tier B is defined by DrugBank agreement"
+  },
+  {
+   "system": "b1names-biomedbert (names only)",
+   "labels": "older_clean pair labels",
+   "tier": "B",
+   "statistic": "within-drug AUROC",
+   "n": 1191,
+   "n_drugs": 128,
+   "value": 0.419109,
+   "ci95": [
+    0.319938,
+    0.531083
+   ],
+   "n_seeds": 5,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "llm-qwen-names (names only)",
+   "labels": "older_clean pair labels",
+   "tier": "B",
+   "statistic": "within-drug AUROC",
+   "n": 1191,
+   "n_drugs": 128,
+   "value": 0.660317,
+   "ci95": [
+    0.54343,
+    0.766619
+   ],
+   "n_seeds": 1,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  },
+  {
+   "system": "b2sentence-biomedbert (sentence model; OOD has no sentence)",
+   "labels": "older_clean pair labels",
+   "tier": "B",
+   "statistic": "within-drug AUROC",
+   "n": 1191,
+   "n_drugs": 128,
+   "value": 0.393318,
+   "ci95": [
+    0.296151,
+    0.501412
+   ],
+   "n_seeds": 5,
+   "interval": "two-way cluster bootstrap over OOD drugs and partners",
+   "note": ""
+  }
+ ]
+}

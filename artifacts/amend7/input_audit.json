@@ -1,0 +1,622 @@
+{
+ "prompts_frozen_sha256": "24f7ba2559aec7e09293092cc1d1a470ec6c3566858ba7f78ef72272321fdfdb",
+ "window_chars": 320,
+ "h5_chars": 400,
+ "labels_snapshot": {
+  "files": 183,
+  "missing": 0,
+  "earliest": "2026-10-15",
+  "latest": "2026-10-16",
+  "by_date": {
+   "2026-10-15": 48,
+   "2026-10-16": 135
+  }
+ },
+ "encoder_arms": {
+  "e7a_h5_contaminated": {
+   "novel": {
+    "truncated_inputs": 0,
+    "n": 438,
+    "novel": {
+     "R_positives_with_partner_in_seen_text": 0.4594594594594595,
+     "negatives_with_partner_in_seen_text": 0.20344827586206896,
+     "grep_auroc_within": 0.6347424042272127,
+     "grep_auroc_pooled": 0.6280055917986952
+    }
+   },
+   "older": {
+    "truncated_inputs": 4,
+    "n": 1944,
+    "older_primary": {
+     "R_positives_with_partner_in_seen_text": 0.5266903914590747,
+     "negatives_with_partner_in_seen_text": 0.23986194995685936,
+     "grep_auroc_within": 0.6418594955180321,
+     "grep_auroc_pooled": 0.6434142207511077
+    },
+    "older_clean": {
+     "R_positives_with_partner_in_seen_text": 0.5175292153589316,
+     "negatives_with_partner_in_seen_text": 0.24574209245742093,
+     "grep_auroc_within": 0.6356063541263076,
+     "grep_auroc_pooled": 0.6358935614507554
+    }
+   }
+  },
+  "e7b_fixed_ownlabel": {
+   "novel": {
+    "truncated_inputs": 1,
+    "n": 438,
+    "novel": {
+     "R_positives_with_partner_in_seen_text": 1.0,
+     "negatives_with_partner_in_seen_text": 0.0,
+     "grep_auroc_within": 1.0,
+     "grep_auroc_pooled": 1.0
+    }
+   },
+   "older": {
+    "truncated_inputs": 5,
+    "n": 1944,
+    "older_primary": {
+     "R_positives_with_partner_in_seen_text": 1.0,
+     "negatives_with_partner_in_seen_text": 0.0,
+     "grep_auroc_within": 1.0,
+     "grep_auroc_pooled": 1.0
+    },
+    "older_clean": {
+     "R_positives_with_partner_in_seen_text": 1.0,
+     "negatives_with_partner_in_seen_text": 0.0,
+     "grep_auroc_within": 1.0,
+     "grep_auroc_pooled": 1.0
+    }
+   }
+  },
+  "e7b_alt_fixed_global_contaminated": {
+   "novel": {
+    "truncated_inputs": 0,
+    "n": 438,
+    "novel": {
+     "R_positives_with_partner_in_seen_text": 0.6554054054054054,
+     "negatives_with_partner_in_seen_text": 0.23103448275862068,
+     "grep_auroc_within": 0.7173051519154557,
+     "grep_auroc_pooled": 0.7121854613233923
+    }
+   },
+   "older": {
+    "truncated_inputs": 3,
+    "n": 1944,
+    "older_primary": {
+     "R_positives_with_partner_in_seen_text": 0.797153024911032,
+     "negatives_with_partner_in_seen_text": 0.27523727351164795,
+     "grep_auroc_within": 0.753179070252241,
+     "grep_auroc_pooled": 0.7609578756996921
+    },
+    "older_clean": {
+     "R_positives_with_partner_in_seen_text": 0.7963272120200334,
+     "negatives_with_partner_in_seen_text": 0.28548256285482565,
+     "grep_auroc_within": 0.7491282448663309,
+     "grep_auroc_pooled": 0.7554223245826038
+    }
+   }
+  },
+  "e7d_fixed_other": {
+   "novel": {
+    "truncated_inputs": 0,
+    "n": 438,
+    "novel": {
+     "R_positives_with_partner_in_seen_text": 0.9932432432432432,
+     "negatives_with_partner_in_seen_text": 0.993103448275862,
+     "grep_auroc_within": 0.4966974900924703,
+     "grep_auroc_pooled": 0.5000698974836906
+    }
+   },
+   "older": {
+    "truncated_inputs": 1,
+    "n": 1944,
+    "older_primary": {
+     "R_positives_with_partner_in_seen_text": 0.9697508896797153,
+     "negatives_with_partner_in_seen_text": 0.9698015530629853,
+     "grep_auroc_within": 0.4985407546383156,
+     "grep_auroc_pooled": 0.499974668308365
+    },
+    "older_clean": {
+     "R_positives_with_partner_in_seen_text": 0.9532554257095158,
+     "negatives_with_partner_in_seen_text": 0.9570154095701541,
+     "grep_auroc_within": 0.4934134056567222,
+     "grep_auroc_pooled": 0.4981200080696808
+    }
+   }
+  },
+  "e7e_fixed_clean": {
+   "novel": {
+    "truncated_inputs": 0,
+    "n": 438,
+    "novel": {
+     "R_positives_with_partner_in_seen_text": 0.4189189189189189,
+     "negatives_with_partner_in_seen_text": 0.24482758620689654,
+     "grep_auroc_within": 0.5416116248348745,
+     "grep_auroc_pooled": 0.5870456663560113
+    }
+   },
+   "older": {
+    "truncated_inputs": 6,
+    "n": 1944,
+    "older_primary": {
+     "R_positives_with_partner_in_seen_text": 0.5284697508896797,
+     "negatives_with_partner_in_seen_text": 0.3451251078515962,
+     "grep_auroc_within": 0.5833854492391077,
+     "grep_auroc_pooled": 0.5916723215190417
+    },
+    "older_clean": {
+     "R_positives_with_partner_in_seen_text": 0.5141903171953256,
+     "negatives_with_partner_in_seen_text": 0.34387672343876724,
+     "grep_auroc_within": 0.5809763657497095,
+     "grep_auroc_pooled": 0.5851567968782793
+    }
+   }
+  }
+ },
+ "own_label_names_partner": {
+  "contaminated": {
+   "novel": {
+    "positives_hit": 72,
+    "positives": 148,
+    "negatives_hit": 0,
+    "negatives": 290,
+    "grep_auroc_within": 0.76221928665786
+   },
+   "older": {
+    "positives_hit": 382,
+    "positives": 562,
+    "negatives_hit": 0,
+    "negatives": 1159,
+    "grep_auroc_within": 0.8467792370231395
+   }
+  },
+  "ownlabel": {
+   "novel": {
+    "positives_hit": 148,
+    "positives": 148,
+    "negatives_hit": 0,
+    "negatives": 290,
+    "grep_auroc_within": 1.0
+   },
+   "older": {
+    "positives_hit": 562,
+    "positives": 562,
+    "negatives_hit": 0,
+    "negatives": 1159,
+    "grep_auroc_within": 1.0
+   }
+  },
+  "other": {
+   "novel": {
+    "positives_hit": 0,
+    "positives": 148,
+    "negatives_hit": 0,
+    "negatives": 290,
+    "grep_auroc_within": 0.5
+   },
+   "older": {
+    "positives_hit": 0,
+    "positives": 562,
+    "negatives_hit": 0,
+    "negatives": 1159,
+    "grep_auroc_within": 0.5
+   }
+  },
+  "clean": {
+   "novel": {
+    "positives_hit": 23,
+    "positives": 148,
+    "negatives_hit": 0,
+    "negatives": 290,
+    "grep_auroc_within": 0.570673712021136
+   },
+   "older": {
+    "positives_hit": 130,
+    "positives": 562,
+    "negatives_hit": 0,
+    "negatives": 1159,
+    "grep_auroc_within": 0.6243485511778195
+   }
+  }
+ },
+ "e7b_train_reachability": {
+  "R_positives": 0.9987029831387808,
+  "negatives_with_partner": 0.0,
+  "truncated_inputs": 2,
+  "n": 4643
+ },
+ "e7b_rule": {
+  "R_novel": 1.0,
+  "R_older_primary": 1.0,
+  "threshold_novel": 0.9,
+  "threshold_older_primary": 0.9,
+  "R_floor": 0.95,
+  "assertion_R_at_least_floor": true,
+  "lower_bound_floor": 0.7
+ },
+ "qwen_arms": {
+  "oracle": {
+   "novel": {
+    "truncated_evidence": 0,
+    "tokens_mean": 760.5776255707763,
+    "tokens_max": 1907,
+    "prompts_over_limit": 0,
+    "n": 438,
+    "novel": {
+     "positives_with_partner_in_context": 1.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 1.0,
+     "grep_auroc_pooled": 1.0
+    }
+   },
+   "older": {
+    "truncated_evidence": 15,
+    "tokens_mean": 852.7340534979423,
+    "tokens_max": 6087,
+    "prompts_over_limit": 0,
+    "n": 1944,
+    "older_primary": {
+     "positives_with_partner_in_context": 1.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 1.0,
+     "grep_auroc_pooled": 1.0
+    },
+    "older_clean": {
+     "positives_with_partner_in_context": 1.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 1.0,
+     "grep_auroc_pooled": 1.0
+    }
+   }
+  },
+  "masked": {
+   "novel": {
+    "truncated_evidence": 0,
+    "tokens_mean": 752.2420091324201,
+    "tokens_max": 1901,
+    "prompts_over_limit": 0,
+    "n": 438,
+    "novel": {
+     "positives_with_partner_in_context": 0.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 0.5,
+     "grep_auroc_pooled": 0.5
+    }
+   },
+   "older": {
+    "truncated_evidence": 15,
+    "tokens_mean": 842.7854938271605,
+    "tokens_max": 6087,
+    "prompts_over_limit": 0,
+    "n": 1944,
+    "older_primary": {
+     "positives_with_partner_in_context": 0.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 0.5,
+     "grep_auroc_pooled": 0.5
+    },
+    "older_clean": {
+     "positives_with_partner_in_context": 0.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 0.5,
+     "grep_auroc_pooled": 0.5
+    }
+   }
+  },
+  "wrong": {
+   "novel": {
+    "truncated_evidence": 0,
+    "tokens_mean": 734.9292237442922,
+    "tokens_max": 1909,
+    "prompts_over_limit": 0,
+    "n": 438,
+    "novel": {
+     "positives_with_partner_in_context": 0.08108108108108109,
+     "negatives_with_partner_in_context": 0.09655172413793103,
+     "grep_auroc_within": 0.49273447820343463,
+     "grep_auroc_pooled": 0.49226467847157507
+    }
+   },
+   "older": {
+    "truncated_evidence": 0,
+    "tokens_mean": 762.6239711934156,
+    "tokens_max": 6016,
+    "prompts_over_limit": 0,
+    "n": 1944,
+    "older_primary": {
+     "positives_with_partner_in_context": 0.08185053380782918,
+     "negatives_with_partner_in_context": 0.091458153580673,
+     "grep_auroc_within": 0.49770690014592456,
+     "grep_auroc_pooled": 0.4951961901135781
+    },
+    "older_clean": {
+     "positives_with_partner_in_context": 0.08013355592654424,
+     "negatives_with_partner_in_context": 0.0908353609083536,
+     "grep_auroc_within": 0.49738473459899263,
+     "grep_auroc_pooled": 0.49464909750909525
+    }
+   }
+  },
+  "redacted": {
+   "novel": {
+    "truncated_evidence": 0,
+    "tokens_mean": 731.2191780821918,
+    "tokens_max": 1906,
+    "prompts_over_limit": 0,
+    "n": 438,
+    "novel": {
+     "positives_with_partner_in_context": 0.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 0.5,
+     "grep_auroc_pooled": 0.5
+    }
+   },
+   "older": {
+    "truncated_evidence": 15,
+    "tokens_mean": 813.6944444444445,
+    "tokens_max": 6087,
+    "prompts_over_limit": 0,
+    "n": 1944,
+    "older_primary": {
+     "positives_with_partner_in_context": 0.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 0.5,
+     "grep_auroc_pooled": 0.5
+    },
+    "older_clean": {
+     "positives_with_partner_in_context": 0.0,
+     "negatives_with_partner_in_context": 0.0,
+     "grep_auroc_within": 0.5,
+     "grep_auroc_pooled": 0.5
+    }
+   }
+  },
+  "contam": {
+   "novel": {
+    "truncated_evidence": 0,
+    "tokens_mean": 457.4703196347032,
+    "tokens_max": 733,
+    "prompts_over_limit": 0,
+    "n": 438,
+    "novel": {
+     "positives_with_partner_in_context": 0.6554054054054054,
+     "negatives_with_partner_in_context": 0.23103448275862068,
+     "grep_auroc_within": 0.7173051519154557,
+     "grep_auroc_pooled": 0.7121854613233923
+    }
+   },
+   "older": {
+    "truncated_evidence": 0,
+    "tokens_mean": 429.80298353909467,
+    "tokens_max": 793,
+    "prompts_over_limit": 0,
+    "n": 1944,
+    "older_primary": {
+     "positives_with_partner_in_context": 0.797153024911032,
+     "negatives_with_partner_in_context": 0.27523727351164795,
+     "grep_auroc_within": 0.753179070252241,
+     "grep_auroc_pooled": 0.7609578756996921
+    },
+    "older_clean": {
+     "positives_with_partner_in_context": 0.7963272120200334,
+     "negatives_with_partner_in_context": 0.28548256285482565,
+     "grep_auroc_within": 0.7491282448663309,
+     "grep_auroc_pooled": 0.7554223245826038
+    }
+   }
+  },
+  "other": {
+   "novel": {
+    "truncated_evidence": 0,
+    "tokens_mean": 430.6392694063927,
+    "tokens_max": 579,
+    "prompts_over_limit": 0,
+    "n": 438,
+    "novel": {
+     "positives_with_partner_in_context": 0.9932432432432432,
+     "negatives_with_partner_in_context": 0.993103448275862,
+     "grep_auroc_within": 0.4966974900924703,
+     "grep_auroc_pooled": 0.5000698974836906
+    }
+   },
+   "older": {
+    "truncated_evidence": 0,
+    "tokens_mean": 458.50205761316874,
+    "tokens_max": 857,
+    "prompts_over_limit": 0,
+    "n": 1944,
+    "older_primary": {
+     "positives_with_partner_in_context": 0.9697508896797153,
+     "negatives_with_partner_in_context": 0.9698015530629853,
+     "grep_auroc_within": 0.4985407546383156,
+     "grep_auroc_pooled": 0.499974668308365
+    },
+    "older_clean": {
+     "positives_with_partner_in_context": 0.9532554257095158,
+     "negatives_with_partner_in_context": 0.9570154095701541,
+     "grep_auroc_within": 0.4934134056567222,
+     "grep_auroc_pooled": 0.4981200080696808
+    }
+   }
+  },
+  "clean": {
+   "novel": {
+    "truncated_evidence": 0,
+    "tokens_mean": 443.8744292237443,
+    "tokens_max": 688,
+    "prompts_over_limit": 0,
+    "n": 438,
+    "novel": {
+     "positives_with_partner_in_context": 0.4189189189189189,
+     "negatives_with_partner_in_context": 0.24482758620689654,
+     "grep_auroc_within": 0.5416116248348745,
+     "grep_auroc_pooled": 0.5870456663560113
+    }
+   },
+   "older": {
+    "truncated_evidence": 0,
+    "tokens_mean": 446.0509259259259,
+    "tokens_max": 857,
+    "prompts_over_limit": 0,
+    "n": 1944,
+    "older_primary": {
+     "positives_with_partner_in_context": 0.5284697508896797,
+     "negatives_with_partner_in_context": 0.3451251078515962,
+     "grep_auroc_within": 0.5833854492391077,
+     "grep_auroc_pooled": 0.5916723215190417
+    },
+    "older_clean": {
+     "positives_with_partner_in_context": 0.5141903171953256,
+     "negatives_with_partner_in_context": 0.34387672343876724,
+     "grep_auroc_within": 0.5809763657497095,
+     "grep_auroc_pooled": 0.5851567968782793
+    }
+   }
+  }
+ },
+ "drugbank_lookup_within_auroc": {
+  "novel": {
+   "novel": 0.7285336856010568
+  },
+  "older": {
+   "older_primary": 0.6517615176151762,
+   "older_clean": 0.6412243316543975
+  }
+ },
+ "training": {
+  "anchors_after_gates": 412,
+  "anchor_gate_rejections": {
+   "no_di_section": 228,
+   "excluded_ood_equivalent_or_ingredient_overlap": 16,
+   "label_identity:combination_product_label": 39,
+   "label_identity:label_is_for_another_moiety": 1
+  },
+  "equivalent_vocab_drugs": 38,
+  "built_pairs": 4890,
+  "built_positives": 1630,
+  "built_negatives": 3260,
+  "dropped": {
+   "ood_drug_as_anchor_or_partner": 96,
+   "ood_drug_as_partner": 96,
+   "duplicate_unordered_pair": 78,
+   "negative_reverse_mention": 73
+  },
+  "final_pairs": 4643,
+  "final_positives": 1542,
+  "final_negatives": 3101,
+  "anchor_drugs": 299,
+  "partner_drugs": 313,
+  "excluded_vocab_drugs": 38
+ },
+ "shingle_sensitivity": {
+  "shingle_only": [
+   "almotriptan malate",
+   "atazanavir sulfate",
+   "atorvastatin calcium",
+   "balsalazide disodium",
+   "benzoate",
+   "citalopram hydrobromide",
+   "darifenacin hydrobromide",
+   "eletriptan hydrobromide",
+   "fosaprepitant dimeglumine",
+   "lonapegsomatropin-tcgd",
+   "oliceridine",
+   "perindopril erbumine",
+   "rabeprazole",
+   "remifentanil",
+   "rizatriptan benzoate",
+   "rosuvastatin calcium",
+   "salmeterol xinafoate",
+   "somatrogon-ghla",
+   "tapentadol",
+   "telmisartan",
+   "teriflunomide",
+   "trandolapril"
+  ],
+  "equivalent_vocab_drug": [
+   "almotriptan malate",
+   "atazanavir sulfate",
+   "atorvastatin calcium",
+   "calcitonin",
+   "citalopram hydrobromide",
+   "darifenacin hydrobromide",
+   "desvenlafaxine",
+   "esmolol",
+   "fosaprepitant dimeglumine",
+   "lonapegsomatropin-tcgd",
+   "methylnaltrexone bromide",
+   "rosuvastatin calcium",
+   "temsirolimus",
+   "toremifene citrate",
+   "trospium chloride"
+  ],
+  "rule": "share of the drug's 8-word Drug Interactions shingles found in any vocabulary drug's section exceeds 0.3",
+  "novel": [
+   "lonapegsomatropin-tcgd",
+   "oliceridine",
+   "somatrogon-ghla"
+  ],
+  "older_clean": [
+   "balsalazide disodium",
+   "calcitonin",
+   "desvenlafaxine",
+   "eletriptan hydrobromide",
+   "esmolol",
+   "fosaprepitant dimeglumine",
+   "methylnaltrexone bromide",
+   "perindopril erbumine",
+   "rabeprazole",
+   "remifentanil",
+   "rizatriptan benzoate",
+   "salmeterol xinafoate",
+   "tapentadol",
+   "telmisartan",
+   "temsirolimus",
+   "teriflunomide",
+   "toremifene citrate",
+   "trandolapril",
+   "trospium chloride"
+  ],
+  "older_primary": [
+   "balsalazide disodium",
+   "desvenlafaxine",
+   "eletriptan hydrobromide",
+   "fosaprepitant dimeglumine",
+   "methylnaltrexone bromide",
+   "rabeprazole",
+   "remifentanil",
+   "rizatriptan benzoate",
+   "salmeterol xinafoate",
+   "tapentadol",
+   "telmisartan",
+   "temsirolimus",
+   "teriflunomide",
+   "trandolapril"
+  ],
+  "older_primary_equivalent_only": [
+   "desvenlafaxine",
+   "methylnaltrexone bromide",
+   "temsirolimus"
+  ],
+  "share": null,
+  "vocab_sections": 468
+ },
+ "stems": {
+  "stem_list_sha256": "99455f208ef5a781da735ace08ae2cb12cf80734badb81df2e5f062a8693087a",
+  "stem_list_size": 96,
+  "drugs_with_stem": {
+   "novel": 25,
+   "older_primary": 55
+  },
+  "drugs_total": {
+   "novel": 48,
+   "older_primary": 121
+  }
+ },
+ "primary_sets": {
+  "older_total": 1944,
+  "older_clean": 1832,
+  "older_primary": 1721
+ }
+}

@@ -1,0 +1,272 @@
+{
+ "status": "post hoc and exploratory; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "reconstruction_check": {
+  "a7-qwen-redactedoracle/ood": {
+   "reconstructed_tokens_mean": 731.219178,
+   "recorded_tokens_mean": 731.219178,
+   "reconstructed_tokens_max": 1906,
+   "recorded_tokens_max": 1906,
+   "match": true
+  },
+  "a7-qwen-redactedoracle/oodold": {
+   "reconstructed_tokens_mean": 813.694444,
+   "recorded_tokens_mean": 813.694444,
+   "reconstructed_tokens_max": 6087,
+   "recorded_tokens_max": 6087,
+   "match": true
+  },
+  "a7-qwen-oracle/ood": {
+   "reconstructed_tokens_mean": 760.577626,
+   "recorded_tokens_mean": 760.577626,
+   "reconstructed_tokens_max": 1907,
+   "recorded_tokens_max": 1907,
+   "match": true
+  },
+  "a7-qwen-oracle/oodold": {
+   "reconstructed_tokens_mean": 852.734053,
+   "recorded_tokens_mean": 852.734053,
+   "reconstructed_tokens_max": 6087,
+   "recorded_tokens_max": 6087,
+   "match": true
+  }
+ },
+ "boot": 1000,
+ "truncated_redacted": {
+  "ood": 0,
+  "oodold": 15
+ },
+ "tiers": {
+  "A": {
+   "novel": {
+    "by_class": {
+     "positives": {
+      "n": 148,
+      "tokens_mean": 792.256757,
+      "tokens_median": 764.0,
+      "chars_mean": 3117.040541,
+      "tokens_removed_mean": 86.878378,
+      "tokens_removed_median": 73.5,
+      "share_with_tokens_removed": 1.0
+     },
+     "negatives": {
+      "n": 290,
+      "tokens_mean": 574.031034,
+      "tokens_median": 422.0,
+      "chars_mean": 2248.617241,
+      "tokens_removed_mean": 0.0,
+      "tokens_removed_median": 0.0,
+      "share_with_tokens_removed": 0.0
+     },
+     "per_drug_neg_minus_pos_tokens": {
+      "n_drugs": 48,
+      "mean": 79.287847,
+      "median": 76.5,
+      "min": 38.333333,
+      "max": 151.0,
+      "share_positive": 1.0,
+      "share_zero": 0.0
+     }
+    },
+    "length_only_within": {
+     "value": 1.0,
+     "lo95": 1.0,
+     "hi95": 1.0,
+     "lo90": 1.0,
+     "hi90": 1.0,
+     "n_draws": 1000
+    },
+    "qwen_redacted_within": {
+     "value": 0.730515,
+     "lo95": 0.609198,
+     "hi95": 0.844449,
+     "lo90": 0.627733,
+     "hi90": 0.829909,
+     "n_draws": 1000
+    },
+    "qwen_minus_length": {
+     "value": -0.269485,
+     "lo95": -0.390802,
+     "hi95": -0.155551,
+     "lo90": -0.372267,
+     "hi90": -0.170091,
+     "n_draws": 1000
+    },
+    "n": 438,
+    "n_pos": 148
+   },
+   "older_primary": {
+    "by_class": {
+     "positives": {
+      "n": 562,
+      "tokens_mean": 822.402135,
+      "tokens_median": 625.0,
+      "chars_mean": 3227.05694,
+      "tokens_removed_mean": 121.122776,
+      "tokens_removed_median": 90.5,
+      "share_with_tokens_removed": 1.0
+     },
+     "negatives": {
+      "n": 1159,
+      "tokens_mean": 579.081967,
+      "tokens_median": 463.0,
+      "chars_mean": 2288.270923,
+      "tokens_removed_mean": 0.0,
+      "tokens_removed_median": 0.0,
+      "share_with_tokens_removed": 0.0
+     },
+     "per_drug_neg_minus_pos_tokens": {
+      "n_drugs": 121,
+      "mean": 111.824334,
+      "median": 97.0,
+      "min": 17.0,
+      "max": 573.8,
+      "share_positive": 1.0,
+      "share_zero": 0.0
+     }
+    },
+    "length_only_within": {
+     "value": 1.0,
+     "lo95": 1.0,
+     "hi95": 1.0,
+     "lo90": 1.0,
+     "hi90": 1.0,
+     "n_draws": 1000
+    },
+    "qwen_redacted_within": {
+     "value": 0.681989,
+     "lo95": 0.617084,
+     "hi95": 0.744496,
+     "lo90": 0.628195,
+     "hi90": 0.735031,
+     "n_draws": 1000
+    },
+    "qwen_minus_length": {
+     "value": -0.318011,
+     "lo95": -0.382916,
+     "hi95": -0.255504,
+     "lo90": -0.371805,
+     "hi90": -0.264969,
+     "n_draws": 1000
+    },
+    "n": 1721,
+    "n_pos": 562
+   }
+  },
+  "C-auto": {
+   "novel": {
+    "by_class": {
+     "positives": {
+      "n": 147,
+      "tokens_mean": 790.312925,
+      "tokens_median": 764.0,
+      "chars_mean": 3106.469388,
+      "tokens_removed_mean": 86.693878,
+      "tokens_removed_median": 73.0,
+      "share_with_tokens_removed": 1.0
+     },
+     "negatives": {
+      "n": 290,
+      "tokens_mean": 574.031034,
+      "tokens_median": 422.0,
+      "chars_mean": 2248.617241,
+      "tokens_removed_mean": 0.0,
+      "tokens_removed_median": 0.0,
+      "share_with_tokens_removed": 0.0
+     },
+     "per_drug_neg_minus_pos_tokens": {
+      "n_drugs": 48,
+      "mean": 79.011806,
+      "median": 76.5,
+      "min": 38.333333,
+      "max": 151.0,
+      "share_positive": 1.0,
+      "share_zero": 0.0
+     }
+    },
+    "length_only_within": {
+     "value": 1.0,
+     "lo95": 1.0,
+     "hi95": 1.0,
+     "lo90": 1.0,
+     "hi90": 1.0,
+     "n_draws": 1000
+    },
+    "qwen_redacted_within": {
+     "value": 0.728362,
+     "lo95": 0.608558,
+     "hi95": 0.844444,
+     "lo90": 0.625171,
+     "hi90": 0.828156,
+     "n_draws": 1000
+    },
+    "qwen_minus_length": {
+     "value": -0.271638,
+     "lo95": -0.391442,
+     "hi95": -0.155556,
+     "lo90": -0.374829,
+     "hi90": -0.171844,
+     "n_draws": 1000
+    },
+    "n": 437,
+    "n_pos": 147
+   },
+   "older_primary": {
+    "by_class": {
+     "positives": {
+      "n": 525,
+      "tokens_mean": 842.466667,
+      "tokens_median": 632.0,
+      "chars_mean": 3309.874286,
+      "tokens_removed_mean": 123.057143,
+      "tokens_removed_median": 91.0,
+      "share_with_tokens_removed": 1.0
+     },
+     "negatives": {
+      "n": 1159,
+      "tokens_mean": 579.081967,
+      "tokens_median": 463.0,
+      "chars_mean": 2288.270923,
+      "tokens_removed_mean": 0.0,
+      "tokens_removed_median": 0.0,
+      "share_with_tokens_removed": 0.0
+     },
+     "per_drug_neg_minus_pos_tokens": {
+      "n_drugs": 114,
+      "mean": 115.614188,
+      "median": 103.15,
+      "min": 17.0,
+      "max": 573.8,
+      "share_positive": 1.0,
+      "share_zero": 0.0
+     }
+    },
+    "length_only_within": {
+     "value": 1.0,
+     "lo95": 1.0,
+     "hi95": 1.0,
+     "lo90": 1.0,
+     "hi90": 1.0,
+     "n_draws": 1000
+    },
+    "qwen_redacted_within": {
+     "value": 0.68437,
+     "lo95": 0.615299,
+     "hi95": 0.746729,
+     "lo90": 0.627904,
+     "hi90": 0.73904,
+     "n_draws": 1000
+    },
+    "qwen_minus_length": {
+     "value": -0.31563,
+     "lo95": -0.384701,
+     "hi95": -0.253271,
+     "lo90": -0.372096,
+     "hi90": -0.26096,
+     "n_draws": 1000
+    },
+    "n": 1684,
+    "n_pos": 525
+   }
+  }
+ }
+}

@@ -1,0 +1,7192 @@
+{
+ "status": "Amendment 7 experiment 7, exploratory, post hoc; criteria in exp7_criteria.json written before computing",
+ "criteria": {
+  "status": "written before any experiment 7 statistic was computed; exploratory, post hoc, changes no preregistered decision",
+  "written": "2026-10-16",
+  "already_known_when_written": "results/revision/eval: b2mixed Older-clean within-drug AUROC 0.452 (tier A) and 0.397 (tier B); exploratory additive residual 0.405; DrugBank lookup Older-clean within-drug 0.641 (tier A). No feature-level statistic below had been computed.",
+  "primary_system": "b2mixed-biomedbert names-only input (oodold_empty), P(interaction) averaged over seeds 42, 1, 2, 3, 4, used as logit",
+  "secondary_systems": [
+   "b1names-biomedbert (seed-averaged, oodold_names)",
+   "llm-qwen-names (oodold)",
+   "DrugBank lookup (listed = 1)"
+  ],
+  "cohort": "Older-clean (1,832 pairs, 128 drugs); Novel reported alongside where stated",
+  "tiers": "tier A (FDA labels) and tier B (FDA and DrugBank agree) are co-primary; a cause is confirmed only if the rule holds on both tiers, and is reported as tier-specific if it holds on one",
+  "statistics": {
+   "feature_auroc": "within-drug AUROC of the feature against the label, two-way cluster bootstrap over OOD drugs and partners (1,000 draws, seed 42), 95% percentile interval",
+   "score_feature_association": "within-drug Spearman: score and feature ranked within each drug, demeaned within drug, pooled Pearson correlation; 95% interval from a drug-cluster bootstrap (1,000 draws, seed 42)",
+   "partialling": "within-drug OLS slope of the demeaned model logit on the demeaned feature; the model's within-drug AUROC is recomputed on logit minus slope times feature; the gap is |AUROC - 0.5|"
+  },
+  "generic_rule_for_features_a_b_c_e": {
+   "C1": "the feature's within-drug AUROC 95% interval excludes 0.5",
+   "C2": "the score-feature association 95% interval excludes 0, with the sign that pushes the model below chance: sign(association) x (feature AUROC - 0.5) < 0",
+   "C3": "partialling out the feature moves the model's within-drug AUROC toward 0.5 by at least half of its gap",
+   "confirmed": "C1, C2 and C3 all hold",
+   "partial": "C1 and C2 hold but C3 does not",
+   "rejected": "C1 or C2 fails"
+  },
+  "causes": {
+   "a": {
+    "name": "partner frequency in SemEval train",
+    "feature": "log(1 + number of SemEval train pairs that contain the partner); partner SemEval train positive rate is reported beside it as a secondary feature without a decision",
+    "expected_if_true": "feature within-drug AUROC below 0.5 and model score positively associated with it",
+    "rule": "generic rule, with C1 requiring the interval to lie below 0.5"
+   },
+   "b": {
+    "name": "popularity of each partner among other drugs' positives",
+    "feature": "leave-one-drug-out count of positive pairs for the partner in the same cohort; the leave-one-drug-out positive rate is the partner-only prior of item (iii)",
+    "expected_if_true": "feature within-drug AUROC below 0.5 (negatives reuse partners that are positives for other drugs) and model score positively associated with it",
+    "rule": "generic rule, with C1 requiring the interval to lie below 0.5"
+   },
+   "c": {
+    "name": "partner token count and tokenization",
+    "feature": "number of BiomedBERT WordPiece tokens in the partner name (primary); whitespace word count reported beside it",
+    "expected_if_true": "feature AUROC away from 0.5 and model association in the direction that pushes it below chance",
+    "rule": "generic rule"
+   },
+   "d": {
+    "name": "label-noise asymmetry",
+    "test": "model within-drug AUROC on tier B versus tier A; also the within-drug AUROC of the model separating DrugBank-contradicted FDA negatives (DrugBank lists them) from DrugBank-confirmed FDA negatives",
+    "confirmed": "tier B point estimate is closer to 0.5 than tier A by at least half of the tier A gap AND the tier B 95% interval contains 0.5",
+    "rejected": "tier B point estimate is as far from 0.5 as tier A or further",
+    "partial": "otherwise"
+   },
+   "e": {
+    "name": "shared name stem or suffix (exploratory)",
+    "feature": "1 if the OOD drug and the partner share a class stem from a fixed list (azole, statin, tinib, navir, olol, pril, sartan, mab, cillin, cycline, floxacin, prazole, dipine, triptan, setron, gliptin, gliflozin, parin, vir, profen, oxetine, afil, caine, barbital, azepam, conazole, mycin) or a common suffix of 4 or more characters after salt words are removed",
+    "rule": "generic rule, labelled exploratory"
+   }
+  },
+  "other_items": {
+   "i": "paired within-drug differences, b2mixed minus Qwen names-only and b2mixed minus DrugBank lookup, Older-clean and Novel, tiers A and B, shared two-way draws (Novel seed 1042, Older seed 42 as in evaluate2); DrugBank on tier B is circular by construction",
+   "ii": "knowledge ceiling: within-drug AUROC of a scorer that outputs DrugBank listing exactly (ties kept), tier A, with the analytic pooled value 0.5 x (1 + c - r), c = share of FDA positives DrugBank lists, r = share of FDA negatives DrugBank lists",
+   "iii": "partner-only prior: leave-one-drug-out partner positive rate within Older-clean, within-drug AUROC, tiers A and B",
+   "iv": "confidently wrong: share of negatives with P(interaction) above 0.5 and above 0.9, OOD versus SemEval test; ECE with 10 equal-width bins beside it",
+   "year": "descriptive only: per-drug within-drug AUROC on continuous first approval year, weighted by the drug's number of pairs, Novel and Older-clean drugs together, drug bootstrap (1,000, seed 42); slope per decade; the 2013 to 2019 gap and the label-format difference between cohorts make it weak"
+  },
+  "dropped": "same-ATC class and pair co-mention in SemEval train are not tested as causes (outside the constrained list; OOD drugs are absent from SemEval by construction, so co-mention is zero for every non-leaked pair); calibration slope, intercept and max-probability OOD detection are replaced by item iv"
+ },
+ "causes": {
+  "older_clean": {
+   "A": {
+    "n": 1832,
+    "n_pos": 599,
+    "n_drugs": 128,
+    "features": {
+     "a_semeval_train_frequency": {
+      "cause": "a",
+      "within_auroc": {
+       "value": 0.506877,
+       "ci95": [
+        0.436446,
+        0.57027
+       ],
+       "ci90": [
+        0.446765,
+        0.562563
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 4.193232,
+      "mean_neg": 4.185029
+     },
+     "a2_semeval_train_positive_rate": {
+      "cause": "a (secondary, no decision)",
+      "within_auroc": {
+       "value": 0.517145,
+       "ci95": [
+        0.459195,
+        0.572292
+       ],
+       "ci90": [
+        0.468186,
+        0.562216
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.13669,
+      "mean_neg": 0.135258
+     },
+     "b_partner_popularity_loo_positives": {
+      "cause": "b",
+      "within_auroc": {
+       "value": 0.448663,
+       "ci95": [
+        0.370561,
+        0.520425
+       ],
+       "ci90": [
+        0.382318,
+        0.510397
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 7.702838,
+      "mean_neg": 8.631792
+     },
+     "iii_partner_prior_loo_rate": {
+      "cause": "iii",
+      "within_auroc": {
+       "value": 0.088144,
+       "ci95": [
+        0.049371,
+        0.129811
+       ],
+       "ci90": [
+        0.054461,
+        0.121585
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.23359,
+      "mean_neg": 0.372328
+     },
+     "iii2_partner_prior_vocab_di": {
+      "cause": "iii (label-free; added after the criteria were written, no decision)",
+      "within_auroc": {
+       "value": 0.506393,
+       "ci95": [
+        0.431195,
+        0.574771
+       ],
+       "ci90": [
+        0.445555,
+        0.562003
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.08586,
+      "mean_neg": 0.08506
+     },
+     "c_partner_wordpieces": {
+      "cause": "c",
+      "within_auroc": {
+       "value": 0.481015,
+       "ci95": [
+        0.429252,
+        0.535957
+       ],
+       "ci90": [
+        0.438292,
+        0.526596
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 2.315526,
+      "mean_neg": 2.324412
+     },
+     "c2_partner_words": {
+      "cause": "c (secondary, no decision)",
+      "within_auroc": {
+       "value": 0.498838,
+       "ci95": [
+        0.48244,
+        0.514079
+       ],
+       "ci90": [
+        0.486138,
+        0.510528
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 1.021703,
+      "mean_neg": 1.02352
+     },
+     "e_shared_stem": {
+      "cause": "e (exploratory)",
+      "within_auroc": {
+       "value": 0.509492,
+       "ci95": [
+        0.496449,
+        0.529075
+       ],
+       "ci90": [
+        0.498492,
+        0.523993
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.025042,
+      "mean_neg": 0.006488
+     }
+    },
+    "systems": {
+     "b2mixed-biomedbert": {
+      "raw_within_auroc": {
+       "value": 0.451763,
+       "ci95": [
+        0.388895,
+        0.518086
+       ],
+       "ci90": [
+        0.394843,
+        0.509221
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.444983,
+         "ci95": [
+          0.382697,
+          0.511035
+         ],
+         "ci90": [
+          0.39344,
+          0.499917
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.113472
+        ],
+        "within_drug_spearman": {
+         "value": 0.199057,
+         "ci95": [
+          0.152144,
+          0.244602
+         ],
+         "ci90": [
+          0.15931,
+          0.239171
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.449244,
+         "ci95": [
+          0.388607,
+          0.518947
+         ],
+         "ci90": [
+          0.396545,
+          0.504715
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         1.806704
+        ],
+        "within_drug_spearman": {
+         "value": 0.402681,
+         "ci95": [
+          0.356365,
+          0.443659
+         ],
+         "ci90": [
+          0.363597,
+          0.437574
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.459899,
+         "ci95": [
+          0.398512,
+          0.525564
+         ],
+         "ci90": [
+          0.405325,
+          0.514962
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.03337
+        ],
+        "within_drug_spearman": {
+         "value": 0.244755,
+         "ci95": [
+          0.18987,
+          0.298647
+         ],
+         "ci90": [
+          0.200809,
+          0.289285
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.483727,
+         "ci95": [
+          0.418192,
+          0.550103
+         ],
+         "ci90": [
+          0.432164,
+          0.540918
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.704601
+        ],
+        "within_drug_spearman": {
+         "value": 0.055014,
+         "ci95": [
+          -0.002425,
+          0.119015
+         ],
+         "ci90": [
+          0.003756,
+          0.109237
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.447114,
+         "ci95": [
+          0.384764,
+          0.511331
+         ],
+         "ci90": [
+          0.394339,
+          0.504722
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         3.843798
+        ],
+        "within_drug_spearman": {
+         "value": 0.256966,
+         "ci95": [
+          0.208844,
+          0.304007
+         ],
+         "ci90": [
+          0.216774,
+          0.294046
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.438009,
+         "ci95": [
+          0.375999,
+          0.506606
+         ],
+         "ci90": [
+          0.384923,
+          0.495277
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.254659
+        ],
+        "within_drug_spearman": {
+         "value": -0.252563,
+         "ci95": [
+          -0.307975,
+          -0.19307
+         ],
+         "ci90": [
+          -0.298043,
+          -0.202453
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.45215,
+         "ci95": [
+          0.389348,
+          0.519153
+         ],
+         "ci90": [
+          0.395793,
+          0.509482
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.055176
+        ],
+        "within_drug_spearman": {
+         "value": -0.005155,
+         "ci95": [
+          -0.058145,
+          0.043455
+         ],
+         "ci90": [
+          -0.047634,
+          0.036436
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.458156,
+         "ci95": [
+          0.395511,
+          0.527087
+         ],
+         "ci90": [
+          0.405693,
+          0.514958
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -1.527995
+        ],
+        "within_drug_spearman": {
+         "value": -0.15025,
+         "ci95": [
+          -0.215954,
+          -0.079777
+         ],
+         "ci90": [
+          -0.203102,
+          -0.089075
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.455444,
+         "ci95": [
+          0.396144,
+          0.521413
+         ],
+         "ci90": [
+          0.403656,
+          0.510588
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.0651,
+         0.035457,
+         -0.237901,
+         -1.390855
+        ]
+       }
+      },
+      "contradicted_vs_confirmed_negatives": {
+       "n_contradicted": 497,
+       "n_confirmed": 734,
+       "within_auroc": 0.4683,
+       "meaning": "above 0.5: the model scores DrugBank-listed FDA negatives higher than DrugBank-unlisted ones, within drug"
+      },
+      "cause_d_label_noise": {
+       "tier_A_gap": 0.048237,
+       "tier_B_gap": 0.103165,
+       "tier_B_ci95_contains_0.5": true,
+       "verdict": "rejected"
+      }
+     },
+     "b1names-biomedbert": {
+      "raw_within_auroc": {
+       "value": 0.462805,
+       "ci95": [
+        0.397921,
+        0.520716
+       ],
+       "ci90": [
+        0.407545,
+        0.512085
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.459706,
+         "ci95": [
+          0.397648,
+          0.519507
+         ],
+         "ci90": [
+          0.407383,
+          0.509918
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.112896
+        ],
+        "within_drug_spearman": {
+         "value": 0.221886,
+         "ci95": [
+          0.168964,
+          0.273744
+         ],
+         "ci90": [
+          0.177367,
+          0.263936
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.459512,
+         "ci95": [
+          0.398223,
+          0.521023
+         ],
+         "ci90": [
+          0.406518,
+          0.510398
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         1.533132
+        ],
+        "within_drug_spearman": {
+         "value": 0.47063,
+         "ci95": [
+          0.432159,
+          0.506099
+         ],
+         "ci90": [
+          0.438694,
+          0.501487
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.470167,
+         "ci95": [
+          0.408117,
+          0.530888
+         ],
+         "ci90": [
+          0.416282,
+          0.520979
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.029132
+        ],
+        "within_drug_spearman": {
+         "value": 0.25475,
+         "ci95": [
+          0.204515,
+          0.303077
+         ],
+         "ci90": [
+          0.212029,
+          0.296037
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.477141,
+         "ci95": [
+          0.41454,
+          0.535299
+         ],
+         "ci90": [
+          0.422885,
+          0.526395
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.282046
+        ],
+        "within_drug_spearman": {
+         "value": 0.03679,
+         "ci95": [
+          -0.023742,
+          0.106876
+         ],
+         "ci90": [
+          -0.015284,
+          0.092544
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.458349,
+         "ci95": [
+          0.398294,
+          0.519789
+         ],
+         "ci90": [
+          0.405516,
+          0.511265
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         3.18415
+        ],
+        "within_drug_spearman": {
+         "value": 0.267566,
+         "ci95": [
+          0.21636,
+          0.316239
+         ],
+         "ci90": [
+          0.224275,
+          0.308606
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.450988,
+         "ci95": [
+          0.3862,
+          0.509309
+         ],
+         "ci90": [
+          0.396051,
+          0.500405
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.191832
+        ],
+        "within_drug_spearman": {
+         "value": -0.249348,
+         "ci95": [
+          -0.306687,
+          -0.180501
+         ],
+         "ci90": [
+          -0.297523,
+          -0.195533
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.462805,
+         "ci95": [
+          0.398219,
+          0.520517
+         ],
+         "ci90": [
+          0.40618,
+          0.512064
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.1326
+        ],
+        "within_drug_spearman": {
+         "value": 0.025831,
+         "ci95": [
+          -0.024088,
+          0.075157
+         ],
+         "ci90": [
+          -0.016146,
+          0.066752
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.467454,
+         "ci95": [
+          0.4035,
+          0.525406
+         ],
+         "ci90": [
+          0.412981,
+          0.517053
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.687836
+        ],
+        "within_drug_spearman": {
+         "value": -0.119484,
+         "ci95": [
+          -0.176029,
+          -0.058871
+         ],
+         "ci90": [
+          -0.166595,
+          -0.065034
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.463774,
+         "ci95": [
+          0.400328,
+          0.52375
+         ],
+         "ci90": [
+          0.410794,
+          0.51487
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.025059,
+         0.028253,
+         -0.170711,
+         -0.585277
+        ]
+       }
+      },
+      "contradicted_vs_confirmed_negatives": {
+       "n_contradicted": 497,
+       "n_confirmed": 734,
+       "within_auroc": 0.451252,
+       "meaning": "above 0.5: the model scores DrugBank-listed FDA negatives higher than DrugBank-unlisted ones, within drug"
+      },
+      "cause_d_label_noise": {
+       "tier_A_gap": 0.037195,
+       "tier_B_gap": 0.080891,
+       "tier_B_ci95_contains_0.5": true,
+       "verdict": "rejected"
+      }
+     },
+     "llm-qwen-names": {
+      "raw_within_auroc": {
+       "value": 0.601898,
+       "ci95": [
+        0.532709,
+        0.666601
+       ],
+       "ci90": [
+        0.542585,
+        0.658469
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.629988,
+         "ci95": [
+          0.565977,
+          0.695926
+         ],
+         "ci90": [
+          0.574863,
+          0.684001
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.832813
+        ],
+        "within_drug_spearman": {
+         "value": 0.483043,
+         "ci95": [
+          0.448901,
+          0.517009
+         ],
+         "ci90": [
+          0.453618,
+          0.512112
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.601124,
+         "ci95": [
+          0.533059,
+          0.667376
+         ],
+         "ci90": [
+          0.543995,
+          0.657864
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.650446
+        ],
+        "within_drug_spearman": {
+         "value": 0.154005,
+         "ci95": [
+          0.106483,
+          0.199012
+         ],
+         "ci90": [
+          0.111799,
+          0.195162
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.652073,
+         "ci95": [
+          0.589343,
+          0.717281
+         ],
+         "ci90": [
+          0.600066,
+          0.703232
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.188194
+        ],
+        "within_drug_spearman": {
+         "value": 0.553641,
+         "ci95": [
+          0.506117,
+          0.596062
+         ],
+         "ci90": [
+          0.515964,
+          0.59022
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.558311,
+         "ci95": [
+          0.48838,
+          0.623222
+         ],
+         "ci90": [
+          0.497827,
+          0.614118
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -3.410602
+        ],
+        "within_drug_spearman": {
+         "value": -0.234305,
+         "ci95": [
+          -0.293995,
+          -0.172039
+         ],
+         "ci90": [
+          -0.283712,
+          -0.183816
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.621271,
+         "ci95": [
+          0.55448,
+          0.690734
+         ],
+         "ci90": [
+          0.567297,
+          0.678735
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         18.734749
+        ],
+        "within_drug_spearman": {
+         "value": 0.569543,
+         "ci95": [
+          0.536068,
+          0.604618
+         ],
+         "ci90": [
+          0.541803,
+          0.5992
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.604126,
+         "ci95": [
+          0.534985,
+          0.668927
+         ],
+         "ci90": [
+          0.547245,
+          0.659302
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.059829
+        ],
+        "within_drug_spearman": {
+         "value": 0.066132,
+         "ci95": [
+          0.022968,
+          0.110028
+         ],
+         "ci90": [
+          0.028811,
+          0.101873
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.60093,
+         "ci95": [
+          0.531625,
+          0.666722
+         ],
+         "ci90": [
+          0.542561,
+          0.656078
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -1.180746
+        ],
+        "within_drug_spearman": {
+         "value": -0.079262,
+         "ci95": [
+          -0.117297,
+          -0.036369
+         ],
+         "ci90": [
+          -0.111622,
+          -0.046444
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.601511,
+         "ci95": [
+          0.532709,
+          0.666277
+         ],
+         "ci90": [
+          0.543102,
+          0.657561
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.457029
+        ],
+        "within_drug_spearman": {
+         "value": 0.037872,
+         "ci95": [
+          -0.039903,
+          0.104639
+         ],
+         "ci90": [
+          -0.026278,
+          0.094948
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.661565,
+         "ci95": [
+          0.603031,
+          0.726782
+         ],
+         "ci90": [
+          0.611649,
+          0.716145
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.373171,
+         0.15302,
+         0.339852,
+         0.53549
+        ]
+       }
+      },
+      "contradicted_vs_confirmed_negatives": {
+       "n_contradicted": 497,
+       "n_confirmed": 734,
+       "within_auroc": 0.594033,
+       "meaning": "above 0.5: the model scores DrugBank-listed FDA negatives higher than DrugBank-unlisted ones, within drug"
+      },
+      "cause_d_label_noise": {
+       "tier_A_gap": 0.101898,
+       "tier_B_gap": 0.160317,
+       "tier_B_ci95_contains_0.5": false,
+       "verdict": "rejected"
+      }
+     },
+     "DrugBank lookup": {
+      "raw_within_auroc": {
+       "value": 0.641224,
+       "ci95": [
+        0.595375,
+        0.688846
+       ],
+       "ci90": [
+        0.600371,
+        0.68347
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.640256,
+         "ci95": [
+          0.570082,
+          0.711858
+         ],
+         "ci90": [
+          0.5819,
+          0.70202
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.037618
+        ],
+        "within_drug_spearman": {
+         "value": 0.092887,
+         "ci95": [
+          0.014994,
+          0.166968
+         ],
+         "ci90": [
+          0.0284,
+          0.156261
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.628245,
+         "ci95": [
+          0.565064,
+          0.694585
+         ],
+         "ci90": [
+          0.571987,
+          0.684949
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.02007
+        ],
+        "within_drug_spearman": {
+         "value": 0.029352,
+         "ci95": [
+          -0.028668,
+          0.083079
+         ],
+         "ci90": [
+          -0.019168,
+          0.075618
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.661759,
+         "ci95": [
+          0.589428,
+          0.740037
+         ],
+         "ci90": [
+          0.600353,
+          0.726505
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.0014
+        ],
+        "within_drug_spearman": {
+         "value": 0.006759,
+         "ci95": [
+          -0.064515,
+          0.075578
+         ],
+         "ci90": [
+          -0.049998,
+          0.063507
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.397714,
+         "ci95": [
+          0.314725,
+          0.478755
+         ],
+         "ci90": [
+          0.325356,
+          0.466443
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.675833
+        ],
+        "within_drug_spearman": {
+         "value": -0.24861,
+         "ci95": [
+          -0.313786,
+          -0.186892
+         ],
+         "ci90": [
+          -0.304086,
+          -0.197896
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.639578,
+         "ci95": [
+          0.566687,
+          0.714652
+         ],
+         "ci90": [
+          0.576755,
+          0.704328
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.486016
+        ],
+        "within_drug_spearman": {
+         "value": 0.077934,
+         "ci95": [
+          0.006143,
+          0.148715
+         ],
+         "ci90": [
+          0.01567,
+          0.137196
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.624274,
+         "ci95": [
+          0.560803,
+          0.690706
+         ],
+         "ci90": [
+          0.570202,
+          0.67983
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.002457
+        ],
+        "within_drug_spearman": {
+         "value": -0.001851,
+         "ci95": [
+          -0.056325,
+          0.056722
+         ],
+         "ci90": [
+          -0.047111,
+          0.045613
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.641612,
+         "ci95": [
+          0.592619,
+          0.692839
+         ],
+         "ci90": [
+          0.599445,
+          0.683967
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.093091
+        ],
+        "within_drug_spearman": {
+         "value": -0.035074,
+         "ci95": [
+          -0.096504,
+          0.024896
+         ],
+         "ci90": [
+          -0.086107,
+          0.015842
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.645196,
+         "ci95": [
+          0.597867,
+          0.694781
+         ],
+         "ci90": [
+          0.604064,
+          0.687606
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.018222
+        ],
+        "within_drug_spearman": {
+         "value": 0.003548,
+         "ci95": [
+          -0.064303,
+          0.078094
+         ],
+         "ci90": [
+          -0.054009,
+          0.066875
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.637931,
+         "ci95": [
+          0.569004,
+          0.706528
+         ],
+         "ci90": [
+          0.577726,
+          0.695613
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.057727,
+         -0.004906,
+         0.012767,
+         -0.028424
+        ]
+       }
+      },
+      "cause_d_label_noise": {
+       "tier_A_gap": 0.141224,
+       "tier_B_gap": 0.5,
+       "tier_B_ci95_contains_0.5": false,
+       "verdict": "rejected"
+      }
+     }
+    }
+   },
+   "B": {
+    "n": 1191,
+    "n_pos": 457,
+    "n_drugs": 128,
+    "features": {
+     "a_semeval_train_frequency": {
+      "cause": "a",
+      "within_auroc": {
+       "value": 0.54279,
+       "ci95": [
+        0.411026,
+        0.66188
+       ],
+       "ci90": [
+        0.435223,
+        0.645603
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 4.287978,
+      "mean_neg": 4.119312
+     },
+     "a2_semeval_train_positive_rate": {
+      "cause": "a (secondary, no decision)",
+      "within_auroc": {
+       "value": 0.517292,
+       "ci95": [
+        0.409008,
+        0.614422
+       ],
+       "ci90": [
+        0.430377,
+        0.602077
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.134557,
+      "mean_neg": 0.132102
+     },
+     "b_partner_popularity_loo_positives": {
+      "cause": "b",
+      "within_auroc": {
+       "value": 0.438159,
+       "ci95": [
+        0.307867,
+        0.564327
+       ],
+       "ci90": [
+        0.329791,
+        0.54008
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 8.043764,
+      "mean_neg": 8.805177
+     },
+     "iii_partner_prior_loo_rate": {
+      "cause": "iii",
+      "within_auroc": {
+       "value": 0.052755,
+       "ci95": [
+        0.016467,
+        0.101653
+       ],
+       "ci90": [
+        0.020239,
+        0.091361
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.238993,
+      "mean_neg": 0.374784
+     },
+     "iii2_partner_prior_vocab_di": {
+      "cause": "iii (label-free; added after the criteria were written, no decision)",
+      "within_auroc": {
+       "value": 0.533705,
+       "ci95": [
+        0.41702,
+        0.654621
+       ],
+       "ci90": [
+        0.431836,
+        0.632659
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.089703,
+      "mean_neg": 0.083325
+     },
+     "c_partner_wordpieces": {
+      "cause": "c",
+      "within_auroc": {
+       "value": 0.501172,
+       "ci95": [
+        0.399366,
+        0.593892
+       ],
+       "ci90": [
+        0.418338,
+        0.57943
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 2.345733,
+      "mean_neg": 2.343324
+     },
+     "c2_partner_words": {
+      "cause": "c (secondary, no decision)",
+      "within_auroc": {
+       "value": 0.492673,
+       "ci95": [
+        0.461574,
+        0.519026
+       ],
+       "ci90": [
+        0.470316,
+        0.514598
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 1.013129,
+      "mean_neg": 1.025886
+     },
+     "e_shared_stem": {
+      "cause": "e (exploratory)",
+      "within_auroc": {
+       "value": 0.511723,
+       "ci95": [
+        0.487582,
+        0.541111
+       ],
+       "ci90": [
+        0.493287,
+        0.533658
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.021882,
+      "mean_neg": 0.00545
+     }
+    },
+    "systems": {
+     "b2mixed-biomedbert": {
+      "raw_within_auroc": {
+       "value": 0.396835,
+       "ci95": [
+        0.288816,
+        0.514355
+       ],
+       "ci90": [
+        0.308146,
+        0.492713
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.37163,
+         "ci95": [
+          0.273395,
+          0.478646
+         ],
+         "ci90": [
+          0.288269,
+          0.464004
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.117964
+        ],
+        "within_drug_spearman": {
+         "value": 0.198966,
+         "ci95": [
+          0.119007,
+          0.275041
+         ],
+         "ci90": [
+          0.134827,
+          0.26204
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.392732,
+         "ci95": [
+          0.294213,
+          0.502816
+         ],
+         "ci90": [
+          0.306683,
+          0.485352
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         2.053678
+        ],
+        "within_drug_spearman": {
+         "value": 0.378773,
+         "ci95": [
+          0.312645,
+          0.442416
+         ],
+         "ci90": [
+          0.322623,
+          0.431344
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.389215,
+         "ci95": [
+          0.283019,
+          0.506179
+         ],
+         "ci90": [
+          0.299931,
+          0.484206
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.032645
+        ],
+        "within_drug_spearman": {
+         "value": 0.223118,
+         "ci95": [
+          0.160125,
+          0.286879
+         ],
+         "ci90": [
+          0.169901,
+          0.277082
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.439039,
+         "ci95": [
+          0.332141,
+          0.556462
+         ],
+         "ci90": [
+          0.345098,
+          0.538105
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.872747
+        ],
+        "within_drug_spearman": {
+         "value": 0.068188,
+         "ci95": [
+          -0.009809,
+          0.147366
+         ],
+         "ci90": [
+          0.004118,
+          0.133801
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.369871,
+         "ci95": [
+          0.271456,
+          0.484478
+         ],
+         "ci90": [
+          0.284751,
+          0.465281
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         3.867402
+        ],
+        "within_drug_spearman": {
+         "value": 0.227538,
+         "ci95": [
+          0.160285,
+          0.292445
+         ],
+         "ci90": [
+          0.168001,
+          0.281726
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.382181,
+         "ci95": [
+          0.285164,
+          0.493723
+         ],
+         "ci90": [
+          0.29966,
+          0.469747
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.248756
+        ],
+        "within_drug_spearman": {
+         "value": -0.208491,
+         "ci95": [
+          -0.283518,
+          -0.131351
+         ],
+         "ci90": [
+          -0.27138,
+          -0.144219
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.395662,
+         "ci95": [
+          0.287763,
+          0.516203
+         ],
+         "ci90": [
+          0.306642,
+          0.491701
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.208785
+        ],
+        "within_drug_spearman": {
+         "value": -0.035747,
+         "ci95": [
+          -0.095611,
+          0.02368
+         ],
+         "ci90": [
+          -0.085688,
+          0.016375
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.401524,
+         "ci95": [
+          0.296382,
+          0.516439
+         ],
+         "ci90": [
+          0.312049,
+          0.496148
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -1.679057
+        ],
+        "within_drug_spearman": {
+         "value": -0.169093,
+         "ci95": [
+          -0.244266,
+          -0.077422
+         ],
+         "ci90": [
+          -0.233897,
+          -0.089825
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.391559,
+         "ci95": [
+          0.296268,
+          0.504499
+         ],
+         "ci90": [
+          0.308455,
+          0.482079
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.06094,
+         0.034677,
+         -0.227803,
+         -1.439189
+        ]
+       }
+      }
+     },
+     "b1names-biomedbert": {
+      "raw_within_auroc": {
+       "value": 0.419109,
+       "ci95": [
+        0.319938,
+        0.531083
+       ],
+       "ci90": [
+        0.335854,
+        0.510492
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.396249,
+         "ci95": [
+          0.300954,
+          0.497693
+         ],
+         "ci90": [
+          0.313788,
+          0.483253
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.115482
+        ],
+        "within_drug_spearman": {
+         "value": 0.235669,
+         "ci95": [
+          0.157812,
+          0.311557
+         ],
+         "ci90": [
+          0.164929,
+          0.297124
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.415592,
+         "ci95": [
+          0.320906,
+          0.520804
+         ],
+         "ci90": [
+          0.336294,
+          0.502001
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         1.845145
+        ],
+        "within_drug_spearman": {
+         "value": 0.457667,
+         "ci95": [
+          0.393803,
+          0.515642
+         ],
+         "ci90": [
+          0.405685,
+          0.507101
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.410317,
+         "ci95": [
+          0.316733,
+          0.514442
+         ],
+         "ci90": [
+          0.327468,
+          0.497597
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.02904
+        ],
+        "within_drug_spearman": {
+         "value": 0.276495,
+         "ci95": [
+          0.213633,
+          0.338635
+         ],
+         "ci90": [
+          0.222867,
+          0.326313
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.440797,
+         "ci95": [
+          0.341823,
+          0.553306
+         ],
+         "ci90": [
+          0.357798,
+          0.533545
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.306308
+        ],
+        "within_drug_spearman": {
+         "value": 0.021745,
+         "ci95": [
+          -0.052794,
+          0.103646
+         ],
+         "ci90": [
+          -0.039397,
+          0.088967
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.389215,
+         "ci95": [
+          0.29672,
+          0.488071
+         ],
+         "ci90": [
+          0.308966,
+          0.47474
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         3.325959
+        ],
+        "within_drug_spearman": {
+         "value": 0.2811,
+         "ci95": [
+          0.207092,
+          0.344953
+         ],
+         "ci90": [
+          0.221601,
+          0.335224
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.40211,
+         "ci95": [
+          0.303913,
+          0.507741
+         ],
+         "ci90": [
+          0.317073,
+          0.48927
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.186237
+        ],
+        "within_drug_spearman": {
+         "value": -0.209659,
+         "ci95": [
+          -0.277487,
+          -0.132123
+         ],
+         "ci90": [
+          -0.267207,
+          -0.144667
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.419109,
+         "ci95": [
+          0.319938,
+          0.531083
+         ],
+         "ci90": [
+          0.335854,
+          0.510492
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.029089
+        ],
+        "within_drug_spearman": {
+         "value": -0.021099,
+         "ci95": [
+          -0.087561,
+          0.050379
+         ],
+         "ci90": [
+          -0.079803,
+          0.038814
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.422626,
+         "ci95": [
+          0.322462,
+          0.531794
+         ],
+         "ci90": [
+          0.339305,
+          0.512059
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.751049
+        ],
+        "within_drug_spearman": {
+         "value": -0.128375,
+         "ci95": [
+          -0.208481,
+          -0.01724
+         ],
+         "ci90": [
+          -0.197159,
+          -0.038044
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.405627,
+         "ci95": [
+          0.312546,
+          0.506582
+         ],
+         "ci90": [
+          0.324824,
+          0.487674
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.025399,
+         0.028554,
+         -0.163648,
+         -0.566574
+        ]
+       }
+      }
+     },
+     "llm-qwen-names": {
+      "raw_within_auroc": {
+       "value": 0.660317,
+       "ci95": [
+        0.54343,
+        0.766619
+       ],
+       "ci90": [
+        0.560191,
+        0.750916
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.667644,
+         "ci95": [
+          0.564049,
+          0.767518
+         ],
+         "ci90": [
+          0.580318,
+          0.747909
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.873562
+        ],
+        "within_drug_spearman": {
+         "value": 0.472945,
+         "ci95": [
+          0.417335,
+          0.52665
+         ],
+         "ci90": [
+          0.425535,
+          0.519207
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.660023,
+         "ci95": [
+          0.541764,
+          0.76742
+         ],
+         "ci90": [
+          0.560453,
+          0.751008
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.704054
+        ],
+        "within_drug_spearman": {
+         "value": 0.195028,
+         "ci95": [
+          0.132393,
+          0.258643
+         ],
+         "ci90": [
+          0.142496,
+          0.249484
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.734467,
+         "ci95": [
+          0.630377,
+          0.818603
+         ],
+         "ci90": [
+          0.652223,
+          0.806962
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.189525
+        ],
+        "within_drug_spearman": {
+         "value": 0.561711,
+         "ci95": [
+          0.492323,
+          0.625356
+         ],
+         "ci90": [
+          0.503484,
+          0.613199
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.611958,
+         "ci95": [
+          0.486508,
+          0.716305
+         ],
+         "ci90": [
+          0.50512,
+          0.702663
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -3.807629
+        ],
+        "within_drug_spearman": {
+         "value": -0.24472,
+         "ci95": [
+          -0.326695,
+          -0.161598
+         ],
+         "ci90": [
+          -0.312917,
+          -0.174285
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.688159,
+         "ci95": [
+          0.58624,
+          0.781447
+         ],
+         "ci90": [
+          0.599291,
+          0.768569
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         19.789869
+        ],
+        "within_drug_spearman": {
+         "value": 0.57654,
+         "ci95": [
+          0.532222,
+          0.621467
+         ],
+         "ci90": [
+          0.539211,
+          0.613732
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.662954,
+         "ci95": [
+          0.54676,
+          0.768989
+         ],
+         "ci90": [
+          0.56367,
+          0.753307
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.072353
+        ],
+        "within_drug_spearman": {
+         "value": 0.041585,
+         "ci95": [
+          -0.014096,
+          0.095393
+         ],
+         "ci90": [
+          -0.005728,
+          0.088704
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.657972,
+         "ci95": [
+          0.541625,
+          0.764301
+         ],
+         "ci90": [
+          0.557406,
+          0.74933
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -1.363818
+        ],
+        "within_drug_spearman": {
+         "value": -0.072727,
+         "ci95": [
+          -0.130558,
+          -0.017163
+         ],
+         "ci90": [
+          -0.119005,
+          -0.025627
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.658558,
+         "ci95": [
+          0.541547,
+          0.764763
+         ],
+         "ci90": [
+          0.557452,
+          0.7499
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         1.036798
+        ],
+        "within_drug_spearman": {
+         "value": 0.066178,
+         "ci95": [
+          -0.042731,
+          0.140557
+         ],
+         "ci90": [
+          -0.019782,
+          0.130279
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.728605,
+         "ci95": [
+          0.625553,
+          0.808631
+         ],
+         "ci90": [
+          0.643508,
+          0.796901
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.431479,
+         0.148572,
+         0.374952,
+         1.114011
+        ]
+       }
+      }
+     },
+     "DrugBank lookup": {
+      "raw_within_auroc": {
+       "value": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.03254
+        ],
+        "within_drug_spearman": {
+         "value": 0.026115,
+         "ci95": [
+          -0.107092,
+          0.142082
+         ],
+         "ci90": [
+          -0.080677,
+          0.12794
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.005544
+        ],
+        "within_drug_spearman": {
+         "value": 0.017597,
+         "ci95": [
+          -0.070585,
+          0.098043
+         ],
+         "ci90": [
+          -0.056841,
+          0.086528
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.000164
+        ],
+        "within_drug_spearman": {
+         "value": -0.108865,
+         "ci95": [
+          -0.22996,
+          0.014493
+         ],
+         "ci90": [
+          -0.211852,
+          -0.011575
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.989449,
+         "ci95": [
+          0.957214,
+          1.0
+         ],
+         "ci90": [
+          0.969035,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -1.697416
+        ],
+        "within_drug_spearman": {
+         "value": -0.580722,
+         "ci95": [
+          -0.642608,
+          -0.512139
+         ],
+         "ci90": [
+          -0.632673,
+          -0.526864
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.42232
+        ],
+        "within_drug_spearman": {
+         "value": 0.015465,
+         "ci95": [
+          -0.099604,
+          0.130578
+         ],
+         "ci90": [
+          -0.082542,
+          0.112104
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.003334
+        ],
+        "within_drug_spearman": {
+         "value": 0.006094,
+         "ci95": [
+          -0.054311,
+          0.075212
+         ],
+         "ci90": [
+          -0.044678,
+          0.064022
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.118002
+        ],
+        "within_drug_spearman": {
+         "value": -0.039469,
+         "ci95": [
+          -0.11129,
+          0.036869
+         ],
+         "ci90": [
+          -0.099822,
+          0.022265
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.280784
+        ],
+        "within_drug_spearman": {
+         "value": 0.076067,
+         "ci95": [
+          -0.02602,
+          0.180369
+         ],
+         "ci90": [
+          -0.012506,
+          0.1672
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.056422,
+         -0.005917,
+         0.010103,
+         0.278545
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "novel": {
+   "A": {
+    "n": 438,
+    "n_pos": 148,
+    "n_drugs": 48,
+    "features": {
+     "a_semeval_train_frequency": {
+      "cause": "a",
+      "within_auroc": {
+       "value": 0.507926,
+       "ci95": [
+        0.365449,
+        0.64697
+       ],
+       "ci90": [
+        0.385632,
+        0.628408
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 4.006096,
+      "mean_neg": 3.977768
+     },
+     "a2_semeval_train_positive_rate": {
+      "cause": "a (secondary, no decision)",
+      "within_auroc": {
+       "value": 0.47424,
+       "ci95": [
+        0.35374,
+        0.589848
+       ],
+       "ci90": [
+        0.37387,
+        0.571925
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.134131,
+      "mean_neg": 0.133538
+     },
+     "b_partner_popularity_loo_positives": {
+      "cause": "b",
+      "within_auroc": {
+       "value": 0.408851,
+       "ci95": [
+        0.263201,
+        0.533831
+       ],
+       "ci90": [
+        0.282109,
+        0.508268
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 2.756757,
+      "mean_neg": 3.606897
+     },
+     "iii_partner_prior_loo_rate": {
+      "cause": "iii",
+      "within_auroc": {
+       "value": 0.027741,
+       "ci95": [
+        0.0,
+        0.095619
+       ],
+       "ci90": [
+        0.0,
+        0.079639
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.187258,
+      "mean_neg": 0.414779
+     },
+     "iii2_partner_prior_vocab_di": {
+      "cause": "iii (label-free; added after the criteria were written, no decision)",
+      "within_auroc": {
+       "value": 0.522457,
+       "ci95": [
+        0.367003,
+        0.671281
+       ],
+       "ci90": [
+        0.392237,
+        0.646676
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.082817,
+      "mean_neg": 0.080598
+     },
+     "c_partner_wordpieces": {
+      "cause": "c",
+      "within_auroc": {
+       "value": 0.511889,
+       "ci95": [
+        0.386463,
+        0.626984
+       ],
+       "ci90": [
+        0.408862,
+        0.604783
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 2.236486,
+      "mean_neg": 2.241379
+     },
+     "c2_partner_words": {
+      "cause": "c (secondary, no decision)",
+      "within_auroc": {
+       "value": 0.501321,
+       "ci95": [
+        0.459876,
+        0.545935
+       ],
+       "ci90": [
+        0.472508,
+        0.532738
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 1.040541,
+      "mean_neg": 1.041379
+     },
+     "e_shared_stem": {
+      "cause": "e (exploratory)",
+      "within_auroc": {
+       "value": 0.509908,
+       "ci95": [
+        0.497191,
+        0.539208
+       ],
+       "ci90": [
+        0.498291,
+        0.530717
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.033784,
+      "mean_neg": 0.003448
+     }
+    },
+    "systems": {
+     "b2mixed-biomedbert": {
+      "raw_within_auroc": {
+       "value": 0.523118,
+       "ci95": [
+        0.397209,
+        0.650333
+       ],
+       "ci90": [
+        0.41133,
+        0.625726
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.515192,
+         "ci95": [
+          0.381286,
+          0.642629
+         ],
+         "ci90": [
+          0.400609,
+          0.618856
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.126763
+        ],
+        "within_drug_spearman": {
+         "value": 0.211482,
+         "ci95": [
+          0.11296,
+          0.304948
+         ],
+         "ci90": [
+          0.129382,
+          0.288637
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.541612,
+         "ci95": [
+          0.409281,
+          0.670773
+         ],
+         "ci90": [
+          0.433242,
+          0.646242
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         3.748669
+        ],
+        "within_drug_spearman": {
+         "value": 0.400055,
+         "ci95": [
+          0.301242,
+          0.492446
+         ],
+         "ci90": [
+          0.319577,
+          0.47545
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.535007,
+         "ci95": [
+          0.396317,
+          0.667735
+         ],
+         "ci90": [
+          0.421066,
+          0.641229
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.031375
+        ],
+        "within_drug_spearman": {
+         "value": 0.112169,
+         "ci95": [
+          0.018754,
+          0.210461
+         ],
+         "ci90": [
+          0.032849,
+          0.191813
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.523118,
+         "ci95": [
+          0.397209,
+          0.650333
+         ],
+         "ci90": [
+          0.41133,
+          0.625726
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.02319
+        ],
+        "within_drug_spearman": {
+         "value": -0.046019,
+         "ci95": [
+          -0.136717,
+          0.037552
+         ],
+         "ci90": [
+          -0.122042,
+          0.022549
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.511229,
+         "ci95": [
+          0.379736,
+          0.638165
+         ],
+         "ci90": [
+          0.399957,
+          0.6162
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         2.560018
+        ],
+        "within_drug_spearman": {
+         "value": 0.224941,
+         "ci95": [
+          0.128965,
+          0.324929
+         ],
+         "ci90": [
+          0.140076,
+          0.309191
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.520476,
+         "ci95": [
+          0.386069,
+          0.651392
+         ],
+         "ci90": [
+          0.408939,
+          0.629414
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.245192
+        ],
+        "within_drug_spearman": {
+         "value": -0.33508,
+         "ci95": [
+          -0.435271,
+          -0.208964
+         ],
+         "ci90": [
+          -0.423786,
+          -0.230471
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.52576,
+         "ci95": [
+          0.400316,
+          0.653823
+         ],
+         "ci90": [
+          0.412682,
+          0.627143
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.44278
+        ],
+        "within_drug_spearman": {
+         "value": 0.077419,
+         "ci95": [
+          -0.015856,
+          0.16135
+         ],
+         "ci90": [
+          -0.003904,
+          0.150691
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.536328,
+         "ci95": [
+          0.405013,
+          0.66593
+         ],
+         "ci90": [
+          0.424304,
+          0.639439
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.828389
+        ],
+        "within_drug_spearman": {
+         "value": -0.156522,
+         "ci95": [
+          -0.241385,
+          -0.055711
+         ],
+         "ci90": [
+          -0.229365,
+          -0.073647
+         ],
+         "n_draws": 958
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.523118,
+         "ci95": [
+          0.390618,
+          0.648765
+         ],
+         "ci90": [
+          0.409479,
+          0.632745
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.043763,
+         -0.007863,
+         -0.221681,
+         -0.762903
+        ]
+       }
+      },
+      "contradicted_vs_confirmed_negatives": {
+       "n_contradicted": 106,
+       "n_confirmed": 183,
+       "within_auroc": 0.573034,
+       "meaning": "above 0.5: the model scores DrugBank-listed FDA negatives higher than DrugBank-unlisted ones, within drug"
+      },
+      "cause_d_label_noise": {
+       "tier_A_gap": 0.023118,
+       "tier_B_gap": 0.032787,
+       "tier_B_ci95_contains_0.5": true,
+       "verdict": "rejected"
+      }
+     },
+     "b1names-biomedbert": {
+      "raw_within_auroc": {
+       "value": 0.513871,
+       "ci95": [
+        0.383902,
+        0.635302
+       ],
+       "ci90": [
+        0.402227,
+        0.616531
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.501982,
+         "ci95": [
+          0.376087,
+          0.627574
+         ],
+         "ci90": [
+          0.391501,
+          0.606166
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.188546
+        ],
+        "within_drug_spearman": {
+         "value": 0.279871,
+         "ci95": [
+          0.180224,
+          0.372142
+         ],
+         "ci90": [
+          0.200936,
+          0.360382
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": true,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.511229,
+         "ci95": [
+          0.383108,
+          0.633579
+         ],
+         "ci90": [
+          0.402407,
+          0.619135
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         2.481544
+        ],
+        "within_drug_spearman": {
+         "value": 0.406382,
+         "ci95": [
+          0.342643,
+          0.461388
+         ],
+         "ci90": [
+          0.351692,
+          0.453122
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.546896,
+         "ci95": [
+          0.41049,
+          0.668471
+         ],
+         "ci90": [
+          0.432863,
+          0.647239
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.086977
+        ],
+        "within_drug_spearman": {
+         "value": 0.258248,
+         "ci95": [
+          0.173068,
+          0.355102
+         ],
+         "ci90": [
+          0.186574,
+          0.333829
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.505945,
+         "ci95": [
+          0.374382,
+          0.62698
+         ],
+         "ci90": [
+          0.394571,
+          0.610916
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.06853
+        ],
+        "within_drug_spearman": {
+         "value": -0.033139,
+         "ci95": [
+          -0.126367,
+          0.061457
+         ],
+         "ci90": [
+          -0.11147,
+          0.047842
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.508587,
+         "ci95": [
+          0.376176,
+          0.625768
+         ],
+         "ci90": [
+          0.395698,
+          0.610205
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         3.783308
+        ],
+        "within_drug_spearman": {
+         "value": 0.307419,
+         "ci95": [
+          0.214294,
+          0.39618
+         ],
+         "ci90": [
+          0.229096,
+          0.383987
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.516513,
+         "ci95": [
+          0.373193,
+          0.643595
+         ],
+         "ci90": [
+          0.403105,
+          0.621986
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.313592
+        ],
+        "within_drug_spearman": {
+         "value": -0.401091,
+         "ci95": [
+          -0.508074,
+          -0.265245
+         ],
+         "ci90": [
+          -0.489915,
+          -0.289572
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.511229,
+         "ci95": [
+          0.379006,
+          0.638587
+         ],
+         "ci90": [
+          0.399539,
+          0.614178
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.237596
+        ],
+        "within_drug_spearman": {
+         "value": 0.071986,
+         "ci95": [
+          -0.032369,
+          0.1696
+         ],
+         "ci90": [
+          -0.019849,
+          0.155875
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.523118,
+         "ci95": [
+          0.387628,
+          0.641616
+         ],
+         "ci90": [
+          0.408669,
+          0.624118
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.816443
+        ],
+        "within_drug_spearman": {
+         "value": -0.132489,
+         "ci95": [
+          -0.202303,
+          -0.055711
+         ],
+         "ci90": [
+          -0.193735,
+          -0.073647
+         ],
+         "n_draws": 958
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.546896,
+         "ci95": [
+          0.394497,
+          0.678169
+         ],
+         "ci90": [
+          0.423334,
+          0.653625
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.055461,
+         0.041539,
+         -0.248006,
+         -0.760659
+        ]
+       }
+      },
+      "contradicted_vs_confirmed_negatives": {
+       "n_contradicted": 106,
+       "n_confirmed": 183,
+       "within_auroc": 0.565543,
+       "meaning": "above 0.5: the model scores DrugBank-listed FDA negatives higher than DrugBank-unlisted ones, within drug"
+      },
+      "cause_d_label_noise": {
+       "tier_A_gap": 0.013871,
+       "tier_B_gap": 0.030055,
+       "tier_B_ci95_contains_0.5": true,
+       "verdict": "rejected"
+      }
+     },
+     "llm-qwen-names": {
+      "raw_within_auroc": {
+       "value": 0.5786,
+       "ci95": [
+        0.439976,
+        0.713106
+       ],
+       "ci90": [
+        0.469717,
+        0.691289
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.603699,
+         "ci95": [
+          0.478775,
+          0.72277
+         ],
+         "ci90": [
+          0.5033,
+          0.708047
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.57169
+        ],
+        "within_drug_spearman": {
+         "value": 0.335789,
+         "ci95": [
+          0.227196,
+          0.441495
+         ],
+         "ci90": [
+          0.243908,
+          0.423012
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.5786,
+         "ci95": [
+          0.442907,
+          0.711413
+         ],
+         "ci90": [
+          0.473463,
+          0.690514
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -1.417926
+        ],
+        "within_drug_spearman": {
+         "value": 0.102426,
+         "ci95": [
+          0.005314,
+          0.1989
+         ],
+         "ci90": [
+          0.020545,
+          0.182349
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.614267,
+         "ci95": [
+          0.488232,
+          0.739628
+         ],
+         "ci90": [
+          0.509525,
+          0.72488
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.375317
+        ],
+        "within_drug_spearman": {
+         "value": 0.25684,
+         "ci95": [
+          0.178455,
+          0.330473
+         ],
+         "ci90": [
+          0.187115,
+          0.320967
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.561427,
+         "ci95": [
+          0.418679,
+          0.700953
+         ],
+         "ci90": [
+          0.446743,
+          0.675107
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.602116
+        ],
+        "within_drug_spearman": {
+         "value": -0.063533,
+         "ci95": [
+          -0.16828,
+          0.055568
+         ],
+         "ci90": [
+          -0.148847,
+          0.032949
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.590489,
+         "ci95": [
+          0.458047,
+          0.72289
+         ],
+         "ci90": [
+          0.485007,
+          0.704385
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         15.910657
+        ],
+        "within_drug_spearman": {
+         "value": 0.464909,
+         "ci95": [
+          0.384643,
+          0.551249
+         ],
+         "ci90": [
+          0.395413,
+          0.535748
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.579921,
+         "ci95": [
+          0.443338,
+          0.715372
+         ],
+         "ci90": [
+          0.464805,
+          0.691983
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.151633
+        ],
+        "within_drug_spearman": {
+         "value": -0.018981,
+         "ci95": [
+          -0.121277,
+          0.08718
+         ],
+         "ci90": [
+          -0.10287,
+          0.072989
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.581242,
+         "ci95": [
+          0.453333,
+          0.714492
+         ],
+         "ci90": [
+          0.478466,
+          0.688316
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -2.233605
+        ],
+        "within_drug_spearman": {
+         "value": -0.072896,
+         "ci95": [
+          -0.143634,
+          -0.003694
+         ],
+         "ci90": [
+          -0.132128,
+          -0.014212
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.579921,
+         "ci95": [
+          0.439976,
+          0.714493
+         ],
+         "ci90": [
+          0.470488,
+          0.694617
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.216812
+        ],
+        "within_drug_spearman": {
+         "value": -0.011709,
+         "ci95": [
+          -0.051219,
+          0.034581
+         ],
+         "ci90": [
+          -0.046289,
+          0.026845
+         ],
+         "n_draws": 958
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.616909,
+         "ci95": [
+          0.484293,
+          0.751317
+         ],
+         "ci90": [
+          0.510148,
+          0.731188
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.468287,
+         0.315781,
+         0.363893,
+         -0.541135
+        ]
+       }
+      },
+      "contradicted_vs_confirmed_negatives": {
+       "n_contradicted": 106,
+       "n_confirmed": 183,
+       "within_auroc": 0.513109,
+       "meaning": "above 0.5: the model scores DrugBank-listed FDA negatives higher than DrugBank-unlisted ones, within drug"
+      },
+      "cause_d_label_noise": {
+       "tier_A_gap": 0.0786,
+       "tier_B_gap": 0.076503,
+       "tier_B_ci95_contains_0.5": true,
+       "verdict": "partial"
+      }
+     },
+     "DrugBank lookup": {
+      "raw_within_auroc": {
+       "value": 0.728534,
+       "ci95": [
+        0.642152,
+        0.808313
+       ],
+       "ci90": [
+        0.655182,
+        0.797937
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.733818,
+         "ci95": [
+          0.595883,
+          0.849471
+         ],
+         "ci90": [
+          0.620084,
+          0.835163
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.012337
+        ],
+        "within_drug_spearman": {
+         "value": 0.098134,
+         "ci95": [
+          -0.02318,
+          0.217387
+         ],
+         "ci90": [
+          -0.005996,
+          0.196786
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.733157,
+         "ci95": [
+          0.607607,
+          0.845082
+         ],
+         "ci90": [
+          0.627725,
+          0.8278
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.0917
+        ],
+        "within_drug_spearman": {
+         "value": 0.058822,
+         "ci95": [
+          -0.060984,
+          0.176315
+         ],
+         "ci90": [
+          -0.042363,
+          0.161372
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.799868,
+         "ci95": [
+          0.694813,
+          0.893564
+         ],
+         "ci90": [
+          0.71325,
+          0.880485
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.005537
+        ],
+        "within_drug_spearman": {
+         "value": 0.04938,
+         "ci95": [
+          -0.07439,
+          0.166961
+         ],
+         "ci90": [
+          -0.052439,
+          0.143589
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.499339,
+         "ci95": [
+          0.339643,
+          0.650307
+         ],
+         "ci90": [
+          0.36895,
+          0.6265
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -1.14638
+        ],
+        "within_drug_spearman": {
+         "value": -0.386706,
+         "ci95": [
+          -0.493511,
+          -0.265043
+         ],
+         "ci90": [
+          -0.477428,
+          -0.281719
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.721929,
+         "ci95": [
+          0.584269,
+          0.843399
+         ],
+         "ci90": [
+          0.603783,
+          0.828085
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.500833
+        ],
+        "within_drug_spearman": {
+         "value": 0.078428,
+         "ci95": [
+          -0.036154,
+          0.199096
+         ],
+         "ci90": [
+          -0.020091,
+          0.180016
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.74967,
+         "ci95": [
+          0.624035,
+          0.844928
+         ],
+         "ci90": [
+          0.648342,
+          0.834566
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.009811
+        ],
+        "within_drug_spearman": {
+         "value": -0.043766,
+         "ci95": [
+          -0.130736,
+          0.045402
+         ],
+         "ci90": [
+          -0.114083,
+          0.025801
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.732497,
+         "ci95": [
+          0.644178,
+          0.812024
+         ],
+         "ci90": [
+          0.656381,
+          0.803706
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.050372
+        ],
+        "within_drug_spearman": {
+         "value": -0.055487,
+         "ci95": [
+          -0.155299,
+          0.063789
+         ],
+         "ci90": [
+          -0.143764,
+          0.042719
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.738441,
+         "ci95": [
+          0.650774,
+          0.815069
+         ],
+         "ci90": [
+          0.668093,
+          0.804635
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.015682
+        ],
+        "within_drug_spearman": {
+         "value": 0.00311,
+         "ci95": [
+          -0.016901,
+          0.017369
+         ],
+         "ci90": [
+          -0.01306,
+          0.015333
+         ],
+         "n_draws": 958
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.76354,
+         "ci95": [
+          0.636305,
+          0.867905
+         ],
+         "ci90": [
+          0.655547,
+          0.855172
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.009034,
+         0.00321,
+         -0.001877,
+         -0.018101
+        ]
+       }
+      },
+      "cause_d_label_noise": {
+       "tier_A_gap": 0.228534,
+       "tier_B_gap": 0.5,
+       "tier_B_ci95_contains_0.5": false,
+       "verdict": "rejected"
+      }
+     }
+    }
+   },
+   "B": {
+    "n": 316,
+    "n_pos": 133,
+    "n_drugs": 48,
+    "features": {
+     "a_semeval_train_frequency": {
+      "cause": "a",
+      "within_auroc": {
+       "value": 0.52459,
+       "ci95": [
+        0.310127,
+        0.731545
+       ],
+       "ci90": [
+        0.342304,
+        0.698832
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 4.064335,
+      "mean_neg": 3.931955
+     },
+     "a2_semeval_train_positive_rate": {
+      "cause": "a (secondary, no decision)",
+      "within_auroc": {
+       "value": 0.474044,
+       "ci95": [
+        0.311052,
+        0.65607
+       ],
+       "ci90": [
+        0.331552,
+        0.636908
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.141668,
+      "mean_neg": 0.126394
+     },
+     "b_partner_popularity_loo_positives": {
+      "cause": "b",
+      "within_auroc": {
+       "value": 0.479508,
+       "ci95": [
+        0.273174,
+        0.664563
+       ],
+       "ci90": [
+        0.298119,
+        0.636893
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 2.947368,
+      "mean_neg": 3.595628
+     },
+     "iii_partner_prior_loo_rate": {
+      "cause": "iii",
+      "within_auroc": {
+       "value": 0.02459,
+       "ci95": [
+        0.0,
+        0.098827
+       ],
+       "ci90": [
+        0.0,
+        0.07484
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.191699,
+      "mean_neg": 0.419622
+     },
+     "iii2_partner_prior_vocab_di": {
+      "cause": "iii (label-free; added after the criteria were written, no decision)",
+      "within_auroc": {
+       "value": 0.535519,
+       "ci95": [
+        0.315292,
+        0.745283
+       ],
+       "ci90": [
+        0.349284,
+        0.713056
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.083553,
+      "mean_neg": 0.07717
+     },
+     "c_partner_wordpieces": {
+      "cause": "c",
+      "within_auroc": {
+       "value": 0.478142,
+       "ci95": [
+        0.314284,
+        0.645532
+       ],
+       "ci90": [
+        0.33757,
+        0.611132
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 2.203008,
+      "mean_neg": 2.278689
+     },
+     "c2_partner_words": {
+      "cause": "c (secondary, no decision)",
+      "within_auroc": {
+       "value": 0.493169,
+       "ci95": [
+        0.431437,
+        0.554609
+       ],
+       "ci90": [
+        0.446947,
+        0.540954
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 1.037594,
+      "mean_neg": 1.043716
+     },
+     "e_shared_stem": {
+      "cause": "e (exploratory)",
+      "within_auroc": {
+       "value": 0.5,
+       "ci95": [
+        0.490214,
+        0.510517
+       ],
+       "ci90": [
+        0.492692,
+        0.506937
+       ],
+       "n_draws": 1000
+      },
+      "mean_pos": 0.037594,
+      "mean_neg": 0.005464
+     }
+    },
+    "systems": {
+     "b2mixed-biomedbert": {
+      "raw_within_auroc": {
+       "value": 0.532787,
+       "ci95": [
+        0.357118,
+        0.714413
+       ],
+       "ci90": [
+        0.383102,
+        0.682159
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.505464,
+         "ci95": [
+          0.322022,
+          0.690111
+         ],
+         "ci90": [
+          0.353095,
+          0.6576
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.141884
+        ],
+        "within_drug_spearman": {
+         "value": 0.268942,
+         "ci95": [
+          0.157514,
+          0.371113
+         ],
+         "ci90": [
+          0.176455,
+          0.354586
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": true,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.557377,
+         "ci95": [
+          0.362732,
+          0.728815
+         ],
+         "ci90": [
+          0.403546,
+          0.70272
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         3.963051
+        ],
+        "within_drug_spearman": {
+         "value": 0.402301,
+         "ci95": [
+          0.293381,
+          0.501735
+         ],
+         "ci90": [
+          0.305149,
+          0.482733
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.519126,
+         "ci95": [
+          0.332295,
+          0.691063
+         ],
+         "ci90": [
+          0.367854,
+          0.668809
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.045167
+        ],
+        "within_drug_spearman": {
+         "value": 0.13115,
+         "ci95": [
+          0.036145,
+          0.244669
+         ],
+         "ci90": [
+          0.047143,
+          0.225812
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.538251,
+         "ci95": [
+          0.361599,
+          0.723719
+         ],
+         "ci90": [
+          0.388222,
+          0.692337
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.112167
+        ],
+        "within_drug_spearman": {
+         "value": -0.030482,
+         "ci95": [
+          -0.123731,
+          0.076277
+         ],
+         "ci90": [
+          -0.111657,
+          0.049725
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.513661,
+         "ci95": [
+          0.33612,
+          0.696158
+         ],
+         "ci90": [
+          0.366182,
+          0.659694
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         3.034043
+        ],
+        "within_drug_spearman": {
+         "value": 0.281186,
+         "ci95": [
+          0.147492,
+          0.401969
+         ],
+         "ci90": [
+          0.164986,
+          0.38465
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.519126,
+         "ci95": [
+          0.338323,
+          0.696097
+         ],
+         "ci90": [
+          0.365508,
+          0.664262
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.264855
+        ],
+        "within_drug_spearman": {
+         "value": -0.364943,
+         "ci95": [
+          -0.492861,
+          -0.193697
+         ],
+         "ci90": [
+          -0.479039,
+          -0.222266
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.535519,
+         "ci95": [
+          0.362136,
+          0.719408
+         ],
+         "ci90": [
+          0.385779,
+          0.682159
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.460068
+        ],
+        "within_drug_spearman": {
+         "value": 0.120041,
+         "ci95": [
+          -0.002881,
+          0.208441
+         ],
+         "ci90": [
+          0.013753,
+          0.199458
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.532787,
+         "ci95": [
+          0.357118,
+          0.714413
+         ],
+         "ci90": [
+          0.383102,
+          0.682159
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.866582
+        ],
+        "within_drug_spearman": {
+         "value": -0.18406,
+         "ci95": [
+          -0.282376,
+          -0.08193
+         ],
+         "ci90": [
+          -0.272081,
+          -0.103312
+         ],
+         "n_draws": 958
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.516393,
+         "ci95": [
+          0.33496,
+          0.696176
+         ],
+         "ci90": [
+          0.363615,
+          0.662263
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.042285,
+         0.010587,
+         -0.227415,
+         -0.863527
+        ]
+       }
+      }
+     },
+     "b1names-biomedbert": {
+      "raw_within_auroc": {
+       "value": 0.530055,
+       "ci95": [
+        0.341348,
+        0.724378
+       ],
+       "ci90": [
+        0.364304,
+        0.693366
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.519126,
+         "ci95": [
+          0.335274,
+          0.700119
+         ],
+         "ci90": [
+          0.36169,
+          0.674925
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.193187
+        ],
+        "within_drug_spearman": {
+         "value": 0.2957,
+         "ci95": [
+          0.188045,
+          0.398439
+         ],
+         "ci90": [
+          0.203426,
+          0.379301
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.535519,
+         "ci95": [
+          0.337681,
+          0.729941
+         ],
+         "ci90": [
+          0.367464,
+          0.698564
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         2.264745
+        ],
+        "within_drug_spearman": {
+         "value": 0.392448,
+         "ci95": [
+          0.29995,
+          0.469677
+         ],
+         "ci90": [
+          0.317138,
+          0.456679
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.554645,
+         "ci95": [
+          0.350148,
+          0.752213
+         ],
+         "ci90": [
+          0.38799,
+          0.712485
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.09233
+        ],
+        "within_drug_spearman": {
+         "value": 0.212661,
+         "ci95": [
+          0.109959,
+          0.341274
+         ],
+         "ci90": [
+          0.126507,
+          0.318839
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.554645,
+         "ci95": [
+          0.361104,
+          0.751444
+         ],
+         "ci90": [
+          0.380838,
+          0.715365
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.170639
+        ],
+        "within_drug_spearman": {
+         "value": 0.024329,
+         "ci95": [
+          -0.115059,
+          0.172012
+         ],
+         "ci90": [
+          -0.094315,
+          0.144561
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.532787,
+         "ci95": [
+          0.340828,
+          0.720767
+         ],
+         "ci90": [
+          0.367986,
+          0.694241
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         4.277666
+        ],
+        "within_drug_spearman": {
+         "value": 0.321356,
+         "ci95": [
+          0.212617,
+          0.423059
+         ],
+         "ci90": [
+          0.225721,
+          0.412608
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.513661,
+         "ci95": [
+          0.320402,
+          0.710681
+         ],
+         "ci90": [
+          0.352234,
+          0.683058
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.343716
+        ],
+        "within_drug_spearman": {
+         "value": -0.406841,
+         "ci95": [
+          -0.55292,
+          -0.232603
+         ],
+         "ci90": [
+          -0.533527,
+          -0.25416
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": true,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.527322,
+         "ci95": [
+          0.339275,
+          0.722659
+         ],
+         "ci90": [
+          0.355924,
+          0.690074
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.077861
+        ],
+        "within_drug_spearman": {
+         "value": 0.124658,
+         "ci95": [
+          -0.019133,
+          0.232793
+         ],
+         "ci90": [
+          0.002101,
+          0.216931
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.530055,
+         "ci95": [
+          0.341348,
+          0.724378
+         ],
+         "ci90": [
+          0.364304,
+          0.693366
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.843864
+        ],
+        "within_drug_spearman": {
+         "value": -0.148664,
+         "ci95": [
+          -0.243882,
+          -0.074745
+         ],
+         "ci90": [
+          -0.229495,
+          -0.079238
+         ],
+         "n_draws": 958
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.551913,
+         "ci95": [
+          0.354003,
+          0.731388
+         ],
+         "ci90": [
+          0.384756,
+          0.702349
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.03878,
+         0.052459,
+         -0.279387,
+         -0.871782
+        ]
+       }
+      }
+     },
+     "llm-qwen-names": {
+      "raw_within_auroc": {
+       "value": 0.576503,
+       "ci95": [
+        0.39691,
+        0.736012
+       ],
+       "ci90": [
+        0.427454,
+        0.716515
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 0.603825,
+         "ci95": [
+          0.422207,
+          0.77971
+         ],
+         "ci90": [
+          0.450583,
+          0.752615
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.614698
+        ],
+        "within_drug_spearman": {
+         "value": 0.389951,
+         "ci95": [
+          0.235562,
+          0.52378
+         ],
+         "ci90": [
+          0.251866,
+          0.501344
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 0.581967,
+         "ci95": [
+          0.401242,
+          0.750137
+         ],
+         "ci90": [
+          0.430833,
+          0.7243
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.636554
+        ],
+        "within_drug_spearman": {
+         "value": 0.213495,
+         "ci95": [
+          0.109393,
+          0.321815
+         ],
+         "ci90": [
+          0.127594,
+          0.297843
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 0.576503,
+         "ci95": [
+          0.387894,
+          0.75067
+         ],
+         "ci90": [
+          0.424749,
+          0.727549
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.408701
+        ],
+        "within_drug_spearman": {
+         "value": 0.325099,
+         "ci95": [
+          0.221397,
+          0.416766
+         ],
+         "ci90": [
+          0.239772,
+          0.399282
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": true,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.571038,
+         "ci95": [
+          0.391294,
+          0.735236
+         ],
+         "ci90": [
+          0.420281,
+          0.714637
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.209483
+        ],
+        "within_drug_spearman": {
+         "value": -0.025871,
+         "ci95": [
+          -0.190659,
+          0.156473
+         ],
+         "ci90": [
+          -0.167804,
+          0.131719
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 0.587432,
+         "ci95": [
+          0.384533,
+          0.778576
+         ],
+         "ci90": [
+          0.416134,
+          0.742881
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         17.385973
+        ],
+        "within_drug_spearman": {
+         "value": 0.495491,
+         "ci95": [
+          0.376684,
+          0.617583
+         ],
+         "ci90": [
+          0.390708,
+          0.591783
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 0.584699,
+         "ci95": [
+          0.411322,
+          0.746615
+         ],
+         "ci90": [
+          0.438752,
+          0.723903
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.20372
+        ],
+        "within_drug_spearman": {
+         "value": -0.026876,
+         "ci95": [
+          -0.142112,
+          0.102516
+         ],
+         "ci90": [
+          -0.124775,
+          0.077247
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 0.57377,
+         "ci95": [
+          0.405654,
+          0.730887
+         ],
+         "ci90": [
+          0.432747,
+          0.703709
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -2.336938
+        ],
+        "within_drug_spearman": {
+         "value": -0.058182,
+         "ci95": [
+          -0.128372,
+          0.008911
+         ],
+         "ci90": [
+          -0.113365,
+          -0.004366
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 0.57377,
+         "ci95": [
+          0.394554,
+          0.734817
+         ],
+         "ci90": [
+          0.424238,
+          0.716071
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.506135
+        ],
+        "within_drug_spearman": {
+         "value": -0.063722,
+         "ci95": [
+          -0.121733,
+          0.0
+         ],
+         "ci90": [
+          -0.113547,
+          0.0
+         ],
+         "n_draws": 958
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 0.581967,
+         "ci95": [
+          0.397671,
+          0.75516
+         ],
+         "ci90": [
+          0.425817,
+          0.732607
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.498295,
+         0.344514,
+         0.377948,
+         -1.129381
+        ]
+       }
+      }
+     },
+     "DrugBank lookup": {
+      "raw_within_auroc": {
+       "value": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "n_draws": 1000
+      },
+      "by_feature": {
+       "a_semeval_train_frequency": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.006811
+        ],
+        "within_drug_spearman": {
+         "value": 0.045557,
+         "ci95": [
+          -0.132998,
+          0.225813
+         ],
+         "ci90": [
+          -0.104553,
+          0.197695
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "a2_semeval_train_positive_rate": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.093217
+        ],
+        "within_drug_spearman": {
+         "value": -0.043606,
+         "ci95": [
+          -0.145395,
+          0.069409
+         ],
+         "ci90": [
+          -0.130791,
+          0.05133
+         ],
+         "n_draws": 1000
+        }
+       },
+       "b_partner_popularity_loo_positives": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.000139
+        ],
+        "within_drug_spearman": {
+         "value": -0.011871,
+         "ci95": [
+          -0.171567,
+          0.13198
+         ],
+         "ci90": [
+          -0.147398,
+          0.10829
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "iii_partner_prior_loo_rate": {
+        "partialled_within_auroc": {
+         "value": 0.89071,
+         "ci95": [
+          0.697795,
+          0.977274
+         ],
+         "ci90": [
+          0.745334,
+          0.969091
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -2.211043
+        ],
+        "within_drug_spearman": {
+         "value": -0.649881,
+         "ci95": [
+          -0.733285,
+          -0.546559
+         ],
+         "ci90": [
+          -0.723169,
+          -0.564264
+         ],
+         "n_draws": 1000
+        }
+       },
+       "iii2_partner_prior_vocab_di": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.39171
+        ],
+        "within_drug_spearman": {
+         "value": 0.040049,
+         "ci95": [
+          -0.147349,
+          0.242577
+         ],
+         "ci90": [
+          -0.118377,
+          0.207969
+         ],
+         "n_draws": 1000
+        }
+       },
+       "c_partner_wordpieces": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.01087
+        ],
+        "within_drug_spearman": {
+         "value": -0.041045,
+         "ci95": [
+          -0.160036,
+          0.087448
+         ],
+         "ci90": [
+          -0.143826,
+          0.065941
+         ],
+         "n_draws": 1000
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "c2_partner_words": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.076684
+        ],
+        "within_drug_spearman": {
+         "value": -0.044417,
+         "ci95": [
+          -0.201722,
+          0.128021
+         ],
+         "ci90": [
+          -0.180042,
+          0.105673
+         ],
+         "n_draws": 1000
+        }
+       },
+       "e_shared_stem": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         -0.012469
+        ],
+        "within_drug_spearman": {
+         "value": 0.003547,
+         "ci95": [
+          -0.027187,
+          0.025868
+         ],
+         "ci90": [
+          -0.020964,
+          0.023475
+         ],
+         "n_draws": 958
+        },
+        "criteria": {
+         "C1": false,
+         "C2": false,
+         "C3": false,
+         "verdict": "rejected"
+        }
+       },
+       "joint a+b+c+e": {
+        "partialled_within_auroc": {
+         "value": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "ci90": [
+          1.0,
+          1.0
+         ],
+         "n_draws": 1000
+        },
+        "slope": [
+         0.004673,
+         -0.001931,
+         -0.009021,
+         -0.01151
+        ]
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "coverage": {
+  "older_clean": {
+   "partners_absent_from_semeval_train": 6,
+   "n_partners": 212,
+   "pairs_with_shared_stem": 23
+  },
+  "novel": {
+   "partners_absent_from_semeval_train": 2,
+   "n_partners": 74,
+   "pairs_with_shared_stem": 6
+  }
+ },
+ "paired_differences": [
+  {
+   "cohort": "older_clean",
+   "tier": "A",
+   "comparison": "b2mixed-biomedbert minus llm-qwen-names",
+   "n": 1832,
+   "n_drugs": 128,
+   "b2mixed": 0.451763,
+   "other": 0.601898,
+   "value": -0.150136,
+   "ci95": [
+    -0.242038,
+    -0.054261
+   ],
+   "ci90": [
+    -0.225744,
+    -0.071565
+   ],
+   "n_draws": 1000,
+   "share_draws_above_0": 0.002,
+   "note": ""
+  },
+  {
+   "cohort": "older_clean",
+   "tier": "A",
+   "comparison": "b2mixed-biomedbert minus DrugBank lookup",
+   "n": 1832,
+   "n_drugs": 128,
+   "b2mixed": 0.451763,
+   "other": 0.641224,
+   "value": -0.189461,
+   "ci95": [
+    -0.284642,
+    -0.102685
+   ],
+   "ci90": [
+    -0.265529,
+    -0.115105
+   ],
+   "n_draws": 1000,
+   "share_draws_above_0": 0.0,
+   "note": ""
+  },
+  {
+   "cohort": "older_clean",
+   "tier": "B",
+   "comparison": "b2mixed-biomedbert minus llm-qwen-names",
+   "n": 1191,
+   "n_drugs": 128,
+   "b2mixed": 0.396835,
+   "other": 0.660317,
+   "value": -0.263482,
+   "ci95": [
+    -0.418339,
+    -0.086595
+   ],
+   "ci90": [
+    -0.389773,
+    -0.120057
+   ],
+   "n_draws": 1000,
+   "share_draws_above_0": 0.003,
+   "note": ""
+  },
+  {
+   "cohort": "older_clean",
+   "tier": "B",
+   "comparison": "b2mixed-biomedbert minus DrugBank lookup",
+   "n": 1191,
+   "n_drugs": 128,
+   "b2mixed": 0.396835,
+   "other": 1.0,
+   "value": -0.603165,
+   "ci95": [
+    -0.711184,
+    -0.485645
+   ],
+   "ci90": [
+    -0.691854,
+    -0.507287
+   ],
+   "n_draws": 1000,
+   "share_draws_above_0": 0.0,
+   "note": "DrugBank is circular on tier B (1.0 by construction)"
+  },
+  {
+   "cohort": "novel",
+   "tier": "A",
+   "comparison": "b2mixed-biomedbert minus llm-qwen-names",
+   "n": 438,
+   "n_drugs": 48,
+   "b2mixed": 0.523118,
+   "other": 0.5786,
+   "value": -0.055482,
+   "ci95": [
+    -0.248852,
+    0.151996
+   ],
+   "ci90": [
+    -0.211401,
+    0.101489
+   ],
+   "n_draws": 1000,
+   "share_draws_above_0": 0.251,
+   "note": ""
+  },
+  {
+   "cohort": "novel",
+   "tier": "A",
+   "comparison": "b2mixed-biomedbert minus DrugBank lookup",
+   "n": 438,
+   "n_drugs": 48,
+   "b2mixed": 0.523118,
+   "other": 0.728534,
+   "value": -0.205416,
+   "ci95": [
+    -0.371712,
+    -0.051141
+   ],
+   "ci90": [
+    -0.343693,
+    -0.075109
+   ],
+   "n_draws": 1000,
+   "share_draws_above_0": 0.005,
+   "note": ""
+  },
+  {
+   "cohort": "novel",
+   "tier": "B",
+   "comparison": "b2mixed-biomedbert minus llm-qwen-names",
+   "n": 316,
+   "n_drugs": 48,
+   "b2mixed": 0.532787,
+   "other": 0.576503,
+   "value": -0.043716,
+   "ci95": [
+    -0.284781,
+    0.220941
+   ],
+   "ci90": [
+    -0.250924,
+    0.166039
+   ],
+   "n_draws": 1000,
+   "share_draws_above_0": 0.358,
+   "note": ""
+  },
+  {
+   "cohort": "novel",
+   "tier": "B",
+   "comparison": "b2mixed-biomedbert minus DrugBank lookup",
+   "n": 316,
+   "n_drugs": 48,
+   "b2mixed": 0.532787,
+   "other": 1.0,
+   "value": -0.467213,
+   "ci95": [
+    -0.642882,
+    -0.285587
+   ],
+   "ci90": [
+    -0.616898,
+    -0.317841
+   ],
+   "n_draws": 1000,
+   "share_draws_above_0": 0.0,
+   "note": "DrugBank is circular on tier B (1.0 by construction)"
+  }
+ ],
+ "ceiling": [
+  {
+   "cohort": "older_clean",
+   "tier": "A",
+   "n": 1832,
+   "n_drugs": 128,
+   "c_share_fda_positives_listed": 0.762938,
+   "r_share_fda_negatives_listed": 0.403082,
+   "analytic_pooled_ceiling": 0.679928,
+   "within_auroc_perfect_drugbank_scorer": {
+    "value": 0.641224,
+    "ci95": [
+     0.595375,
+     0.688846
+    ],
+    "ci90": [
+     0.600371,
+     0.68347
+    ],
+    "n_draws": 1000
+   }
+  },
+  {
+   "cohort": "novel",
+   "tier": "A",
+   "n": 438,
+   "n_drugs": 48,
+   "c_share_fda_positives_listed": 0.898649,
+   "r_share_fda_negatives_listed": 0.365517,
+   "analytic_pooled_ceiling": 0.766566,
+   "within_auroc_perfect_drugbank_scorer": {
+    "value": 0.728534,
+    "ci95": [
+     0.642152,
+     0.808313
+    ],
+    "ci90": [
+     0.655182,
+     0.797937
+    ],
+    "n_draws": 1000
+   }
+  }
+ ],
+ "confidently_wrong": [
+  {
+   "system": "b2mixed-biomedbert",
+   "set": "SemEval test, sentence",
+   "key": "test_sentence",
+   "n": 2810,
+   "n_neg": 2439,
+   "neg_above_0.5": 191,
+   "share_neg_above_0.5": 0.078311,
+   "neg_above_0.9": 86,
+   "share_neg_above_0.9": 0.03526,
+   "ece_10_bins": 0.055046,
+   "n_seeds": 5
+  },
+  {
+   "system": "b2mixed-biomedbert",
+   "set": "SemEval test, names only",
+   "key": "test_empty",
+   "n": 2810,
+   "n_neg": 2439,
+   "neg_above_0.5": 167,
+   "share_neg_above_0.5": 0.068471,
+   "neg_above_0.9": 18,
+   "share_neg_above_0.9": 0.00738,
+   "ece_10_bins": 0.098057,
+   "n_seeds": 5
+  },
+  {
+   "system": "b2mixed-biomedbert",
+   "set": "novel",
+   "key": "ood_empty",
+   "n": 438,
+   "n_neg": 290,
+   "neg_above_0.5": 81,
+   "share_neg_above_0.5": 0.27931,
+   "neg_above_0.9": 2,
+   "share_neg_above_0.9": 0.006897,
+   "ece_10_bins": 0.169804,
+   "n_seeds": 5
+  },
+  {
+   "system": "b2mixed-biomedbert",
+   "set": "older_clean",
+   "key": "oodold_empty",
+   "n": 1832,
+   "n_neg": 1233,
+   "neg_above_0.5": 264,
+   "share_neg_above_0.5": 0.214112,
+   "neg_above_0.9": 0,
+   "share_neg_above_0.9": 0.0,
+   "ece_10_bins": 0.221433,
+   "n_seeds": 5
+  },
+  {
+   "system": "b2sentence-biomedbert",
+   "set": "SemEval test, sentence",
+   "key": "test_sentence",
+   "n": 2810,
+   "n_neg": 2439,
+   "neg_above_0.5": 193,
+   "share_neg_above_0.5": 0.079131,
+   "neg_above_0.9": 68,
+   "share_neg_above_0.9": 0.02788,
+   "ece_10_bins": 0.059668,
+   "n_seeds": 5
+  },
+  {
+   "system": "b2sentence-biomedbert",
+   "set": "SemEval test, names only",
+   "key": "test_empty",
+   "n": 2810,
+   "n_neg": 2439,
+   "neg_above_0.5": 0,
+   "share_neg_above_0.5": 0.0,
+   "neg_above_0.9": 0,
+   "share_neg_above_0.9": 0.0,
+   "ece_10_bins": 0.124158,
+   "n_seeds": 5
+  },
+  {
+   "system": "b2sentence-biomedbert",
+   "set": "novel",
+   "key": "ood_empty",
+   "n": 438,
+   "n_neg": 290,
+   "neg_above_0.5": 0,
+   "share_neg_above_0.5": 0.0,
+   "neg_above_0.9": 0,
+   "share_neg_above_0.9": 0.0,
+   "ece_10_bins": 0.313783,
+   "n_seeds": 5
+  },
+  {
+   "system": "b2sentence-biomedbert",
+   "set": "older_clean",
+   "key": "oodold_empty",
+   "n": 1832,
+   "n_neg": 1233,
+   "neg_above_0.5": 0,
+   "share_neg_above_0.5": 0.0,
+   "neg_above_0.9": 0,
+   "share_neg_above_0.9": 0.0,
+   "ece_10_bins": 0.312829,
+   "n_seeds": 5
+  },
+  {
+   "system": "b1names-biomedbert",
+   "set": "SemEval test, names only",
+   "key": "test_names",
+   "n": 2810,
+   "n_neg": 2439,
+   "neg_above_0.5": 413,
+   "share_neg_above_0.5": 0.169332,
+   "neg_above_0.9": 30,
+   "share_neg_above_0.9": 0.0123,
+   "ece_10_bins": 0.166815,
+   "n_seeds": 5
+  },
+  {
+   "system": "b1names-biomedbert",
+   "set": "novel",
+   "key": "ood_names",
+   "n": 438,
+   "n_neg": 290,
+   "neg_above_0.5": 168,
+   "share_neg_above_0.5": 0.57931,
+   "neg_above_0.9": 4,
+   "share_neg_above_0.9": 0.013793,
+   "ece_10_bins": 0.262891,
+   "n_seeds": 5
+  },
+  {
+   "system": "b1names-biomedbert",
+   "set": "older_clean",
+   "key": "oodold_names",
+   "n": 1832,
+   "n_neg": 1233,
+   "neg_above_0.5": 588,
+   "share_neg_above_0.5": 0.476886,
+   "neg_above_0.9": 10,
+   "share_neg_above_0.9": 0.00811,
+   "ece_10_bins": 0.233922,
+   "n_seeds": 5
+  },
+  {
+   "system": "llm-qwen-names",
+   "set": "SemEval test, names only",
+   "key": "test",
+   "n": 2810,
+   "n_neg": 2439,
+   "neg_above_0.5": 2240,
+   "share_neg_above_0.5": 0.918409,
+   "neg_above_0.9": 1895,
+   "share_neg_above_0.9": 0.776958,
+   "ece_10_bins": 0.771736,
+   "n_seeds": 1
+  },
+  {
+   "system": "llm-qwen-names",
+   "set": "novel",
+   "key": "ood",
+   "n": 438,
+   "n_neg": 290,
+   "neg_above_0.5": 275,
+   "share_neg_above_0.5": 0.948276,
+   "neg_above_0.9": 214,
+   "share_neg_above_0.9": 0.737931,
+   "ece_10_bins": 0.582165,
+   "n_seeds": 1
+  },
+  {
+   "system": "llm-qwen-names",
+   "set": "older_clean",
+   "key": "oodold",
+   "n": 1832,
+   "n_neg": 1233,
+   "neg_above_0.5": 1188,
+   "share_neg_above_0.5": 0.963504,
+   "neg_above_0.9": 1022,
+   "share_neg_above_0.9": 0.828873,
+   "ece_10_bins": 0.613587,
+   "n_seeds": 1
+  }
+ ],
+ "year_gradient": {
+  "b2mixed-biomedbert": {
+   "slope_per_decade": {
+    "value": 0.046332,
+    "ci95": [
+     0.011197,
+     0.081833
+    ],
+    "ci90": [
+     0.015809,
+     0.077535
+    ],
+    "n_draws": 1000
+   },
+   "n_drugs": 176,
+   "cohorts": {
+    "older_clean": {
+     "n_drugs": 128,
+     "years": [
+      1985,
+      2012
+     ],
+     "weighted_mean_per_drug_auroc": 0.443068
+    },
+    "novel": {
+     "n_drugs": 48,
+     "years": [
+      2020,
+      2024
+     ],
+     "weighted_mean_per_drug_auroc": 0.517217
+    }
+   },
+   "per_drug": [
+    {
+     "cohort": "older_clean",
+     "drug": "abiraterone",
+     "year": 2011,
+     "n_pairs": 12,
+     "auroc": 0.342857
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "adalimumab",
+     "year": 2002,
+     "n_pairs": 21,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "alfuzosin",
+     "year": 2003,
+     "n_pairs": 14,
+     "auroc": 0.484848
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "alvimopan",
+     "year": 2008,
+     "n_pairs": 14,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "aminolevulinic acid",
+     "year": 1999,
+     "n_pairs": 9,
+     "auroc": 0.125
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "apixaban",
+     "year": 2012,
+     "n_pairs": 17,
+     "auroc": 0.402778
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "asenapine",
+     "year": 2009,
+     "n_pairs": 11,
+     "auroc": 0.125
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "avanafil",
+     "year": 2012,
+     "n_pairs": 15,
+     "auroc": 0.66
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "axitinib",
+     "year": 2012,
+     "n_pairs": 21,
+     "auroc": 0.627273
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "balsalazide disodium",
+     "year": 2000,
+     "n_pairs": 15,
+     "auroc": 0.230769
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "bedaquiline",
+     "year": 2012,
+     "n_pairs": 7,
+     "auroc": 0.166667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "belatacept",
+     "year": 2011,
+     "n_pairs": 17,
+     "auroc": 0.214286
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "belimumab",
+     "year": 2011,
+     "n_pairs": 19,
+     "auroc": 0.5
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "betaxolol",
+     "year": 1985,
+     "n_pairs": 11,
+     "auroc": 0.222222
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "bicalutamide",
+     "year": 1995,
+     "n_pairs": 8,
+     "auroc": 0.142857
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "brentuximab vedotin",
+     "year": 2011,
+     "n_pairs": 7,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "cabazitaxel",
+     "year": 2010,
+     "n_pairs": 9,
+     "auroc": 0.5
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "cabozantinib",
+     "year": 2012,
+     "n_pairs": 16,
+     "auroc": 0.783333
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "calcitonin",
+     "year": 1986,
+     "n_pairs": 14,
+     "auroc": 0.307692
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "cefpodoxime proxetil",
+     "year": 1992,
+     "n_pairs": 13,
+     "auroc": 0.866667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "certolizumab pegol",
+     "year": 2008,
+     "n_pairs": 13,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "cidofovir",
+     "year": 1996,
+     "n_pairs": 22,
+     "auroc": 0.575
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "cladribine",
+     "year": 1993,
+     "n_pairs": 17,
+     "auroc": 0.242857
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "clopidogrel bisulfate",
+     "year": 1997,
+     "n_pairs": 21,
+     "auroc": 0.388889
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "colesevelam",
+     "year": 2000,
+     "n_pairs": 17,
+     "auroc": 0.628571
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "crizotinib",
+     "year": 2011,
+     "n_pairs": 9,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "dabigatran etexilate",
+     "year": 2010,
+     "n_pairs": 13,
+     "auroc": 0.285714
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "dalfampridine",
+     "year": 2010,
+     "n_pairs": 12,
+     "auroc": 0.363636
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "darunavir",
+     "year": 2006,
+     "n_pairs": 13,
+     "auroc": 0.466667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "deferiprone",
+     "year": 2011,
+     "n_pairs": 15,
+     "auroc": 0.576923
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "desvenlafaxine",
+     "year": 2008,
+     "n_pairs": 22,
+     "auroc": 0.475
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "donepezil",
+     "year": 1996,
+     "n_pairs": 6,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "doxercalciferol",
+     "year": 1999,
+     "n_pairs": 15,
+     "auroc": 0.214286
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "dronabinol",
+     "year": 1985,
+     "n_pairs": 17,
+     "auroc": 0.685714
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "dronedarone",
+     "year": 2009,
+     "n_pairs": 13,
+     "auroc": 0.833333
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "dutasteride",
+     "year": 2001,
+     "n_pairs": 13,
+     "auroc": 0.190476
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "eletriptan hydrobromide",
+     "year": 2002,
+     "n_pairs": 14,
+     "auroc": 0.076923
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "eltrombopag",
+     "year": 2008,
+     "n_pairs": 19,
+     "auroc": 0.333333
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "enzalutamide",
+     "year": 2012,
+     "n_pairs": 8,
+     "auroc": 0.5
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "eribulin",
+     "year": 2010,
+     "n_pairs": 9,
+     "auroc": 0.357143
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "esmolol",
+     "year": 1986,
+     "n_pairs": 13,
+     "auroc": 0.325
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "etravirine",
+     "year": 2008,
+     "n_pairs": 13,
+     "auroc": 0.3
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "exenatide",
+     "year": 2005,
+     "n_pairs": 10,
+     "auroc": 0.333333
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "febuxostat",
+     "year": 2009,
+     "n_pairs": 20,
+     "auroc": 0.427083
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "fesoterodine",
+     "year": 2008,
+     "n_pairs": 10,
+     "auroc": 0.666667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "fidaxomicin",
+     "year": 2011,
+     "n_pairs": 12,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "fingolimod",
+     "year": 2010,
+     "n_pairs": 17,
+     "auroc": 0.457143
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "fomepizole",
+     "year": 1997,
+     "n_pairs": 17,
+     "auroc": 0.538462
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "fosaprepitant dimeglumine",
+     "year": 2008,
+     "n_pairs": 15,
+     "auroc": 0.54
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "golimumab",
+     "year": 2009,
+     "n_pairs": 11,
+     "auroc": 0.083333
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "iloperidone",
+     "year": 2009,
+     "n_pairs": 16,
+     "auroc": 0.897436
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "iohexol",
+     "year": 1985,
+     "n_pairs": 11,
+     "auroc": 0.388889
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "iopromide",
+     "year": 1995,
+     "n_pairs": 15,
+     "auroc": 0.384615
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "ivacaftor",
+     "year": 2012,
+     "n_pairs": 20,
+     "auroc": 0.604167
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "lanreotide",
+     "year": 2007,
+     "n_pairs": 17,
+     "auroc": 0.115385
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "lanthanum carbonate",
+     "year": 2004,
+     "n_pairs": 9,
+     "auroc": 0.75
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "lisdexamfetamine dimesylate",
+     "year": 2007,
+     "n_pairs": 16,
+     "auroc": 0.466667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "lurasidone",
+     "year": 2010,
+     "n_pairs": 16,
+     "auroc": 0.433333
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "maraviroc",
+     "year": 2007,
+     "n_pairs": 10,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "methylnaltrexone bromide",
+     "year": 2008,
+     "n_pairs": 11,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "midodrine",
+     "year": 1996,
+     "n_pairs": 19,
+     "auroc": 0.230769
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "miglitol",
+     "year": 1996,
+     "n_pairs": 17,
+     "auroc": 0.190476
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "milnacipran",
+     "year": 2009,
+     "n_pairs": 21,
+     "auroc": 0.6625
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "mirabegron",
+     "year": 2012,
+     "n_pairs": 8,
+     "auroc": 0.142857
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "natalizumab",
+     "year": 2004,
+     "n_pairs": 16,
+     "auroc": 0.307692
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "nebivolol",
+     "year": 2007,
+     "n_pairs": 13,
+     "auroc": 0.111111
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "nitisinone",
+     "year": 2002,
+     "n_pairs": 13,
+     "auroc": 0.6
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "oxaliplatin",
+     "year": 2002,
+     "n_pairs": 13,
+     "auroc": 0.318182
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "oxybate",
+     "year": 2002,
+     "n_pairs": 10,
+     "auroc": 0.4375
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "pasireotide",
+     "year": 2012,
+     "n_pairs": 14,
+     "auroc": 0.291667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "pazopanib",
+     "year": 2009,
+     "n_pairs": 15,
+     "auroc": 0.846154
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "peginterferon alfa-2a",
+     "year": 2002,
+     "n_pairs": 10,
+     "auroc": 0.5625
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "pegloticase",
+     "year": 2010,
+     "n_pairs": 15,
+     "auroc": 0.714286
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "pemetrexed disodium",
+     "year": 2004,
+     "n_pairs": 16,
+     "auroc": 0.266667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "perampanel",
+     "year": 2012,
+     "n_pairs": 8,
+     "auroc": 0.4375
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "perindopril erbumine",
+     "year": 1993,
+     "n_pairs": 20,
+     "auroc": 0.520833
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "pimecrolimus",
+     "year": 2001,
+     "n_pairs": 13,
+     "auroc": 0.4
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "pitavastatin",
+     "year": 2009,
+     "n_pairs": 12,
+     "auroc": 0.657143
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "porfimer",
+     "year": 1995,
+     "n_pairs": 12,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "posaconazole",
+     "year": 2006,
+     "n_pairs": 13,
+     "auroc": 0.466667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "pralatrexate",
+     "year": 2009,
+     "n_pairs": 12,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "pramlintide",
+     "year": 2005,
+     "n_pairs": 14,
+     "auroc": 0.230769
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "rabeprazole",
+     "year": 1999,
+     "n_pairs": 14,
+     "auroc": 0.416667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "raltegravir",
+     "year": 2007,
+     "n_pairs": 17,
+     "auroc": 0.430556
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "ramelteon",
+     "year": 2005,
+     "n_pairs": 13,
+     "auroc": 0.75
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "ranolazine",
+     "year": 2006,
+     "n_pairs": 19,
+     "auroc": 0.666667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "rasagiline",
+     "year": 2006,
+     "n_pairs": 17,
+     "auroc": 0.365385
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "regadenoson",
+     "year": 2008,
+     "n_pairs": 15,
+     "auroc": 0.159091
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "regorafenib",
+     "year": 2012,
+     "n_pairs": 19,
+     "auroc": 0.488889
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "remifentanil",
+     "year": 1996,
+     "n_pairs": 14,
+     "auroc": 0.066667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "repaglinide",
+     "year": 1997,
+     "n_pairs": 8,
+     "auroc": 0.4
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "rifaximin",
+     "year": 2004,
+     "n_pairs": 10,
+     "auroc": 0.625
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "rilpivirine",
+     "year": 2011,
+     "n_pairs": 13,
+     "auroc": 0.6
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "risedronate",
+     "year": 1998,
+     "n_pairs": 14,
+     "auroc": 0.461538
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "rituximab",
+     "year": 1997,
+     "n_pairs": 16,
+     "auroc": 0.2
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "rivaroxaban",
+     "year": 2011,
+     "n_pairs": 19,
+     "auroc": 0.488889
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "rizatriptan benzoate",
+     "year": 1998,
+     "n_pairs": 11,
+     "auroc": 0.1
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "romidepsin",
+     "year": 2009,
+     "n_pairs": 10,
+     "auroc": 0.5625
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "ropinirole",
+     "year": 1997,
+     "n_pairs": 14,
+     "auroc": 0.846154
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "salmeterol xinafoate",
+     "year": 1994,
+     "n_pairs": 17,
+     "auroc": 0.471429
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "sapropterin dihydrochloride",
+     "year": 2007,
+     "n_pairs": 15,
+     "auroc": 0.785714
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "sargramostim",
+     "year": 1991,
+     "n_pairs": 11,
+     "auroc": 0.8
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "sevelamer",
+     "year": 1998,
+     "n_pairs": 16,
+     "auroc": 0.487179
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "silodosin",
+     "year": 2008,
+     "n_pairs": 25,
+     "auroc": 0.466667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "tapentadol",
+     "year": 2008,
+     "n_pairs": 19,
+     "auroc": 0.215909
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "telmisartan",
+     "year": 1998,
+     "n_pairs": 11,
+     "auroc": 0.375
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "temsirolimus",
+     "year": 2007,
+     "n_pairs": 9,
+     "auroc": 0.285714
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "teriflunomide",
+     "year": 2012,
+     "n_pairs": 18,
+     "auroc": 0.5125
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "tetrabenazine",
+     "year": 2008,
+     "n_pairs": 23,
+     "auroc": 0.138462
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "tinidazole",
+     "year": 2004,
+     "n_pairs": 12,
+     "auroc": 0.7
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "tizanidine",
+     "year": 1996,
+     "n_pairs": 19,
+     "auroc": 0.355556
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "tocilizumab",
+     "year": 2010,
+     "n_pairs": 15,
+     "auroc": 0.285714
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "tofacitinib",
+     "year": 2012,
+     "n_pairs": 18,
+     "auroc": 0.888889
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "tolvaptan",
+     "year": 2009,
+     "n_pairs": 10,
+     "auroc": 0.5625
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "toremifene citrate",
+     "year": 1997,
+     "n_pairs": 14,
+     "auroc": 0.85
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "torsemide",
+     "year": 1993,
+     "n_pairs": 18,
+     "auroc": 0.4125
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "trandolapril",
+     "year": 1996,
+     "n_pairs": 15,
+     "auroc": 0.357143
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "trastuzumab",
+     "year": 1998,
+     "n_pairs": 17,
+     "auroc": 0.694444
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "trospium chloride",
+     "year": 2004,
+     "n_pairs": 19,
+     "auroc": 0.628571
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "ulipristal",
+     "year": 2010,
+     "n_pairs": 12,
+     "auroc": 0.40625
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "vandetanib",
+     "year": 2011,
+     "n_pairs": 11,
+     "auroc": 0.777778
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "varenicline",
+     "year": 2006,
+     "n_pairs": 18,
+     "auroc": 0.133333
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "vemurafenib",
+     "year": 2011,
+     "n_pairs": 10,
+     "auroc": 0.541667
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "vilazodone",
+     "year": 2011,
+     "n_pairs": 17,
+     "auroc": 0.472222
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "vorinostat",
+     "year": 2006,
+     "n_pairs": 8,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "zoledronic acid",
+     "year": 2001,
+     "n_pairs": 19,
+     "auroc": 0.388889
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "zolmitriptan",
+     "year": 1997,
+     "n_pairs": 20,
+     "auroc": 0.277778
+    },
+    {
+     "cohort": "older_clean",
+     "drug": "zolpidem",
+     "year": 1992,
+     "n_pairs": 12,
+     "auroc": 0.444444
+    },
+    {
+     "cohort": "novel",
+     "drug": "abrocitinib",
+     "year": 2022,
+     "n_pairs": 7,
+     "auroc": 0.6
+    },
+    {
+     "cohort": "novel",
+     "drug": "amisulpride",
+     "year": 2020,
+     "n_pairs": 10,
+     "auroc": 0.714286
+    },
+    {
+     "cohort": "novel",
+     "drug": "atogepant",
+     "year": 2021,
+     "n_pairs": 9,
+     "auroc": 0.444444
+    },
+    {
+     "cohort": "novel",
+     "drug": "avacopan",
+     "year": 2021,
+     "n_pairs": 8,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "belumosudil",
+     "year": 2021,
+     "n_pairs": 6,
+     "auroc": 0.2
+    },
+    {
+     "cohort": "novel",
+     "drug": "berotralstat",
+     "year": 2020,
+     "n_pairs": 10,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "bexagliflozin",
+     "year": 2023,
+     "n_pairs": 8,
+     "auroc": 0.857143
+    },
+    {
+     "cohort": "novel",
+     "drug": "bimekizumab-bkzx",
+     "year": 2023,
+     "n_pairs": 10,
+     "auroc": 0.25
+    },
+    {
+     "cohort": "novel",
+     "drug": "danicopan",
+     "year": 2024,
+     "n_pairs": 10,
+     "auroc": 0.222222
+    },
+    {
+     "cohort": "novel",
+     "drug": "daprodustat",
+     "year": 2023,
+     "n_pairs": 6,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "elafibranor",
+     "year": 2024,
+     "n_pairs": 8,
+     "auroc": 0.2
+    },
+    {
+     "cohort": "novel",
+     "drug": "etrasimod",
+     "year": 2023,
+     "n_pairs": 10,
+     "auroc": 0.5
+    },
+    {
+     "cohort": "novel",
+     "drug": "fexinidazole",
+     "year": 2021,
+     "n_pairs": 13,
+     "auroc": 0.566667
+    },
+    {
+     "cohort": "novel",
+     "drug": "fostemsavir",
+     "year": 2020,
+     "n_pairs": 13,
+     "auroc": 0.366667
+    },
+    {
+     "cohort": "novel",
+     "drug": "gepirone",
+     "year": 2023,
+     "n_pairs": 5,
+     "auroc": 0.75
+    },
+    {
+     "cohort": "novel",
+     "drug": "iptacopan",
+     "year": 2023,
+     "n_pairs": 11,
+     "auroc": 0.666667
+    },
+    {
+     "cohort": "novel",
+     "drug": "lonafarnib",
+     "year": 2020,
+     "n_pairs": 9,
+     "auroc": 0.611111
+    },
+    {
+     "cohort": "novel",
+     "drug": "lonapegsomatropin-tcgd",
+     "year": 2021,
+     "n_pairs": 9,
+     "auroc": 0.5
+    },
+    {
+     "cohort": "novel",
+     "drug": "maribavir",
+     "year": 2021,
+     "n_pairs": 11,
+     "auroc": 0.7
+    },
+    {
+     "cohort": "novel",
+     "drug": "mavorixafor",
+     "year": 2024,
+     "n_pairs": 7,
+     "auroc": 0.5
+    },
+    {
+     "cohort": "novel",
+     "drug": "mitapivat",
+     "year": 2022,
+     "n_pairs": 9,
+     "auroc": 0.666667
+    },
+    {
+     "cohort": "novel",
+     "drug": "momelotinib",
+     "year": 2023,
+     "n_pairs": 5,
+     "auroc": 0.25
+    },
+    {
+     "cohort": "novel",
+     "drug": "oliceridine",
+     "year": 2020,
+     "n_pairs": 14,
+     "auroc": 0.575
+    },
+    {
+     "cohort": "novel",
+     "drug": "opicapone",
+     "year": 2020,
+     "n_pairs": 8,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "osilodrostat",
+     "year": 2020,
+     "n_pairs": 10,
+     "auroc": 0.8
+    },
+    {
+     "cohort": "novel",
+     "drug": "oteseconazole",
+     "year": 2022,
+     "n_pairs": 7,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "ozanimod",
+     "year": 2020,
+     "n_pairs": 11,
+     "auroc": 0.6
+    },
+    {
+     "cohort": "novel",
+     "drug": "pacritinib",
+     "year": 2022,
+     "n_pairs": 6,
+     "auroc": 0.375
+    },
+    {
+     "cohort": "novel",
+     "drug": "pafolacianine",
+     "year": 2021,
+     "n_pairs": 9,
+     "auroc": 0.375
+    },
+    {
+     "cohort": "novel",
+     "drug": "palopegteriparatide",
+     "year": 2024,
+     "n_pairs": 13,
+     "auroc": 0.272727
+    },
+    {
+     "cohort": "novel",
+     "drug": "quizartinib",
+     "year": 2023,
+     "n_pairs": 10,
+     "auroc": 0.625
+    },
+    {
+     "cohort": "novel",
+     "drug": "remdesivir",
+     "year": 2020,
+     "n_pairs": 10,
+     "auroc": 0.4375
+    },
+    {
+     "cohort": "novel",
+     "drug": "remimazolam",
+     "year": 2020,
+     "n_pairs": 9,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "resmetirom",
+     "year": 2024,
+     "n_pairs": 15,
+     "auroc": 0.28
+    },
+    {
+     "cohort": "novel",
+     "drug": "rimegepant",
+     "year": 2020,
+     "n_pairs": 10,
+     "auroc": 0.625
+    },
+    {
+     "cohort": "novel",
+     "drug": "ritlecitinib",
+     "year": 2023,
+     "n_pairs": 3,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "seladelpar",
+     "year": 2024,
+     "n_pairs": 6,
+     "auroc": 0.25
+    },
+    {
+     "cohort": "novel",
+     "drug": "selumetinib",
+     "year": 2020,
+     "n_pairs": 6,
+     "auroc": 0.625
+    },
+    {
+     "cohort": "novel",
+     "drug": "somatrogon-ghla",
+     "year": 2023,
+     "n_pairs": 11,
+     "auroc": 0.8
+    },
+    {
+     "cohort": "novel",
+     "drug": "sotagliflozin",
+     "year": 2023,
+     "n_pairs": 14,
+     "auroc": 0.69697
+    },
+    {
+     "cohort": "novel",
+     "drug": "tirzepatide",
+     "year": 2022,
+     "n_pairs": 10,
+     "auroc": 0.666667
+    },
+    {
+     "cohort": "novel",
+     "drug": "tovorafenib",
+     "year": 2024,
+     "n_pairs": 8,
+     "auroc": 0.5
+    },
+    {
+     "cohort": "novel",
+     "drug": "triheptanoin",
+     "year": 2020,
+     "n_pairs": 10,
+     "auroc": 0.111111
+    },
+    {
+     "cohort": "novel",
+     "drug": "trilaciclib",
+     "year": 2021,
+     "n_pairs": 9,
+     "auroc": 0.785714
+    },
+    {
+     "cohort": "novel",
+     "drug": "vadadustat",
+     "year": 2024,
+     "n_pairs": 7,
+     "auroc": 0.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "vamorolone",
+     "year": 2023,
+     "n_pairs": 6,
+     "auroc": 0.8
+    },
+    {
+     "cohort": "novel",
+     "drug": "vibegron",
+     "year": 2020,
+     "n_pairs": 7,
+     "auroc": 1.0
+    },
+    {
+     "cohort": "novel",
+     "drug": "voclosporin",
+     "year": 2021,
+     "n_pairs": 15,
+     "auroc": 0.52
+    }
+   ]
+  },
+  "llm-qwen-names": {
+   "slope_per_decade": {
+    "value": 0.025092,
+    "ci95": [
+     -0.012151,
+     0.063027
+    ],
+    "ci90": [
+     -0.006276,
+     0.057288
+    ],
+    "n_draws": 1000
+   },
+   "n_drugs": 176,
+   "cohorts": {
+    "older_clean": {
+     "n_drugs": 128,
+     "years": [
+      1985,
+      2012
+     ],
+     "weighted_mean_per_drug_auroc": 0.590314
+    },
+    "novel": {
+     "n_drugs": 48,
+     "years": [
+      2020,
+      2024
+     ],
+     "weighted_mean_per_drug_auroc": 0.529542
+    }
+   },
+   "per_drug": null
+  },
+  "b1names-biomedbert": {
+   "slope_per_decade": {
+    "value": 0.024889,
+    "ci95": [
+     -0.009717,
+     0.06268
+    ],
+    "ci90": [
+     -0.003725,
+     0.054457
+    ],
+    "n_draws": 1000
+   },
+   "n_drugs": 176,
+   "cohorts": {
+    "older_clean": {
+     "n_drugs": 128,
+     "years": [
+      1985,
+      2012
+     ],
+     "weighted_mean_per_drug_auroc": 0.462454
+    },
+    "novel": {
+     "n_drugs": 48,
+     "years": [
+      2020,
+      2024
+     ],
+     "weighted_mean_per_drug_auroc": 0.514555
+    }
+   },
+   "per_drug": null
+  },
+  "DrugBank lookup": {
+   "slope_per_decade": {
+    "value": 0.056898,
+    "ci95": [
+     0.032086,
+     0.078794
+    ],
+    "ci90": [
+     0.036408,
+     0.074815
+    ],
+    "n_draws": 1000
+   },
+   "n_drugs": 176,
+   "cohorts": {
+    "older_clean": {
+     "n_drugs": 128,
+     "years": [
+      1985,
+      2012
+     ],
+     "weighted_mean_per_drug_auroc": 0.641914
+    },
+    "novel": {
+     "n_drugs": 48,
+     "years": [
+      2020,
+      2024
+     ],
+     "weighted_mean_per_drug_auroc": 0.726885
+    }
+   },
+   "per_drug": null
+  }
+ }
+}

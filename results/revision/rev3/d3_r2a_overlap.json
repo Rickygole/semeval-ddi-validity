@@ -1,0 +1,598 @@
+{
+ "plan_sha256": "c1c1b72bc7344c15b23a90267bbc0f19bc3316ad66f2695baf9d1919c7b79ef1",
+ "status": "post hoc and descriptive; plan in docs/POSTHOC_REV3_PLAN.md was written before computing; changes no preregistered decision",
+ "overlap": {
+  "match_rule": "unordered pair, each name lowercased and stripped, against every SemEval 2013 train pair",
+  "n_pairs": 4643,
+  "n_in_semeval_train": 581,
+  "n_in_semeval_train_with_a_positive_instance": 213,
+  "n_positive_and_semeval_positive": 206,
+  "n_not_in_semeval_train": 4062,
+  "n_positive_not_in_semeval_train": 1134,
+  "n_drugs_both_anchor_and_partner": 175,
+  "n_anchor_drugs": 299,
+  "n_partner_drugs": 313
+ },
+ "cohorts": {
+  "seen": {
+   "n_pairs": 4643,
+   "n_positive": 1542,
+   "n_anchor_drugs": 299,
+   "n_anchor_drugs_with_both_classes": 298,
+   "n_partner_drugs": 313,
+   "n_drugs_both_anchor_and_partner": 175
+  },
+  "seen_not_in_semeval_train": {
+   "n_pairs": 4062,
+   "n_positive": 1134,
+   "n_anchor_drugs": 299,
+   "n_anchor_drugs_with_both_classes": 267,
+   "n_partner_drugs": 313,
+   "n_drugs_both_anchor_and_partner": 175
+  },
+  "seen_in_semeval_train": {
+   "n_pairs": 581,
+   "n_positive": 408,
+   "n_anchor_drugs": 184,
+   "n_anchor_drugs_with_both_classes": 73,
+   "n_partner_drugs": 158,
+   "n_drugs_both_anchor_and_partner": 73
+  }
+ },
+ "rows": [
+  {
+   "family": "b2mixed",
+   "cohort": "seen",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.444054,
+   "within_drug_auroc": 0.45548,
+   "within_ci95_two_way": [
+    0.411031,
+    0.494094
+   ],
+   "within_ci95_anchor_only": [
+    0.432862,
+    0.478439
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.460419,
+    0.45837,
+    0.463813,
+    0.45669,
+    0.450978
+   ]
+  },
+  {
+   "family": "b2mixed",
+   "cohort": "seen",
+   "input": "names_text_b1",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.446438,
+   "within_drug_auroc": 0.463679,
+   "within_ci95_two_way": [
+    0.42165,
+    0.50371
+   ],
+   "within_ci95_anchor_only": [
+    0.441162,
+    0.487647
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.477757,
+    0.462066,
+    0.467946,
+    0.461192,
+    0.440024
+   ]
+  },
+  {
+   "family": "b2mixed",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.422259,
+   "within_drug_auroc": 0.439261,
+   "within_ci95_two_way": [
+    0.390082,
+    0.485502
+   ],
+   "within_ci95_anchor_only": [
+    0.414093,
+    0.465687
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.441641,
+    0.441451,
+    0.442879,
+    0.439356,
+    0.450114
+   ]
+  },
+  {
+   "family": "b2mixed",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_text_b1",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.426335,
+   "within_drug_auroc": 0.450495,
+   "within_ci95_two_way": [
+    0.403834,
+    0.494716
+   ],
+   "within_ci95_anchor_only": [
+    0.425836,
+    0.478551
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.457445,
+    0.443165,
+    0.455684,
+    0.445164,
+    0.442879
+   ]
+  },
+  {
+   "family": "b2mixed",
+   "cohort": "seen_in_semeval_train",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.627437,
+   "within_drug_auroc": 0.590361,
+   "within_ci95_two_way": [
+    0.433023,
+    0.742457
+   ],
+   "within_ci95_anchor_only": [
+    0.52446,
+    0.654242
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.587952,
+    0.585542,
+    0.571084,
+    0.573494,
+    0.544578
+   ]
+  },
+  {
+   "family": "b2mixed",
+   "cohort": "seen_in_semeval_train",
+   "input": "names_text_b1",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.625808,
+   "within_drug_auroc": 0.583133,
+   "within_ci95_two_way": [
+    0.425388,
+    0.73708
+   ],
+   "within_ci95_anchor_only": [
+    0.510074,
+    0.659914
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.595181,
+    0.580723,
+    0.544578,
+    0.607229,
+    0.522892
+   ]
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.436555,
+   "within_drug_auroc": 0.434816,
+   "within_ci95_two_way": [
+    0.395414,
+    0.473079
+   ],
+   "within_ci95_anchor_only": [
+    0.41386,
+    0.457915
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.425274,
+    0.466131,
+    0.471843,
+    0.456522,
+    0.446408
+   ]
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen",
+   "input": "names_text_b1",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.426238,
+   "within_drug_auroc": 0.429138,
+   "within_ci95_two_way": [
+    0.391429,
+    0.465724
+   ],
+   "within_ci95_anchor_only": [
+    0.407374,
+    0.450695
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.429843,
+    0.484342,
+    0.486224,
+    0.457496,
+    0.440797
+   ]
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.444468,
+   "within_drug_auroc": 0.438928,
+   "within_ci95_two_way": [
+    0.395827,
+    0.484053
+   ],
+   "within_ci95_anchor_only": [
+    0.416416,
+    0.463772
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.436738,
+    0.468964,
+    0.487148,
+    0.459492,
+    0.45735
+   ]
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_text_b1",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.438049,
+   "within_drug_auroc": 0.441213,
+   "within_ci95_two_way": [
+    0.394945,
+    0.485474
+   ],
+   "within_ci95_anchor_only": [
+    0.416758,
+    0.465519
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.440546,
+    0.492955,
+    0.492336,
+    0.465156,
+    0.455017
+   ]
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen_in_semeval_train",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.500043,
+   "within_drug_auroc": 0.445783,
+   "within_ci95_two_way": [
+    0.27876,
+    0.600935
+   ],
+   "within_ci95_anchor_only": [
+    0.358272,
+    0.529784
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.491566,
+    0.389157,
+    0.431325,
+    0.424096,
+    0.474699
+   ]
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen_in_semeval_train",
+   "input": "names_text_b1",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.492427,
+   "within_drug_auroc": 0.459036,
+   "within_ci95_two_way": [
+    0.30433,
+    0.601824
+   ],
+   "within_ci95_anchor_only": [
+    0.38392,
+    0.5283
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.479518,
+    0.549398,
+    0.486747,
+    0.546988,
+    0.436145
+   ]
+  },
+  {
+   "family": "marker",
+   "cohort": "seen",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.406122,
+   "within_drug_auroc": 0.398092,
+   "within_ci95_two_way": [
+    0.356299,
+    0.437445
+   ],
+   "within_ci95_anchor_only": [
+    0.37465,
+    0.423481
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.417915,
+    0.438277,
+    0.424635,
+    0.39584,
+    0.417277
+   ]
+  },
+  {
+   "family": "marker",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.42483,
+   "within_drug_auroc": 0.41627,
+   "within_ci95_two_way": [
+    0.36729,
+    0.465297
+   ],
+   "within_ci95_anchor_only": [
+    0.388682,
+    0.44713
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.427789,
+    0.456493,
+    0.441022,
+    0.408749,
+    0.419983
+   ]
+  },
+  {
+   "family": "marker",
+   "cohort": "seen_in_semeval_train",
+   "input": "names_only",
+   "seeds": [
+    42,
+    1,
+    2,
+    3,
+    4
+   ],
+   "complete": true,
+   "pooled_auroc": 0.441715,
+   "within_drug_auroc": 0.419277,
+   "within_ci95_two_way": [
+    0.264901,
+    0.573471
+   ],
+   "within_ci95_anchor_only": [
+    0.351457,
+    0.492355
+   ],
+   "n_draws_two_way": 1000,
+   "n_draws_anchor_only": 1000,
+   "per_seed_within": [
+    0.449398,
+    0.545783,
+    0.420482,
+    0.455422,
+    0.395181
+   ]
+  }
+ ],
+ "r2a_reproduction": [
+  {
+   "family": "b2mixed",
+   "cohort": "seen",
+   "input": "names_only",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "b2mixed",
+   "cohort": "seen",
+   "input": "names_text_b1",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "b2mixed",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_only",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "b2mixed",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_text_b1",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen",
+   "input": "names_only",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen",
+   "input": "names_text_b1",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_only",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "b2sentence",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_text_b1",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "marker",
+   "cohort": "seen",
+   "input": "names_only",
+   "point_matches": true,
+   "interval_matches": true
+  },
+  {
+   "family": "marker",
+   "cohort": "seen_not_in_semeval_train",
+   "input": "names_only",
+   "point_matches": true,
+   "interval_matches": true
+  }
+ ],
+ "n_boot": 1000,
+ "seed": 42
+}

@@ -1,0 +1,183 @@
+{
+ "H1": {
+  "statistic": "within-drug AUROC",
+  "cohort": "Older-clean",
+  "value": 0.451763,
+  "interval": [
+   0.388895,
+   0.518086
+  ],
+  "interval90": [
+   0.394843,
+   0.509221
+  ],
+  "upper95_one_sided": 0.509221,
+  "p_tost": 0.060939,
+  "p_holm": 0.182817,
+  "decision": "inconclusive",
+  "detail": "b2mixed names only, seeds [1, 2, 3, 4, 42], n=1832, 128 drugs"
+ },
+ "H1-novel": {
+  "statistic": "within-drug AUROC",
+  "cohort": "Novel",
+  "value": 0.523118,
+  "interval": [
+   0.397209,
+   0.650333
+  ],
+  "interval90": [
+   0.41133,
+   0.625726
+  ],
+  "upper95_one_sided": 0.625726,
+  "p_tost": null,
+  "p_holm": null,
+  "decision": "estimate only (no equivalence test)",
+  "detail": "b2mixed names only, seeds [1, 2, 3, 4, 42], n=438, 48 drugs; upper95 one-sided 0.626"
+ },
+ "H1-pooled": {
+  "statistic": "within-drug AUROC",
+  "cohort": "Novel + Older-clean",
+  "value": 0.460889,
+  "interval": [
+   0.399343,
+   0.520093
+  ],
+  "interval90": [
+   0.409974,
+   0.511291
+  ],
+  "upper95_one_sided": 0.511291,
+  "p_tost": 0.027972,
+  "p_holm": null,
+  "decision": "descriptive, secondary (no pre-registered decision rule)",
+  "detail": "secondary, outside the Holm family, n=2270, 176 drugs"
+ },
+ "H1-sensitivity": {
+  "statistic": "within-drug AUROC",
+  "cohort": "Older-clean sensitivity",
+  "value": 0.452619,
+  "interval": [
+   0.378697,
+   0.522102
+  ],
+  "interval90": [
+   0.393585,
+   0.511125
+  ],
+  "upper95_one_sided": 0.511125,
+  "p_tost": 0.077922,
+  "p_holm": null,
+  "decision": "sensitivity, not preregistered (no decision rule)",
+  "detail": "b2mixed names only, Older-clean without clopidogrel bisulfate, perindopril erbumine, peginterferon alfa-2a, calcitonin, esmolol (SemEval vocabulary drugs the filter missed), n=1754, 123 drugs, outside the Holm family"
+ },
+ "H2a": {
+  "statistic": "masked F1 ratio and flip rates",
+  "cohort": "test-time masking of the sentence-trained model",
+  "value": {
+   "ratio": 0.027888,
+   "vocab": 0.056584,
+   "novel": 0.053594,
+   "pseudo": 0.059431
+  },
+  "interval": null,
+  "interval90": null,
+  "upper95_one_sided": null,
+  "p_tost": null,
+  "p_holm": null,
+  "decision": "falsified",
+  "detail": "b2sentence, seeds [1, 2, 3, 4, 42]"
+ },
+ "H2b": {
+  "statistic": "masked F1 ratio and flip rates",
+  "cohort": "masked-trained model",
+  "value": {
+   "ratio": 6.008276,
+   "vocab": 0.063986,
+   "novel": 0.072171,
+   "pseudo": 0.072313
+  },
+  "interval": null,
+  "interval90": null,
+  "upper95_one_sided": null,
+  "p_tost": null,
+  "p_holm": null,
+  "decision": "supported",
+  "detail": "b2masked, seeds [1, 2, 3, 4, 42]; seed-mean ratio is the preregistered value; median ratio 1.581, ratio of mean F1s 1.868, per-seed ratio range 1.364 to 23.939; per seed (flips vocab/novel/pseudo): s1 ratio 23.939 flips 0.028/0.024/0.031; s2 ratio 1.668 flips 0.047/0.043/0.049; s3 ratio 1.364 flips 0.063/0.076/0.073; s4 ratio 1.489 flips 0.090/0.108/0.103 (over 0.10: novel, pseudo); s42 ratio 1.581 flips 0.092/0.110/0.106 (over 0.10: novel, pseudo); the seed-mean aggregation was not preregistered"
+ },
+ "H3": {
+  "statistic": "pooled AUROC",
+  "cohort": "OOD swap",
+  "value": 0.5028,
+  "interval": [
+   0.464051,
+   0.545184
+  ],
+  "interval90": [
+   0.471893,
+   0.537079
+  ],
+  "upper95_one_sided": 0.537079,
+  "p_tost": null,
+  "p_holm": null,
+  "decision": "descriptive only",
+  "detail": "b2sentence, seeds [1, 2, 3, 4, 42], no p-value, outside the Holm family"
+ },
+ "H4": {
+  "statistic": "Older-clean minus Novel within-drug AUROC",
+  "cohort": "cohort comparison",
+  "value": -0.071355,
+  "interval": [
+   -0.220383,
+   0.068359
+  ],
+  "interval90": [
+   -0.192309,
+   0.045012
+  ],
+  "upper95_one_sided": 0.045012,
+  "p_tost": 0.338661,
+  "p_holm": 0.338661,
+  "decision": "inconclusive",
+  "detail": "Older-clean 0.452 vs Novel 0.523; equivalence of the difference within +/-0.10"
+ },
+ "H5": {
+  "statistic": "AUROC and MCC",
+  "cohort": "Novel",
+  "value": [
+   0.620993,
+   0.167355
+  ],
+  "interval": [
+   0.556674,
+   0.68741
+  ],
+  "interval90": [
+   0.568272,
+   0.677863
+  ],
+  "upper95_one_sided": 0.677863,
+  "p_tost": null,
+  "p_holm": null,
+  "decision": "falsified",
+  "detail": "below either threshold: null results uninterpretable"
+ },
+ "H6": {
+  "statistic": "within-drug AUROC",
+  "cohort": "Novel",
+  "value": 0.519155,
+  "interval": [
+   0.39324,
+   0.647088
+  ],
+  "interval90": [
+   0.420617,
+   0.626776
+  ],
+  "upper95_one_sided": 0.626776,
+  "p_tost": 0.101898,
+  "p_holm": 0.203796,
+  "decision": "inconclusive",
+  "detail": "krag hybrid k5 c400, seeds [1, 2, 3, 4, 42], upper95 one-sided 0.627"
+ }
+}

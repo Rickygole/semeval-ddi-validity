@@ -1,0 +1,256 @@
+item_id,cohort,row_index,ood_drug,partner,current_label,oracle_p_yes,rule_flag,families,absence_flag,patterns,scope,ood_drug_not_named,cooccurrence_also_flags,older_subset,selected_because
+A001,older,560,tizanidine,propafenone,1,0.067244,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A002,novel,31,fexinidazole,metformin,1,0.151625,0,,0,,clause,0,0,,positive_oracle_below_0.5
+A003,older,94,cabozantinib,furosemide,1,0.009508,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A004,older,738,ropinirole,rifampin,0,0.987446,,,,,,,,primary,negative_oracle_above_0.5
+A005,older,217,dutasteride,terazosin,1,0.0,0,,1,s01 s02,clause,0,1,primary,positive_oracle_below_0.5
+A006,older,549,tinidazole,metronidazole,1,0.000103,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A007,older,638,vorinostat,valproic acid,1,0.175422,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A008,older,446,remifentanil,nalbuphine,1,0.006329,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A009,novel,40,fostemsavir,fluvastatin,1,0.004708,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A010,novel,133,trilaciclib,cisplatin,1,0.170203,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A011,older,515,tapentadol,naloxone,1,0.00396,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A012,older,1192,pazopanib,verapamil,0,0.999985,,,,,,,,primary,negative_oracle_above_0.5
+A013,older,1277,vilazodone,diltiazem,0,0.882434,,,,,,,,primary,negative_oracle_above_0.5
+A014,older,954,ropinirole,clarithromycin,0,0.961852,,,,,,,,primary,negative_oracle_above_0.5
+A015,older,274,fomepizole,cimetidine,1,0.042953,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A016,older,36,atazanavir sulfate,sirolimus,1,0.177144,0,,0,,clause,0,0,artifact,positive_oracle_below_0.5
+A017,older,620,vandetanib,digoxin,1,0.034415,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A018,novel,68,oliceridine,carbamazepine,1,0.000263,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A019,older,152,dabigatran etexilate,amiodarone,1,0.99976,1,N,0,n13,clause,0,0,primary,positive_rule_flag
+A020,novel,101,quizartinib,granisetron,1,0.36033,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A021,older,1479,vilazodone,cyclosporine,0,0.943218,,,,,,,,primary,negative_oracle_above_0.5
+A022,novel,86,ozanimod,cyclosporine,1,4.6e-05,1,N,0,n17 s01 s02,clause,1,1,,positive_oracle_below_0.5 positive_rule_flag
+A023,older,234,eribulin,rifampin,1,1.6e-05,1,N,0,n11,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A024,older,384,posaconazole,cimetidine,1,0.0001,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A025,novel,164,momelotinib,itraconazole,0,0.999859,,,,,,,,,negative_oracle_above_0.5
+A026,older,253,febuxostat,desipramine,1,0.0,1,N,0,n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A027,older,1913,ropinirole,itraconazole,0,0.993638,,,,,,,,primary,negative_oracle_above_0.5
+A028,older,1736,crizotinib,cyclosporine,0,0.949118,,,,,,,,primary,negative_oracle_above_0.5
+A029,novel,41,fostemsavir,mitotane,1,0.002309,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A030,older,443,remifentanil,buprenorphine,1,0.028689,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A031,older,535,tetrabenazine,chlorpromazine,1,0.340081,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A032,older,153,dabigatran etexilate,clarithromycin,1,0.999988,1,N,0,n13,clause,0,0,primary,positive_rule_flag
+A033,older,336,milnacipran,linezolid,1,0.178874,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A034,older,850,repaglinide,rifapentine,0,0.577836,,,,,,,,primary,negative_oracle_above_0.5
+A035,older,1193,tofacitinib,verapamil,0,0.990924,,,,,,,,primary,negative_oracle_above_0.5
+A036,novel,102,quizartinib,ondansetron,1,0.125757,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A037,older,128,cladribine,nifedipine,1,0.022981,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A038,novel,83,osilodrostat,phenobarbital,1,0.478227,0,,0,,clause,0,0,,positive_oracle_below_0.5
+A039,older,77,belimumab,cyclophosphamide,1,0.000306,1,N,0,n04,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A040,older,276,fomepizole,phenytoin,1,0.132023,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A041,older,602,trastuzumab,ketoconazole,1,0.454198,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A042,older,498,sevelamer,cyclosporine,1,0.051566,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A043,older,1644,bedaquiline,cyclosporine,0,0.798278,,,,,,,,primary,negative_oracle_above_0.5
+A044,older,518,tapentadol,tranylcypromine,1,0.460846,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A045,novel,356,berotralstat,tacrolimus,0,0.515248,,,,,,,,,negative_oracle_above_0.5
+A046,older,31,atazanavir sulfate,lamotrigine,1,0.213008,0,,0,,clause,0,0,artifact,positive_oracle_below_0.5
+A047,novel,74,oliceridine,phenytoin,1,0.391466,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A048,older,32,atazanavir sulfate,lidocaine,1,0.001414,0,,0,,clause,0,0,artifact,positive_oracle_below_0.5
+A049,older,758,dabigatran etexilate,nelfinavir,0,0.999872,,,,,,,,primary,negative_oracle_above_0.5
+A050,older,624,varenicline,warfarin,1,0.001119,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A051,older,499,sevelamer,levothyroxine,1,0.025064,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A052,novel,250,vamorolone,loperamide,0,0.868181,,,,,,,,,negative_oracle_above_0.5
+A053,older,323,methylnaltrexone bromide,dextromethorphan,1,0.019631,1,N,0,n05,clause,1,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A054,older,121,citalopram hydrobromide,lithium,1,0.122955,0,,0,,clause,0,0,artifact,positive_oracle_below_0.5
+A055,novel,435,selumetinib,simvastatin,0,0.848873,,,,,,,,,negative_oracle_above_0.5
+A056,older,1143,pazopanib,nevirapine,0,0.999909,,,,,,,,primary,negative_oracle_above_0.5
+A057,older,166,darifenacin hydrobromide,paroxetine,1,0.00243,1,N,0,n12,clause,1,0,artifact,positive_oracle_below_0.5 positive_rule_flag
+A058,older,294,iohexol,thyroid,1,0.002817,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A059,older,257,febuxostat,naproxen,1,0.0,1,N,0,n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A060,older,9,alfuzosin,ketoconazole,1,0.098488,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A061,older,162,darifenacin hydrobromide,fluoxetine,1,0.000109,1,N,0,n12,clause,1,0,artifact,positive_oracle_below_0.5 positive_rule_flag
+A062,older,467,rivaroxaban,clarithromycin,1,0.016295,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A063,older,1857,pazopanib,nelfinavir,0,0.999945,,,,,,,,primary,negative_oracle_above_0.5
+A064,older,255,febuxostat,indomethacin,1,0.0,1,N,0,n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A065,older,1212,brentuximab vedotin,nelfinavir,0,0.999933,,,,,,,,primary,negative_oracle_above_0.5
+A066,older,326,midodrine,fludrocortisone acetate,1,0.0,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A067,older,183,desvenlafaxine,buspirone,1,0.006949,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A068,older,500,sevelamer,tacrolimus,1,7.4e-05,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A069,older,75,belatacept,mycophenolate mofetil,1,0.070838,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A070,older,213,dutasteride,cholestyramine,1,0.0,1,N,0,n05,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A071,older,406,raltegravir,midazolam,1,0.463199,1,HN,0,h01 n04 n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A072,older,70,bedaquiline,cycloserine,1,0.0,1,N,0,n09,clause,1,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A073,older,296,iopromide,thyroid,1,0.001771,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A074,older,185,desvenlafaxine,linezolid,1,0.012277,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A075,older,214,dutasteride,digoxin,1,0.0,1,N,0,n05,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A076,older,1783,torsemide,ketoconazole,0,0.999683,,,,,,,,primary,negative_oracle_above_0.5
+A077,older,197,dronabinol,disulfiram,1,0.072744,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A078,older,1727,dronabinol,quinidine,0,0.98488,,,,,,,,primary,negative_oracle_above_0.5
+A079,older,142,colesevelam,ethinyl estradiol,1,0.286441,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A080,novel,129,tirzepatide,warfarin,1,0.146092,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A081,older,451,rifaximin,cyclosporine,1,0.00396,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A082,older,113,cidofovir,famotidine,1,0.254658,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A083,older,190,desvenlafaxine,warfarin,1,2e-06,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A084,novel,14,bimekizumab-bkzx,warfarin,1,0.038664,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A085,novel,436,oliceridine,verapamil,0,0.996041,,,,,,,,,negative_oracle_above_0.5
+A086,older,267,fingolimod,erythromycin,1,0.006405,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A087,older,402,raltegravir,estradiol,1,0.0,1,HN,0,h01 n04 n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A088,older,426,rasagiline,dextromethorphan,1,0.407343,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A089,older,27,asenapine,valproic acid,1,0.0,1,N,0,n10,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A090,older,554,tizanidine,acyclovir,1,0.001296,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A091,older,123,citalopram hydrobromide,warfarin,1,6e-06,0,,0,,clause,1,0,artifact,positive_oracle_below_0.5
+A092,older,1023,torsemide,phenelzine,0,0.947989,,,,,,,,primary,negative_oracle_above_0.5
+A093,older,1607,pazopanib,atazanavir,0,0.999111,,,,,,,,primary,negative_oracle_above_0.5
+A094,novel,134,trilaciclib,dofetilide,1,0.25178,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A095,novel,45,fostemsavir,simvastatin,1,0.000866,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A096,novel,206,abrocitinib,itraconazole,0,0.998089,,,,,,,,,negative_oracle_above_0.5
+A097,novel,127,sotagliflozin,lithium,1,0.002262,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A098,novel,319,mitapivat,rosuvastatin,0,0.500016,,,,,,,,,negative_oracle_above_0.5
+A099,older,194,dronabinol,amphotericin,1,0.116317,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A100,novel,97,palopegteriparatide,digoxin,1,0.320832,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A101,older,254,febuxostat,hydrochlorothiazide,1,0.0,1,N,0,n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A102,older,145,colesevelam,metformin,1,0.002716,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A103,older,475,rizatriptan benzoate,dihydroergotamine,1,0.081215,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A104,older,1861,apixaban,voriconazole,0,0.983444,,,,,,,,primary,negative_oracle_above_0.5
+A105,novel,403,pacritinib,estradiol,0,0.957933,,,,,,,,,negative_oracle_above_0.5
+A106,older,1671,methylnaltrexone bromide,buprenorphine,0,0.72556,,,,,,,,primary,negative_oracle_above_0.5
+A107,older,149,colesevelam,warfarin,1,0.37493,0,,0,,clause,0,1,primary,positive_oracle_below_0.5
+A108,older,334,milnacipran,clonidine,1,0.312521,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A109,older,1196,dabigatran etexilate,cimetidine,0,0.996985,,,,,,,,primary,negative_oracle_above_0.5
+A110,older,78,belimumab,methotrexate,1,1e-06,1,N,0,n04,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A111,novel,301,berotralstat,rifampin,0,0.999949,,,,,,,,,negative_oracle_above_0.5
+A112,older,233,eribulin,ketoconazole,1,1e-06,1,N,0,n11,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A113,older,403,raltegravir,ethinyl estradiol,1,0.0,1,HN,0,h01 n04 n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A114,older,80,benzoate,dihydroergotamine,1,0.000561,0,,0,,clause,1,0,artifact,positive_oracle_below_0.5
+A115,older,349,oxaliplatin,fluorouracil,1,0.089043,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A116,novel,124,selumetinib,vitamin e,1,1.5e-05,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A117,older,1813,tofacitinib,amiodarone,0,0.984873,,,,,,,,primary,negative_oracle_above_0.5
+A118,older,447,remifentanil,pentazocine,1,0.334254,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A119,older,219,dutasteride,warfarin,1,0.0,1,N,0,n05,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A120,older,563,tocilizumab,methotrexate,1,0.0,1,N,0,n08,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A121,older,295,iopromide,iodine,1,5.1e-05,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A122,novel,0,abrocitinib,aspirin,1,0.01012,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A123,novel,3,amisulpride,levodopa,1,0.000651,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A124,older,79,belimumab,mycophenolate,1,0.00027,1,N,0,n04,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A125,novel,366,abrocitinib,gemfibrozil,0,0.912075,,,,,,,,,negative_oracle_above_0.5
+A126,older,160,darifenacin hydrobromide,duloxetine,1,0.003598,1,N,0,n12,clause,1,0,artifact,positive_oracle_below_0.5 positive_rule_flag
+A127,older,706,rivaroxaban,efavirenz,0,0.999723,,,,,,,,primary,negative_oracle_above_0.5
+A128,older,408,raltegravir,ritonavir,1,3.7e-05,1,HN,0,h01 n04 n07,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A129,older,533,teriflunomide,theophylline,1,0.474923,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A130,older,1929,vemurafenib,cimetidine,0,0.50608,,,,,,,,primary,negative_oracle_above_0.5
+A131,older,155,dabigatran etexilate,quinidine,1,0.999853,1,N,0,n13,clause,0,0,primary,positive_rule_flag
+A132,novel,219,atogepant,voriconazole,0,0.99263,,,,,,,,,negative_oracle_above_0.5
+A133,older,13,almotriptan malate,ketoconazole,1,0.229177,0,,0,,clause,0,0,artifact,positive_oracle_below_0.5
+A134,older,623,varenicline,theophylline,1,4.8e-05,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A135,older,307,lanreotide,glucagon,1,0.0,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A136,novel,44,fostemsavir,rosuvastatin,1,0.000782,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A137,older,1859,ropinirole,ritonavir,0,0.992427,,,,,,,,primary,negative_oracle_above_0.5
+A138,older,1726,brentuximab vedotin,quinidine,0,0.508243,,,,,,,,primary,negative_oracle_above_0.5
+A139,novel,126,sotagliflozin,digoxin,1,0.23167,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A140,older,1287,dronabinol,verapamil,0,0.930169,,,,,,,,primary,negative_oracle_above_0.5
+A141,novel,13,bimekizumab-bkzx,cyclosporine,1,0.045864,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A142,older,250,exenatide,warfarin,1,0.443387,1,N,0,n07,clause,1,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A143,novel,137,vibegron,digoxin,1,0.000336,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A144,older,335,milnacipran,digoxin,1,0.084066,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A145,older,520,telmisartan,digoxin,1,0.384126,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A146,older,293,iohexol,iodine,1,0.001305,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A147,older,14,alvimopan,morphine,1,0.000108,1,N,0,n05,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A148,older,271,fingolimod,mitoxantrone,1,0.000751,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A149,older,258,febuxostat,warfarin,1,0.0,1,N,0,n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A150,older,1290,vilazodone,efavirenz,0,0.998676,,,,,,,,primary,negative_oracle_above_0.5
+A151,older,576,toremifene citrate,midazolam,1,0.0,0,,0,,clause,0,0,clean_not_primary,positive_oracle_below_0.5
+A152,older,71,bedaquiline,ethambutol,1,0.0,1,N,0,n09,clause,1,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A153,older,603,trastuzumab,nefazodone,1,0.053383,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A154,older,25,asenapine,lithium,1,0.0,1,N,0,n10,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A155,novel,331,tovorafenib,fluconazole,0,0.770897,,,,,,,,,negative_oracle_above_0.5
+A156,older,444,remifentanil,butorphanol,1,0.419718,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A157,older,404,raltegravir,lamivudine,1,0.0,1,HN,0,h01 n04 n07,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A158,novel,268,avacopan,rifabutin,0,0.963663,,,,,,,,,negative_oracle_above_0.5
+A159,older,252,febuxostat,colchicine,1,0.0,1,N,0,n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A160,older,386,posaconazole,esomeprazole,1,9.8e-05,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A161,novel,100,quizartinib,doxycycline,1,0.496852,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A162,older,1264,oxaliplatin,quinidine,0,0.93803,,,,,,,,primary,negative_oracle_above_0.5
+A163,older,928,fosaprepitant dimeglumine,cyclosporine,0,0.99948,,,,,,,,primary,negative_oracle_above_0.5
+A164,older,110,cidofovir,acyclovir,1,0.477732,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A165,novel,261,berotralstat,carbamazepine,0,0.999903,,,,,,,,,negative_oracle_above_0.5
+A166,older,893,oxaliplatin,pimozide,0,0.999747,,,,,,,,primary,negative_oracle_above_0.5
+A167,novel,367,mavorixafor,gemfibrozil,0,0.880805,,,,,,,,,negative_oracle_above_0.5
+A168,older,148,colesevelam,thyroid,1,0.0352,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A169,older,577,toremifene citrate,nefazodone,1,0.110356,0,,0,,clause,1,0,clean_not_primary,positive_oracle_below_0.5
+A170,older,419,ranolazine,phenobarbital,1,0.406017,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A171,novel,322,mitapivat,linezolid,0,0.518407,,,,,,,,,negative_oracle_above_0.5
+A172,older,333,milnacipran,aspirin,1,0.007248,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A173,older,485,rosuvastatin calcium,lopinavir,1,0.023913,0,,0,,clause,0,0,artifact,positive_oracle_below_0.5
+A174,novel,4,amisulpride,ondansetron,1,7.6e-05,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A175,older,169,darunavir,amiodarone,1,0.01203,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A176,novel,413,mavorixafor,simvastatin,0,0.676426,,,,,,,,,negative_oracle_above_0.5
+A177,older,268,fingolimod,haloperidol,1,0.000506,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A178,older,1291,salmeterol xinafoate,efavirenz,0,0.999712,,,,,,,,primary,negative_oracle_above_0.5
+A179,older,607,trospium chloride,digoxin,1,0.0,1,N,0,n06,clause,0,1,clean_not_primary,positive_oracle_below_0.5 positive_rule_flag
+A180,older,1621,risedronate,magnesium hydroxide,0,0.999997,,,,,,,,primary,negative_oracle_above_0.5
+A181,novel,377,selumetinib,cyclosporine,0,0.996021,,,,,,,,,negative_oracle_above_0.5
+A182,older,429,regadenoson,adenosine,1,0.000916,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A183,older,108,certolizumab pegol,anakinra,1,0.013889,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A184,novel,200,maribavir,dofetilide,0,0.677023,,,,,,,,,negative_oracle_above_0.5
+A185,older,1778,rivaroxaban,cyclosporine,0,0.999289,,,,,,,,primary,negative_oracle_above_0.5
+A186,novel,36,fostemsavir,atorvastatin,1,1.6e-05,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A187,older,463,risedronate,aspirin,1,2.7e-05,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A188,older,186,desvenlafaxine,lithium,1,2e-06,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A189,older,143,colesevelam,glimepiride,1,0.076262,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A190,older,119,citalopram hydrobromide,buspirone,1,0.000234,0,,0,,clause,0,0,artifact,positive_oracle_below_0.5
+A191,older,1270,apixaban,atazanavir,0,0.961474,,,,,,,,primary,negative_oracle_above_0.5
+A192,older,1357,dutasteride,cyclosporine,0,0.949606,,,,,,,,primary,negative_oracle_above_0.5
+A193,older,141,colesevelam,estradiol,1,0.000105,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A194,novel,38,fostemsavir,estradiol,1,0.038861,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A195,novel,47,iptacopan,gemfibrozil,1,0.193731,0,,0,,clause,0,0,,positive_oracle_below_0.5
+A196,older,8,alfuzosin,itraconazole,1,0.008012,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A197,older,1145,fosaprepitant dimeglumine,rifabutin,0,0.998757,,,,,,,,primary,negative_oracle_above_0.5
+A198,older,265,fingolimod,digoxin,1,0.131835,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A199,novel,76,oliceridine,rifampin,1,4.8e-05,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A200,older,445,remifentanil,gabapentin,1,0.001257,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A201,older,74,belatacept,mycophenolate,1,0.00805,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A202,older,1254,repaglinide,voriconazole,0,0.997083,,,,,,,,primary,negative_oracle_above_0.5
+A203,older,270,fingolimod,methadone,1,0.069615,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A204,older,844,vilazodone,nelfinavir,0,0.996581,,,,,,,,primary,negative_oracle_above_0.5
+A205,older,1561,ropinirole,ketoconazole,0,0.964926,,,,,,,,primary,negative_oracle_above_0.5
+A206,older,24,apixaban,warfarin,1,0.264252,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A207,novel,432,berotralstat,pravastatin,0,0.619496,,,,,,,,,negative_oracle_above_0.5
+A208,older,182,desvenlafaxine,aspirin,1,2.3e-05,0,,0,,clause,1,0,primary,positive_oracle_below_0.5
+A209,novel,402,lonapegsomatropin-tcgd,estradiol,0,0.770896,,,,,,,,,negative_oracle_above_0.5
+A210,older,853,tofacitinib,voriconazole,0,0.999952,,,,,,,,primary,negative_oracle_above_0.5
+A211,older,482,rosuvastatin calcium,fenofibrate,1,0.013153,0,,0,,clause,1,0,artifact,positive_oracle_below_0.5
+A212,older,892,toremifene citrate,pimozide,0,0.835555,,,,,,,,clean_not_primary,negative_oracle_above_0.5
+A213,older,558,tizanidine,famotidine,1,0.38306,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A214,older,1878,pazopanib,griseofulvin,0,0.614706,,,,,,,,primary,negative_oracle_above_0.5
+A215,older,759,romidepsin,nelfinavir,0,0.929846,,,,,,,,primary,negative_oracle_above_0.5
+A216,older,1260,axitinib,cyclosporine,0,0.944504,,,,,,,,primary,negative_oracle_above_0.5
+A217,older,448,repaglinide,clonidine,1,0.159005,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A218,older,7,adalimumab,methotrexate,1,8e-06,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A219,older,1047,dabigatran etexilate,itraconazole,0,0.999997,,,,,,,,primary,negative_oracle_above_0.5
+A220,novel,374,oliceridine,amiodarone,0,0.990556,,,,,,,,,negative_oracle_above_0.5
+A221,older,139,clopidogrel bisulfate,warfarin,1,1.7e-05,0,,0,n05,clause,0,0,clean_not_primary,positive_oracle_below_0.5
+A222,novel,96,palopegteriparatide,digitalis,1,0.057863,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A223,older,2,abiraterone,prednisone,1,0.000198,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A224,older,672,vilazodone,ergotamine,0,0.956242,,,,,,,,primary,negative_oracle_above_0.5
+A225,older,409,raltegravir,tenofovir disoproxil fumarate,1,0.0,1,HN,0,h01 n04 n07,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A226,older,1847,rivaroxaban,atazanavir,0,0.999829,,,,,,,,primary,negative_oracle_above_0.5
+A227,older,555,tizanidine,amiodarone,1,0.053162,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A228,older,561,tizanidine,verapamil,1,0.391467,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A229,older,260,fesoterodine,itraconazole,1,0.229167,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A230,novel,233,osilodrostat,phenytoin,0,0.986051,,,,,,,,,negative_oracle_above_0.5
+A231,older,405,raltegravir,methadone,1,0.0,1,HN,0,h01 n04 n07,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A232,older,1724,oxaliplatin,procainamide,0,0.697274,,,,,,,,primary,negative_oracle_above_0.5
+A233,novel,2,amisulpride,droperidol,1,0.025329,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A234,novel,410,mitapivat,dofetilide,0,0.636186,,,,,,,,,negative_oracle_above_0.5
+A235,older,337,milnacipran,warfarin,1,6.1e-05,0,,0,,clause,1,1,primary,positive_oracle_below_0.5
+A236,older,264,fingolimod,citalopram,1,0.023961,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A237,older,367,perindopril erbumine,cyclosporine,1,0.000304,0,,0,,clause,1,0,clean_not_primary,positive_oracle_below_0.5
+A238,older,164,darifenacin hydrobromide,midazolam,1,3.3e-05,1,N,0,n07,clause,0,0,artifact,positive_oracle_below_0.5 positive_rule_flag
+A239,older,157,dabigatran etexilate,verapamil,1,0.16459,1,N,0,n13,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A240,older,216,dutasteride,tamsulosin,1,0.0,0,,1,s01 s02,clause,0,0,primary,positive_oracle_below_0.5
+A241,older,129,cladribine,nimodipine,1,0.000181,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A242,older,639,zoledronic acid,thalidomide,1,0.0,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A243,older,76,belimumab,azathioprine,1,1.4e-05,1,N,0,n04,clause,0,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A244,older,900,tofacitinib,dipyridamole,0,0.989785,,,,,,,,primary,negative_oracle_above_0.5
+A245,older,852,pazopanib,voriconazole,0,0.999833,,,,,,,,primary,negative_oracle_above_0.5
+A246,older,246,etravirine,nelfinavir,1,0.998942,1,N,0,n14,clause,0,0,primary,positive_rule_flag
+A247,older,1937,salmeterol xinafoate,imipramine,0,0.999218,,,,,,,,primary,negative_oracle_above_0.5
+A248,novel,93,pacritinib,levonorgestrel,1,0.13715,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A249,older,556,tizanidine,cimetidine,1,0.034072,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A250,older,72,bedaquiline,ofloxacin,1,0.002065,1,N,0,n09,clause,1,1,primary,positive_oracle_below_0.5 positive_rule_flag
+A251,older,181,desvenlafaxine,amphetamine,1,0.000554,1,L,0,l01 l02 l03 l05,clause,0,0,primary,positive_oracle_below_0.5 positive_rule_flag
+A252,novel,55,lonapegsomatropin-tcgd,antipyrine,1,0.3951,0,,0,,clause,1,0,,positive_oracle_below_0.5
+A253,older,144,colesevelam,glyburide,1,0.089582,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A254,older,502,silodosin,digoxin,1,0.0,0,,0,,clause,0,0,primary,positive_oracle_below_0.5
+A255,older,163,darifenacin hydrobromide,itraconazole,1,0.294325,0,,0,,clause,0,0,artifact,positive_oracle_below_0.5

@@ -1,0 +1,1012 @@
+{
+ "source_ref": "a3e1010938fd5ad607f9c5d293f10b92acf4f708",
+ "source_commit": "a3e1010938fd5ad607f9c5d293f10b92acf4f708",
+ "source_commit_date": "2026-10-18T10:47:24-04:00",
+ "tags": [
+  {
+   "tag": "prereg-v1",
+   "tag_type": "annotated",
+   "commit": "897d448fc0053a532194da4793f13319b5df5abc",
+   "commit_date": "2026-10-16T00:36:39-04:00",
+   "author_date": "2026-10-16T00:36:39-04:00",
+   "commit_subject": "Partner-matched OOD negatives, older-drug control set, CPU baselines, audit sheet, revision job runner and evaluation, pre-registration",
+   "tag_object": "51468316dcdb4d3f65507cd271a6a7c4e67d4990",
+   "tagger_date": "2026-10-16T00:36:39-04:00",
+   "tag_subject": "Pre-registered OOD sets, job registry and analysis plan",
+   "preregistration": {
+    "path": "docs/PREREGISTRATION.md",
+    "sha256": "f5cd60a9800b0f13f9aa8591fae41ee7aa396f54e058c523e1ec8bf242b1c931",
+    "bytes": 5289,
+    "git_blob": "cd4b6009cf7bd3d7f8171f9061e81676e26f14b8"
+   },
+   "files_changed_in_tag_commit": [
+    {
+     "path": "ddiood/baselines.py",
+     "sha256": "fcdc3f0b1844768d10cec86154f0827f497cffc9c169bd6d9abf99dc78baac9c",
+     "bytes": 4522,
+     "git_blob": "6f34da37337a4089fff3c20e88f8b99eefc2c197"
+    },
+    {
+     "path": "ddiood/bert.py",
+     "sha256": "176cf97523c0aabb764bf68c5f97414a072a2c7670cfe1e1f970209a36c93a02",
+     "bytes": 5526,
+     "git_blob": "4e4085b4cc80fe3e5b71fdcf391a73f4f8d49c39"
+    },
+    {
+     "path": "ddiood/evaluate2.py",
+     "sha256": "70c26853875d9d0a422d3359ddb83b685adc7a3d8d46d741b3ed6a147686bf6b",
+     "bytes": 21326,
+     "git_blob": "639fc493d39a13172587c8c530ba41c9d02991f3"
+    },
+    {
+     "path": "ddiood/figures2.py",
+     "sha256": "e9a6444b3b83e926e2e6927865bb890cfc96097fc98a703ab63267478c828225",
+     "bytes": 4506,
+     "git_blob": "3e3fedc3fd4ed6b58022a1ba14e6ea6b55ef5187"
+    },
+    {
+     "path": "ddiood/gpu_jobs.py",
+     "sha256": "9d996a71bc38cf11aef238bc55c77b799319e7d60bd8c4e3fe14021576b806d1",
+     "bytes": 12729,
+     "git_blob": "516974c0356b0e85481a127a21ed6e36b75b8fd6"
+    },
+    {
+     "path": "ddiood/inputs.py",
+     "sha256": "5515e07f76ab997d27ed75b34bd4cbe5dee5c0927006ca7420c9e05cf19e52c6",
+     "bytes": 2651,
+     "git_blob": "94c21663e3650bee8e4ab2b8d47792aad82f43d1"
+    },
+    {
+     "path": "ddiood/llm.py",
+     "sha256": "98c5df9d339a4a9ef6cafa742907e9a4a33aa2f09be2477a284e1e698f831324",
+     "bytes": 4681,
+     "git_blob": "5149cd1af76b1d79359a37f73b9f7e898ab46f04"
+    },
+    {
+     "path": "ddiood/ood.py",
+     "sha256": "8bd5cddb11e8f6003ef39cb5684da5e1e337c1c691b3da9abff619aa6608380d",
+     "bytes": 10628,
+     "git_blob": "bd69b2970493a396b825cf31d40e9f969c0b5597"
+    },
+    {
+     "path": "ddiood/pipeline.py",
+     "sha256": "8c456e870fcc5ba372268a875c46a45ebae96c45a4d1ebcc4935ea04c6fc7b8d",
+     "bytes": 19376,
+     "git_blob": "7733241b9cc2540741557def93b0551582bac6ae"
+    },
+    {
+     "path": "ddiood/stats.py",
+     "sha256": "9089f71a9a9fe50e99f0cfbedcf2ee4c7580c3c53800d3892723e22c99ee143f",
+     "bytes": 3285,
+     "git_blob": "8c7e7521d91fa949b80729a96ab225ad93225db7"
+    },
+    {
+     "path": "docs/ABLATION_MATRIX.md",
+     "sha256": "e88f107b0e52a50924783bd58f74027c8a52242e03dc1dcc1364ac80b9f8c2ea",
+     "bytes": 25003,
+     "git_blob": "6105048875f8998f4648a06e83f9b3d6feb4ecc0"
+    },
+    {
+     "path": "docs/EXPERIMENT_PLAN.md",
+     "sha256": "eeb3f371c63dc646f3a519006eab4ec68b5a517de014d09a5fc659246fe1e2d8",
+     "bytes": 35082,
+     "git_blob": "0f6fd8420ba70b9b8d75b3d18eb0ad8b5f170e9c"
+    },
+    {
+     "path": "docs/PREREGISTRATION.md",
+     "sha256": "f5cd60a9800b0f13f9aa8591fae41ee7aa396f54e058c523e1ec8bf242b1c931",
+     "bytes": 5289,
+     "git_blob": "cd4b6009cf7bd3d7f8171f9061e81676e26f14b8"
+    },
+    {
+     "path": "results/corrected/audit/GUIDELINES.md",
+     "sha256": "519d2784627b9538e18615531231ba31fbecf38f88931507ea6dc46c7e7dc2af",
+     "bytes": 2099,
+     "git_blob": "55d5c497bc161204717306cd668dcd87f7083fd9"
+    },
+    {
+     "path": "results/corrected/audit/answer_key.csv",
+     "sha256": "e82b7679ce8f512f93459e7611aae8ffd00fa36816cdabf46142348721558b90",
+     "bytes": 1615,
+     "git_blob": "3b9e43c92aec0fa1c924c75915b75edb404bd476"
+    },
+    {
+     "path": "results/corrected/audit/audit_sheet.csv",
+     "sha256": "2c531b5e28f94b5bcff39c9764ec0f95e61534fe1417e10ea2ddf757e82d5bdc",
+     "bytes": 47672,
+     "git_blob": "81a24b3b80747d9f29864c240cd04b76934731ea"
+    },
+    {
+     "path": "results/corrected/baselines.json",
+     "sha256": "05057a5b7a98719483fa24c35bc9fb5243f61d72a2a58d9a72332723f64eec54",
+     "bytes": 5553,
+     "git_blob": "7f5a15bb73b29471fdaf956c179fe0acdcb9a966"
+    },
+    {
+     "path": "results/corrected/ood_construction_report.json",
+     "sha256": "e7e24608dc44edb1e8d1669d2336332492d011c4f8c5faf48af841966af49d1a",
+     "bytes": 47208,
+     "git_blob": "1240d33d49ee8a8c27270c862e74554ff5ed762f"
+    },
+    {
+     "path": "results/corrected/ood_old_pairs.csv",
+     "sha256": "d30abf999e78584f7e4f85dbaf51c2d8278475b3d9771719ddd9657149cfa70c",
+     "bytes": 352325,
+     "git_blob": "b2f25acab32771823ef833ed526291ab46f5292c"
+    },
+    {
+     "path": "results/corrected/ood_old_pairs_random_negatives.csv",
+     "sha256": "1bf70c9185860c6bf8fa78129c31f156c9e95c333f640c66c337033d0c69b0dd",
+     "bytes": 354097,
+     "git_blob": "eeccf62568fc21c95f1732b30b7ac8510645958d"
+    },
+    {
+     "path": "results/corrected/ood_old_summary.json",
+     "sha256": "f89b1fddfab2946e7b55c0340528713a1fb2dd502929bd39394fcd77b48d985d",
+     "bytes": 679,
+     "git_blob": "9cf9cc3791db27dc67168fe1c86f8402839fd385"
+    },
+    {
+     "path": "results/corrected/ood_pairs.csv",
+     "sha256": "245aa99d3439deba4f461976eb0094da84528d509a1d4616882271f259ba80aa",
+     "bytes": 75791,
+     "git_blob": "0206b5be91a59ba90b5f3d316bcae383e8054ea6"
+    },
+    {
+     "path": "results/corrected/ood_pairs_random_negatives.csv",
+     "sha256": "e238c57c3253f07ae363e846eb2a32061fb52ba944139e91e7a450c329f3c4d2",
+     "bytes": 76111,
+     "git_blob": "6bbbdf0d199b5ad71e3e495c01348badc3e11406"
+    },
+    {
+     "path": "results/corrected/ood_summary.json",
+     "sha256": "a3ab2e852b1ed2139a4be98844d3bd0e6fac1756cdfc0bdeab7833f20aa1fdd1",
+     "bytes": 425,
+     "git_blob": "65f6e0bf6baae3b34bb24d4d104def721acea966"
+    },
+    {
+     "path": "tests/test_baselines.py",
+     "sha256": "2bb1bdbb9a1ea981e1137d892980a0246faf01eca6083696d7667298f67fe0ba",
+     "bytes": 2654,
+     "git_blob": "a02b146302cf04267291a12a63a5ca4a56c90ae4"
+    },
+    {
+     "path": "tests/test_core.py",
+     "sha256": "32230174d2662ccc458dc12a52969d1d926c19f7877735b737fdfacc66d440b2",
+     "bytes": 6466,
+     "git_blob": "8ad3e74beade47dc4ab25876725bbd781fb711ef"
+    },
+    {
+     "path": "tests/test_evaluate2.py",
+     "sha256": "ac1ee7801372aa158360ba05a70f377fcad12f8ab5f9fbf5fc1dc828b1d40577",
+     "bytes": 9911,
+     "git_blob": "5ab03f17baf8d1ecb36618638a55ee504680e774"
+    }
+   ]
+  },
+  {
+   "tag": "prereg-v1-amend4",
+   "tag_type": "annotated",
+   "commit": "742824c7cb5b1d8e8c3bf33bb8e108bd8ddabf96",
+   "commit_date": "2026-10-16T02:58:25-04:00",
+   "author_date": "2026-10-16T02:58:25-04:00",
+   "commit_subject": "Pre-registration amendment 4: within-drug AUROC, Older-clean cohort, power-based decision rules; filed before seeds 1 to 4 were analysed",
+   "tag_object": "4e009ea7a6293f2185fb2339078b5006343f786f",
+   "tagger_date": "2026-10-16T02:58:25-04:00",
+   "tag_subject": "Amendment 4 filed before analysing seeds 1 to 4",
+   "preregistration": {
+    "path": "docs/PREREGISTRATION.md",
+    "sha256": "05a54d595db19e26c6f8d63162202a103a7ff690d68c6b1700ce26bc0994da98",
+    "bytes": 9043,
+    "git_blob": "480a3de67b83b7860394d4cdd94dedc1f4a83bca"
+   },
+   "files_changed_in_tag_commit": [
+    {
+     "path": "ddiood/stats.py",
+     "sha256": "5fd88f8fc509c9ffdd814e5f551936f28c8d3cd3c9bab93f95609097319a3279",
+     "bytes": 3910,
+     "git_blob": "cbd8001fc114a32b5bb79c974b4c2ece5dd40058"
+    },
+    {
+     "path": "docs/PREREGISTRATION.md",
+     "sha256": "05a54d595db19e26c6f8d63162202a103a7ff690d68c6b1700ce26bc0994da98",
+     "bytes": 9043,
+     "git_blob": "480a3de67b83b7860394d4cdd94dedc1f4a83bca"
+    },
+    {
+     "path": "results/corrected/power_analysis.json",
+     "sha256": "272587d11e63c9a005f73477d08d6abf91128eb9e2c71a5baca3e2626e991ab0",
+     "bytes": 3802,
+     "git_blob": "bf6bf7b2780af0a4d022cf81d5449b77ab9433ca"
+    },
+    {
+     "path": "scripts/power_analysis.py",
+     "sha256": "4e227e28ba7dfa972872d2562e0afb54e279766a4f17bb12bdd3f6ddfacd0b76",
+     "bytes": 3006,
+     "git_blob": "5d5fe35ebc48b2811cdf10247b23791fcbbd8ad5"
+    }
+   ]
+  },
+  {
+   "tag": "prereg-v1-amend6",
+   "tag_type": "lightweight",
+   "commit": "cc734456c585f84180579c925a53e08fb6d8e275",
+   "commit_date": "2026-10-16T11:23:05-04:00",
+   "author_date": "2026-10-16T11:23:05-04:00",
+   "commit_subject": "Pre-registration amendment 6 and the evaluator that implements amendments 1 to 6; Older cohort DrugBank check; filed before seeds 1 to 4 were analysed",
+   "preregistration": {
+    "path": "docs/PREREGISTRATION.md",
+    "sha256": "10789828b7d96bf96ea8431dacc76bddc2498c92b4ac4fd91032b9e643297f77",
+    "bytes": 11591,
+    "git_blob": "7df595940645400c07d21626bf2f18bb09b54116"
+   },
+   "files_changed_in_tag_commit": [
+    {
+     "path": "ddiood/evaluate2.py",
+     "sha256": "b84a79d63a5995c707dc678accee867bfb962b9fe7dbc40cf382c13e164e7b05",
+     "bytes": 34970,
+     "git_blob": "be4b79fcab05e307addaee08542907be90bb292b"
+    },
+    {
+     "path": "ddiood/pipeline.py",
+     "sha256": "ac5927cff0e15ee4470a187dded82505e38a14786baf4927dd5565e64c094470",
+     "bytes": 19739,
+     "git_blob": "b435f5916ffccaba062d1282d44bd8182dde634c"
+    },
+    {
+     "path": "ddiood/stats.py",
+     "sha256": "38afc326c22f7ec2e11072c36df35db4a95a5765836b77c4f225831d8a37194b",
+     "bytes": 4097,
+     "git_blob": "c5d8304e41562a404c83ec0e8fbfa7aead371f27"
+    },
+    {
+     "path": "docs/PREREGISTRATION.md",
+     "sha256": "10789828b7d96bf96ea8431dacc76bddc2498c92b4ac4fd91032b9e643297f77",
+     "bytes": 11591,
+     "git_blob": "7df595940645400c07d21626bf2f18bb09b54116"
+    },
+    {
+     "path": "results/corrected/drugbank_validation_old_summary.json",
+     "sha256": "26fb5659e7b839170ce348806007410fd9ee9f98cd63ea16615ba20ebecd64f5",
+     "bytes": 228,
+     "git_blob": "0417d77b81b58df92c3b3644d8c8f8671f62bc8b"
+    },
+    {
+     "path": "scripts/power_analysis.py",
+     "sha256": "e691ccc4affa8412c9862ecdaa3f50b19a953c98ddf1a86278a15e4406d90a50",
+     "bytes": 3045,
+     "git_blob": "f2d02b41d2a8d499afff7ac7c46085c18150a8cb"
+    },
+    {
+     "path": "tests/test_evaluate2.py",
+     "sha256": "8a291bcfac4a36e2f06c543c85aed0fee5c2cb92504466048a22afec834af435",
+     "bytes": 11994,
+     "git_blob": "15214b1a44faa3520c2f6fa1037fd7fc6ec3569e"
+    }
+   ]
+  },
+  {
+   "tag": "prereg-v1-amend7",
+   "tag_type": "annotated",
+   "commit": "fb91d06ddc930898697c02e241f419d5055b3c46",
+   "commit_date": "2026-10-16T22:06:01-04:00",
+   "author_date": "2026-10-16T22:06:01-04:00",
+   "commit_subject": "Amendment 7: post hoc integrity controls, evidence reader and model panel, with frozen code, inputs, thresholds and analysis",
+   "tag_object": "02c70c2bc0b2de4c9e464d7797c1d578698af6e6",
+   "tagger_date": "2026-10-16T22:06:01-04:00",
+   "tag_subject": "Amendment 7 freeze before any E7, E8 or E9 job",
+   "preregistration": {
+    "path": "docs/PREREGISTRATION.md",
+    "sha256": "3b435826a9c521b13f2581e0db7ea1c4a1b8c3f84e266ff45248eb5eb12a0d0f",
+    "bytes": 47037,
+    "git_blob": "d0e6c54d122f914f61bf1b3e4642013dbedd08d2"
+   },
+   "files_changed_in_tag_commit": [
+    {
+     "path": "artifacts/amend7/hub_candidates.json",
+     "sha256": "90a2c723f184d8d9f7e3d61ab417cac191a73d74639fee1d9e56c636f175679b",
+     "bytes": 13974,
+     "git_blob": "f09af8b317a3e365ee3edb91acafa2ad1b08f7ac"
+    },
+    {
+     "path": "artifacts/amend7/input_audit.json",
+     "sha256": "7f00977e4822541cf21f6c0975dc0de8786052b228ced95a4c8b7a56943ba2e7",
+     "bytes": 16507,
+     "git_blob": "57b4c7ac3ce368cb29c5d0711698ba4e2f6e1412"
+    },
+    {
+     "path": "artifacts/amend7/manifest.json",
+     "sha256": "69bda837a89de0787188da1a0d63ad9a12e210c74cc9532f5e2344e0f3c9e808",
+     "bytes": 2539,
+     "git_blob": "ce91a9dc2bfc359a9ab156165ca626336d62e15c"
+    },
+    {
+     "path": "artifacts/amend7/panel_manifest.json",
+     "sha256": "0b871f4b60f4f8c9cdeddd10f256eb4e9da568a50d4e4fa812502349dace2198",
+     "bytes": 3003,
+     "git_blob": "fda7156bcdaf24da4e11a65844cfe288eff9b2ab"
+    },
+    {
+     "path": "artifacts/amend7/primary_sets.json",
+     "sha256": "cbb70a1ab351af53a2c529a2304367373bf9c19f052832eeb35a0c59cf3bfe3f",
+     "bytes": 3552,
+     "git_blob": "65dda0245b4e38b2e4d7457807da6b801ecc4dcb"
+    },
+    {
+     "path": "artifacts/amend7/stem_names.json",
+     "sha256": "dd96836bf45719c5d04572b32d2577dfb77227563d2df0da17282a6e9275e14f",
+     "bytes": 14585,
+     "git_blob": "3d0f8cd122eced25a541375cf9b93f536568152b"
+    },
+    {
+     "path": "artifacts/amend7/time_estimates.json",
+     "sha256": "0a2cf7b2a8139cdc9f5cb87e8cb69f61bdf14af1e4f607be65ad385d838e4565",
+     "bytes": 5191,
+     "git_blob": "a7188b1ae26597b8196c5b6b12ca6e63b312eddc"
+    },
+    {
+     "path": "artifacts/amend7/train_pairs.csv",
+     "sha256": "9ee22ba04116844253c84e531dc2f9ff05a1cef3dcf86ea983e50153a24a8e0e",
+     "bytes": 925542,
+     "git_blob": "767b953f4092e7704534519c9c0d5058539562ea"
+    },
+    {
+     "path": "artifacts/amend7/train_pairs_report.json",
+     "sha256": "31fdf93925b2634aaea1e96e77e1c7d8e2adea0e32a726d0bb80ec9a16d0fd79",
+     "bytes": 7713,
+     "git_blob": "d6c9e5015af941baa3cdfec0e75f4b8a9f91c23a"
+    },
+    {
+     "path": "colab/experiments/E7_positive_control_part1.ipynb",
+     "sha256": "a9b86b87b1f8c05a81fc7d155ae8299fd0d15a6aa2ed76efa0ca2dc8c776cc02",
+     "bytes": 2982,
+     "git_blob": "609c89d0e7f404f47d2006b668a7c6f0ee7d8e5f"
+    },
+    {
+     "path": "colab/experiments/E7_positive_control_part2.ipynb",
+     "sha256": "513e43cb85d07cf35da6972d245d99d3c7445bc4bb21a3fa38d854d3ad7dba75",
+     "bytes": 2821,
+     "git_blob": "78b66d1081a2eeb75d54dae0a69e066a790cb412"
+    },
+    {
+     "path": "colab/experiments/E8_evidence_reader.ipynb",
+     "sha256": "9f61c50cee5a5e4a5eacd40dac54e559173e6c5c79dc28a4006c5888ccd1b4e9",
+     "bytes": 2790,
+     "git_blob": "91d955c1fd90ec6bc2321cfddf2de9c10ba616d1"
+    },
+    {
+     "path": "colab/experiments/E9_model_panel_part1.ipynb",
+     "sha256": "ce092b4437d77ebbf3fa958d15ccf79ae8d080da08715418bf31632a7ff062ea",
+     "bytes": 2867,
+     "git_blob": "0755f56864d427490d8a05aa53124b1173609a95"
+    },
+    {
+     "path": "colab/experiments/E9_model_panel_part2.ipynb",
+     "sha256": "5e6613a0760e8ebfa64edee92bf5ab735a7d58dea14f66de3f7839ddd8f72d58",
+     "bytes": 3027,
+     "git_blob": "4198b12de165c220d606a497ea39a9ef1852f3ed"
+    },
+    {
+     "path": "ddiood/amend7_analysis.py",
+     "sha256": "7e37f37ce847cd825701e1d5e3e4494a0ee06b74c8970678d59463db475f0c78",
+     "bytes": 19788,
+     "git_blob": "0969459345620767673b424ed5917f42ecd9a019"
+    },
+    {
+     "path": "ddiood/amend7_data.py",
+     "sha256": "3c1847a2c0e59fafe612f205c71d6abd15860f5012b9bbf1027f25ed247e4e00",
+     "bytes": 6015,
+     "git_blob": "641f4f80f2e7a1bd1179c809ac0c99e7d5b3f27a"
+    },
+    {
+     "path": "ddiood/amend7_evidence.py",
+     "sha256": "adfb7de3320696bfe19a0c848f9db2377d9a112f890d3e312097c2cad255aa8e",
+     "bytes": 9902,
+     "git_blob": "ba8d88228d49314d33398c81711036f4224328b7"
+    },
+    {
+     "path": "ddiood/amend7_inputs.py",
+     "sha256": "b04d5c36898bafb037d6bca9d325ac863d55c72e8156af53a4e82cfa34248663",
+     "bytes": 3826,
+     "git_blob": "bb3c35c9bf75bcebe0e3785a700aeeccf82882b2"
+    },
+    {
+     "path": "ddiood/amend7_jobs.py",
+     "sha256": "f32fa519d4475117cf4fbf9f2c9d5b6a97860b4c50a6e5033d5c6b2a9f4451ba",
+     "bytes": 17281,
+     "git_blob": "e31cb8ac44c74c5522ab8f1244ff7a957f97fb1c"
+    },
+    {
+     "path": "ddiood/amend7_llm.py",
+     "sha256": "ec69427d088a6d6a4c2c2c353c841c8a983452fad9d91509f5e823ad22c0065b",
+     "bytes": 3394,
+     "git_blob": "027e91f6970e9fc7c437f126dd84cb9822ddc62b"
+    },
+    {
+     "path": "ddiood/amend7_pairs.py",
+     "sha256": "358af71675c1c3d0ddea92dc9ee08ac5be0198796b66588daa11223a4b4ad7b7",
+     "bytes": 10340,
+     "git_blob": "2b2f043ac6f8b840d9936c54ae8934c07076a13c"
+    },
+    {
+     "path": "ddiood/amend7_panel.py",
+     "sha256": "df478ca53341e55c3e36b213fc9bdc3a6e54ea04952b9107a46d3f7d4436730e",
+     "bytes": 9304,
+     "git_blob": "0f972bf1ac9e713cf4bc628315b55dca71d8613a"
+    },
+    {
+     "path": "ddiood/amend7_prompts.py",
+     "sha256": "ee68e8595cac09459a4f91a34776a50339b0feb8409109c767142f67e3f8c595",
+     "bytes": 4307,
+     "git_blob": "3de124634f94e1db330b0f1ea3c1c2163c9419fd"
+    },
+    {
+     "path": "ddiood/amend7_retrieval.py",
+     "sha256": "80ea0707bb091edd88d8da97d01218baf6cd3c1709628eaafeaced95418f2515",
+     "bytes": 4213,
+     "git_blob": "faaa24f699eae0e8c4e13b86f93be44ec740e57a"
+    },
+    {
+     "path": "ddiood/amend7_train.py",
+     "sha256": "9bdcc18318f4e7c188d9735d5cd1db7cfe7a492831f3bf146dfb06b90faa9a37",
+     "bytes": 4120,
+     "git_blob": "63e828f2353458cec838c7e90275d3007684f411"
+    },
+    {
+     "path": "docs/PREREGISTRATION.md",
+     "sha256": "3b435826a9c521b13f2581e0db7ea1c4a1b8c3f84e266ff45248eb5eb12a0d0f",
+     "bytes": 47037,
+     "git_blob": "d0e6c54d122f914f61bf1b3e4642013dbedd08d2"
+    },
+    {
+     "path": "scripts/amend7_analysis.py",
+     "sha256": "b970495a5795983844a66f595ba6431b7815a05a0f37f0245c3a5f11228cd152",
+     "bytes": 3576,
+     "git_blob": "c11afd1fbb9362204e3c73e8b86d9a517ab622a8"
+    },
+    {
+     "path": "scripts/amend7_build_bundle.sh",
+     "sha256": "49ff38dca7138249f790caa57950f7768a742b38ab01feefd636bce86df721b3",
+     "bytes": 907,
+     "git_blob": "d5440e822f0f3c1d96f8061c9cdb3e31f1c566d2"
+    },
+    {
+     "path": "scripts/amend7_build_inputs.py",
+     "sha256": "4197a91cad978a8d6c7626308c961fbdd2997edf726dedca045f586bf6db9239",
+     "bytes": 15888,
+     "git_blob": "26be2ead3340fd7611daf0bb5998146c95c2f326"
+    },
+    {
+     "path": "scripts/amend7_build_manifest.py",
+     "sha256": "90247256af7759be66c0dd1dd3e57650def372d924d2ced1052c7baab168f847",
+     "bytes": 1785,
+     "git_blob": "00b552c6364685e9df3b6e7dc6cdc328927ccaeb"
+    },
+    {
+     "path": "scripts/amend7_build_pairs.py",
+     "sha256": "fe79f6e4e922befa9418527dcb1b574bd8a0518669aa9d7a9a0162ce44f4705e",
+     "bytes": 1719,
+     "git_blob": "f949ce8cabc355e5410f0c406983619d5ac0a8d2"
+    },
+    {
+     "path": "scripts/amend7_build_retrieval.py",
+     "sha256": "38d16b35ebf4245adb56027a5e80bba4a95dba373b56f0faf7d19527cff5de19",
+     "bytes": 6365,
+     "git_blob": "dc93c28e313df89740382dca796c7cda8649c1b6"
+    },
+    {
+     "path": "scripts/amend7_cpu_exp5_dissociation.py",
+     "sha256": "4479ae8255181af573a8462c1d817f85636c460985abe62c28e4761d5408fcd3",
+     "bytes": 13199,
+     "git_blob": "8ae14587270a1ea5fb8cba9e8a76d3a4c10f938c"
+    },
+    {
+     "path": "scripts/amend7_estimate.py",
+     "sha256": "6c964d9a85d1ce3cb2500852e6d7dd993aea96acfee8b23e4d9df2791fc1f480",
+     "bytes": 3661,
+     "git_blob": "961272b3cd8963cbcf5ac0a735ce9c3a94f6ec36"
+    },
+    {
+     "path": "scripts/amend7_hub_search.py",
+     "sha256": "e4da7802908ccd100173dd8fe0e9a108b26d331a8d10d5855f8cc692e19d8224",
+     "bytes": 4835,
+     "git_blob": "67fb60d6f03243bcc668a5e7ac3eb405e1b5a221"
+    },
+    {
+     "path": "scripts/amend7_make_notebooks.py",
+     "sha256": "44c8425460dc492f90a654831ab5804ca09c2c6362f7d4afa22ab40b3e971c13",
+     "bytes": 2829,
+     "git_blob": "e5d38d55c9c14f8c9aaf57a018670fa28bdf7bf8"
+    },
+    {
+     "path": "scripts/amend7_panel_manifest.py",
+     "sha256": "7aa45e5c8f1db6fe023cf7ff878a35e6a467c412c3a681f952dd0cfae2aa58fb",
+     "bytes": 1592,
+     "git_blob": "412b1f12e7a5f02ea65224a3336ff194de008687"
+    },
+    {
+     "path": "scripts/amend7_refresh_ownlabel.py",
+     "sha256": "c0673b0571e1af2396320a47aa3eb53815d12c26da8acd80af2065f893b34ae7",
+     "bytes": 2938,
+     "git_blob": "5f8d681e1e59594f75034df19fa73071ef3fa30b"
+    },
+    {
+     "path": "scripts/amend7_smoke.py",
+     "sha256": "7462c08aa1aecad185f38a013b897a32787557b8ffbc6ba8470f1b83d4cb3d10",
+     "bytes": 3609,
+     "git_blob": "d2df937daa25c6547e7795a6aa68bef381625fc2"
+    },
+    {
+     "path": "scripts/amend7_write_amendment.py",
+     "sha256": "fe808c03496dbefea781ff8db4582abeb16aa566a3da2779bbd4457790102b97",
+     "bytes": 35703,
+     "git_blob": "972a9340247a25eb288217b8510462d79f3e4dff"
+    },
+    {
+     "path": "tests/test_amend7.py",
+     "sha256": "37005b3ef1c28a4392b07ba7b9639c260bbddec47f76681398496bfee5c3e35b",
+     "bytes": 13642,
+     "git_blob": "ac50eca54439e5f1d81375885c6d09af6799cc0d"
+    },
+    {
+     "path": "tests/test_amend7_analysis.py",
+     "sha256": "1dfb2b662d55a20244e78cc5c4d151aff761c4b9f2821e3c86b6ab3e9652fd1d",
+     "bytes": 9232,
+     "git_blob": "75a836d22b2b811ba04063fc2771766d4e498323"
+    }
+   ]
+  }
+ ],
+ "prediction_manifests": [
+  {
+   "path": "results/revision/amend7/preds_sha256.txt",
+   "sha256": "3bee70bec5a6534d872c5900c2d6e402812551d0d86ff03d2c1ac9254172c5a9",
+   "bytes": 5415,
+   "entries": 58,
+   "first_commit": "edb368b06093342458228e5eb33ec60338b9acc7",
+   "first_commit_date": "2026-10-17T00:02:35-04:00"
+  },
+  {
+   "path": "results/revision/amend7/preds_cpu_sha256.txt",
+   "sha256": "d0dfea62f949fac86bdce9a162f58e2e5246bbbbf03ac9ec0dfc37dedc6243b3",
+   "bytes": 1644,
+   "entries": 17,
+   "first_commit": "edb368b06093342458228e5eb33ec60338b9acc7",
+   "first_commit_date": "2026-10-17T00:02:35-04:00"
+  }
+ ],
+ "revision_predictions": [
+  {
+   "path": "results/revision/preds/b1names-bertbase-s42.json",
+   "sha256": "0223738fd53657d77f65162d726d44db7d01ecc5610f70ba1e08013c26abb476",
+   "bytes": 176932,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b1names-biobert-s42.json",
+   "sha256": "2f880a0ad8ee906f92e7f9c49183967dbbf1565b81122c5d6770207faf574e67",
+   "bytes": 176956,
+   "first_commit": "819c5f4681720294b78d169375a098a517e679fb",
+   "first_commit_date": "2026-10-16T19:57:42-04:00"
+  },
+  {
+   "path": "results/revision/preds/b1names-biomedbert-disjoint-s42.json",
+   "sha256": "1260a38e57dc72ff4c0757ccdf490c1a8e4489513c84246b84f45923f15dddfd",
+   "bytes": 184034,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b1names-biomedbert-s1.json",
+   "sha256": "ea4b1b799343291f3acf1bbcc439276d867c31a75424a6e6fa27c25a92117dff",
+   "bytes": 176968,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b1names-biomedbert-s2.json",
+   "sha256": "7574a3fa2639fb914ad75646fc4f24d652fe33ef7996afb59f8cd6580ecd8687",
+   "bytes": 176899,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b1names-biomedbert-s3.json",
+   "sha256": "57a8e9807669779a4b0925f11ae932c23445cf8fc842caf80ea6c8840669949d",
+   "bytes": 176933,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b1names-biomedbert-s4.json",
+   "sha256": "6a59609c044d84f32da0689c8f50bb4c4ff87b9064c3de8abc466d2d142d5085",
+   "bytes": 176909,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b1names-biomedbert-s42.json",
+   "sha256": "05273f1d8f7ca58f22c68a80cc08ffc3e80f23ae3fae625228aabe91ac1984b3",
+   "bytes": 177011,
+   "first_commit": "be350b63a6ffa1a340c93ecc9bb7f446d6864e67",
+   "first_commit_date": "2026-10-16T02:44:30-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2masked-biomedbert-s1.json",
+   "sha256": "84462dab6edc84af5ed6280b455007bce28043b7109b8f616d075d1afa0805ad",
+   "bytes": 298511,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2masked-biomedbert-s2.json",
+   "sha256": "13bd9ce4529c7147a690fc2da8b2ff71d2efffb9bd5b03c3eb7d1678fa615149",
+   "bytes": 298536,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2masked-biomedbert-s3.json",
+   "sha256": "6588131236af246cb9fb6e0af2f0ec44f4860820f1bd50f4a95806d3e6ea50fd",
+   "bytes": 298388,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2masked-biomedbert-s4.json",
+   "sha256": "46ad4ab9a0ed428cda1cb3c903c9436c68a89603205d0f2606105733312e67ba",
+   "bytes": 298556,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2masked-biomedbert-s42.json",
+   "sha256": "d04ea879a44a07a251fbf09afa1db9cac0655ffe9f93ec63096c0bfa283c0a33",
+   "bytes": 298444,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-bertbase-s1.json",
+   "sha256": "8b8abdc16e7fb929f1cf87f5f6f64b971bed4715897cdd5b465a7918c53b8342",
+   "bytes": 298508,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-bertbase-s2.json",
+   "sha256": "19e8cbe2f820bdac91cbe40e161afc47f89d03af81b73b08a0e57f24537e3d04",
+   "bytes": 298453,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-bertbase-s3.json",
+   "sha256": "63e6dd40c2714d6e1bcd443379d2b17593504e49cb92e1bf7aac2c9e2170d923",
+   "bytes": 298575,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-bertbase-s4.json",
+   "sha256": "a602065aa3ad1678c40c22d27ec8abdba334c5f3cf04034dae9b64cadade6087",
+   "bytes": 298465,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-bertbase-s42.json",
+   "sha256": "98191504e44364feb671ad8f5ab146dfab6def788c0868ee6f272903a5155cb1",
+   "bytes": 298660,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-biobert-s42.json",
+   "sha256": "6c24b487e0cc015b5b534905c986f9841f4b0e18a68efe4be26981a269fd1a87",
+   "bytes": 298468,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-biomedbert-disjoint-s42.json",
+   "sha256": "0058875bafd2ce975ce9746946064f8328cbb1e5e4d03cdd4ef2588107e33cc5",
+   "bytes": 305722,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-biomedbert-s1.json",
+   "sha256": "0c93e6d70eb778e90d4f3971cca8c92ac29028dcdd34bbfbc0f954c89885ff39",
+   "bytes": 298567,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-biomedbert-s2.json",
+   "sha256": "837af29f93d0b223816b645abf9f54ebf583824dc0d49c81b3d9373656827b58",
+   "bytes": 298494,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-biomedbert-s3.json",
+   "sha256": "cbc8281ab792a46706d54a4f81cc44e0ca4d7410047c564ad29a5f606b651588",
+   "bytes": 298529,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-biomedbert-s4.json",
+   "sha256": "15a8ce62d5db6357eec8b8e9563b5391ed5b522b47cd885ed49d3f2ab53b15c0",
+   "bytes": 298510,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2mixed-biomedbert-s42.json",
+   "sha256": "7253a344f19c4bf9b0674c7241ce861f4c70cde74c05e87bc09e3bb79cdebee1",
+   "bytes": 298737,
+   "first_commit": "be350b63a6ffa1a340c93ecc9bb7f446d6864e67",
+   "first_commit_date": "2026-10-16T02:44:30-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-bertbase-s1.json",
+   "sha256": "0f748f0651b829477a04822f4ccbd3e74972971c41be6a96691430aeb89d1534",
+   "bytes": 298555,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-bertbase-s2.json",
+   "sha256": "cc1c8e677d8ab0f1640eb87bf0e5d42dce553e8e07fac4f60e772b449cae96dc",
+   "bytes": 298600,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-bertbase-s3.json",
+   "sha256": "e94185b11abc3028b608dc01f00d8efe7d9d53ce1e0e3fd9f55ee2815cdf0f20",
+   "bytes": 298451,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-bertbase-s4.json",
+   "sha256": "aa550314d67f7419cc52069c929dc292f15e950e362cd2486bcbc1c6a96d4b32",
+   "bytes": 298553,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-bertbase-s42.json",
+   "sha256": "62eb78a3330d7f13cec875fb855eecc1cfbb2cf00eb25b0a8a456d6c0e6d6f13",
+   "bytes": 298492,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-biobert-s42.json",
+   "sha256": "82d71d638f397266618f01a41de63c44cd1f14e2b96fa7f72c00b393bd376644",
+   "bytes": 298443,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-biomedbert-disjoint-s42.json",
+   "sha256": "17f4f0d8dc391b0d43693d42d5de50fd961fcaec8c725fdef15f0dc5c087ef7d",
+   "bytes": 305627,
+   "first_commit": "b29a2abace4d4bdad44821486cef858569439b00",
+   "first_commit_date": "2026-10-16T17:28:35-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-biomedbert-s1.json",
+   "sha256": "b72229072d1261a8e169569e641cd13b249312fa3608e6b4b79404e2492803fa",
+   "bytes": 298321,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-biomedbert-s2.json",
+   "sha256": "2cc4ee9b9d984d02cb7ac337d5675a2447666f18a0bcb84dc7df0139e22bfb47",
+   "bytes": 298543,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-biomedbert-s3.json",
+   "sha256": "18013ea9ae6f17ad5071c5469607822fdb50b58d139a1b8934a45fec82624264",
+   "bytes": 298547,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-biomedbert-s4.json",
+   "sha256": "abd22eb8e0e04e0d24b23bb2b92cd9a9edb1d5f8a9c2606f280323d9188cf393",
+   "bytes": 298340,
+   "first_commit": "7f24d69744d6ee4a7a223cdc468a9bcae844fe4c",
+   "first_commit_date": "2026-10-16T12:03:50-04:00"
+  },
+  {
+   "path": "results/revision/preds/b2sentence-biomedbert-s42.json",
+   "sha256": "6de2df3a222cf16816ee74a2f40f6da30b40fcf131e894b2ecafbef4d9913849",
+   "bytes": 298251,
+   "first_commit": "6c36db98347b627e8fe2343fb498b2ad49e5ada3",
+   "first_commit_date": "2026-10-16T01:15:57-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-bm25-k5-c400-biomedbert-s42.json",
+   "sha256": "a5266e54ddbb465716cf18d94d12f018a405fd7ec5ae163533bd3ae1c0c8caa4",
+   "bytes": 43325,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-contaminated-k5-c400-biomedbert-s1.json",
+   "sha256": "ab6fa01a03330f61f7185a1084863e727bfa84090152d05e2c9a90116ee5a37f",
+   "bytes": 43564,
+   "first_commit": "819c5f4681720294b78d169375a098a517e679fb",
+   "first_commit_date": "2026-10-16T19:57:42-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-contaminated-k5-c400-biomedbert-s2.json",
+   "sha256": "a92f59d2acb2a704275013a6673424e186a0b744e6a186c4f4a39c0ffd1120f0",
+   "bytes": 43211,
+   "first_commit": "819c5f4681720294b78d169375a098a517e679fb",
+   "first_commit_date": "2026-10-16T19:57:42-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-contaminated-k5-c400-biomedbert-s3.json",
+   "sha256": "bd4d7611966332df74c2a6a92a0a9e55164f0fcc8311ac3691b8a0dafca85cd6",
+   "bytes": 43427,
+   "first_commit": "819c5f4681720294b78d169375a098a517e679fb",
+   "first_commit_date": "2026-10-16T19:57:42-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-contaminated-k5-c400-biomedbert-s4.json",
+   "sha256": "ee179d8d2a82a2e4cd3341cccac4f174c86fd78efe0bfb13f204ce3959b7c907",
+   "bytes": 43671,
+   "first_commit": "819c5f4681720294b78d169375a098a517e679fb",
+   "first_commit_date": "2026-10-16T19:57:42-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-contaminated-k5-c400-biomedbert-s42.json",
+   "sha256": "15d3adbcd00f945cd94e64682b5d782ab6d69c10c04f4f722b5236d312361565",
+   "bytes": 43672,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-dense-k5-c400-biomedbert-s42.json",
+   "sha256": "c81ef8455cb58a34020a21664260509d24cf91fe3882731b59d07e8e9e51fa00",
+   "bytes": 43637,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-excl_clinical_pharmacology-k5-c400-biomedbert-s42.json",
+   "sha256": "3fd654ff6a10cbc3c66c0a21a0a2063b99a06383c2240e6cc9b72befd4d60611",
+   "bytes": 43667,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-excl_mechanism_of_action-k5-c400-biomedbert-s42.json",
+   "sha256": "42ff127747be49aab0acae2ee366d8ebafa4d08d5df12bcdb5440d5a6e408b5d",
+   "bytes": 43667,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-excl_pharmacokinetics-k5-c400-biomedbert-s42.json",
+   "sha256": "4fa965f46e4e8d53dfafb828ebb0f91bf9e6f790bc1e4374f697d8a0fc0fa075",
+   "bytes": 43619,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-excl_warnings_and_cautions-k5-c400-biomedbert-s42.json",
+   "sha256": "75740148687978c3949610f2a0fbf35746e373f626dfea00b74c304a59d2c8bf",
+   "bytes": 43711,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-hybrid-k1-c400-biomedbert-s42.json",
+   "sha256": "656d467324ea12be12f776d188d828e1083461ac9eb3d0f8870f3bee9cb6bf99",
+   "bytes": 43682,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-hybrid-k3-c400-biomedbert-s42.json",
+   "sha256": "38f9e0803201ccae0aa7378eb7791452f515e65b5a7af6e0fac55ae715b8afdd",
+   "bytes": 43640,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-hybrid-k5-c100-biomedbert-s42.json",
+   "sha256": "07df59fdbba82f3b8ab881a29950fcf4f1504f8ea4930ec90bbc6ec2b6c42576",
+   "bytes": 43074,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-hybrid-k5-c400-biomedbert-s1.json",
+   "sha256": "ffeb6af78fdc1584b855a0b63c50860eb774907bf6b2213279b7880b3d85059d",
+   "bytes": 43690,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-hybrid-k5-c400-biomedbert-s2.json",
+   "sha256": "0f525291689bfb3c631186f9f67ac5990f9fd829eacbafd56118ac3351927c16",
+   "bytes": 43536,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-hybrid-k5-c400-biomedbert-s3.json",
+   "sha256": "9598c56265f83478714574ab5207414c1eb01ca4113652d6aff4a0361be395be",
+   "bytes": 43674,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-hybrid-k5-c400-biomedbert-s4.json",
+   "sha256": "eef76edf7ff4d03bb68ba34d307a30aaad9fcbccaecdce83faf250cca3e865c0",
+   "bytes": 43085,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-hybrid-k5-c400-biomedbert-s42.json",
+   "sha256": "d3b877617a7cbb076dd31e3a3cae7badae36d9ac3f811e9b48a8f3f6de678296",
+   "bytes": 43689,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/krag-masked-k5-c400-biomedbert-s42.json",
+   "sha256": "c1fcb87062288d2329d049500d4577003dee803dadc11692dcd61b04110e9062",
+   "bytes": 43654,
+   "first_commit": "c2651c5c2d365a81f034f085e4c928b8f21202e4",
+   "first_commit_date": "2026-10-16T19:04:09-04:00"
+  },
+  {
+   "path": "results/revision/preds/llm-biomistral-names.json",
+   "sha256": "45f4d701b152b274f1acd3d773d6feab9d438dc04daca7897bb8385dc66967bd",
+   "bytes": 67524,
+   "first_commit": "bfe4b9dd8034aa4f4c7e5d581d8577b28c9dd390",
+   "first_commit_date": "2026-10-16T19:16:14-04:00"
+  },
+  {
+   "path": "results/revision/preds/llm-biomistral-rag.json",
+   "sha256": "b3882f21aef50da7255c20929e0ae8f74826d665d069cb6f8435f21c94405247",
+   "bytes": 42416,
+   "first_commit": "bfe4b9dd8034aa4f4c7e5d581d8577b28c9dd390",
+   "first_commit_date": "2026-10-16T19:16:14-04:00"
+  },
+  {
+   "path": "results/revision/preds/llm-qwen-names.json",
+   "sha256": "a73dc39bc3879bbde6bb0c6e591478d5aa01d2304f750e0a45ddbaf2b02a6d71",
+   "bytes": 67523,
+   "first_commit": "bfe4b9dd8034aa4f4c7e5d581d8577b28c9dd390",
+   "first_commit_date": "2026-10-16T19:16:14-04:00"
+  },
+  {
+   "path": "results/revision/preds/llm-qwen-rag.json",
+   "sha256": "0befa64c07b8ad3578f0e943a75df0a53289b3f0bc8519a85590de2a5900a7ea",
+   "bytes": 42343,
+   "first_commit": "bfe4b9dd8034aa4f4c7e5d581d8577b28c9dd390",
+   "first_commit_date": "2026-10-16T19:16:14-04:00"
+  }
+ ],
+ "decisions": {
+  "path": "results/revision/eval/decisions.json",
+  "sha256": "a13f1c45472447893edd3401981de2e3f8507e8aa16209db50ea633bf6c2199a",
+  "bytes": 4597
+ }
+}

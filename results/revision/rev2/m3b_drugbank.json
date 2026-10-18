@@ -1,0 +1,471 @@
+{
+ "status": "post hoc and descriptive; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "criteria": {
+  "drugbank_source": "~/Downloads/drugbank_all_full_database.xml.zip; version and exported-on read from the drugbank root element and written to every output",
+  "resolution": "the experiment 5 rule (scripts/amend7_cpu_exp5_dissociation.py resolve, equivalent to ddiood.drugbank.validate): names plus RxNorm normalized and canonicalized forms from artifacts/vocab/drug_lookup.json; listed if either drug's DrugBank interaction list names the other",
+  "a_random_pairs": "the SemEval vocabulary is the 992 keys of artifacts/vocab/drug_lookup.json; 10000 unordered pairs of two keys with different RxCUI drawn uniformly with replacement of pairs (numpy RandomState(1)); primary rate = listed / pairs with at least one drug resolved (the exp5 'resolvable' denominator); also listed / all and listed / both resolved; Wilson 95% intervals. Secondary: the same with one key per RxCUI (alphabetically first key). Compared with SemEval test negatives and positives on the same denominators, with and without self pairs",
+  "b_by_source": "DrugBank lookup pooled AUROC on SemEval test against binary SemEval labels, by corpus folder (DrugBank = DDI-DrugBank documents, MedLine = DDI-MedLine abstracts), all pairs and without self pairs (case and space normalised same name), unresolvable counted as not listed, sentence-cluster bootstrap 1000 draws seed 42 (ev.boot_auroc)",
+  "c_string_match": "non_di_label_string_match pooled AUROC with intervals copied from results/corrected/baselines.json (two-way cluster bootstrap, seed 42); additionally within-drug AUROC on Novel and Older-clean from results/corrected/baseline_scores.json with paired_draws two-way intervals (1000, seeds 1042 / 42)",
+  "d_subgroups": "algebraic decomposition: for a 0/1 score AUROC = 0.5 (1 + TPR - FPR); report TPR and FPR per subgroup and the subgroup weights among positives and among negatives that produce the pooled value, for all 2810 pairs and without self pairs"
+ },
+ "drugbank_release": {
+  "file": "drugbank_all_full_database.xml.zip",
+  "version": "5.1",
+  "exported_on": "2026-03-05",
+  "root_element": "<drugbank xmlns=\"http://www.drugbank.ca\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.drugbank.ca http://www.drugbank.ca/docs/drugbank.xsd\" version=\"5.1\" exported-on=\"2026-03-05\">"
+ },
+ "listing_rates": {
+  "random vocabulary pairs (names)": {
+   "n_names": 992,
+   "draws_including_rejected": 10016,
+   "n": 10000,
+   "resolvable": 9944,
+   "both_resolved": 8732,
+   "listed": 3530,
+   "listed_share_of_all": 0.353,
+   "ci95_all": [
+    0.343691,
+    0.362422
+   ],
+   "listed_share_of_resolvable": 0.354988,
+   "ci95_resolvable": [
+    0.345641,
+    0.364447
+   ],
+   "listed_share_of_both_resolved": 0.40426,
+   "ci95_both_resolved": [
+    0.394011,
+    0.414593
+   ]
+  },
+  "random vocabulary pairs (one name per RxCUI)": {
+   "n_names": 918,
+   "draws_including_rejected": 10014,
+   "n": 10000,
+   "resolvable": 9943,
+   "both_resolved": 8640,
+   "listed": 3427,
+   "listed_share_of_all": 0.3427,
+   "ci95_all": [
+    0.33346,
+    0.352061
+   ],
+   "listed_share_of_resolvable": 0.344665,
+   "ci95_resolvable": [
+    0.335385,
+    0.354065
+   ],
+   "listed_share_of_both_resolved": 0.396644,
+   "ci95_both_resolved": [
+    0.386376,
+    0.407002
+   ]
+  },
+  "SemEval test negatives": {
+   "n": 2439,
+   "resolvable": 2377,
+   "both_resolved": 2261,
+   "listed": 1609,
+   "listed_share_of_all": 0.659697,
+   "ci95_all": [
+    0.640655,
+    0.678236
+   ],
+   "listed_share_of_resolvable": 0.676904,
+   "ci95_resolvable": [
+    0.657831,
+    0.695405
+   ],
+   "listed_share_of_both_resolved": 0.711632,
+   "ci95_both_resolved": [
+    0.692613,
+    0.729933
+   ]
+  },
+  "SemEval test positives": {
+   "n": 371,
+   "resolvable": 362,
+   "both_resolved": 321,
+   "listed": 263,
+   "listed_share_of_all": 0.708895,
+   "ci95_all": [
+    0.660717,
+    0.752791
+   ],
+   "listed_share_of_resolvable": 0.726519,
+   "ci95_resolvable": [
+    0.678403,
+    0.769879
+   ],
+   "listed_share_of_both_resolved": 0.819315,
+   "ci95_both_resolved": [
+    0.773528,
+    0.857549
+   ]
+  },
+  "SemEval test negatives, no self pairs": {
+   "n": 2150,
+   "resolvable": 2108,
+   "both_resolved": 1992,
+   "listed": 1609,
+   "listed_share_of_all": 0.748372,
+   "ci95_all": [
+    0.729597,
+    0.766261
+   ],
+   "listed_share_of_resolvable": 0.763283,
+   "ci95_resolvable": [
+    0.744668,
+    0.780939
+   ],
+   "listed_share_of_both_resolved": 0.807731,
+   "ci95_both_resolved": [
+    0.789839,
+    0.824438
+   ]
+  },
+  "SemEval test positives, no self pairs": {
+   "n": 371,
+   "resolvable": 362,
+   "both_resolved": 321,
+   "listed": 263,
+   "listed_share_of_all": 0.708895,
+   "ci95_all": [
+    0.660717,
+    0.752791
+   ],
+   "listed_share_of_resolvable": 0.726519,
+   "ci95_resolvable": [
+    0.678403,
+    0.769879
+   ],
+   "listed_share_of_both_resolved": 0.819315,
+   "ci95_both_resolved": [
+    0.773528,
+    0.857549
+   ]
+  },
+  "SemEval test negatives, DDI-DrugBank": {
+   "n": 2161,
+   "resolvable": 2148,
+   "both_resolved": 2067,
+   "listed": 1508,
+   "listed_share_of_all": 0.697825,
+   "ci95_all": [
+    0.678127,
+    0.716821
+   ],
+   "listed_share_of_resolvable": 0.702048,
+   "ci95_resolvable": [
+    0.68236,
+    0.721015
+   ],
+   "listed_share_of_both_resolved": 0.72956,
+   "ci95_both_resolved": [
+    0.709998,
+    0.74827
+   ]
+  },
+  "SemEval test positives, DDI-DrugBank": {
+   "n": 291,
+   "resolvable": 291,
+   "both_resolved": 258,
+   "listed": 222,
+   "listed_share_of_all": 0.762887,
+   "ci95_all": [
+    0.710794,
+    0.808129
+   ],
+   "listed_share_of_resolvable": 0.762887,
+   "ci95_resolvable": [
+    0.710794,
+    0.808129
+   ],
+   "listed_share_of_both_resolved": 0.860465,
+   "ci95_both_resolved": [
+    0.812875,
+    0.897478
+   ]
+  },
+  "SemEval test negatives, DDI-MedLine": {
+   "n": 278,
+   "resolvable": 229,
+   "both_resolved": 194,
+   "listed": 101,
+   "listed_share_of_all": 0.363309,
+   "ci95_all": [
+    0.308992,
+    0.421353
+   ],
+   "listed_share_of_resolvable": 0.441048,
+   "ci95_resolvable": [
+    0.378239,
+    0.505803
+   ],
+   "listed_share_of_both_resolved": 0.520619,
+   "ci95_both_resolved": [
+    0.450604,
+    0.589832
+   ]
+  },
+  "SemEval test positives, DDI-MedLine": {
+   "n": 80,
+   "resolvable": 71,
+   "both_resolved": 63,
+   "listed": 41,
+   "listed_share_of_all": 0.5125,
+   "ci95_all": [
+    0.404933,
+    0.618921
+   ],
+   "listed_share_of_resolvable": 0.577465,
+   "ci95_resolvable": [
+    0.461507,
+    0.68547
+   ],
+   "listed_share_of_both_resolved": 0.650794,
+   "ci95_both_resolved": [
+    0.527515,
+    0.75674
+   ]
+  }
+ },
+ "by_source": [
+  {
+   "subset": "all sources, all pairs",
+   "n": 2810,
+   "n_pos": 371,
+   "n_neg": 2439,
+   "listed": 1872,
+   "tpr_listed_share_of_positives": 0.708895,
+   "fpr_listed_share_of_negatives": 0.659697,
+   "auroc": 0.524599,
+   "ci95": [
+    0.483536,
+    0.569571
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "subset": "all sources, no self pairs",
+   "n": 2521,
+   "n_pos": 371,
+   "n_neg": 2150,
+   "listed": 1872,
+   "tpr_listed_share_of_positives": 0.708895,
+   "fpr_listed_share_of_negatives": 0.748372,
+   "auroc": 0.480261,
+   "ci95": [
+    0.438568,
+    0.52081
+   ],
+   "n_self_pairs_removed": 289
+  },
+  {
+   "subset": "DDI-DrugBank documents, all pairs",
+   "n": 2452,
+   "n_pos": 291,
+   "n_neg": 2161,
+   "listed": 1730,
+   "tpr_listed_share_of_positives": 0.762887,
+   "fpr_listed_share_of_negatives": 0.697825,
+   "auroc": 0.532531,
+   "ci95": [
+    0.480623,
+    0.584778
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "subset": "DDI-DrugBank documents, no self pairs",
+   "n": 2212,
+   "n_pos": 291,
+   "n_neg": 1921,
+   "listed": 1730,
+   "tpr_listed_share_of_positives": 0.762887,
+   "fpr_listed_share_of_negatives": 0.785008,
+   "auroc": 0.488939,
+   "ci95": [
+    0.446729,
+    0.536433
+   ],
+   "n_self_pairs_removed": 240
+  },
+  {
+   "subset": "DDI-MedLine abstracts, all pairs",
+   "n": 358,
+   "n_pos": 80,
+   "n_neg": 278,
+   "listed": 142,
+   "tpr_listed_share_of_positives": 0.5125,
+   "fpr_listed_share_of_negatives": 0.363309,
+   "auroc": 0.574595,
+   "ci95": [
+    0.504347,
+    0.644389
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "subset": "DDI-MedLine abstracts, no self pairs",
+   "n": 309,
+   "n_pos": 80,
+   "n_neg": 229,
+   "listed": 142,
+   "tpr_listed_share_of_positives": 0.5125,
+   "fpr_listed_share_of_negatives": 0.441048,
+   "auroc": 0.535726,
+   "ci95": [
+    0.461139,
+    0.60724
+   ],
+   "n_self_pairs_removed": 49
+  }
+ ],
+ "n_self_pairs": 289,
+ "self_pairs_by_source": {
+  "DrugBank": 240,
+  "MedLine": 49
+ },
+ "self_pairs_comentioned": 179,
+ "string_match": {
+  "pooled_from_baselines_json": {
+   "novel": {
+    "n": 438,
+    "n_pos": 148,
+    "auroc": 0.797297,
+    "ci95": [
+     0.708594,
+     0.877201
+    ],
+    "bootstrap": "two-way cluster over novel drugs and partner drugs",
+    "auprc": 0.731581,
+    "binary_f1": 0.745763,
+    "mcc": 0.7019,
+    "confusion": {
+     "tp": 88,
+     "fp": 0,
+     "fn": 60,
+     "tn": 290
+    },
+    "cohort_note": "Novel 438 pairs; 'older' is the full Older cohort (1944 pairs), not Older-clean"
+   },
+   "older": {
+    "n": 1944,
+    "n_pos": 648,
+    "auroc": 0.837191,
+    "ci95": [
+     0.789872,
+     0.880065
+    ],
+    "bootstrap": "two-way cluster over novel drugs and partner drugs",
+    "auprc": 0.782922,
+    "binary_f1": 0.80553,
+    "mcc": 0.761551,
+    "confusion": {
+     "tp": 437,
+     "fp": 0,
+     "fn": 211,
+     "tn": 1296
+    },
+    "cohort_note": "Novel 438 pairs; 'older' is the full Older cohort (1944 pairs), not Older-clean"
+   }
+  },
+  "within_drug": {
+   "novel": {
+    "n": 438,
+    "n_drugs": 48,
+    "auroc_within": 0.813738,
+    "ci95": [
+     0.719444,
+     0.903433
+    ],
+    "pooled_auroc": 0.797297
+   },
+   "older_clean": {
+    "n": 1832,
+    "n_drugs": 128,
+    "auroc_within": 0.843568,
+    "ci95": [
+     0.792202,
+     0.890401
+    ],
+    "pooled_auroc": 0.83222
+   }
+  }
+ },
+ "subgroups": [
+  {
+   "set": "all 2810 SemEval test pairs, self pairs kept, unresolvable as not listed (the experiment 5 set behind 0.525, 0.591 and 0.529)",
+   "n": 2810,
+   "co-mentioned": {
+    "n": 1023,
+    "n_pos": 54,
+    "n_neg": 969,
+    "share_of_all_positives": 0.145553,
+    "share_of_all_negatives": 0.397294,
+    "positive_rate": 0.052786,
+    "tpr": 0.907407,
+    "fpr": 0.724458,
+    "auroc": 0.591475
+   },
+   "not co-mentioned": {
+    "n": 1787,
+    "n_pos": 317,
+    "n_neg": 1470,
+    "share_of_all_positives": 0.854447,
+    "share_of_all_negatives": 0.602706,
+    "positive_rate": 0.177392,
+    "tpr": 0.675079,
+    "fpr": 0.617007,
+    "auroc": 0.529036
+   },
+   "pooled": {
+    "tpr": 0.708895,
+    "fpr": 0.659697,
+    "auroc": 0.524599,
+    "auroc_direct": 0.524599
+   },
+   "counterfactual_pooled_auroc_if_negatives_had_positive_mix": 0.538124
+  },
+  {
+   "set": "2521 pairs without self pairs",
+   "n": 2521,
+   "co-mentioned": {
+    "n": 844,
+    "n_pos": 54,
+    "n_neg": 790,
+    "share_of_all_positives": 0.145553,
+    "share_of_all_negatives": 0.367442,
+    "positive_rate": 0.063981,
+    "tpr": 0.907407,
+    "fpr": 0.888608,
+    "auroc": 0.5094
+   },
+   "not co-mentioned": {
+    "n": 1677,
+    "n_pos": 317,
+    "n_neg": 1360,
+    "share_of_all_positives": 0.854447,
+    "share_of_all_negatives": 0.632558,
+    "positive_rate": 0.189028,
+    "tpr": 0.675079,
+    "fpr": 0.666912,
+    "auroc": 0.504084
+   },
+   "pooled": {
+    "tpr": 0.708895,
+    "fpr": 0.748372,
+    "auroc": 0.480261,
+    "auroc_direct": 0.480261
+   },
+   "counterfactual_pooled_auroc_if_negatives_had_positive_mix": 0.504857
+  }
+ ],
+ "subgroup_explanation": "The three values use the same set: all 2,810 SemEval test pairs with the 289 self pairs kept and unresolvable pairs counted as not listed, pooled AUROC of the 0/1 lookup, sentence bootstrap (Amendment 7 experiment 5). Both subgroups beat the pooled value because co-mention is associated with both the label and the score (Simpson's paradox). Co-mentioned pairs are rarely positive (54 of 1023, 0.053) but are listed often (FPR 0.724); not co-mentioned pairs are positive more often (0.177) and listed less (FPR 0.617). Pooling weights the TPR by where the positives are (0.854 of positives are not co-mentioned, so pooled TPR 0.709 sits near the low subgroup TPR 0.675) and the FPR by where the negatives are (0.397 of negatives are co-mentioned, which pulls pooled FPR up to 0.660). The pooled TPR minus FPR, 0.049, is smaller than in either subgroup (0.183 and 0.058), so 0.5 (1 + TPR - FPR) is 0.525 overall against 0.591 and 0.529.",
+ "check_exp5": {
+  "all": true,
+  "co": true,
+  "not_co": true
+ }
+}

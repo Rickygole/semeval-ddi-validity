@@ -1,0 +1,1211 @@
+{
+ "sha256": "31e0d9129357916540d508426b1a9cc3a799d26ea7c165f9b2e4373d8517ab6b",
+ "drugs": [
+  {
+   "drug": "abrocitinib",
+   "first_approval_year": 2022,
+   "brand": "Cibinqo",
+   "approval_date": "1/14/2022"
+  },
+  {
+   "drug": "acoramidis",
+   "first_approval_year": 2024,
+   "brand": "Attruby",
+   "approval_date": "11/22/2024"
+  },
+  {
+   "drug": "adagrasib",
+   "first_approval_year": 2022,
+   "brand": "Krazati",
+   "approval_date": "12/12/2022"
+  },
+  {
+   "drug": "amisulpride",
+   "first_approval_year": 2020,
+   "brand": "Barhemsys",
+   "approval_date": "2/26/2020"
+  },
+  {
+   "drug": "amivantamab-vmjw",
+   "first_approval_year": 2021,
+   "brand": "Rybrevant",
+   "approval_date": "5/21/2021"
+  },
+  {
+   "drug": "anacaulase-bcdb",
+   "first_approval_year": 2022,
+   "brand": "NexoBrid",
+   "approval_date": "12/28/2022"
+  },
+  {
+   "drug": "ansuvimab-zykl",
+   "first_approval_year": 2020,
+   "brand": "Ebanga",
+   "approval_date": "12/21/2020"
+  },
+  {
+   "drug": "aprocitentan",
+   "first_approval_year": 2024,
+   "brand": "Tryvio",
+   "approval_date": "3/19/2024"
+  },
+  {
+   "drug": "arimoclomol",
+   "first_approval_year": 2024,
+   "brand": "Miplyffa",
+   "approval_date": "9/20/2024"
+  },
+  {
+   "drug": "asparaginase erwinia chrysanthemi -rywn",
+   "first_approval_year": 2021,
+   "brand": "Rylaze",
+   "approval_date": "6/30/2021"
+  },
+  {
+   "drug": "atogepant",
+   "first_approval_year": 2021,
+   "brand": "Qulipta",
+   "approval_date": "9/28/2021"
+  },
+  {
+   "drug": "atoltivimab",
+   "first_approval_year": 2020,
+   "brand": "Inmazeb",
+   "approval_date": "10/14/2020"
+  },
+  {
+   "drug": "avacopan",
+   "first_approval_year": 2021,
+   "brand": "Tavneos",
+   "approval_date": "10/7/2021"
+  },
+  {
+   "drug": "avalglucosidase alfa-ngpt",
+   "first_approval_year": 2021,
+   "brand": "Nexviazyme",
+   "approval_date": "8/6/2021"
+  },
+  {
+   "drug": "belumosudil",
+   "first_approval_year": 2021,
+   "brand": "Rezurock",
+   "approval_date": "7/16/2021"
+  },
+  {
+   "drug": "bempedoic acid",
+   "first_approval_year": 2020,
+   "brand": "Nexletol",
+   "approval_date": "2/21/2020"
+  },
+  {
+   "drug": "berdazimer",
+   "first_approval_year": 2024,
+   "brand": "Zelsuvmi",
+   "approval_date": "1/5/2024"
+  },
+  {
+   "drug": "berotralstat",
+   "first_approval_year": 2020,
+   "brand": "Orladeyo",
+   "approval_date": "12/3/2020"
+  },
+  {
+   "drug": "bexagliflozin",
+   "first_approval_year": 2023,
+   "brand": "Brenzavvy",
+   "approval_date": "1/20/2023"
+  },
+  {
+   "drug": "bimekizumab-bkzx",
+   "first_approval_year": 2023,
+   "brand": "Bimzelx",
+   "approval_date": "10/17/2023"
+  },
+  {
+   "drug": "birch triterpenes",
+   "first_approval_year": 2023,
+   "brand": "Filsuvez",
+   "approval_date": "12/18/2023"
+  },
+  {
+   "drug": "cabotegravir",
+   "first_approval_year": 2021,
+   "brand": "Cabenuva",
+   "approval_date": "1/21/2021"
+  },
+  {
+   "drug": "capmatinib",
+   "first_approval_year": 2020,
+   "brand": "Tabrecta",
+   "approval_date": "5/6/2020"
+  },
+  {
+   "drug": "casimersen",
+   "first_approval_year": 2021,
+   "brand": "Amondys 45",
+   "approval_date": "2/25/2021"
+  },
+  {
+   "drug": "cedazuridine",
+   "first_approval_year": 2020,
+   "brand": "Inqovi",
+   "approval_date": "7/7/2020"
+  },
+  {
+   "drug": "cipaglucosidase alfa-atga",
+   "first_approval_year": 2023,
+   "brand": "Pombiliti",
+   "approval_date": "9/28/2023"
+  },
+  {
+   "drug": "clascoterone",
+   "first_approval_year": 2020,
+   "brand": "Winlevi",
+   "approval_date": "8/26/2020"
+  },
+  {
+   "drug": "concizumab-mtci",
+   "first_approval_year": 2024,
+   "brand": "Alhemo",
+   "approval_date": "12/20/2024"
+  },
+  {
+   "drug": "copper cu 64 dotatate",
+   "first_approval_year": 2020,
+   "brand": "Detectnet",
+   "approval_date": "9/3/2020"
+  },
+  {
+   "drug": "crovalimab-akkz",
+   "first_approval_year": 2024,
+   "brand": "Piasky",
+   "approval_date": "6/20/2024"
+  },
+  {
+   "drug": "danicopan",
+   "first_approval_year": 2024,
+   "brand": "Voydeya",
+   "approval_date": "3/29/2024"
+  },
+  {
+   "drug": "daprodustat",
+   "first_approval_year": 2023,
+   "brand": "Jesduvroq",
+   "approval_date": "2/1/2023"
+  },
+  {
+   "drug": "daridorexant",
+   "first_approval_year": 2022,
+   "brand": "Quviviq",
+   "approval_date": "1/7/2022"
+  },
+  {
+   "drug": "dasiglucagon",
+   "first_approval_year": 2021,
+   "brand": "Zegalogue",
+   "approval_date": "3/22/2021"
+  },
+  {
+   "drug": "deucravacitinib",
+   "first_approval_year": 2022,
+   "brand": "Sotyktu",
+   "approval_date": "9/9/2022"
+  },
+  {
+   "drug": "deutivacaftor",
+   "first_approval_year": 2024,
+   "brand": "Alyftrek",
+   "approval_date": "12/20/2024"
+  },
+  {
+   "drug": "difelikefalin",
+   "first_approval_year": 2021,
+   "brand": "Korsuva",
+   "approval_date": "8/23/2021"
+  },
+  {
+   "drug": "donanemab-azbt",
+   "first_approval_year": 2024,
+   "brand": "Kisunla",
+   "approval_date": "7/2/2024"
+  },
+  {
+   "drug": "dostarlimab-gxly",
+   "first_approval_year": 2021,
+   "brand": "Jemperli",
+   "approval_date": "4/22/2021"
+  },
+  {
+   "drug": "efbemalenograstim alfa-vuxw",
+   "first_approval_year": 2023,
+   "brand": "Ryzneuta",
+   "approval_date": "11/16/2023"
+  },
+  {
+   "drug": "efgartigimod alfa-fcab",
+   "first_approval_year": 2021,
+   "brand": "Vyvgart",
+   "approval_date": "12/17/2021"
+  },
+  {
+   "drug": "eflapegrastim-xnst",
+   "first_approval_year": 2022,
+   "brand": "Rolvedon",
+   "approval_date": "9/9/2022"
+  },
+  {
+   "drug": "elacestrant",
+   "first_approval_year": 2023,
+   "brand": "Orserdu",
+   "approval_date": "1/27/2023"
+  },
+  {
+   "drug": "elafibranor",
+   "first_approval_year": 2024,
+   "brand": "Iqirvo",
+   "approval_date": "6/10/2024"
+  },
+  {
+   "drug": "elranatamab-bcmm",
+   "first_approval_year": 2023,
+   "brand": "Elrexfio",
+   "approval_date": "8/14/2023"
+  },
+  {
+   "drug": "ensartinib",
+   "first_approval_year": 2024,
+   "brand": "Ensacove",
+   "approval_date": "12/18/2024"
+  },
+  {
+   "drug": "ensifentrine",
+   "first_approval_year": 2024,
+   "brand": "Ohtuvayre",
+   "approval_date": "6/26/2024"
+  },
+  {
+   "drug": "epcoritamab-bysp",
+   "first_approval_year": 2023,
+   "brand": "Epkinly",
+   "approval_date": "5/19/2023"
+  },
+  {
+   "drug": "eplontersen",
+   "first_approval_year": 2023,
+   "brand": "Wainua",
+   "approval_date": "12/21/2023"
+  },
+  {
+   "drug": "eptinezumab-jjmr",
+   "first_approval_year": 2020,
+   "brand": "Vyepti",
+   "approval_date": "2/21/2020"
+  },
+  {
+   "drug": "estetrol",
+   "first_approval_year": 2021,
+   "brand": "Nextstellis",
+   "approval_date": "4/15/2021"
+  },
+  {
+   "drug": "etrasimod",
+   "first_approval_year": 2023,
+   "brand": "Velsipity",
+   "approval_date": "10/12/2023"
+  },
+  {
+   "drug": "faricimab-svoa",
+   "first_approval_year": 2022,
+   "brand": "Vabysmo",
+   "approval_date": "1/28/2022"
+  },
+  {
+   "drug": "fexinidazole",
+   "first_approval_year": 2021,
+   "brand": "[drug marketed without a proprietary name]",
+   "approval_date": "7/16/2021"
+  },
+  {
+   "drug": "fezolinetant",
+   "first_approval_year": 2023,
+   "brand": "Veozah",
+   "approval_date": "5/12/2023"
+  },
+  {
+   "drug": "flortaucipir f 18",
+   "first_approval_year": 2020,
+   "brand": "Tauvid",
+   "approval_date": "5/28/2020"
+  },
+  {
+   "drug": "flotufolastat f 18",
+   "first_approval_year": 2023,
+   "brand": "Posluma",
+   "approval_date": "5/25/2023"
+  },
+  {
+   "drug": "fluoroestradiol f 18",
+   "first_approval_year": 2020,
+   "brand": "Cerianna",
+   "approval_date": "5/20/2020"
+  },
+  {
+   "drug": "fosdenopterin",
+   "first_approval_year": 2021,
+   "brand": "Nulibry",
+   "approval_date": "2/26/2021"
+  },
+  {
+   "drug": "fostemsavir",
+   "first_approval_year": 2020,
+   "brand": "Rukobia",
+   "approval_date": "7/2/2020"
+  },
+  {
+   "drug": "fruquintinib",
+   "first_approval_year": 2023,
+   "brand": "Fruzaqla",
+   "approval_date": "11/8/2023"
+  },
+  {
+   "drug": "futibatinib",
+   "first_approval_year": 2022,
+   "brand": "Lytgobi",
+   "approval_date": "9/30/2022"
+  },
+  {
+   "drug": "gadopiclenol",
+   "first_approval_year": 2022,
+   "brand": "Elucirem",
+   "approval_date": "9/21/2022"
+  },
+  {
+   "drug": "gepirone",
+   "first_approval_year": 2023,
+   "brand": "Exxua",
+   "approval_date": "9/22/2023"
+  },
+  {
+   "drug": "givinostat",
+   "first_approval_year": 2024,
+   "brand": "Duvyzat",
+   "approval_date": "3/21/2024"
+  },
+  {
+   "drug": "glofitamab-gxbm",
+   "first_approval_year": 2023,
+   "brand": "Columvi",
+   "approval_date": "6/15/2023"
+  },
+  {
+   "drug": "imetelstat",
+   "first_approval_year": 2024,
+   "brand": "Rytelo",
+   "approval_date": "6/6/2024"
+  },
+  {
+   "drug": "inavolisib",
+   "first_approval_year": 2024,
+   "brand": "Itovebi",
+   "approval_date": "10/10/2024"
+  },
+  {
+   "drug": "inclisiran",
+   "first_approval_year": 2021,
+   "brand": "Leqvio",
+   "approval_date": "12/22/2021"
+  },
+  {
+   "drug": "iomeprol",
+   "first_approval_year": 2024,
+   "brand": "Iomervu",
+   "approval_date": "11/27/2024"
+  },
+  {
+   "drug": "iptacopan",
+   "first_approval_year": 2023,
+   "brand": "Fabhalta",
+   "approval_date": "12/5/2023"
+  },
+  {
+   "drug": "isatuximab-irfc",
+   "first_approval_year": 2020,
+   "brand": "Sarclisa",
+   "approval_date": "3/2/2020"
+  },
+  {
+   "drug": "landiolol",
+   "first_approval_year": 2024,
+   "brand": "Rapiblyk",
+   "approval_date": "11/22/2024"
+  },
+  {
+   "drug": "lazertinib",
+   "first_approval_year": 2024,
+   "brand": "Lazcluze",
+   "approval_date": "8/19/2024"
+  },
+  {
+   "drug": "lecanemab-irmb",
+   "first_approval_year": 2023,
+   "brand": "Leqembi",
+   "approval_date": "1/6/2023"
+  },
+  {
+   "drug": "lenacapavir",
+   "first_approval_year": 2022,
+   "brand": "Sunlenca",
+   "approval_date": "12/22/2022"
+  },
+  {
+   "drug": "letibotulinumtoxina-wlbg",
+   "first_approval_year": 2024,
+   "brand": "Letybo",
+   "approval_date": "2/29/2024"
+  },
+  {
+   "drug": "lonafarnib",
+   "first_approval_year": 2020,
+   "brand": "Zokinvy",
+   "approval_date": "11/20/2020"
+  },
+  {
+   "drug": "lonapegsomatropin-tcgd",
+   "first_approval_year": 2021,
+   "brand": "Skytrofa",
+   "approval_date": "8/25/2021"
+  },
+  {
+   "drug": "loncastuximab tesirine-lpyl",
+   "first_approval_year": 2021,
+   "brand": "Zynlonta",
+   "approval_date": "4/23/2021"
+  },
+  {
+   "drug": "lotilaner",
+   "first_approval_year": 2023,
+   "brand": "Xdemvy",
+   "approval_date": "7/24/2023"
+  },
+  {
+   "drug": "lumasiran",
+   "first_approval_year": 2020,
+   "brand": "Oxlumo",
+   "approval_date": "11/23/2020"
+  },
+  {
+   "drug": "lutetium lu 177 vipivotide tetraxetan",
+   "first_approval_year": 2022,
+   "brand": "Pluvicto",
+   "approval_date": "3/23/2022"
+  },
+  {
+   "drug": "maftivimab",
+   "first_approval_year": 2020,
+   "brand": "Inmazeb",
+   "approval_date": "10/14/2020"
+  },
+  {
+   "drug": "maralixibat",
+   "first_approval_year": 2021,
+   "brand": "Livmarli",
+   "approval_date": "9/29/2021"
+  },
+  {
+   "drug": "margetuximab-cmkb",
+   "first_approval_year": 2020,
+   "brand": "Margenza",
+   "approval_date": "12/16/2020"
+  },
+  {
+   "drug": "maribavir",
+   "first_approval_year": 2021,
+   "brand": "Livtencity",
+   "approval_date": "11/23/2021"
+  },
+  {
+   "drug": "marstacimab-hncq",
+   "first_approval_year": 2024,
+   "brand": "Hympavzi",
+   "approval_date": "10/11/2024"
+  },
+  {
+   "drug": "mavorixafor",
+   "first_approval_year": 2024,
+   "brand": "Xolremdi",
+   "approval_date": "4/26/2024"
+  },
+  {
+   "drug": "mirikizumab-mrkz",
+   "first_approval_year": 2023,
+   "brand": "Omvoh",
+   "approval_date": "10/26/2023"
+  },
+  {
+   "drug": "mirvetuximab soravtansine-gynx",
+   "first_approval_year": 2022,
+   "brand": "Elahere",
+   "approval_date": "11/14/2022"
+  },
+  {
+   "drug": "mitapivat",
+   "first_approval_year": 2022,
+   "brand": "Pyrukynd",
+   "approval_date": "2/17/2022"
+  },
+  {
+   "drug": "momelotinib",
+   "first_approval_year": 2023,
+   "brand": "Ojjaara",
+   "approval_date": "9/15/2023"
+  },
+  {
+   "drug": "mosunetuzumab-axgb",
+   "first_approval_year": 2022,
+   "brand": "Lunsumio",
+   "approval_date": "12/22/2022"
+  },
+  {
+   "drug": "motixafortide",
+   "first_approval_year": 2023,
+   "brand": "Aphexda",
+   "approval_date": "9/8/2023"
+  },
+  {
+   "drug": "naxitamab-gqgk",
+   "first_approval_year": 2020,
+   "brand": "Danyelza",
+   "approval_date": "11/25/2020"
+  },
+  {
+   "drug": "nedosiran",
+   "first_approval_year": 2023,
+   "brand": "Rivfloza",
+   "approval_date": "9/29/2023"
+  },
+  {
+   "drug": "nemolizumab-ilto",
+   "first_approval_year": 2024,
+   "brand": "Nemluvio",
+   "approval_date": "8/12/2024"
+  },
+  {
+   "drug": "nifurtimox",
+   "first_approval_year": 2020,
+   "brand": "Lampit",
+   "approval_date": "8/6/2020"
+  },
+  {
+   "drug": "nirmatrelvir",
+   "first_approval_year": 2023,
+   "brand": "Paxlovid",
+   "approval_date": "5/25/2023"
+  },
+  {
+   "drug": "nirogacestat",
+   "first_approval_year": 2023,
+   "brand": "Ogsiveo",
+   "approval_date": "11/27/2023"
+  },
+  {
+   "drug": "nirsevimab-alip",
+   "first_approval_year": 2023,
+   "brand": "Beyfortus",
+   "approval_date": "7/17/2023"
+  },
+  {
+   "drug": "nogapendekin alfa inbakicept-pmln",
+   "first_approval_year": 2024,
+   "brand": "Anktiva",
+   "approval_date": "4/22/2024"
+  },
+  {
+   "drug": "odesivimab-ebgn",
+   "first_approval_year": 2020,
+   "brand": "Inmazeb",
+   "approval_date": "10/14/2020"
+  },
+  {
+   "drug": "odevixibat",
+   "first_approval_year": 2021,
+   "brand": "Bylvay",
+   "approval_date": "7/20/2021"
+  },
+  {
+   "drug": "olezarsen",
+   "first_approval_year": 2024,
+   "brand": "Tryngolza",
+   "approval_date": "12/19/2024"
+  },
+  {
+   "drug": "oliceridine",
+   "first_approval_year": 2020,
+   "brand": "Olinvyk",
+   "approval_date": "8/7/2020"
+  },
+  {
+   "drug": "olipudase alfa-rpcp",
+   "first_approval_year": 2022,
+   "brand": "Xenpozyme",
+   "approval_date": "8/31/2022"
+  },
+  {
+   "drug": "olutasidenib",
+   "first_approval_year": 2022,
+   "brand": "Rezlidhia",
+   "approval_date": "12/1/2022"
+  },
+  {
+   "drug": "omaveloxolone",
+   "first_approval_year": 2023,
+   "brand": "Skyclarys",
+   "approval_date": "2/28/2023"
+  },
+  {
+   "drug": "omidenepag isopropyl",
+   "first_approval_year": 2022,
+   "brand": "Omlonti",
+   "approval_date": "9/22/2022"
+  },
+  {
+   "drug": "opicapone",
+   "first_approval_year": 2020,
+   "brand": "Ongentys",
+   "approval_date": "4/24/2020"
+  },
+  {
+   "drug": "osilodrostat",
+   "first_approval_year": 2020,
+   "brand": "Isturisa",
+   "approval_date": "3/6/2020"
+  },
+  {
+   "drug": "oteseconazole",
+   "first_approval_year": 2022,
+   "brand": "Vivjoa",
+   "approval_date": "4/26/2022"
+  },
+  {
+   "drug": "ozanimod",
+   "first_approval_year": 2020,
+   "brand": "Zeposia",
+   "approval_date": "3/25/2020"
+  },
+  {
+   "drug": "pacritinib",
+   "first_approval_year": 2022,
+   "brand": "Vonjo",
+   "approval_date": "2/28/2022"
+  },
+  {
+   "drug": "pafolacianine",
+   "first_approval_year": 2021,
+   "brand": "Cytalux",
+   "approval_date": "11/29/2021"
+  },
+  {
+   "drug": "palopegteriparatide",
+   "first_approval_year": 2024,
+   "brand": "Yorvipath",
+   "approval_date": "8/9/2024"
+  },
+  {
+   "drug": "pegcetacoplan",
+   "first_approval_year": 2021,
+   "brand": "Empaveli",
+   "approval_date": "5/14/2021"
+  },
+  {
+   "drug": "pegulicianine",
+   "first_approval_year": 2024,
+   "brand": "Lumisight",
+   "approval_date": "4/17/2024"
+  },
+  {
+   "drug": "pegunigalsidase alfa-iwxj",
+   "first_approval_year": 2023,
+   "brand": "Elfabrio",
+   "approval_date": "5/9/2023"
+  },
+  {
+   "drug": "pemigatinib",
+   "first_approval_year": 2020,
+   "brand": "Pemazyre",
+   "approval_date": "4/17/2020"
+  },
+  {
+   "drug": "perfluorohexyloctane",
+   "first_approval_year": 2023,
+   "brand": "Miebo",
+   "approval_date": "5/18/2023"
+  },
+  {
+   "drug": "piflufolastat f 18",
+   "first_approval_year": 2021,
+   "brand": "Pylarify",
+   "approval_date": "5/26/2021"
+  },
+  {
+   "drug": "pirtobrutinib",
+   "first_approval_year": 2023,
+   "brand": "Jaypirca",
+   "approval_date": "1/27/2023"
+  },
+  {
+   "drug": "ponesimod",
+   "first_approval_year": 2021,
+   "brand": "Ponvory",
+   "approval_date": "3/18/2021"
+  },
+  {
+   "drug": "pozelimab-bbfg",
+   "first_approval_year": 2023,
+   "brand": "Veopoz",
+   "approval_date": "8/18/2023"
+  },
+  {
+   "drug": "pralsetinib",
+   "first_approval_year": 2020,
+   "brand": "Gavreto",
+   "approval_date": "9/4/2020"
+  },
+  {
+   "drug": "quizartinib",
+   "first_approval_year": 2023,
+   "brand": "Vanflyta",
+   "approval_date": "7/20/2023"
+  },
+  {
+   "drug": "relatlimab-rmbw",
+   "first_approval_year": 2022,
+   "brand": "Opdualag",
+   "approval_date": "3/18/2022"
+  },
+  {
+   "drug": "relugolix",
+   "first_approval_year": 2020,
+   "brand": "Orgovyx",
+   "approval_date": "12/18/2020"
+  },
+  {
+   "drug": "remdesivir",
+   "first_approval_year": 2020,
+   "brand": "Veklury",
+   "approval_date": "10/22/2020"
+  },
+  {
+   "drug": "remimazolam",
+   "first_approval_year": 2020,
+   "brand": "Byfavo",
+   "approval_date": "7/2/2020"
+  },
+  {
+   "drug": "repotrectinib",
+   "first_approval_year": 2023,
+   "brand": "Augtyro",
+   "approval_date": "11/15/2023"
+  },
+  {
+   "drug": "resmetirom",
+   "first_approval_year": 2024,
+   "brand": "Rezdiffra",
+   "approval_date": "3/14/2024"
+  },
+  {
+   "drug": "revumenib",
+   "first_approval_year": 2024,
+   "brand": "Revuforj",
+   "approval_date": "11/15/2024"
+  },
+  {
+   "drug": "rezafungin",
+   "first_approval_year": 2023,
+   "brand": "Rezzayo",
+   "approval_date": "3/22/2023"
+  },
+  {
+   "drug": "rimegepant",
+   "first_approval_year": 2020,
+   "brand": "Nurtec ODT",
+   "approval_date": "2/27/2020"
+  },
+  {
+   "drug": "ripretinib",
+   "first_approval_year": 2020,
+   "brand": "Qinlock",
+   "approval_date": "5/15/2020"
+  },
+  {
+   "drug": "ritlecitinib",
+   "first_approval_year": 2023,
+   "brand": "Litfulo",
+   "approval_date": "6/23/2023"
+  },
+  {
+   "drug": "ropeginterferon alfa-2b-njft",
+   "first_approval_year": 2021,
+   "brand": "Besremi",
+   "approval_date": "11/12/2021"
+  },
+  {
+   "drug": "rozanolixizumab-noli",
+   "first_approval_year": 2023,
+   "brand": "Rystiggo",
+   "approval_date": "6/26/2023"
+  },
+  {
+   "drug": "sacituzumab govitecan-hziy",
+   "first_approval_year": 2020,
+   "brand": "Trodelvy",
+   "approval_date": "4/22/2020"
+  },
+  {
+   "drug": "samidorphan",
+   "first_approval_year": 2021,
+   "brand": "Lybalvi",
+   "approval_date": "5/28/2021"
+  },
+  {
+   "drug": "satralizumab-mwge",
+   "first_approval_year": 2020,
+   "brand": "Enspryng",
+   "approval_date": "8/14/2020"
+  },
+  {
+   "drug": "seladelpar",
+   "first_approval_year": 2024,
+   "brand": "Livdelzi",
+   "approval_date": "8/14/2024"
+  },
+  {
+   "drug": "selumetinib",
+   "first_approval_year": 2020,
+   "brand": "Koselugo",
+   "approval_date": "4/10/2020"
+  },
+  {
+   "drug": "serdexmethylphenidate",
+   "first_approval_year": 2021,
+   "brand": "Azstarys",
+   "approval_date": "3/2/2021"
+  },
+  {
+   "drug": "setmelanotide",
+   "first_approval_year": 2020,
+   "brand": "Imcivree",
+   "approval_date": "11/25/2020"
+  },
+  {
+   "drug": "sofpironium",
+   "first_approval_year": 2024,
+   "brand": "Sofdra",
+   "approval_date": "6/18/2024"
+  },
+  {
+   "drug": "somapacitan-beco",
+   "first_approval_year": 2020,
+   "brand": "Sogroya",
+   "approval_date": "8/28/2020"
+  },
+  {
+   "drug": "somatrogon-ghla",
+   "first_approval_year": 2023,
+   "brand": "Ngenla",
+   "approval_date": "6/27/2023"
+  },
+  {
+   "drug": "sotagliflozin",
+   "first_approval_year": 2023,
+   "brand": "Inpefa",
+   "approval_date": "5/26/2023"
+  },
+  {
+   "drug": "sotorasib",
+   "first_approval_year": 2021,
+   "brand": "Lumakras",
+   "approval_date": "5/28/2021"
+  },
+  {
+   "drug": "sparsentan",
+   "first_approval_year": 2023,
+   "brand": "Filspari",
+   "approval_date": "2/17/2023"
+  },
+  {
+   "drug": "spesolimab-sbzo",
+   "first_approval_year": 2022,
+   "brand": "Spevigo",
+   "approval_date": "9/1/2022"
+  },
+  {
+   "drug": "sulopenem etzadroxil",
+   "first_approval_year": 2024,
+   "brand": "Orlynvah",
+   "approval_date": "10/25/2024"
+  },
+  {
+   "drug": "sutimlimab-jome",
+   "first_approval_year": 2022,
+   "brand": "Enjaymo",
+   "approval_date": "2/4/2022"
+  },
+  {
+   "drug": "tafasitamab-cxix",
+   "first_approval_year": 2020,
+   "brand": "Monjuvi",
+   "approval_date": "7/31/2020"
+  },
+  {
+   "drug": "talquetamab-tgvs",
+   "first_approval_year": 2023,
+   "brand": "Talvey",
+   "approval_date": "8/9/2023"
+  },
+  {
+   "drug": "tapinarof",
+   "first_approval_year": 2022,
+   "brand": "Vtama",
+   "approval_date": "5/23/2022"
+  },
+  {
+   "drug": "taurolidine",
+   "first_approval_year": 2023,
+   "brand": "Defencath",
+   "approval_date": "11/15/2023"
+  },
+  {
+   "drug": "tazemetostat",
+   "first_approval_year": 2020,
+   "brand": "Tazverik",
+   "approval_date": "1/23/2020"
+  },
+  {
+   "drug": "tebentafusp-tebn",
+   "first_approval_year": 2022,
+   "brand": "Kimmtrak",
+   "approval_date": "1/25/2022"
+  },
+  {
+   "drug": "teclistamab-cqyv",
+   "first_approval_year": 2022,
+   "brand": "Tecvayli",
+   "approval_date": "10/25/2022"
+  },
+  {
+   "drug": "teplizumab-mzwv",
+   "first_approval_year": 2022,
+   "brand": "Tzield",
+   "approval_date": "11/17/2022"
+  },
+  {
+   "drug": "tepotinib",
+   "first_approval_year": 2021,
+   "brand": "Tepmetko",
+   "approval_date": "2/3/2021"
+  },
+  {
+   "drug": "terlipressin",
+   "first_approval_year": 2022,
+   "brand": "Terlivaz",
+   "approval_date": "9/14/2022"
+  },
+  {
+   "drug": "tezepelumab-ekko",
+   "first_approval_year": 2021,
+   "brand": "Tezspire",
+   "approval_date": "12/17/2021"
+  },
+  {
+   "drug": "tirbanibulin",
+   "first_approval_year": 2020,
+   "brand": "Klisyri",
+   "approval_date": "12/14/2020"
+  },
+  {
+   "drug": "tirzepatide",
+   "first_approval_year": 2022,
+   "brand": "Mounjaro",
+   "approval_date": "5/13/2022"
+  },
+  {
+   "drug": "tisotumab vedotin-tftv",
+   "first_approval_year": 2021,
+   "brand": "Tivdak",
+   "approval_date": "9/20/2021"
+  },
+  {
+   "drug": "tofersen",
+   "first_approval_year": 2023,
+   "brand": "Qalsody",
+   "approval_date": "4/25/2023"
+  },
+  {
+   "drug": "toripalimab-tpzi",
+   "first_approval_year": 2023,
+   "brand": "Loqtorzi",
+   "approval_date": "10/27/2023"
+  },
+  {
+   "drug": "tovorafenib",
+   "first_approval_year": 2024,
+   "brand": "Ojemda",
+   "approval_date": "4/23/2024"
+  },
+  {
+   "drug": "tralokinumab-ldrm",
+   "first_approval_year": 2021,
+   "brand": "Adbry",
+   "approval_date": "12/27/2021"
+  },
+  {
+   "drug": "tremelimumab-actl",
+   "first_approval_year": 2022,
+   "brand": "Imjudo",
+   "approval_date": "10/21/2022"
+  },
+  {
+   "drug": "triheptanoin",
+   "first_approval_year": 2020,
+   "brand": "Dojolvi",
+   "approval_date": "6/30/2020"
+  },
+  {
+   "drug": "trilaciclib",
+   "first_approval_year": 2021,
+   "brand": "Cosela",
+   "approval_date": "2/12/2021"
+  },
+  {
+   "drug": "trofinetide",
+   "first_approval_year": 2023,
+   "brand": "Daybue",
+   "approval_date": "3/10/2023"
+  },
+  {
+   "drug": "tucatinib",
+   "first_approval_year": 2020,
+   "brand": "Tukysa",
+   "approval_date": "4/17/2020"
+  },
+  {
+   "drug": "ublituximab-xiiy",
+   "first_approval_year": 2022,
+   "brand": "Briumvi",
+   "approval_date": "12/28/2022"
+  },
+  {
+   "drug": "vadadustat",
+   "first_approval_year": 2024,
+   "brand": "Vafseo",
+   "approval_date": "3/27/2024"
+  },
+  {
+   "drug": "vamorolone",
+   "first_approval_year": 2023,
+   "brand": "Agamree",
+   "approval_date": "10/26/2023"
+  },
+  {
+   "drug": "vanzacaftor",
+   "first_approval_year": 2024,
+   "brand": "Alyftrek",
+   "approval_date": "12/20/2024"
+  },
+  {
+   "drug": "velmanase alfa-tycv",
+   "first_approval_year": 2023,
+   "brand": "Lamzede",
+   "approval_date": "2/16/2023"
+  },
+  {
+   "drug": "vericiguat",
+   "first_approval_year": 2021,
+   "brand": "Verquvo",
+   "approval_date": "1/19/2021"
+  },
+  {
+   "drug": "vibegron",
+   "first_approval_year": 2020,
+   "brand": "Gemtesa",
+   "approval_date": "12/23/2020"
+  },
+  {
+   "drug": "viltolarsen",
+   "first_approval_year": 2020,
+   "brand": "Viltepso",
+   "approval_date": "8/12/2020"
+  },
+  {
+   "drug": "voclosporin",
+   "first_approval_year": 2021,
+   "brand": "Lupkynis",
+   "approval_date": "1/22/2021"
+  },
+  {
+   "drug": "vonoprazan",
+   "first_approval_year": 2022,
+   "brand": "Voquezna Triple Pak",
+   "approval_date": "5/3/2022"
+  },
+  {
+   "drug": "vosoritide",
+   "first_approval_year": 2021,
+   "brand": "Voxzogo",
+   "approval_date": "11/19/2021"
+  },
+  {
+   "drug": "vutrisiran",
+   "first_approval_year": 2022,
+   "brand": "Amvuttra",
+   "approval_date": "6/13/2022"
+  },
+  {
+   "drug": "xanomeline",
+   "first_approval_year": 2024,
+   "brand": "Cobenfy",
+   "approval_date": "9/26/2024"
+  },
+  {
+   "drug": "xenon xe 129 hyperpolarized",
+   "first_approval_year": 2022,
+   "brand": "Xenoview",
+   "approval_date": "12/23/2022"
+  },
+  {
+   "drug": "zanidatamab-hrii",
+   "first_approval_year": 2024,
+   "brand": "Ziihera",
+   "approval_date": "11/20/2024"
+  },
+  {
+   "drug": "zavegepant",
+   "first_approval_year": 2023,
+   "brand": "Zavzpret",
+   "approval_date": "3/9/2023"
+  },
+  {
+   "drug": "zenocutuzumab-zbco",
+   "first_approval_year": 2024,
+   "brand": "Bizengri",
+   "approval_date": "12/4/2024"
+  },
+  {
+   "drug": "zilucoplan",
+   "first_approval_year": 2023,
+   "brand": "Zilbrysq",
+   "approval_date": "10/17/2023"
+  },
+  {
+   "drug": "zolbetuximab-clzb",
+   "first_approval_year": 2024,
+   "brand": "Vyloy",
+   "approval_date": "10/18/2024"
+  },
+  {
+   "drug": "zuranolone",
+   "first_approval_year": 2023,
+   "brand": "Zurzuvae",
+   "approval_date": "8/4/2023"
+  }
+ ]
+}

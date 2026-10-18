@@ -1,0 +1,41 @@
+{
+ "status": "post hoc and descriptive; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "criteria": {
+  "statistic": "pooled AUROC of b2mixed BiomedBERT ood_empty P(interaction) averaged over seeds 1, 2, 3, 4, 42 on Novel (438 pairs), as in the preregistration's primary endpoint",
+  "intervals": "drug-cluster bootstrap (the preregistered one, ev.boot_auroc groups = OOD drug, 1000 draws, seed 42): 90% and 95% percentile intervals and p_TOST against [0.40, 0.60]; the two-way interval alongside; must reproduce 0.529 [0.457, 0.608]"
+ },
+ "endpoint": {
+  "statistic": "pooled AUROC, b2mixed BiomedBERT, Novel OOD, names only (empty sentence), P(interaction) averaged over seeds 1, 2, 3, 4, 42",
+  "n": 438,
+  "n_pos": 148,
+  "n_drugs": 48,
+  "n_seeds": 5,
+  "value": 0.528611,
+  "drug_cluster": {
+   "ci95": [
+    0.456603,
+    0.608432
+   ],
+   "ci90": [
+    0.46516,
+    0.597399
+   ],
+   "p_tost": 0.045954,
+   "n_draws": 1000
+  },
+  "two_way": {
+   "ci95": [
+    0.41037,
+    0.636534
+   ],
+   "ci90": [
+    0.436168,
+    0.620046
+   ],
+   "p_tost": 0.100899,
+   "n_draws": 1000
+  },
+  "within_drug_for_reference": 0.523118,
+  "reproduces_tables_md": true
+ }
+}

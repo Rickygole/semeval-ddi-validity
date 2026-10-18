@@ -1,0 +1,654 @@
+{
+ "stems": {
+  "abrocitinib": {
+   "stem": "tinib",
+   "preserved": "zomanutinib",
+   "scrambled": "zomanunibti",
+   "prefix": "zomanu",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "berotralstat": {
+   "stem": "stat",
+   "preserved": "jadaremostat",
+   "scrambled": "jadaremotsta",
+   "prefix": "jadaremo",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "bexagliflozin": {
+   "stem": "gliflozin",
+   "preserved": "jehegliflozin",
+   "scrambled": "jeheilnflogzi",
+   "prefix": "jehe",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 6
+  },
+  "bimekizumab-bkzx": {
+   "stem": "zumab",
+   "preserved": "dunohezumab",
+   "scrambled": "dunohezuamb",
+   "prefix": "dunohe",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 5
+  },
+  "daprodustat": {
+   "stem": "stat",
+   "preserved": "bobumulstat",
+   "scrambled": "bobumultats",
+   "prefix": "bobumul",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "fexinidazole": {
+   "stem": "dazole",
+   "preserved": "zenaridazole",
+   "scrambled": "zenariodeazl",
+   "prefix": "zenari",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "fostemsavir": {
+   "stem": "vir",
+   "preserved": "bataholavir",
+   "scrambled": "bataholarvi",
+   "prefix": "batahola",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "lonafarnib": {
+   "stem": "nib",
+   "preserved": "gezatornib",
+   "scrambled": "gezatorinb",
+   "prefix": "gezator",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "maribavir": {
+   "stem": "vir",
+   "preserved": "kibudevir",
+   "scrambled": "kibudevri",
+   "prefix": "kibude",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "momelotinib": {
+   "stem": "tinib",
+   "preserved": "kupivutinib",
+   "scrambled": "kupivuitinb",
+   "prefix": "kupivu",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "osilodrostat": {
+   "stem": "stat",
+   "preserved": "lasusikistat",
+   "scrambled": "lasusikittas",
+   "prefix": "lasusiki",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "oteseconazole": {
+   "stem": "conazole",
+   "preserved": "picojconazole",
+   "scrambled": "picojnzeoclao",
+   "prefix": "picoj",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  },
+  "pacritinib": {
+   "stem": "tinib",
+   "preserved": "fujuctinib",
+   "scrambled": "fujucbitni",
+   "prefix": "fujuc",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "palopegteriparatide": {
+   "stem": "tide",
+   "preserved": "nerusifidebaboptide",
+   "scrambled": "nerusifidebaboptedi",
+   "prefix": "nerusifidebabop",
+   "tokens_preserved": 7,
+   "tokens_scrambled": 7
+  },
+  "quizartinib": {
+   "stem": "tinib",
+   "preserved": "vidupetinib",
+   "scrambled": "vidupebntii",
+   "prefix": "vidupe",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "remdesivir": {
+   "stem": "vir",
+   "preserved": "rimumonvir",
+   "scrambled": "rimumonirv",
+   "prefix": "rimumon",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "remimazolam": {
+   "stem": "zolam",
+   "preserved": "hehedizolam",
+   "scrambled": "hehedimzloa",
+   "prefix": "hehedi",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  },
+  "ritlecitinib": {
+   "stem": "tinib",
+   "preserved": "nozahibtinib",
+   "scrambled": "nozahibbinti",
+   "prefix": "nozahib",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 7
+  },
+  "selumetinib": {
+   "stem": "tinib",
+   "preserved": "fakezutinib",
+   "scrambled": "fakezutibni",
+   "prefix": "fakezu",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "sotagliflozin": {
+   "stem": "gliflozin",
+   "preserved": "furogliflozin",
+   "scrambled": "furolingzoilf",
+   "prefix": "furo",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 6
+  },
+  "tirzepatide": {
+   "stem": "tide",
+   "preserved": "janehoctide",
+   "scrambled": "janehoctdei",
+   "prefix": "janehoc",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "tovorafenib": {
+   "stem": "nib",
+   "preserved": "sojetilunib",
+   "scrambled": "sojetiluinb",
+   "prefix": "sojetilu",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "trilaciclib": {
+   "stem": "ciclib",
+   "preserved": "poresciclib",
+   "scrambled": "poresilcibc",
+   "prefix": "pores",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "vadadustat": {
+   "stem": "stat",
+   "preserved": "difolustat",
+   "scrambled": "difolutast",
+   "prefix": "difolu",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 3
+  },
+  "vamorolone": {
+   "stem": "olone",
+   "preserved": "kisafolone",
+   "scrambled": "kisafoonle",
+   "prefix": "kisaf",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 4
+  },
+  "adalimumab": {
+   "stem": "umab",
+   "preserved": "nezaniumab",
+   "scrambled": "nezaniabmu",
+   "prefix": "nezani",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "apixaban": {
+   "stem": "xaban",
+   "preserved": "hatxaban",
+   "scrambled": "hatanaxb",
+   "prefix": "hat",
+   "tokens_preserved": 3,
+   "tokens_scrambled": 3
+  },
+  "asenapine": {
+   "stem": "apine",
+   "preserved": "koruapine",
+   "scrambled": "koruenapi",
+   "prefix": "koru",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 3
+  },
+  "avanafil": {
+   "stem": "afil",
+   "preserved": "zocaafil",
+   "scrambled": "zocaifal",
+   "prefix": "zoca",
+   "tokens_preserved": 3,
+   "tokens_scrambled": 4
+  },
+  "axitinib": {
+   "stem": "tinib",
+   "preserved": "mohtinib",
+   "scrambled": "mohnbtii",
+   "prefix": "moh",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "belatacept": {
+   "stem": "cept",
+   "preserved": "ficazicept",
+   "scrambled": "ficazipetc",
+   "prefix": "ficazi",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "belimumab": {
+   "stem": "umab",
+   "preserved": "jutunumab",
+   "scrambled": "jutunbmau",
+   "prefix": "jutun",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  },
+  "betaxolol": {
+   "stem": "olol",
+   "preserved": "madasolol",
+   "scrambled": "madaslool",
+   "prefix": "madas",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "bicalutamide": {
+   "stem": "mide",
+   "preserved": "vosalukemide",
+   "scrambled": "vosalukedime",
+   "prefix": "vosaluke",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "cabazitaxel": {
+   "stem": "taxel",
+   "preserved": "comisotaxel",
+   "scrambled": "comisoxlate",
+   "prefix": "comiso",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 4
+  },
+  "cabozantinib": {
+   "stem": "tinib",
+   "preserved": "sajaboctinib",
+   "scrambled": "sajabocibint",
+   "prefix": "sajaboc",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "cidofovir": {
+   "stem": "vir",
+   "preserved": "fuvalavir",
+   "scrambled": "fuvalariv",
+   "prefix": "fuvala",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "colesevelam": {
+   "stem": "lam",
+   "preserved": "dudinelilam",
+   "scrambled": "dudinelialm",
+   "prefix": "dudineli",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "crizotinib": {
+   "stem": "tinib",
+   "preserved": "negortinib",
+   "scrambled": "negoriitnb",
+   "prefix": "negor",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "darunavir": {
+   "stem": "navir",
+   "preserved": "vacenavir",
+   "scrambled": "vacenairv",
+   "prefix": "vace",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "enzalutamide": {
+   "stem": "mide",
+   "preserved": "cilebejamide",
+   "scrambled": "cilebejaedmi",
+   "prefix": "cilebeja",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  },
+  "exenatide": {
+   "stem": "tide",
+   "preserved": "juniktide",
+   "scrambled": "junikidet",
+   "prefix": "junik",
+   "tokens_preserved": 3,
+   "tokens_scrambled": 4
+  },
+  "febuxostat": {
+   "stem": "stat",
+   "preserved": "pijahustat",
+   "scrambled": "pijahuttsa",
+   "prefix": "pijahu",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "golimumab": {
+   "stem": "umab",
+   "preserved": "conocumab",
+   "scrambled": "conocmabu",
+   "prefix": "conoc",
+   "tokens_preserved": 3,
+   "tokens_scrambled": 4
+  },
+  "iloperidone": {
+   "stem": "idone",
+   "preserved": "nefogiidone",
+   "scrambled": "nefogionide",
+   "prefix": "nefogi",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "iopromide": {
+   "stem": "mide",
+   "preserved": "cuvucmide",
+   "scrambled": "cuvucdemi",
+   "prefix": "cuvuc",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "lanreotide": {
+   "stem": "tide",
+   "preserved": "tejazotide",
+   "scrambled": "tejazodiet",
+   "prefix": "tejazo",
+   "tokens_preserved": 3,
+   "tokens_scrambled": 4
+  },
+  "lurasidone": {
+   "stem": "idone",
+   "preserved": "tazemidone",
+   "scrambled": "tazemndoei",
+   "prefix": "tazem",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  },
+  "natalizumab": {
+   "stem": "zumab",
+   "preserved": "porudazumab",
+   "scrambled": "porudaambzu",
+   "prefix": "poruda",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 4
+  },
+  "nebivolol": {
+   "stem": "olol",
+   "preserved": "fitufolol",
+   "scrambled": "fitufollo",
+   "prefix": "fituf",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 3
+  },
+  "oxaliplatin": {
+   "stem": "platin",
+   "preserved": "jikedplatin",
+   "scrambled": "jikedpnailt",
+   "prefix": "jiked",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "pasireotide": {
+   "stem": "tide",
+   "preserved": "decekintide",
+   "scrambled": "decekintied",
+   "prefix": "decekin",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "pazopanib": {
+   "stem": "nib",
+   "preserved": "mihimenib",
+   "scrambled": "mihimeibn",
+   "prefix": "mihime",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "pimecrolimus": {
+   "stem": "limus",
+   "preserved": "rucunejlimus",
+   "scrambled": "rucunejimuls",
+   "prefix": "rucunej",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 6
+  },
+  "pitavastatin": {
+   "stem": "vastatin",
+   "preserved": "mazovastatin",
+   "scrambled": "mazoatasnvti",
+   "prefix": "mazo",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  },
+  "posaconazole": {
+   "stem": "conazole",
+   "preserved": "vozeconazole",
+   "scrambled": "vozezcloneao",
+   "prefix": "voze",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "pramlintide": {
+   "stem": "tide",
+   "preserved": "rasenantide",
+   "scrambled": "rasenandite",
+   "prefix": "rasenan",
+   "tokens_preserved": 3,
+   "tokens_scrambled": 4
+  },
+  "rabeprazole": {
+   "stem": "prazole",
+   "preserved": "filaprazole",
+   "scrambled": "filaloazpre",
+   "prefix": "fila",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "raltegravir": {
+   "stem": "tegravir",
+   "preserved": "rahtegravir",
+   "scrambled": "rahivetrarg",
+   "prefix": "rah",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 4
+  },
+  "ranolazine": {
+   "stem": "azine",
+   "preserved": "fadurazine",
+   "scrambled": "faduranzie",
+   "prefix": "fadur",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "regorafenib": {
+   "stem": "nib",
+   "preserved": "sukebavunib",
+   "scrambled": "sukebavubin",
+   "prefix": "sukebavu",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 6
+  },
+  "repaglinide": {
+   "stem": "glinide",
+   "preserved": "fozoglinide",
+   "scrambled": "fozogeidinl",
+   "prefix": "fozo",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  },
+  "risedronate": {
+   "stem": "dronate",
+   "preserved": "tocedronate",
+   "scrambled": "toceraedotn",
+   "prefix": "toce",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "rituximab": {
+   "stem": "ximab",
+   "preserved": "vehaximab",
+   "scrambled": "vehaibxam",
+   "prefix": "veha",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "rivaroxaban": {
+   "stem": "xaban",
+   "preserved": "pozedixaban",
+   "scrambled": "pozediaaxnb",
+   "prefix": "pozedi",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "sargramostim": {
+   "stem": "stim",
+   "preserved": "sagugejestim",
+   "scrambled": "sagugejesimt",
+   "prefix": "sagugeje",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 5
+  },
+  "telmisartan": {
+   "stem": "sartan",
+   "preserved": "vefofsartan",
+   "scrambled": "vefoftrnasa",
+   "prefix": "vefof",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  },
+  "temsirolimus": {
+   "stem": "limus",
+   "preserved": "bepojoglimus",
+   "scrambled": "bepojogmuils",
+   "prefix": "bepojog",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 6
+  },
+  "teriflunomide": {
+   "stem": "mide",
+   "preserved": "henigumusmide",
+   "scrambled": "henigumusimde",
+   "prefix": "henigumus",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 6
+  },
+  "tetrabenazine": {
+   "stem": "azine",
+   "preserved": "rohulohuazine",
+   "scrambled": "rohulohuneiaz",
+   "prefix": "rohulohu",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 6
+  },
+  "tinidazole": {
+   "stem": "dazole",
+   "preserved": "nicadazole",
+   "scrambled": "nicalodeaz",
+   "prefix": "nica",
+   "tokens_preserved": 3,
+   "tokens_scrambled": 4
+  },
+  "tocilizumab": {
+   "stem": "zumab",
+   "preserved": "vumepezumab",
+   "scrambled": "vumepeambuz",
+   "prefix": "vumepe",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "tofacitinib": {
+   "stem": "tinib",
+   "preserved": "zarugetinib",
+   "scrambled": "zarugetibni",
+   "prefix": "zaruge",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "torsemide": {
+   "stem": "semide",
+   "preserved": "nirsemide",
+   "scrambled": "nirsieemd",
+   "prefix": "nir",
+   "tokens_preserved": 3,
+   "tokens_scrambled": 4
+  },
+  "trandolapril": {
+   "stem": "pril",
+   "preserved": "verofefopril",
+   "scrambled": "verofeforlip",
+   "prefix": "verofefo",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "trastuzumab": {
+   "stem": "zumab",
+   "preserved": "guhojazumab",
+   "scrambled": "guhojabuamz",
+   "prefix": "guhoja",
+   "tokens_preserved": 6,
+   "tokens_scrambled": 6
+  },
+  "vandetanib": {
+   "stem": "nib",
+   "preserved": "zilofelnib",
+   "scrambled": "zilofelnbi",
+   "prefix": "zilofel",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "vemurafenib": {
+   "stem": "nib",
+   "preserved": "rihadunonib",
+   "scrambled": "rihadunoibn",
+   "prefix": "rihaduno",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 5
+  },
+  "vorinostat": {
+   "stem": "stat",
+   "preserved": "bajasistat",
+   "scrambled": "bajasiastt",
+   "prefix": "bajasi",
+   "tokens_preserved": 4,
+   "tokens_scrambled": 4
+  },
+  "zolmitriptan": {
+   "stem": "triptan",
+   "preserved": "henigtriptan",
+   "scrambled": "henigrpnttia",
+   "prefix": "henig",
+   "tokens_preserved": 5,
+   "tokens_scrambled": 6
+  }
+ },
+ "stem_list_sha256": "99455f208ef5a781da735ace08ae2cb12cf80734badb81df2e5f062a8693087a",
+ "stem_list_size": 96,
+ "drugs_with_stem": {
+  "novel": 25,
+  "older_primary": 55
+ },
+ "drugs_total": {
+  "novel": 48,
+  "older_primary": 121
+ }
+}

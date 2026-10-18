@@ -1,0 +1,2547 @@
+{
+ "status": "post hoc and exploratory; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "disclosure": "automated model adjudication, not a human audit",
+ "corrections_applied": [
+  "rule_flag and current_label were stripped from the copy of label_audit_sheet.csv used for judging; items were judged from the text only",
+  "each of the 76 negative rows, which carry no evidence text, was judged against the ood_drug Drug Interactions section in artifacts/amend7/di_sections.json, from the supplied text only and never from background knowledge"
+ ],
+ "boot": 1000,
+ "adjudication_counts": {
+  "yes|current_1": 114,
+  "yes|current_0": 1,
+  "no|current_1": 59,
+  "no|current_0": 75,
+  "unsure|current_1": 6,
+  "unsure|current_0": 0
+ },
+ "agreement_current_label": {
+  "table_rows_adjudication_cols_current_label": {
+   "yes": {
+    "1": 114,
+    "0": 1
+   },
+   "no": {
+    "1": 59,
+    "0": 75
+   },
+   "unsure": {
+    "1": 6,
+    "0": 0
+   }
+  },
+  "unsure_as_not_confirming": {
+   "k": 189,
+   "n": 255,
+   "rate": 0.741176,
+   "ci95_exact": [
+    0.682843,
+    0.793809
+   ]
+  },
+  "decided_only": {
+   "k": 189,
+   "n": 249,
+   "rate": 0.759036,
+   "ci95_exact": [
+    0.700999,
+    0.810793
+   ]
+  },
+  "n_unsure": 6
+ },
+ "error_rates": {
+  "flagged_positives": {
+   "n": 179,
+   "n_wrong": 59,
+   "n_unsure": 6,
+   "primary_decided_only": {
+    "k": 59,
+    "n": 173,
+    "rate": 0.34104,
+    "ci95_exact": [
+     0.270796,
+     0.416838
+    ]
+   },
+   "unsure_as_correct": {
+    "k": 59,
+    "n": 179,
+    "rate": 0.329609,
+    "ci95_exact": [
+     0.261305,
+     0.403665
+    ]
+   },
+   "unsure_as_error": {
+    "k": 65,
+    "n": 179,
+    "rate": 0.363128,
+    "ci95_exact": [
+     0.292692,
+     0.43818
+    ]
+   }
+  },
+  "flagged_negatives": {
+   "n": 76,
+   "n_wrong": 1,
+   "n_unsure": 0,
+   "primary_decided_only": {
+    "k": 1,
+    "n": 76,
+    "rate": 0.013158,
+    "ci95_exact": [
+     0.000333,
+     0.071144
+    ]
+   },
+   "unsure_as_correct": {
+    "k": 1,
+    "n": 76,
+    "rate": 0.013158,
+    "ci95_exact": [
+     0.000333,
+     0.071144
+    ]
+   },
+   "unsure_as_error": {
+    "k": 1,
+    "n": 76,
+    "rate": 0.013158,
+    "ci95_exact": [
+     0.000333,
+     0.071144
+    ]
+   }
+  },
+  "positives_by_selection": {
+   "positive_oracle_below_0.5": {
+    "n": 136,
+    "n_wrong": 19,
+    "n_unsure": 6,
+    "primary_decided_only": {
+     "k": 19,
+     "n": 130,
+     "rate": 0.146154,
+     "ci95_exact": [
+      0.090347,
+      0.218793
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 19,
+     "n": 136,
+     "rate": 0.139706,
+     "ci95_exact": [
+      0.086256,
+      0.209542
+     ]
+    },
+    "unsure_as_error": {
+     "k": 25,
+     "n": 136,
+     "rate": 0.183824,
+     "ci95_exact": [
+      0.122636,
+      0.259285
+     ]
+    }
+   },
+   "positive_oracle_below_0.5 positive_rule_flag": {
+    "n": 39,
+    "n_wrong": 37,
+    "n_unsure": 0,
+    "primary_decided_only": {
+     "k": 37,
+     "n": 39,
+     "rate": 0.948718,
+     "ci95_exact": [
+      0.826755,
+      0.993728
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 37,
+     "n": 39,
+     "rate": 0.948718,
+     "ci95_exact": [
+      0.826755,
+      0.993728
+     ]
+    },
+    "unsure_as_error": {
+     "k": 37,
+     "n": 39,
+     "rate": 0.948718,
+     "ci95_exact": [
+      0.826755,
+      0.993728
+     ]
+    }
+   },
+   "positive_rule_flag": {
+    "n": 4,
+    "n_wrong": 3,
+    "n_unsure": 0,
+    "primary_decided_only": {
+     "k": 3,
+     "n": 4,
+     "rate": 0.75,
+     "ci95_exact": [
+      0.19412,
+      0.993691
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 3,
+     "n": 4,
+     "rate": 0.75,
+     "ci95_exact": [
+      0.19412,
+      0.993691
+     ]
+    },
+    "unsure_as_error": {
+     "k": 3,
+     "n": 4,
+     "rate": 0.75,
+     "ci95_exact": [
+      0.19412,
+      0.993691
+     ]
+    }
+   }
+  },
+  "positives_by_cohort": {
+   "novel": {
+    "n": 33,
+    "n_wrong": 1,
+    "n_unsure": 3,
+    "primary_decided_only": {
+     "k": 1,
+     "n": 30,
+     "rate": 0.033333,
+     "ci95_exact": [
+      0.000844,
+      0.172169
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 1,
+     "n": 33,
+     "rate": 0.030303,
+     "ci95_exact": [
+      0.000767,
+      0.157594
+     ]
+    },
+    "unsure_as_error": {
+     "k": 4,
+     "n": 33,
+     "rate": 0.121212,
+     "ci95_exact": [
+      0.034033,
+      0.282016
+     ]
+    }
+   },
+   "older": {
+    "n": 146,
+    "n_wrong": 58,
+    "n_unsure": 3,
+    "primary_decided_only": {
+     "k": 58,
+     "n": 143,
+     "rate": 0.405594,
+     "ci95_exact": [
+      0.324353,
+      0.49083
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 58,
+     "n": 146,
+     "rate": 0.39726,
+     "ci95_exact": [
+      0.317298,
+      0.481481
+     ]
+    },
+    "unsure_as_error": {
+     "k": 61,
+     "n": 146,
+     "rate": 0.417808,
+     "ci95_exact": [
+      0.336802,
+      0.502219
+     ]
+    }
+   }
+  },
+  "negatives_by_cohort": {
+   "novel": {
+    "n": 24,
+    "n_wrong": 0,
+    "n_unsure": 0,
+    "primary_decided_only": {
+     "k": 0,
+     "n": 24,
+     "rate": 0.0,
+     "ci95_exact": [
+      0.0,
+      0.142474
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 0,
+     "n": 24,
+     "rate": 0.0,
+     "ci95_exact": [
+      0.0,
+      0.142474
+     ]
+    },
+    "unsure_as_error": {
+     "k": 0,
+     "n": 24,
+     "rate": 0.0,
+     "ci95_exact": [
+      0.0,
+      0.142474
+     ]
+    }
+   },
+   "older": {
+    "n": 52,
+    "n_wrong": 1,
+    "n_unsure": 0,
+    "primary_decided_only": {
+     "k": 1,
+     "n": 52,
+     "rate": 0.019231,
+     "ci95_exact": [
+      0.000487,
+      0.102554
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 1,
+     "n": 52,
+     "rate": 0.019231,
+     "ci95_exact": [
+      0.000487,
+      0.102554
+     ]
+    },
+    "unsure_as_error": {
+     "k": 1,
+     "n": 52,
+     "rate": 0.019231,
+     "ci95_exact": [
+      0.000487,
+      0.102554
+     ]
+    }
+   }
+  }
+ },
+ "agreement_rule": {
+  "scope": "the 179 positives; rule_flag 1 means the post8 rule calls the positive a non-interaction",
+  "table_rows_adjudication_cols_rule_flag": {
+   "yes": {
+    "1": 3,
+    "0": 111
+   },
+   "no": {
+    "1": 40,
+    "0": 19
+   },
+   "unsure": {
+    "1": 0,
+    "0": 6
+   }
+  },
+  "agreement_decided_only": {
+   "k": 151,
+   "n": 173,
+   "rate": 0.872832,
+   "ci95_exact": [
+    0.813817,
+    0.91856
+   ]
+  },
+  "flagged_judged_no": {
+   "k": 40,
+   "n": 43,
+   "rate": 0.930233,
+   "ci95_exact": [
+    0.809393,
+    0.985375
+   ]
+  },
+  "judged_no_flagged": {
+   "k": 40,
+   "n": 59,
+   "rate": 0.677966,
+   "ci95_exact": [
+    0.54362,
+    0.793753
+   ]
+  }
+ },
+ "agreement_oracle": {
+  "threshold": 0.5,
+  "all_items_decided_only": {
+   "k": 58,
+   "n": 249,
+   "rate": 0.232932,
+   "ci95_exact": [
+    0.181884,
+    0.290458
+   ]
+  },
+  "current_label_0_decided_only": {
+   "k": 1,
+   "n": 76,
+   "rate": 0.013158,
+   "ci95_exact": [
+    0.000333,
+    0.071144
+   ]
+  },
+  "current_label_1_decided_only": {
+   "k": 57,
+   "n": 173,
+   "rate": 0.32948,
+   "ci95_exact": [
+    0.260031,
+    0.404888
+   ]
+  }
+ },
+ "tier": {
+  "name": "C-adjudicated",
+  "dropped_items": [
+   "A005",
+   "A006",
+   "A011",
+   "A019",
+   "A022",
+   "A023",
+   "A026",
+   "A032",
+   "A039",
+   "A050",
+   "A053",
+   "A057",
+   "A059",
+   "A061",
+   "A062",
+   "A064",
+   "A070",
+   "A071",
+   "A072",
+   "A075",
+   "A082",
+   "A087",
+   "A089",
+   "A101",
+   "A110",
+   "A112",
+   "A113",
+   "A115",
+   "A119",
+   "A120",
+   "A124",
+   "A126",
+   "A128",
+   "A131",
+   "A134",
+   "A135",
+   "A147",
+   "A149",
+   "A151",
+   "A152",
+   "A154",
+   "A157",
+   "A159",
+   "A164",
+   "A179",
+   "A182",
+   "A187",
+   "A206",
+   "A218",
+   "A223",
+   "A225",
+   "A231",
+   "A238",
+   "A239",
+   "A240",
+   "A242",
+   "A243",
+   "A250",
+   "A254"
+  ],
+  "counts": {
+   "novel": {
+    "positives": 147,
+    "negatives": 290,
+    "positives_dropped": 1
+   },
+   "older_primary": {
+    "positives": 510,
+    "negatives": 1159,
+    "positives_dropped": 52
+   },
+   "older_clean": {
+    "positives": 545,
+    "negatives": 1233,
+    "positives_dropped": 54
+   }
+  },
+  "h": {
+   "H1": {
+    "n": 1778,
+    "n_pos": 545,
+    "n_drugs": 128,
+    "value": 0.462138,
+    "ci90": [
+     0.404622,
+     0.519038
+    ],
+    "ci95": [
+     0.393882,
+     0.529761
+    ],
+    "upper95_one_sided": 0.519038,
+    "lo95": 0.393882,
+    "p_tost": 0.038961,
+    "drugbank_within": 0.646257,
+    "drugbank_ci95": [
+     0.597799,
+     0.6972
+    ],
+    "kappa": -0.258876,
+    "kappa_ci95": [
+     -0.695635,
+     0.228472
+    ],
+    "kappa_upper95": 0.228472,
+    "n_draws": 1000,
+    "p_holm": 0.116883,
+    "would_be_label": "inconclusive"
+   },
+   "H1-novel": {
+    "n": 437,
+    "n_pos": 147,
+    "n_drugs": 48,
+    "value": 0.519308,
+    "ci90": [
+     0.409979,
+     0.624534
+    ],
+    "ci95": [
+     0.393192,
+     0.650333
+    ],
+    "upper95_one_sided": 0.624534,
+    "lo95": 0.393192,
+    "p_tost": 0.100899,
+    "drugbank_within": 0.727031,
+    "drugbank_ci95": [
+     0.640503,
+     0.808329
+    ],
+    "kappa": 0.085044,
+    "kappa_ci95": [
+     -0.504337,
+     0.708085
+    ],
+    "kappa_upper95": 0.708085,
+    "n_draws": 1000
+   },
+   "H6": {
+    "n": 437,
+    "n_pos": 147,
+    "n_drugs": 48,
+    "value": 0.520639,
+    "ci90": [
+     0.420485,
+     0.629337
+    ],
+    "ci95": [
+     0.393438,
+     0.648306
+    ],
+    "upper95_one_sided": 0.629337,
+    "lo95": 0.393438,
+    "p_tost": 0.111888,
+    "drugbank_within": 0.727031,
+    "drugbank_ci95": [
+     0.640503,
+     0.808329
+    ],
+    "kappa": 0.090909,
+    "kappa_ci95": [
+     -0.493393,
+     0.694499
+    ],
+    "kappa_upper95": 0.694499,
+    "n_draws": 1000,
+    "p_holm": 0.223776,
+    "would_be_label": "inconclusive"
+   },
+   "H4": {
+    "value": -0.05717,
+    "ci90": [
+     -0.183164,
+     0.062547
+    ],
+    "ci95": [
+     -0.209931,
+     0.083879
+    ],
+    "p_tost": 0.26973,
+    "p_holm": 0.26973,
+    "would_be_label": "inconclusive"
+   }
+  },
+  "e8": {
+   "novel": {
+    "within": {
+     "value": 0.973369,
+     "lo95": 0.914763,
+     "hi95": 1.0,
+     "lo90": 0.929839,
+     "hi90": 0.998498,
+     "n_draws": 1000
+    },
+    "grep": 1.0,
+    "bar": 0.95,
+    "statistic": "point",
+    "pass": true
+   },
+   "older_primary": {
+    "within": {
+     "value": 0.986199,
+     "lo95": 0.967664,
+     "hi95": 0.997675,
+     "lo90": 0.971763,
+     "hi90": 0.996554,
+     "n_draws": 1000
+    },
+    "grep": 1.0,
+    "bar": 0.95,
+    "statistic": "lower95",
+    "pass": true
+   },
+   "decision": "pass",
+   "pass": true
+  },
+  "e7": {
+   "c": {
+    "novel/A": {
+     "within": {
+      "value": 0.532623,
+      "lo95": 0.398885,
+      "hi95": 0.697963,
+      "lo90": 0.42222,
+      "hi90": 0.666182,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.552631,
+      "lo95": 0.410054,
+      "hi95": 0.680341,
+      "lo90": 0.435033,
+      "hi90": 0.66164,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.554492,
+      "lo95": 0.444268,
+      "hi95": 0.663906,
+      "lo90": 0.461186,
+      "hi90": 0.649341,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.524634,
+      "lo95": 0.388341,
+      "hi95": 0.67728,
+      "lo90": 0.414428,
+      "hi90": 0.650503,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.490013,
+      "lo95": 0.364651,
+      "hi95": 0.622151,
+      "lo90": 0.384717,
+      "hi90": 0.597754,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.04261,
+      "lo95": -0.159213,
+      "hi95": 0.260607,
+      "lo90": -0.127627,
+      "hi90": 0.216723,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "neither",
+     "drugbank_within": 0.727031,
+     "kappa": 0.143695,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "novel/B": {
+     "within": {
+      "value": 0.529086,
+      "lo95": 0.341558,
+      "hi95": 0.736346,
+      "lo90": 0.372702,
+      "hi90": 0.699625,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.565639,
+      "lo95": 0.393951,
+      "hi95": 0.730645,
+      "lo90": 0.413272,
+      "hi90": 0.698429,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.5948,
+      "lo95": 0.459745,
+      "hi95": 0.71361,
+      "lo90": 0.490242,
+      "hi90": 0.697085,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.533241,
+      "lo95": 0.360093,
+      "hi95": 0.708343,
+      "lo90": 0.390514,
+      "hi90": 0.686304,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.450139,
+      "lo95": 0.246941,
+      "hi95": 0.645635,
+      "lo90": 0.280201,
+      "hi90": 0.620466,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.078947,
+      "lo95": -0.197247,
+      "hi95": 0.381888,
+      "lo90": -0.150391,
+      "hi90": 0.340165,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "neither",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_primary/A": {
+     "within": {
+      "value": 0.684444,
+      "lo95": 0.615271,
+      "hi95": 0.754319,
+      "lo90": 0.623969,
+      "hi90": 0.743197,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.704152,
+      "lo95": 0.637531,
+      "hi95": 0.765558,
+      "lo90": 0.646069,
+      "hi90": 0.756606,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.692358,
+      "lo95": 0.635132,
+      "hi95": 0.748752,
+      "lo90": 0.645521,
+      "hi90": 0.739495,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.690526,
+      "lo95": 0.617559,
+      "hi95": 0.759353,
+      "lo90": 0.629958,
+      "hi90": 0.74652,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.487485,
+      "lo95": 0.420086,
+      "hi95": 0.560542,
+      "lo90": 0.432823,
+      "hi90": 0.545693,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.196959,
+      "lo95": 0.098698,
+      "hi95": 0.288219,
+      "lo90": 0.112086,
+      "hi90": 0.276805,
+      "n_draws": 1000
+     },
+     "tost_older_primary": {
+      "equivalent": false,
+      "lo90": 0.623969,
+      "hi90": 0.743197,
+      "margin": [
+       0.4,
+       0.6
+      ]
+     },
+     "label": "signal",
+     "drugbank_within": 0.657895,
+     "kappa": 1.168148,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_primary/B": {
+     "within": {
+      "value": 0.741402,
+      "lo95": 0.636275,
+      "hi95": 0.836344,
+      "lo90": 0.648088,
+      "hi90": 0.820137,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.735991,
+      "lo95": 0.639666,
+      "hi95": 0.818774,
+      "lo90": 0.65743,
+      "hi90": 0.809333,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.731983,
+      "lo95": 0.664837,
+      "hi95": 0.791355,
+      "lo90": 0.677527,
+      "hi90": 0.782212,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.707341,
+      "lo95": 0.601123,
+      "hi95": 0.802129,
+      "lo90": 0.615701,
+      "hi90": 0.78817,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.438823,
+      "lo95": 0.329592,
+      "hi95": 0.554169,
+      "lo90": 0.3447,
+      "hi90": 0.535587,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.302579,
+      "lo95": 0.129948,
+      "hi95": 0.458214,
+      "lo90": 0.160396,
+      "hi90": 0.433985,
+      "n_draws": 1000
+     },
+     "tost_older_primary": {
+      "equivalent": false,
+      "lo90": 0.648088,
+      "hi90": 0.820137,
+      "margin": [
+       0.4,
+       0.6
+      ]
+     },
+     "label": "signal",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_clean/A": {
+     "within": {
+      "value": 0.687148,
+      "lo95": 0.61292,
+      "hi95": 0.753566,
+      "lo90": 0.626017,
+      "hi90": 0.74111,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.703464,
+      "lo95": 0.631509,
+      "hi95": 0.761386,
+      "lo90": 0.6484,
+      "hi90": 0.751787,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.693368,
+      "lo95": 0.639355,
+      "hi95": 0.742875,
+      "lo90": 0.649733,
+      "hi90": 0.735663,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.699048,
+      "lo95": 0.622383,
+      "hi95": 0.767,
+      "lo90": 0.639005,
+      "hi90": 0.75553,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.490913,
+      "lo95": 0.430076,
+      "hi95": 0.55799,
+      "lo90": 0.43996,
+      "hi90": 0.546572,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.196235,
+      "lo95": 0.09936,
+      "hi95": 0.285935,
+      "lo90": 0.108868,
+      "hi90": 0.266285,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "signal",
+     "drugbank_within": 0.646257,
+     "kappa": 1.279586,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_clean/B": {
+     "within": {
+      "value": 0.739159,
+      "lo95": 0.631572,
+      "hi95": 0.828433,
+      "lo90": 0.644273,
+      "hi90": 0.815823,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.732173,
+      "lo95": 0.628558,
+      "hi95": 0.822292,
+      "lo90": 0.647542,
+      "hi90": 0.805608,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.733335,
+      "lo95": 0.670801,
+      "hi95": 0.792023,
+      "lo90": 0.682263,
+      "hi90": 0.779491,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.712549,
+      "lo95": 0.605801,
+      "hi95": 0.812542,
+      "lo90": 0.620671,
+      "hi90": 0.791774,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.441196,
+      "lo95": 0.329277,
+      "hi95": 0.55756,
+      "lo90": 0.352174,
+      "hi90": 0.540283,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.297963,
+      "lo95": 0.129799,
+      "hi95": 0.448465,
+      "lo90": 0.160697,
+      "hi90": 0.423685,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "signal",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    }
+   },
+   "d": {
+    "novel/A": {
+     "within": {
+      "value": 0.513981,
+      "lo95": 0.374976,
+      "hi95": 0.662585,
+      "lo90": 0.39098,
+      "hi90": 0.649447,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.526734,
+      "lo95": 0.386149,
+      "hi95": 0.653498,
+      "lo90": 0.403737,
+      "hi90": 0.630765,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.564415,
+      "lo95": 0.452608,
+      "hi95": 0.680754,
+      "lo90": 0.465201,
+      "hi90": 0.662614,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.500666,
+      "lo95": 0.358921,
+      "hi95": 0.671461,
+      "lo90": 0.382356,
+      "hi90": 0.640946,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.490013,
+      "lo95": 0.364651,
+      "hi95": 0.622151,
+      "lo90": 0.384717,
+      "hi90": 0.597754,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.023968,
+      "lo95": -0.185227,
+      "hi95": 0.243881,
+      "lo90": -0.151221,
+      "hi90": 0.207664,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "neither",
+     "drugbank_within": 0.727031,
+     "kappa": 0.061584,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "novel/B": {
+     "within": {
+      "value": 0.556787,
+      "lo95": 0.373055,
+      "hi95": 0.759393,
+      "lo90": 0.406522,
+      "hi90": 0.730164,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.53427,
+      "lo95": 0.369992,
+      "hi95": 0.714015,
+      "lo90": 0.393146,
+      "hi90": 0.692042,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.585445,
+      "lo95": 0.451537,
+      "hi95": 0.716987,
+      "lo90": 0.470008,
+      "hi90": 0.694083,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.522161,
+      "lo95": 0.321171,
+      "hi95": 0.738597,
+      "lo90": 0.353169,
+      "hi90": 0.711391,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.450139,
+      "lo95": 0.246941,
+      "hi95": 0.645635,
+      "lo90": 0.280201,
+      "hi90": 0.620466,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.106648,
+      "lo95": -0.174267,
+      "hi95": 0.451716,
+      "lo90": -0.135249,
+      "hi90": 0.381508,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "neither",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_primary/A": {
+     "within": {
+      "value": 0.661988,
+      "lo95": 0.582722,
+      "hi95": 0.73297,
+      "lo90": 0.597105,
+      "hi90": 0.719324,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.672729,
+      "lo95": 0.599686,
+      "hi95": 0.732488,
+      "lo90": 0.612673,
+      "hi90": 0.722006,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.649857,
+      "lo95": 0.587062,
+      "hi95": 0.709801,
+      "lo90": 0.596234,
+      "hi90": 0.698429,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.660585,
+      "lo95": 0.57885,
+      "hi95": 0.73073,
+      "lo90": 0.591711,
+      "hi90": 0.721167,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.487485,
+      "lo95": 0.420086,
+      "hi95": 0.560542,
+      "lo90": 0.432823,
+      "hi90": 0.545693,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.174503,
+      "lo95": 0.065052,
+      "hi95": 0.268839,
+      "lo90": 0.082686,
+      "hi90": 0.255028,
+      "n_draws": 1000
+     },
+     "tost_older_primary": {
+      "equivalent": false,
+      "lo90": 0.597105,
+      "hi90": 0.719324,
+      "margin": [
+       0.4,
+       0.6
+      ]
+     },
+     "label": "signal",
+     "drugbank_within": 0.657895,
+     "kappa": 1.025926,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_primary/B": {
+     "within": {
+      "value": 0.721561,
+      "lo95": 0.612038,
+      "hi95": 0.821239,
+      "lo90": 0.632108,
+      "hi90": 0.808042,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.73515,
+      "lo95": 0.628314,
+      "hi95": 0.817199,
+      "lo90": 0.648162,
+      "hi90": 0.80388,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.694,
+      "lo95": 0.623604,
+      "hi95": 0.757016,
+      "lo90": 0.634742,
+      "hi90": 0.746502,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.69213,
+      "lo95": 0.587199,
+      "hi95": 0.788864,
+      "lo90": 0.601076,
+      "hi90": 0.775054,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.438823,
+      "lo95": 0.329592,
+      "hi95": 0.554169,
+      "lo90": 0.3447,
+      "hi90": 0.535587,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.282738,
+      "lo95": 0.115757,
+      "hi95": 0.441649,
+      "lo90": 0.138477,
+      "hi90": 0.424897,
+      "n_draws": 1000
+     },
+     "tost_older_primary": {
+      "equivalent": false,
+      "lo90": 0.632108,
+      "hi90": 0.808042,
+      "margin": [
+       0.4,
+       0.6
+      ]
+     },
+     "label": "signal",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_clean/A": {
+     "within": {
+      "value": 0.654479,
+      "lo95": 0.583871,
+      "hi95": 0.72582,
+      "lo90": 0.592483,
+      "hi90": 0.71086,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.666761,
+      "lo95": 0.595414,
+      "hi95": 0.726379,
+      "lo90": 0.60912,
+      "hi90": 0.717905,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.647756,
+      "lo95": 0.590463,
+      "hi95": 0.705274,
+      "lo90": 0.598916,
+      "hi90": 0.695712,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.655993,
+      "lo95": 0.574833,
+      "hi95": 0.731815,
+      "lo90": 0.591446,
+      "hi90": 0.720846,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.490913,
+      "lo95": 0.430076,
+      "hi95": 0.55799,
+      "lo90": 0.43996,
+      "hi90": 0.546572,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.163566,
+      "lo95": 0.067722,
+      "hi95": 0.255393,
+      "lo90": 0.082313,
+      "hi90": 0.242563,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "signal",
+     "drugbank_within": 0.646257,
+     "kappa": 1.056213,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_clean/B": {
+     "within": {
+      "value": 0.722076,
+      "lo95": 0.616154,
+      "hi95": 0.812979,
+      "lo90": 0.635956,
+      "hi90": 0.79879,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.735887,
+      "lo95": 0.639344,
+      "hi95": 0.813766,
+      "lo90": 0.652649,
+      "hi90": 0.797881,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.68978,
+      "lo95": 0.621576,
+      "hi95": 0.756616,
+      "lo90": 0.63114,
+      "hi90": 0.74603,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.692181,
+      "lo95": 0.585531,
+      "hi95": 0.778598,
+      "lo90": 0.606747,
+      "hi90": 0.769018,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.441196,
+      "lo95": 0.329277,
+      "hi95": 0.55756,
+      "lo90": 0.352174,
+      "hi90": 0.540283,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.28088,
+      "lo95": 0.112532,
+      "hi95": 0.433538,
+      "lo90": 0.142878,
+      "hi90": 0.4105,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "signal",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    }
+   },
+   "e": {
+    "novel/A": {
+     "within": {
+      "value": 0.609854,
+      "lo95": 0.4716,
+      "hi95": 0.757829,
+      "lo90": 0.494508,
+      "hi90": 0.730754,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.668172,
+      "lo95": 0.522905,
+      "hi95": 0.771679,
+      "lo90": 0.544722,
+      "hi90": 0.756885,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.648933,
+      "lo95": 0.541592,
+      "hi95": 0.753671,
+      "lo90": 0.556291,
+      "hi90": 0.74148,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.651132,
+      "lo95": 0.511618,
+      "hi95": 0.783031,
+      "lo90": 0.532535,
+      "hi90": 0.763657,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.490013,
+      "lo95": 0.364651,
+      "hi95": 0.622151,
+      "lo90": 0.384717,
+      "hi90": 0.597754,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.11984,
+      "lo95": -0.091842,
+      "hi95": 0.330291,
+      "lo90": -0.052657,
+      "hi90": 0.301179,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "neither",
+     "drugbank_within": 0.727031,
+     "kappa": 0.483871,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "novel/B": {
+     "within": {
+      "value": 0.65928,
+      "lo95": 0.479067,
+      "hi95": 0.837153,
+      "lo90": 0.49738,
+      "hi90": 0.810008,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.712643,
+      "lo95": 0.505211,
+      "hi95": 0.829788,
+      "lo90": 0.541941,
+      "hi90": 0.811431,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.694403,
+      "lo95": 0.576277,
+      "hi95": 0.80243,
+      "lo90": 0.595015,
+      "hi90": 0.793852,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.638504,
+      "lo95": 0.45295,
+      "hi95": 0.822937,
+      "lo90": 0.482433,
+      "hi90": 0.790247,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.450139,
+      "lo95": 0.246941,
+      "hi95": 0.645635,
+      "lo90": 0.280201,
+      "hi90": 0.620466,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.209141,
+      "lo95": -0.085472,
+      "hi95": 0.521821,
+      "lo90": -0.034433,
+      "hi90": 0.467049,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "neither",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_primary/A": {
+     "within": {
+      "value": 0.720234,
+      "lo95": 0.644255,
+      "hi95": 0.793039,
+      "lo90": 0.659022,
+      "hi90": 0.780932,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.769656,
+      "lo95": 0.69442,
+      "hi95": 0.823095,
+      "lo90": 0.70765,
+      "hi90": 0.812812,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.72752,
+      "lo95": 0.668435,
+      "hi95": 0.78525,
+      "lo90": 0.678338,
+      "hi90": 0.772828,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.733567,
+      "lo95": 0.662808,
+      "hi95": 0.799273,
+      "lo90": 0.676601,
+      "hi90": 0.790465,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.487485,
+      "lo95": 0.420086,
+      "hi95": 0.560542,
+      "lo90": 0.432823,
+      "hi90": 0.545693,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.232749,
+      "lo95": 0.117172,
+      "hi95": 0.335614,
+      "lo90": 0.132973,
+      "hi90": 0.316564,
+      "n_draws": 1000
+     },
+     "tost_older_primary": {
+      "equivalent": false,
+      "lo90": 0.659022,
+      "hi90": 0.780932,
+      "margin": [
+       0.4,
+       0.6
+      ]
+     },
+     "label": "signal",
+     "drugbank_within": 0.657895,
+     "kappa": 1.394815,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_primary/B": {
+     "within": {
+      "value": 0.766534,
+      "lo95": 0.66641,
+      "hi95": 0.856311,
+      "lo90": 0.684237,
+      "hi90": 0.845233,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.809743,
+      "lo95": 0.716065,
+      "hi95": 0.873619,
+      "lo90": 0.727624,
+      "hi90": 0.86379,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.782886,
+      "lo95": 0.717298,
+      "hi95": 0.836257,
+      "lo90": 0.730905,
+      "hi90": 0.828408,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.747024,
+      "lo95": 0.641055,
+      "hi95": 0.835318,
+      "lo90": 0.660135,
+      "hi90": 0.822625,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.438823,
+      "lo95": 0.329592,
+      "hi95": 0.554169,
+      "lo90": 0.3447,
+      "hi90": 0.535587,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.327712,
+      "lo95": 0.164109,
+      "hi95": 0.485675,
+      "lo90": 0.190885,
+      "hi90": 0.461924,
+      "n_draws": 1000
+     },
+     "tost_older_primary": {
+      "equivalent": false,
+      "lo90": 0.684237,
+      "hi90": 0.845233,
+      "margin": [
+       0.4,
+       0.6
+      ]
+     },
+     "label": "signal",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_clean/A": {
+     "within": {
+      "value": 0.716357,
+      "lo95": 0.643916,
+      "hi95": 0.781333,
+      "lo90": 0.653695,
+      "hi90": 0.774212,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.760982,
+      "lo95": 0.690588,
+      "hi95": 0.819994,
+      "lo90": 0.700277,
+      "hi90": 0.804227,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.723553,
+      "lo95": 0.667373,
+      "hi95": 0.777816,
+      "lo90": 0.677092,
+      "hi90": 0.769175,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.733449,
+      "lo95": 0.665162,
+      "hi95": 0.796559,
+      "lo90": 0.677352,
+      "hi90": 0.7886,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.490913,
+      "lo95": 0.430076,
+      "hi95": 0.55799,
+      "lo90": 0.43996,
+      "hi90": 0.546572,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.225444,
+      "lo95": 0.11242,
+      "hi95": 0.322643,
+      "lo90": 0.130685,
+      "hi90": 0.307577,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "signal",
+     "drugbank_within": 0.646257,
+     "kappa": 1.47929,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    },
+    "older_clean/B": {
+     "within": {
+      "value": 0.764126,
+      "lo95": 0.670305,
+      "hi95": 0.852378,
+      "lo90": 0.687584,
+      "hi90": 0.842603,
+      "n_draws": 1000
+     },
+     "drug_weighted": {
+      "value": 0.805086,
+      "lo95": 0.716367,
+      "hi95": 0.868344,
+      "lo90": 0.727767,
+      "hi90": 0.856937,
+      "n_draws": 1000
+     },
+     "pooled": {
+      "value": 0.775354,
+      "lo95": 0.716096,
+      "hi95": 0.83099,
+      "lo90": 0.724702,
+      "hi90": 0.823576,
+      "n_draws": 1000
+     },
+     "residual_within": {
+      "value": 0.740802,
+      "lo95": 0.637459,
+      "hi95": 0.832281,
+      "lo90": 0.656224,
+      "hi90": 0.819633,
+      "n_draws": 1000
+     },
+     "partner_prior_within": {
+      "value": 0.441196,
+      "lo95": 0.329277,
+      "hi95": 0.55756,
+      "lo90": 0.352174,
+      "hi90": 0.540283,
+      "n_draws": 1000
+     },
+     "paired_vs_partner_prior": {
+      "value": 0.32293,
+      "lo95": 0.167952,
+      "hi95": 0.474516,
+      "lo90": 0.192714,
+      "hi90": 0.452336,
+      "n_draws": 1000
+     },
+     "tost_older_primary": null,
+     "label": "signal",
+     "drugbank_within": null,
+     "kappa": null,
+     "n": null,
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "complete": true
+    }
+   }
+  },
+  "e7_older_primary": {
+   "c older_primary/A": {
+    "within": {
+     "value": 0.684444,
+     "lo95": 0.615271,
+     "hi95": 0.754319,
+     "lo90": 0.623969,
+     "hi90": 0.743197,
+     "n_draws": 1000
+    },
+    "residual_within": {
+     "value": 0.690526,
+     "lo95": 0.617559,
+     "hi95": 0.759353,
+     "lo90": 0.629958,
+     "hi90": 0.74652,
+     "n_draws": 1000
+    },
+    "paired_vs_partner_prior": {
+     "value": 0.196959,
+     "lo95": 0.098698,
+     "hi95": 0.288219,
+     "lo90": 0.112086,
+     "hi90": 0.276805,
+     "n_draws": 1000
+    },
+    "tost_older_primary": {
+     "equivalent": false,
+     "lo90": 0.623969,
+     "hi90": 0.743197,
+     "margin": [
+      0.4,
+      0.6
+     ]
+    },
+    "kappa": 1.168148,
+    "label": "signal"
+   },
+   "c older_primary/B": {
+    "within": {
+     "value": 0.741402,
+     "lo95": 0.636275,
+     "hi95": 0.836344,
+     "lo90": 0.648088,
+     "hi90": 0.820137,
+     "n_draws": 1000
+    },
+    "residual_within": {
+     "value": 0.707341,
+     "lo95": 0.601123,
+     "hi95": 0.802129,
+     "lo90": 0.615701,
+     "hi90": 0.78817,
+     "n_draws": 1000
+    },
+    "paired_vs_partner_prior": {
+     "value": 0.302579,
+     "lo95": 0.129948,
+     "hi95": 0.458214,
+     "lo90": 0.160396,
+     "hi90": 0.433985,
+     "n_draws": 1000
+    },
+    "tost_older_primary": {
+     "equivalent": false,
+     "lo90": 0.648088,
+     "hi90": 0.820137,
+     "margin": [
+      0.4,
+      0.6
+     ]
+    },
+    "kappa": null,
+    "label": "signal"
+   },
+   "d older_primary/A": {
+    "within": {
+     "value": 0.661988,
+     "lo95": 0.582722,
+     "hi95": 0.73297,
+     "lo90": 0.597105,
+     "hi90": 0.719324,
+     "n_draws": 1000
+    },
+    "residual_within": {
+     "value": 0.660585,
+     "lo95": 0.57885,
+     "hi95": 0.73073,
+     "lo90": 0.591711,
+     "hi90": 0.721167,
+     "n_draws": 1000
+    },
+    "paired_vs_partner_prior": {
+     "value": 0.174503,
+     "lo95": 0.065052,
+     "hi95": 0.268839,
+     "lo90": 0.082686,
+     "hi90": 0.255028,
+     "n_draws": 1000
+    },
+    "tost_older_primary": {
+     "equivalent": false,
+     "lo90": 0.597105,
+     "hi90": 0.719324,
+     "margin": [
+      0.4,
+      0.6
+     ]
+    },
+    "kappa": 1.025926,
+    "label": "signal"
+   },
+   "d older_primary/B": {
+    "within": {
+     "value": 0.721561,
+     "lo95": 0.612038,
+     "hi95": 0.821239,
+     "lo90": 0.632108,
+     "hi90": 0.808042,
+     "n_draws": 1000
+    },
+    "residual_within": {
+     "value": 0.69213,
+     "lo95": 0.587199,
+     "hi95": 0.788864,
+     "lo90": 0.601076,
+     "hi90": 0.775054,
+     "n_draws": 1000
+    },
+    "paired_vs_partner_prior": {
+     "value": 0.282738,
+     "lo95": 0.115757,
+     "hi95": 0.441649,
+     "lo90": 0.138477,
+     "hi90": 0.424897,
+     "n_draws": 1000
+    },
+    "tost_older_primary": {
+     "equivalent": false,
+     "lo90": 0.632108,
+     "hi90": 0.808042,
+     "margin": [
+      0.4,
+      0.6
+     ]
+    },
+    "kappa": null,
+    "label": "signal"
+   },
+   "e older_primary/A": {
+    "within": {
+     "value": 0.720234,
+     "lo95": 0.644255,
+     "hi95": 0.793039,
+     "lo90": 0.659022,
+     "hi90": 0.780932,
+     "n_draws": 1000
+    },
+    "residual_within": {
+     "value": 0.733567,
+     "lo95": 0.662808,
+     "hi95": 0.799273,
+     "lo90": 0.676601,
+     "hi90": 0.790465,
+     "n_draws": 1000
+    },
+    "paired_vs_partner_prior": {
+     "value": 0.232749,
+     "lo95": 0.117172,
+     "hi95": 0.335614,
+     "lo90": 0.132973,
+     "hi90": 0.316564,
+     "n_draws": 1000
+    },
+    "tost_older_primary": {
+     "equivalent": false,
+     "lo90": 0.659022,
+     "hi90": 0.780932,
+     "margin": [
+      0.4,
+      0.6
+     ]
+    },
+    "kappa": 1.394815,
+    "label": "signal"
+   },
+   "e older_primary/B": {
+    "within": {
+     "value": 0.766534,
+     "lo95": 0.66641,
+     "hi95": 0.856311,
+     "lo90": 0.684237,
+     "hi90": 0.845233,
+     "n_draws": 1000
+    },
+    "residual_within": {
+     "value": 0.747024,
+     "lo95": 0.641055,
+     "hi95": 0.835318,
+     "lo90": 0.660135,
+     "hi90": 0.822625,
+     "n_draws": 1000
+    },
+    "paired_vs_partner_prior": {
+     "value": 0.327712,
+     "lo95": 0.164109,
+     "hi95": 0.485675,
+     "lo90": 0.190885,
+     "hi90": 0.461924,
+     "n_draws": 1000
+    },
+    "tost_older_primary": {
+     "equivalent": false,
+     "lo90": 0.684237,
+     "hi90": 0.845233,
+     "margin": [
+      0.4,
+      0.6
+     ]
+    },
+    "kappa": null,
+    "label": "signal"
+   }
+  },
+  "e9": {
+   "older_primary": {
+    "n_rows": 1669,
+    "n_pos": 510,
+    "n_upper_at_most_0.60": 20,
+    "n_models": 20,
+    "drugbank_within": 0.657895,
+    "drugbank_lo95": 0.607383,
+    "drugbank_hi95": 0.713214,
+    "kappa_hi95_range": [
+     -0.134446,
+     0.599845
+    ],
+    "kappa_upper95_one_sided_range": [
+     -0.194181,
+     0.512015
+    ],
+    "ratio_old": 0.607736,
+    "ratio_paired": 0.717432
+   },
+   "novel": {
+    "n_rows": 437,
+    "n_pos": 147,
+    "n_upper_at_most_0.60": 2,
+    "n_models": 20,
+    "drugbank_within": 0.727031,
+    "drugbank_lo95": 0.640503,
+    "drugbank_hi95": 0.808329,
+    "kappa_hi95_range": [
+     0.390004,
+     0.856138
+    ],
+    "kappa_upper95_one_sided_range": [
+     0.294644,
+     0.71941
+    ],
+    "ratio_old": 0.115734,
+    "ratio_paired": 0.123498
+   }
+  }
+ },
+ "conclusions": [
+  {
+   "item": "H1 would-be label",
+   "vs": "A",
+   "reference": "inconclusive",
+   "adjudicated": "inconclusive",
+   "changed": false
+  },
+  {
+   "item": "H1 would-be label",
+   "vs": "C-auto",
+   "reference": "inconclusive",
+   "adjudicated": "inconclusive",
+   "changed": false
+  },
+  {
+   "item": "H4 would-be label",
+   "vs": "A",
+   "reference": "inconclusive",
+   "adjudicated": "inconclusive",
+   "changed": false
+  },
+  {
+   "item": "H4 would-be label",
+   "vs": "C-auto",
+   "reference": "inconclusive",
+   "adjudicated": "inconclusive",
+   "changed": false
+  },
+  {
+   "item": "H6 would-be label",
+   "vs": "A",
+   "reference": "inconclusive",
+   "adjudicated": "inconclusive",
+   "changed": false
+  },
+  {
+   "item": "H6 would-be label",
+   "vs": "C-auto",
+   "reference": "inconclusive",
+   "adjudicated": "inconclusive",
+   "changed": false
+  },
+  {
+   "item": "E8 decision",
+   "vs": "A",
+   "reference": "fail",
+   "adjudicated": "pass",
+   "changed": true
+  },
+  {
+   "item": "E8 novel pass",
+   "vs": "A",
+   "reference": true,
+   "adjudicated": true,
+   "changed": false
+  },
+  {
+   "item": "E8 older_primary pass",
+   "vs": "A",
+   "reference": false,
+   "adjudicated": true,
+   "changed": true
+  },
+  {
+   "item": "E7 c novel/A label",
+   "vs": "A",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 c novel/B label",
+   "vs": "A",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 c older_primary/A label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 c older_primary/A TOST equivalence",
+   "vs": "A",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 c older_primary/B label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 c older_primary/B TOST equivalence",
+   "vs": "A",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 c older_clean/A label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 c older_clean/B label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 d novel/A label",
+   "vs": "A",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 d novel/B label",
+   "vs": "A",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 d older_primary/A label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 d older_primary/A TOST equivalence",
+   "vs": "A",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 d older_primary/B label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 d older_primary/B TOST equivalence",
+   "vs": "A",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 d older_clean/A label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 d older_clean/B label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 e novel/A label",
+   "vs": "A",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 e novel/B label",
+   "vs": "A",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 e older_primary/A label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 e older_primary/A TOST equivalence",
+   "vs": "A",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 e older_primary/B label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 e older_primary/B TOST equivalence",
+   "vs": "A",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 e older_clean/A label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 e older_clean/B label",
+   "vs": "A",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E9 older_primary count upper95 <= 0.60",
+   "vs": "A",
+   "reference": 20,
+   "adjudicated": 20,
+   "changed": false
+  },
+  {
+   "item": "E9 novel count upper95 <= 0.60",
+   "vs": "A",
+   "reference": 3,
+   "adjudicated": 2,
+   "changed": true
+  },
+  {
+   "item": "E8 decision",
+   "vs": "C-auto",
+   "reference": "pass",
+   "adjudicated": "pass",
+   "changed": false
+  },
+  {
+   "item": "E8 novel pass",
+   "vs": "C-auto",
+   "reference": true,
+   "adjudicated": true,
+   "changed": false
+  },
+  {
+   "item": "E8 older_primary pass",
+   "vs": "C-auto",
+   "reference": true,
+   "adjudicated": true,
+   "changed": false
+  },
+  {
+   "item": "E7 c novel/A label",
+   "vs": "C-auto",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 c novel/B label",
+   "vs": "C-auto",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 c older_primary/A label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 c older_primary/A TOST equivalence",
+   "vs": "C-auto",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 c older_primary/B label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 c older_primary/B TOST equivalence",
+   "vs": "C-auto",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 c older_clean/A label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 c older_clean/B label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 d novel/A label",
+   "vs": "C-auto",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 d novel/B label",
+   "vs": "C-auto",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 d older_primary/A label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 d older_primary/A TOST equivalence",
+   "vs": "C-auto",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 d older_primary/B label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 d older_primary/B TOST equivalence",
+   "vs": "C-auto",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 d older_clean/A label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 d older_clean/B label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 e novel/A label",
+   "vs": "C-auto",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 e novel/B label",
+   "vs": "C-auto",
+   "reference": "neither",
+   "adjudicated": "neither",
+   "changed": false
+  },
+  {
+   "item": "E7 e older_primary/A label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 e older_primary/A TOST equivalence",
+   "vs": "C-auto",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 e older_primary/B label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 e older_primary/B TOST equivalence",
+   "vs": "C-auto",
+   "reference": false,
+   "adjudicated": false,
+   "changed": false
+  },
+  {
+   "item": "E7 e older_clean/A label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E7 e older_clean/B label",
+   "vs": "C-auto",
+   "reference": "signal",
+   "adjudicated": "signal",
+   "changed": false
+  },
+  {
+   "item": "E9 older_primary count upper95 <= 0.60",
+   "vs": "C-auto",
+   "reference": 20,
+   "adjudicated": 20,
+   "changed": false
+  },
+  {
+   "item": "E9 novel count upper95 <= 0.60",
+   "vs": "C-auto",
+   "reference": 2,
+   "adjudicated": 2,
+   "changed": false
+  }
+ ],
+ "n_conclusions_changed": 3
+}

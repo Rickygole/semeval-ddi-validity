@@ -1,0 +1,11 @@
+{
+ "total": 438,
+ "resolvable": 437,
+ "unresolvable": 1,
+ "pos_resolvable": 148,
+ "pos_confirmed": 133,
+ "neg_resolvable": 289,
+ "neg_contradicted": 106,
+ "positive_precision": 0.8986,
+ "negative_contradiction_rate": 0.3668
+}

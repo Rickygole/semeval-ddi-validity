@@ -1,0 +1,16 @@
+{
+ "pairs_file": "results/corrected/ood_pairs.csv",
+ "pairs_sha256": "245aa99d3439deba4f461976eb0094da84528d509a1d4616882271f259ba80aa",
+ "pairs_hash": "61928b6d9f311ae902b468e11cbc77150c88850e20268431d8ba286773bbad0b",
+ "n_pos": 50,
+ "n_neg": 50,
+ "seed": 42,
+ "sampling": "round robin over novel drugs within each class, drug order and rows shuffled with the seed, then the combined list shuffled",
+ "n_items": 100,
+ "n_novel_drugs": 48,
+ "n_novel_drugs_positive": 48,
+ "n_novel_drugs_negative": 48,
+ "drugs_without_local_di_section": [],
+ "audit_sheet_sha256": "697de8690f7be6515cfd52a0a54b4d3d10cd4dd7f5a2465c9303dfbe05bf2a21",
+ "answer_key_sha256": "2c5ff27aa34e08ae23903b3ffa0a2a18e69fcfc8df52092b07c00c7052374e8a"
+}

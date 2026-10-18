@@ -1,0 +1,2350 @@
+{
+ "status": "post hoc and exploratory; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "criteria": {
+  "designs": "the real (y, drug, partner) structure of Novel and Older-clean, tiers A and B",
+  "scorer": "s = beta_d * y + sigma_p * u_partner + sigma_d * v_drug + e, u, v, e standard normal, beta_d = beta + tau * z_d; the true within-drug AUROC is Phi(beta / sqrt(2 (sigma_p^2 + 1) + tau^2)) because a drug's positives and negatives never share a partner; sigma_d = 1",
+  "scenarios": "true AUROC in {0.45, 0.50, 0.60} x sigma_p in {0, 1} x tau in {0, 0.5}: 12 per design",
+  "reps": "1,000 replicates per scenario and design (at least 500 as required), 1,000 bootstrap draws per replicate, simulation seed 7",
+  "primary_statistic": "empirical coverage of the nominal 90% percentile interval against the analytic true value, per bootstrap (two-way, one-way drug, partner only); also 95% coverage, mean 90% half-width, the ratio of that half-width to 1.645 times the replicate SD, and the share of replicates with the 90% interval inside [0.40, 0.60]",
+  "calibrated": "90% coverage in [0.87, 0.93] and half-width ratio in [0.85, 1.15]",
+  "conservative": "90% coverage above 0.93 or half-width ratio above 1.15, with coverage at least 0.87",
+  "anti_conservative": "90% coverage below 0.87",
+  "adequate_bootstrap_on_a_design": "no scenario on that design is anti-conservative"
+ },
+ "reps": 1000,
+ "boot": 1000,
+ "seed": 7,
+ "rows": [
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": -0.177712
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.450918,
+    "bias": 0.000918,
+    "sd_of_estimate": 0.017108,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.051961,
+      "halfwidth90_over_nominal": 1.846518,
+      "share_90_inside_040_060": 0.467,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.89,
+      "coverage95": 0.942,
+      "mean_halfwidth90": 0.027419,
+      "halfwidth90_over_nominal": 0.974386,
+      "share_90_inside_040_060": 0.917,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.923,
+      "coverage95": 0.969,
+      "mean_halfwidth90": 0.031488,
+      "halfwidth90_over_nominal": 1.118964,
+      "share_90_inside_040_060": 0.872,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": -0.188492
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.449927,
+    "bias": -7.3e-05,
+    "sd_of_estimate": 0.022572,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.991,
+      "coverage95": 0.996,
+      "mean_halfwidth90": 0.057408,
+      "halfwidth90_over_nominal": 1.546258,
+      "share_90_inside_040_060": 0.372,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.871,
+      "coverage95": 0.941,
+      "mean_halfwidth90": 0.035367,
+      "halfwidth90_over_nominal": 0.952588,
+      "share_90_inside_040_060": 0.739,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.828,
+      "coverage95": 0.902,
+      "mean_halfwidth90": 0.032237,
+      "halfwidth90_over_nominal": 0.868294,
+      "share_90_inside_040_060": 0.786,
+      "label": "anti-conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": -0.251323
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.450628,
+    "bias": 0.000628,
+    "sd_of_estimate": 0.013808,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 1.0,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.049642,
+      "halfwidth90_over_nominal": 2.185711,
+      "share_90_inside_040_060": 0.518,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.951,
+      "coverage95": 0.985,
+      "mean_halfwidth90": 0.027413,
+      "halfwidth90_over_nominal": 1.206979,
+      "share_90_inside_040_060": 0.957,
+      "label": "conservative"
+     },
+     "partner_only": {
+      "coverage90": 0.954,
+      "coverage95": 0.987,
+      "mean_halfwidth90": 0.027266,
+      "halfwidth90_over_nominal": 1.200508,
+      "share_90_inside_040_060": 0.955,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": -0.259058
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.450285,
+    "bias": 0.000285,
+    "sd_of_estimate": 0.016954,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.052833,
+      "halfwidth90_over_nominal": 1.894541,
+      "share_90_inside_040_060": 0.449,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.943,
+      "coverage95": 0.966,
+      "mean_halfwidth90": 0.032052,
+      "halfwidth90_over_nominal": 1.14936,
+      "share_90_inside_040_060": 0.857,
+      "label": "conservative"
+     },
+     "partner_only": {
+      "coverage90": 0.913,
+      "coverage95": 0.945,
+      "mean_halfwidth90": 0.027995,
+      "halfwidth90_over_nominal": 1.003855,
+      "share_90_inside_040_060": 0.911,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.501392,
+    "bias": 0.001392,
+    "sd_of_estimate": 0.017406,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.995,
+      "coverage95": 0.998,
+      "mean_halfwidth90": 0.052266,
+      "halfwidth90_over_nominal": 1.8255,
+      "share_90_inside_040_060": 0.994,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.882,
+      "coverage95": 0.937,
+      "mean_halfwidth90": 0.02766,
+      "halfwidth90_over_nominal": 0.966087,
+      "share_90_inside_040_060": 1.0,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.923,
+      "coverage95": 0.967,
+      "mean_halfwidth90": 0.031491,
+      "halfwidth90_over_nominal": 1.099892,
+      "share_90_inside_040_060": 1.0,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.499765,
+    "bias": -0.000235,
+    "sd_of_estimate": 0.021779,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.992,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.057848,
+      "halfwidth90_over_nominal": 1.614793,
+      "share_90_inside_040_060": 0.948,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.896,
+      "coverage95": 0.948,
+      "mean_halfwidth90": 0.035789,
+      "halfwidth90_over_nominal": 0.999017,
+      "share_90_inside_040_060": 0.999,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.858,
+      "coverage95": 0.919,
+      "mean_halfwidth90": 0.032392,
+      "halfwidth90_over_nominal": 0.90419,
+      "share_90_inside_040_060": 0.999,
+      "label": "anti-conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.500241,
+    "bias": 0.000241,
+    "sd_of_estimate": 0.014215,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 1.0,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.049816,
+      "halfwidth90_over_nominal": 2.130559,
+      "share_90_inside_040_060": 1.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.958,
+      "coverage95": 0.986,
+      "mean_halfwidth90": 0.02767,
+      "halfwidth90_over_nominal": 1.183421,
+      "share_90_inside_040_060": 1.0,
+      "label": "conservative"
+     },
+     "partner_only": {
+      "coverage90": 0.958,
+      "coverage95": 0.983,
+      "mean_halfwidth90": 0.027185,
+      "halfwidth90_over_nominal": 1.162647,
+      "share_90_inside_040_060": 1.0,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.500015,
+    "bias": 1.5e-05,
+    "sd_of_estimate": 0.018082,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.996,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.053035,
+      "halfwidth90_over_nominal": 1.783119,
+      "share_90_inside_040_060": 0.987,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.923,
+      "coverage95": 0.965,
+      "mean_halfwidth90": 0.032239,
+      "halfwidth90_over_nominal": 1.08392,
+      "share_90_inside_040_060": 1.0,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.866,
+      "coverage95": 0.928,
+      "mean_halfwidth90": 0.028007,
+      "halfwidth90_over_nominal": 0.94164,
+      "share_90_inside_040_060": 1.0,
+      "label": "anti-conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.358287
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.600409,
+    "bias": 0.000409,
+    "sd_of_estimate": 0.016659,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.050823,
+      "halfwidth90_over_nominal": 1.854742,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.897,
+      "coverage95": 0.946,
+      "mean_halfwidth90": 0.026757,
+      "halfwidth90_over_nominal": 0.97645,
+      "share_90_inside_040_060": 0.046,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.936,
+      "coverage95": 0.977,
+      "mean_halfwidth90": 0.030708,
+      "halfwidth90_over_nominal": 1.120648,
+      "share_90_inside_040_060": 0.032,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.380021
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.599391,
+    "bias": -0.000609,
+    "sd_of_estimate": 0.02106,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.989,
+      "coverage95": 0.997,
+      "mean_halfwidth90": 0.056345,
+      "halfwidth90_over_nominal": 1.626568,
+      "share_90_inside_040_060": 0.005,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.907,
+      "coverage95": 0.949,
+      "mean_halfwidth90": 0.034638,
+      "halfwidth90_over_nominal": 0.999934,
+      "share_90_inside_040_060": 0.052,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.872,
+      "coverage95": 0.933,
+      "mean_halfwidth90": 0.031606,
+      "halfwidth90_over_nominal": 0.912419,
+      "share_90_inside_040_060": 0.067,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.506694
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.599887,
+    "bias": -0.000113,
+    "sd_of_estimate": 0.014145,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.049013,
+      "halfwidth90_over_nominal": 2.106581,
+      "share_90_inside_040_060": 0.001,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.929,
+      "coverage95": 0.975,
+      "mean_halfwidth90": 0.02683,
+      "halfwidth90_over_nominal": 1.153139,
+      "share_90_inside_040_060": 0.028,
+      "label": "conservative"
+     },
+     "partner_only": {
+      "coverage90": 0.941,
+      "coverage95": 0.977,
+      "mean_halfwidth90": 0.027415,
+      "halfwidth90_over_nominal": 1.178279,
+      "share_90_inside_040_060": 0.024,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier A",
+   "n": 1832,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.522288
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.600318,
+    "bias": 0.000318,
+    "sd_of_estimate": 0.018115,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.994,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.051932,
+      "halfwidth90_over_nominal": 1.742836,
+      "share_90_inside_040_060": 0.001,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.917,
+      "coverage95": 0.956,
+      "mean_halfwidth90": 0.031113,
+      "halfwidth90_over_nominal": 1.044172,
+      "share_90_inside_040_060": 0.039,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.874,
+      "coverage95": 0.933,
+      "mean_halfwidth90": 0.02792,
+      "halfwidth90_over_nominal": 0.937,
+      "share_90_inside_040_060": 0.063,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": -0.177712
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.449528,
+    "bias": -0.000472,
+    "sd_of_estimate": 0.025872,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.998,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.080226,
+      "halfwidth90_over_nominal": 1.885197,
+      "share_90_inside_040_060": 0.11,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.892,
+      "coverage95": 0.94,
+      "mean_halfwidth90": 0.041147,
+      "halfwidth90_over_nominal": 0.966894,
+      "share_90_inside_040_060": 0.628,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.942,
+      "coverage95": 0.973,
+      "mean_halfwidth90": 0.049297,
+      "halfwidth90_over_nominal": 1.158411,
+      "share_90_inside_040_060": 0.514,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": -0.188492
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.44981,
+    "bias": -0.00019,
+    "sd_of_estimate": 0.030269,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.995,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.086458,
+      "halfwidth90_over_nominal": 1.736498,
+      "share_90_inside_040_060": 0.095,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.887,
+      "coverage95": 0.958,
+      "mean_halfwidth90": 0.050013,
+      "halfwidth90_over_nominal": 1.004499,
+      "share_90_inside_040_060": 0.5,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.904,
+      "coverage95": 0.959,
+      "mean_halfwidth90": 0.050696,
+      "halfwidth90_over_nominal": 1.018227,
+      "share_90_inside_040_060": 0.484,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": -0.251323
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.449076,
+    "bias": -0.000924,
+    "sd_of_estimate": 0.025867,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.998,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.080917,
+      "halfwidth90_over_nominal": 1.901793,
+      "share_90_inside_040_060": 0.11,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.893,
+      "coverage95": 0.937,
+      "mean_halfwidth90": 0.041438,
+      "halfwidth90_over_nominal": 0.973903,
+      "share_90_inside_040_060": 0.616,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.948,
+      "coverage95": 0.979,
+      "mean_halfwidth90": 0.050361,
+      "halfwidth90_over_nominal": 1.183617,
+      "share_90_inside_040_060": 0.478,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": -0.259058
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.450506,
+    "bias": 0.000506,
+    "sd_of_estimate": 0.028933,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.996,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.08417,
+      "halfwidth90_over_nominal": 1.768614,
+      "share_90_inside_040_060": 0.11,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.891,
+      "coverage95": 0.935,
+      "mean_halfwidth90": 0.046147,
+      "halfwidth90_over_nominal": 0.969668,
+      "share_90_inside_040_060": 0.566,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.917,
+      "coverage95": 0.959,
+      "mean_halfwidth90": 0.050953,
+      "halfwidth90_over_nominal": 1.070648,
+      "share_90_inside_040_060": 0.499,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.499787,
+    "bias": -0.000213,
+    "sd_of_estimate": 0.025298,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 1.0,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.08085,
+      "halfwidth90_over_nominal": 1.942979,
+      "share_90_inside_040_060": 0.524,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.893,
+      "coverage95": 0.948,
+      "mean_halfwidth90": 0.041528,
+      "halfwidth90_over_nominal": 0.997997,
+      "share_90_inside_040_060": 0.981,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.944,
+      "coverage95": 0.982,
+      "mean_halfwidth90": 0.049793,
+      "halfwidth90_over_nominal": 1.196621,
+      "share_90_inside_040_060": 0.956,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.501995,
+    "bias": 0.001995,
+    "sd_of_estimate": 0.032799,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.995,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.087075,
+      "halfwidth90_over_nominal": 1.613987,
+      "share_90_inside_040_060": 0.295,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.869,
+      "coverage95": 0.928,
+      "mean_halfwidth90": 0.050451,
+      "halfwidth90_over_nominal": 0.935134,
+      "share_90_inside_040_060": 0.864,
+      "label": "anti-conservative"
+     },
+     "partner_only": {
+      "coverage90": 0.873,
+      "coverage95": 0.934,
+      "mean_halfwidth90": 0.051104,
+      "halfwidth90_over_nominal": 0.947244,
+      "share_90_inside_040_060": 0.862,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.499966,
+    "bias": -3.4e-05,
+    "sd_of_estimate": 0.026136,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.081307,
+      "halfwidth90_over_nominal": 1.891308,
+      "share_90_inside_040_060": 0.529,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.88,
+      "coverage95": 0.943,
+      "mean_halfwidth90": 0.041389,
+      "halfwidth90_over_nominal": 0.962764,
+      "share_90_inside_040_060": 0.976,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.947,
+      "coverage95": 0.981,
+      "mean_halfwidth90": 0.050663,
+      "halfwidth90_over_nominal": 1.178485,
+      "share_90_inside_040_060": 0.948,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.497723,
+    "bias": -0.002277,
+    "sd_of_estimate": 0.030269,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.995,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.08497,
+      "halfwidth90_over_nominal": 1.70661,
+      "share_90_inside_040_060": 0.379,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.865,
+      "coverage95": 0.935,
+      "mean_halfwidth90": 0.046476,
+      "halfwidth90_over_nominal": 0.933466,
+      "share_90_inside_040_060": 0.922,
+      "label": "anti-conservative"
+     },
+     "partner_only": {
+      "coverage90": 0.917,
+      "coverage95": 0.965,
+      "mean_halfwidth90": 0.051334,
+      "halfwidth90_over_nominal": 1.03103,
+      "share_90_inside_040_060": 0.891,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.358287
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.60091,
+    "bias": 0.00091,
+    "sd_of_estimate": 0.025178,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.078732,
+      "halfwidth90_over_nominal": 1.901099,
+      "share_90_inside_040_060": 0.002,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.893,
+      "coverage95": 0.953,
+      "mean_halfwidth90": 0.040245,
+      "halfwidth90_over_nominal": 0.971759,
+      "share_90_inside_040_060": 0.042,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.95,
+      "coverage95": 0.98,
+      "mean_halfwidth90": 0.048609,
+      "halfwidth90_over_nominal": 1.173727,
+      "share_90_inside_040_060": 0.021,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.380021
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.599825,
+    "bias": -0.000175,
+    "sd_of_estimate": 0.028625,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.996,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.084967,
+      "halfwidth90_over_nominal": 1.804556,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.909,
+      "coverage95": 0.957,
+      "mean_halfwidth90": 0.049061,
+      "halfwidth90_over_nominal": 1.041975,
+      "share_90_inside_040_060": 0.041,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.91,
+      "coverage95": 0.958,
+      "mean_halfwidth90": 0.050087,
+      "halfwidth90_over_nominal": 1.063765,
+      "share_90_inside_040_060": 0.042,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.506694
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.600672,
+    "bias": 0.000672,
+    "sd_of_estimate": 0.026262,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.079992,
+      "halfwidth90_over_nominal": 1.851771,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.873,
+      "coverage95": 0.933,
+      "mean_halfwidth90": 0.040583,
+      "halfwidth90_over_nominal": 0.939462,
+      "share_90_inside_040_060": 0.061,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.946,
+      "coverage95": 0.975,
+      "mean_halfwidth90": 0.050048,
+      "halfwidth90_over_nominal": 1.158579,
+      "share_90_inside_040_060": 0.024,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "older_clean tier B",
+   "n": 1191,
+   "n_drugs": 128,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.522288
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.600771,
+    "bias": 0.000771,
+    "sd_of_estimate": 0.027874,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.996,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.082947,
+      "halfwidth90_over_nominal": 1.809116,
+      "share_90_inside_040_060": 0.001,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.892,
+      "coverage95": 0.939,
+      "mean_halfwidth90": 0.045218,
+      "halfwidth90_over_nominal": 0.986231,
+      "share_90_inside_040_060": 0.049,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.926,
+      "coverage95": 0.967,
+      "mean_halfwidth90": 0.050426,
+      "halfwidth90_over_nominal": 1.099828,
+      "share_90_inside_040_060": 0.03,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": -0.177712
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.448773,
+    "bias": -0.001227,
+    "sd_of_estimate": 0.036614,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.112581,
+      "halfwidth90_over_nominal": 1.869335,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.881,
+      "coverage95": 0.936,
+      "mean_halfwidth90": 0.057496,
+      "halfwidth90_over_nominal": 0.95468,
+      "share_90_inside_040_060": 0.395,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.935,
+      "coverage95": 0.97,
+      "mean_halfwidth90": 0.069898,
+      "halfwidth90_over_nominal": 1.160607,
+      "share_90_inside_040_060": 0.257,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": -0.188492
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.450531,
+    "bias": 0.000531,
+    "sd_of_estimate": 0.042647,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.995,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.118673,
+      "halfwidth90_over_nominal": 1.691745,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.872,
+      "coverage95": 0.929,
+      "mean_halfwidth90": 0.066512,
+      "halfwidth90_over_nominal": 0.948158,
+      "share_90_inside_040_060": 0.315,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.897,
+      "coverage95": 0.944,
+      "mean_halfwidth90": 0.071502,
+      "halfwidth90_over_nominal": 1.019305,
+      "share_90_inside_040_060": 0.257,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": -0.251323
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.449404,
+    "bias": -0.000596,
+    "sd_of_estimate": 0.029543,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 1.0,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.108257,
+      "halfwidth90_over_nominal": 2.227802,
+      "share_90_inside_040_060": 0.001,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.951,
+      "coverage95": 0.978,
+      "mean_halfwidth90": 0.057592,
+      "halfwidth90_over_nominal": 1.185167,
+      "share_90_inside_040_060": 0.389,
+      "label": "conservative"
+     },
+     "partner_only": {
+      "coverage90": 0.963,
+      "coverage95": 0.987,
+      "mean_halfwidth90": 0.062404,
+      "halfwidth90_over_nominal": 1.284198,
+      "share_90_inside_040_060": 0.335,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": -0.259058
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.450353,
+    "bias": 0.000353,
+    "sd_of_estimate": 0.034346,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 1.0,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.111804,
+      "halfwidth90_over_nominal": 1.979046,
+      "share_90_inside_040_060": 0.001,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.925,
+      "coverage95": 0.968,
+      "mean_halfwidth90": 0.062048,
+      "halfwidth90_over_nominal": 1.098318,
+      "share_90_inside_040_060": 0.36,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.931,
+      "coverage95": 0.966,
+      "mean_halfwidth90": 0.063446,
+      "halfwidth90_over_nominal": 1.123055,
+      "share_90_inside_040_060": 0.34,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.500165,
+    "bias": 0.000165,
+    "sd_of_estimate": 0.035769,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.112639,
+      "halfwidth90_over_nominal": 1.914528,
+      "share_90_inside_040_060": 0.001,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.881,
+      "coverage95": 0.935,
+      "mean_halfwidth90": 0.057281,
+      "halfwidth90_over_nominal": 0.973601,
+      "share_90_inside_040_060": 0.755,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.942,
+      "coverage95": 0.981,
+      "mean_halfwidth90": 0.070075,
+      "halfwidth90_over_nominal": 1.191065,
+      "share_90_inside_040_060": 0.587,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.498918,
+    "bias": -0.001082,
+    "sd_of_estimate": 0.041481,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.994,
+      "coverage95": 0.998,
+      "mean_halfwidth90": 0.11939,
+      "halfwidth90_over_nominal": 1.749813,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.896,
+      "coverage95": 0.942,
+      "mean_halfwidth90": 0.066769,
+      "halfwidth90_over_nominal": 0.978579,
+      "share_90_inside_040_060": 0.566,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.92,
+      "coverage95": 0.961,
+      "mean_halfwidth90": 0.071713,
+      "halfwidth90_over_nominal": 1.051047,
+      "share_90_inside_040_060": 0.488,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.499894,
+    "bias": -0.000106,
+    "sd_of_estimate": 0.030031,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.108558,
+      "halfwidth90_over_nominal": 2.197681,
+      "share_90_inside_040_060": 0.009,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.934,
+      "coverage95": 0.973,
+      "mean_halfwidth90": 0.057719,
+      "halfwidth90_over_nominal": 1.168484,
+      "share_90_inside_040_060": 0.838,
+      "label": "conservative"
+     },
+     "partner_only": {
+      "coverage90": 0.958,
+      "coverage95": 0.978,
+      "mean_halfwidth90": 0.062359,
+      "halfwidth90_over_nominal": 1.262425,
+      "share_90_inside_040_060": 0.788,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.500987,
+    "bias": 0.000987,
+    "sd_of_estimate": 0.033905,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 1.0,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.112468,
+      "halfwidth90_over_nominal": 2.016711,
+      "share_90_inside_040_060": 0.003,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.928,
+      "coverage95": 0.959,
+      "mean_halfwidth90": 0.063234,
+      "halfwidth90_over_nominal": 1.133871,
+      "share_90_inside_040_060": 0.722,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.932,
+      "coverage95": 0.964,
+      "mean_halfwidth90": 0.063753,
+      "halfwidth90_over_nominal": 1.143175,
+      "share_90_inside_040_060": 0.712,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.358287
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.599416,
+    "bias": -0.000584,
+    "sd_of_estimate": 0.03497,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.998,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.11063,
+      "halfwidth90_over_nominal": 1.923287,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.89,
+      "coverage95": 0.943,
+      "mean_halfwidth90": 0.05652,
+      "halfwidth90_over_nominal": 0.982591,
+      "share_90_inside_040_060": 0.049,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.951,
+      "coverage95": 0.978,
+      "mean_halfwidth90": 0.068855,
+      "halfwidth90_over_nominal": 1.19704,
+      "share_90_inside_040_060": 0.027,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.380021
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.600022,
+    "bias": 2.2e-05,
+    "sd_of_estimate": 0.038748,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.998,
+      "coverage95": 0.998,
+      "mean_halfwidth90": 0.116509,
+      "halfwidth90_over_nominal": 1.828059,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.902,
+      "coverage95": 0.949,
+      "mean_halfwidth90": 0.065231,
+      "halfwidth90_over_nominal": 1.023492,
+      "share_90_inside_040_060": 0.038,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.925,
+      "coverage95": 0.968,
+      "mean_halfwidth90": 0.069843,
+      "halfwidth90_over_nominal": 1.095858,
+      "share_90_inside_040_060": 0.034,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.506694
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.598322,
+    "bias": -0.001678,
+    "sd_of_estimate": 0.030467,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.106521,
+      "halfwidth90_over_nominal": 2.125592,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.93,
+      "coverage95": 0.963,
+      "mean_halfwidth90": 0.056452,
+      "halfwidth90_over_nominal": 1.126483,
+      "share_90_inside_040_060": 0.037,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.946,
+      "coverage95": 0.981,
+      "mean_halfwidth90": 0.061449,
+      "halfwidth90_over_nominal": 1.22619,
+      "share_90_inside_040_060": 0.026,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier A",
+   "n": 438,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.522288
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.598938,
+    "bias": -0.001062,
+    "sd_of_estimate": 0.035009,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.110227,
+      "halfwidth90_over_nominal": 1.914202,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.909,
+      "coverage95": 0.953,
+      "mean_halfwidth90": 0.061194,
+      "halfwidth90_over_nominal": 1.06269,
+      "share_90_inside_040_060": 0.043,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.918,
+      "coverage95": 0.965,
+      "mean_halfwidth90": 0.062917,
+      "halfwidth90_over_nominal": 1.092623,
+      "share_90_inside_040_060": 0.042,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": -0.177712
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.450981,
+    "bias": 0.000981,
+    "sd_of_estimate": 0.046411,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.149214,
+      "halfwidth90_over_nominal": 1.954599,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.887,
+      "coverage95": 0.933,
+      "mean_halfwidth90": 0.074529,
+      "halfwidth90_over_nominal": 0.976278,
+      "share_90_inside_040_060": 0.259,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.949,
+      "coverage95": 0.975,
+      "mean_halfwidth90": 0.09486,
+      "halfwidth90_over_nominal": 1.242602,
+      "share_90_inside_040_060": 0.061,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": -0.188492
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.450085,
+    "bias": 8.5e-05,
+    "sd_of_estimate": 0.052738,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.995,
+      "coverage95": 0.998,
+      "mean_halfwidth90": 0.156289,
+      "halfwidth90_over_nominal": 1.801664,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.891,
+      "coverage95": 0.936,
+      "mean_halfwidth90": 0.083957,
+      "halfwidth90_over_nominal": 0.967838,
+      "share_90_inside_040_060": 0.153,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.926,
+      "coverage95": 0.969,
+      "mean_halfwidth90": 0.09684,
+      "halfwidth90_over_nominal": 1.116348,
+      "share_90_inside_040_060": 0.04,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": -0.251323
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.44956,
+    "bias": -0.00044,
+    "sd_of_estimate": 0.045887,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.998,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.14784,
+      "halfwidth90_over_nominal": 1.958718,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.886,
+      "coverage95": 0.943,
+      "mean_halfwidth90": 0.074423,
+      "halfwidth90_over_nominal": 0.986022,
+      "share_90_inside_040_060": 0.245,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.952,
+      "coverage95": 0.978,
+      "mean_halfwidth90": 0.092491,
+      "halfwidth90_over_nominal": 1.225402,
+      "share_90_inside_040_060": 0.058,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.45,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": -0.259058
+   },
+   "result": {
+    "true_auroc": 0.45,
+    "mean_estimate": 0.452817,
+    "bias": 0.002817,
+    "sd_of_estimate": 0.049509,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.151607,
+      "halfwidth90_over_nominal": 1.861688,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.897,
+      "coverage95": 0.943,
+      "mean_halfwidth90": 0.079525,
+      "halfwidth90_over_nominal": 0.976546,
+      "share_90_inside_040_060": 0.206,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.94,
+      "coverage95": 0.968,
+      "mean_halfwidth90": 0.093652,
+      "halfwidth90_over_nominal": 1.150016,
+      "share_90_inside_040_060": 0.067,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.501033,
+    "bias": 0.001033,
+    "sd_of_estimate": 0.04685,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.150516,
+      "halfwidth90_over_nominal": 1.953194,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.9,
+      "coverage95": 0.943,
+      "mean_halfwidth90": 0.074594,
+      "halfwidth90_over_nominal": 0.967976,
+      "share_90_inside_040_060": 0.388,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.958,
+      "coverage95": 0.986,
+      "mean_halfwidth90": 0.095706,
+      "halfwidth90_over_nominal": 1.241945,
+      "share_90_inside_040_060": 0.088,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.500055,
+    "bias": 5.5e-05,
+    "sd_of_estimate": 0.054032,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.998,
+      "coverage95": 0.999,
+      "mean_halfwidth90": 0.156943,
+      "halfwidth90_over_nominal": 1.765905,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.877,
+      "coverage95": 0.935,
+      "mean_halfwidth90": 0.084175,
+      "halfwidth90_over_nominal": 0.947131,
+      "share_90_inside_040_060": 0.229,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.918,
+      "coverage95": 0.967,
+      "mean_halfwidth90": 0.097376,
+      "halfwidth90_over_nominal": 1.095662,
+      "share_90_inside_040_060": 0.058,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.500702,
+    "bias": 0.000702,
+    "sd_of_estimate": 0.047389,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.998,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.148999,
+      "halfwidth90_over_nominal": 1.911501,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.876,
+      "coverage95": 0.941,
+      "mean_halfwidth90": 0.07536,
+      "halfwidth90_over_nominal": 0.966792,
+      "share_90_inside_040_060": 0.383,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.954,
+      "coverage95": 0.982,
+      "mean_halfwidth90": 0.093269,
+      "halfwidth90_over_nominal": 1.196542,
+      "share_90_inside_040_060": 0.125,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.5,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.0
+   },
+   "result": {
+    "true_auroc": 0.5,
+    "mean_estimate": 0.501399,
+    "bias": 0.001399,
+    "sd_of_estimate": 0.048465,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.152148,
+      "halfwidth90_over_nominal": 1.908586,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.893,
+      "coverage95": 0.943,
+      "mean_halfwidth90": 0.079479,
+      "halfwidth90_over_nominal": 0.997011,
+      "share_90_inside_040_060": 0.34,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.944,
+      "coverage95": 0.974,
+      "mean_halfwidth90": 0.094203,
+      "halfwidth90_over_nominal": 1.181716,
+      "share_90_inside_040_060": 0.097,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 0.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.358287
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.598079,
+    "bias": -0.001921,
+    "sd_of_estimate": 0.046355,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.146691,
+      "halfwidth90_over_nominal": 1.923888,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.883,
+      "coverage95": 0.931,
+      "mean_halfwidth90": 0.072927,
+      "halfwidth90_over_nominal": 0.95645,
+      "share_90_inside_040_060": 0.052,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.95,
+      "coverage95": 0.985,
+      "mean_halfwidth90": 0.093538,
+      "halfwidth90_over_nominal": 1.226775,
+      "share_90_inside_040_060": 0.013,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 0.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.380021
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.600951,
+    "bias": 0.000951,
+    "sd_of_estimate": 0.052661,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.153282,
+      "halfwidth90_over_nominal": 1.769587,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.87,
+      "coverage95": 0.918,
+      "mean_halfwidth90": 0.082519,
+      "halfwidth90_over_nominal": 0.952651,
+      "share_90_inside_040_060": 0.036,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.918,
+      "coverage95": 0.963,
+      "mean_halfwidth90": 0.095077,
+      "halfwidth90_over_nominal": 1.097626,
+      "share_90_inside_040_060": 0.013,
+      "label": "calibrated"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 1.0,
+    "slope_sd": 0.0,
+    "drug_sd": 1.0,
+    "beta": 0.506694
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.600303,
+    "bias": 0.000303,
+    "sd_of_estimate": 0.04505,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.999,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.145524,
+      "halfwidth90_over_nominal": 1.963887,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.892,
+      "coverage95": 0.939,
+      "mean_halfwidth90": 0.072956,
+      "halfwidth90_over_nominal": 0.984563,
+      "share_90_inside_040_060": 0.047,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.951,
+      "coverage95": 0.982,
+      "mean_halfwidth90": 0.09161,
+      "halfwidth90_over_nominal": 1.236296,
+      "share_90_inside_040_060": 0.017,
+      "label": "conservative"
+     }
+    }
+   }
+  },
+  {
+   "design": "novel tier B",
+   "n": 316,
+   "n_drugs": 48,
+   "scenario": {
+    "true_auroc": 0.6,
+    "partner_sd": 1.0,
+    "slope_sd": 0.5,
+    "drug_sd": 1.0,
+    "beta": 0.522288
+   },
+   "result": {
+    "true_auroc": 0.6,
+    "mean_estimate": 0.598377,
+    "bias": -0.001623,
+    "sd_of_estimate": 0.048914,
+    "mc_se_coverage90": 0.009487,
+    "schemes": {
+     "two_way": {
+      "coverage90": 0.997,
+      "coverage95": 1.0,
+      "mean_halfwidth90": 0.149031,
+      "halfwidth90_over_nominal": 1.852344,
+      "share_90_inside_040_060": 0.0,
+      "label": "conservative"
+     },
+     "one_way_drug": {
+      "coverage90": 0.877,
+      "coverage95": 0.936,
+      "mean_halfwidth90": 0.078234,
+      "halfwidth90_over_nominal": 0.972388,
+      "share_90_inside_040_060": 0.05,
+      "label": "calibrated"
+     },
+     "partner_only": {
+      "coverage90": 0.931,
+      "coverage95": 0.977,
+      "mean_halfwidth90": 0.092735,
+      "halfwidth90_over_nominal": 1.152627,
+      "share_90_inside_040_060": 0.018,
+      "label": "conservative"
+     }
+    }
+   }
+  }
+ ],
+ "summary": [
+  {
+   "design": "older_clean tier A",
+   "scheme": "two_way",
+   "coverage90_range": [
+    0.989,
+    1.0
+   ],
+   "ratio_range": [
+    1.546258,
+    2.185711
+   ],
+   "labels": "conservative",
+   "adequate": true
+  },
+  {
+   "design": "older_clean tier A",
+   "scheme": "one_way_drug",
+   "coverage90_range": [
+    0.871,
+    0.958
+   ],
+   "ratio_range": [
+    0.952588,
+    1.206979
+   ],
+   "labels": "calibrated, conservative",
+   "adequate": true
+  },
+  {
+   "design": "older_clean tier A",
+   "scheme": "partner_only",
+   "coverage90_range": [
+    0.828,
+    0.958
+   ],
+   "ratio_range": [
+    0.868294,
+    1.200508
+   ],
+   "labels": "anti-conservative, calibrated, conservative",
+   "adequate": false
+  },
+  {
+   "design": "older_clean tier B",
+   "scheme": "two_way",
+   "coverage90_range": [
+    0.995,
+    1.0
+   ],
+   "ratio_range": [
+    1.613987,
+    1.942979
+   ],
+   "labels": "conservative",
+   "adequate": true
+  },
+  {
+   "design": "older_clean tier B",
+   "scheme": "one_way_drug",
+   "coverage90_range": [
+    0.865,
+    0.909
+   ],
+   "ratio_range": [
+    0.933466,
+    1.041975
+   ],
+   "labels": "anti-conservative, calibrated",
+   "adequate": false
+  },
+  {
+   "design": "older_clean tier B",
+   "scheme": "partner_only",
+   "coverage90_range": [
+    0.873,
+    0.95
+   ],
+   "ratio_range": [
+    0.947244,
+    1.196621
+   ],
+   "labels": "calibrated, conservative",
+   "adequate": true
+  },
+  {
+   "design": "novel tier A",
+   "scheme": "two_way",
+   "coverage90_range": [
+    0.994,
+    1.0
+   ],
+   "ratio_range": [
+    1.691745,
+    2.227802
+   ],
+   "labels": "conservative",
+   "adequate": true
+  },
+  {
+   "design": "novel tier A",
+   "scheme": "one_way_drug",
+   "coverage90_range": [
+    0.872,
+    0.951
+   ],
+   "ratio_range": [
+    0.948158,
+    1.185167
+   ],
+   "labels": "calibrated, conservative",
+   "adequate": true
+  },
+  {
+   "design": "novel tier A",
+   "scheme": "partner_only",
+   "coverage90_range": [
+    0.897,
+    0.963
+   ],
+   "ratio_range": [
+    1.019305,
+    1.284198
+   ],
+   "labels": "calibrated, conservative",
+   "adequate": true
+  },
+  {
+   "design": "novel tier B",
+   "scheme": "two_way",
+   "coverage90_range": [
+    0.995,
+    0.999
+   ],
+   "ratio_range": [
+    1.765905,
+    1.963887
+   ],
+   "labels": "conservative",
+   "adequate": true
+  },
+  {
+   "design": "novel tier B",
+   "scheme": "one_way_drug",
+   "coverage90_range": [
+    0.87,
+    0.9
+   ],
+   "ratio_range": [
+    0.947131,
+    0.997011
+   ],
+   "labels": "calibrated",
+   "adequate": true
+  },
+  {
+   "design": "novel tier B",
+   "scheme": "partner_only",
+   "coverage90_range": [
+    0.918,
+    0.958
+   ],
+   "ratio_range": [
+    1.095662,
+    1.242602
+   ],
+   "labels": "calibrated, conservative",
+   "adequate": true
+  }
+ ],
+ "seconds": 1795.353505
+}

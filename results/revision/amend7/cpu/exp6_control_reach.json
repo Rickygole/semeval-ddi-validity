@@ -1,0 +1,534 @@
+{
+ "status": "Amendment 7 experiment 6, exploratory, post hoc",
+ "method": "top 5 chunk ids from artifacts/bundle/inputs.json.gz; model input rebuilt as ddiood.inputs.krag (names, then the first 400 characters of each chunk) and truncated with the BiomedBERT tokenizer at 512 tokens; partner matched case-insensitively at word boundaries as in ddiood.inputs.mask_names, only in the evidence part (not the leading drug names); rule AUROC within drug with a two-way cluster bootstrap (1,000 draws, seed 1042), pooled AUROC with the same two-way bootstrap, MCC of the binary rule",
+ "variants": {
+  "contaminated": {
+   "n": 438,
+   "n_pos": 148,
+   "n_neg": 290,
+   "inputs_truncated_at_512": 35,
+   "features": {
+    "di_chunk_of_ood_drug": {
+     "positives": 33,
+     "negatives": 3,
+     "share_pos": 0.222973,
+     "share_neg": 0.010345,
+     "rule_auroc_pooled": 0.606314,
+     "rule_auroc_pooled_ci95": [
+      0.539471,
+      0.689705
+     ],
+     "rule_auroc_within": {
+      "value": 0.604359,
+      "ci95": [
+       0.526954,
+       0.703014
+      ],
+      "ci90": [
+       0.535351,
+       0.687702
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.366173
+    },
+    "partner_in_full_chunks": {
+     "positives": 97,
+     "negatives": 67,
+     "share_pos": 0.655405,
+     "share_neg": 0.231034,
+     "rule_auroc_pooled": 0.712185,
+     "rule_auroc_pooled_ci95": [
+      0.616063,
+      0.798785
+     ],
+     "rule_auroc_within": {
+      "value": 0.717305,
+      "ci95": [
+       0.597386,
+       0.821308
+      ],
+      "ci90": [
+       0.620621,
+       0.80441
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.414742
+    },
+    "partner_in_first400": {
+     "positives": 68,
+     "negatives": 59,
+     "share_pos": 0.459459,
+     "share_neg": 0.203448,
+     "rule_auroc_pooled": 0.628006,
+     "rule_auroc_pooled_ci95": [
+      0.529136,
+      0.717397
+     ],
+     "rule_auroc_within": {
+      "value": 0.634742,
+      "ci95": [
+       0.509896,
+       0.736592
+      ],
+      "ci90": [
+       0.530766,
+       0.722274
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.266874
+    },
+    "partner_in_512_tokens": {
+     "positives": 68,
+     "negatives": 59,
+     "share_pos": 0.459459,
+     "share_neg": 0.203448,
+     "rule_auroc_pooled": 0.628006,
+     "rule_auroc_pooled_ci95": [
+      0.529136,
+      0.717397
+     ],
+     "rule_auroc_within": {
+      "value": 0.634742,
+      "ci95": [
+       0.509896,
+       0.736592
+      ],
+      "ci90": [
+       0.530766,
+       0.722274
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.266874
+    },
+    "partner_in_di_chunk_first400": {
+     "positives": 20,
+     "negatives": 0,
+     "share_pos": 0.135135,
+     "share_neg": 0.0,
+     "rule_auroc_pooled": 0.567568,
+     "rule_auroc_pooled_ci95": [
+      0.516667,
+      0.629696
+     ],
+     "rule_auroc_within": {
+      "value": 0.587186,
+      "ci95": [
+       0.517143,
+       0.669486
+      ],
+      "ci90": [
+       0.524254,
+       0.654161
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.306193
+    },
+    "own_label_chunk_retrieved": {
+     "positives": 142,
+     "negatives": 279,
+     "share_pos": 0.959459,
+     "share_neg": 0.962069,
+     "rule_auroc_pooled": 0.498695,
+     "rule_auroc_pooled_ci95": [
+      0.46654,
+      0.531216
+     ],
+     "rule_auroc_within": {
+      "value": 0.517834,
+      "ci95": [
+       0.47863,
+       0.566576
+      ],
+      "ci90": [
+       0.486754,
+       0.555247
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": -0.00639
+    },
+    "partner_in_own_label_chunk": {
+     "positives": 72,
+     "negatives": 0,
+     "share_pos": 0.486486,
+     "share_neg": 0.0,
+     "rule_auroc_pooled": 0.743243,
+     "rule_auroc_pooled_ci95": [
+      0.644985,
+      0.838824
+     ],
+     "rule_auroc_within": {
+      "value": 0.762219,
+      "ci95": [
+       0.65308,
+       0.865478
+      ],
+      "ci90": [
+       0.667774,
+       0.85227
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.62086
+    },
+    "partner_in_own_label_first400": {
+     "positives": 44,
+     "negatives": 0,
+     "share_pos": 0.297297,
+     "share_neg": 0.0,
+     "rule_auroc_pooled": 0.648649,
+     "rule_auroc_pooled_ci95": [
+      0.569134,
+      0.736016
+     ],
+     "rule_auroc_within": {
+      "value": 0.673712,
+      "ci95": [
+       0.571886,
+       0.777066
+      ],
+      "ci90": [
+       0.588201,
+       0.76035
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.467785
+    }
+   }
+  },
+  "hybrid": {
+   "n": 438,
+   "n_pos": 148,
+   "n_neg": 290,
+   "inputs_truncated_at_512": 56,
+   "features": {
+    "di_chunk_of_ood_drug": {
+     "positives": 0,
+     "negatives": 0,
+     "share_pos": 0.0,
+     "share_neg": 0.0,
+     "rule_auroc_pooled": 0.5,
+     "rule_auroc_pooled_ci95": [
+      0.5,
+      0.5
+     ],
+     "rule_auroc_within": {
+      "value": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "ci90": [
+       0.5,
+       0.5
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.0
+    },
+    "partner_in_full_chunks": {
+     "positives": 62,
+     "negatives": 71,
+     "share_pos": 0.418919,
+     "share_neg": 0.244828,
+     "rule_auroc_pooled": 0.587046,
+     "rule_auroc_pooled_ci95": [
+      0.50378,
+      0.667747
+     ],
+     "rule_auroc_within": {
+      "value": 0.541612,
+      "ci95": [
+       0.426724,
+       0.638759
+      ],
+      "ci90": [
+       0.450076,
+       0.625452
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.179073
+    },
+    "partner_in_first400": {
+     "positives": 48,
+     "negatives": 68,
+     "share_pos": 0.324324,
+     "share_neg": 0.234483,
+     "rule_auroc_pooled": 0.544921,
+     "rule_auroc_pooled_ci95": [
+      0.468738,
+      0.619129
+     ],
+     "rule_auroc_within": {
+      "value": 0.501321,
+      "ci95": [
+       0.396223,
+       0.602623
+      ],
+      "ci90": [
+       0.416486,
+       0.586576
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.096305
+    },
+    "partner_in_512_tokens": {
+     "positives": 48,
+     "negatives": 68,
+     "share_pos": 0.324324,
+     "share_neg": 0.234483,
+     "rule_auroc_pooled": 0.544921,
+     "rule_auroc_pooled_ci95": [
+      0.468738,
+      0.619129
+     ],
+     "rule_auroc_within": {
+      "value": 0.501321,
+      "ci95": [
+       0.396223,
+       0.602623
+      ],
+      "ci90": [
+       0.416486,
+       0.586576
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.096305
+    },
+    "partner_in_di_chunk_first400": {
+     "positives": 0,
+     "negatives": 0,
+     "share_pos": 0.0,
+     "share_neg": 0.0,
+     "rule_auroc_pooled": 0.5,
+     "rule_auroc_pooled_ci95": [
+      0.5,
+      0.5
+     ],
+     "rule_auroc_within": {
+      "value": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "ci90": [
+       0.5,
+       0.5
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.0
+    },
+    "own_label_chunk_retrieved": {
+     "positives": 135,
+     "negatives": 270,
+     "share_pos": 0.912162,
+     "share_neg": 0.931034,
+     "rule_auroc_pooled": 0.490564,
+     "rule_auroc_pooled_ci95": [
+      0.434838,
+      0.539436
+     ],
+     "rule_auroc_within": {
+      "value": 0.496037,
+      "ci95": [
+       0.44171,
+       0.548295
+      ],
+      "ci90": [
+       0.451462,
+       0.537786
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": -0.03382
+    },
+    "partner_in_own_label_chunk": {
+     "positives": 23,
+     "negatives": 0,
+     "share_pos": 0.155405,
+     "share_neg": 0.0,
+     "rule_auroc_pooled": 0.577703,
+     "rule_auroc_pooled_ci95": [
+      0.525733,
+      0.646897
+     ],
+     "rule_auroc_within": {
+      "value": 0.570674,
+      "ci95": [
+       0.521903,
+       0.646697
+      ],
+      "ci90": [
+       0.526372,
+       0.627668
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.32954
+    },
+    "partner_in_own_label_first400": {
+     "positives": 14,
+     "negatives": 0,
+     "share_pos": 0.094595,
+     "share_neg": 0.0,
+     "rule_auroc_pooled": 0.547297,
+     "rule_auroc_pooled_ci95": [
+      0.509663,
+      0.604212
+     ],
+     "rule_auroc_within": {
+      "value": 0.540291,
+      "ci95": [
+       0.50646,
+       0.595911
+      ],
+      "ci90": [
+       0.509164,
+       0.583912
+      ],
+      "n_draws": 1000
+     },
+     "rule_mcc": 0.25436
+    }
+   }
+  }
+ },
+ "older": {
+  "status": "not available",
+  "n_older_drugs": 135,
+  "n_older_drugs_in_index": 0,
+  "note": "Older drugs have no chunks in the retrieval index, so no retrieval-based statistic is computed for Older; nothing falls back to names only"
+ },
+ "training": [
+  {
+   "job": "krag-contaminated-k5-c400-biomedbert-s42",
+   "seed": 42,
+   "semeval_test_auroc": 0.603942,
+   "best_epoch": 8,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.395491
+  },
+  {
+   "job": "krag-hybrid-k5-c400-biomedbert-s42",
+   "seed": 42,
+   "semeval_test_auroc": 0.675554,
+   "best_epoch": 8,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.447356
+  },
+  {
+   "job": "b1names-biomedbert-s42",
+   "seed": 42,
+   "semeval_test_auroc": 0.685505,
+   "best_epoch": 5,
+   "max_epochs": 5,
+   "best_val_macro_f1": 0.411537
+  },
+  {
+   "job": "krag-contaminated-k5-c400-biomedbert-s1",
+   "seed": 1,
+   "semeval_test_auroc": 0.638685,
+   "best_epoch": 7,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.420262
+  },
+  {
+   "job": "krag-hybrid-k5-c400-biomedbert-s1",
+   "seed": 1,
+   "semeval_test_auroc": 0.636323,
+   "best_epoch": 9,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.452001
+  },
+  {
+   "job": "b1names-biomedbert-s1",
+   "seed": 1,
+   "semeval_test_auroc": 0.632947,
+   "best_epoch": 5,
+   "max_epochs": 5,
+   "best_val_macro_f1": 0.375425
+  },
+  {
+   "job": "krag-contaminated-k5-c400-biomedbert-s2",
+   "seed": 2,
+   "semeval_test_auroc": 0.599711,
+   "best_epoch": 4,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.409449
+  },
+  {
+   "job": "krag-hybrid-k5-c400-biomedbert-s2",
+   "seed": 2,
+   "semeval_test_auroc": 0.619069,
+   "best_epoch": 7,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.400449
+  },
+  {
+   "job": "b1names-biomedbert-s2",
+   "seed": 2,
+   "semeval_test_auroc": 0.653825,
+   "best_epoch": 4,
+   "max_epochs": 5,
+   "best_val_macro_f1": 0.456234
+  },
+  {
+   "job": "krag-contaminated-k5-c400-biomedbert-s3",
+   "seed": 3,
+   "semeval_test_auroc": 0.621596,
+   "best_epoch": 6,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.469642
+  },
+  {
+   "job": "krag-hybrid-k5-c400-biomedbert-s3",
+   "seed": 3,
+   "semeval_test_auroc": 0.637562,
+   "best_epoch": 8,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.430038
+  },
+  {
+   "job": "b1names-biomedbert-s3",
+   "seed": 3,
+   "semeval_test_auroc": 0.662627,
+   "best_epoch": 5,
+   "max_epochs": 5,
+   "best_val_macro_f1": 0.417584
+  },
+  {
+   "job": "krag-contaminated-k5-c400-biomedbert-s4",
+   "seed": 4,
+   "semeval_test_auroc": 0.631061,
+   "best_epoch": 9,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.507148
+  },
+  {
+   "job": "krag-hybrid-k5-c400-biomedbert-s4",
+   "seed": 4,
+   "semeval_test_auroc": 0.601343,
+   "best_epoch": 3,
+   "max_epochs": 10,
+   "best_val_macro_f1": 0.360703
+  },
+  {
+   "job": "b1names-biomedbert-s4",
+   "seed": 4,
+   "semeval_test_auroc": 0.680498,
+   "best_epoch": 5,
+   "max_epochs": 5,
+   "best_val_macro_f1": 0.496235
+  }
+ ]
+}

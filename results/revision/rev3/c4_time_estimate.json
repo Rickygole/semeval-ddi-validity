@@ -1,0 +1,39 @@
+{
+ "plan_sha256": "4610135c2222240f9df68fec628050b4556027c4d3ed2db0fa766f5c8f8229a1",
+ "status": "post hoc and descriptive; plan in docs/POSTHOC_REV3_PLAN.md was written before computing; changes no preregistered decision",
+ "per_set": {
+  "test1": {
+   "items": 3169,
+   "prompts_including_chunks": 3920,
+   "prompt_tokens": 6728271,
+   "items_with_more_than_one_chunk": 751
+  },
+  "test2": {
+   "items": 2549,
+   "prompts_including_chunks": 2549,
+   "prompt_tokens": 3143581,
+   "items_with_more_than_one_chunk": 0
+  },
+  "train22": {
+   "items": 811,
+   "prompts_including_chunks": 811,
+   "prompt_tokens": 668705,
+   "items_with_more_than_one_chunk": 0
+  }
+ },
+ "total_tokens": 10540557,
+ "items_sha256": "eedca86c5035b2adda86adb9eb9e47418c7dbc88bdad94468b1508801e78952a",
+ "estimate": {
+  "tokens": 10540557,
+  "low_s": 1411,
+  "high_s": 3308,
+  "low_h": 0.39,
+  "high_h": 0.92,
+  "rule": "600 s + tokens / 13000 (low) and 1200 s + tokens / 5000 (high), the rates of the R2b adjudicator"
+ },
+ "tokenizer": {
+  "repo": "allenai/OLMo-2-1124-7B-Instruct",
+  "revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84"
+ },
+ "notebook_hours_cap": 2.0
+}

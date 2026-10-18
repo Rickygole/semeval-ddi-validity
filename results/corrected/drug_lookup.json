@@ -1,0 +1,6946 @@
+{
+ "4-methylpyrazole": {
+  "normalized": "4-methylpyrazole",
+  "canonicalized": "4-methylpyrazole",
+  "rxcui": "15226",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "5-fluorouracil": {
+  "normalized": "5-fluorouracil",
+  "canonicalized": "5-fluorouracil",
+  "rxcui": "4492",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "5-fu": {
+  "normalized": "5-fu",
+  "canonicalized": "5-fu",
+  "rxcui": "4492",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "6-mercaptopurine": {
+  "normalized": "6-mercaptopurine",
+  "canonicalized": "6-mercaptopurine",
+  "rxcui": "103",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "6-mp": {
+  "normalized": "6-mp",
+  "canonicalized": "6-mp",
+  "rxcui": "103",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "abatacept": {
+  "normalized": "abatacept",
+  "canonicalized": "abatacept",
+  "rxcui": "614391",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "abciximab": {
+  "normalized": "abciximab",
+  "canonicalized": "abciximab",
+  "rxcui": "83929",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acamprosate": {
+  "normalized": "acamprosate",
+  "canonicalized": "acamprosate",
+  "rxcui": "82819",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acarbose": {
+  "normalized": "acarbose",
+  "canonicalized": "acarbose",
+  "rxcui": "16681",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acebutolol": {
+  "normalized": "acebutolol",
+  "canonicalized": "acebutolol",
+  "rxcui": "149",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acenocoumarol": {
+  "normalized": "acenocoumarol",
+  "canonicalized": "acenocoumarol",
+  "rxcui": "154",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acetaldehyde": {
+  "normalized": "acetaldehyde",
+  "canonicalized": "acetaldehyde",
+  "rxcui": "1311137",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acetaminophen": {
+  "normalized": "acetaminophen",
+  "canonicalized": "acetaminophen",
+  "rxcui": "161",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acetazolamide": {
+  "normalized": "acetazolamide",
+  "canonicalized": "acetazolamide",
+  "rxcui": "167",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acetohydroxamic acid": {
+  "normalized": "acetohydroxamic acid",
+  "canonicalized": "acetohydroxamic acid",
+  "rxcui": "16728",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acetophenazine": {
+  "normalized": "acetophenazine",
+  "canonicalized": "acetophenazine",
+  "rxcui": "16735",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acetylcysteine": {
+  "normalized": "acetylcysteine",
+  "canonicalized": "acetylcysteine",
+  "rxcui": "197",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acetylsalicylic acid": {
+  "normalized": "acetylsalicylic acid",
+  "canonicalized": "acetylsalicylic acid",
+  "rxcui": "1191",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acitretin": {
+  "normalized": "acitretin",
+  "canonicalized": "acitretin",
+  "rxcui": "16818",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acth": {
+  "normalized": "acth",
+  "canonicalized": "acth",
+  "rxcui": "376",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "activated charcoal": {
+  "normalized": "activated charcoal",
+  "canonicalized": "activated charcoal",
+  "rxcui": "272",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "acyclovir": {
+  "normalized": "acyclovir",
+  "canonicalized": "acyclovir",
+  "rxcui": "281",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "adefovir dipivoxil": {
+  "normalized": "adefovir dipivoxil",
+  "canonicalized": "adefovir dipivoxil",
+  "rxcui": "141400",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "adenosine": {
+  "normalized": "adenosine",
+  "canonicalized": "adenosine",
+  "rxcui": "296",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "adrenaline": {
+  "normalized": "adrenaline",
+  "canonicalized": "adrenaline",
+  "rxcui": "3992",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "albendazole": {
+  "normalized": "albendazole",
+  "canonicalized": "albendazole",
+  "rxcui": "430",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "albuterol": {
+  "normalized": "albuterol",
+  "canonicalized": "albuterol",
+  "rxcui": "435",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alcohol": {
+  "normalized": "alcohol",
+  "canonicalized": "alcohol",
+  "rxcui": "448",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alcohols": {
+  "normalized": "alcohols",
+  "canonicalized": "alcohols",
+  "rxcui": "448",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alefacept": {
+  "normalized": "alefacept",
+  "canonicalized": "alefacept",
+  "rxcui": "299635",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alendronate": {
+  "normalized": "alendronate",
+  "canonicalized": "alendronate",
+  "rxcui": "46041",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alfentanil": {
+  "normalized": "alfentanil",
+  "canonicalized": "alfentanil",
+  "rxcui": "480",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alfentanyl": {
+  "normalized": "alfentanyl",
+  "canonicalized": "alfentanyl",
+  "rxcui": "480",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aliskiren": {
+  "normalized": "aliskiren",
+  "canonicalized": "aliskiren",
+  "rxcui": "325646",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "allopurinol": {
+  "normalized": "allopurinol",
+  "canonicalized": "allopurinol",
+  "rxcui": "519",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "allopurinol sodium": {
+  "normalized": "allopurinol sodium",
+  "canonicalized": "allopurinol",
+  "rxcui": "80566",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "almotriptan": {
+  "normalized": "almotriptan",
+  "canonicalized": "almotriptan",
+  "rxcui": "279645",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alosetron": {
+  "normalized": "alosetron",
+  "canonicalized": "alosetron",
+  "rxcui": "85248",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alprazolam": {
+  "normalized": "alprazolam",
+  "canonicalized": "alprazolam",
+  "rxcui": "596",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "alprostadil": {
+  "normalized": "alprostadil",
+  "canonicalized": "alprostadil",
+  "rxcui": "598",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "altretamine": {
+  "normalized": "altretamine",
+  "canonicalized": "altretamine",
+  "rxcui": "5296",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aluminum hydroxide": {
+  "normalized": "aluminum hydroxide",
+  "canonicalized": "aluminum hydroxide",
+  "rxcui": "612",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amantadine": {
+  "normalized": "amantadine",
+  "canonicalized": "amantadine",
+  "rxcui": "620",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amikacin": {
+  "normalized": "amikacin",
+  "canonicalized": "amikacin",
+  "rxcui": "641",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amiloride": {
+  "normalized": "amiloride",
+  "canonicalized": "amiloride",
+  "rxcui": "644",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aminocaproic acid": {
+  "normalized": "aminocaproic acid",
+  "canonicalized": "aminocaproic acid",
+  "rxcui": "99",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aminoglutethimide": {
+  "normalized": "aminoglutethimide",
+  "canonicalized": "aminoglutethimide",
+  "rxcui": "677",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aminophylline": {
+  "normalized": "aminophylline",
+  "canonicalized": "aminophylline",
+  "rxcui": "689",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aminopyrine": {
+  "normalized": "aminopyrine",
+  "canonicalized": "aminopyrine",
+  "rxcui": "695",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aminosalicylic acid": {
+  "normalized": "aminosalicylic acid",
+  "canonicalized": "aminosalicylic acid",
+  "rxcui": "7833",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amiodarone": {
+  "normalized": "amiodarone",
+  "canonicalized": "amiodarone",
+  "rxcui": "703",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amitriptyline": {
+  "normalized": "amitriptyline",
+  "canonicalized": "amitriptyline",
+  "rxcui": "704",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amitriptyline hcl": {
+  "normalized": "amitriptyline hcl",
+  "canonicalized": "amitriptyline hcl",
+  "rxcui": "203168",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "amlodipine": {
+  "normalized": "amlodipine",
+  "canonicalized": "amlodipine",
+  "rxcui": "17767",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ammonium chloride": {
+  "normalized": "ammonium chloride",
+  "canonicalized": "ammonium chloride",
+  "rxcui": "712",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amoxicillin": {
+  "normalized": "amoxicillin",
+  "canonicalized": "amoxicillin",
+  "rxcui": "723",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amphetamine": {
+  "normalized": "amphetamine",
+  "canonicalized": "amphetamine",
+  "rxcui": "725",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amphetamines": {
+  "normalized": "amphetamines",
+  "canonicalized": "amphetamines",
+  "rxcui": "3288",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amphotericin": {
+  "normalized": "amphotericin",
+  "canonicalized": "amphotericin",
+  "rxcui": "42527",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amphotericin b": {
+  "normalized": "amphotericin b",
+  "canonicalized": "amphotericin b",
+  "rxcui": "732",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ampicillin": {
+  "normalized": "ampicillin",
+  "canonicalized": "ampicillin",
+  "rxcui": "733",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amprenavir": {
+  "normalized": "amprenavir",
+  "canonicalized": "amprenavir",
+  "rxcui": "228656",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amrinone": {
+  "normalized": "amrinone",
+  "canonicalized": "amrinone",
+  "rxcui": "738",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amyl nitrite": {
+  "normalized": "amyl nitrite",
+  "canonicalized": "amyl nitrite",
+  "rxcui": "742",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "amylase": {
+  "normalized": "amylase",
+  "canonicalized": "amylase",
+  "rxcui": "743",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "anagrelide": {
+  "normalized": "anagrelide",
+  "canonicalized": "anagrelide",
+  "rxcui": "596724",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "anakinra": {
+  "normalized": "anakinra",
+  "canonicalized": "anakinra",
+  "rxcui": "72435",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "anastrozole": {
+  "normalized": "anastrozole",
+  "canonicalized": "anastrozole",
+  "rxcui": "84857",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "angiotensin 2": {
+  "normalized": "angiotensin 2",
+  "canonicalized": "angiotensin 2",
+  "rxcui": "1999003",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "anidulafungin": {
+  "normalized": "anidulafungin",
+  "canonicalized": "anidulafungin",
+  "rxcui": "341018",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "anileridine": {
+  "normalized": "anileridine",
+  "canonicalized": "anileridine",
+  "rxcui": "17933",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "anisindione": {
+  "normalized": "anisindione",
+  "canonicalized": "anisindione",
+  "rxcui": "17941",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "antipyrine": {
+  "normalized": "antipyrine",
+  "canonicalized": "antipyrine",
+  "rxcui": "1001",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "antithrombin iii": {
+  "normalized": "antithrombin iii",
+  "canonicalized": "antithrombin iii",
+  "rxcui": "1009",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "apomorphine": {
+  "normalized": "apomorphine",
+  "canonicalized": "apomorphine",
+  "rxcui": "1043",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "apraclonidine": {
+  "normalized": "apraclonidine",
+  "canonicalized": "apraclonidine",
+  "rxcui": "14845",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aprepitant": {
+  "normalized": "aprepitant",
+  "canonicalized": "aprepitant",
+  "rxcui": "358255",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "arbutamine": {
+  "normalized": "arbutamine",
+  "canonicalized": "arbutamine",
+  "rxcui": "61609",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ardeparin": {
+  "normalized": "ardeparin",
+  "canonicalized": "ardeparin",
+  "rxcui": "87866",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "argatroban": {
+  "normalized": "argatroban",
+  "canonicalized": "argatroban",
+  "rxcui": "15202",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "arginine": {
+  "normalized": "arginine",
+  "canonicalized": "arginine",
+  "rxcui": "1091",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aripiprazole": {
+  "normalized": "aripiprazole",
+  "canonicalized": "aripiprazole",
+  "rxcui": "89013",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "arsenate": {
+  "normalized": "arsenate",
+  "canonicalized": "arsenate",
+  "rxcui": "1375924",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "asa": {
+  "normalized": "asa",
+  "canonicalized": "asa",
+  "rxcui": "1191",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ascorbic acid": {
+  "normalized": "ascorbic acid",
+  "canonicalized": "ascorbic acid",
+  "rxcui": "1151",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "asparaginase": {
+  "normalized": "asparaginase",
+  "canonicalized": "asparaginase",
+  "rxcui": "1156",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "aspirin": {
+  "normalized": "aspirin",
+  "canonicalized": "aspirin",
+  "rxcui": "1191",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "astemizole": {
+  "normalized": "astemizole",
+  "canonicalized": "astemizole",
+  "rxcui": "42328",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "atazanavir": {
+  "normalized": "atazanavir",
+  "canonicalized": "atazanavir",
+  "rxcui": "343047",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "atenolol": {
+  "normalized": "atenolol",
+  "canonicalized": "atenolol",
+  "rxcui": "1202",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "atomoxetine": {
+  "normalized": "atomoxetine",
+  "canonicalized": "atomoxetine",
+  "rxcui": "38400",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "atorvastatin": {
+  "normalized": "atorvastatin",
+  "canonicalized": "atorvastatin",
+  "rxcui": "83367",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "atovaquone": {
+  "normalized": "atovaquone",
+  "canonicalized": "atovaquone",
+  "rxcui": "60212",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "atracurium": {
+  "normalized": "atracurium",
+  "canonicalized": "atracurium",
+  "rxcui": "1218",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "atropine": {
+  "normalized": "atropine",
+  "canonicalized": "atropine",
+  "rxcui": "1223",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "atropine sulfate": {
+  "normalized": "atropine sulfate",
+  "canonicalized": "atropine sulfate",
+  "rxcui": "153971",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "auranofin": {
+  "normalized": "auranofin",
+  "canonicalized": "auranofin",
+  "rxcui": "1227",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "azathioprine": {
+  "normalized": "azathioprine",
+  "canonicalized": "azathioprine",
+  "rxcui": "1256",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "azithromycin": {
+  "normalized": "azithromycin",
+  "canonicalized": "azithromycin",
+  "rxcui": "18631",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "azlocillin": {
+  "normalized": "azlocillin",
+  "canonicalized": "azlocillin",
+  "rxcui": "1266",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bacitracin": {
+  "normalized": "bacitracin",
+  "canonicalized": "bacitracin",
+  "rxcui": "1291",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "baclofen": {
+  "normalized": "baclofen",
+  "canonicalized": "baclofen",
+  "rxcui": "1292",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "benazepril": {
+  "normalized": "benazepril",
+  "canonicalized": "benazepril",
+  "rxcui": "18867",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bentiromide": {
+  "normalized": "bentiromide",
+  "canonicalized": "bentiromide",
+  "rxcui": "18896",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bentoquatam": {
+  "normalized": "bentoquatam",
+  "canonicalized": "bentoquatam",
+  "rxcui": "134568",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "benzocaine": {
+  "normalized": "benzocaine",
+  "canonicalized": "benzocaine",
+  "rxcui": "1399",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "benzthiazide": {
+  "normalized": "benzthiazide",
+  "canonicalized": "benzthiazide",
+  "rxcui": "19008",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "benzyl alcohol": {
+  "normalized": "benzyl alcohol",
+  "canonicalized": "benzyl alcohol",
+  "rxcui": "1426",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "benzylpenicillin": {
+  "normalized": "benzylpenicillin",
+  "canonicalized": "benzylpenicillin",
+  "rxcui": "7980",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bepridil": {
+  "normalized": "bepridil",
+  "canonicalized": "bepridil",
+  "rxcui": "1436",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bepridil hydrochloride": {
+  "normalized": "bepridil hydrochloride",
+  "canonicalized": "bepridil",
+  "rxcui": "235752",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "beta-interferon": {
+  "normalized": "beta-interferon",
+  "canonicalized": "beta-interferon",
+  "rxcui": "4381",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bexarotene": {
+  "normalized": "bexarotene",
+  "canonicalized": "bexarotene",
+  "rxcui": "233272",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bezafibrate": {
+  "normalized": "bezafibrate",
+  "canonicalized": "bezafibrate",
+  "rxcui": "1525",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bishydroxycoumarin": {
+  "normalized": "bishydroxycoumarin",
+  "canonicalized": "bishydroxycoumarin",
+  "rxcui": "1598",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bismuth subsalicylate": {
+  "normalized": "bismuth subsalicylate",
+  "canonicalized": "bismuth subsalicylate",
+  "rxcui": "19478",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bitolterol": {
+  "normalized": "bitolterol",
+  "canonicalized": "bitolterol",
+  "rxcui": "19499",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bivalirudin": {
+  "normalized": "bivalirudin",
+  "canonicalized": "bivalirudin",
+  "rxcui": "60819",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bleomycin": {
+  "normalized": "bleomycin",
+  "canonicalized": "bleomycin",
+  "rxcui": "1622",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "boric acid": {
+  "normalized": "boric acid",
+  "canonicalized": "boric acid",
+  "rxcui": "1700",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bortezomib": {
+  "normalized": "bortezomib",
+  "canonicalized": "bortezomib",
+  "rxcui": "358258",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bosentan": {
+  "normalized": "bosentan",
+  "canonicalized": "bosentan",
+  "rxcui": "75207",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bretylium tosylate": {
+  "normalized": "bretylium tosylate",
+  "canonicalized": "bretylium",
+  "rxcui": "1737",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "brinzolamide": {
+  "normalized": "brinzolamide",
+  "canonicalized": "brinzolamide",
+  "rxcui": "194881",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bromelains": {
+  "normalized": "bromelains",
+  "canonicalized": "bromelains",
+  "rxcui": "1752",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bromocriptine": {
+  "normalized": "bromocriptine",
+  "canonicalized": "bromocriptine",
+  "rxcui": "1760",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bromocriptine mesylate": {
+  "normalized": "bromocriptine mesylate",
+  "canonicalized": "bromocriptine",
+  "rxcui": "142426",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "budesonide": {
+  "normalized": "budesonide",
+  "canonicalized": "budesonide",
+  "rxcui": "19831",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bumetanide": {
+  "normalized": "bumetanide",
+  "canonicalized": "bumetanide",
+  "rxcui": "1808",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "buprenorphine": {
+  "normalized": "buprenorphine",
+  "canonicalized": "buprenorphine",
+  "rxcui": "1819",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "bupropion": {
+  "normalized": "bupropion",
+  "canonicalized": "bupropion",
+  "rxcui": "42347",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "buspirone": {
+  "normalized": "buspirone",
+  "canonicalized": "buspirone",
+  "rxcui": "1827",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "buspirone hcl": {
+  "normalized": "buspirone hcl",
+  "canonicalized": "buspirone hcl",
+  "rxcui": "203116",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "buspirone hydrochloride": {
+  "normalized": "buspirone hydrochloride",
+  "canonicalized": "buspirone",
+  "rxcui": "203116",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "busulfan": {
+  "normalized": "busulfan",
+  "canonicalized": "busulfan",
+  "rxcui": "1828",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "butalbital": {
+  "normalized": "butalbital",
+  "canonicalized": "butalbital",
+  "rxcui": "19860",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "butenafine hcl": {
+  "normalized": "butenafine hcl",
+  "canonicalized": "butenafine hcl",
+  "rxcui": "236558",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "butorphanol": {
+  "normalized": "butorphanol",
+  "canonicalized": "butorphanol",
+  "rxcui": "1841",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cabergoline": {
+  "normalized": "cabergoline",
+  "canonicalized": "cabergoline",
+  "rxcui": "47579",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "caffeine": {
+  "normalized": "caffeine",
+  "canonicalized": "caffeine",
+  "rxcui": "1886",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "calcidiol": {
+  "normalized": "calcidiol",
+  "canonicalized": "calcidiol",
+  "rxcui": "1889",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "calcitriol": {
+  "normalized": "calcitriol",
+  "canonicalized": "calcitriol",
+  "rxcui": "1894",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "calcium acetate": {
+  "normalized": "calcium acetate",
+  "canonicalized": "calcium",
+  "rxcui": "214342",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "calcium carbonate": {
+  "normalized": "calcium carbonate",
+  "canonicalized": "calcium carbonate",
+  "rxcui": "1897",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "candesartan": {
+  "normalized": "candesartan",
+  "canonicalized": "candesartan",
+  "rxcui": "214354",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "candesartan cilexetil": {
+  "normalized": "candesartan cilexetil",
+  "canonicalized": "candesartan cilexetil",
+  "rxcui": "135481",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "capecitabine": {
+  "normalized": "capecitabine",
+  "canonicalized": "capecitabine",
+  "rxcui": "194000",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "captopril": {
+  "normalized": "captopril",
+  "canonicalized": "captopril",
+  "rxcui": "1998",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "carbachol": {
+  "normalized": "carbachol",
+  "canonicalized": "carbachol",
+  "rxcui": "1999",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "carbamazepine": {
+  "normalized": "carbamazepine",
+  "canonicalized": "carbamazepine",
+  "rxcui": "2002",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "carbenicillin indanyl sodium": {
+  "normalized": "carbenicillin indanyl sodium",
+  "canonicalized": "carbenicillin indanyl",
+  "rxcui": "56461",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "carbidopa": {
+  "normalized": "carbidopa",
+  "canonicalized": "carbidopa",
+  "rxcui": "2019",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "carbimazole": {
+  "normalized": "carbimazole",
+  "canonicalized": "carbimazole",
+  "rxcui": "2020",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "carboplatin": {
+  "normalized": "carboplatin",
+  "canonicalized": "carboplatin",
+  "rxcui": "40048",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "carmustine": {
+  "normalized": "carmustine",
+  "canonicalized": "carmustine",
+  "rxcui": "2105",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "carvedilol": {
+  "normalized": "carvedilol",
+  "canonicalized": "carvedilol",
+  "rxcui": "20352",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "caspofungin": {
+  "normalized": "caspofungin",
+  "canonicalized": "caspofungin",
+  "rxcui": "140108",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "caspofungin acetate": {
+  "normalized": "caspofungin acetate",
+  "canonicalized": "caspofungin",
+  "rxcui": "282363",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "castor oil": {
+  "normalized": "castor oil",
+  "canonicalized": "castor oil",
+  "rxcui": "2129",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cbz": {
+  "normalized": "cbz",
+  "canonicalized": "cbz",
+  "rxcui": "2002",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ccnu": {
+  "normalized": "ccnu",
+  "canonicalized": "ccnu",
+  "rxcui": "6466",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefamandole": {
+  "normalized": "cefamandole",
+  "canonicalized": "cefamandole",
+  "rxcui": "2178",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefamandole naftate": {
+  "normalized": "cefamandole naftate",
+  "canonicalized": "cefamandole naftate",
+  "rxcui": "20473",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "cefazolin": {
+  "normalized": "cefazolin",
+  "canonicalized": "cefazolin",
+  "rxcui": "2180",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefdinir": {
+  "normalized": "cefdinir",
+  "canonicalized": "cefdinir",
+  "rxcui": "25037",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefditoren": {
+  "normalized": "cefditoren",
+  "canonicalized": "cefditoren",
+  "rxcui": "83682",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefditoren pivoxil": {
+  "normalized": "cefditoren pivoxil",
+  "canonicalized": "cefditoren pivoxil",
+  "rxcui": "72611",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "cefepime": {
+  "normalized": "cefepime",
+  "canonicalized": "cefepime",
+  "rxcui": "20481",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefixime": {
+  "normalized": "cefixime",
+  "canonicalized": "cefixime",
+  "rxcui": "25033",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefoperazone": {
+  "normalized": "cefoperazone",
+  "canonicalized": "cefoperazone",
+  "rxcui": "2184",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefotaxime sodium": {
+  "normalized": "cefotaxime sodium",
+  "canonicalized": "cefotaxime",
+  "rxcui": "203117",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "cefotetan": {
+  "normalized": "cefotetan",
+  "canonicalized": "cefotetan",
+  "rxcui": "2187",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefoxitin": {
+  "normalized": "cefoxitin",
+  "canonicalized": "cefoxitin",
+  "rxcui": "2189",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefprozil": {
+  "normalized": "cefprozil",
+  "canonicalized": "cefprozil",
+  "rxcui": "19552",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ceftazidime": {
+  "normalized": "ceftazidime",
+  "canonicalized": "ceftazidime",
+  "rxcui": "2191",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ceftibuten": {
+  "normalized": "ceftibuten",
+  "canonicalized": "ceftibuten",
+  "rxcui": "20492",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cefuroxime": {
+  "normalized": "cefuroxime",
+  "canonicalized": "cefuroxime",
+  "rxcui": "2194",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "celecoxib": {
+  "normalized": "celecoxib",
+  "canonicalized": "celecoxib",
+  "rxcui": "140587",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cephalexin": {
+  "normalized": "cephalexin",
+  "canonicalized": "cephalexin",
+  "rxcui": "2231",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cephaloridine": {
+  "normalized": "cephaloridine",
+  "canonicalized": "cephaloridine",
+  "rxcui": "2233",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cephalothin": {
+  "normalized": "cephalothin",
+  "canonicalized": "cephalothin",
+  "rxcui": "2236",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cephalothin sodium": {
+  "normalized": "cephalothin sodium",
+  "canonicalized": "cephalothin",
+  "rxcui": "9860",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "cerivastatin": {
+  "normalized": "cerivastatin",
+  "canonicalized": "cerivastatin",
+  "rxcui": "596723",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cerivastatin sodium": {
+  "normalized": "cerivastatin sodium",
+  "canonicalized": "cerivastatin",
+  "rxcui": "221072",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "cetirizine": {
+  "normalized": "cetirizine",
+  "canonicalized": "cetirizine",
+  "rxcui": "20610",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cevimeline": {
+  "normalized": "cevimeline",
+  "canonicalized": "cevimeline",
+  "rxcui": "44281",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "charcoal": {
+  "normalized": "charcoal",
+  "canonicalized": "charcoal",
+  "rxcui": "2296",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chloral hydrate": {
+  "normalized": "chloral hydrate",
+  "canonicalized": "chloral",
+  "rxcui": "2344",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "chlorambucil": {
+  "normalized": "chlorambucil",
+  "canonicalized": "chlorambucil",
+  "rxcui": "2346",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chloramphenicol": {
+  "normalized": "chloramphenicol",
+  "canonicalized": "chloramphenicol",
+  "rxcui": "2348",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlordiazepoxide": {
+  "normalized": "chlordiazepoxide",
+  "canonicalized": "chlordiazepoxide",
+  "rxcui": "2356",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chloroprocaine": {
+  "normalized": "chloroprocaine",
+  "canonicalized": "chloroprocaine",
+  "rxcui": "20859",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chloroquine": {
+  "normalized": "chloroquine",
+  "canonicalized": "chloroquine",
+  "rxcui": "2393",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlorothiazide": {
+  "normalized": "chlorothiazide",
+  "canonicalized": "chlorothiazide",
+  "rxcui": "2396",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlorotrianisene": {
+  "normalized": "chlorotrianisene",
+  "canonicalized": "chlorotrianisene",
+  "rxcui": "2397",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlorpheniramine": {
+  "normalized": "chlorpheniramine",
+  "canonicalized": "chlorpheniramine",
+  "rxcui": "2400",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlorpromazine": {
+  "normalized": "chlorpromazine",
+  "canonicalized": "chlorpromazine",
+  "rxcui": "2403",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlorpropamide": {
+  "normalized": "chlorpropamide",
+  "canonicalized": "chlorpropamide",
+  "rxcui": "2404",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlorprothixene": {
+  "normalized": "chlorprothixene",
+  "canonicalized": "chlorprothixene",
+  "rxcui": "2406",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlortetracycline": {
+  "normalized": "chlortetracycline",
+  "canonicalized": "chlortetracycline",
+  "rxcui": "2408",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "chlorthalidone": {
+  "normalized": "chlorthalidone",
+  "canonicalized": "chlorthalidone",
+  "rxcui": "2409",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cholestyramine": {
+  "normalized": "cholestyramine",
+  "canonicalized": "cholestyramine",
+  "rxcui": "2447",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "choline salicylate": {
+  "normalized": "choline salicylate",
+  "canonicalized": "choline salicylate",
+  "rxcui": "20974",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "chymotrypsin": {
+  "normalized": "chymotrypsin",
+  "canonicalized": "chymotrypsin",
+  "rxcui": "2530",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ciclesonide": {
+  "normalized": "ciclesonide",
+  "canonicalized": "ciclesonide",
+  "rxcui": "274964",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ciclosporin": {
+  "normalized": "ciclosporin",
+  "canonicalized": "ciclosporin",
+  "rxcui": "3008",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cilostazol": {
+  "normalized": "cilostazol",
+  "canonicalized": "cilostazol",
+  "rxcui": "21107",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cimetidine": {
+  "normalized": "cimetidine",
+  "canonicalized": "cimetidine",
+  "rxcui": "2541",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cinacalcet": {
+  "normalized": "cinacalcet",
+  "canonicalized": "cinacalcet",
+  "rxcui": "407990",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cinoxacin": {
+  "normalized": "cinoxacin",
+  "canonicalized": "cinoxacin",
+  "rxcui": "2550",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ciprofloxacin": {
+  "normalized": "ciprofloxacin",
+  "canonicalized": "ciprofloxacin",
+  "rxcui": "2551",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cis-platinum": {
+  "normalized": "cis-platinum",
+  "canonicalized": "cis-platinum",
+  "rxcui": "2555",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cisapride": {
+  "normalized": "cisapride",
+  "canonicalized": "cisapride",
+  "rxcui": "35255",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cisplatin": {
+  "normalized": "cisplatin",
+  "canonicalized": "cisplatin",
+  "rxcui": "2555",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "citalopram": {
+  "normalized": "citalopram",
+  "canonicalized": "citalopram",
+  "rxcui": "2556",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clarithromycin": {
+  "normalized": "clarithromycin",
+  "canonicalized": "clarithromycin",
+  "rxcui": "21212",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clidinium": {
+  "normalized": "clidinium",
+  "canonicalized": "clidinium",
+  "rxcui": "21232",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clindamycin": {
+  "normalized": "clindamycin",
+  "canonicalized": "clindamycin",
+  "rxcui": "2582",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clobazam": {
+  "normalized": "clobazam",
+  "canonicalized": "clobazam",
+  "rxcui": "21241",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clofarabine": {
+  "normalized": "clofarabine",
+  "canonicalized": "clofarabine",
+  "rxcui": "44151",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clofazimine": {
+  "normalized": "clofazimine",
+  "canonicalized": "clofazimine",
+  "rxcui": "2592",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clofibrate": {
+  "normalized": "clofibrate",
+  "canonicalized": "clofibrate",
+  "rxcui": "2594",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clomiphene citrate": {
+  "normalized": "clomiphene citrate",
+  "canonicalized": "clomiphene citrate",
+  "rxcui": "142431",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "clomipramine hcl": {
+  "normalized": "clomipramine hcl",
+  "canonicalized": "clomipramine hcl",
+  "rxcui": "81984",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "clonazepam": {
+  "normalized": "clonazepam",
+  "canonicalized": "clonazepam",
+  "rxcui": "2598",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clonidine": {
+  "normalized": "clonidine",
+  "canonicalized": "clonidine",
+  "rxcui": "2599",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clonidine hydrochloride": {
+  "normalized": "clonidine hydrochloride",
+  "canonicalized": "clonidine",
+  "rxcui": "142432",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "clorazepate dipotassium": {
+  "normalized": "clorazepate dipotassium",
+  "canonicalized": "clorazepate dipotassium",
+  "rxcui": "2607",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "clotrimazole": {
+  "normalized": "clotrimazole",
+  "canonicalized": "clotrimazole",
+  "rxcui": "2623",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cloxacillin": {
+  "normalized": "cloxacillin",
+  "canonicalized": "cloxacillin",
+  "rxcui": "2625",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "clozapine": {
+  "normalized": "clozapine",
+  "canonicalized": "clozapine",
+  "rxcui": "2626",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "co": {
+  "normalized": "co",
+  "canonicalized": "co",
+  "rxcui": "2037",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cobalt": {
+  "normalized": "cobalt",
+  "canonicalized": "cobalt",
+  "rxcui": "1310300",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cocaine": {
+  "normalized": "cocaine",
+  "canonicalized": "cocaine",
+  "rxcui": "2653",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "codeine": {
+  "normalized": "codeine",
+  "canonicalized": "codeine",
+  "rxcui": "2670",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "colchicine": {
+  "normalized": "colchicine",
+  "canonicalized": "colchicine",
+  "rxcui": "2683",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "colestipol": {
+  "normalized": "colestipol",
+  "canonicalized": "colestipol",
+  "rxcui": "2685",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "colestipol hydrochloride": {
+  "normalized": "colestipol hydrochloride",
+  "canonicalized": "colestipol",
+  "rxcui": "104485",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "colistin": {
+  "normalized": "colistin",
+  "canonicalized": "colistin",
+  "rxcui": "2709",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "conivaptan": {
+  "normalized": "conivaptan",
+  "canonicalized": "conivaptan",
+  "rxcui": "302285",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "copper sulfate": {
+  "normalized": "copper sulfate",
+  "canonicalized": "copper sulfate",
+  "rxcui": "21579",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "corticotropin": {
+  "normalized": "corticotropin",
+  "canonicalized": "corticotropin",
+  "rxcui": "376",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "coumaphos": {
+  "normalized": "coumaphos",
+  "canonicalized": "coumaphos",
+  "rxcui": "2745582",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cromolyn sodium": {
+  "normalized": "cromolyn sodium",
+  "canonicalized": "cromolyn",
+  "rxcui": "3538",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "cyclopentolate": {
+  "normalized": "cyclopentolate",
+  "canonicalized": "cyclopentolate",
+  "rxcui": "3001",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cyclophosphamide": {
+  "normalized": "cyclophosphamide",
+  "canonicalized": "cyclophosphamide",
+  "rxcui": "3002",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cycloserine": {
+  "normalized": "cycloserine",
+  "canonicalized": "cycloserine",
+  "rxcui": "3007",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cyclosporin": {
+  "normalized": "cyclosporin",
+  "canonicalized": "cyclosporin",
+  "rxcui": "3008",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cyclosporin a": {
+  "normalized": "cyclosporin a",
+  "canonicalized": "cyclosporin a",
+  "rxcui": "3008",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cyclosporine": {
+  "normalized": "cyclosporine",
+  "canonicalized": "cyclosporine",
+  "rxcui": "3008",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cyclosporine a": {
+  "normalized": "cyclosporine a",
+  "canonicalized": "cyclosporine a",
+  "rxcui": "3008",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cypermethrin": {
+  "normalized": "cypermethrin",
+  "canonicalized": "cypermethrin",
+  "rxcui": "2590266",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cysteine": {
+  "normalized": "cysteine",
+  "canonicalized": "cysteine",
+  "rxcui": "3024",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "cytosine arabinoside": {
+  "normalized": "cytosine arabinoside",
+  "canonicalized": "cytosine arabinoside",
+  "rxcui": "3041",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "d-amphetamine": {
+  "normalized": "d-amphetamine",
+  "canonicalized": "d-amphetamine",
+  "rxcui": "3288",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "d-penicillamine": {
+  "normalized": "d-penicillamine",
+  "canonicalized": "d-penicillamine",
+  "rxcui": "7975",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dacarbazine": {
+  "normalized": "dacarbazine",
+  "canonicalized": "dacarbazine",
+  "rxcui": "3098",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dactinomycin": {
+  "normalized": "dactinomycin",
+  "canonicalized": "dactinomycin",
+  "rxcui": "3100",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dalfopristin": {
+  "normalized": "dalfopristin",
+  "canonicalized": "dalfopristin",
+  "rxcui": "229369",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "danazol": {
+  "normalized": "danazol",
+  "canonicalized": "danazol",
+  "rxcui": "3102",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dantrolene": {
+  "normalized": "dantrolene",
+  "canonicalized": "dantrolene",
+  "rxcui": "3105",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dantrolene sodium": {
+  "normalized": "dantrolene sodium",
+  "canonicalized": "dantrolene",
+  "rxcui": "3106",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "dapsone": {
+  "normalized": "dapsone",
+  "canonicalized": "dapsone",
+  "rxcui": "3108",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "daptomycin": {
+  "normalized": "daptomycin",
+  "canonicalized": "daptomycin",
+  "rxcui": "22299",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "darifenacin": {
+  "normalized": "darifenacin",
+  "canonicalized": "darifenacin",
+  "rxcui": "136198",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dasatinib": {
+  "normalized": "dasatinib",
+  "canonicalized": "dasatinib",
+  "rxcui": "475342",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "daunorubicin": {
+  "normalized": "daunorubicin",
+  "canonicalized": "daunorubicin",
+  "rxcui": "3109",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "debrisoquin": {
+  "normalized": "debrisoquin",
+  "canonicalized": "debrisoquin",
+  "rxcui": "3118",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "decitabine": {
+  "normalized": "decitabine",
+  "canonicalized": "decitabine",
+  "rxcui": "15657",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "deet": {
+  "normalized": "deet",
+  "canonicalized": "deet",
+  "rxcui": "3129",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "deferasirox": {
+  "normalized": "deferasirox",
+  "canonicalized": "deferasirox",
+  "rxcui": "614373",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "delavirdine": {
+  "normalized": "delavirdine",
+  "canonicalized": "delavirdine",
+  "rxcui": "83816",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "denileukin diftitox": {
+  "normalized": "denileukin diftitox",
+  "canonicalized": "denileukin diftitox",
+  "rxcui": "214470",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "descarboethoxyloratadine": {
+  "normalized": "descarboethoxyloratadine",
+  "canonicalized": "descarboethoxyloratadine",
+  "rxcui": "275635",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "desflurane": {
+  "normalized": "desflurane",
+  "canonicalized": "desflurane",
+  "rxcui": "27340",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "desipramine": {
+  "normalized": "desipramine",
+  "canonicalized": "desipramine",
+  "rxcui": "3247",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "desipramine hydrochloride": {
+  "normalized": "desipramine hydrochloride",
+  "canonicalized": "desipramine",
+  "rxcui": "203174",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "desloratadine": {
+  "normalized": "desloratadine",
+  "canonicalized": "desloratadine",
+  "rxcui": "275635",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "desmopressin": {
+  "normalized": "desmopressin",
+  "canonicalized": "desmopressin",
+  "rxcui": "3251",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dexamethasone": {
+  "normalized": "dexamethasone",
+  "canonicalized": "dexamethasone",
+  "rxcui": "3264",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dexbrompheniramine": {
+  "normalized": "dexbrompheniramine",
+  "canonicalized": "dexbrompheniramine",
+  "rxcui": "22696",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dexfenfluramine": {
+  "normalized": "dexfenfluramine",
+  "canonicalized": "dexfenfluramine",
+  "rxcui": "3268",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dexmedetomidine": {
+  "normalized": "dexmedetomidine",
+  "canonicalized": "dexmedetomidine",
+  "rxcui": "48937",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dexrazoxane": {
+  "normalized": "dexrazoxane",
+  "canonicalized": "dexrazoxane",
+  "rxcui": "42736",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dextran": {
+  "normalized": "dextran",
+  "canonicalized": "dextran",
+  "rxcui": "42635",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dextromethorphan": {
+  "normalized": "dextromethorphan",
+  "canonicalized": "dextromethorphan",
+  "rxcui": "3289",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dextromethorphan hydrobromide": {
+  "normalized": "dextromethorphan hydrobromide",
+  "canonicalized": "dextromethorphan hydrobromide",
+  "rxcui": "102490",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "dextropropoxyphene": {
+  "normalized": "dextropropoxyphene",
+  "canonicalized": "dextropropoxyphene",
+  "rxcui": "8785",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dextrose": {
+  "normalized": "dextrose",
+  "canonicalized": "dextrose",
+  "rxcui": "4850",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dextrothyroxine": {
+  "normalized": "dextrothyroxine",
+  "canonicalized": "dextrothyroxine",
+  "rxcui": "3292",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dezocine": {
+  "normalized": "dezocine",
+  "canonicalized": "dezocine",
+  "rxcui": "22713",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dha": {
+  "normalized": "dha",
+  "canonicalized": "dha",
+  "rxcui": "144450",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "diazepam": {
+  "normalized": "diazepam",
+  "canonicalized": "diazepam",
+  "rxcui": "3322",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diazoxide": {
+  "normalized": "diazoxide",
+  "canonicalized": "diazoxide",
+  "rxcui": "3327",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diclofenac": {
+  "normalized": "diclofenac",
+  "canonicalized": "diclofenac",
+  "rxcui": "3355",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dicumarol": {
+  "normalized": "dicumarol",
+  "canonicalized": "dicumarol",
+  "rxcui": "1598",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dicyclomine": {
+  "normalized": "dicyclomine",
+  "canonicalized": "dicyclomine",
+  "rxcui": "3361",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "didanosine": {
+  "normalized": "didanosine",
+  "canonicalized": "didanosine",
+  "rxcui": "3364",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dideoxyinosine": {
+  "normalized": "dideoxyinosine",
+  "canonicalized": "dideoxyinosine",
+  "rxcui": "3364",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diethylpropion": {
+  "normalized": "diethylpropion",
+  "canonicalized": "diethylpropion",
+  "rxcui": "3389",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diethylstilbestrol": {
+  "normalized": "diethylstilbestrol",
+  "canonicalized": "diethylstilbestrol",
+  "rxcui": "3390",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diflunisal": {
+  "normalized": "diflunisal",
+  "canonicalized": "diflunisal",
+  "rxcui": "3393",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "digitalis": {
+  "normalized": "digitalis",
+  "canonicalized": "digitalis",
+  "rxcui": "91235",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "digitoxin": {
+  "normalized": "digitoxin",
+  "canonicalized": "digitoxin",
+  "rxcui": "3403",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "digoxin": {
+  "normalized": "digoxin",
+  "canonicalized": "digoxin",
+  "rxcui": "3407",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dihydroergotamine": {
+  "normalized": "dihydroergotamine",
+  "canonicalized": "dihydroergotamine",
+  "rxcui": "3418",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dihydroergotamine mesylate": {
+  "normalized": "dihydroergotamine mesylate",
+  "canonicalized": "dihydroergotamine",
+  "rxcui": "203176",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "dihydrotachysterol": {
+  "normalized": "dihydrotachysterol",
+  "canonicalized": "dihydrotachysterol",
+  "rxcui": "3429",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diltiazem": {
+  "normalized": "diltiazem",
+  "canonicalized": "diltiazem",
+  "rxcui": "3443",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diltiazem hydrochloride": {
+  "normalized": "diltiazem hydrochloride",
+  "canonicalized": "diltiazem",
+  "rxcui": "203211",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "dimenhydrinate": {
+  "normalized": "dimenhydrinate",
+  "canonicalized": "dimenhydrinate",
+  "rxcui": "3444",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dinoprost": {
+  "normalized": "dinoprost",
+  "canonicalized": "dinoprost",
+  "rxcui": "3477",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diphenhydramine": {
+  "normalized": "diphenhydramine",
+  "canonicalized": "diphenhydramine",
+  "rxcui": "3498",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diphenhydramine hydrochloride": {
+  "normalized": "diphenhydramine hydrochloride",
+  "canonicalized": "diphenhydramine",
+  "rxcui": "1362",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "diphenidol": {
+  "normalized": "diphenidol",
+  "canonicalized": "diphenidol",
+  "rxcui": "23370",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diphenoxylate": {
+  "normalized": "diphenoxylate",
+  "canonicalized": "diphenoxylate",
+  "rxcui": "3500",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "diphenoxylate hcl": {
+  "normalized": "diphenoxylate hcl",
+  "canonicalized": "diphenoxylate hcl",
+  "rxcui": "82005",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "diphenoxylate hydrochloride": {
+  "normalized": "diphenoxylate hydrochloride",
+  "canonicalized": "diphenoxylate",
+  "rxcui": "82005",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "diphenylhydantoin": {
+  "normalized": "diphenylhydantoin",
+  "canonicalized": "diphenylhydantoin",
+  "rxcui": "8183",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dipyridamole": {
+  "normalized": "dipyridamole",
+  "canonicalized": "dipyridamole",
+  "rxcui": "3521",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dipyrone": {
+  "normalized": "dipyrone",
+  "canonicalized": "dipyrone",
+  "rxcui": "3523",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dirithromycin": {
+  "normalized": "dirithromycin",
+  "canonicalized": "dirithromycin",
+  "rxcui": "23437",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "disopyramide": {
+  "normalized": "disopyramide",
+  "canonicalized": "disopyramide",
+  "rxcui": "3541",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "disopyramide phosphate": {
+  "normalized": "disopyramide phosphate",
+  "canonicalized": "disopyramide",
+  "rxcui": "203178",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "disulfiram": {
+  "normalized": "disulfiram",
+  "canonicalized": "disulfiram",
+  "rxcui": "3554",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "divalproex": {
+  "normalized": "divalproex",
+  "canonicalized": "divalproex",
+  "rxcui": "11118",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "divalproex sodium": {
+  "normalized": "divalproex sodium",
+  "canonicalized": "divalproex",
+  "rxcui": "266856",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "dobutamine": {
+  "normalized": "dobutamine",
+  "canonicalized": "dobutamine",
+  "rxcui": "3616",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "docetaxel": {
+  "normalized": "docetaxel",
+  "canonicalized": "docetaxel",
+  "rxcui": "72962",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dofetilide": {
+  "normalized": "dofetilide",
+  "canonicalized": "dofetilide",
+  "rxcui": "49247",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dolasetron": {
+  "normalized": "dolasetron",
+  "canonicalized": "dolasetron",
+  "rxcui": "68091",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dolasetron mesylate": {
+  "normalized": "dolasetron mesylate",
+  "canonicalized": "dolasetron",
+  "rxcui": "29398",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "dopamine hcl": {
+  "normalized": "dopamine hcl",
+  "canonicalized": "dopamine hcl",
+  "rxcui": "82010",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "dorzolamide": {
+  "normalized": "dorzolamide",
+  "canonicalized": "dorzolamide",
+  "rxcui": "60207",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "doxapram": {
+  "normalized": "doxapram",
+  "canonicalized": "doxapram",
+  "rxcui": "3637",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "doxazosin": {
+  "normalized": "doxazosin",
+  "canonicalized": "doxazosin",
+  "rxcui": "49276",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "doxazosin mesylate": {
+  "normalized": "doxazosin mesylate",
+  "canonicalized": "doxazosin",
+  "rxcui": "39173",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "doxepin": {
+  "normalized": "doxepin",
+  "canonicalized": "doxepin",
+  "rxcui": "3638",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "doxorubicin": {
+  "normalized": "doxorubicin",
+  "canonicalized": "doxorubicin",
+  "rxcui": "3639",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "doxorubicin hcl": {
+  "normalized": "doxorubicin hcl",
+  "canonicalized": "doxorubicin hcl",
+  "rxcui": "142433",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "doxycycline": {
+  "normalized": "doxycycline",
+  "canonicalized": "doxycycline",
+  "rxcui": "3640",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "doxylamine": {
+  "normalized": "doxylamine",
+  "canonicalized": "doxylamine",
+  "rxcui": "3642",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "droperidol": {
+  "normalized": "droperidol",
+  "canonicalized": "droperidol",
+  "rxcui": "3648",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "duloxetine": {
+  "normalized": "duloxetine",
+  "canonicalized": "duloxetine",
+  "rxcui": "72625",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "dyphylline": {
+  "normalized": "dyphylline",
+  "canonicalized": "dyphylline",
+  "rxcui": "3714",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "eaca": {
+  "normalized": "eaca",
+  "canonicalized": "eaca",
+  "rxcui": "99",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "edetate calcium disodium": {
+  "normalized": "edetate calcium disodium",
+  "canonicalized": "edetate calcium disodium",
+  "rxcui": "1903",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "edrophonium": {
+  "normalized": "edrophonium",
+  "canonicalized": "edrophonium",
+  "rxcui": "3752",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "efavirenz": {
+  "normalized": "efavirenz",
+  "canonicalized": "efavirenz",
+  "rxcui": "195085",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "egg": {
+  "normalized": "egg",
+  "canonicalized": "egg",
+  "rxcui": "1315115",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "enalapril": {
+  "normalized": "enalapril",
+  "canonicalized": "enalapril",
+  "rxcui": "3827",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "enalaprilat": {
+  "normalized": "enalaprilat",
+  "canonicalized": "enalaprilat",
+  "rxcui": "3829",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "encainide": {
+  "normalized": "encainide",
+  "canonicalized": "encainide",
+  "rxcui": "42368",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "enflurane": {
+  "normalized": "enflurane",
+  "canonicalized": "enflurane",
+  "rxcui": "3920",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "enfuvirtide": {
+  "normalized": "enfuvirtide",
+  "canonicalized": "enfuvirtide",
+  "rxcui": "139896",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "enoxacin": {
+  "normalized": "enoxacin",
+  "canonicalized": "enoxacin",
+  "rxcui": "3925",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "enoxaparin": {
+  "normalized": "enoxaparin",
+  "canonicalized": "enoxaparin",
+  "rxcui": "67108",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "enoximone": {
+  "normalized": "enoximone",
+  "canonicalized": "enoximone",
+  "rxcui": "49626",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "entacapone": {
+  "normalized": "entacapone",
+  "canonicalized": "entacapone",
+  "rxcui": "60307",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "entecavir": {
+  "normalized": "entecavir",
+  "canonicalized": "entecavir",
+  "rxcui": "306266",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "epa": {
+  "normalized": "epa",
+  "canonicalized": "epa",
+  "rxcui": "90",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "ephedrine": {
+  "normalized": "ephedrine",
+  "canonicalized": "ephedrine",
+  "rxcui": "3966",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "epinephrine": {
+  "normalized": "epinephrine",
+  "canonicalized": "epinephrine",
+  "rxcui": "3992",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "epirubicin": {
+  "normalized": "epirubicin",
+  "canonicalized": "epirubicin",
+  "rxcui": "3995",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "eplerenone": {
+  "normalized": "eplerenone",
+  "canonicalized": "eplerenone",
+  "rxcui": "298869",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "eprosartan": {
+  "normalized": "eprosartan",
+  "canonicalized": "eprosartan",
+  "rxcui": "83515",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "eptifibatide": {
+  "normalized": "eptifibatide",
+  "canonicalized": "eptifibatide",
+  "rxcui": "75635",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ergocalciferol": {
+  "normalized": "ergocalciferol",
+  "canonicalized": "ergocalciferol",
+  "rxcui": "4018",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ergonovine": {
+  "normalized": "ergonovine",
+  "canonicalized": "ergonovine",
+  "rxcui": "4021",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ergot": {
+  "normalized": "ergot",
+  "canonicalized": "ergot",
+  "rxcui": "91405",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ergotamine": {
+  "normalized": "ergotamine",
+  "canonicalized": "ergotamine",
+  "rxcui": "4025",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "erlotinib": {
+  "normalized": "erlotinib",
+  "canonicalized": "erlotinib",
+  "rxcui": "337525",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ertapenem": {
+  "normalized": "ertapenem",
+  "canonicalized": "ertapenem",
+  "rxcui": "325642",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "erythromycin": {
+  "normalized": "erythromycin",
+  "canonicalized": "erythromycin",
+  "rxcui": "4053",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "erythromycins": {
+  "normalized": "erythromycins",
+  "canonicalized": "erythromycins",
+  "rxcui": "4053",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "escitalopram": {
+  "normalized": "escitalopram",
+  "canonicalized": "escitalopram",
+  "rxcui": "321988",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "esmolol hcl": {
+  "normalized": "esmolol hcl",
+  "canonicalized": "esmolol hcl",
+  "rxcui": "203222",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "esomeprazole": {
+  "normalized": "esomeprazole",
+  "canonicalized": "esomeprazole",
+  "rxcui": "283742",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "estazolam": {
+  "normalized": "estazolam",
+  "canonicalized": "estazolam",
+  "rxcui": "4077",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "estradiol": {
+  "normalized": "estradiol",
+  "canonicalized": "estradiol",
+  "rxcui": "4083",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "eszopiclone": {
+  "normalized": "eszopiclone",
+  "canonicalized": "eszopiclone",
+  "rxcui": "461016",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "etanercept": {
+  "normalized": "etanercept",
+  "canonicalized": "etanercept",
+  "rxcui": "214555",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethacrynic acid": {
+  "normalized": "ethacrynic acid",
+  "canonicalized": "ethacrynic acid",
+  "rxcui": "4109",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "ethambutol": {
+  "normalized": "ethambutol",
+  "canonicalized": "ethambutol",
+  "rxcui": "4110",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethchlorvynol": {
+  "normalized": "ethchlorvynol",
+  "canonicalized": "ethchlorvynol",
+  "rxcui": "4118",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethinamate": {
+  "normalized": "ethinamate",
+  "canonicalized": "ethinamate",
+  "rxcui": "24474",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethinyl estradiol": {
+  "normalized": "ethinyl estradiol",
+  "canonicalized": "ethinyl estradiol",
+  "rxcui": "4124",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethinylestradiol": {
+  "normalized": "ethinylestradiol",
+  "canonicalized": "ethinylestradiol",
+  "rxcui": "4124",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethionamide": {
+  "normalized": "ethionamide",
+  "canonicalized": "ethionamide",
+  "rxcui": "4127",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethopropazine": {
+  "normalized": "ethopropazine",
+  "canonicalized": "ethopropazine",
+  "rxcui": "4134",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethosuximide": {
+  "normalized": "ethosuximide",
+  "canonicalized": "ethosuximide",
+  "rxcui": "4135",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethotoin": {
+  "normalized": "ethotoin",
+  "canonicalized": "ethotoin",
+  "rxcui": "4136",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethyl alcohol": {
+  "normalized": "ethyl alcohol",
+  "canonicalized": "ethyl alcohol",
+  "rxcui": "448",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ethynyl estradiol": {
+  "normalized": "ethynyl estradiol",
+  "canonicalized": "ethynyl estradiol",
+  "rxcui": "4124",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "etidronate": {
+  "normalized": "etidronate",
+  "canonicalized": "etidronate",
+  "rxcui": "42682",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "etodolac": {
+  "normalized": "etodolac",
+  "canonicalized": "etodolac",
+  "rxcui": "24605",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "etofibrate": {
+  "normalized": "etofibrate",
+  "canonicalized": "etofibrate",
+  "rxcui": "24609",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "etomidate": {
+  "normalized": "etomidate",
+  "canonicalized": "etomidate",
+  "rxcui": "4177",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "etonogestrel": {
+  "normalized": "etonogestrel",
+  "canonicalized": "etonogestrel",
+  "rxcui": "14584",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "etoposide": {
+  "normalized": "etoposide",
+  "canonicalized": "etoposide",
+  "rxcui": "4179",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "etretinate": {
+  "normalized": "etretinate",
+  "canonicalized": "etretinate",
+  "rxcui": "4182",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "everolimus": {
+  "normalized": "everolimus",
+  "canonicalized": "everolimus",
+  "rxcui": "141704",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "exemestane": {
+  "normalized": "exemestane",
+  "canonicalized": "exemestane",
+  "rxcui": "258494",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "famciclovir": {
+  "normalized": "famciclovir",
+  "canonicalized": "famciclovir",
+  "rxcui": "68099",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "famotidine": {
+  "normalized": "famotidine",
+  "canonicalized": "famotidine",
+  "rxcui": "4278",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fe": {
+  "normalized": "fe",
+  "canonicalized": "fe",
+  "rxcui": "90176",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "felbamate": {
+  "normalized": "felbamate",
+  "canonicalized": "felbamate",
+  "rxcui": "24812",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "felodipine": {
+  "normalized": "felodipine",
+  "canonicalized": "felodipine",
+  "rxcui": "4316",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fenbufen": {
+  "normalized": "fenbufen",
+  "canonicalized": "fenbufen",
+  "rxcui": "24830",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fenfluramine": {
+  "normalized": "fenfluramine",
+  "canonicalized": "fenfluramine",
+  "rxcui": "4328",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fenofibrate": {
+  "normalized": "fenofibrate",
+  "canonicalized": "fenofibrate",
+  "rxcui": "8703",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fenofibric acid": {
+  "normalized": "fenofibric acid",
+  "canonicalized": "fenofibric acid",
+  "rxcui": "24852",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "fenoldopam": {
+  "normalized": "fenoldopam",
+  "canonicalized": "fenoldopam",
+  "rxcui": "24853",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fenoprofen": {
+  "normalized": "fenoprofen",
+  "canonicalized": "fenoprofen",
+  "rxcui": "4331",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fentanyl": {
+  "normalized": "fentanyl",
+  "canonicalized": "fentanyl",
+  "rxcui": "4337",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ferrous sulfate": {
+  "normalized": "ferrous sulfate",
+  "canonicalized": "ferrous sulfate",
+  "rxcui": "24947",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fexofenadine": {
+  "normalized": "fexofenadine",
+  "canonicalized": "fexofenadine",
+  "rxcui": "87636",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fexofenadine hydrochloride": {
+  "normalized": "fexofenadine hydrochloride",
+  "canonicalized": "fexofenadine",
+  "rxcui": "236474",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "fibrinogen": {
+  "normalized": "fibrinogen",
+  "canonicalized": "fibrinogen",
+  "rxcui": "4385",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "finasteride": {
+  "normalized": "finasteride",
+  "canonicalized": "finasteride",
+  "rxcui": "25025",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "flecainide": {
+  "normalized": "flecainide",
+  "canonicalized": "flecainide",
+  "rxcui": "4441",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "floxuridine": {
+  "normalized": "floxuridine",
+  "canonicalized": "floxuridine",
+  "rxcui": "4488",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fluconazole": {
+  "normalized": "fluconazole",
+  "canonicalized": "fluconazole",
+  "rxcui": "4450",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "flucytosine": {
+  "normalized": "flucytosine",
+  "canonicalized": "flucytosine",
+  "rxcui": "4451",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fludrocortisone acetate": {
+  "normalized": "fludrocortisone acetate",
+  "canonicalized": "fludrocortisone",
+  "rxcui": "165516",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "flumazenil": {
+  "normalized": "flumazenil",
+  "canonicalized": "flumazenil",
+  "rxcui": "4457",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fluorouracil": {
+  "normalized": "fluorouracil",
+  "canonicalized": "fluorouracil",
+  "rxcui": "4492",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fluoxetine": {
+  "normalized": "fluoxetine",
+  "canonicalized": "fluoxetine",
+  "rxcui": "4493",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fluoxetine hydrochloride": {
+  "normalized": "fluoxetine hydrochloride",
+  "canonicalized": "fluoxetine",
+  "rxcui": "227224",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "flupenthixol": {
+  "normalized": "flupenthixol",
+  "canonicalized": "flupenthixol",
+  "rxcui": "4495",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fluphenazine": {
+  "normalized": "fluphenazine",
+  "canonicalized": "fluphenazine",
+  "rxcui": "4496",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "flurbiprofen": {
+  "normalized": "flurbiprofen",
+  "canonicalized": "flurbiprofen",
+  "rxcui": "4502",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "flutamide": {
+  "normalized": "flutamide",
+  "canonicalized": "flutamide",
+  "rxcui": "4508",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fluvastatin": {
+  "normalized": "fluvastatin",
+  "canonicalized": "fluvastatin",
+  "rxcui": "41127",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fluvoxamine": {
+  "normalized": "fluvoxamine",
+  "canonicalized": "fluvoxamine",
+  "rxcui": "42355",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fluvoxamine maleate": {
+  "normalized": "fluvoxamine maleate",
+  "canonicalized": "fluvoxamine",
+  "rxcui": "203143",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "folic acid": {
+  "normalized": "folic acid",
+  "canonicalized": "folic acid",
+  "rxcui": "4511",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fondaparinux": {
+  "normalized": "fondaparinux",
+  "canonicalized": "fondaparinux",
+  "rxcui": "321208",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fondaparinux sodium": {
+  "normalized": "fondaparinux sodium",
+  "canonicalized": "fondaparinux",
+  "rxcui": "322154",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "formoterol": {
+  "normalized": "formoterol",
+  "canonicalized": "formoterol",
+  "rxcui": "25255",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "formoterol fumarate": {
+  "normalized": "formoterol fumarate",
+  "canonicalized": "formoterol",
+  "rxcui": "236216",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "foscarnet": {
+  "normalized": "foscarnet",
+  "canonicalized": "foscarnet",
+  "rxcui": "33562",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fosfomycin": {
+  "normalized": "fosfomycin",
+  "canonicalized": "fosfomycin",
+  "rxcui": "4550",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fosinopril": {
+  "normalized": "fosinopril",
+  "canonicalized": "fosinopril",
+  "rxcui": "50166",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fosinopril sodium": {
+  "normalized": "fosinopril sodium",
+  "canonicalized": "fosinopril",
+  "rxcui": "227278",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "fosinoprilat": {
+  "normalized": "fosinoprilat",
+  "canonicalized": "fosinoprilat",
+  "rxcui": "1546393",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fosphenytoin": {
+  "normalized": "fosphenytoin",
+  "canonicalized": "fosphenytoin",
+  "rxcui": "72236",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "frovatriptan": {
+  "normalized": "frovatriptan",
+  "canonicalized": "frovatriptan",
+  "rxcui": "228783",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "fulvestrant": {
+  "normalized": "fulvestrant",
+  "canonicalized": "fulvestrant",
+  "rxcui": "282357",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "furazolidone": {
+  "normalized": "furazolidone",
+  "canonicalized": "furazolidone",
+  "rxcui": "4601",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "furosemide": {
+  "normalized": "furosemide",
+  "canonicalized": "furosemide",
+  "rxcui": "4603",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gabapentin": {
+  "normalized": "gabapentin",
+  "canonicalized": "gabapentin",
+  "rxcui": "25480",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gallamine": {
+  "normalized": "gallamine",
+  "canonicalized": "gallamine",
+  "rxcui": "4638",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ganciclovir": {
+  "normalized": "ganciclovir",
+  "canonicalized": "ganciclovir",
+  "rxcui": "4678",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ganoderma lucidum extract": {
+  "normalized": "ganoderma lucidum extract",
+  "canonicalized": "ganoderma lucidum extract",
+  "rxcui": "1313180",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gefitinib": {
+  "normalized": "gefitinib",
+  "canonicalized": "gefitinib",
+  "rxcui": "328134",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gemfibrozil": {
+  "normalized": "gemfibrozil",
+  "canonicalized": "gemfibrozil",
+  "rxcui": "4719",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gemifloxacin": {
+  "normalized": "gemifloxacin",
+  "canonicalized": "gemifloxacin",
+  "rxcui": "138099",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gentamicin": {
+  "normalized": "gentamicin",
+  "canonicalized": "gentamicin",
+  "rxcui": "1596450",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gentamycin": {
+  "normalized": "gentamycin",
+  "canonicalized": "gentamycin",
+  "rxcui": "1596450",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gestodene": {
+  "normalized": "gestodene",
+  "canonicalized": "gestodene",
+  "rxcui": "25734",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ginkgo": {
+  "normalized": "ginkgo",
+  "canonicalized": "ginkgo",
+  "rxcui": "236809",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ginkgo biloba": {
+  "normalized": "ginkgo biloba",
+  "canonicalized": "ginkgo biloba",
+  "rxcui": "236809",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ginseng": {
+  "normalized": "ginseng",
+  "canonicalized": "ginseng",
+  "rxcui": "325526",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ginsenosides": {
+  "normalized": "ginsenosides",
+  "canonicalized": "ginsenosides",
+  "rxcui": "349656",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glatiramer acetate": {
+  "normalized": "glatiramer acetate",
+  "canonicalized": "glatiramer",
+  "rxcui": "84375",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "glibenclamide": {
+  "normalized": "glibenclamide",
+  "canonicalized": "glibenclamide",
+  "rxcui": "4815",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glimepiride": {
+  "normalized": "glimepiride",
+  "canonicalized": "glimepiride",
+  "rxcui": "25789",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glipizide": {
+  "normalized": "glipizide",
+  "canonicalized": "glipizide",
+  "rxcui": "4821",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glucagon": {
+  "normalized": "glucagon",
+  "canonicalized": "glucagon",
+  "rxcui": "4832",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glutamate": {
+  "normalized": "glutamate",
+  "canonicalized": "glutamate",
+  "rxcui": "70602",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glutamic acid": {
+  "normalized": "glutamic acid",
+  "canonicalized": "glutamic acid",
+  "rxcui": "25916",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "glutamic acid hcl": {
+  "normalized": "glutamic acid hcl",
+  "canonicalized": "glutamic acid hcl",
+  "rxcui": "91269",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "glutethimide": {
+  "normalized": "glutethimide",
+  "canonicalized": "glutethimide",
+  "rxcui": "4903",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glyburide": {
+  "normalized": "glyburide",
+  "canonicalized": "glyburide",
+  "rxcui": "4815",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glyceryl trinitrate": {
+  "normalized": "glyceryl trinitrate",
+  "canonicalized": "glyceryl trinitrate",
+  "rxcui": "4917",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "glycine": {
+  "normalized": "glycine",
+  "canonicalized": "glycine",
+  "rxcui": "4919",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "gold": {
+  "normalized": "gold",
+  "canonicalized": "gold",
+  "rxcui": "1311190",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "granisetron": {
+  "normalized": "granisetron",
+  "canonicalized": "granisetron",
+  "rxcui": "26237",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "grepafloxacin": {
+  "normalized": "grepafloxacin",
+  "canonicalized": "grepafloxacin",
+  "rxcui": "83719",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "griseofulvin": {
+  "normalized": "griseofulvin",
+  "canonicalized": "griseofulvin",
+  "rxcui": "5021",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "guafacine": {
+  "normalized": "guafacine",
+  "canonicalized": "guafacine",
+  "rxcui": "862004",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "guanadrel": {
+  "normalized": "guanadrel",
+  "canonicalized": "guanadrel",
+  "rxcui": "26296",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "guanethidine": {
+  "normalized": "guanethidine",
+  "canonicalized": "guanethidine",
+  "rxcui": "5036",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "guanfacine": {
+  "normalized": "guanfacine",
+  "canonicalized": "guanfacine",
+  "rxcui": "40114",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "halofantrine": {
+  "normalized": "halofantrine",
+  "canonicalized": "halofantrine",
+  "rxcui": "50749",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "haloperidol": {
+  "normalized": "haloperidol",
+  "canonicalized": "haloperidol",
+  "rxcui": "5093",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "halothane": {
+  "normalized": "halothane",
+  "canonicalized": "halothane",
+  "rxcui": "5095",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hctz": {
+  "normalized": "hctz",
+  "canonicalized": "hctz",
+  "rxcui": "5487",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "heparin": {
+  "normalized": "heparin",
+  "canonicalized": "heparin",
+  "rxcui": "5224",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "heparin sodium": {
+  "normalized": "heparin sodium",
+  "canonicalized": "heparin",
+  "rxcui": "314659",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "heroin": {
+  "normalized": "heroin",
+  "canonicalized": "heroin",
+  "rxcui": "3304",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hexobarbital": {
+  "normalized": "hexobarbital",
+  "canonicalized": "hexobarbital",
+  "rxcui": "5302",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "human growth hormone": {
+  "normalized": "human growth hormone",
+  "canonicalized": "human growth hormone",
+  "rxcui": "61148",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hydralazine": {
+  "normalized": "hydralazine",
+  "canonicalized": "hydralazine",
+  "rxcui": "5470",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hydrochlorothiazide": {
+  "normalized": "hydrochlorothiazide",
+  "canonicalized": "hydrochlorothiazide",
+  "rxcui": "5487",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hydrocodone": {
+  "normalized": "hydrocodone",
+  "canonicalized": "hydrocodone",
+  "rxcui": "5489",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hydrocortisone": {
+  "normalized": "hydrocortisone",
+  "canonicalized": "hydrocortisone",
+  "rxcui": "5492",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hydroflumethiazide": {
+  "normalized": "hydroflumethiazide",
+  "canonicalized": "hydroflumethiazide",
+  "rxcui": "5495",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hydroxychloroquine": {
+  "normalized": "hydroxychloroquine",
+  "canonicalized": "hydroxychloroquine",
+  "rxcui": "5521",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hydroxyurea": {
+  "normalized": "hydroxyurea",
+  "canonicalized": "hydroxyurea",
+  "rxcui": "5552",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "hydroxyzine": {
+  "normalized": "hydroxyzine",
+  "canonicalized": "hydroxyzine",
+  "rxcui": "5553",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ibandronate": {
+  "normalized": "ibandronate",
+  "canonicalized": "ibandronate",
+  "rxcui": "115264",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ibuprofen": {
+  "normalized": "ibuprofen",
+  "canonicalized": "ibuprofen",
+  "rxcui": "5640",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ibutilide": {
+  "normalized": "ibutilide",
+  "canonicalized": "ibutilide",
+  "rxcui": "41289",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "icodextrin": {
+  "normalized": "icodextrin",
+  "canonicalized": "icodextrin",
+  "rxcui": "140480",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "idoxuridine": {
+  "normalized": "idoxuridine",
+  "canonicalized": "idoxuridine",
+  "rxcui": "5653",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ifosfamide": {
+  "normalized": "ifosfamide",
+  "canonicalized": "ifosfamide",
+  "rxcui": "5657",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "iloprost": {
+  "normalized": "iloprost",
+  "canonicalized": "iloprost",
+  "rxcui": "40138",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "imatinib": {
+  "normalized": "imatinib",
+  "canonicalized": "imatinib",
+  "rxcui": "282388",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "imipramine": {
+  "normalized": "imipramine",
+  "canonicalized": "imipramine",
+  "rxcui": "5691",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "imipramine hydrochloride": {
+  "normalized": "imipramine hydrochloride",
+  "canonicalized": "imipramine",
+  "rxcui": "150816",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "indinavir": {
+  "normalized": "indinavir",
+  "canonicalized": "indinavir",
+  "rxcui": "114289",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "indocyanine green": {
+  "normalized": "indocyanine green",
+  "canonicalized": "indocyanine green",
+  "rxcui": "5775",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "indomethacin": {
+  "normalized": "indomethacin",
+  "canonicalized": "indomethacin",
+  "rxcui": "5781",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "infliximab": {
+  "normalized": "infliximab",
+  "canonicalized": "infliximab",
+  "rxcui": "191831",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "inh": {
+  "normalized": "inh",
+  "canonicalized": "inh",
+  "rxcui": "6038",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "insulin": {
+  "normalized": "insulin",
+  "canonicalized": "insulin",
+  "rxcui": "253182",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "interferon beta": {
+  "normalized": "interferon beta",
+  "canonicalized": "interferon beta",
+  "rxcui": "4381",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "interferon beta-1a": {
+  "normalized": "interferon beta-1a",
+  "canonicalized": "interferon beta-1a",
+  "rxcui": "75917",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "iodamide": {
+  "normalized": "iodamide",
+  "canonicalized": "iodamide",
+  "rxcui": "5928",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "iodine": {
+  "normalized": "iodine",
+  "canonicalized": "iodine",
+  "rxcui": "5933",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "iodoquinol": {
+  "normalized": "iodoquinol",
+  "canonicalized": "iodoquinol",
+  "rxcui": "3435",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ipratropium bromide": {
+  "normalized": "ipratropium bromide",
+  "canonicalized": "ipratropium bromide",
+  "rxcui": "203212",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "irbesartan": {
+  "normalized": "irbesartan",
+  "canonicalized": "irbesartan",
+  "rxcui": "83818",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "irinotecan": {
+  "normalized": "irinotecan",
+  "canonicalized": "irinotecan",
+  "rxcui": "51499",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "isocarboxazid": {
+  "normalized": "isocarboxazid",
+  "canonicalized": "isocarboxazid",
+  "rxcui": "6011",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "isoflurane": {
+  "normalized": "isoflurane",
+  "canonicalized": "isoflurane",
+  "rxcui": "6026",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "isoniazid": {
+  "normalized": "isoniazid",
+  "canonicalized": "isoniazid",
+  "rxcui": "6038",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "isoniazide": {
+  "normalized": "isoniazide",
+  "canonicalized": "isoniazide",
+  "rxcui": "6038",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "isoproterenol": {
+  "normalized": "isoproterenol",
+  "canonicalized": "isoproterenol",
+  "rxcui": "6054",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "isoproterenol hydrochloride": {
+  "normalized": "isoproterenol hydrochloride",
+  "canonicalized": "isoproterenol",
+  "rxcui": "82030",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "isosorbide dinitrate": {
+  "normalized": "isosorbide dinitrate",
+  "canonicalized": "isosorbide dinitrate",
+  "rxcui": "6058",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "isosorbide mononitrate": {
+  "normalized": "isosorbide mononitrate",
+  "canonicalized": "isosorbide mononitrate",
+  "rxcui": "28004",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "isotretinoin": {
+  "normalized": "isotretinoin",
+  "canonicalized": "isotretinoin",
+  "rxcui": "6064",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "isradipine": {
+  "normalized": "isradipine",
+  "canonicalized": "isradipine",
+  "rxcui": "33910",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "itraconazole": {
+  "normalized": "itraconazole",
+  "canonicalized": "itraconazole",
+  "rxcui": "28031",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "kanamycin": {
+  "normalized": "kanamycin",
+  "canonicalized": "kanamycin",
+  "rxcui": "6099",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "kaolin": {
+  "normalized": "kaolin",
+  "canonicalized": "kaolin",
+  "rxcui": "6102",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "kcl": {
+  "normalized": "kcl",
+  "canonicalized": "kcl",
+  "rxcui": "8591",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ketamine": {
+  "normalized": "ketamine",
+  "canonicalized": "ketamine",
+  "rxcui": "6130",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ketoconazole": {
+  "normalized": "ketoconazole",
+  "canonicalized": "ketoconazole",
+  "rxcui": "6135",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ketoprofen": {
+  "normalized": "ketoprofen",
+  "canonicalized": "ketoprofen",
+  "rxcui": "6142",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ketorolac": {
+  "normalized": "ketorolac",
+  "canonicalized": "ketorolac",
+  "rxcui": "35827",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ketorolac tromethamine": {
+  "normalized": "ketorolac tromethamine",
+  "canonicalized": "ketorolac tromethamine",
+  "rxcui": "28200",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "l-arginine": {
+  "normalized": "l-arginine",
+  "canonicalized": "l-arginine",
+  "rxcui": "1091",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "l-glutamine": {
+  "normalized": "l-glutamine",
+  "canonicalized": "l-glutamine",
+  "rxcui": "4885",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "l-histidine": {
+  "normalized": "l-histidine",
+  "canonicalized": "l-histidine",
+  "rxcui": "5340",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "l-lysine": {
+  "normalized": "l-lysine",
+  "canonicalized": "l-lysine",
+  "rxcui": "6536",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "l-methionine": {
+  "normalized": "l-methionine",
+  "canonicalized": "l-methionine",
+  "rxcui": "6837",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "l-phenylalanine": {
+  "normalized": "l-phenylalanine",
+  "canonicalized": "l-phenylalanine",
+  "rxcui": "8156",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "l-tryptophan": {
+  "normalized": "l-tryptophan",
+  "canonicalized": "l-tryptophan",
+  "rxcui": "10898",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "l-tyrosine": {
+  "normalized": "l-tyrosine",
+  "canonicalized": "l-tyrosine",
+  "rxcui": "10962",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "labetalol": {
+  "normalized": "labetalol",
+  "canonicalized": "labetalol",
+  "rxcui": "6185",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "labetalol hcl": {
+  "normalized": "labetalol hcl",
+  "canonicalized": "labetalol hcl",
+  "rxcui": "202693",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "lactulose": {
+  "normalized": "lactulose",
+  "canonicalized": "lactulose",
+  "rxcui": "6218",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lamivudine": {
+  "normalized": "lamivudine",
+  "canonicalized": "lamivudine",
+  "rxcui": "68244",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lamotrigine": {
+  "normalized": "lamotrigine",
+  "canonicalized": "lamotrigine",
+  "rxcui": "28439",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lansoprazole": {
+  "normalized": "lansoprazole",
+  "canonicalized": "lansoprazole",
+  "rxcui": "17128",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lapatinib": {
+  "normalized": "lapatinib",
+  "canonicalized": "lapatinib",
+  "rxcui": "480167",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "latamoxef": {
+  "normalized": "latamoxef",
+  "canonicalized": "latamoxef",
+  "rxcui": "7069",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "latanoprost": {
+  "normalized": "latanoprost",
+  "canonicalized": "latanoprost",
+  "rxcui": "43611",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lead": {
+  "normalized": "lead",
+  "canonicalized": "lead",
+  "rxcui": "6260",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "leflunomide": {
+  "normalized": "leflunomide",
+  "canonicalized": "leflunomide",
+  "rxcui": "27169",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lenalidomide": {
+  "normalized": "lenalidomide",
+  "canonicalized": "lenalidomide",
+  "rxcui": "342369",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "letrozole": {
+  "normalized": "letrozole",
+  "canonicalized": "letrozole",
+  "rxcui": "72965",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "leucovorin": {
+  "normalized": "leucovorin",
+  "canonicalized": "leucovorin",
+  "rxcui": "6313",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levamisole": {
+  "normalized": "levamisole",
+  "canonicalized": "levamisole",
+  "rxcui": "6371",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levamisole hydrochloride": {
+  "normalized": "levamisole hydrochloride",
+  "canonicalized": "levamisole",
+  "rxcui": "227227",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "levetiracetam": {
+  "normalized": "levetiracetam",
+  "canonicalized": "levetiracetam",
+  "rxcui": "114477",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levobupivacaine": {
+  "normalized": "levobupivacaine",
+  "canonicalized": "levobupivacaine",
+  "rxcui": "259453",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levodopa": {
+  "normalized": "levodopa",
+  "canonicalized": "levodopa",
+  "rxcui": "6375",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levofloxacin": {
+  "normalized": "levofloxacin",
+  "canonicalized": "levofloxacin",
+  "rxcui": "82122",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levonorgestrel": {
+  "normalized": "levonorgestrel",
+  "canonicalized": "levonorgestrel",
+  "rxcui": "6373",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levorphanol": {
+  "normalized": "levorphanol",
+  "canonicalized": "levorphanol",
+  "rxcui": "6378",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levosimendan": {
+  "normalized": "levosimendan",
+  "canonicalized": "levosimendan",
+  "rxcui": "73107",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levothyroxine": {
+  "normalized": "levothyroxine",
+  "canonicalized": "levothyroxine",
+  "rxcui": "10582",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "levothyroxine sodium": {
+  "normalized": "levothyroxine sodium",
+  "canonicalized": "levothyroxine",
+  "rxcui": "40144",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "lidocaine": {
+  "normalized": "lidocaine",
+  "canonicalized": "lidocaine",
+  "rxcui": "6387",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lignocaine": {
+  "normalized": "lignocaine",
+  "canonicalized": "lignocaine",
+  "rxcui": "6387",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lincomycin": {
+  "normalized": "lincomycin",
+  "canonicalized": "lincomycin",
+  "rxcui": "6398",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "linezolid": {
+  "normalized": "linezolid",
+  "canonicalized": "linezolid",
+  "rxcui": "190376",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lisinopril": {
+  "normalized": "lisinopril",
+  "canonicalized": "lisinopril",
+  "rxcui": "29046",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lithium": {
+  "normalized": "lithium",
+  "canonicalized": "lithium",
+  "rxcui": "6448",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lithium carbonate": {
+  "normalized": "lithium carbonate",
+  "canonicalized": "lithium carbonate",
+  "rxcui": "42351",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lofexidine": {
+  "normalized": "lofexidine",
+  "canonicalized": "lofexidine",
+  "rxcui": "28863",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lomefloxacin": {
+  "normalized": "lomefloxacin",
+  "canonicalized": "lomefloxacin",
+  "rxcui": "28872",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "loperamide": {
+  "normalized": "loperamide",
+  "canonicalized": "loperamide",
+  "rxcui": "6468",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lopinavir": {
+  "normalized": "lopinavir",
+  "canonicalized": "lopinavir",
+  "rxcui": "195088",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "loracarbef": {
+  "normalized": "loracarbef",
+  "canonicalized": "loracarbef",
+  "rxcui": "28981",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "loratadine": {
+  "normalized": "loratadine",
+  "canonicalized": "loratadine",
+  "rxcui": "28889",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lorazepam": {
+  "normalized": "lorazepam",
+  "canonicalized": "lorazepam",
+  "rxcui": "6470",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "losartan": {
+  "normalized": "losartan",
+  "canonicalized": "losartan",
+  "rxcui": "52175",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lovastatin": {
+  "normalized": "lovastatin",
+  "canonicalized": "lovastatin",
+  "rxcui": "6472",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "loxapine": {
+  "normalized": "loxapine",
+  "canonicalized": "loxapine",
+  "rxcui": "6475",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "lymecycline": {
+  "normalized": "lymecycline",
+  "canonicalized": "lymecycline",
+  "rxcui": "6513",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "magnesium hydroxide": {
+  "normalized": "magnesium hydroxide",
+  "canonicalized": "magnesium hydroxide",
+  "rxcui": "6581",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "magnesium salicylate": {
+  "normalized": "magnesium salicylate",
+  "canonicalized": "magnesium salicylate",
+  "rxcui": "52364",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "magnesium sulfate": {
+  "normalized": "magnesium sulfate",
+  "canonicalized": "magnesium sulfate",
+  "rxcui": "6585",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "magnesium trisilicate": {
+  "normalized": "magnesium trisilicate",
+  "canonicalized": "magnesium trisilicate",
+  "rxcui": "29170",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "magnesium-aluminum hydroxide": {
+  "normalized": "magnesium-aluminum hydroxide",
+  "canonicalized": "magnesium-aluminum hydroxide",
+  "rxcui": "1009149",
+  "tty": "MIN",
+  "matched_form": "normalized"
+ },
+ "maprotiline": {
+  "normalized": "maprotiline",
+  "canonicalized": "maprotiline",
+  "rxcui": "6646",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mazindol": {
+  "normalized": "mazindol",
+  "canonicalized": "mazindol",
+  "rxcui": "6664",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mecamylamine": {
+  "normalized": "mecamylamine",
+  "canonicalized": "mecamylamine",
+  "rxcui": "6673",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mechlorethamine": {
+  "normalized": "mechlorethamine",
+  "canonicalized": "mechlorethamine",
+  "rxcui": "6674",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "meclofenamate sodium": {
+  "normalized": "meclofenamate sodium",
+  "canonicalized": "meclofenamate",
+  "rxcui": "6677",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "meclofenamic acid": {
+  "normalized": "meclofenamic acid",
+  "canonicalized": "meclofenamic acid",
+  "rxcui": "6678",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "medroxyprogesterone": {
+  "normalized": "medroxyprogesterone",
+  "canonicalized": "medroxyprogesterone",
+  "rxcui": "6691",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "medroxyprogesterone acetate": {
+  "normalized": "medroxyprogesterone acetate",
+  "canonicalized": "medroxyprogesterone",
+  "rxcui": "1000112",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "mefenamic acid": {
+  "normalized": "mefenamic acid",
+  "canonicalized": "mefenamic acid",
+  "rxcui": "6693",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "mefloquine": {
+  "normalized": "mefloquine",
+  "canonicalized": "mefloquine",
+  "rxcui": "6694",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "meperidine": {
+  "normalized": "meperidine",
+  "canonicalized": "meperidine",
+  "rxcui": "6754",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mephenytoin": {
+  "normalized": "mephenytoin",
+  "canonicalized": "mephenytoin",
+  "rxcui": "6757",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "meprobamate": {
+  "normalized": "meprobamate",
+  "canonicalized": "meprobamate",
+  "rxcui": "6760",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mercaptopurine": {
+  "normalized": "mercaptopurine",
+  "canonicalized": "mercaptopurine",
+  "rxcui": "103",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mesalamine": {
+  "normalized": "mesalamine",
+  "canonicalized": "mesalamine",
+  "rxcui": "52582",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "metamizol": {
+  "normalized": "metamizol",
+  "canonicalized": "metamizol",
+  "rxcui": "3523",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "metformin": {
+  "normalized": "metformin",
+  "canonicalized": "metformin",
+  "rxcui": "6809",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methadone": {
+  "normalized": "methadone",
+  "canonicalized": "methadone",
+  "rxcui": "6813",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methamphetamine": {
+  "normalized": "methamphetamine",
+  "canonicalized": "methamphetamine",
+  "rxcui": "6816",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methandrostenolone": {
+  "normalized": "methandrostenolone",
+  "canonicalized": "methandrostenolone",
+  "rxcui": "6818",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methanol": {
+  "normalized": "methanol",
+  "canonicalized": "methanol",
+  "rxcui": "1310568",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methaqualone": {
+  "normalized": "methaqualone",
+  "canonicalized": "methaqualone",
+  "rxcui": "6823",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methdilazine": {
+  "normalized": "methdilazine",
+  "canonicalized": "methdilazine",
+  "rxcui": "29648",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methenamine": {
+  "normalized": "methenamine",
+  "canonicalized": "methenamine",
+  "rxcui": "6832",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methionine": {
+  "normalized": "methionine",
+  "canonicalized": "methionine",
+  "rxcui": "6837",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methotrexate": {
+  "normalized": "methotrexate",
+  "canonicalized": "methotrexate",
+  "rxcui": "6851",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methoxyflurane": {
+  "normalized": "methoxyflurane",
+  "canonicalized": "methoxyflurane",
+  "rxcui": "6857",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methsuximide": {
+  "normalized": "methsuximide",
+  "canonicalized": "methsuximide",
+  "rxcui": "47858",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methyldopa": {
+  "normalized": "methyldopa",
+  "canonicalized": "methyldopa",
+  "rxcui": "6876",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methylergonovine": {
+  "normalized": "methylergonovine",
+  "canonicalized": "methylergonovine",
+  "rxcui": "6883",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methylphenidate": {
+  "normalized": "methylphenidate",
+  "canonicalized": "methylphenidate",
+  "rxcui": "6901",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methylprednisolone": {
+  "normalized": "methylprednisolone",
+  "canonicalized": "methylprednisolone",
+  "rxcui": "6902",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "methysergide": {
+  "normalized": "methysergide",
+  "canonicalized": "methysergide",
+  "rxcui": "6911",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "metoclopramide": {
+  "normalized": "metoclopramide",
+  "canonicalized": "metoclopramide",
+  "rxcui": "6915",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "metoprolol": {
+  "normalized": "metoprolol",
+  "canonicalized": "metoprolol",
+  "rxcui": "6918",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "metrizamide": {
+  "normalized": "metrizamide",
+  "canonicalized": "metrizamide",
+  "rxcui": "6920",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "metronidazole": {
+  "normalized": "metronidazole",
+  "canonicalized": "metronidazole",
+  "rxcui": "6922",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "miconazole": {
+  "normalized": "miconazole",
+  "canonicalized": "miconazole",
+  "rxcui": "6932",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "miconazole nitrate": {
+  "normalized": "miconazole nitrate",
+  "canonicalized": "miconazole nitrate",
+  "rxcui": "42790",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "midazolam": {
+  "normalized": "midazolam",
+  "canonicalized": "midazolam",
+  "rxcui": "6960",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "milrinone": {
+  "normalized": "milrinone",
+  "canonicalized": "milrinone",
+  "rxcui": "52769",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mineral oil": {
+  "normalized": "mineral oil",
+  "canonicalized": "mineral oil",
+  "rxcui": "6972",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "minocycline": {
+  "normalized": "minocycline",
+  "canonicalized": "minocycline",
+  "rxcui": "6980",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mirtazapine": {
+  "normalized": "mirtazapine",
+  "canonicalized": "mirtazapine",
+  "rxcui": "15996",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "misoprostol": {
+  "normalized": "misoprostol",
+  "canonicalized": "misoprostol",
+  "rxcui": "42331",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mitotane": {
+  "normalized": "mitotane",
+  "canonicalized": "mitotane",
+  "rxcui": "7004",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mitoxantrone": {
+  "normalized": "mitoxantrone",
+  "canonicalized": "mitoxantrone",
+  "rxcui": "7005",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "moclobemide": {
+  "normalized": "moclobemide",
+  "canonicalized": "moclobemide",
+  "rxcui": "30121",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "morphine": {
+  "normalized": "morphine",
+  "canonicalized": "morphine",
+  "rxcui": "7052",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mtx": {
+  "normalized": "mtx",
+  "canonicalized": "mtx",
+  "rxcui": "6851",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "muromonab-cd3": {
+  "normalized": "muromonab-cd3",
+  "canonicalized": "muromonab-cd3",
+  "rxcui": "42405",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mycophenolate": {
+  "normalized": "mycophenolate",
+  "canonicalized": "mycophenolate",
+  "rxcui": "265323",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "mycophenolate mofetil": {
+  "normalized": "mycophenolate mofetil",
+  "canonicalized": "mycophenolate mofetil",
+  "rxcui": "68149",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "n-desmethyldiazepam": {
+  "normalized": "n-desmethyldiazepam",
+  "canonicalized": "n-desmethyldiazepam",
+  "rxcui": "3155",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nabilone": {
+  "normalized": "nabilone",
+  "canonicalized": "nabilone",
+  "rxcui": "31447",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nabumetone": {
+  "normalized": "nabumetone",
+  "canonicalized": "nabumetone",
+  "rxcui": "31448",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nadolol": {
+  "normalized": "nadolol",
+  "canonicalized": "nadolol",
+  "rxcui": "7226",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nafarelin acetate": {
+  "normalized": "nafarelin acetate",
+  "canonicalized": "nafarelin",
+  "rxcui": "203147",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "nafcillin": {
+  "normalized": "nafcillin",
+  "canonicalized": "nafcillin",
+  "rxcui": "7233",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nalbuphine": {
+  "normalized": "nalbuphine",
+  "canonicalized": "nalbuphine",
+  "rxcui": "7238",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nalidixic acid": {
+  "normalized": "nalidixic acid",
+  "canonicalized": "nalidixic acid",
+  "rxcui": "7240",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "naloxone": {
+  "normalized": "naloxone",
+  "canonicalized": "naloxone",
+  "rxcui": "7242",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "naltrexone": {
+  "normalized": "naltrexone",
+  "canonicalized": "naltrexone",
+  "rxcui": "7243",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nandrolone": {
+  "normalized": "nandrolone",
+  "canonicalized": "nandrolone",
+  "rxcui": "7244",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "naproxen": {
+  "normalized": "naproxen",
+  "canonicalized": "naproxen",
+  "rxcui": "7258",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "naproxen sodium": {
+  "normalized": "naproxen sodium",
+  "canonicalized": "naproxen",
+  "rxcui": "142442",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "naratriptan": {
+  "normalized": "naratriptan",
+  "canonicalized": "naratriptan",
+  "rxcui": "141366",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nateglinide": {
+  "normalized": "nateglinide",
+  "canonicalized": "nateglinide",
+  "rxcui": "274332",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nefazodone": {
+  "normalized": "nefazodone",
+  "canonicalized": "nefazodone",
+  "rxcui": "31565",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nelfinavir": {
+  "normalized": "nelfinavir",
+  "canonicalized": "nelfinavir",
+  "rxcui": "134527",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "neomycin": {
+  "normalized": "neomycin",
+  "canonicalized": "neomycin",
+  "rxcui": "7299",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "neomycin sulfate": {
+  "normalized": "neomycin sulfate",
+  "canonicalized": "neomycin sulfate",
+  "rxcui": "7300",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "netilmicin": {
+  "normalized": "netilmicin",
+  "canonicalized": "netilmicin",
+  "rxcui": "7337",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "neurotensin": {
+  "normalized": "neurotensin",
+  "canonicalized": "neurotensin",
+  "rxcui": "2590652",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nevirapine": {
+  "normalized": "nevirapine",
+  "canonicalized": "nevirapine",
+  "rxcui": "53654",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "niacin": {
+  "normalized": "niacin",
+  "canonicalized": "niacin",
+  "rxcui": "7393",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "niacinamide": {
+  "normalized": "niacinamide",
+  "canonicalized": "niacinamide",
+  "rxcui": "7405",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nicardipine": {
+  "normalized": "nicardipine",
+  "canonicalized": "nicardipine",
+  "rxcui": "7396",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nicardipine hcl": {
+  "normalized": "nicardipine hcl",
+  "canonicalized": "nicardipine hcl",
+  "rxcui": "235230",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "nicotinamide": {
+  "normalized": "nicotinamide",
+  "canonicalized": "nicotinamide",
+  "rxcui": "7405",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nicotine": {
+  "normalized": "nicotine",
+  "canonicalized": "nicotine",
+  "rxcui": "7407",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nicotinic acid": {
+  "normalized": "nicotinic acid",
+  "canonicalized": "nicotinic acid",
+  "rxcui": "7393",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nifedipine": {
+  "normalized": "nifedipine",
+  "canonicalized": "nifedipine",
+  "rxcui": "7417",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nilutamide": {
+  "normalized": "nilutamide",
+  "canonicalized": "nilutamide",
+  "rxcui": "31805",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nimodipine": {
+  "normalized": "nimodipine",
+  "canonicalized": "nimodipine",
+  "rxcui": "7426",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nisoldipine": {
+  "normalized": "nisoldipine",
+  "canonicalized": "nisoldipine",
+  "rxcui": "7435",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nitazoxanide": {
+  "normalized": "nitazoxanide",
+  "canonicalized": "nitazoxanide",
+  "rxcui": "31819",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nitrite": {
+  "normalized": "nitrite",
+  "canonicalized": "nitrite",
+  "rxcui": "1546424",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nitroferricyanide": {
+  "normalized": "nitroferricyanide",
+  "canonicalized": "nitroferricyanide",
+  "rxcui": "7476",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nitrofurantoin": {
+  "normalized": "nitrofurantoin",
+  "canonicalized": "nitrofurantoin",
+  "rxcui": "7454",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nitrogen mustard": {
+  "normalized": "nitrogen mustard",
+  "canonicalized": "nitrogen mustard",
+  "rxcui": "6674",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nitroglycerin": {
+  "normalized": "nitroglycerin",
+  "canonicalized": "nitroglycerin",
+  "rxcui": "4917",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nitroprusside": {
+  "normalized": "nitroprusside",
+  "canonicalized": "nitroprusside",
+  "rxcui": "7476",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nitrous oxide": {
+  "normalized": "nitrous oxide",
+  "canonicalized": "nitrous oxide",
+  "rxcui": "7486",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nizatidine": {
+  "normalized": "nizatidine",
+  "canonicalized": "nizatidine",
+  "rxcui": "42319",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "noradrenaline": {
+  "normalized": "noradrenaline",
+  "canonicalized": "noradrenaline",
+  "rxcui": "7512",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "norepinephrine": {
+  "normalized": "norepinephrine",
+  "canonicalized": "norepinephrine",
+  "rxcui": "7512",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "norethandrolone": {
+  "normalized": "norethandrolone",
+  "canonicalized": "norethandrolone",
+  "rxcui": "7513",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "norethindrone": {
+  "normalized": "norethindrone",
+  "canonicalized": "norethindrone",
+  "rxcui": "7514",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "norethindrone acetate": {
+  "normalized": "norethindrone acetate",
+  "canonicalized": "norethindrone",
+  "rxcui": "31983",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "norfloxacin": {
+  "normalized": "norfloxacin",
+  "canonicalized": "norfloxacin",
+  "rxcui": "7517",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "norgestrel": {
+  "normalized": "norgestrel",
+  "canonicalized": "norgestrel",
+  "rxcui": "7518",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nortriptyline": {
+  "normalized": "nortriptyline",
+  "canonicalized": "nortriptyline",
+  "rxcui": "7531",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "nortriptyline hydrochloride": {
+  "normalized": "nortriptyline hydrochloride",
+  "canonicalized": "nortriptyline",
+  "rxcui": "203130",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "ntg": {
+  "normalized": "ntg",
+  "canonicalized": "ntg",
+  "rxcui": "4917",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "octreotide": {
+  "normalized": "octreotide",
+  "canonicalized": "octreotide",
+  "rxcui": "7617",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ofloxacin": {
+  "normalized": "ofloxacin",
+  "canonicalized": "ofloxacin",
+  "rxcui": "7623",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "olanzapine": {
+  "normalized": "olanzapine",
+  "canonicalized": "olanzapine",
+  "rxcui": "61381",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "omeprazole": {
+  "normalized": "omeprazole",
+  "canonicalized": "omeprazole",
+  "rxcui": "7646",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ondansetron": {
+  "normalized": "ondansetron",
+  "canonicalized": "ondansetron",
+  "rxcui": "26225",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "orlistat": {
+  "normalized": "orlistat",
+  "canonicalized": "orlistat",
+  "rxcui": "37925",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "orphenadrine": {
+  "normalized": "orphenadrine",
+  "canonicalized": "orphenadrine",
+  "rxcui": "7715",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ouabain": {
+  "normalized": "ouabain",
+  "canonicalized": "ouabain",
+  "rxcui": "7762",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxacillin": {
+  "normalized": "oxacillin",
+  "canonicalized": "oxacillin",
+  "rxcui": "7773",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxandrolone": {
+  "normalized": "oxandrolone",
+  "canonicalized": "oxandrolone",
+  "rxcui": "7779",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxaprozin": {
+  "normalized": "oxaprozin",
+  "canonicalized": "oxaprozin",
+  "rxcui": "32613",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxazepam": {
+  "normalized": "oxazepam",
+  "canonicalized": "oxazepam",
+  "rxcui": "7781",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxcarbazepine": {
+  "normalized": "oxcarbazepine",
+  "canonicalized": "oxcarbazepine",
+  "rxcui": "32624",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxolinic acid": {
+  "normalized": "oxolinic acid",
+  "canonicalized": "oxolinic acid",
+  "rxcui": "7798",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxycodone": {
+  "normalized": "oxycodone",
+  "canonicalized": "oxycodone",
+  "rxcui": "7804",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxygen": {
+  "normalized": "oxygen",
+  "canonicalized": "oxygen",
+  "rxcui": "7806",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxymetazoline": {
+  "normalized": "oxymetazoline",
+  "canonicalized": "oxymetazoline",
+  "rxcui": "7812",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxymetholone": {
+  "normalized": "oxymetholone",
+  "canonicalized": "oxymetholone",
+  "rxcui": "7813",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxyphenbutazone": {
+  "normalized": "oxyphenbutazone",
+  "canonicalized": "oxyphenbutazone",
+  "rxcui": "7816",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxytetracycline": {
+  "normalized": "oxytetracycline",
+  "canonicalized": "oxytetracycline",
+  "rxcui": "7821",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "oxytocin": {
+  "normalized": "oxytocin",
+  "canonicalized": "oxytocin",
+  "rxcui": "7824",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "p-aminosalicylic acid": {
+  "normalized": "p-aminosalicylic acid",
+  "canonicalized": "p-aminosalicylic acid",
+  "rxcui": "7833",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "paba": {
+  "normalized": "paba",
+  "canonicalized": "paba",
+  "rxcui": "74",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "paclitaxel": {
+  "normalized": "paclitaxel",
+  "canonicalized": "paclitaxel",
+  "rxcui": "56946",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pah": {
+  "normalized": "pah",
+  "canonicalized": "pah",
+  "rxcui": "7832",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "palonosetron": {
+  "normalized": "palonosetron",
+  "canonicalized": "palonosetron",
+  "rxcui": "70561",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pancreatin": {
+  "normalized": "pancreatin",
+  "canonicalized": "pancreatin",
+  "rxcui": "7880",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pancuronium": {
+  "normalized": "pancuronium",
+  "canonicalized": "pancuronium",
+  "rxcui": "7883",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "papaverine": {
+  "normalized": "papaverine",
+  "canonicalized": "papaverine",
+  "rxcui": "7895",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "para-aminobenzoic acid": {
+  "normalized": "para-aminobenzoic acid",
+  "canonicalized": "para-aminobenzoic acid",
+  "rxcui": "74",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "para-aminosalicylic acid": {
+  "normalized": "para-aminosalicylic acid",
+  "canonicalized": "para-aminosalicylic acid",
+  "rxcui": "7833",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "paraldehyde": {
+  "normalized": "paraldehyde",
+  "canonicalized": "paraldehyde",
+  "rxcui": "7909",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pargyline": {
+  "normalized": "pargyline",
+  "canonicalized": "pargyline",
+  "rxcui": "7930",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "paroxetine": {
+  "normalized": "paroxetine",
+  "canonicalized": "paroxetine",
+  "rxcui": "32937",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pegylated interferon alfa-2a": {
+  "normalized": "pegylated interferon alfa-2a",
+  "canonicalized": "pegylated interferon alfa-2a",
+  "rxcui": "120608",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "penciclovir": {
+  "normalized": "penciclovir",
+  "canonicalized": "penciclovir",
+  "rxcui": "59839",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "penicillamine": {
+  "normalized": "penicillamine",
+  "canonicalized": "penicillamine",
+  "rxcui": "7975",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "penicillin g": {
+  "normalized": "penicillin g",
+  "canonicalized": "penicillin g",
+  "rxcui": "7980",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "penicillin v": {
+  "normalized": "penicillin v",
+  "canonicalized": "penicillin v",
+  "rxcui": "7984",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pentagastrin": {
+  "normalized": "pentagastrin",
+  "canonicalized": "pentagastrin",
+  "rxcui": "7993",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pentamidine": {
+  "normalized": "pentamidine",
+  "canonicalized": "pentamidine",
+  "rxcui": "7994",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pentazocine": {
+  "normalized": "pentazocine",
+  "canonicalized": "pentazocine",
+  "rxcui": "8001",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pentobarbital": {
+  "normalized": "pentobarbital",
+  "canonicalized": "pentobarbital",
+  "rxcui": "8004",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pentostatin": {
+  "normalized": "pentostatin",
+  "canonicalized": "pentostatin",
+  "rxcui": "8011",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pentoxifylline": {
+  "normalized": "pentoxifylline",
+  "canonicalized": "pentoxifylline",
+  "rxcui": "8013",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "perphenazine": {
+  "normalized": "perphenazine",
+  "canonicalized": "perphenazine",
+  "rxcui": "8076",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenacemide": {
+  "normalized": "phenacemide",
+  "canonicalized": "phenacemide",
+  "rxcui": "33253",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenelzine": {
+  "normalized": "phenelzine",
+  "canonicalized": "phenelzine",
+  "rxcui": "8123",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenelzine sulfate": {
+  "normalized": "phenelzine sulfate",
+  "canonicalized": "phenelzine sulfate",
+  "rxcui": "8124",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "phenformin": {
+  "normalized": "phenformin",
+  "canonicalized": "phenformin",
+  "rxcui": "8129",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenobarbital": {
+  "normalized": "phenobarbital",
+  "canonicalized": "phenobarbital",
+  "rxcui": "8134",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenobarbital sodium": {
+  "normalized": "phenobarbital sodium",
+  "canonicalized": "phenobarbital",
+  "rxcui": "82077",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "phenobarbitone": {
+  "normalized": "phenobarbitone",
+  "canonicalized": "phenobarbitone",
+  "rxcui": "8134",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenprocoumon": {
+  "normalized": "phenprocoumon",
+  "canonicalized": "phenprocoumon",
+  "rxcui": "8150",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phentolamine": {
+  "normalized": "phentolamine",
+  "canonicalized": "phentolamine",
+  "rxcui": "8153",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenylbutazone": {
+  "normalized": "phenylbutazone",
+  "canonicalized": "phenylbutazone",
+  "rxcui": "8160",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenylpropanolamine": {
+  "normalized": "phenylpropanolamine",
+  "canonicalized": "phenylpropanolamine",
+  "rxcui": "8175",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenyltoloxamine": {
+  "normalized": "phenyltoloxamine",
+  "canonicalized": "phenyltoloxamine",
+  "rxcui": "33408",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenytoin": {
+  "normalized": "phenytoin",
+  "canonicalized": "phenytoin",
+  "rxcui": "8183",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "phenytoin sodium": {
+  "normalized": "phenytoin sodium",
+  "canonicalized": "phenytoin",
+  "rxcui": "71227",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "physostigmine": {
+  "normalized": "physostigmine",
+  "canonicalized": "physostigmine",
+  "rxcui": "8299",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "picrotoxin": {
+  "normalized": "picrotoxin",
+  "canonicalized": "picrotoxin",
+  "rxcui": "2539172",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pilocarpine": {
+  "normalized": "pilocarpine",
+  "canonicalized": "pilocarpine",
+  "rxcui": "8328",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pimozide": {
+  "normalized": "pimozide",
+  "canonicalized": "pimozide",
+  "rxcui": "8331",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pioglitazone": {
+  "normalized": "pioglitazone",
+  "canonicalized": "pioglitazone",
+  "rxcui": "33738",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "piperacillin": {
+  "normalized": "piperacillin",
+  "canonicalized": "piperacillin",
+  "rxcui": "8339",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "piperacillin sodium": {
+  "normalized": "piperacillin sodium",
+  "canonicalized": "piperacillin",
+  "rxcui": "203134",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "piperazine": {
+  "normalized": "piperazine",
+  "canonicalized": "piperazine",
+  "rxcui": "8340",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "piroxicam": {
+  "normalized": "piroxicam",
+  "canonicalized": "piroxicam",
+  "rxcui": "8356",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "plicamycin": {
+  "normalized": "plicamycin",
+  "canonicalized": "plicamycin",
+  "rxcui": "6995",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "potassium": {
+  "normalized": "potassium",
+  "canonicalized": "",
+  "rxcui": "8588",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "potassium chloride": {
+  "normalized": "potassium chloride",
+  "canonicalized": "chloride",
+  "rxcui": "8591",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pralidoxime": {
+  "normalized": "pralidoxime",
+  "canonicalized": "pralidoxime",
+  "rxcui": "34345",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pravastatin": {
+  "normalized": "pravastatin",
+  "canonicalized": "pravastatin",
+  "rxcui": "42463",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "praziquantel": {
+  "normalized": "praziquantel",
+  "canonicalized": "praziquantel",
+  "rxcui": "8628",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "prazosin": {
+  "normalized": "prazosin",
+  "canonicalized": "prazosin",
+  "rxcui": "8629",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "prednisolone": {
+  "normalized": "prednisolone",
+  "canonicalized": "prednisolone",
+  "rxcui": "8638",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "prednisolone sodium succinate": {
+  "normalized": "prednisolone sodium succinate",
+  "canonicalized": "prednisolone",
+  "rxcui": "55063",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "prednisone": {
+  "normalized": "prednisone",
+  "canonicalized": "prednisone",
+  "rxcui": "8640",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "prilocaine": {
+  "normalized": "prilocaine",
+  "canonicalized": "prilocaine",
+  "rxcui": "8686",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "primaquine": {
+  "normalized": "primaquine",
+  "canonicalized": "primaquine",
+  "rxcui": "8687",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "primidone": {
+  "normalized": "primidone",
+  "canonicalized": "primidone",
+  "rxcui": "8691",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "probenecid": {
+  "normalized": "probenecid",
+  "canonicalized": "probenecid",
+  "rxcui": "8698",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "procainamide": {
+  "normalized": "procainamide",
+  "canonicalized": "procainamide",
+  "rxcui": "8700",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "procaine": {
+  "normalized": "procaine",
+  "canonicalized": "procaine",
+  "rxcui": "8701",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "procarbazine": {
+  "normalized": "procarbazine",
+  "canonicalized": "procarbazine",
+  "rxcui": "8702",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "prochlorperazine": {
+  "normalized": "prochlorperazine",
+  "canonicalized": "prochlorperazine",
+  "rxcui": "8704",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "prochlorperazine edisylate": {
+  "normalized": "prochlorperazine edisylate",
+  "canonicalized": "prochlorperazine edisylate",
+  "rxcui": "8705",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "progesterone": {
+  "normalized": "progesterone",
+  "canonicalized": "progesterone",
+  "rxcui": "8727",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "promazine": {
+  "normalized": "promazine",
+  "canonicalized": "promazine",
+  "rxcui": "8742",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "promethazine": {
+  "normalized": "promethazine",
+  "canonicalized": "promethazine",
+  "rxcui": "8745",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "propafenone": {
+  "normalized": "propafenone",
+  "canonicalized": "propafenone",
+  "rxcui": "8754",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "propanolol": {
+  "normalized": "propanolol",
+  "canonicalized": "propanolol",
+  "rxcui": "8787",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "propantheline": {
+  "normalized": "propantheline",
+  "canonicalized": "propantheline",
+  "rxcui": "8761",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "propofol": {
+  "normalized": "propofol",
+  "canonicalized": "propofol",
+  "rxcui": "8782",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "propoxyphene": {
+  "normalized": "propoxyphene",
+  "canonicalized": "propoxyphene",
+  "rxcui": "8785",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "propoxyphene hydrochloride": {
+  "normalized": "propoxyphene hydrochloride",
+  "canonicalized": "propoxyphene",
+  "rxcui": "71517",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "propranolol": {
+  "normalized": "propranolol",
+  "canonicalized": "propranolol",
+  "rxcui": "8787",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "protamine": {
+  "normalized": "protamine",
+  "canonicalized": "protamine",
+  "rxcui": "8826",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "protriptyline": {
+  "normalized": "protriptyline",
+  "canonicalized": "protriptyline",
+  "rxcui": "8886",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pseudoephedrine": {
+  "normalized": "pseudoephedrine",
+  "canonicalized": "pseudoephedrine",
+  "rxcui": "8896",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pyrantel": {
+  "normalized": "pyrantel",
+  "canonicalized": "pyrantel",
+  "rxcui": "8984",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pyridoxine": {
+  "normalized": "pyridoxine",
+  "canonicalized": "pyridoxine",
+  "rxcui": "684879",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pyrilamine": {
+  "normalized": "pyrilamine",
+  "canonicalized": "pyrilamine",
+  "rxcui": "9009",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "pyrimethamine": {
+  "normalized": "pyrimethamine",
+  "canonicalized": "pyrimethamine",
+  "rxcui": "9010",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "quetiapine": {
+  "normalized": "quetiapine",
+  "canonicalized": "quetiapine",
+  "rxcui": "51272",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "quetiapine fumarate": {
+  "normalized": "quetiapine fumarate",
+  "canonicalized": "quetiapine",
+  "rxcui": "221153",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "quinidine": {
+  "normalized": "quinidine",
+  "canonicalized": "quinidine",
+  "rxcui": "9068",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "quinine": {
+  "normalized": "quinine",
+  "canonicalized": "quinine",
+  "rxcui": "9071",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "quinupristin": {
+  "normalized": "quinupristin",
+  "canonicalized": "quinupristin",
+  "rxcui": "229367",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ramipril": {
+  "normalized": "ramipril",
+  "canonicalized": "ramipril",
+  "rxcui": "35296",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ranitidine": {
+  "normalized": "ranitidine",
+  "canonicalized": "ranitidine",
+  "rxcui": "9143",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rapamycin": {
+  "normalized": "rapamycin",
+  "canonicalized": "rapamycin",
+  "rxcui": "35302",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "reserpine": {
+  "normalized": "reserpine",
+  "canonicalized": "reserpine",
+  "rxcui": "9260",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "resorcinol": {
+  "normalized": "resorcinol",
+  "canonicalized": "resorcinol",
+  "rxcui": "35382",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "resveratrol": {
+  "normalized": "resveratrol",
+  "canonicalized": "resveratrol",
+  "rxcui": "1000492",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "retinyl acetate": {
+  "normalized": "retinyl acetate",
+  "canonicalized": "retinyl",
+  "rxcui": "35400",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "ribavirin": {
+  "normalized": "ribavirin",
+  "canonicalized": "ribavirin",
+  "rxcui": "9344",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rifabutin": {
+  "normalized": "rifabutin",
+  "canonicalized": "rifabutin",
+  "rxcui": "55672",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rifampicin": {
+  "normalized": "rifampicin",
+  "canonicalized": "rifampicin",
+  "rxcui": "9384",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rifampin": {
+  "normalized": "rifampin",
+  "canonicalized": "rifampin",
+  "rxcui": "9384",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rifamycin": {
+  "normalized": "rifamycin",
+  "canonicalized": "rifamycin",
+  "rxcui": "35616",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rifapentine": {
+  "normalized": "rifapentine",
+  "canonicalized": "rifapentine",
+  "rxcui": "35617",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "risperidone": {
+  "normalized": "risperidone",
+  "canonicalized": "risperidone",
+  "rxcui": "35636",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ritonavir": {
+  "normalized": "ritonavir",
+  "canonicalized": "ritonavir",
+  "rxcui": "85762",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rocuronium": {
+  "normalized": "rocuronium",
+  "canonicalized": "rocuronium",
+  "rxcui": "68139",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rofecoxib": {
+  "normalized": "rofecoxib",
+  "canonicalized": "rofecoxib",
+  "rxcui": "232158",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rosiglitazone": {
+  "normalized": "rosiglitazone",
+  "canonicalized": "rosiglitazone",
+  "rxcui": "84108",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "rosuvastatin": {
+  "normalized": "rosuvastatin",
+  "canonicalized": "rosuvastatin",
+  "rxcui": "301542",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "salbutamol": {
+  "normalized": "salbutamol",
+  "canonicalized": "salbutamol",
+  "rxcui": "435",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "salicylate": {
+  "normalized": "salicylate",
+  "canonicalized": "salicylate",
+  "rxcui": "9522",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "salicylic acid": {
+  "normalized": "salicylic acid",
+  "canonicalized": "salicylic acid",
+  "rxcui": "9525",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "salsalate": {
+  "normalized": "salsalate",
+  "canonicalized": "salsalate",
+  "rxcui": "36108",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "saquinavir": {
+  "normalized": "saquinavir",
+  "canonicalized": "saquinavir",
+  "rxcui": "83395",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "scopolamine": {
+  "normalized": "scopolamine",
+  "canonicalized": "scopolamine",
+  "rxcui": "9601",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "secobarbital": {
+  "normalized": "secobarbital",
+  "canonicalized": "secobarbital",
+  "rxcui": "9624",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "selegiline": {
+  "normalized": "selegiline",
+  "canonicalized": "selegiline",
+  "rxcui": "9639",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "selegiline hydrochloride": {
+  "normalized": "selegiline hydrochloride",
+  "canonicalized": "selegiline",
+  "rxcui": "203137",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "selenium": {
+  "normalized": "selenium",
+  "canonicalized": "selenium",
+  "rxcui": "9641",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sertindole": {
+  "normalized": "sertindole",
+  "canonicalized": "sertindole",
+  "rxcui": "41996",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sertraline": {
+  "normalized": "sertraline",
+  "canonicalized": "sertraline",
+  "rxcui": "36437",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sevoflurane": {
+  "normalized": "sevoflurane",
+  "canonicalized": "sevoflurane",
+  "rxcui": "36453",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sildenafil": {
+  "normalized": "sildenafil",
+  "canonicalized": "sildenafil",
+  "rxcui": "136411",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sildenafil citrate": {
+  "normalized": "sildenafil citrate",
+  "canonicalized": "sildenafil citrate",
+  "rxcui": "221161",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "silver": {
+  "normalized": "silver",
+  "canonicalized": "silver",
+  "rxcui": "2606543",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "simethicone": {
+  "normalized": "simethicone",
+  "canonicalized": "simethicone",
+  "rxcui": "9796",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "simvastatin": {
+  "normalized": "simvastatin",
+  "canonicalized": "simvastatin",
+  "rxcui": "36567",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sirolimus": {
+  "normalized": "sirolimus",
+  "canonicalized": "sirolimus",
+  "rxcui": "35302",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "smx": {
+  "normalized": "smx",
+  "canonicalized": "smx",
+  "rxcui": "10180",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sodium acid phosphate": {
+  "normalized": "sodium acid phosphate",
+  "canonicalized": "acid",
+  "rxcui": "235496",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sodium bicarbonate": {
+  "normalized": "sodium bicarbonate",
+  "canonicalized": "bicarbonate",
+  "rxcui": "36676",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sodium carboxymethylcellulose": {
+  "normalized": "sodium carboxymethylcellulose",
+  "canonicalized": "carboxymethylcellulose",
+  "rxcui": "491498",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sodium cephalothin": {
+  "normalized": "sodium cephalothin",
+  "canonicalized": "cephalothin",
+  "rxcui": "9860",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sodium citrate": {
+  "normalized": "sodium citrate",
+  "canonicalized": "citrate",
+  "rxcui": "56466",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sodium colistimethate": {
+  "normalized": "sodium colistimethate",
+  "canonicalized": "colistimethate",
+  "rxcui": "48305",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sodium dodecyl sulfate": {
+  "normalized": "sodium dodecyl sulfate",
+  "canonicalized": "dodecyl sulfate",
+  "rxcui": "9871",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sodium fluorescein": {
+  "normalized": "sodium fluorescein",
+  "canonicalized": "fluorescein",
+  "rxcui": "57789",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sodium iodide": {
+  "normalized": "sodium iodide",
+  "canonicalized": "iodide",
+  "rxcui": "9884",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sodium iodide i131": {
+  "normalized": "sodium iodide i131",
+  "canonicalized": "iodide i131",
+  "rxcui": "91535",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sodium nitroprusside": {
+  "normalized": "sodium nitroprusside",
+  "canonicalized": "nitroprusside",
+  "rxcui": "9895",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sodium polystyrene sulfonate": {
+  "normalized": "sodium polystyrene sulfonate",
+  "canonicalized": "polystyrene sulfonate",
+  "rxcui": "56512",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sodium thiosulfate": {
+  "normalized": "sodium thiosulfate",
+  "canonicalized": "thiosulfate",
+  "rxcui": "36726",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sodium valproate": {
+  "normalized": "sodium valproate",
+  "canonicalized": "valproate",
+  "rxcui": "9919",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "somatostatin": {
+  "normalized": "somatostatin",
+  "canonicalized": "somatostatin",
+  "rxcui": "9939",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "somatrem": {
+  "normalized": "somatrem",
+  "canonicalized": "somatrem",
+  "rxcui": "56570",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "somatropin": {
+  "normalized": "somatropin",
+  "canonicalized": "somatropin",
+  "rxcui": "61148",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sotalol": {
+  "normalized": "sotalol",
+  "canonicalized": "sotalol",
+  "rxcui": "9947",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sparfloxacin": {
+  "normalized": "sparfloxacin",
+  "canonicalized": "sparfloxacin",
+  "rxcui": "18469",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "spermidine": {
+  "normalized": "spermidine",
+  "canonicalized": "spermidine",
+  "rxcui": "1483262",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "spermine": {
+  "normalized": "spermine",
+  "canonicalized": "spermine",
+  "rxcui": "1483263",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "spironolactone": {
+  "normalized": "spironolactone",
+  "canonicalized": "spironolactone",
+  "rxcui": "9997",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "stanozolol": {
+  "normalized": "stanozolol",
+  "canonicalized": "stanozolol",
+  "rxcui": "10032",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "stavudine": {
+  "normalized": "stavudine",
+  "canonicalized": "stavudine",
+  "rxcui": "59763",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "streptokinase": {
+  "normalized": "streptokinase",
+  "canonicalized": "streptokinase",
+  "rxcui": "10106",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "streptomycin": {
+  "normalized": "streptomycin",
+  "canonicalized": "streptomycin",
+  "rxcui": "10109",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "succinylcholine": {
+  "normalized": "succinylcholine",
+  "canonicalized": "succinylcholine",
+  "rxcui": "10154",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "succinylcholine chloride": {
+  "normalized": "succinylcholine chloride",
+  "canonicalized": "succinylcholine chloride",
+  "rxcui": "3565",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "sucralfate": {
+  "normalized": "sucralfate",
+  "canonicalized": "sucralfate",
+  "rxcui": "10156",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulfacetamide": {
+  "normalized": "sulfacetamide",
+  "canonicalized": "sulfacetamide",
+  "rxcui": "10169",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulfadoxine": {
+  "normalized": "sulfadoxine",
+  "canonicalized": "sulfadoxine",
+  "rxcui": "10173",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulfamethoxazole": {
+  "normalized": "sulfamethoxazole",
+  "canonicalized": "sulfamethoxazole",
+  "rxcui": "10180",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulfapyridine": {
+  "normalized": "sulfapyridine",
+  "canonicalized": "sulfapyridine",
+  "rxcui": "10188",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulfasalazine": {
+  "normalized": "sulfasalazine",
+  "canonicalized": "sulfasalazine",
+  "rxcui": "9524",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulfinpyrazone": {
+  "normalized": "sulfinpyrazone",
+  "canonicalized": "sulfinpyrazone",
+  "rxcui": "10205",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulfisoxazole": {
+  "normalized": "sulfisoxazole",
+  "canonicalized": "sulfisoxazole",
+  "rxcui": "10207",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulfur": {
+  "normalized": "sulfur",
+  "canonicalized": "sulfur",
+  "rxcui": "10223",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sulindac": {
+  "normalized": "sulindac",
+  "canonicalized": "sulindac",
+  "rxcui": "10237",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sumatriptan": {
+  "normalized": "sumatriptan",
+  "canonicalized": "sumatriptan",
+  "rxcui": "37418",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "sumatriptan succinate": {
+  "normalized": "sumatriptan succinate",
+  "canonicalized": "sumatriptan",
+  "rxcui": "67158",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "t3": {
+  "normalized": "t3",
+  "canonicalized": "t3",
+  "rxcui": "10814",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "t4": {
+  "normalized": "t4",
+  "canonicalized": "t4",
+  "rxcui": "10582",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tacrine": {
+  "normalized": "tacrine",
+  "canonicalized": "tacrine",
+  "rxcui": "10318",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tacrolimus": {
+  "normalized": "tacrolimus",
+  "canonicalized": "tacrolimus",
+  "rxcui": "42316",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tadalafil": {
+  "normalized": "tadalafil",
+  "canonicalized": "tadalafil",
+  "rxcui": "358263",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tamoxifen": {
+  "normalized": "tamoxifen",
+  "canonicalized": "tamoxifen",
+  "rxcui": "10324",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tamsulosin": {
+  "normalized": "tamsulosin",
+  "canonicalized": "tamsulosin",
+  "rxcui": "77492",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tannic acid": {
+  "normalized": "tannic acid",
+  "canonicalized": "tannic acid",
+  "rxcui": "10328",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tazobactam": {
+  "normalized": "tazobactam",
+  "canonicalized": "tazobactam",
+  "rxcui": "37617",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "telithromycin": {
+  "normalized": "telithromycin",
+  "canonicalized": "telithromycin",
+  "rxcui": "274786",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "temazepam": {
+  "normalized": "temazepam",
+  "canonicalized": "temazepam",
+  "rxcui": "10355",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "teniposide": {
+  "normalized": "teniposide",
+  "canonicalized": "teniposide",
+  "rxcui": "10362",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tenofovir disoproxil fumarate": {
+  "normalized": "tenofovir disoproxil fumarate",
+  "canonicalized": "tenofovir disoproxil",
+  "rxcui": "322248",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "terazosin": {
+  "normalized": "terazosin",
+  "canonicalized": "terazosin",
+  "rxcui": "37798",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "terbinafine": {
+  "normalized": "terbinafine",
+  "canonicalized": "terbinafine",
+  "rxcui": "37801",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "terbutaline": {
+  "normalized": "terbutaline",
+  "canonicalized": "terbutaline",
+  "rxcui": "10368",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "terfenadine": {
+  "normalized": "terfenadine",
+  "canonicalized": "terfenadine",
+  "rxcui": "42330",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "terodiline": {
+  "normalized": "terodiline",
+  "canonicalized": "terodiline",
+  "rxcui": "37815",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "testosterone": {
+  "normalized": "testosterone",
+  "canonicalized": "testosterone",
+  "rxcui": "10379",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tetracycline": {
+  "normalized": "tetracycline",
+  "canonicalized": "tetracycline",
+  "rxcui": "10395",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thalidomide": {
+  "normalized": "thalidomide",
+  "canonicalized": "thalidomide",
+  "rxcui": "10432",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "theobromine": {
+  "normalized": "theobromine",
+  "canonicalized": "theobromine",
+  "rxcui": "10437",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "theophylline": {
+  "normalized": "theophylline",
+  "canonicalized": "theophylline",
+  "rxcui": "10438",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thiabendazole": {
+  "normalized": "thiabendazole",
+  "canonicalized": "thiabendazole",
+  "rxcui": "10450",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thimerosal": {
+  "normalized": "thimerosal",
+  "canonicalized": "thimerosal",
+  "rxcui": "10472",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thiocyanate": {
+  "normalized": "thiocyanate",
+  "canonicalized": "thiocyanate",
+  "rxcui": "1427067",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thioridazine": {
+  "normalized": "thioridazine",
+  "canonicalized": "thioridazine",
+  "rxcui": "10502",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thiosulfate": {
+  "normalized": "thiosulfate",
+  "canonicalized": "thiosulfate",
+  "rxcui": "1546411",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thiothixene": {
+  "normalized": "thiothixene",
+  "canonicalized": "thiothixene",
+  "rxcui": "10510",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thyroid": {
+  "normalized": "thyroid",
+  "canonicalized": "thyroid",
+  "rxcui": "10572",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thyroxin": {
+  "normalized": "thyroxin",
+  "canonicalized": "thyroxin",
+  "rxcui": "10582",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "thyroxine": {
+  "normalized": "thyroxine",
+  "canonicalized": "thyroxine",
+  "rxcui": "10582",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tiagabine": {
+  "normalized": "tiagabine",
+  "canonicalized": "tiagabine",
+  "rxcui": "31914",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ticlopidine": {
+  "normalized": "ticlopidine",
+  "canonicalized": "ticlopidine",
+  "rxcui": "10594",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "timolol": {
+  "normalized": "timolol",
+  "canonicalized": "timolol",
+  "rxcui": "10600",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tmp": {
+  "normalized": "tmp",
+  "canonicalized": "tmp",
+  "rxcui": "10829",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tobramycin": {
+  "normalized": "tobramycin",
+  "canonicalized": "tobramycin",
+  "rxcui": "10627",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tolazamide": {
+  "normalized": "tolazamide",
+  "canonicalized": "tolazamide",
+  "rxcui": "10633",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tolazoline": {
+  "normalized": "tolazoline",
+  "canonicalized": "tolazoline",
+  "rxcui": "10634",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tolbutamide": {
+  "normalized": "tolbutamide",
+  "canonicalized": "tolbutamide",
+  "rxcui": "10635",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "topiramate": {
+  "normalized": "topiramate",
+  "canonicalized": "topiramate",
+  "rxcui": "38404",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tramadol": {
+  "normalized": "tramadol",
+  "canonicalized": "tramadol",
+  "rxcui": "10689",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tranexamic acid": {
+  "normalized": "tranexamic acid",
+  "canonicalized": "tranexamic acid",
+  "rxcui": "10691",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tranylcypromine": {
+  "normalized": "tranylcypromine",
+  "canonicalized": "tranylcypromine",
+  "rxcui": "10734",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tranylcypromine sulfate": {
+  "normalized": "tranylcypromine sulfate",
+  "canonicalized": "tranylcypromine sulfate",
+  "rxcui": "91119",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "trazodone": {
+  "normalized": "trazodone",
+  "canonicalized": "trazodone",
+  "rxcui": "10737",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "trazodone hydrochloride": {
+  "normalized": "trazodone hydrochloride",
+  "canonicalized": "trazodone",
+  "rxcui": "82112",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "triacetyloleandomycin": {
+  "normalized": "triacetyloleandomycin",
+  "canonicalized": "triacetyloleandomycin",
+  "rxcui": "10864",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "triamterene": {
+  "normalized": "triamterene",
+  "canonicalized": "triamterene",
+  "rxcui": "10763",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "triazolam": {
+  "normalized": "triazolam",
+  "canonicalized": "triazolam",
+  "rxcui": "10767",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "trichlorfon": {
+  "normalized": "trichlorfon",
+  "canonicalized": "trichlorfon",
+  "rxcui": "1000581",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "triclofos sodium": {
+  "normalized": "triclofos sodium",
+  "canonicalized": "triclofos",
+  "rxcui": "104696",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "trifluoperazine": {
+  "normalized": "trifluoperazine",
+  "canonicalized": "trifluoperazine",
+  "rxcui": "10800",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "triflupromazine": {
+  "normalized": "triflupromazine",
+  "canonicalized": "triflupromazine",
+  "rxcui": "10805",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "trihexyphenidyl": {
+  "normalized": "trihexyphenidyl",
+  "canonicalized": "trihexyphenidyl",
+  "rxcui": "10811",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "trimeprazine": {
+  "normalized": "trimeprazine",
+  "canonicalized": "trimeprazine",
+  "rxcui": "10825",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "trimethoprim": {
+  "normalized": "trimethoprim",
+  "canonicalized": "trimethoprim",
+  "rxcui": "10829",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tripelennamine": {
+  "normalized": "tripelennamine",
+  "canonicalized": "tripelennamine",
+  "rxcui": "10847",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "troleandomycin": {
+  "normalized": "troleandomycin",
+  "canonicalized": "troleandomycin",
+  "rxcui": "10864",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "trovafloxacin": {
+  "normalized": "trovafloxacin",
+  "canonicalized": "trovafloxacin",
+  "rxcui": "115552",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tubocurarine": {
+  "normalized": "tubocurarine",
+  "canonicalized": "tubocurarine",
+  "rxcui": "10917",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "tuftsin": {
+  "normalized": "tuftsin",
+  "canonicalized": "tuftsin",
+  "rxcui": "1534774",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "unfractionated heparin": {
+  "normalized": "unfractionated heparin",
+  "canonicalized": "unfractionated heparin",
+  "rxcui": "5224",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "valdecoxib": {
+  "normalized": "valdecoxib",
+  "canonicalized": "valdecoxib",
+  "rxcui": "278567",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "valproate": {
+  "normalized": "valproate",
+  "canonicalized": "valproate",
+  "rxcui": "40254",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "valproic acid": {
+  "normalized": "valproic acid",
+  "canonicalized": "valproic acid",
+  "rxcui": "11118",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "valsartan": {
+  "normalized": "valsartan",
+  "canonicalized": "valsartan",
+  "rxcui": "69749",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vancomycin": {
+  "normalized": "vancomycin",
+  "canonicalized": "vancomycin",
+  "rxcui": "11124",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vardenafil": {
+  "normalized": "vardenafil",
+  "canonicalized": "vardenafil",
+  "rxcui": "306674",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vecuronium": {
+  "normalized": "vecuronium",
+  "canonicalized": "vecuronium",
+  "rxcui": "71535",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "venlafaxine": {
+  "normalized": "venlafaxine",
+  "canonicalized": "venlafaxine",
+  "rxcui": "39786",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "verapamil": {
+  "normalized": "verapamil",
+  "canonicalized": "verapamil",
+  "rxcui": "11170",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "verapamil hydrochloride": {
+  "normalized": "verapamil hydrochloride",
+  "canonicalized": "verapamil",
+  "rxcui": "203138",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "vinblastine": {
+  "normalized": "vinblastine",
+  "canonicalized": "vinblastine",
+  "rxcui": "11198",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vincristine": {
+  "normalized": "vincristine",
+  "canonicalized": "vincristine",
+  "rxcui": "11202",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vinorelbine": {
+  "normalized": "vinorelbine",
+  "canonicalized": "vinorelbine",
+  "rxcui": "39541",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vitamin b-12": {
+  "normalized": "vitamin b-12",
+  "canonicalized": "vitamin b-12",
+  "rxcui": "11248",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vitamin b12": {
+  "normalized": "vitamin b12",
+  "canonicalized": "vitamin b12",
+  "rxcui": "11248",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vitamin b3": {
+  "normalized": "vitamin b3",
+  "canonicalized": "vitamin b3",
+  "rxcui": "7405",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vitamin b6": {
+  "normalized": "vitamin b6",
+  "canonicalized": "vitamin b6",
+  "rxcui": "42954",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vitamin c": {
+  "normalized": "vitamin c",
+  "canonicalized": "vitamin c",
+  "rxcui": "1151",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vitamin d2": {
+  "normalized": "vitamin d2",
+  "canonicalized": "vitamin d2",
+  "rxcui": "4018",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vitamin d3": {
+  "normalized": "vitamin d3",
+  "canonicalized": "vitamin d3",
+  "rxcui": "1244014",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "vitamin e": {
+  "normalized": "vitamin e",
+  "canonicalized": "vitamin e",
+  "rxcui": "11256",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "voriconazole": {
+  "normalized": "voriconazole",
+  "canonicalized": "voriconazole",
+  "rxcui": "121243",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "warfarin": {
+  "normalized": "warfarin",
+  "canonicalized": "warfarin",
+  "rxcui": "11289",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "warfarin sodium": {
+  "normalized": "warfarin sodium",
+  "canonicalized": "warfarin",
+  "rxcui": "114194",
+  "tty": "PIN",
+  "matched_form": "normalized"
+ },
+ "zafirlukast": {
+  "normalized": "zafirlukast",
+  "canonicalized": "zafirlukast",
+  "rxcui": "114970",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "zalcitabine": {
+  "normalized": "zalcitabine",
+  "canonicalized": "zalcitabine",
+  "rxcui": "3363",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "zaleplon": {
+  "normalized": "zaleplon",
+  "canonicalized": "zaleplon",
+  "rxcui": "74667",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "zdv": {
+  "normalized": "zdv",
+  "canonicalized": "zdv",
+  "rxcui": "11413",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "zidovudine": {
+  "normalized": "zidovudine",
+  "canonicalized": "zidovudine",
+  "rxcui": "11413",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "zileuton": {
+  "normalized": "zileuton",
+  "canonicalized": "zileuton",
+  "rxcui": "40575",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "zinc": {
+  "normalized": "zinc",
+  "canonicalized": "zinc",
+  "rxcui": "11416",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "ziprasidone": {
+  "normalized": "ziprasidone",
+  "canonicalized": "ziprasidone",
+  "rxcui": "115698",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "zonisamide": {
+  "normalized": "zonisamide",
+  "canonicalized": "zonisamide",
+  "rxcui": "39998",
+  "tty": "IN",
+  "matched_form": "normalized"
+ },
+ "zopiclone": {
+  "normalized": "zopiclone",
+  "canonicalized": "zopiclone",
+  "rxcui": "40001",
+  "tty": "IN",
+  "matched_form": "normalized"
+ }
+}

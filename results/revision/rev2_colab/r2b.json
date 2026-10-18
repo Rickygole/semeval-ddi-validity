@@ -1,0 +1,877 @@
+{
+ "status": "post hoc, descriptive; automated model adjudication from the Drug Interactions section only, not a human audit",
+ "smoke": false,
+ "model": {
+  "repo": "allenai/OLMo-2-1124-7B-Instruct",
+  "revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+  "license": "apache-2.0",
+  "quantization": "bitsandbytes nf4 4-bit, double quantization, bfloat16 compute",
+  "tiny_stand_in": null
+ },
+ "prompt_sha256": "eade2527898604e24481e235a7ea17e73a23fa64b05e823fb18edda0f6a29d93",
+ "n_items": 505,
+ "n_audit": 255,
+ "n_random": 250,
+ "n_unique_prompts": 459,
+ "n_pairs_in_both_sets": 46,
+ "answer_mass": {
+  "mean_answer_mass": 0.9717208348709204,
+  "min_answer_mass": 0.5296574831008911,
+  "non_answers": 0,
+  "n": 467,
+  "tokens_mean": 837.3918629550321,
+  "tokens_max": 3895
+ },
+ "non_answers_by_prompt": 0,
+ "non_answer_items": 0,
+ "multi_chunk_items": 8,
+ "decisions": {
+  "audit": {
+   "yes": 36,
+   "no": 219,
+   "unsure": 0
+  },
+  "random": {
+   "yes": 56,
+   "no": 194,
+   "unsure": 0
+  }
+ },
+ "audit": {
+  "scope": "the 255 flagged items; selected for suspected errors, so these are not population rates",
+  "agreement_with_current_label": {
+   "table_rows_decision_cols_current_label": {
+    "yes": {
+     "1": 35,
+     "0": 1
+    },
+    "no": {
+     "1": 144,
+     "0": 75
+    },
+    "unsure": {
+     "1": 0,
+     "0": 0
+    }
+   },
+   "unsure_as_not_confirming": {
+    "k": 110,
+    "n": 255,
+    "rate": 0.43137254901960786,
+    "ci95_exact": [
+     0.36973757556162706,
+     0.494621579176144
+    ]
+   },
+   "decided_only": {
+    "k": 110,
+    "n": 255,
+    "rate": 0.43137254901960786,
+    "ci95_exact": [
+     0.36973757556162706,
+     0.494621579176144
+    ]
+   },
+   "n_unsure": 0
+  },
+  "errors": {
+   "positives_judged_no": {
+    "n": 179,
+    "n_wrong": 144,
+    "n_unsure": 0,
+    "primary_decided_only": {
+     "k": 144,
+     "n": 179,
+     "rate": 0.8044692737430168,
+     "ci95_exact": [
+      0.7387036042712338,
+      0.8598650575776594
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 144,
+     "n": 179,
+     "rate": 0.8044692737430168,
+     "ci95_exact": [
+      0.7387036042712338,
+      0.8598650575776594
+     ]
+    },
+    "unsure_as_error": {
+     "k": 144,
+     "n": 179,
+     "rate": 0.8044692737430168,
+     "ci95_exact": [
+      0.7387036042712338,
+      0.8598650575776594
+     ]
+    }
+   },
+   "negatives_judged_yes": {
+    "n": 76,
+    "n_wrong": 1,
+    "n_unsure": 0,
+    "primary_decided_only": {
+     "k": 1,
+     "n": 76,
+     "rate": 0.013157894736842105,
+     "ci95_exact": [
+      0.00033307357110306645,
+      0.07114369125171909
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 1,
+     "n": 76,
+     "rate": 0.013157894736842105,
+     "ci95_exact": [
+      0.00033307357110306645,
+      0.07114369125171909
+     ]
+    },
+    "unsure_as_error": {
+     "k": 1,
+     "n": 76,
+     "rate": 0.013157894736842105,
+     "ci95_exact": [
+      0.00033307357110306645,
+      0.07114369125171909
+     ]
+    }
+   }
+  },
+  "positives_by_selection": {
+   "positive_oracle_below_0.5": {
+    "positives_judged_no": {
+     "n": 136,
+     "n_wrong": 102,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 102,
+      "n": 136,
+      "rate": 0.75,
+      "ci95_exact": [
+       0.668551779292264,
+       0.8202384272260324
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 102,
+      "n": 136,
+      "rate": 0.75,
+      "ci95_exact": [
+       0.668551779292264,
+       0.8202384272260324
+      ]
+     },
+     "unsure_as_error": {
+      "k": 102,
+      "n": 136,
+      "rate": 0.75,
+      "ci95_exact": [
+       0.668551779292264,
+       0.8202384272260324
+      ]
+     }
+    },
+    "negatives_judged_yes": {
+     "n": 0,
+     "n_wrong": 0,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     },
+     "unsure_as_error": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     }
+    }
+   },
+   "positive_oracle_below_0.5 positive_rule_flag": {
+    "positives_judged_no": {
+     "n": 39,
+     "n_wrong": 38,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 38,
+      "n": 39,
+      "rate": 0.9743589743589743,
+      "ci95_exact": [
+       0.865236078440502,
+       0.999351036104518
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 38,
+      "n": 39,
+      "rate": 0.9743589743589743,
+      "ci95_exact": [
+       0.865236078440502,
+       0.999351036104518
+      ]
+     },
+     "unsure_as_error": {
+      "k": 38,
+      "n": 39,
+      "rate": 0.9743589743589743,
+      "ci95_exact": [
+       0.865236078440502,
+       0.999351036104518
+      ]
+     }
+    },
+    "negatives_judged_yes": {
+     "n": 0,
+     "n_wrong": 0,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     },
+     "unsure_as_error": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     }
+    }
+   },
+   "positive_rule_flag": {
+    "positives_judged_no": {
+     "n": 4,
+     "n_wrong": 4,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 4,
+      "n": 4,
+      "rate": 1.0,
+      "ci95_exact": [
+       0.3976353643835253,
+       1.0
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 4,
+      "n": 4,
+      "rate": 1.0,
+      "ci95_exact": [
+       0.3976353643835253,
+       1.0
+      ]
+     },
+     "unsure_as_error": {
+      "k": 4,
+      "n": 4,
+      "rate": 1.0,
+      "ci95_exact": [
+       0.3976353643835253,
+       1.0
+      ]
+     }
+    },
+    "negatives_judged_yes": {
+     "n": 0,
+     "n_wrong": 0,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     },
+     "unsure_as_error": {
+      "k": 0,
+      "n": 0,
+      "rate": null,
+      "ci95_exact": [
+       null,
+       null
+      ]
+     }
+    }
+   }
+  },
+  "by_cohort": {
+   "novel": {
+    "positives_judged_no": {
+     "n": 33,
+     "n_wrong": 24,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 24,
+      "n": 33,
+      "rate": 0.7272727272727273,
+      "ci95_exact": [
+       0.5447615722392183,
+       0.867003611289185
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 24,
+      "n": 33,
+      "rate": 0.7272727272727273,
+      "ci95_exact": [
+       0.5447615722392183,
+       0.867003611289185
+      ]
+     },
+     "unsure_as_error": {
+      "k": 24,
+      "n": 33,
+      "rate": 0.7272727272727273,
+      "ci95_exact": [
+       0.5447615722392183,
+       0.867003611289185
+      ]
+     }
+    },
+    "negatives_judged_yes": {
+     "n": 24,
+     "n_wrong": 1,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 1,
+      "n": 24,
+      "rate": 0.041666666666666664,
+      "ci95_exact": [
+       0.0010543524454697472,
+       0.2112016834569731
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 1,
+      "n": 24,
+      "rate": 0.041666666666666664,
+      "ci95_exact": [
+       0.0010543524454697472,
+       0.2112016834569731
+      ]
+     },
+     "unsure_as_error": {
+      "k": 1,
+      "n": 24,
+      "rate": 0.041666666666666664,
+      "ci95_exact": [
+       0.0010543524454697472,
+       0.2112016834569731
+      ]
+     }
+    }
+   },
+   "older": {
+    "positives_judged_no": {
+     "n": 146,
+     "n_wrong": 120,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 120,
+      "n": 146,
+      "rate": 0.821917808219178,
+      "ci95_exact": [
+       0.7500586861656658,
+       0.8802493126646421
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 120,
+      "n": 146,
+      "rate": 0.821917808219178,
+      "ci95_exact": [
+       0.7500586861656658,
+       0.8802493126646421
+      ]
+     },
+     "unsure_as_error": {
+      "k": 120,
+      "n": 146,
+      "rate": 0.821917808219178,
+      "ci95_exact": [
+       0.7500586861656658,
+       0.8802493126646421
+      ]
+     }
+    },
+    "negatives_judged_yes": {
+     "n": 52,
+     "n_wrong": 0,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 0,
+      "n": 52,
+      "rate": 0.0,
+      "ci95_exact": [
+       0.0,
+       0.06848220870331956
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 0,
+      "n": 52,
+      "rate": 0.0,
+      "ci95_exact": [
+       0.0,
+       0.06848220870331956
+      ]
+     },
+     "unsure_as_error": {
+      "k": 0,
+      "n": 52,
+      "rate": 0.0,
+      "ci95_exact": [
+       0.0,
+       0.06848220870331956
+      ]
+     }
+    }
+   }
+  },
+  "agreement_with_earlier_model_adjudication": {
+   "all": {
+    "n": 255,
+    "table_rows_new_cols_earlier": {
+     "yes": {
+      "yes": 30,
+      "no": 3,
+      "unsure": 3
+     },
+     "no": {
+      "yes": 85,
+      "no": 131,
+      "unsure": 3
+     },
+     "unsure": {
+      "yes": 0,
+      "no": 0,
+      "unsure": 0
+     }
+    },
+    "agreement_three_way": {
+     "k": 161,
+     "n": 255,
+     "rate": 0.6313725490196078,
+     "ci95_exact": [
+      0.5689438386187863,
+      0.6907082687935698
+     ]
+    },
+    "agreement_both_decided": {
+     "k": 161,
+     "n": 249,
+     "rate": 0.6465863453815262,
+     "ci95_exact": [
+      0.5837314062196424,
+      0.7059044025725999
+     ]
+    },
+    "kappa_three_way": 0.23998858556073435,
+    "kappa_both_decided": 0.2511790034857494
+   },
+   "current_label_1": {
+    "n": 179,
+    "table_rows_new_cols_earlier": {
+     "yes": {
+      "yes": 30,
+      "no": 2,
+      "unsure": 3
+     },
+     "no": {
+      "yes": 84,
+      "no": 57,
+      "unsure": 3
+     },
+     "unsure": {
+      "yes": 0,
+      "no": 0,
+      "unsure": 0
+     }
+    },
+    "agreement_three_way": {
+     "k": 87,
+     "n": 179,
+     "rate": 0.4860335195530726,
+     "ci95_exact": [
+      0.41079408729362066,
+      0.5617431045092449
+     ]
+    },
+    "agreement_both_decided": {
+     "k": 87,
+     "n": 173,
+     "rate": 0.5028901734104047,
+     "ci95_exact": [
+      0.42601105547415674,
+      0.5796685764007286
+     ]
+    },
+    "kappa_three_way": 0.15786243927384302,
+    "kappa_both_decided": 0.17169580224919273
+   },
+   "current_label_0": {
+    "n": 76,
+    "table_rows_new_cols_earlier": {
+     "yes": {
+      "yes": 0,
+      "no": 1,
+      "unsure": 0
+     },
+     "no": {
+      "yes": 1,
+      "no": 74,
+      "unsure": 0
+     },
+     "unsure": {
+      "yes": 0,
+      "no": 0,
+      "unsure": 0
+     }
+    },
+    "agreement_three_way": {
+     "k": 74,
+     "n": 76,
+     "rate": 0.9736842105263158,
+     "ci95_exact": [
+      0.9081504766768341,
+      0.9967969946552675
+     ]
+    },
+    "agreement_both_decided": {
+     "k": 74,
+     "n": 76,
+     "rate": 0.9736842105263158,
+     "ci95_exact": [
+      0.9081504766768341,
+      0.9967969946552675
+     ]
+    },
+    "kappa_three_way": -0.013333333333332135,
+    "kappa_both_decided": -0.013333333333332135
+   }
+  }
+ },
+ "random": {
+  "scope": "random sample, 75 and 50 per class from Older primary and Novel; the population estimates by stratum",
+  "agreement_with_current_label": {
+   "novel": {
+    "table_rows_decision_cols_current_label": {
+     "yes": {
+      "1": 23,
+      "0": 1
+     },
+     "no": {
+      "1": 27,
+      "0": 49
+     },
+     "unsure": {
+      "1": 0,
+      "0": 0
+     }
+    },
+    "unsure_as_not_confirming": {
+     "k": 72,
+     "n": 100,
+     "rate": 0.72,
+     "ci95_exact": [
+      0.6213329952827327,
+      0.8052063725088185
+     ]
+    },
+    "decided_only": {
+     "k": 72,
+     "n": 100,
+     "rate": 0.72,
+     "ci95_exact": [
+      0.6213329952827327,
+      0.8052063725088185
+     ]
+    },
+    "n_unsure": 0
+   },
+   "older": {
+    "table_rows_decision_cols_current_label": {
+     "yes": {
+      "1": 32,
+      "0": 0
+     },
+     "no": {
+      "1": 43,
+      "0": 75
+     },
+     "unsure": {
+      "1": 0,
+      "0": 0
+     }
+    },
+    "unsure_as_not_confirming": {
+     "k": 107,
+     "n": 150,
+     "rate": 0.7133333333333334,
+     "ci95_exact": [
+      0.6338911356747159,
+      0.7841387291502816
+     ]
+    },
+    "decided_only": {
+     "k": 107,
+     "n": 150,
+     "rate": 0.7133333333333334,
+     "ci95_exact": [
+      0.6338911356747159,
+      0.7841387291502816
+     ]
+    },
+    "n_unsure": 0
+   }
+  },
+  "errors_by_cohort": {
+   "novel": {
+    "positives_judged_no": {
+     "n": 50,
+     "n_wrong": 27,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 27,
+      "n": 50,
+      "rate": 0.54,
+      "ci95_exact": [
+       0.3932419761169223,
+       0.6818508214313913
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 27,
+      "n": 50,
+      "rate": 0.54,
+      "ci95_exact": [
+       0.3932419761169223,
+       0.6818508214313913
+      ]
+     },
+     "unsure_as_error": {
+      "k": 27,
+      "n": 50,
+      "rate": 0.54,
+      "ci95_exact": [
+       0.3932419761169223,
+       0.6818508214313913
+      ]
+     }
+    },
+    "negatives_judged_yes": {
+     "n": 50,
+     "n_wrong": 1,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 1,
+      "n": 50,
+      "rate": 0.02,
+      "ci95_exact": [
+       0.000506227983040829,
+       0.1064695457114999
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 1,
+      "n": 50,
+      "rate": 0.02,
+      "ci95_exact": [
+       0.000506227983040829,
+       0.1064695457114999
+      ]
+     },
+     "unsure_as_error": {
+      "k": 1,
+      "n": 50,
+      "rate": 0.02,
+      "ci95_exact": [
+       0.000506227983040829,
+       0.1064695457114999
+      ]
+     }
+    }
+   },
+   "older": {
+    "positives_judged_no": {
+     "n": 75,
+     "n_wrong": 43,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 43,
+      "n": 75,
+      "rate": 0.5733333333333334,
+      "ci95_exact": [
+       0.4537647102239673,
+       0.6869299972470507
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 43,
+      "n": 75,
+      "rate": 0.5733333333333334,
+      "ci95_exact": [
+       0.4537647102239673,
+       0.6869299972470507
+      ]
+     },
+     "unsure_as_error": {
+      "k": 43,
+      "n": 75,
+      "rate": 0.5733333333333334,
+      "ci95_exact": [
+       0.4537647102239673,
+       0.6869299972470507
+      ]
+     }
+    },
+    "negatives_judged_yes": {
+     "n": 75,
+     "n_wrong": 0,
+     "n_unsure": 0,
+     "primary_decided_only": {
+      "k": 0,
+      "n": 75,
+      "rate": 0.0,
+      "ci95_exact": [
+       0.0,
+       0.047995064055142256
+      ]
+     },
+     "unsure_as_correct": {
+      "k": 0,
+      "n": 75,
+      "rate": 0.0,
+      "ci95_exact": [
+       0.0,
+       0.047995064055142256
+      ]
+     },
+     "unsure_as_error": {
+      "k": 0,
+      "n": 75,
+      "rate": 0.0,
+      "ci95_exact": [
+       0.0,
+       0.047995064055142256
+      ]
+     }
+    }
+   }
+  },
+  "errors_unweighted_pool_by_class": {
+   "positives_judged_no": {
+    "n": 125,
+    "n_wrong": 70,
+    "n_unsure": 0,
+    "primary_decided_only": {
+     "k": 70,
+     "n": 125,
+     "rate": 0.56,
+     "ci95_exact": [
+      0.46844895859565905,
+      0.6486420636785966
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 70,
+     "n": 125,
+     "rate": 0.56,
+     "ci95_exact": [
+      0.46844895859565905,
+      0.6486420636785966
+     ]
+    },
+    "unsure_as_error": {
+     "k": 70,
+     "n": 125,
+     "rate": 0.56,
+     "ci95_exact": [
+      0.46844895859565905,
+      0.6486420636785966
+     ]
+    }
+   },
+   "negatives_judged_yes": {
+    "n": 125,
+    "n_wrong": 1,
+    "n_unsure": 0,
+    "primary_decided_only": {
+     "k": 1,
+     "n": 125,
+     "rate": 0.008,
+     "ci95_exact": [
+      0.0002025219535342445,
+      0.04376653637502473
+     ]
+    },
+    "unsure_as_correct": {
+     "k": 1,
+     "n": 125,
+     "rate": 0.008,
+     "ci95_exact": [
+      0.0002025219535342445,
+      0.04376653637502473
+     ]
+    },
+    "unsure_as_error": {
+     "k": 1,
+     "n": 125,
+     "rate": 0.008,
+     "ci95_exact": [
+      0.0002025219535342445,
+      0.04376653637502473
+     ]
+    }
+   }
+  },
+  "pool_note": "an unweighted pool of the strata samples, not a population rate",
+  "note": "intervals treat each stratum sample as binomial and ignore the finite-population correction, so they are conservative"
+ }
+}

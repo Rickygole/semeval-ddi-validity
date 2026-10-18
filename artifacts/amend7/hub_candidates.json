@@ -1,0 +1,523 @@
+{
+ "searched_on": "2026-10-16",
+ "queries": {
+  "ddi": 100,
+  "ddi2013": 2,
+  "ddi-2013": 2,
+  "ddi_corpus": 0,
+  "semeval-2013-task-9": 0,
+  "drug-drug interaction": 16,
+  "drug_drug_interaction": 16,
+  "ddi extraction": 0,
+  "DDIExtraction": 0,
+  "biobert ddi": 93,
+  "pubmedbert ddi": 100,
+  "relation extraction drug": 0,
+  "drugprot": 4,
+  "pubmedbert relation extraction": 5,
+  "biomedical relation extraction": 0
+ },
+ "candidates": {
+  "jialicheng/ddi_biobert": {
+   "sha": "9885091baba218fd9b98c9f8f42aa6647af3289f",
+   "tags": [
+    "transformers",
+    "tensorboard",
+    "safetensors",
+    "bert",
+    "text-classification",
+    "generated_from_trainer",
+    "base_model:dmis-lab/biobert-v1.1",
+    "base_model:finetune:dmis-lab/biobert-v1.1",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "text-classification",
+   "note": "label names are LABEL_0..LABEL_4; model card names no training corpus",
+   "architectures": [
+    "BertForSequenceClassification"
+   ],
+   "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4"
+   },
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "jialicheng/ddi-pubmedbert-abstract": {
+   "sha": "99d93233b8b1445ef462dca5b19a86b606e57bf7",
+   "tags": [
+    "transformers",
+    "tensorboard",
+    "safetensors",
+    "bert",
+    "text-classification",
+    "generated_from_trainer",
+    "base_model:microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract",
+    "base_model:finetune:microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract",
+    "license:mit",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "text-classification",
+   "note": "label names are LABEL_0..LABEL_4; model card names no training corpus",
+   "architectures": [
+    "BertForSequenceClassification"
+   ],
+   "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4"
+   },
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "jialicheng/ddi-pubmedbert-fulltext": {
+   "sha": "338a68a25ec107c980aa4522aaf6e81b0662ac5d",
+   "tags": [
+    "transformers",
+    "tensorboard",
+    "safetensors",
+    "bert",
+    "text-classification",
+    "generated_from_trainer",
+    "base_model:microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+    "base_model:finetune:microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+    "license:mit",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "text-classification",
+   "note": "label names are LABEL_0..LABEL_4; model card names no training corpus",
+   "architectures": [
+    "BertForSequenceClassification"
+   ],
+   "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4"
+   },
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "wesin/pubmedbert-relation-extraction": {
+   "sha": "3616405c9fbb882ed2a0b9cf95da3f6405e3110a",
+   "tags": [
+    "safetensors",
+    "bert",
+    "biomedical",
+    "relation-extraction",
+    "pubmedbert",
+    "named-entity-recognition",
+    "en",
+    "dataset:chemprot",
+    "dataset:bc5cdr",
+    "dataset:gad",
+    "dataset:biored",
+    "dataset:ddi",
+    "license:mit",
+    "model-index",
+    "region:us"
+   ],
+   "pipeline_tag": null,
+   "note": "trained on five corpora jointly; entity-marker format documented",
+   "architectures": [
+    "BertForSequenceClassification"
+   ],
+   "id2label": {
+    "0": "activates",
+    "1": "inhibits",
+    "2": "converts",
+    "3": "causes",
+    "4": "treats",
+    "5": "associated_with",
+    "6": "interacts_with",
+    "7": "located_in",
+    "8": "NO_RELATION"
+   },
+   "facts": {
+    "train_corpora": [
+     "chemprot",
+     "bc5cdr",
+     "gad",
+     "biored",
+     "ddi"
+    ],
+    "input_format_documented": true,
+    "negative_label": true
+   },
+   "static_checks": {
+    "training_data_stated": true,
+    "no_tac_or_drugbank": true,
+    "input_format_documented": true,
+    "label_set_has_negative": true
+   },
+   "static_pass": true
+  },
+  "ltmai/Bio_ClinicalBERT_DDI_finetuned": {
+   "sha": "5e4e6ea5c1860a891c39ae5505d69ecd162051a5",
+   "tags": [
+    "transformers",
+    "pytorch",
+    "bert",
+    "generated_from_trainer",
+    "chemistry",
+    "medical",
+    "drug_drug_interaction",
+    "text-classification",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "text-classification",
+   "note": "trained on DrugBank and RxNav interactions from chemical structure, not on DDI Extraction 2013",
+   "architectures": [
+    "BioClinicalBertClassification"
+   ],
+   "id2label": {
+    "0": "NEGATIVE",
+    "1": "POSITIVE"
+   },
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": true,
+    "negative_label": true
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": true,
+    "label_set_has_negative": true
+   },
+   "static_pass": false
+  },
+  "GooKSL/BioLinkBERT-large-DDI": {
+   "sha": "433919b41be830d3bd6a6e262843ffcc0e8dc6bc",
+   "tags": [
+    "transformers",
+    "safetensors",
+    "bert",
+    "feature-extraction",
+    "arxiv:1910.09700",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "feature-extraction",
+   "note": "feature-extraction checkpoint without a classification head",
+   "architectures": [
+    "BertModel"
+   ],
+   "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4"
+   },
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "GooKSL/BioM-BERT-PubMed-PMC-Large-DDI": {
+   "sha": "a8bf5ed1d17116f8609a04873ed7daa9ec6105ab",
+   "tags": [
+    "transformers",
+    "safetensors",
+    "electra",
+    "feature-extraction",
+    "arxiv:1910.09700",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "feature-extraction",
+   "note": "feature-extraction checkpoint without a classification head",
+   "architectures": [
+    "ElectraModel"
+   ],
+   "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4"
+   },
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "clinicalnlplab/finetuned-Llama-2-13b-hf-DDI2013_train": {
+   "sha": "b9431dc693efad85a19e89ce77c73f78bc7b2746",
+   "tags": [
+    "transformers",
+    "safetensors",
+    "llama",
+    "text-generation",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "text-generation",
+   "note": "13B generative model, no model card, no documented input format",
+   "architectures": [
+    "LlamaForCausalLM"
+   ],
+   "id2label": null,
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "clinicalnlplab/finetuned-PMCLLaMA-13B-DDI2013_train": {
+   "sha": "f76fcbd0f2a8c6d5b6c7ac85b3f0cefb1bf281dd",
+   "tags": [
+    "transformers",
+    "safetensors",
+    "llama",
+    "text-generation",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "text-generation",
+   "note": "13B generative model, no model card, no documented input format",
+   "architectures": [
+    "LlamaForCausalLM"
+   ],
+   "id2label": null,
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "igorvln/dare_gpt2_ddi_finetuning": {
+   "sha": "aacc583879792f7827bc2f3caf77e351a7c52f56",
+   "tags": [
+    "transformers",
+    "pytorch",
+    "gpt2",
+    "text-generation",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "text-generation",
+   "note": "generative GPT-2 for the 2018 task path, no classification head",
+   "architectures": [
+    "GPT2LMHeadModel"
+   ],
+   "id2label": null,
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "Zabbonat/DDI": {
+   "sha": "a92884f601f75e764d9ab4008633767eeae89806",
+   "tags": [
+    "transformers",
+    "safetensors",
+    "roberta",
+    "text-classification",
+    "en",
+    "arxiv:1910.09700",
+    "doi:10.57967/hf/1977",
+    "endpoints_compatible",
+    "region:us"
+   ],
+   "pipeline_tag": "text-classification",
+   "note": "DDI means data-driven innovation, unrelated to drugs",
+   "architectures": [
+    "RobertaForSequenceClassification"
+   ],
+   "id2label": {
+    "0": "NoDDI",
+    "1": "DDI"
+   },
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": true
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": true
+   },
+   "static_pass": false
+  },
+  "selmahabib/biobert-finetuned-tac-ddi": {
+   "sha": "4cfce9b31f3294a2cd1107659a85b2d273f24253",
+   "tags": [
+    "safetensors",
+    "bert",
+    "region:us"
+   ],
+   "pipeline_tag": null,
+   "note": "token classification (TAC 2018), no relation head",
+   "architectures": [
+    "BertForTokenClassification"
+   ],
+   "id2label": {
+    "0": "O",
+    "1": "B",
+    "2": "I"
+   },
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  },
+  "bprimal/Drug-Drug-Interaction-Classification": {
+   "sha": "12c0f267e411e68cd0bdb37aab8707c2789ec9b0",
+   "tags": [
+    "chemistry",
+    "biology",
+    "en",
+    "license:mit",
+    "region:us"
+   ],
+   "pipeline_tag": null,
+   "note": "CatBoost on molecular properties, not a text model",
+   "config_error": "RemoteEntryNotFoundError",
+   "facts": {
+    "train_corpora": [],
+    "input_format_documented": false,
+    "negative_label": false
+   },
+   "static_checks": {
+    "training_data_stated": false,
+    "no_tac_or_drugbank": false,
+    "input_format_documented": false,
+    "label_set_has_negative": false
+   },
+   "static_pass": false
+  }
+ },
+ "external_subset": {
+  "rule": "label mapping from the SemEval TRAIN majority class; a negative class exists; no TAC 2018 or DrugBank training stated; input format documented; a sequence classification head",
+  "passed_static_checks": [
+   "wesin/pubmedbert-relation-extraction"
+  ],
+  "facts": {
+   "wesin/pubmedbert-relation-extraction": {
+    "train_corpora": [
+     "chemprot",
+     "bc5cdr",
+     "gad",
+     "biored",
+     "ddi"
+    ],
+    "input_format_documented": true,
+    "negative_label": true
+   }
+  },
+  "revisions": {
+   "wesin/pubmedbert-relation-extraction": "3616405c9fbb882ed2a0b9cf95da3f6405e3110a"
+  },
+  "excluded": {
+   "jialicheng/ddi_biobert": "label names are LABEL_0..LABEL_4; model card names no training corpus",
+   "jialicheng/ddi-pubmedbert-abstract": "label names are LABEL_0..LABEL_4; model card names no training corpus",
+   "jialicheng/ddi-pubmedbert-fulltext": "label names are LABEL_0..LABEL_4; model card names no training corpus",
+   "ltmai/Bio_ClinicalBERT_DDI_finetuned": "trained on DrugBank and RxNav interactions from chemical structure, not on DDI Extraction 2013",
+   "GooKSL/BioLinkBERT-large-DDI": "feature-extraction checkpoint without a classification head",
+   "GooKSL/BioM-BERT-PubMed-PMC-Large-DDI": "feature-extraction checkpoint without a classification head",
+   "clinicalnlplab/finetuned-Llama-2-13b-hf-DDI2013_train": "13B generative model, no model card, no documented input format",
+   "clinicalnlplab/finetuned-PMCLLaMA-13B-DDI2013_train": "13B generative model, no model card, no documented input format",
+   "igorvln/dare_gpt2_ddi_finetuning": "generative GPT-2 for the 2018 task path, no classification head",
+   "Zabbonat/DDI": "DDI means data-driven innovation, unrelated to drugs",
+   "selmahabib/biobert-finetuned-tac-ddi": "token classification (TAC 2018), no relation head",
+   "bprimal/Drug-Drug-Interaction-Classification": "CatBoost on molecular properties, not a text model"
+  }
+ }
+}

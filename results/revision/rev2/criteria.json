@@ -1,0 +1,62 @@
+{
+ "status": "written before any statistic of results/revision/rev2 was computed; post hoc and descriptive; answers JBI referee points M3b, M4, M7, M8, M9 and M10; changes no preregistered decision (H1, H4 and H6 stay inconclusive, H5 stays falsified, the Amendment 7 E8 oracle check stays failed)",
+ "written": "2026-10-17",
+ "already_known_when_written": {
+  "m4_rho": "while locating inputs, the Spearman rho between results/revision/post8/e9.json tier A SemEval binary F1 and results/revision/amend7/e9.json Older-primary within-drug AUROC was computed once per input format: marker -0.479 (10 checkpoints), pair -0.309; Novel marker -0.261, pair -0.030; pooled Older-primary -0.161 as already in post8/e9.json. No bootstrap had been run. The referee reported -0.48 and -0.33.",
+  "m4_partner": "results/revision/amend7/cpu/exp7_below_chance.json already holds the label-free partner prior (iii2) partialled within-drug AUROC for b2mixed, b1names, Qwen names-only and DrugBank on Novel and Older-clean tier A (b2mixed Older-clean 0.447); results/revision/post7/partner.md holds tetrad AUROCs for DrugBank, b2mixed, Qwen, b1names and b2sentence. No panel checkpoint had been put through either.",
+  "m3b": "results/revision/amend7/cpu/exp5_dissociation.md (all pairs 0.525, co-mentioned 0.591, not co-mentioned 0.529, listing rates by label) and results/revision/sensitivity/semeval_selfpairs.md (0.480 without the 289 self pairs) were read. The SemEval test pairs split 2452 DDI-DrugBank and 358 DDI-MedLine by corpus folder. No random-pair rate and no per-source AUROC had been computed. The XML header reads version 5.1, exported-on 2026-03-05.",
+  "m8": "results/revision/sensitivity/bootstrap_coverage.md and results/revision/post7/coverage.md and summary.md were read, including their definitions: the sensitivity file reports half-width / SD (1.645 is calibrated), post7 reports half-width / (1.645 SD) (1 is calibrated).",
+  "m10": "the stored predictions in results/revision/preds and runs/preds carry 5-class argmax predictions ('preds', class ids 0 false, 1 mechanism, 2 effect, 3 advise, 4 int) and P(interaction) ('p'). The repository test set is 2810 pairs (entity types drug and drug_n only, config.ENTITY_TYPES); the official SemEval 2013 DDI test set has 5716 pairs and 979 positives. Gu et al. 2021 Table 6 was read (PubMedBERT DDI 82.36, BioBERT 80.88, BERT uncased 80.04; DDI test 5716, micro F1). No micro F1 of any repository model had been computed.",
+  "m7": "results/revision/eval/decisions.md and tables.md report the b2mixed BiomedBERT ood_empty seed-averaged pooled AUROC 0.529 with pooled drug-cluster interval [0.457, 0.608] and two-way [0.410, 0.636].",
+  "m9": "results/revision/eval/confusion.md covers the b1/b2/krag/llm systems but not the 20 Amendment 7 panel checkpoints."
+ },
+ "m4": {
+  "a_rho_by_format": {
+   "inputs": "SemEval binary F1 per checkpoint from results/revision/post8/e9.json tiers A (and C-auto as a sensitivity); within-drug AUROC per checkpoint from results/revision/amend7/e9.json e9.panel (tier A) and from post8/e9.json tier C-auto",
+   "cohorts": ["older_primary", "novel"],
+   "strata": ["marker", "pair", "all 20"],
+   "statistic": "Spearman rho (scipy.stats.spearmanr)",
+   "interval": "percentile bootstrap over checkpoints within the stratum, 10000 draws, numpy RandomState(42); draws where either vector is constant are dropped and counted",
+   "also": "two-sided permutation p over 10000 random permutations of AUROC against F1, RandomState(43)",
+   "caveat_to_state": "n = 10 per format; the AUROC values carry their own two-way bootstrap uncertainty (within-checkpoint SD about 0.03) which the checkpoint bootstrap ignores"
+  },
+  "b_partner_adjusted": {
+   "systems": "b2mixed BiomedBERT (seed mean of seeds 42, 1, 2, 3, 4, ood_empty / oodold_empty), the 20 Amendment 7 panel checkpoints (runs/preds a7-panel-*, variants marker and pair, ood_empty / oodold_empty, one seed each), Qwen2.5-7B names only (llm-qwen-names), DrugBank lookup",
+   "cohorts": "Novel (438 rows, 48 drugs) and Older-clean (1832 rows, 128 drugs), tier A",
+   "scale": "logit of P(interaction) for models, the 0/1 listing for DrugBank, as in experiment 7",
+   "partner_prior": "label-free: baselines.Context.partner_prior, the share of vocabulary Drug Interactions sections (excluding the partner's own RxCUI) that name the partner; feature iii2 of scripts/amend7_cpu_exp7_below_chance.py",
+   "adjustment": "within-drug residualization of experiment 7 (partial): demean score and prior within OOD drug, regress, subtract slope times prior from the score; adjusted within-drug AUROC on the residual",
+   "intervals": "two-way cluster bootstrap over OOD drugs and partner drugs, amend7_cpu_common.paired_draws, 1000 draws, seed 1042 Novel and 42 Older-clean, raw and adjusted in the same draws; the paired difference adjusted minus raw is reported",
+   "tetrad": "doubly matched tetrad AUROC of post7_common.tetrad_design on the additive scale, two-way weights of post7_common.scheme_weights with the same seeds; values for systems already in results/revision/post7/partner.json are checked against that file",
+   "reproduction_checks": "b2mixed, Qwen and DrugBank adjusted values must equal experiment 7 iii2 partialled values to 3 decimals; tetrad values must equal post7/partner.json"
+  }
+ },
+ "m3b": {
+  "drugbank_source": "~/Downloads/drugbank_all_full_database.xml.zip; version and exported-on read from the drugbank root element and written to every output",
+  "resolution": "the experiment 5 rule (scripts/amend7_cpu_exp5_dissociation.py resolve, equivalent to ddiood.drugbank.validate): names plus RxNorm normalized and canonicalized forms from artifacts/vocab/drug_lookup.json; listed if either drug's DrugBank interaction list names the other",
+  "a_random_pairs": "the SemEval vocabulary is the 992 keys of artifacts/vocab/drug_lookup.json; 10000 unordered pairs of two keys with different RxCUI drawn uniformly with replacement of pairs (numpy RandomState(1)); primary rate = listed / pairs with at least one drug resolved (the exp5 'resolvable' denominator); also listed / all and listed / both resolved; Wilson 95% intervals. Secondary: the same with one key per RxCUI (alphabetically first key). Compared with SemEval test negatives and positives on the same denominators, with and without self pairs",
+  "b_by_source": "DrugBank lookup pooled AUROC on SemEval test against binary SemEval labels, by corpus folder (DrugBank = DDI-DrugBank documents, MedLine = DDI-MedLine abstracts), all pairs and without self pairs (case and space normalised same name), unresolvable counted as not listed, sentence-cluster bootstrap 1000 draws seed 42 (ev.boot_auroc)",
+  "c_string_match": "non_di_label_string_match pooled AUROC with intervals copied from results/corrected/baselines.json (two-way cluster bootstrap, seed 42); additionally within-drug AUROC on Novel and Older-clean from results/corrected/baseline_scores.json with paired_draws two-way intervals (1000, seeds 1042 / 42)",
+  "d_subgroups": "algebraic decomposition: for a 0/1 score AUROC = 0.5 (1 + TPR - FPR); report TPR and FPR per subgroup and the subgroup weights among positives and among negatives that produce the pooled value, for all 2810 pairs and without self pairs"
+ },
+ "m8": {
+  "reconcile": "convert the sensitivity half-width / SD to the post7 ratio by dividing by 1.645 (the stored halfwidth90_over_nominal field), restrict to matching cells (two-way bootstrap, tier A, each cohort), and list every remaining difference in definitions, scenarios, replicate counts, seeds and SD estimator",
+  "collect": "for the writer, copy without recomputation: Bayesian ROPE (post7/calibration.json bayes, H1 tier A primary and secondary), one-way drug and partner-only bootstrap rows (post7/calibration.json intervals), coverage of partner-only (post7/coverage.json), spike-in kappa rule threshold and observed decision (spikein/spikein.json), with the criteria file of each"
+ },
+ "m10": {
+  "metric": "SemEval 2013 DDI standard: micro-averaged F1 over the four positive classes mechanism, effect, advise, int (sklearn f1_score labels [1, 2, 3, 4], average micro) on test_sentence 5-class argmax predictions",
+  "models": "b2sentence and b2mixed for biomedbert, bertbase (seeds 42, 1, 2, 3, 4) and biobert (seed 42 only); also the 20 panel checkpoints (test_sentence) as a secondary table",
+  "aggregation": "per seed, then mean, SD (ddof 1), min and max over seeds; sentence-cluster bootstrap 95% interval for each seed (1000, seed 42)",
+  "official_set_bound": "a second column treats the 2906 official test pairs that the repository does not score (entity types brand and group) as predicted false, which gives the score these predictions would receive on the 5716-pair official set; it is a lower bound for a model that scored those pairs, not an estimate",
+  "published": "Gu et al. 2021 (ACM HEALTH, arXiv 2007.15779) Table 6: PubMedBERT 82.36, BioBERT 80.88, BERT uncased 80.04, micro F1, BLURB DDI test 5716 pairs; the comparison is stated as not like-for-like (different train split, entity types, preprocessing)"
+ },
+ "m9": {
+  "panel": "each of the 20 panel checkpoints on SemEval test_sentence and on Novel and Older-clean (ood_empty / oodold_empty): confusion (binary argmax != false), F1, all-positive F1 on the same rows, MCC, balanced accuracy, AUPRC (average precision of P(interaction)), prevalence",
+  "h2": "b2sentence and b2masked BiomedBERT, seeds 42, 1, 2, 3, 4, on test_sentence and test_masked: the same metrics per seed, plus the preregistered seed-mean masked/sentence F1 ratio reproduced from decisions.json"
+ },
+ "m7": {
+  "statistic": "pooled AUROC of b2mixed BiomedBERT ood_empty P(interaction) averaged over seeds 1, 2, 3, 4, 42 on Novel (438 pairs), as in the preregistration's primary endpoint",
+  "intervals": "drug-cluster bootstrap (the preregistered one, ev.boot_auroc groups = OOD drug, 1000 draws, seed 42): 90% and 95% percentile intervals and p_TOST against [0.40, 0.60]; the two-way interval alongside; must reproduce 0.529 [0.457, 0.608]"
+ },
+ "rules": "no hypothesis decision is changed; outputs are descriptive; any reproduction mismatch is reported, not hidden"
+}

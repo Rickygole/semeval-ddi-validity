@@ -1,0 +1,2085 @@
+{
+ "plan_sha256": "4610135c2222240f9df68fec628050b4556027c4d3ed2db0fa766f5c8f8229a1",
+ "status": "post hoc and descriptive; plan in docs/POSTHOC_REV3_PLAN.md was written before computing; changes no preregistered decision",
+ "drugbank_release": {
+  "file": "drugbank_all_full_database.xml.zip",
+  "version": "5.1",
+  "exported_on": "2026-03-05",
+  "root_element": "<drugbank xmlns=\"http://www.drugbank.ca\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.drugbank.ca http://www.drugbank.ca/docs/drugbank.xsd\" version=\"5.1\" exported-on=\"2026-03-05\">"
+ },
+ "overlap": {
+  "match_rule": "unordered pair, each name lowercased and stripped, against every SemEval 2013 train pair",
+  "n_pairs": 4643,
+  "n_in_semeval_train": 581,
+  "n_in_semeval_train_with_a_positive_instance": 213,
+  "n_positive_and_semeval_positive": 206,
+  "n_not_in_semeval_train": 4062,
+  "n_positive_not_in_semeval_train": 1134,
+  "n_drugs_both_anchor_and_partner": 175,
+  "n_anchor_drugs": 299,
+  "n_partner_drugs": 313
+ },
+ "n_boot": 1000,
+ "seed": 42,
+ "drugbank_counts": {
+  "listed": 3258,
+  "unresolvable": 2,
+  "one_side_resolved": 287
+ },
+ "r2a_rows": {
+  "status": "post hoc, descriptive; no decision rule",
+  "bootstrap": "two-way over anchor drugs and partners, percentile 95%",
+  "bootstrap_seeds": {
+   "seen": 42,
+   "seen_not_in_semeval_train": 42,
+   "novel": 1042,
+   "older_primary": 42
+  },
+  "n_draws": 1000,
+  "seen_overlap_with_semeval_train": {
+   "match_rule": "unordered pair, each name lowercased and stripped, against every SemEval 2013 train pair",
+   "n_pairs": 4643,
+   "n_in_semeval_train": 581,
+   "n_in_semeval_train_with_a_positive_instance": 213,
+   "n_positive_and_semeval_positive": 206,
+   "n_not_in_semeval_train": 4062,
+   "n_positive_not_in_semeval_train": 1134,
+   "n_drugs_both_anchor_and_partner": 175,
+   "n_anchor_drugs": 299,
+   "n_partner_drugs": 313
+  },
+  "dissociation": [
+   {
+    "family": "b2mixed",
+    "cohort": "seen",
+    "input": "names_only",
+    "key": "train_empty",
+    "n_pairs": 4643,
+    "n_positive": 1542,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.45548,
+     "lo95": 0.411031,
+     "hi95": 0.494094,
+     "lo90": 0.419287,
+     "hi90": 0.486885,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.460419,
+     0.45837,
+     0.463813,
+     0.45669,
+     0.450978
+    ]
+   },
+   {
+    "family": "b2mixed",
+    "cohort": "seen",
+    "input": "names_text_b1",
+    "key": "train_names",
+    "n_pairs": 4643,
+    "n_positive": 1542,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.463679,
+     "lo95": 0.42165,
+     "hi95": 0.50371,
+     "lo90": 0.429027,
+     "hi90": 0.496333,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.477757,
+     0.462066,
+     0.467946,
+     0.461192,
+     0.440024
+    ]
+   },
+   {
+    "family": "b2mixed",
+    "cohort": "seen_not_in_semeval_train",
+    "input": "names_only",
+    "key": "train_empty",
+    "n_pairs": 4062,
+    "n_positive": 1134,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.439261,
+     "lo95": 0.390082,
+     "hi95": 0.485502,
+     "lo90": 0.400899,
+     "hi90": 0.478757,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.441641,
+     0.441451,
+     0.442879,
+     0.439356,
+     0.450114
+    ]
+   },
+   {
+    "family": "b2mixed",
+    "cohort": "seen_not_in_semeval_train",
+    "input": "names_text_b1",
+    "key": "train_names",
+    "n_pairs": 4062,
+    "n_positive": 1134,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.450495,
+     "lo95": 0.403834,
+     "hi95": 0.494716,
+     "lo90": 0.413226,
+     "hi90": 0.487135,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.457445,
+     0.443165,
+     0.455684,
+     0.445164,
+     0.442879
+    ]
+   },
+   {
+    "family": "b2mixed",
+    "cohort": "novel",
+    "input": "names_only",
+    "key": "ood_empty",
+    "n_pairs": 438,
+    "n_positive": 148,
+    "n_anchor_drugs": 48,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.483487,
+     "lo95": 0.353163,
+     "hi95": 0.615385,
+     "lo90": 0.372708,
+     "hi90": 0.592483,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.507266,
+     0.546896,
+     0.498018,
+     0.484808,
+     0.494055
+    ]
+   },
+   {
+    "family": "b2mixed",
+    "cohort": "novel",
+    "input": "names_text_b1",
+    "key": "ood_names",
+    "n_pairs": 438,
+    "n_positive": 148,
+    "n_anchor_drugs": 48,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.482166,
+     "lo95": 0.335159,
+     "hi95": 0.624051,
+     "lo90": 0.364653,
+     "hi90": 0.596281,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.484808,
+     0.53897,
+     0.451783,
+     0.468956,
+     0.483487
+    ]
+   },
+   {
+    "family": "b2mixed",
+    "cohort": "older_primary",
+    "input": "names_only",
+    "key": "oodold_empty",
+    "n_pairs": 1721,
+    "n_positive": 562,
+    "n_anchor_drugs": 121,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.451115,
+     "lo95": 0.382523,
+     "hi95": 0.518395,
+     "lo90": 0.392484,
+     "hi90": 0.508377,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.461538,
+     0.45862,
+     0.45591,
+     0.459245,
+     0.465082
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "cohort": "seen",
+    "input": "names_only",
+    "key": "train_empty",
+    "n_pairs": 4643,
+    "n_positive": 1542,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.434816,
+     "lo95": 0.395414,
+     "hi95": 0.473079,
+     "lo90": 0.402278,
+     "hi90": 0.468031,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.425274,
+     0.466131,
+     0.471843,
+     0.456522,
+     0.446408
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "cohort": "seen",
+    "input": "names_text_b1",
+    "key": "train_names",
+    "n_pairs": 4643,
+    "n_positive": 1542,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.429138,
+     "lo95": 0.391429,
+     "hi95": 0.465724,
+     "lo90": 0.397831,
+     "hi90": 0.461132,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.429843,
+     0.484342,
+     0.486224,
+     0.457496,
+     0.440797
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "cohort": "seen_not_in_semeval_train",
+    "input": "names_only",
+    "key": "train_empty",
+    "n_pairs": 4062,
+    "n_positive": 1134,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.438928,
+     "lo95": 0.395827,
+     "hi95": 0.484053,
+     "lo90": 0.401916,
+     "hi90": 0.475996,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.436738,
+     0.468964,
+     0.487148,
+     0.459492,
+     0.45735
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "cohort": "seen_not_in_semeval_train",
+    "input": "names_text_b1",
+    "key": "train_names",
+    "n_pairs": 4062,
+    "n_positive": 1134,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.441213,
+     "lo95": 0.394945,
+     "hi95": 0.485474,
+     "lo90": 0.403761,
+     "hi90": 0.47758,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.440546,
+     0.492955,
+     0.492336,
+     0.465156,
+     0.455017
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "cohort": "novel",
+    "input": "names_only",
+    "key": "ood_empty",
+    "n_pairs": 438,
+    "n_positive": 148,
+    "n_anchor_drugs": 48,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.511229,
+     "lo95": 0.379639,
+     "hi95": 0.641481,
+     "lo90": 0.408445,
+     "hi90": 0.620794,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.461691,
+     0.463672,
+     0.468956,
+     0.523778,
+     0.507266
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "cohort": "novel",
+    "input": "names_text_b1",
+    "key": "ood_names",
+    "n_pairs": 438,
+    "n_positive": 148,
+    "n_anchor_drugs": 48,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.443857,
+     "lo95": 0.32091,
+     "hi95": 0.589301,
+     "lo90": 0.334216,
+     "hi90": 0.567444,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.453104,
+     0.464993,
+     0.478864,
+     0.495376,
+     0.463012
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "cohort": "older_primary",
+    "input": "names_only",
+    "key": "oodold_empty",
+    "n_pairs": 1721,
+    "n_positive": 562,
+    "n_anchor_drugs": 121,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.46946,
+     "lo95": 0.404164,
+     "hi95": 0.533758,
+     "lo90": 0.413284,
+     "hi90": 0.524105,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.460913,
+     0.493642,
+     0.487179,
+     0.472066,
+     0.484469
+    ]
+   },
+   {
+    "family": "marker",
+    "cohort": "seen",
+    "input": "names_only",
+    "key": "train_empty",
+    "n_pairs": 4643,
+    "n_positive": 1542,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.398092,
+     "lo95": 0.356299,
+     "hi95": 0.437445,
+     "lo90": 0.362521,
+     "hi90": 0.430261,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.417915,
+     0.438277,
+     0.424635,
+     0.39584,
+     0.417277
+    ]
+   },
+   {
+    "family": "marker",
+    "cohort": "seen_not_in_semeval_train",
+    "input": "names_only",
+    "key": "train_empty",
+    "n_pairs": 4062,
+    "n_positive": 1134,
+    "n_anchor_drugs": 299,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.41627,
+     "lo95": 0.36729,
+     "hi95": 0.465297,
+     "lo90": 0.373877,
+     "hi90": 0.454962,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.427789,
+     0.456493,
+     0.441022,
+     0.408749,
+     0.419983
+    ]
+   },
+   {
+    "family": "marker",
+    "cohort": "novel",
+    "input": "names_only",
+    "key": "ood_empty",
+    "n_pairs": 438,
+    "n_positive": 148,
+    "n_anchor_drugs": 48,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.494055,
+     "lo95": 0.356978,
+     "hi95": 0.628647,
+     "lo90": 0.384157,
+     "hi90": 0.602746,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.481506,
+     0.472259,
+     0.475561,
+     0.497358,
+     0.536988
+    ]
+   },
+   {
+    "family": "marker",
+    "cohort": "older_primary",
+    "input": "names_only",
+    "key": "oodold_empty",
+    "n_pairs": 1721,
+    "n_positive": 562,
+    "n_anchor_drugs": 121,
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "complete": true,
+    "seed_mean": {
+     "value": 0.400667,
+     "lo95": 0.335487,
+     "hi95": 0.472249,
+     "lo90": 0.346497,
+     "hi90": 0.459093,
+     "n_draws": 1000
+    },
+    "per_seed": [
+     0.420158,
+     0.448197,
+     0.421826,
+     0.396081,
+     0.442985
+    ]
+   }
+  ],
+  "reproducibility": [
+   {
+    "family": "b2mixed",
+    "seed": 42,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.702307,
+      "max_abs_diff": 0.843961,
+      "same_class": 0.712329
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.698662,
+      "max_abs_diff": 0.728169,
+      "same_class": 0.794521
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.938055,
+      "max_abs_diff": 0.613677,
+      "same_class": 0.92
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.906967,
+      "max_abs_diff": 0.792379,
+      "same_class": 0.89
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.764621,
+      "max_abs_diff": 0.747172,
+      "same_class": 0.773663
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.934363,
+      "max_abs_diff": 0.962633,
+      "same_class": 0.875
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.892674,
+      "max_abs_diff": 0.993083,
+      "same_class": 0.929537
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.884823,
+      "max_abs_diff": 0.984462,
+      "same_class": 0.93274
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.883873,
+      "max_abs_diff": 0.99107,
+      "same_class": 0.936299
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.860594,
+      "max_abs_diff": 0.808031,
+      "same_class": 0.907829
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.801656,
+      "max_abs_diff": 0.993929,
+      "same_class": 0.993594
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.815531,
+      "max_abs_diff": 0.89741,
+      "same_class": 0.937722
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.861071,
+      "max_abs_diff": 0.991506,
+      "same_class": 0.947331
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.507266,
+      "stored": 0.517834,
+      "difference": -0.010568
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.461538,
+      "stored": 0.447571,
+      "difference": 0.013967
+     },
+     "ood_names/novel": {
+      "retrained": 0.484808,
+      "stored": 0.515192,
+      "difference": -0.030383
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2mixed",
+    "seed": 1,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.756313,
+      "max_abs_diff": 0.861986,
+      "same_class": 0.771689
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.713935,
+      "max_abs_diff": 0.805395,
+      "same_class": 0.840183
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.911837,
+      "max_abs_diff": 0.944167,
+      "same_class": 0.88
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.892037,
+      "max_abs_diff": 0.944167,
+      "same_class": 0.85
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.831456,
+      "max_abs_diff": 0.742128,
+      "same_class": 0.834877
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.890405,
+      "max_abs_diff": 0.995134,
+      "same_class": 0.863281
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.966724,
+      "max_abs_diff": 0.990124,
+      "same_class": 0.937367
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.953416,
+      "max_abs_diff": 0.978816,
+      "same_class": 0.939502
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.950596,
+      "max_abs_diff": 0.993499,
+      "same_class": 0.943416
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.880256,
+      "max_abs_diff": 0.835729,
+      "same_class": 0.944484
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.892697,
+      "max_abs_diff": 0.981859,
+      "same_class": 0.992883
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.832748,
+      "max_abs_diff": 0.898962,
+      "same_class": 0.955872
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.954158,
+      "max_abs_diff": 0.991322,
+      "same_class": 0.951246
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.546896,
+      "stored": 0.515192,
+      "difference": 0.031704
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.45862,
+      "stored": 0.447988,
+      "difference": 0.010632
+     },
+     "ood_names/novel": {
+      "retrained": 0.53897,
+      "stored": 0.509908,
+      "difference": 0.029062
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2mixed",
+    "seed": 2,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.748949,
+      "max_abs_diff": 0.868989,
+      "same_class": 0.755708
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.636857,
+      "max_abs_diff": 0.96391,
+      "same_class": 0.789954
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.743962,
+      "max_abs_diff": 0.829116,
+      "same_class": 0.82
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.743246,
+      "max_abs_diff": 0.829116,
+      "same_class": 0.8
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.770561,
+      "max_abs_diff": 0.947966,
+      "same_class": 0.825617
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.91552,
+      "max_abs_diff": 0.994023,
+      "same_class": 0.871094
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.93424,
+      "max_abs_diff": 0.994524,
+      "same_class": 0.93879
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.9282,
+      "max_abs_diff": 0.995621,
+      "same_class": 0.941637
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.924389,
+      "max_abs_diff": 0.99081,
+      "same_class": 0.928826
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.887148,
+      "max_abs_diff": 0.964221,
+      "same_class": 0.924911
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.899749,
+      "max_abs_diff": 0.964248,
+      "same_class": 0.994306
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.867608,
+      "max_abs_diff": 0.898715,
+      "same_class": 0.935943
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.911693,
+      "max_abs_diff": 0.99675,
+      "same_class": 0.945907
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.498018,
+      "stored": 0.509908,
+      "difference": -0.011889
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.45591,
+      "stored": 0.454451,
+      "difference": 0.001459
+     },
+     "ood_names/novel": {
+      "retrained": 0.451783,
+      "stored": 0.508587,
+      "difference": -0.056803
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2mixed",
+    "seed": 3,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.742541,
+      "max_abs_diff": 0.929154,
+      "same_class": 0.66895
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.538347,
+      "max_abs_diff": 0.985007,
+      "same_class": 0.840183
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.658647,
+      "max_abs_diff": 0.957705,
+      "same_class": 0.78
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.6643,
+      "max_abs_diff": 0.957705,
+      "same_class": 0.81
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.743259,
+      "max_abs_diff": 0.919569,
+      "same_class": 0.774177
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.90219,
+      "max_abs_diff": 0.987004,
+      "same_class": 0.875
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.911092,
+      "max_abs_diff": 0.995474,
+      "same_class": 0.941281
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.88938,
+      "max_abs_diff": 0.996364,
+      "same_class": 0.937722
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.912576,
+      "max_abs_diff": 0.99225,
+      "same_class": 0.940925
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.875362,
+      "max_abs_diff": 0.948789,
+      "same_class": 0.914235
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.807884,
+      "max_abs_diff": 0.563406,
+      "same_class": 0.999644
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.756619,
+      "max_abs_diff": 0.966165,
+      "same_class": 0.910676
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.914204,
+      "max_abs_diff": 0.981649,
+      "same_class": 0.958007
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.484808,
+      "stored": 0.532365,
+      "difference": -0.047556
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.459245,
+      "stored": 0.441317,
+      "difference": 0.017928
+     },
+     "ood_names/novel": {
+      "retrained": 0.468956,
+      "stored": 0.520476,
+      "difference": -0.051519
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2mixed",
+    "seed": 4,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.463433,
+      "max_abs_diff": 0.827461,
+      "same_class": 0.559361
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.469589,
+      "max_abs_diff": 0.959717,
+      "same_class": 0.860731
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.692197,
+      "max_abs_diff": 0.709214,
+      "same_class": 0.78
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.686145,
+      "max_abs_diff": 0.816951,
+      "same_class": 0.77
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.672631,
+      "max_abs_diff": 0.877,
+      "same_class": 0.748971
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.855766,
+      "max_abs_diff": 0.98827,
+      "same_class": 0.808594
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.905805,
+      "max_abs_diff": 0.989984,
+      "same_class": 0.907473
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.905833,
+      "max_abs_diff": 0.99616,
+      "same_class": 0.918505
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.885681,
+      "max_abs_diff": 0.993325,
+      "same_class": 0.923132
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.82227,
+      "max_abs_diff": 0.837889,
+      "same_class": 0.876157
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.796451,
+      "max_abs_diff": 0.989656,
+      "same_class": 0.969039
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.812725,
+      "max_abs_diff": 0.801141,
+      "same_class": 0.946619
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.872181,
+      "max_abs_diff": 0.986341,
+      "same_class": 0.944484
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.494055,
+      "stored": 0.507266,
+      "difference": -0.01321
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.465082,
+      "stored": 0.481343,
+      "difference": -0.01626
+     },
+     "ood_names/novel": {
+      "retrained": 0.483487,
+      "stored": 0.527081,
+      "difference": -0.043593
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2sentence",
+    "seed": 42,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.634678,
+      "max_abs_diff": 0.719682,
+      "same_class": 0.988584
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.621383,
+      "max_abs_diff": 0.745187,
+      "same_class": 0.995434
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.820024,
+      "max_abs_diff": 0.934969,
+      "same_class": 0.76
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.825947,
+      "max_abs_diff": 0.934969,
+      "same_class": 0.76
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.60723,
+      "max_abs_diff": 0.879852,
+      "same_class": 0.977881
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.773462,
+      "max_abs_diff": 0.983659,
+      "same_class": 0.78125
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.922747,
+      "max_abs_diff": 0.990837,
+      "same_class": 0.879359
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.91428,
+      "max_abs_diff": 0.988602,
+      "same_class": 0.904982
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.916219,
+      "max_abs_diff": 0.995914,
+      "same_class": 0.89573
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.747477,
+      "max_abs_diff": 0.900259,
+      "same_class": 0.99573
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.794759,
+      "max_abs_diff": 0.958364,
+      "same_class": 0.998221
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.669555,
+      "max_abs_diff": 0.343482,
+      "same_class": 0.999644
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.911742,
+      "max_abs_diff": 0.990118,
+      "same_class": 0.94484
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.461691,
+      "stored": 0.488771,
+      "difference": -0.027081
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.460913,
+      "stored": 0.458203,
+      "difference": 0.00271
+     },
+     "ood_names/novel": {
+      "retrained": 0.453104,
+      "stored": 0.492734,
+      "difference": -0.03963
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2sentence",
+    "seed": 1,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.570192,
+      "max_abs_diff": 0.063309,
+      "same_class": 1.0
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.540732,
+      "max_abs_diff": 0.038973,
+      "same_class": 1.0
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.940213,
+      "max_abs_diff": 0.520209,
+      "same_class": 0.98
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.940813,
+      "max_abs_diff": 0.768474,
+      "same_class": 0.97
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.716503,
+      "max_abs_diff": 0.815755,
+      "same_class": 0.998971
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.962887,
+      "max_abs_diff": 0.888958,
+      "same_class": 0.929688
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.953102,
+      "max_abs_diff": 0.992269,
+      "same_class": 0.969039
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.945813,
+      "max_abs_diff": 0.994022,
+      "same_class": 0.961566
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.925234,
+      "max_abs_diff": 0.993357,
+      "same_class": 0.970463
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.630566,
+      "max_abs_diff": 0.979461,
+      "same_class": 0.998577
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.934002,
+      "max_abs_diff": 0.662605,
+      "same_class": 0.998577
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.493605,
+      "max_abs_diff": 0.83315,
+      "same_class": 0.999644
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.912859,
+      "max_abs_diff": 0.981447,
+      "same_class": 0.974377
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.463672,
+      "stored": 0.494055,
+      "difference": -0.030383
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.493642,
+      "stored": 0.47832,
+      "difference": 0.015322
+     },
+     "ood_names/novel": {
+      "retrained": 0.464993,
+      "stored": 0.425363,
+      "difference": 0.03963
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2sentence",
+    "seed": 2,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.598915,
+      "max_abs_diff": 0.11362,
+      "same_class": 1.0
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.603119,
+      "max_abs_diff": 0.084189,
+      "same_class": 1.0
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.963481,
+      "max_abs_diff": 0.544179,
+      "same_class": 0.98
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.962607,
+      "max_abs_diff": 0.842612,
+      "same_class": 0.95
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.393054,
+      "max_abs_diff": 0.105007,
+      "same_class": 1.0
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.959648,
+      "max_abs_diff": 0.817585,
+      "same_class": 0.917969
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.96674,
+      "max_abs_diff": 0.862155,
+      "same_class": 0.965836
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.963239,
+      "max_abs_diff": 0.982717,
+      "same_class": 0.966548
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.961345,
+      "max_abs_diff": 0.936439,
+      "same_class": 0.961922
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.128005,
+      "max_abs_diff": 0.130185,
+      "same_class": 1.0
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.911208,
+      "max_abs_diff": 0.071042,
+      "same_class": 1.0
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.030089,
+      "max_abs_diff": 0.12637,
+      "same_class": 1.0
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.947479,
+      "max_abs_diff": 0.948803,
+      "same_class": 0.962278
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.468956,
+      "stored": 0.495376,
+      "difference": -0.02642
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.487179,
+      "stored": 0.484469,
+      "difference": 0.00271
+     },
+     "ood_names/novel": {
+      "retrained": 0.478864,
+      "stored": 0.445178,
+      "difference": 0.033686
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2sentence",
+    "seed": 3,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.636023,
+      "max_abs_diff": 0.651763,
+      "same_class": 0.997717
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.697762,
+      "max_abs_diff": 0.043878,
+      "same_class": 1.0
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.893205,
+      "max_abs_diff": 0.96058,
+      "same_class": 0.8
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.855062,
+      "max_abs_diff": 0.96855,
+      "same_class": 0.77
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.662211,
+      "max_abs_diff": 0.581273,
+      "same_class": 0.998457
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.923778,
+      "max_abs_diff": 0.959924,
+      "same_class": 0.855469
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.949637,
+      "max_abs_diff": 0.980619,
+      "same_class": 0.950534
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.949,
+      "max_abs_diff": 0.969392,
+      "same_class": 0.954804
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.937447,
+      "max_abs_diff": 0.988601,
+      "same_class": 0.954804
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.555765,
+      "max_abs_diff": 0.540005,
+      "same_class": 0.998577
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.930866,
+      "max_abs_diff": 0.92217,
+      "same_class": 0.996441
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.47329,
+      "max_abs_diff": 0.252615,
+      "same_class": 1.0
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.932327,
+      "max_abs_diff": 0.967872,
+      "same_class": 0.968683
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.523778,
+      "stored": 0.501321,
+      "difference": 0.022457
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.472066,
+      "stored": 0.48843,
+      "difference": -0.016364
+     },
+     "ood_names/novel": {
+      "retrained": 0.495376,
+      "stored": 0.498018,
+      "difference": -0.002642
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "b2sentence",
+    "seed": 4,
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.616184,
+      "max_abs_diff": 0.101989,
+      "same_class": 1.0
+     },
+     "ood_names": {
+      "n": 438,
+      "spearman": 0.722311,
+      "max_abs_diff": 0.105753,
+      "same_class": 1.0
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.857211,
+      "max_abs_diff": 0.723574,
+      "same_class": 0.88
+     },
+     "ood_swap_sentence": {
+      "n": 100,
+      "spearman": 0.864641,
+      "max_abs_diff": 0.82817,
+      "same_class": 0.87
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.54593,
+      "max_abs_diff": 0.186746,
+      "same_class": 1.0
+     },
+     "oodold_sentence": {
+      "n": 256,
+      "spearman": 0.915897,
+      "max_abs_diff": 0.98679,
+      "same_class": 0.890625
+     },
+     "swap_novel_sentence": {
+      "n": 2810,
+      "spearman": 0.931096,
+      "max_abs_diff": 0.992871,
+      "same_class": 0.947331
+     },
+     "swap_pseudo_sentence": {
+      "n": 2810,
+      "spearman": 0.924886,
+      "max_abs_diff": 0.995731,
+      "same_class": 0.938078
+     },
+     "swap_vocab_sentence": {
+      "n": 2810,
+      "spearman": 0.915323,
+      "max_abs_diff": 0.991537,
+      "same_class": 0.946263
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.401148,
+      "max_abs_diff": 0.519155,
+      "same_class": 0.999644
+     },
+     "test_masked": {
+      "n": 2810,
+      "spearman": 0.882785,
+      "max_abs_diff": 0.736221,
+      "same_class": 0.999288
+     },
+     "test_names": {
+      "n": 2810,
+      "spearman": 0.468078,
+      "max_abs_diff": 0.75885,
+      "same_class": 0.999288
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.902881,
+      "max_abs_diff": 0.996814,
+      "same_class": 0.958719
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.507266,
+      "stored": 0.484808,
+      "difference": 0.022457
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.484469,
+      "stored": 0.449135,
+      "difference": 0.035335
+     },
+     "ood_names/novel": {
+      "retrained": 0.463012,
+      "stored": 0.472259,
+      "difference": -0.009247
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty",
+     "train_names"
+    ],
+    "retrained_missing_keys": []
+   },
+   {
+    "family": "marker",
+    "seed": 42,
+    "stored_name": "a7-panel-biomedbert_full-marker",
+    "status": "compared",
+    "keys": {
+     "ood_empty": {
+      "n": 438,
+      "spearman": 0.618151,
+      "max_abs_diff": 0.351319,
+      "same_class": 1.0
+     },
+     "ood_sentence": {
+      "n": 50,
+      "spearman": 0.816654,
+      "max_abs_diff": 0.992311,
+      "same_class": 0.96
+     },
+     "oodold_empty": {
+      "n": 1944,
+      "spearman": 0.523059,
+      "max_abs_diff": 0.031856,
+      "same_class": 1.0
+     },
+     "oodold_sentence": {
+      "n": 255,
+      "spearman": 0.906386,
+      "max_abs_diff": 0.998003,
+      "same_class": 0.882353
+     },
+     "test_empty": {
+      "n": 2810,
+      "spearman": 0.630511,
+      "max_abs_diff": 0.020629,
+      "same_class": 1.0
+     },
+     "test_sentence": {
+      "n": 2810,
+      "spearman": 0.923276,
+      "max_abs_diff": 0.998394,
+      "same_class": 0.974733
+     }
+    },
+    "within_drug_auroc": {
+     "ood_empty/novel": {
+      "retrained": 0.481506,
+      "stored": 0.474901,
+      "difference": 0.006605
+     },
+     "oodold_empty/older_primary": {
+      "retrained": 0.420158,
+      "stored": 0.424119,
+      "difference": -0.003961
+     }
+    },
+    "stored_missing_keys": [
+     "train_empty"
+    ],
+    "retrained_missing_keys": []
+   }
+  ],
+  "semeval_test": [
+   {
+    "family": "b2mixed",
+    "key": "test_sentence",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "pooled_auroc_seed_mean": 0.960546,
+    "per_seed": [
+     0.959295,
+     0.960314,
+     0.947254,
+     0.958871,
+     0.941403
+    ]
+   },
+   {
+    "family": "b2mixed",
+    "key": "test_empty",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "pooled_auroc_seed_mean": 0.670292,
+    "per_seed": [
+     0.648306,
+     0.684037,
+     0.661694,
+     0.658992,
+     0.660155
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "key": "test_sentence",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "pooled_auroc_seed_mean": 0.969519,
+    "per_seed": [
+     0.970918,
+     0.954471,
+     0.964508,
+     0.960222,
+     0.961788
+    ]
+   },
+   {
+    "family": "b2sentence",
+    "key": "test_empty",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "pooled_auroc_seed_mean": 0.630818,
+    "per_seed": [
+     0.64483,
+     0.633459,
+     0.498956,
+     0.592443,
+     0.598558
+    ]
+   },
+   {
+    "family": "marker",
+    "key": "test_sentence",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "pooled_auroc_seed_mean": 0.983871,
+    "per_seed": [
+     0.97826,
+     0.97729,
+     0.98189,
+     0.977376,
+     0.97204
+    ]
+   },
+   {
+    "family": "marker",
+    "key": "test_empty",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ],
+    "pooled_auroc_seed_mean": 0.639537,
+    "per_seed": [
+     0.594151,
+     0.597863,
+     0.61147,
+     0.640756,
+     0.606301
+    ]
+   }
+  ]
+ },
+ "notes": "label_string_match is 0 for every negative by construction (E7 negatives are not named anywhere in the anchor label). Rows marked circular include the anchor's own label or the pair's own training label. No comparison with the Novel or Older rows is made.",
+ "cohorts": {
+  "seen": {
+   "meta": {
+    "n_pairs": 4643,
+    "n_positive": 1542,
+    "n_anchor_drugs": 299,
+    "n_partner_drugs": 313,
+    "n_drugs_both_anchor_and_partner": 175
+   },
+   "rows": {
+    "drugbank_lookup": {
+     "pooled_auroc": 0.632528,
+     "within_drug_auroc": 0.610913,
+     "within_ci95_two_way": [
+      0.584733,
+      0.639116
+     ],
+     "within_ci95_anchor_only": [
+      0.595836,
+      0.626977
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "label_string_match": {
+     "pooled_auroc": 0.831388,
+     "within_drug_auroc": 0.836503,
+     "within_ci95_two_way": [
+      0.801927,
+      0.867022
+     ],
+     "within_ci95_anchor_only": [
+      0.81154,
+      0.861182
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_prior_label_free_anchor_section_excluded": {
+     "pooled_auroc": 0.48753,
+     "within_drug_auroc": 0.500605,
+     "within_ci95_two_way": [
+      0.459302,
+      0.537035
+     ],
+     "within_ci95_anchor_only": [
+      0.47297,
+      0.527939
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_prior_with_anchor_section (circular for these pairs)": {
+     "pooled_auroc": 0.505914,
+     "within_drug_auroc": 0.51475,
+     "within_ci95_two_way": [
+      0.475136,
+      0.551053
+     ],
+     "within_ci95_anchor_only": [
+      0.48616,
+      0.54193
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_rate_leave_one_drug_out": {
+     "pooled_auroc": 0.06697,
+     "within_drug_auroc": 0.061286,
+     "within_ci95_two_way": [
+      0.033667,
+      0.094754
+     ],
+     "within_ci95_anchor_only": [
+      0.052621,
+      0.070223
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_rate_not_left_out (circular reference)": {
+     "pooled_auroc": 0.518022,
+     "within_drug_auroc": 0.510752,
+     "within_ci95_two_way": [
+      0.475656,
+      0.548732
+     ],
+     "within_ci95_anchor_only": [
+      0.484926,
+      0.538688
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    }
+   }
+  },
+  "seen_not_in_semeval_train": {
+   "meta": {
+    "n_pairs": 4062,
+    "n_positive": 1134,
+    "n_anchor_drugs": 299,
+    "n_partner_drugs": 313,
+    "n_drugs_both_anchor_and_partner": 175
+   },
+   "rows": {
+    "drugbank_lookup": {
+     "pooled_auroc": 0.626674,
+     "within_drug_auroc": 0.613481,
+     "within_ci95_two_way": [
+      0.585632,
+      0.646945
+     ],
+     "within_ci95_anchor_only": [
+      0.595746,
+      0.63306
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "label_string_match": {
+     "pooled_auroc": 0.826279,
+     "within_drug_auroc": 0.832683,
+     "within_ci95_two_way": [
+      0.792614,
+      0.871187
+     ],
+     "within_ci95_anchor_only": [
+      0.80318,
+      0.860533
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_prior_label_free_anchor_section_excluded": {
+     "pooled_auroc": 0.474868,
+     "within_drug_auroc": 0.488909,
+     "within_ci95_two_way": [
+      0.440738,
+      0.532606
+     ],
+     "within_ci95_anchor_only": [
+      0.457374,
+      0.518191
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_prior_with_anchor_section (circular for these pairs)": {
+     "pooled_auroc": 0.493832,
+     "within_drug_auroc": 0.504522,
+     "within_ci95_two_way": [
+      0.455324,
+      0.547739
+     ],
+     "within_ci95_anchor_only": [
+      0.473285,
+      0.532826
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_rate_leave_one_drug_out (from the 4,062 pairs)": {
+     "pooled_auroc": 0.290288,
+     "within_drug_auroc": 0.285177,
+     "within_ci95_two_way": [
+      0.232775,
+      0.332915
+     ],
+     "within_ci95_anchor_only": [
+      0.263842,
+      0.30628
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_rate_leave_one_drug_out (from all 4,643 pairs)": {
+     "pooled_auroc": 0.066263,
+     "within_drug_auroc": 0.062072,
+     "within_ci95_two_way": [
+      0.033642,
+      0.098418
+     ],
+     "within_ci95_anchor_only": [
+      0.051559,
+      0.073107
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    },
+    "partner_rate_not_left_out (circular reference)": {
+     "pooled_auroc": 0.577716,
+     "within_drug_auroc": 0.572306,
+     "within_ci95_two_way": [
+      0.532554,
+      0.61506
+     ],
+     "within_ci95_anchor_only": [
+      0.546403,
+      0.600343
+     ],
+     "n_draws_two_way": 1000,
+     "n_draws_anchor_only": 1000
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "status": "written before any statistic of results/revision/post7 was computed; post hoc and exploratory; changes no preregistered decision (H1, H4 and H6 stay inconclusive, H5 stays falsified)",
+ "written": "2026-10-16",
+ "already_known_when_written": {
+  "decisions": "results/revision/eval/decisions.md: H1 Older-clean within-drug AUROC 0.452, 90% [0.395, 0.509], 95% [0.389, 0.518], p_TOST 0.061; H1-novel 0.523 [0.411, 0.626]; H4 -0.071, 90% [-0.192, 0.045], p_TOST 0.339; H6 0.519 [0.421, 0.627], p_TOST 0.102; tier B b2mixed Older-clean 0.397 [0.308, 0.493] (90%), Novel 0.533, krag Novel tier B 0.552",
+  "bootstrap_audit": "docs/REVISION_REVIEW_2026-10-16.md: in simulation the two-way 90% interval covered 99.5 to 100% with a half-width about three times the true SD; a one-way drug bootstrap was near nominal",
+  "exp7": "results/revision/amend7/cpu/exp7_below_chance.md: leave-one-drug-out partner positive rate within-drug AUROC 0.088 [0.049, 0.130] (tier A); label-free partner popularity (share of vocabulary Drug Interactions sections naming the partner) within-drug AUROC 0.506 [0.431, 0.575] (tier A); b2mixed within-drug Spearman with popularity 0.257 [0.209, 0.304]; DrugBank lookup partialled on the leave-one-drug-out rate 0.398",
+  "kappa": "results/revision/amend7/cpu/kappa_weighting.md: H1 kappa -0.342, 95% [-0.794, 0.133], DrugBank within-drug 0.641",
+  "consequence_known": "because the label-free popularity feature itself has within-drug AUROC 0.506 on Older-clean tier A, a scorer that depends only on it cannot reach 0.452 at any sensitivity; analysis 2b is run anyway as specified and this expectation is recorded here, before running it",
+  "design_counts_checked_from_labels_only": "Older-clean tier A has 5,162 within-drug positive-negative comparisons, 10,643 within-partner comparisons over 203 partners with both classes, and 1,975 drug-and-partner tetrads over 125 drugs (tier B 172 tetrads, Novel A 152, Novel B 35); no score was used for these counts"
+ },
+ "scope_changes_before_running": [
+  "coordinator red-team note received before any post7 statistic was computed: the doubly stratified AUROC is a decomposition, never a replacement for H1; it is valid only if the DrugBank lookup keeps its signal under it, and DrugBank is reported first",
+  "the leave-one-drug-out partialling of exp7 drives DrugBank lookup to 0.398; that adjustment is treated as broken and is not used as an explanation",
+  "the one-way bootstrap is a sensitivity analysis; if it places the Older-clean interval below 0.5, that is reported as significantly below chance (inverted information), not as support for equivalence",
+  "a primary framing row is added: the H1 kappa against DrugBank with its 95% upper bound, two-way bootstrap with paired DrugBank draws",
+  "the power analysis for additional drugs (item 3 of the request) is dropped; another analysis covers it"
+ ],
+ "shared": {
+  "cohorts": "Novel (438 pairs, 48 drugs) and Older-clean (1,832 pairs, 128 drugs), label tiers A and B, as in ddiood.evaluate2",
+  "statistic": "within-drug AUROC of ddiood.stats.stratified_auroc (pair-weighted); every scorer ranks by its score; sums of scores (tetrads) use logit(P) with P clipped to [1e-6, 1 - 1e-6] for model probabilities and 0/1 for DrugBank lookup",
+  "two_way_bootstrap": "the preregistered resampling of ddiood.stats.two_way_samples (drugs and partners resampled independently, drug copies as separate strata), 1,000 draws, seed 42 for Older-clean and 1042 for Novel, reproducing the generator call order of evaluate2 so that H1 reproduces 0.452 [0.395, 0.509]",
+  "one_way_drug_bootstrap": "drugs resampled with replacement, partners fixed, drug copies as separate strata, 1,000 draws, same seeds",
+  "partner_only_bootstrap": "partners resampled with replacement, drugs fixed",
+  "tost": "p_TOST = max((1 + #draws <= 0.40) / (n + 1), (1 + #draws >= 0.60) / (n + 1)) as in evaluate2.tost_p; H4 uses the difference Older-clean minus Novel of independent per-cohort draws with margin +/- 0.10",
+  "systems": {
+   "b2mixed": "b2mixed-biomedbert, P averaged over seeds 42, 1, 2, 3, 4, names only (ood_empty, oodold_empty)",
+   "b1names": "b1names-biomedbert seed-averaged (ood_names, oodold_names)",
+   "b2sentence": "b2sentence-biomedbert seed-averaged, empty sentence (ood_empty, oodold_empty)",
+   "qwen": "llm-qwen-names (ood, oodold)",
+   "drugbank": "DrugBank lookup, listed = 1",
+   "krag": "krag-hybrid-k5-c400-biomedbert seed-averaged (ood), H6 only"
+  }
+ },
+ "analysis_0_kappa_framing": {
+  "primary_statistic": "H1 kappa = (AUROC_b2mixed - 0.5) / (AUROC_DrugBank - 0.5), within-drug, Older-clean tier A, with the 95% interval from the two-way bootstrap with paired draws for b2mixed and DrugBank (seed 42, 1,000 draws); the 95% upper bound is the headline number",
+  "secondary": "the same under the one-way drug bootstrap; H1-novel and H6 rows on Novel; tier B rows are reported with the note that DrugBank is 1.0 on tier B by construction, so the tier B kappa reduces to 2 x (AUROC - 0.5)",
+  "reading": "the upper bound states the largest share of the DrugBank-lookup within-drug signal that b2mixed can carry at 95% confidence; no decision rule is attached"
+ },
+ "analysis_1a_one_way": {
+  "rows": "H1, H1-novel, H4 and H6, tiers A and B",
+  "primary_statistic": "one-way drug bootstrap 90% and 95% percentile intervals and p_TOST, beside the two-way values recomputed by the same code",
+  "equivalent_under_one_way": "90% interval inside [0.40, 0.60] (p_TOST < 0.05, unadjusted); Holm across H1, H4 and H6 under the one-way bootstrap is reported beside it",
+  "below_chance_under_one_way": "if the one-way 95% interval of a row lies entirely below 0.5 (and separately if the 90% interval does), the row is reported as significantly below chance under the one-way bootstrap (inverted information), not as equivalence",
+  "decision_effect": "none; the preregistered two-way decisions stand"
+ },
+ "analysis_1b_coverage": {
+  "designs": "the real (y, drug, partner) structure of Novel and Older-clean, tiers A and B",
+  "scorer": "s = beta_d * y + sigma_p * u_partner + sigma_d * v_drug + e, u, v, e standard normal, beta_d = beta + tau * z_d; the true within-drug AUROC is Phi(beta / sqrt(2 (sigma_p^2 + 1) + tau^2)) because a drug's positives and negatives never share a partner; sigma_d = 1",
+  "scenarios": "true AUROC in {0.45, 0.50, 0.60} x sigma_p in {0, 1} x tau in {0, 0.5}: 12 per design",
+  "reps": "1,000 replicates per scenario and design (at least 500 as required), 1,000 bootstrap draws per replicate, simulation seed 7",
+  "primary_statistic": "empirical coverage of the nominal 90% percentile interval against the analytic true value, per bootstrap (two-way, one-way drug, partner only); also 95% coverage, mean 90% half-width, the ratio of that half-width to 1.645 times the replicate SD, and the share of replicates with the 90% interval inside [0.40, 0.60]",
+  "calibrated": "90% coverage in [0.87, 0.93] and half-width ratio in [0.85, 1.15]",
+  "conservative": "90% coverage above 0.93 or half-width ratio above 1.15, with coverage at least 0.87",
+  "anti_conservative": "90% coverage below 0.87",
+  "adequate_bootstrap_on_a_design": "no scenario on that design is anti-conservative"
+ },
+ "analysis_1c_bayes": {
+  "rows": "H1, H1-novel, H4 (difference, region [-0.10, 0.10]) and H6, tiers A and B",
+  "primary_model": "Bayesian bootstrap over drugs (Rubin 1981): Dirichlet(1, ..., 1) weights on the cohort's drugs, AUROC = sum_d w_d U_d / sum_d w_d N_d with U_d the within-drug wins (ties 0.5) and N_d the comparisons of drug d; 20,000 posterior draws, seed 11; H4 uses independent draws per cohort",
+  "prior": "the Bayesian bootstrap is the posterior of a Dirichlet process prior on the distribution of drugs with concentration tending to 0: a noninformative prior that puts all mass on the observed drug types and no parametric prior on the AUROC; partners are fixed",
+  "secondary_model": "two-way Bayesian bootstrap: independent Dirichlet(1) weights on drugs and on partners, comparison weight w_d x w_partner(pos) x w_partner(neg); 4,000 draws, seed 12",
+  "primary_statistic": "posterior probability that the within-drug AUROC lies in [0.40, 0.60]; 90% and 95% equal-tailed credible intervals and P(AUROC < 0.5) beside it, reported next to the frequentist two-way and one-way results",
+  "practically_equivalent": "posterior probability at least 0.95",
+  "practically_not_equivalent": "posterior probability at most 0.05",
+  "undecided": "otherwise"
+ },
+ "analysis_2a_partner_decomposition": {
+  "framing": "a decomposition of the within-drug AUROC by partner structure, never a replacement for H1",
+  "statistics": {
+   "partner_stratified": "positives and negatives that share the same partner (pairs (d1, p) positive and (d2, p) negative, d1 != d2) are compared within partner and combined across partners with weights equal to the number of comparisons (Mann-Whitney pooled over partner strata); this is the statistic the request defines and it is the primary one; it removes partner effects but compares different drugs",
+   "doubly_matched_tetrad": "every set of two drugs and two partners with (d1, p1) and (d2, p2) positive and (d1, p2) and (d2, p1) negative; a tetrad is a win when s(d1, p1) + s(d2, p2) > s(d1, p2) + s(d2, p1), ties 0.5; additive drug and partner effects cancel exactly; secondary"
+  },
+  "intervals": "two-way cluster bootstrap (primary) and one-way drug bootstrap, on the same draws as the within-drug AUROC so that shifts are paired; comparison weights: within drug w_d w_p w_p', within partner w_p w_d w_d', tetrad w_d1 w_d2 w_p1 w_p2",
+  "systems_and_cells": "DrugBank lookup first, then b2mixed, Qwen names only, b1names, b2sentence; Older-clean and Novel; tiers A and B",
+  "validity_condition": "a statistic is a valid decomposition on a cohort and tier only if the DrugBank lookup keeps its signal under it: its two-way 95% lower bound is above 0.5; on tier B DrugBank is 1.0 by construction and the condition is checked on tier A; a statistic that fails the condition on Older-clean tier A yields no explained verdict",
+  "primary_cell": "b2mixed, Older-clean, tier A, partner-stratified",
+  "explained": "the partner-controlled statistic's two-way 95% interval contains 0.5 AND |S - 0.5| <= |W - 0.5| - 0.03, where S is the statistic and W the within-drug AUROC of the same system and cell (for W = 0.452: S in [0.482, 0.518]), AND the validity condition holds",
+  "secondary_verdicts": "the same rule for the tetrad statistic and for the one-way intervals; tier B and the other systems are reported without a decision",
+  "not_used": "the leave-one-drug-out partialling of exp7 is not used as an explanation because it drives DrugBank to 0.398"
+ },
+ "analysis_2b_popularity_simulation": {
+  "feature": "label-free partner popularity pop(p) = share of vocabulary Drug Interactions sections naming the partner (baselines.Context.partner_prior, as exp7 iii2), converted to normal scores of its ranks in the cohort",
+  "scorer": "s = lambda x z(pop) + e, e standard normal, lambda in {-5, -2, -1, -0.5, -0.25, 0, 0.25, 0.5, 1, 2, 5} and the noise-free limits +inf and -inf; 300 noise replicates per lambda, seed 21, on the exact frozen Older-clean and Novel designs, tiers A and B",
+  "primary_statistic": "mean within-drug AUROC of the scorer at each lambda; the lambda at which the mean within-drug Spearman with popularity equals the measured b2mixed value (computed in this analysis on the same rows; exp7 gave 0.257 on Older-clean tier A), found by linear interpolation, and the scorer's AUROC there; and the lambda, if any, at which the scorer's AUROC equals the measured b2mixed within-drug AUROC",
+  "popularity_explains": "the popularity scorer matched to b2mixed's Spearman reaches at least half of b2mixed's gap from 0.5 (for 0.452: an AUROC of at most 0.476)",
+  "contrast": "the same simulation with the label-derived leave-one-drug-out partner positive rate instead of popularity, reported without a decision as an upper bound on what partner structure can do"
+ },
+ "analysis_2c_decomposition": {
+  "partner_component_from_2a": "within-drug AUROC minus the partner-stratified AUROC (and minus the tetrad AUROC), with paired two-way and one-way intervals; residual = partner-controlled AUROC minus 0.5",
+  "popularity_component_from_2b": "AUROC of the matched popularity scorer minus 0.5; residual = b2mixed within-drug AUROC minus that value; interval from 1,000 one-way drug bootstrap draws (seed 42 Older-clean, 1042 Novel) in which b2mixed's within-drug AUROC and Spearman are recomputed and the Spearman is mapped through the simulated curve",
+  "reported_for": "b2mixed, Older-clean and Novel, tiers A and B; primary b2mixed Older-clean tier A",
+  "no_decision": "descriptive"
+ }
+}

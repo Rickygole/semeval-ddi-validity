@@ -1,0 +1,1141 @@
+{
+ "status": "post hoc and exploratory; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "rule": "criteria.json rule (families N, L, H); absence family reported, not dropped",
+ "oracle_row_order": "ood_hash and ood_old_hash of a7-qwen-oracle.json equal the frozen pair hashes; partner_in_context is 0 on every negative and at least 0.99 on positives",
+ "counts": {
+  "novel/all": {
+   "positives": 148,
+   "negatives": 290,
+   "drugs": 48,
+   "rule_flags": 1,
+   "families": {
+    "N": 1
+   },
+   "absence_flags_not_dropped": 0,
+   "ood_drug_not_named": 102,
+   "cooccurrence_also_flags": 9,
+   "positives_oracle_below_0.5": 33,
+   "negatives_oracle_above_0.5": 24,
+   "cross_tab_positives": {
+    "flag_and_rejected": 1,
+    "flag_not_rejected": 0,
+    "no_flag_rejected": 32,
+    "no_flag_not_rejected": 115
+   },
+   "share_of_rejections_flagged": 0.030303
+  },
+  "older/all": {
+   "positives": 648,
+   "negatives": 1296,
+   "drugs": 135,
+   "rule_flags": 42,
+   "families": {
+    "N": 34,
+    "L": 1,
+    "HN": 7
+   },
+   "absence_flags_not_dropped": 3,
+   "ood_drug_not_named": 246,
+   "cooccurrence_also_flags": 33,
+   "positives_oracle_below_0.5": 142,
+   "negatives_oracle_above_0.5": 52,
+   "cross_tab_positives": {
+    "flag_and_rejected": 38,
+    "flag_not_rejected": 4,
+    "no_flag_rejected": 104,
+    "no_flag_not_rejected": 502
+   },
+   "share_of_rejections_flagged": 0.267606
+  },
+  "older/older_clean": {
+   "positives": 599,
+   "negatives": 1233,
+   "drugs": 128,
+   "rule_flags": 38,
+   "families": {
+    "N": 30,
+    "L": 1,
+    "HN": 7
+   },
+   "absence_flags_not_dropped": 2,
+   "ood_drug_not_named": 237,
+   "cooccurrence_also_flags": 33,
+   "positives_oracle_below_0.5": 127,
+   "negatives_oracle_above_0.5": 52,
+   "cross_tab_positives": {
+    "flag_and_rejected": 34,
+    "flag_not_rejected": 4,
+    "no_flag_rejected": 93,
+    "no_flag_not_rejected": 468
+   },
+   "share_of_rejections_flagged": 0.267717
+  },
+  "older/older_primary": {
+   "positives": 562,
+   "negatives": 1159,
+   "drugs": 121,
+   "rule_flags": 37,
+   "families": {
+    "N": 29,
+    "L": 1,
+    "HN": 7
+   },
+   "absence_flags_not_dropped": 2,
+   "ood_drug_not_named": 218,
+   "cooccurrence_also_flags": 32,
+   "positives_oracle_below_0.5": 122,
+   "negatives_oracle_above_0.5": 51,
+   "cross_tab_positives": {
+    "flag_and_rejected": 33,
+    "flag_not_rejected": 4,
+    "no_flag_rejected": 89,
+    "no_flag_not_rejected": 436
+   },
+   "share_of_rejections_flagged": 0.270492
+  }
+ },
+ "per_drug": {
+  "novel": {
+   "by_rule_flags": [
+    {
+     "drug": "ozanimod",
+     "positives": 5,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 1
+    }
+   ],
+   "by_oracle_rejections": [
+    {
+     "drug": "fostemsavir",
+     "positives": 10,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 6
+    },
+    {
+     "drug": "amisulpride",
+     "positives": 3,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 3
+    },
+    {
+     "drug": "oliceridine",
+     "positives": 10,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 3
+    },
+    {
+     "drug": "quizartinib",
+     "positives": 8,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 3
+    },
+    {
+     "drug": "bimekizumab-bkzx",
+     "positives": 2,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 2
+    },
+    {
+     "drug": "palopegteriparatide",
+     "positives": 2,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 2
+    },
+    {
+     "drug": "sotagliflozin",
+     "positives": 3,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 2
+    },
+    {
+     "drug": "trilaciclib",
+     "positives": 2,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 2
+    },
+    {
+     "drug": "abrocitinib",
+     "positives": 2,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "fexinidazole",
+     "positives": 10,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "iptacopan",
+     "positives": 2,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "lonapegsomatropin-tcgd",
+     "positives": 1,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "osilodrostat",
+     "positives": 5,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "ozanimod",
+     "positives": 5,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "pacritinib",
+     "positives": 4,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 1
+    }
+   ],
+   "drugs_with_a_flag": 1
+  },
+  "older": {
+   "by_rule_flags": [
+    {
+     "drug": "raltegravir",
+     "positives": 8,
+     "rule_flags": 7,
+     "oracle_rejected_positives": 7
+    },
+    {
+     "drug": "febuxostat",
+     "positives": 8,
+     "rule_flags": 6,
+     "oracle_rejected_positives": 6
+    },
+    {
+     "drug": "darifenacin hydrobromide",
+     "positives": 10,
+     "rule_flags": 4,
+     "oracle_rejected_positives": 5
+    },
+    {
+     "drug": "belimumab",
+     "positives": 4,
+     "rule_flags": 4,
+     "oracle_rejected_positives": 4
+    },
+    {
+     "drug": "dabigatran etexilate",
+     "positives": 6,
+     "rule_flags": 4,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "dutasteride",
+     "positives": 7,
+     "rule_flags": 3,
+     "oracle_rejected_positives": 5
+    },
+    {
+     "drug": "bedaquiline",
+     "positives": 3,
+     "rule_flags": 3,
+     "oracle_rejected_positives": 3
+    },
+    {
+     "drug": "asenapine",
+     "positives": 3,
+     "rule_flags": 2,
+     "oracle_rejected_positives": 2
+    },
+    {
+     "drug": "eribulin",
+     "positives": 2,
+     "rule_flags": 2,
+     "oracle_rejected_positives": 2
+    },
+    {
+     "drug": "desvenlafaxine",
+     "positives": 10,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 6
+    },
+    {
+     "drug": "alvimopan",
+     "positives": 1,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "exenatide",
+     "positives": 1,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "methylnaltrexone bromide",
+     "positives": 1,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "tocilizumab",
+     "positives": 1,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 1
+    },
+    {
+     "drug": "trospium chloride",
+     "positives": 5,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 1
+    }
+   ],
+   "by_oracle_rejections": [
+    {
+     "drug": "colesevelam",
+     "positives": 10,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 7
+    },
+    {
+     "drug": "raltegravir",
+     "positives": 8,
+     "rule_flags": 7,
+     "oracle_rejected_positives": 7
+    },
+    {
+     "drug": "desvenlafaxine",
+     "positives": 10,
+     "rule_flags": 1,
+     "oracle_rejected_positives": 6
+    },
+    {
+     "drug": "febuxostat",
+     "positives": 8,
+     "rule_flags": 6,
+     "oracle_rejected_positives": 6
+    },
+    {
+     "drug": "fingolimod",
+     "positives": 10,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 6
+    },
+    {
+     "drug": "tizanidine",
+     "positives": 9,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 6
+    },
+    {
+     "drug": "darifenacin hydrobromide",
+     "positives": 10,
+     "rule_flags": 4,
+     "oracle_rejected_positives": 5
+    },
+    {
+     "drug": "dutasteride",
+     "positives": 7,
+     "rule_flags": 3,
+     "oracle_rejected_positives": 5
+    },
+    {
+     "drug": "milnacipran",
+     "positives": 5,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 5
+    },
+    {
+     "drug": "remifentanil",
+     "positives": 5,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 5
+    },
+    {
+     "drug": "belimumab",
+     "positives": 4,
+     "rule_flags": 4,
+     "oracle_rejected_positives": 4
+    },
+    {
+     "drug": "atazanavir sulfate",
+     "positives": 10,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 3
+    },
+    {
+     "drug": "bedaquiline",
+     "positives": 3,
+     "rule_flags": 3,
+     "oracle_rejected_positives": 3
+    },
+    {
+     "drug": "citalopram hydrobromide",
+     "positives": 5,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 3
+    },
+    {
+     "drug": "sevelamer",
+     "positives": 3,
+     "rule_flags": 0,
+     "oracle_rejected_positives": 3
+    }
+   ],
+   "drugs_with_a_flag": 16
+  }
+ },
+ "flagged_items": [
+  {
+   "cohort": "novel",
+   "row_index": 86,
+   "ood_drug": "ozanimod",
+   "partner": "cyclosporine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n17",
+    "s01",
+    "s02"
+   ],
+   "scope": "clause",
+   "heading": "",
+   "evidence": "Table 5: Clinically Relevant Interactions Affecting Drugs and Vaccines Co-administered with ZEPOSIA Anti-Neoplastic, Immune-Modulating, or Non-Corticosteroid Immunosuppressive Therapies Clinical Impact: ZEPOSIA has not been studied in combination with anti-neoplastic, immune-modulating, or non-corticosteroid immunosuppressive therapies with the exception of cyclosporine, which had no pharmacokinetic interaction [see Clinical Pharmacology (12.3) ] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 14,
+   "ood_drug": "alvimopan",
+   "partner": "morphine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n05"
+   ],
+   "scope": "clause",
+   "heading": "",
+   "evidence": "7 DRUG INTERACTIONS 7.1 Effects of Alvimopan on Intravenous Morphine Coadministration of alvimopan does not appear to alter the pharmacokinetics of morphine and its metabolite, morphine-6-glucuronide, to a clinically significant degree when morphine is administered intravenously."
+  },
+  {
+   "cohort": "older",
+   "row_index": 25,
+   "ood_drug": "asenapine",
+   "partner": "lithium",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n10"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Drugs Having No Clinically Important Interactions with Asenapine No dosage adjustment of asenapine is necessary when administered concomitantly with paroxetine (see Table 12 in Drug Interactions (7.1) for paroxetine dosage adjustment), imipramine, cimetidine, valporate, lithium, or a CYP3A4 indu",
+   "evidence": "In addition, valproic acid and lithium pre-dose serum concentrations collected from an adjunctive therapy study were comparable between asenapine-treated patients and placebo-treated patients indicating a lack of effect of asenapine on valproic and lithium plasma levels."
+  },
+  {
+   "cohort": "older",
+   "row_index": 27,
+   "ood_drug": "asenapine",
+   "partner": "valproic acid",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n10"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Drugs Having No Clinically Important Interactions with Asenapine No dosage adjustment of asenapine is necessary when administered concomitantly with paroxetine (see Table 12 in Drug Interactions (7.1) for paroxetine dosage adjustment), imipramine, cimetidine, valporate, lithium, or a CYP3A4 indu",
+   "evidence": "In addition, valproic acid and lithium pre-dose serum concentrations collected from an adjunctive therapy study were comparable between asenapine-treated patients and placebo-treated patients indicating a lack of effect of asenapine on valproic and lithium plasma levels."
+  },
+  {
+   "cohort": "older",
+   "row_index": 33,
+   "ood_drug": "atazanavir sulfate",
+   "partner": "nifedipine",
+   "flag": 0,
+   "absence": 1,
+   "families": "",
+   "patterns": [
+    "s01",
+    "s02"
+   ],
+   "scope": "clause",
+   "heading": "7.3 Established and Other Potentially Significant Drug Interactions Table 16 provides dosing recommendations in adults as a result of drug interactions with atazanavir. These recommendations are based on either drug interaction studies or predicted interactions due to the expected magnitude of inter",
+   "evidence": "Coadministration of diltiazem and atazanavir with ritonavir has not been studied. felodipine, nifedipine, nicardipine, and verapamil \u2191 calcium channel blocker Caution is warranted."
+  },
+  {
+   "cohort": "older",
+   "row_index": 70,
+   "ood_drug": "bedaquiline",
+   "partner": "cycloserine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n09"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Other Antimicrobial Medications No dose adjustment of isoniazid or pyrazinamide is required during coadministration with SIRTURO. ",
+   "evidence": "In a placebo-controlled clinical trial in adult patients, no major impact of coadministration of SIRTURO on the pharmacokinetics of ethambutol, kanamycin, pyrazinamide, ofloxacin or cycloserine was observed."
+  },
+  {
+   "cohort": "older",
+   "row_index": 71,
+   "ood_drug": "bedaquiline",
+   "partner": "ethambutol",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n09"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Other Antimicrobial Medications No dose adjustment of isoniazid or pyrazinamide is required during coadministration with SIRTURO. ",
+   "evidence": "In a placebo-controlled clinical trial in adult patients, no major impact of coadministration of SIRTURO on the pharmacokinetics of ethambutol, kanamycin, pyrazinamide, ofloxacin or cycloserine was observed."
+  },
+  {
+   "cohort": "older",
+   "row_index": 72,
+   "ood_drug": "bedaquiline",
+   "partner": "ofloxacin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n09"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Other Antimicrobial Medications No dose adjustment of isoniazid or pyrazinamide is required during coadministration with SIRTURO. ",
+   "evidence": "In a placebo-controlled clinical trial in adult patients, no major impact of coadministration of SIRTURO on the pharmacokinetics of ethambutol, kanamycin, pyrazinamide, ofloxacin or cycloserine was observed."
+  },
+  {
+   "cohort": "older",
+   "row_index": 76,
+   "ood_drug": "belimumab",
+   "partner": "azathioprine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n04"
+   ],
+   "scope": "clause",
+   "heading": "",
+   "evidence": "In clinical trials, BENLYSTA was administered concomitantly with other drugs, including corticosteroids, antimalarials, immunomodulatory and immunosuppressive agents (including azathioprine, cyclophosphamide, methotrexate, and mycophenolate), angiotensin pathway antihypertensives, HMG\u2011CoA reductase inhibitors (statins), and/or non-steroidal anti-inflammatory drugs (NSAIDs) without evidence of a clinically meaningful effect of these concomitant medications on belimumab pharmacokinetics."
+  },
+  {
+   "cohort": "older",
+   "row_index": 77,
+   "ood_drug": "belimumab",
+   "partner": "cyclophosphamide",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n04"
+   ],
+   "scope": "clause",
+   "heading": "",
+   "evidence": "In clinical trials, BENLYSTA was administered concomitantly with other drugs, including corticosteroids, antimalarials, immunomodulatory and immunosuppressive agents (including azathioprine, cyclophosphamide, methotrexate, and mycophenolate), angiotensin pathway antihypertensives, HMG\u2011CoA reductase inhibitors (statins), and/or non-steroidal anti-inflammatory drugs (NSAIDs) without evidence of a clinically meaningful effect of these concomitant medications on belimumab pharmacokinetics."
+  },
+  {
+   "cohort": "older",
+   "row_index": 78,
+   "ood_drug": "belimumab",
+   "partner": "methotrexate",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n04"
+   ],
+   "scope": "clause",
+   "heading": "",
+   "evidence": "In clinical trials, BENLYSTA was administered concomitantly with other drugs, including corticosteroids, antimalarials, immunomodulatory and immunosuppressive agents (including azathioprine, cyclophosphamide, methotrexate, and mycophenolate), angiotensin pathway antihypertensives, HMG\u2011CoA reductase inhibitors (statins), and/or non-steroidal anti-inflammatory drugs (NSAIDs) without evidence of a clinically meaningful effect of these concomitant medications on belimumab pharmacokinetics."
+  },
+  {
+   "cohort": "older",
+   "row_index": 79,
+   "ood_drug": "belimumab",
+   "partner": "mycophenolate",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n04"
+   ],
+   "scope": "clause",
+   "heading": "",
+   "evidence": "In clinical trials, BENLYSTA was administered concomitantly with other drugs, including corticosteroids, antimalarials, immunomodulatory and immunosuppressive agents (including azathioprine, cyclophosphamide, methotrexate, and mycophenolate), angiotensin pathway antihypertensives, HMG\u2011CoA reductase inhibitors (statins), and/or non-steroidal anti-inflammatory drugs (NSAIDs) without evidence of a clinically meaningful effect of these concomitant medications on belimumab pharmacokinetics."
+  },
+  {
+   "cohort": "older",
+   "row_index": 152,
+   "ood_drug": "dabigatran etexilate",
+   "partner": "amiodarone",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n13"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Reduction of Risk of Stroke and Systemic Embolism in Non-valvular Atrial Fibrillation in Adult Patients The concomitant use of dabigatran etexilate with P-gp inducers (e.g., rifampin) reduces exposure to dabigatran and should generally be avoided [see Clinical Pharmacology (12.3)] . P-gp inhibit",
+   "evidence": "The use of the P-gp inhibitors verapamil, amiodarone, quinidine, clarithromycin, and ticagrelor does not require a dosage adjustment of dabigatran etexilate."
+  },
+  {
+   "cohort": "older",
+   "row_index": 153,
+   "ood_drug": "dabigatran etexilate",
+   "partner": "clarithromycin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n13"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Reduction of Risk of Stroke and Systemic Embolism in Non-valvular Atrial Fibrillation in Adult Patients The concomitant use of dabigatran etexilate with P-gp inducers (e.g., rifampin) reduces exposure to dabigatran and should generally be avoided [see Clinical Pharmacology (12.3)] . P-gp inhibit",
+   "evidence": "The use of the P-gp inhibitors verapamil, amiodarone, quinidine, clarithromycin, and ticagrelor does not require a dosage adjustment of dabigatran etexilate."
+  },
+  {
+   "cohort": "older",
+   "row_index": 155,
+   "ood_drug": "dabigatran etexilate",
+   "partner": "quinidine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n13"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Reduction of Risk of Stroke and Systemic Embolism in Non-valvular Atrial Fibrillation in Adult Patients The concomitant use of dabigatran etexilate with P-gp inducers (e.g., rifampin) reduces exposure to dabigatran and should generally be avoided [see Clinical Pharmacology (12.3)] . P-gp inhibit",
+   "evidence": "The use of the P-gp inhibitors verapamil, amiodarone, quinidine, clarithromycin, and ticagrelor does not require a dosage adjustment of dabigatran etexilate."
+  },
+  {
+   "cohort": "older",
+   "row_index": 157,
+   "ood_drug": "dabigatran etexilate",
+   "partner": "verapamil",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n13"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Reduction of Risk of Stroke and Systemic Embolism in Non-valvular Atrial Fibrillation in Adult Patients The concomitant use of dabigatran etexilate with P-gp inducers (e.g., rifampin) reduces exposure to dabigatran and should generally be avoided [see Clinical Pharmacology (12.3)] . P-gp inhibit",
+   "evidence": "The use of the P-gp inhibitors verapamil, amiodarone, quinidine, clarithromycin, and ticagrelor does not require a dosage adjustment of dabigatran etexilate."
+  },
+  {
+   "cohort": "older",
+   "row_index": 160,
+   "ood_drug": "darifenacin hydrobromide",
+   "partner": "duloxetine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n12"
+   ],
+   "scope": "clause",
+   "heading": "7.1 CYP3A4 Inhibitors The systemic exposure of darifenacin from darifenacin extended-release tablets is increased in the presence of CYP3A4 inhibitors. The daily dose of darifenacin extended-release tablet should not exceed 7.5 mg when co-administered with potent CYP3A4 inhibitors (for example, keto",
+   "evidence": "7.2 CYP2D6 Inhibitors No dosing adjustments are recommended in the presence of CYP2D6 inhibitors (for example, paroxetine, fluoxetine, quinidine and duloxetine) [see Clinical Pharmacology ( 12.3 )] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 162,
+   "ood_drug": "darifenacin hydrobromide",
+   "partner": "fluoxetine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n12"
+   ],
+   "scope": "clause",
+   "heading": "7.1 CYP3A4 Inhibitors The systemic exposure of darifenacin from darifenacin extended-release tablets is increased in the presence of CYP3A4 inhibitors. The daily dose of darifenacin extended-release tablet should not exceed 7.5 mg when co-administered with potent CYP3A4 inhibitors (for example, keto",
+   "evidence": "7.2 CYP2D6 Inhibitors No dosing adjustments are recommended in the presence of CYP2D6 inhibitors (for example, paroxetine, fluoxetine, quinidine and duloxetine) [see Clinical Pharmacology ( 12.3 )] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 164,
+   "ood_drug": "darifenacin hydrobromide",
+   "partner": "midazolam",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.3 CYP2D6 Substrates Caution should be taken when darifenacin extended-release tablet is used concomitantly with medications that are predominantly metabolized by CYP2D6 and which have a narrow therapeutic window (for example, flecainide, thioridazine and tricyclic antidepressants) [see Clinical Ph",
+   "evidence": "7.4 CYP3A4 Substrates Darifenacin (30 mg daily) did not have a significant impact on midazolam (7.5 mg) pharmacokinetics [see Clinical Pharmacology ( 12.3 )] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 166,
+   "ood_drug": "darifenacin hydrobromide",
+   "partner": "paroxetine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n12"
+   ],
+   "scope": "clause",
+   "heading": "7.1 CYP3A4 Inhibitors The systemic exposure of darifenacin from darifenacin extended-release tablets is increased in the presence of CYP3A4 inhibitors. The daily dose of darifenacin extended-release tablet should not exceed 7.5 mg when co-administered with potent CYP3A4 inhibitors (for example, keto",
+   "evidence": "7.2 CYP2D6 Inhibitors No dosing adjustments are recommended in the presence of CYP2D6 inhibitors (for example, paroxetine, fluoxetine, quinidine and duloxetine) [see Clinical Pharmacology ( 12.3 )] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 181,
+   "ood_drug": "desvenlafaxine",
+   "partner": "amphetamine",
+   "flag": 1,
+   "absence": 0,
+   "families": "L",
+   "patterns": [
+    "l01",
+    "l02",
+    "l03",
+    "l05"
+   ],
+   "scope": "clause",
+   "heading": "7.3 Alcohol A clinical study has shown that PRISTIQ does not increase the impairment of mental and motor skills caused by ethanol. However, as with all CNS-active drugs, patients should be advised to avoid alcohol consumption while taking PRISTIQ. ",
+   "evidence": "7.4 Drug-Laboratory Test Interactions False-positive urine immunoassay screening tests for phencyclidine (PCP) and amphetamine have been reported in patients taking desvenlafaxine."
+  },
+  {
+   "cohort": "older",
+   "row_index": 213,
+   "ood_drug": "dutasteride",
+   "partner": "cholestyramine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n05"
+   ],
+   "scope": "clause",
+   "heading": "7.3 Calcium Channel Antagonists Coadministration of verapamil or diltiazem decreases dutasteride clearance and leads to increased exposure to dutasteride. The change in dutasteride exposure is not considered to be clinically significant. No dose adjustment is recommended [see Clinical Pharmacology (",
+   "evidence": "7.4 Cholestyramine Administration of a single 5-mg dose of dutasteride followed 1 hour later by 12 g of cholestyramine does not affect the relative bioavailability of dutasteride [see Clinical Pharmacology (12.3)] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 214,
+   "ood_drug": "dutasteride",
+   "partner": "digoxin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n05"
+   ],
+   "scope": "clause",
+   "heading": "7.4 Cholestyramine Administration of a single 5-mg dose of dutasteride followed 1 hour later by 12 g of cholestyramine does not affect the relative bioavailability of dutasteride [see Clinical Pharmacology (12.3)] . ",
+   "evidence": "7.5 Digoxin Dutasteride does not alter the steady-state pharmacokinetics of digoxin when administered concomitantly at a dose of 0.5 mg/day for 3 weeks [see Clinical Pharmacology (12.3)] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 216,
+   "ood_drug": "dutasteride",
+   "partner": "tamsulosin",
+   "flag": 0,
+   "absence": 1,
+   "families": "",
+   "patterns": [
+    "s01",
+    "s02"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Alpha-adrenergic Antagonists The administration of dutasteride in combination with tamsulosin or terazosin has no effect on the steady-state pharmacokinetics of either alpha-adrenergic antagonist. ",
+   "evidence": "The effect of administration of tamsulosin or terazosin on dutasteride pharmacokinetic parameters has not been evaluated."
+  },
+  {
+   "cohort": "older",
+   "row_index": 217,
+   "ood_drug": "dutasteride",
+   "partner": "terazosin",
+   "flag": 0,
+   "absence": 1,
+   "families": "",
+   "patterns": [
+    "s01",
+    "s02"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Alpha-adrenergic Antagonists The administration of dutasteride in combination with tamsulosin or terazosin has no effect on the steady-state pharmacokinetics of either alpha-adrenergic antagonist. ",
+   "evidence": "The effect of administration of tamsulosin or terazosin on dutasteride pharmacokinetic parameters has not been evaluated."
+  },
+  {
+   "cohort": "older",
+   "row_index": 219,
+   "ood_drug": "dutasteride",
+   "partner": "warfarin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n05"
+   ],
+   "scope": "clause",
+   "heading": "7.5 Digoxin Dutasteride does not alter the steady-state pharmacokinetics of digoxin when administered concomitantly at a dose of 0.5 mg/day for 3 weeks [see Clinical Pharmacology (12.3)] . ",
+   "evidence": "7.6 Warfarin Concomitant administration of dutasteride 0.5 mg/day for 3 weeks with warfarin does not alter the steady-state pharmacokinetics of the S- or R-warfarin isomers or alter the effect of warfarin on prothrombin time [see Clinical Pharmacology (12.3)] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 233,
+   "ood_drug": "eribulin",
+   "partner": "ketoconazole",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n11"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effects of Other Drugs on Eribulin Mesylate No drug-drug interactions are expected with CYP3A4 inhibitors, CYP3A4 inducers or P\u2011glycoprotein (P-gp) inhibitors. ",
+   "evidence": "Clinically meaningful differences in exposure (AUC) were not observed in patients with advanced solid tumors when eribulin mesylate was administered with or without ketoconazole (a strong inhibitor of CYP3A4 and a P-gp inhibitor) and when eribulin mesylate was administered with or without rifampin (a CYP3A4 inducer) [see Clinical Pharmacology ( 12.3 )]."
+  },
+  {
+   "cohort": "older",
+   "row_index": 234,
+   "ood_drug": "eribulin",
+   "partner": "rifampin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n11"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effects of Other Drugs on Eribulin Mesylate No drug-drug interactions are expected with CYP3A4 inhibitors, CYP3A4 inducers or P\u2011glycoprotein (P-gp) inhibitors. ",
+   "evidence": "Clinically meaningful differences in exposure (AUC) were not observed in patients with advanced solid tumors when eribulin mesylate was administered with or without ketoconazole (a strong inhibitor of CYP3A4 and a P-gp inhibitor) and when eribulin mesylate was administered with or without rifampin (a CYP3A4 inducer) [see Clinical Pharmacology ( 12.3 )]."
+  },
+  {
+   "cohort": "older",
+   "row_index": 246,
+   "ood_drug": "etravirine",
+   "partner": "nelfinavir",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n14"
+   ],
+   "scope": "clause",
+   "heading": "7.3 Significant Drug Interactions Table 4 shows significant drug interactions based on which, alterations in dose or regimen of etravirine tablets and/or co-administered drug may be recommended. Drugs that are not recommended for co-administration with etravirine tablets are also included in Table 4",
+   "evidence": "Because the reduction in the mean systemic exposures of etravirine in the presence of lopinavir/ritonavir is similar to the reduction in mean systemic exposures of etravirine in the presence of darunavir/ritonavir, etravirine tablets and lopinavir/ritonavir can be co-administered without dose adjustments. nelfinavir (without ritonavir) ritonavir saquinavir/ritonavir tipranavir/ritonavir \u2191 nelfinavir \u2193 etravirine \u2193 etravirine \u2193 etravirine Concomitant use of etravirine tablets with nelfinavir without low- dose ritonavir may cause a significant alteration in the plasma concentration of nelfinavir."
+  },
+  {
+   "cohort": "older",
+   "row_index": 250,
+   "ood_drug": "exenatide",
+   "partner": "warfarin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "",
+   "evidence": "Warfarin Clinical Impact In a drug interaction study, BYETTA did not have a significant effect on INR [see Clinical Pharmacology (12.3) ] ."
+  },
+  {
+   "cohort": "older",
+   "row_index": 252,
+   "ood_drug": "febuxostat",
+   "partner": "colchicine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Cytotoxic Chemotherapy Drugs Drug interaction studies of febuxostat with cytotoxic chemotherapy have not been conducted. No data are available regarding the safety of febuxostat during cytotoxic chemotherapy. ",
+   "evidence": "7.3 In Vivo Drug Interaction Studies Based on drug interaction studies in healthy patients, febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine [see Clinical Pharmacology (12.3) ]."
+  },
+  {
+   "cohort": "older",
+   "row_index": 253,
+   "ood_drug": "febuxostat",
+   "partner": "desipramine",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Cytotoxic Chemotherapy Drugs Drug interaction studies of febuxostat with cytotoxic chemotherapy have not been conducted. No data are available regarding the safety of febuxostat during cytotoxic chemotherapy. ",
+   "evidence": "7.3 In Vivo Drug Interaction Studies Based on drug interaction studies in healthy patients, febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine [see Clinical Pharmacology (12.3) ]."
+  },
+  {
+   "cohort": "older",
+   "row_index": 254,
+   "ood_drug": "febuxostat",
+   "partner": "hydrochlorothiazide",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Cytotoxic Chemotherapy Drugs Drug interaction studies of febuxostat with cytotoxic chemotherapy have not been conducted. No data are available regarding the safety of febuxostat during cytotoxic chemotherapy. ",
+   "evidence": "7.3 In Vivo Drug Interaction Studies Based on drug interaction studies in healthy patients, febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine [see Clinical Pharmacology (12.3) ]."
+  },
+  {
+   "cohort": "older",
+   "row_index": 255,
+   "ood_drug": "febuxostat",
+   "partner": "indomethacin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Cytotoxic Chemotherapy Drugs Drug interaction studies of febuxostat with cytotoxic chemotherapy have not been conducted. No data are available regarding the safety of febuxostat during cytotoxic chemotherapy. ",
+   "evidence": "7.3 In Vivo Drug Interaction Studies Based on drug interaction studies in healthy patients, febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine [see Clinical Pharmacology (12.3) ]."
+  },
+  {
+   "cohort": "older",
+   "row_index": 257,
+   "ood_drug": "febuxostat",
+   "partner": "naproxen",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Cytotoxic Chemotherapy Drugs Drug interaction studies of febuxostat with cytotoxic chemotherapy have not been conducted. No data are available regarding the safety of febuxostat during cytotoxic chemotherapy. ",
+   "evidence": "7.3 In Vivo Drug Interaction Studies Based on drug interaction studies in healthy patients, febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine [see Clinical Pharmacology (12.3) ]."
+  },
+  {
+   "cohort": "older",
+   "row_index": 258,
+   "ood_drug": "febuxostat",
+   "partner": "warfarin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.2 Cytotoxic Chemotherapy Drugs Drug interaction studies of febuxostat with cytotoxic chemotherapy have not been conducted. No data are available regarding the safety of febuxostat during cytotoxic chemotherapy. ",
+   "evidence": "7.3 In Vivo Drug Interaction Studies Based on drug interaction studies in healthy patients, febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine [see Clinical Pharmacology (12.3) ]."
+  },
+  {
+   "cohort": "older",
+   "row_index": 323,
+   "ood_drug": "methylnaltrexone bromide",
+   "partner": "dextromethorphan",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n05"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Other Opioid Antagonists Avoid concomitant use of RELISTOR with other opioid antagonists because of the potential for additive effects of opioid receptor antagonism and increased risk of opioid withdrawal. ",
+   "evidence": "7.2 Drugs Metabolized by Cytochrome P450 Isozymes In healthy subjects, a subcutaneous dose of 0.3 mg/kg of RELISTOR did not significantly affect the metabolism of dextromethorphan, a CYP2D6 substrate."
+  },
+  {
+   "cohort": "older",
+   "row_index": 402,
+   "ood_drug": "raltegravir",
+   "partner": "estradiol",
+   "flag": 1,
+   "absence": 0,
+   "families": "HN",
+   "patterns": [
+    "h01",
+    "n04",
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effect of Other Agents on the Pharmacokinetics of Raltegravir Raltegravir is not a substrate of cytochrome P450 (CYP) enzymes. Based on in vivo and in vitro studies, raltegravir is eliminated mainly by metabolism via a UGT1A1-mediated glucuronidation pathway. Coadministration of raltegravir with",
+   "evidence": "7.2 Drugs without Clinically Significant Interactions with Raltegravir In drug interaction studies performed using raltegravir film-coated tablets 400 mg twice daily dose, raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate, methadone, midazolam, lamivudine, tenofovir disoproxil fumarate, etravirine, darunavir/ritonavir, or boceprevir."
+  },
+  {
+   "cohort": "older",
+   "row_index": 403,
+   "ood_drug": "raltegravir",
+   "partner": "ethinyl estradiol",
+   "flag": 1,
+   "absence": 0,
+   "families": "HN",
+   "patterns": [
+    "h01",
+    "n04",
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effect of Other Agents on the Pharmacokinetics of Raltegravir Raltegravir is not a substrate of cytochrome P450 (CYP) enzymes. Based on in vivo and in vitro studies, raltegravir is eliminated mainly by metabolism via a UGT1A1-mediated glucuronidation pathway. Coadministration of raltegravir with",
+   "evidence": "7.2 Drugs without Clinically Significant Interactions with Raltegravir In drug interaction studies performed using raltegravir film-coated tablets 400 mg twice daily dose, raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate, methadone, midazolam, lamivudine, tenofovir disoproxil fumarate, etravirine, darunavir/ritonavir, or boceprevir."
+  },
+  {
+   "cohort": "older",
+   "row_index": 404,
+   "ood_drug": "raltegravir",
+   "partner": "lamivudine",
+   "flag": 1,
+   "absence": 0,
+   "families": "HN",
+   "patterns": [
+    "h01",
+    "n04",
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effect of Other Agents on the Pharmacokinetics of Raltegravir Raltegravir is not a substrate of cytochrome P450 (CYP) enzymes. Based on in vivo and in vitro studies, raltegravir is eliminated mainly by metabolism via a UGT1A1-mediated glucuronidation pathway. Coadministration of raltegravir with",
+   "evidence": "7.2 Drugs without Clinically Significant Interactions with Raltegravir In drug interaction studies performed using raltegravir film-coated tablets 400 mg twice daily dose, raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate, methadone, midazolam, lamivudine, tenofovir disoproxil fumarate, etravirine, darunavir/ritonavir, or boceprevir."
+  },
+  {
+   "cohort": "older",
+   "row_index": 405,
+   "ood_drug": "raltegravir",
+   "partner": "methadone",
+   "flag": 1,
+   "absence": 0,
+   "families": "HN",
+   "patterns": [
+    "h01",
+    "n04",
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effect of Other Agents on the Pharmacokinetics of Raltegravir Raltegravir is not a substrate of cytochrome P450 (CYP) enzymes. Based on in vivo and in vitro studies, raltegravir is eliminated mainly by metabolism via a UGT1A1-mediated glucuronidation pathway. Coadministration of raltegravir with",
+   "evidence": "7.2 Drugs without Clinically Significant Interactions with Raltegravir In drug interaction studies performed using raltegravir film-coated tablets 400 mg twice daily dose, raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate, methadone, midazolam, lamivudine, tenofovir disoproxil fumarate, etravirine, darunavir/ritonavir, or boceprevir."
+  },
+  {
+   "cohort": "older",
+   "row_index": 406,
+   "ood_drug": "raltegravir",
+   "partner": "midazolam",
+   "flag": 1,
+   "absence": 0,
+   "families": "HN",
+   "patterns": [
+    "h01",
+    "n04",
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effect of Other Agents on the Pharmacokinetics of Raltegravir Raltegravir is not a substrate of cytochrome P450 (CYP) enzymes. Based on in vivo and in vitro studies, raltegravir is eliminated mainly by metabolism via a UGT1A1-mediated glucuronidation pathway. Coadministration of raltegravir with",
+   "evidence": "7.2 Drugs without Clinically Significant Interactions with Raltegravir In drug interaction studies performed using raltegravir film-coated tablets 400 mg twice daily dose, raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate, methadone, midazolam, lamivudine, tenofovir disoproxil fumarate, etravirine, darunavir/ritonavir, or boceprevir."
+  },
+  {
+   "cohort": "older",
+   "row_index": 408,
+   "ood_drug": "raltegravir",
+   "partner": "ritonavir",
+   "flag": 1,
+   "absence": 0,
+   "families": "HN",
+   "patterns": [
+    "h01",
+    "n04",
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effect of Other Agents on the Pharmacokinetics of Raltegravir Raltegravir is not a substrate of cytochrome P450 (CYP) enzymes. Based on in vivo and in vitro studies, raltegravir is eliminated mainly by metabolism via a UGT1A1-mediated glucuronidation pathway. Coadministration of raltegravir with",
+   "evidence": "7.2 Drugs without Clinically Significant Interactions with Raltegravir In drug interaction studies performed using raltegravir film-coated tablets 400 mg twice daily dose, raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate, methadone, midazolam, lamivudine, tenofovir disoproxil fumarate, etravirine, darunavir/ritonavir, or boceprevir."
+  },
+  {
+   "cohort": "older",
+   "row_index": 409,
+   "ood_drug": "raltegravir",
+   "partner": "tenofovir disoproxil fumarate",
+   "flag": 1,
+   "absence": 0,
+   "families": "HN",
+   "patterns": [
+    "h01",
+    "n04",
+    "n07"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Effect of Other Agents on the Pharmacokinetics of Raltegravir Raltegravir is not a substrate of cytochrome P450 (CYP) enzymes. Based on in vivo and in vitro studies, raltegravir is eliminated mainly by metabolism via a UGT1A1-mediated glucuronidation pathway. Coadministration of raltegravir with",
+   "evidence": "7.2 Drugs without Clinically Significant Interactions with Raltegravir In drug interaction studies performed using raltegravir film-coated tablets 400 mg twice daily dose, raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate, methadone, midazolam, lamivudine, tenofovir disoproxil fumarate, etravirine, darunavir/ritonavir, or boceprevir."
+  },
+  {
+   "cohort": "older",
+   "row_index": 563,
+   "ood_drug": "tocilizumab",
+   "partner": "methotrexate",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n08"
+   ],
+   "scope": "clause",
+   "heading": "",
+   "evidence": "7 DRUG INTERACTIONS 7.1 Concomitant Drugs for Treatment of Adult Indications In RA patients, population pharmacokinetic analyses did not detect any effect of methotrexate (MTX), non-steroidal anti-inflammatory drugs or corticosteroids on tocilizumab clearance."
+  },
+  {
+   "cohort": "older",
+   "row_index": 607,
+   "ood_drug": "trospium chloride",
+   "partner": "digoxin",
+   "flag": 1,
+   "absence": 0,
+   "families": "N",
+   "patterns": [
+    "n06"
+   ],
+   "scope": "clause",
+   "heading": "7.1 Digoxin Concomitant use of trospium chloride tablets and digoxin did not affect the pharmacokinetics of either drug [ see Clinical Pharmacology (12.3) ]. ",
+   "evidence": "7.2 Drugs Eliminated by Active Tubular Secretion Although demonstrated in a drug-drug interaction study not to affect the pharmacokinetics of digoxin, trospium chloride tablets has the potential for pharmacokinetic interactions with other drugs that are eliminated by active tubular secretion (e.g., procainamide, pancuronium, morphine, vancomycin, and tenofovir)."
+  }
+ ],
+ "reviewer_comparison": {
+  "older_positives_oracle_below_0.5": {
+   "reviewer": "142 of 648",
+   "here": "142 of 648"
+  },
+  "older_rule_flags": {
+   "reviewer": "about 69 of 648",
+   "here": "42 of 648"
+  },
+  "novel_rule_flags": {
+   "reviewer": "2 of 148",
+   "here": "1 of 148"
+  },
+  "negatives_oracle_above_0.5": {
+   "reviewer": "52",
+   "here": 76,
+   "novel": 24,
+   "older": 52
+  }
+ },
+ "audit_sheet": {
+  "rows": 255,
+  "selected_because": {
+   "positive_oracle_below_0.5": 175,
+   "negative_oracle_above_0.5": 76,
+   "positive_rule_flag": 43
+  },
+  "by_cohort": {
+   "older": 198,
+   "novel": 57
+  },
+  "files": [
+   "label_audit_sheet.csv",
+   "label_audit_key.csv"
+  ],
+  "shuffle": "numpy RandomState(42).permutation",
+  "adjudicated": 0
+ }
+}

@@ -1,0 +1,740 @@
+{
+ "status": "exploratory, not pre-registered",
+ "method": "seed-averaged logit scores minus an additive drug effect plus partner effect fitted by alternating least squares; AUROC of the residual within drug and pooled, two-way cluster bootstrap over OOD drugs and partners",
+ "cohorts": {
+  "novel": {
+   "A": {
+    "bootstrap_seed": 1042,
+    "n": 438,
+    "n_drugs": 48,
+    "n_partners": 74,
+    "null_additive_scores_residual_auroc": {
+     "mean": 0.501486,
+     "sd": 0.037242,
+     "reps": 200
+    },
+    "partner_prior_raw": {
+     "auroc_within": 0.516513,
+     "auroc_pooled": 0.509576,
+     "ci90": [
+      0.496631,
+      0.564184
+     ],
+     "ci95": [
+      0.486077,
+      0.57819
+     ]
+    },
+    "partner_prior_residual": {
+     "auroc_within": 0.5,
+     "auroc_pooled": 0.5,
+     "ci90": [
+      0.5,
+      0.5
+     ],
+     "ci95": [
+      0.5,
+      0.5
+     ]
+    },
+    "b2mixed-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.523118,
+      "auroc_pooled": 0.528611,
+      "ci90": [
+       0.41133,
+       0.625726
+      ],
+      "ci95": [
+       0.397209,
+       0.650333
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.51255,
+      "auroc_pooled": 0.507945,
+      "ci90": [
+       0.384227,
+       0.631729
+      ],
+      "ci95": [
+       0.356756,
+       0.656298
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": 0.103065,
+      "p": 0.3822093136934531,
+      "n_partners": 74
+     }
+    },
+    "b2sentence-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.490092,
+      "auroc_pooled": 0.472402,
+      "ci90": [
+       0.388962,
+       0.595423
+      ],
+      "ci95": [
+       0.369719,
+       0.612369
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.495376,
+      "auroc_pooled": 0.496715,
+      "ci90": [
+       0.376635,
+       0.614815
+      ],
+      "ci95": [
+       0.362275,
+       0.633811
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": -0.007624,
+      "p": 0.9485992885897698,
+      "n_partners": 74
+     }
+    },
+    "b1names-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.513871,
+      "auroc_pooled": 0.504893,
+      "ci90": [
+       0.402227,
+       0.616531
+      ],
+      "ci95": [
+       0.383902,
+       0.635302
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.532365,
+      "auroc_pooled": 0.530522,
+      "ci90": [
+       0.407877,
+       0.650939
+      ],
+      "ci95": [
+       0.381008,
+       0.675892
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": 0.142684,
+      "p": 0.22523124902055727,
+      "n_partners": 74
+     }
+    },
+    "b2mixed-bertbase": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.513871,
+      "auroc_pooled": 0.527004,
+      "ci90": [
+       0.40242,
+       0.610191
+      ],
+      "ci95": [
+       0.385737,
+       0.64365
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.521797,
+      "auroc_pooled": 0.516659,
+      "ci90": [
+       0.398989,
+       0.635373
+      ],
+      "ci95": [
+       0.375245,
+       0.651632
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": -0.004127,
+      "p": 0.9721589843120287,
+      "n_partners": 74
+     }
+    },
+    "b2sentence-bertbase": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.52576,
+      "auroc_pooled": 0.449464,
+      "ci90": [
+       0.414482,
+       0.632066
+      ],
+      "ci95": [
+       0.390227,
+       0.656043
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.501982,
+      "auroc_pooled": 0.500466,
+      "ci90": [
+       0.39646,
+       0.608487
+      ],
+      "ci95": [
+       0.377581,
+       0.630852
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": -0.079034,
+      "p": 0.503272758657006,
+      "n_partners": 74
+     }
+    }
+   },
+   "B": {
+    "bootstrap_seed": 1042,
+    "n": 316,
+    "n_drugs": 48,
+    "n_partners": 74,
+    "null_additive_scores_residual_auroc": {
+     "mean": 0.497801,
+     "sd": 0.051736,
+     "reps": 200
+    },
+    "partner_prior_raw": {
+     "auroc_within": 0.516393,
+     "auroc_pooled": 0.505834,
+     "ci90": [
+      0.489483,
+      0.573337
+     ],
+     "ci95": [
+      0.478245,
+      0.593499
+     ]
+    },
+    "partner_prior_residual": {
+     "auroc_within": 0.5,
+     "auroc_pooled": 0.5,
+     "ci90": [
+      0.5,
+      0.5
+     ],
+     "ci95": [
+      0.5,
+      0.5
+     ]
+    },
+    "b2mixed-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.532787,
+      "auroc_pooled": 0.550598,
+      "ci90": [
+       0.383102,
+       0.682159
+      ],
+      "ci95": [
+       0.357118,
+       0.714413
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.48224,
+      "auroc_pooled": 0.502075,
+      "ci90": [
+       0.296697,
+       0.643411
+      ],
+      "ci95": [
+       0.272674,
+       0.675879
+      ]
+     }
+    },
+    "b2sentence-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.47541,
+      "auroc_pooled": 0.439336,
+      "ci90": [
+       0.337331,
+       0.615427
+      ],
+      "ci95": [
+       0.308071,
+       0.644081
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.454918,
+      "auroc_pooled": 0.471671,
+      "ci90": [
+       0.316942,
+       0.585295
+      ],
+      "ci95": [
+       0.303106,
+       0.601217
+      ]
+     }
+    },
+    "b1names-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.530055,
+      "auroc_pooled": 0.530424,
+      "ci90": [
+       0.364304,
+       0.693366
+      ],
+      "ci95": [
+       0.341348,
+       0.724378
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.523224,
+      "auroc_pooled": 0.509676,
+      "ci90": [
+       0.344241,
+       0.684068
+      ],
+      "ci95": [
+       0.308024,
+       0.729107
+      ]
+     }
+    },
+    "b2mixed-bertbase": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.532787,
+      "auroc_pooled": 0.592013,
+      "ci90": [
+       0.390528,
+       0.670546
+      ],
+      "ci95": [
+       0.360229,
+       0.7005
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.501366,
+      "auroc_pooled": 0.490817,
+      "ci90": [
+       0.329569,
+       0.654205
+      ],
+      "ci95": [
+       0.30034,
+       0.676012
+      ]
+     }
+    },
+    "b2sentence-bertbase": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.489071,
+      "auroc_pooled": 0.454045,
+      "ci90": [
+       0.335948,
+       0.643067
+      ],
+      "ci95": [
+       0.304451,
+       0.665431
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.471311,
+      "auroc_pooled": 0.496775,
+      "ci90": [
+       0.322647,
+       0.610611
+      ],
+      "ci95": [
+       0.288844,
+       0.6314
+      ]
+     }
+    }
+   }
+  },
+  "older_clean": {
+   "A": {
+    "bootstrap_seed": 42,
+    "n": 1832,
+    "n_drugs": 128,
+    "n_partners": 212,
+    "null_additive_scores_residual_auroc": {
+     "mean": 0.500625,
+     "sd": 0.015077,
+     "reps": 200
+    },
+    "partner_prior_raw": {
+     "auroc_within": 0.553371,
+     "auroc_pooled": 0.544619,
+     "ci90": [
+      0.501985,
+      0.599245
+     ],
+     "ci95": [
+      0.491081,
+      0.61048
+     ]
+    },
+    "partner_prior_residual": {
+     "auroc_within": 0.5,
+     "auroc_pooled": 0.5,
+     "ci90": [
+      0.5,
+      0.5
+     ],
+     "ci95": [
+      0.5,
+      0.5
+     ]
+    },
+    "b2mixed-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.451763,
+      "auroc_pooled": 0.444201,
+      "ci90": [
+       0.394843,
+       0.509221
+      ],
+      "ci95": [
+       0.388895,
+       0.518086
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.404882,
+      "auroc_pooled": 0.413541,
+      "ci90": [
+       0.347255,
+       0.464975
+      ],
+      "ci95": [
+       0.337076,
+       0.477601
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": 0.108523,
+      "p": 0.11515614872771393,
+      "n_partners": 212
+     }
+    },
+    "b2sentence-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.453119,
+      "auroc_pooled": 0.437021,
+      "ci90": [
+       0.397762,
+       0.507836
+      ],
+      "ci95": [
+       0.390759,
+       0.518153
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.434909,
+      "auroc_pooled": 0.448746,
+      "ci90": [
+       0.375722,
+       0.496193
+      ],
+      "ci95": [
+       0.364297,
+       0.50571
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": 0.010553,
+      "p": 0.8785906399183557,
+      "n_partners": 212
+     }
+    },
+    "b1names-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.462805,
+      "auroc_pooled": 0.466109,
+      "ci90": [
+       0.407545,
+       0.512085
+      ],
+      "ci95": [
+       0.397921,
+       0.520716
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.431616,
+      "auroc_pooled": 0.44115,
+      "ci90": [
+       0.381082,
+       0.487032
+      ],
+      "ci95": [
+       0.371325,
+       0.496508
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": 0.101328,
+      "p": 0.141447794376611,
+      "n_partners": 212
+     }
+    },
+    "b2mixed-bertbase": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.507749,
+      "auroc_pooled": 0.463315,
+      "ci90": [
+       0.45632,
+       0.557711
+      ],
+      "ci95": [
+       0.446997,
+       0.567239
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.466486,
+      "auroc_pooled": 0.472316,
+      "ci90": [
+       0.411852,
+       0.525335
+      ],
+      "ci95": [
+       0.399859,
+       0.538927
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": 0.011277,
+      "p": 0.8703331325125914,
+      "n_partners": 212
+     }
+    },
+    "b2sentence-bertbase": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.476559,
+      "auroc_pooled": 0.480745,
+      "ci90": [
+       0.431926,
+       0.529759
+      ],
+      "ci95": [
+       0.423263,
+       0.538253
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.472879,
+      "auroc_pooled": 0.476352,
+      "ci90": [
+       0.421213,
+       0.530601
+      ],
+      "ci95": [
+       0.412515,
+       0.540651
+      ]
+     },
+     "partner_mean_score_vs_positive_count": {
+      "spearman": 0.015066,
+      "p": 0.8273653622033623,
+      "n_partners": 212
+     }
+    }
+   },
+   "B": {
+    "bootstrap_seed": 42,
+    "n": 1191,
+    "n_drugs": 128,
+    "n_partners": 210,
+    "null_additive_scores_residual_auroc": {
+     "mean": 0.499531,
+     "sd": 0.02369,
+     "reps": 200
+    },
+    "partner_prior_raw": {
+     "auroc_within": 0.548945,
+     "auroc_pooled": 0.551656,
+     "ci90": [
+      0.471289,
+      0.625373
+     ],
+     "ci95": [
+      0.447987,
+      0.640765
+     ]
+    },
+    "partner_prior_residual": {
+     "auroc_within": 0.5,
+     "auroc_pooled": 0.5,
+     "ci90": [
+      0.5,
+      0.5
+     ],
+     "ci95": [
+      0.5,
+      0.5
+     ]
+    },
+    "b2mixed-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.396835,
+      "auroc_pooled": 0.390764,
+      "ci90": [
+       0.308146,
+       0.492713
+      ],
+      "ci95": [
+       0.288816,
+       0.514355
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.346717,
+      "auroc_pooled": 0.404681,
+      "ci90": [
+       0.268572,
+       0.436006
+      ],
+      "ci95": [
+       0.256651,
+       0.458115
+      ]
+     }
+    },
+    "b2sentence-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.393318,
+      "auroc_pooled": 0.406437,
+      "ci90": [
+       0.30978,
+       0.485273
+      ],
+      "ci95": [
+       0.296151,
+       0.501412
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.397128,
+      "auroc_pooled": 0.449363,
+      "ci90": [
+       0.320419,
+       0.479749
+      ],
+      "ci95": [
+       0.305935,
+       0.494111
+      ]
+     }
+    },
+    "b1names-biomedbert": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.419109,
+      "auroc_pooled": 0.421005,
+      "ci90": [
+       0.335854,
+       0.510492
+      ],
+      "ci95": [
+       0.319938,
+       0.531083
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.390094,
+      "auroc_pooled": 0.436243,
+      "ci90": [
+       0.313583,
+       0.475291
+      ],
+      "ci95": [
+       0.299093,
+       0.493816
+      ]
+     }
+    },
+    "b2mixed-bertbase": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.512309,
+      "auroc_pooled": 0.457386,
+      "ci90": [
+       0.427396,
+       0.597002
+      ],
+      "ci95": [
+       0.40418,
+       0.614732
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.504396,
+      "auroc_pooled": 0.499083,
+      "ci90": [
+       0.421123,
+       0.593008
+      ],
+      "ci95": [
+       0.403933,
+       0.609183
+      ]
+     }
+    },
+    "b2sentence-bertbase": {
+     "n_seeds": 5,
+     "raw": {
+      "auroc_within": 0.453107,
+      "auroc_pooled": 0.494738,
+      "ci90": [
+       0.376519,
+       0.53484
+      ],
+      "ci95": [
+       0.363301,
+       0.552575
+      ]
+     },
+     "residual": {
+      "auroc_within": 0.481536,
+      "auroc_pooled": 0.478537,
+      "ci90": [
+       0.393658,
+       0.569733
+      ],
+      "ci95": [
+       0.380698,
+       0.584292
+      ]
+     }
+    }
+   }
+  }
+ }
+}

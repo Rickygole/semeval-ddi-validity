@@ -1,0 +1,923 @@
+{
+ "plan_sha256": "7fe118a2793a11eaf7a4f1bd405e9f7335f64e3d4d97419dc24ff35a0e18d817",
+ "status": "post hoc and descriptive; plan in docs/POSTHOC_REV3_PLAN.md was written before computing; changes no preregistered decision",
+ "n_boot": 1000,
+ "cohorts": {
+  "older_clean": {
+   "n_pairs": 1832,
+   "n_positive": 599,
+   "n_anchor_drugs": 128,
+   "n_partner_drugs": 212,
+   "systems": {
+    "DrugBank lookup": {
+     "n_pairs": 1832,
+     "n_with_other_anchor_pairs": 1832,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": 0.184971,
+      "ci95": [
+       0.074046,
+       0.275474
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.128548,
+      "ci95": [
+       0.023351,
+       0.240323
+      ],
+      "n_partners": 212,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.441496,
+      "lo95": 0.378312,
+      "hi95": 0.499669,
+      "lo90": 0.390207,
+      "hi90": 0.487366,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.641224,
+      "lo95": 0.595375,
+      "hi95": 0.688846,
+      "lo90": 0.600371,
+      "hi90": 0.68347,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.092019,
+      "lo95": 0.053674,
+      "hi95": 0.13614,
+      "lo90": 0.057955,
+      "hi90": 0.127988,
+      "n_draws": 1000
+     }
+    },
+    "stored b2mixed": {
+     "n_pairs": 1832,
+     "n_with_other_anchor_pairs": 1832,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.082479,
+      "ci95": [
+       -0.19652,
+       0.031647
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.031309,
+      "ci95": [
+       -0.115381,
+       0.184664
+      ],
+      "n_partners": 212,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.522666,
+      "lo95": 0.463815,
+      "hi95": 0.582594,
+      "lo90": 0.473027,
+      "hi90": 0.5715,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.451763,
+      "lo95": 0.388895,
+      "hi95": 0.518086,
+      "lo90": 0.394843,
+      "hi90": 0.509221,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.092019,
+      "lo95": 0.053674,
+      "hi95": 0.13614,
+      "lo90": 0.057955,
+      "hi90": 0.127988,
+      "n_draws": 1000
+     }
+    },
+    "stored b2sentence": {
+     "n_pairs": 1832,
+     "n_with_other_anchor_pairs": 1832,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.030153,
+      "ci95": [
+       -0.156664,
+       0.092182
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.012335,
+      "ci95": [
+       -0.135762,
+       0.148284
+      ],
+      "n_partners": 212,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.522084,
+      "lo95": 0.464396,
+      "hi95": 0.577325,
+      "lo90": 0.473823,
+      "hi90": 0.569376,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.453119,
+      "lo95": 0.390759,
+      "hi95": 0.518153,
+      "lo90": 0.397762,
+      "hi90": 0.507836,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.092019,
+      "lo95": 0.053674,
+      "hi95": 0.13614,
+      "lo90": 0.057955,
+      "hi90": 0.127988,
+      "n_draws": 1000
+     }
+    },
+    "Qwen names only": {
+     "n_pairs": 1832,
+     "n_with_other_anchor_pairs": 1832,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.135692,
+      "ci95": [
+       -0.228672,
+       -0.036488
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": -0.100055,
+      "ci95": [
+       -0.238737,
+       0.040999
+      ],
+      "n_partners": 212,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.474429,
+      "lo95": 0.40575,
+      "hi95": 0.545098,
+      "lo90": 0.416418,
+      "hi90": 0.531308,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.601898,
+      "lo95": 0.532709,
+      "hi95": 0.666601,
+      "lo90": 0.542585,
+      "hi90": 0.658469,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.092019,
+      "lo95": 0.053674,
+      "hi95": 0.13614,
+      "lo90": 0.057955,
+      "hi90": 0.127988,
+      "n_draws": 1000
+     }
+    },
+    "R2a b2mixed": {
+     "n_pairs": 1832,
+     "n_with_other_anchor_pairs": 1832,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.058454,
+      "ci95": [
+       -0.177111,
+       0.058527
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.047788,
+      "ci95": [
+       -0.09192,
+       0.189286
+      ],
+      "n_partners": 212,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.526153,
+      "lo95": 0.4664,
+      "hi95": 0.587923,
+      "lo90": 0.476332,
+      "hi90": 0.574946,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.454088,
+      "lo95": 0.392857,
+      "hi95": 0.519804,
+      "lo90": 0.399777,
+      "hi90": 0.506491,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.092019,
+      "lo95": 0.053674,
+      "hi95": 0.13614,
+      "lo90": 0.057955,
+      "hi90": 0.127988,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "R2a b2sentence": {
+     "n_pairs": 1832,
+     "n_with_other_anchor_pairs": 1832,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.020821,
+      "ci95": [
+       -0.142242,
+       0.096782
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.02029,
+      "ci95": [
+       -0.13111,
+       0.156713
+      ],
+      "n_partners": 212,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.527509,
+      "lo95": 0.468168,
+      "hi95": 0.584041,
+      "lo90": 0.477086,
+      "hi90": 0.575192,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.471523,
+      "lo95": 0.406935,
+      "hi95": 0.533004,
+      "lo90": 0.418504,
+      "hi90": 0.523675,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.092019,
+      "lo95": 0.053674,
+      "hi95": 0.13614,
+      "lo90": 0.057955,
+      "hi90": 0.127988,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "R2a marker": {
+     "n_pairs": 1832,
+     "n_with_other_anchor_pairs": 1832,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.091635,
+      "ci95": [
+       -0.222793,
+       0.042886
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.065703,
+      "ci95": [
+       -0.07265,
+       0.208916
+      ],
+      "n_partners": 212,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.531577,
+      "lo95": 0.473271,
+      "hi95": 0.589366,
+      "lo90": 0.482257,
+      "hi90": 0.581506,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.406819,
+      "lo95": 0.343903,
+      "hi95": 0.475313,
+      "lo90": 0.352145,
+      "hi90": 0.464909,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.092019,
+      "lo95": 0.053674,
+      "hi95": 0.13614,
+      "lo90": 0.057955,
+      "hi90": 0.127988,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    }
+   }
+  },
+  "novel": {
+   "n_pairs": 438,
+   "n_positive": 148,
+   "n_anchor_drugs": 48,
+   "n_partner_drugs": 74,
+   "systems": {
+    "DrugBank lookup": {
+     "n_pairs": 438,
+     "n_with_other_anchor_pairs": 438,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": 0.169698,
+      "ci95": [
+       0.035671,
+       0.304244
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": -0.002849,
+      "ci95": [
+       -0.058004,
+       0.056877
+      ],
+      "n_partners": 74,
+      "n_draws": 639
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.365258,
+      "lo95": 0.241233,
+      "hi95": 0.492304,
+      "lo90": 0.258699,
+      "hi90": 0.466534,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.728534,
+      "lo95": 0.642152,
+      "hi95": 0.808313,
+      "lo90": 0.655182,
+      "hi90": 0.797937,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.022457,
+      "lo95": 0.0,
+      "hi95": 0.076932,
+      "lo90": 0.0,
+      "hi90": 0.066415,
+      "n_draws": 1000
+     }
+    },
+    "stored b2mixed": {
+     "n_pairs": 438,
+     "n_with_other_anchor_pairs": 438,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.062181,
+      "ci95": [
+       -0.159758,
+       0.055001
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.019178,
+      "ci95": [
+       -0.031349,
+       0.085863
+      ],
+      "n_partners": 74,
+      "n_draws": 639
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.511229,
+      "lo95": 0.386909,
+      "hi95": 0.638483,
+      "lo90": 0.4024,
+      "hi90": 0.619915,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.523118,
+      "lo95": 0.397209,
+      "hi95": 0.650333,
+      "lo90": 0.41133,
+      "hi90": 0.625726,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.022457,
+      "lo95": 0.0,
+      "hi95": 0.076932,
+      "lo90": 0.0,
+      "hi90": 0.066415,
+      "n_draws": 1000
+     }
+    },
+    "stored b2sentence": {
+     "n_pairs": 438,
+     "n_with_other_anchor_pairs": 438,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.137059,
+      "ci95": [
+       -0.236454,
+       -0.034156
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": -0.123288,
+      "ci95": [
+       -0.255632,
+       -0.095918
+      ],
+      "n_partners": 74,
+      "n_draws": 639
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.517834,
+      "lo95": 0.380418,
+      "hi95": 0.67354,
+      "lo90": 0.402098,
+      "hi90": 0.647406,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.490092,
+      "lo95": 0.369719,
+      "hi95": 0.612369,
+      "lo90": 0.388962,
+      "hi90": 0.595423,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.022457,
+      "lo95": 0.0,
+      "hi95": 0.076932,
+      "lo90": 0.0,
+      "hi90": 0.066415,
+      "n_draws": 1000
+     }
+    },
+    "Qwen names only": {
+     "n_pairs": 438,
+     "n_with_other_anchor_pairs": 438,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": 0.050464,
+      "ci95": [
+       -0.051331,
+       0.162206
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.189041,
+      "ci95": [
+       0.172701,
+       0.35828
+      ],
+      "n_partners": 74,
+      "n_draws": 639
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.492734,
+      "lo95": 0.354852,
+      "hi95": 0.630515,
+      "lo90": 0.379105,
+      "hi90": 0.603937,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.5786,
+      "lo95": 0.439976,
+      "hi95": 0.713106,
+      "lo90": 0.469717,
+      "hi90": 0.691289,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.022457,
+      "lo95": 0.0,
+      "hi95": 0.076932,
+      "lo90": 0.0,
+      "hi90": 0.066415,
+      "n_draws": 1000
+     }
+    },
+    "R2a b2mixed": {
+     "n_pairs": 438,
+     "n_with_other_anchor_pairs": 438,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.007542,
+      "ci95": [
+       -0.108215,
+       0.109017
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.084932,
+      "ci95": [
+       0.046593,
+       0.187847
+      ],
+      "n_partners": 74,
+      "n_draws": 639
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.482166,
+      "lo95": 0.342663,
+      "hi95": 0.620518,
+      "lo90": 0.371005,
+      "hi90": 0.592444,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.483487,
+      "lo95": 0.353163,
+      "hi95": 0.615385,
+      "lo90": 0.372708,
+      "hi90": 0.592483,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.022457,
+      "lo95": 0.0,
+      "hi95": 0.076932,
+      "lo90": 0.0,
+      "hi90": 0.066415,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "R2a b2sentence": {
+     "n_pairs": 438,
+     "n_with_other_anchor_pairs": 438,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.06311,
+      "ci95": [
+       -0.162482,
+       0.061024
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.024658,
+      "ci95": [
+       -0.024667,
+       0.101108
+      ],
+      "n_partners": 74,
+      "n_draws": 639
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.508587,
+      "lo95": 0.358365,
+      "hi95": 0.656454,
+      "lo90": 0.38441,
+      "hi90": 0.634039,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.511229,
+      "lo95": 0.379639,
+      "hi95": 0.641481,
+      "lo90": 0.408445,
+      "hi90": 0.620794,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.022457,
+      "lo95": 0.0,
+      "hi95": 0.076932,
+      "lo90": 0.0,
+      "hi90": 0.066415,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "R2a marker": {
+     "n_pairs": 438,
+     "n_with_other_anchor_pairs": 438,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.065225,
+      "ci95": [
+       -0.200478,
+       0.056082
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.041096,
+      "ci95": [
+       -0.007805,
+       0.124877
+      ],
+      "n_partners": 74,
+      "n_draws": 639
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.545575,
+      "lo95": 0.423405,
+      "hi95": 0.677765,
+      "lo90": 0.445639,
+      "hi90": 0.660187,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.494055,
+      "lo95": 0.356978,
+      "hi95": 0.628647,
+      "lo90": 0.384157,
+      "hi90": 0.602746,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.022457,
+      "lo95": 0.0,
+      "hi95": 0.076932,
+      "lo90": 0.0,
+      "hi90": 0.066415,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    }
+   }
+  },
+  "seen": {
+   "n_pairs": 4643,
+   "n_positive": 1542,
+   "n_anchor_drugs": 299,
+   "n_partner_drugs": 313,
+   "systems": {
+    "DrugBank lookup": {
+     "n_pairs": 4643,
+     "n_with_other_anchor_pairs": 4643,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": 0.04589,
+      "ci95": [
+       -0.018072,
+       0.109425
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.202785,
+      "ci95": [
+       0.088114,
+       0.293618
+      ],
+      "n_partners": 313,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.479269,
+      "lo95": 0.443067,
+      "hi95": 0.514961,
+      "lo90": 0.448563,
+      "hi90": 0.508279,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.610913,
+      "lo95": 0.584733,
+      "hi95": 0.639116,
+      "lo90": 0.58865,
+      "hi90": 0.634584,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.061286,
+      "lo95": 0.033667,
+      "hi95": 0.094754,
+      "lo90": 0.037604,
+      "hi90": 0.089082,
+      "n_draws": 1000
+     }
+    },
+    "R2a b2mixed": {
+     "n_pairs": 4643,
+     "n_with_other_anchor_pairs": 4643,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.109165,
+      "ci95": [
+       -0.17761,
+       -0.026548
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": -0.008361,
+      "ci95": [
+       -0.121728,
+       0.097939
+      ],
+      "n_partners": 313,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.513474,
+      "lo95": 0.475413,
+      "hi95": 0.549796,
+      "lo90": 0.482854,
+      "hi90": 0.544458,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.45548,
+      "lo95": 0.411031,
+      "hi95": 0.494094,
+      "lo90": 0.419287,
+      "hi90": 0.486885,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.061286,
+      "lo95": 0.033667,
+      "hi95": 0.094754,
+      "lo90": 0.037604,
+      "hi90": 0.089082,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "R2a b2sentence": {
+     "n_pairs": 4643,
+     "n_with_other_anchor_pairs": 4643,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.122119,
+      "ci95": [
+       -0.191988,
+       -0.043797
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": -0.079301,
+      "ci95": [
+       -0.176469,
+       0.025776
+      ],
+      "n_partners": 313,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.522546,
+      "lo95": 0.486081,
+      "hi95": 0.555114,
+      "lo90": 0.491643,
+      "hi90": 0.549113,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.434816,
+      "lo95": 0.395414,
+      "hi95": 0.473079,
+      "lo90": 0.402278,
+      "hi90": 0.468031,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.061286,
+      "lo95": 0.033667,
+      "hi95": 0.094754,
+      "lo90": 0.037604,
+      "hi90": 0.089082,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "R2a marker": {
+     "n_pairs": 4643,
+     "n_with_other_anchor_pairs": 4643,
+     "n_dropped_no_other_pair": 0,
+     "pair_level_spearman_marginal_vs_loo_rate": {
+      "value": -0.049627,
+      "ci95": [
+       -0.13262,
+       0.032221
+      ],
+      "n_draws": 1000
+     },
+     "partner_level_spearman_mean_score_vs_rate": {
+      "value": 0.006152,
+      "ci95": [
+       -0.098317,
+       0.125208
+      ],
+      "n_partners": 313,
+      "n_draws": 1000
+     },
+     "marginal_score_within_drug_auroc": {
+      "value": 0.514885,
+      "lo95": 0.47946,
+      "hi95": 0.549128,
+      "lo90": 0.48633,
+      "hi90": 0.543905,
+      "n_draws": 1000
+     },
+     "system_own_within_drug_auroc": {
+      "value": 0.398092,
+      "lo95": 0.356299,
+      "hi95": 0.437445,
+      "lo90": 0.362521,
+      "hi90": 0.430261,
+      "n_draws": 1000
+     },
+     "loo_rate_within_drug_auroc": {
+      "value": 0.061286,
+      "lo95": 0.033667,
+      "hi95": 0.094754,
+      "lo90": 0.037604,
+      "hi90": 0.089082,
+      "n_draws": 1000
+     },
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ]
+    }
+   }
+  }
+ },
+ "drugbank_table_source": "cache with matching source key"
+}

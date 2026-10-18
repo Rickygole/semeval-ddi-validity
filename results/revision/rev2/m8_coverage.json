@@ -1,0 +1,435 @@
+{
+ "status": "post hoc and descriptive; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "criteria": {
+  "reconcile": "convert the sensitivity half-width / SD to the post7 ratio by dividing by 1.645 (the stored halfwidth90_over_nominal field), restrict to matching cells (two-way bootstrap, tier A, each cohort), and list every remaining difference in definitions, scenarios, replicate counts, seeds and SD estimator",
+  "collect": "for the writer, copy without recomputation: Bayesian ROPE (post7/calibration.json bayes, H1 tier A primary and secondary), one-way drug and partner-only bootstrap rows (post7/calibration.json intervals), coverage of partner-only (post7/coverage.json), spike-in kappa rule threshold and observed decision (spikein/spikein.json), with the criteria file of each"
+ },
+ "reconcile": {
+  "cells": [
+   {
+    "cohort": "novel",
+    "tier": "A",
+    "scheme": "two_way",
+    "sensitivity_halfwidth_over_sd": [
+     2.892781,
+     3.655132
+    ],
+    "sensitivity_ratio": [
+     1.758636,
+     2.2221
+    ],
+    "post7_halfwidth_over_sd": [
+     2.782681,
+     3.664388
+    ],
+    "post7_ratio": [
+     1.691745,
+     2.227802
+    ],
+    "sensitivity_coverage90": [
+     0.996667,
+     1.0
+    ],
+    "post7_coverage90": [
+     0.994,
+     1.0
+    ],
+    "n_sensitivity_scenarios": 6,
+    "n_post7_scenarios": 12
+   },
+   {
+    "cohort": "novel",
+    "tier": "B",
+    "scheme": "two_way",
+    "sensitivity_halfwidth_over_sd": null,
+    "sensitivity_ratio": null,
+    "post7_halfwidth_over_sd": [
+     2.904631,
+     3.230277
+    ],
+    "post7_ratio": [
+     1.765905,
+     1.963887
+    ],
+    "sensitivity_coverage90": null,
+    "post7_coverage90": [
+     0.995,
+     0.999
+    ],
+    "n_sensitivity_scenarios": 0,
+    "n_post7_scenarios": 12
+   },
+   {
+    "cohort": "older_clean",
+    "tier": "A",
+    "scheme": "two_way",
+    "sensitivity_halfwidth_over_sd": [
+     2.52113,
+     3.751222
+    ],
+    "sensitivity_ratio": [
+     1.532695,
+     2.280517
+    ],
+    "post7_halfwidth_over_sd": [
+     2.543328,
+     3.595162
+    ],
+    "post7_ratio": [
+     1.546258,
+     2.185711
+    ],
+    "sensitivity_coverage90": [
+     0.99,
+     1.0
+    ],
+    "post7_coverage90": [
+     0.989,
+     1.0
+    ],
+    "n_sensitivity_scenarios": 6,
+    "n_post7_scenarios": 12
+   },
+   {
+    "cohort": "older_clean",
+    "tier": "B",
+    "scheme": "two_way",
+    "sensitivity_halfwidth_over_sd": null,
+    "sensitivity_ratio": null,
+    "post7_halfwidth_over_sd": [
+     2.654807,
+     3.195905
+    ],
+    "post7_ratio": [
+     1.613987,
+     1.942979
+    ],
+    "sensitivity_coverage90": null,
+    "post7_coverage90": [
+     0.995,
+     1.0
+    ],
+    "n_sensitivity_scenarios": 0,
+    "n_post7_scenarios": 12
+   }
+  ],
+  "overall": {
+   "sensitivity_two_way_halfwidth_over_sd": [
+    2.52113,
+    3.751222
+   ],
+   "sensitivity_two_way_ratio": [
+    1.532695,
+    2.280517
+   ],
+   "post7_two_way_tierA_ratio": [
+    1.546258,
+    2.227802
+   ],
+   "post7_two_way_tierA_halfwidth_over_sd": [
+    2.543328,
+    3.664388
+   ],
+   "post7_two_way_all_ratio": [
+    1.546258,
+    2.227802
+   ],
+   "post7_two_way_all_halfwidth_over_sd": [
+    2.543328,
+    3.664388
+   ],
+   "post7_older_clean_A_two_way_ratio": [
+    1.546258,
+    2.185711
+   ],
+   "sensitivity_one_way_drug_ratio": [
+    0.977813,
+    1.128737
+   ],
+   "post7_one_way_drug_ratio": [
+    0.933466,
+    1.206979
+   ],
+   "sensitivity_two_way_coverage90": [
+    0.99,
+    1.0
+   ],
+   "post7_two_way_coverage90": [
+    0.989,
+    1.0
+   ]
+  },
+  "differences": [
+   {
+    "aspect": "normalisation",
+    "sensitivity": "90% half-width / replicate SD; a calibrated interval gives 1.645",
+    "post7": "90% half-width / (1.645 x replicate SD); a calibrated interval gives 1",
+    "effect": "the main difference: 2.52 / 1.645 = 1.53 and 3.75 / 1.645 = 2.28"
+   },
+   {
+    "aspect": "replicates and seed",
+    "sensitivity": "300 replicates, 1000 bootstrap draws, seed 1",
+    "post7": "1000 replicates, 1000 bootstrap draws, seed 7",
+    "effect": "Monte Carlo noise only"
+   },
+   {
+    "aspect": "designs",
+    "sensitivity": "Novel and Older-clean, tier A only",
+    "post7": "Novel and Older-clean, tiers A and B",
+    "effect": "the post7 headline 1.546 to 2.186 is Older-clean tier A only; over all post7 designs the two-way ratio is wider"
+   },
+   {
+    "aspect": "scenarios",
+    "sensitivity": "model A: fixed signal 0 or 0.37 on the score scale, partner SD 0 or 1, drug SD 1; model B: per-drug random slope (mean 0 or 0.37, SD 0.6), partner SD 0 or 1",
+    "post7": "target true AUROC 0.45, 0.50, 0.60 crossed with partner SD 0 or 1 and slope SD 0 or 0.5, drug SD 1",
+    "effect": "different grids; both have label-independent partner effects; only post7 has a below-chance truth"
+   },
+   {
+    "aspect": "true value",
+    "sensitivity": "mean estimate over replicates",
+    "post7": "analytic Phi(beta / sqrt(2 (sigma_p^2 + 1) + tau^2))",
+    "effect": "affects coverage, not the half-width ratio"
+   },
+   {
+    "aspect": "SD estimator",
+    "sensitivity": "numpy std, ddof 0",
+    "post7": "ddof 1",
+    "effect": "factor sqrt(n/(n-1)), at most 0.2% at 300 replicates"
+   },
+   {
+    "aspect": "criteria file",
+    "sensitivity": "none (sensitivity analysis)",
+    "post7": "results/revision/post7/criteria.json analysis_1b_coverage",
+    "effect": "only the post7 run is criteria-backed"
+   }
+  ],
+  "statement": "Both simulations find the two-way cluster bootstrap conservative on these designs. On a common scale (mean 90% half-width divided by the calibrated 1.645 x SD) the two-way interval is 1.533 to 2.281 times nominal in the 300-replicate sensitivity run and 1.546 to 2.228 times nominal over every design of the 1000-replicate post7 run (1.546 to 2.186 on Older-clean tier A); 90% coverage is 0.989 to 1.000. The 2.52 to 3.75 figure is the same quantity before division by 1.645. The one-way drug bootstrap is near nominal in both (0.978 to 1.129 and 0.933 to 1.207). In both simulations partner effects are independent of the labels, which the real partner-matched design is not."
+ },
+ "collect": {
+  "bayesian_rope": {
+   "criteria": "results/revision/post7/criteria.json analysis_1c_bayes",
+   "source": "results/revision/post7/calibration.json bayes",
+   "rows": [
+    {
+     "id": "H1",
+     "tier": "A",
+     "model": "Bayesian bootstrap over drugs (primary)",
+     "posterior_mean": 0.451733,
+     "cri90": [
+      0.418217,
+      0.484649
+     ],
+     "cri95": [
+      0.410988,
+      0.491138
+     ],
+     "p_in_rope": 0.99265,
+     "p_below": 0.9918,
+     "verdict": "practically equivalent",
+     "n_draws": 20000
+    },
+    {
+     "id": "H1",
+     "tier": "A",
+     "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+     "posterior_mean": 0.451709,
+     "cri90": [
+      0.396648,
+      0.50566
+     ],
+     "cri95": [
+      0.38588,
+      0.514776
+     ],
+     "p_in_rope": 0.93775,
+     "p_below": 0.92725,
+     "verdict": "undecided",
+     "n_draws": 4000
+    }
+   ]
+  },
+  "one_way_and_partner_only_bootstrap": {
+   "criteria": "results/revision/post7/criteria.json analysis_1a_one_way",
+   "source": "results/revision/post7/calibration.json intervals",
+   "rows": [
+    {
+     "id": "H1",
+     "tier": "A",
+     "scheme": "two_way",
+     "n": 1832,
+     "n_drugs": 128,
+     "value": 0.451763,
+     "ci90": [
+      0.394843,
+      0.509221
+     ],
+     "ci95": [
+      0.388895,
+      0.518086
+     ],
+     "p_tost": 0.060939,
+     "n_draws": 1000,
+     "ci95_below_0.5": false,
+     "ci90_below_0.5": false,
+     "note": "",
+     "p_holm_family_H1_H4_H6": 0.182817,
+     "equivalent_unadjusted": false
+    },
+    {
+     "id": "H1",
+     "tier": "A",
+     "scheme": "one_way_drug",
+     "n": 1832,
+     "n_drugs": 128,
+     "value": 0.451763,
+     "ci90": [
+      0.417041,
+      0.487264
+     ],
+     "ci95": [
+      0.411594,
+      0.494876
+     ],
+     "p_tost": 0.004995,
+     "n_draws": 1000,
+     "ci95_below_0.5": true,
+     "ci90_below_0.5": true,
+     "note": "",
+     "p_holm_family_H1_H4_H6": 0.014985,
+     "equivalent_unadjusted": true
+    },
+    {
+     "id": "H1",
+     "tier": "A",
+     "scheme": "partner_only",
+     "n": 1832,
+     "n_drugs": 128,
+     "value": 0.451763,
+     "ci90": [
+      0.419243,
+      0.482178
+     ],
+     "ci95": [
+      0.414688,
+      0.488041
+     ],
+     "p_tost": 0.003996,
+     "n_draws": 1000,
+     "ci95_below_0.5": true,
+     "ci90_below_0.5": true,
+     "note": "",
+     "p_holm_family_H1_H4_H6": 0.011988,
+     "equivalent_unadjusted": true
+    }
+   ]
+  },
+  "partner_only_coverage": {
+   "criteria": "results/revision/post7/criteria.json analysis_1b_coverage",
+   "source": "results/revision/post7/coverage.json summary",
+   "rows": [
+    {
+     "design": "older_clean tier A",
+     "scheme": "partner_only",
+     "coverage90_range": [
+      0.828,
+      0.958
+     ],
+     "ratio_range": [
+      0.868294,
+      1.200508
+     ],
+     "labels": "anti-conservative, calibrated, conservative",
+     "adequate": false
+    },
+    {
+     "design": "older_clean tier B",
+     "scheme": "partner_only",
+     "coverage90_range": [
+      0.873,
+      0.95
+     ],
+     "ratio_range": [
+      0.947244,
+      1.196621
+     ],
+     "labels": "calibrated, conservative",
+     "adequate": true
+    },
+    {
+     "design": "novel tier A",
+     "scheme": "partner_only",
+     "coverage90_range": [
+      0.897,
+      0.963
+     ],
+     "ratio_range": [
+      1.019305,
+      1.284198
+     ],
+     "labels": "calibrated, conservative",
+     "adequate": true
+    },
+    {
+     "design": "novel tier B",
+     "scheme": "partner_only",
+     "coverage90_range": [
+      0.918,
+      0.958
+     ],
+     "ratio_range": [
+      1.095662,
+      1.242602
+     ],
+     "labels": "calibrated, conservative",
+     "adequate": true
+    }
+   ]
+  },
+  "spikein_kappa_rule": {
+   "criteria": "results/revision/spikein/criteria.json",
+   "source": "results/revision/spikein/spikein.json",
+   "rule": "equivalent if the paired kappa 95% upper bound is at most 0.25, falsified if its 95% lower bound is above 0.25",
+   "b2mixed_base_kappa_falsified_80pct": {
+    "b_falsified80_grid": 0.8,
+    "b_falsified80_interp": 0.753846,
+    "c_equivalent20_grid": null,
+    "c_equivalent20_interp": null,
+    "equivalent50_interp": null
+   },
+   "noise_base_kappa_falsified_80pct": {
+    "b_falsified80_grid": 0.8,
+    "b_falsified80_interp": 0.778788,
+    "c_equivalent20_grid": null,
+    "c_equivalent20_interp": null,
+    "equivalent50_interp": null
+   },
+   "observed_b2mixed_older_clean_A_1000_draws": {
+    "auroc": 0.451763,
+    "kappa": -0.341564,
+    "drugbank_within": 0.641224,
+    "ci90": [
+     0.394843,
+     0.509221
+    ],
+    "ci95": [
+     0.388895,
+     0.518086
+    ],
+    "p_tost": 0.060939,
+    "decision": "inconclusive",
+    "decision_holm": "inconclusive",
+    "decision_one_way": "equivalent",
+    "ci95_one_way": [
+     0.411594,
+     0.494876
+    ],
+    "kappa_ci95": [
+     -0.793756,
+     0.133447
+    ],
+    "kappa_decision": "equivalent",
+    "n_draws": 1000
+   }
+  }
+ }
+}

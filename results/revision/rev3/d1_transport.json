@@ -1,0 +1,4692 @@
+{
+ "plan_sha256": "c1c1b72bc7344c15b23a90267bbc0f19bc3316ad66f2695baf9d1919c7b79ef1",
+ "status": "post hoc and descriptive; plan in docs/POSTHOC_REV3_PLAN.md was written before computing; changes no preregistered decision",
+ "length_edges": [
+  882,
+  1485
+ ],
+ "edges_used": [
+  882,
+  1485
+ ],
+ "calibrations": {
+  "primary_substance_pooled": {
+   "unsure_not_yes": {
+    "stratum": "primary_substance_test1_test2",
+    "sensitivity": 0.348185,
+    "specificity": 0.995875,
+    "youden": 0.344059,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 1.228106,
+      "corrected_error_rate_unclipped": -0.228106,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.205765
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344059,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.078482,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.01199,
+      "corrected_error_rate_unclipped": -0.01199,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344059,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "transport": {
+       "calibration_false_yes_rate": 0.004125,
+       "observed_minus_reference": -0.004125,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.324988,
+      "corrected_error_rate_unclipped": -0.324988,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.173965
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344059,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.111815,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.046139,
+      "corrected_error_rate_unclipped": 0.046139,
+      "corrected_error_rate": 0.046139,
+      "corrected_error_ci95": [
+       0.0,
+       0.192859
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344059,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "transport": {
+       "calibration_false_yes_rate": 0.004125,
+       "observed_minus_reference": 0.015875,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": -0.266859,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "youden": 0.344059,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.091815,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.011261,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "youden": 0.344059,
+      "corrected_error_rate": 0.011261,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.004125,
+       "observed_minus_reference": 0.003875,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_excluded": {
+    "stratum": "primary_substance_test1_test2",
+    "sensitivity": 0.348185,
+    "specificity": 0.995823,
+    "youden": 0.344008,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 1.22814,
+      "corrected_error_rate_unclipped": -0.22814,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.205766
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344008,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995823,
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.078482,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.012142,
+      "corrected_error_rate_unclipped": -0.012142,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344008,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995823,
+      "transport": {
+       "calibration_false_yes_rate": 0.004177,
+       "observed_minus_reference": -0.004177,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.325037,
+      "corrected_error_rate_unclipped": -0.325037,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.173997
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344008,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995823,
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.111815,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.045996,
+      "corrected_error_rate_unclipped": 0.045996,
+      "corrected_error_rate": 0.045996,
+      "corrected_error_ci95": [
+       0.0,
+       0.192727
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344008,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995823,
+      "transport": {
+       "calibration_false_yes_rate": 0.004177,
+       "observed_minus_reference": 0.015823,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": -0.266899,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995823,
+      "youden": 0.344008,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.091815,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.011113,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995823,
+      "youden": 0.344008,
+      "corrected_error_rate": 0.011113,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.004177,
+       "observed_minus_reference": 0.003823,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_as_yes": {
+    "stratum": "primary_substance_test1_test2",
+    "sensitivity": 0.348185,
+    "specificity": 0.995875,
+    "youden": 0.344059,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 1.228106,
+      "corrected_error_rate_unclipped": -0.228106,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.205765
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344059,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.078482,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.01199,
+      "corrected_error_rate_unclipped": -0.01199,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344059,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "transport": {
+       "calibration_false_yes_rate": 0.004125,
+       "observed_minus_reference": -0.004125,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.324988,
+      "corrected_error_rate_unclipped": -0.324988,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.173965
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344059,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.111815,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.046139,
+      "corrected_error_rate_unclipped": 0.046139,
+      "corrected_error_rate": 0.046139,
+      "corrected_error_ci95": [
+       0.0,
+       0.192859
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.344059,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "transport": {
+       "calibration_false_yes_rate": 0.004125,
+       "observed_minus_reference": 0.015875,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": -0.266859,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "youden": 0.344059,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.348185,
+       "observed_minus_reference": 0.091815,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.011261,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.348185,
+      "calibration_specificity": 0.995875,
+      "youden": 0.344059,
+      "corrected_error_rate": 0.011261,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.004125,
+       "observed_minus_reference": 0.003875,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "all_partners_pooled": {
+   "unsure_not_yes": {
+    "stratum": "all_partners_test1_test2",
+    "sensitivity": 0.521403,
+    "specificity": 0.944959,
+    "youden": 0.466362,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.796861,
+      "corrected_error_rate_unclipped": 0.203139,
+      "corrected_error_rate": 0.203139,
+      "corrected_error_ci95": [
+       0.0,
+       0.45831
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466362,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.094736,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.118022,
+      "corrected_error_rate_unclipped": -0.118022,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466362,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "transport": {
+       "calibration_false_yes_rate": 0.055041,
+       "observed_minus_reference": -0.055041,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.868337,
+      "corrected_error_rate_unclipped": 0.131663,
+      "corrected_error_rate": 0.131663,
+      "corrected_error_ci95": [
+       0.0,
+       0.44532
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466362,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.061403,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.075137,
+      "corrected_error_rate_unclipped": -0.075137,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.028424
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466362,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "transport": {
+       "calibration_false_yes_rate": 0.055041,
+       "observed_minus_reference": -0.035041,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.174549,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "youden": 0.466362,
+      "corrected_error_rate": 0.174549,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.081403,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.100868,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "youden": 0.466362,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.055041,
+       "observed_minus_reference": -0.047041,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_excluded": {
+    "stratum": "all_partners_test1_test2",
+    "sensitivity": 0.521403,
+    "specificity": 0.944622,
+    "youden": 0.466025,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.796714,
+      "corrected_error_rate_unclipped": 0.203286,
+      "corrected_error_rate": 0.203286,
+      "corrected_error_ci95": [
+       0.0,
+       0.458388
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466025,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944622,
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.094736,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.118831,
+      "corrected_error_rate_unclipped": -0.118831,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466025,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944622,
+      "transport": {
+       "calibration_false_yes_rate": 0.055378,
+       "observed_minus_reference": -0.055378,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.868241,
+      "corrected_error_rate_unclipped": 0.131759,
+      "corrected_error_rate": 0.131759,
+      "corrected_error_ci95": [
+       0.0,
+       0.445408
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466025,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944622,
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.061403,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.075915,
+      "corrected_error_rate_unclipped": -0.075915,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.027844
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466025,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944622,
+      "transport": {
+       "calibration_false_yes_rate": 0.055378,
+       "observed_minus_reference": -0.035378,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.174675,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944622,
+      "youden": 0.466025,
+      "corrected_error_rate": 0.174675,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.081403,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.101664,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944622,
+      "youden": 0.466025,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.055378,
+       "observed_minus_reference": -0.047378,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_as_yes": {
+    "stratum": "all_partners_test1_test2",
+    "sensitivity": 0.521403,
+    "specificity": 0.944959,
+    "youden": 0.466362,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.796861,
+      "corrected_error_rate_unclipped": 0.203139,
+      "corrected_error_rate": 0.203139,
+      "corrected_error_ci95": [
+       0.0,
+       0.45831
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466362,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.094736,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.118022,
+      "corrected_error_rate_unclipped": -0.118022,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466362,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "transport": {
+       "calibration_false_yes_rate": 0.055041,
+       "observed_minus_reference": -0.055041,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.868337,
+      "corrected_error_rate_unclipped": 0.131663,
+      "corrected_error_rate": 0.131663,
+      "corrected_error_ci95": [
+       0.0,
+       0.44532
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466362,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.061403,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.075137,
+      "corrected_error_rate_unclipped": -0.075137,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.028424
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.466362,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "transport": {
+       "calibration_false_yes_rate": 0.055041,
+       "observed_minus_reference": -0.035041,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.174549,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "youden": 0.466362,
+      "corrected_error_rate": 0.174549,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.521403,
+       "observed_minus_reference": -0.081403,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.100868,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.521403,
+      "calibration_specificity": 0.944959,
+      "youden": 0.466362,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.055041,
+       "observed_minus_reference": -0.047041,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "test1_substance": {
+   "unsure_not_yes": {
+    "stratum": "test1_substance",
+    "sensitivity": 0.298077,
+    "specificity": 0.997596,
+    "youden": 0.295673,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 1.434905,
+      "corrected_error_rate_unclipped": -0.434905,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.143965
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295673,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.12859,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.00813,
+      "corrected_error_rate_unclipped": -0.00813,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295673,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "transport": {
+       "calibration_false_yes_rate": 0.002404,
+       "observed_minus_reference": -0.002404,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.547642,
+      "corrected_error_rate_unclipped": -0.547642,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.110029
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295673,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.161923,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.059512,
+      "corrected_error_rate_unclipped": 0.059512,
+      "corrected_error_rate": 0.059512,
+      "corrected_error_ci95": [
+       0.0,
+       0.2376
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295673,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "transport": {
+       "calibration_false_yes_rate": 0.002404,
+       "observed_minus_reference": 0.017596,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": -0.48,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "youden": 0.295673,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.141923,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.018927,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "youden": 0.295673,
+      "corrected_error_rate": 0.018927,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.002404,
+       "observed_minus_reference": 0.005596,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_excluded": {
+    "stratum": "test1_substance",
+    "sensitivity": 0.298077,
+    "specificity": 0.997552,
+    "youden": 0.295629,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 1.43497,
+      "corrected_error_rate_unclipped": -0.43497,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.143982
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295629,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997552,
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.12859,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.008281,
+      "corrected_error_rate_unclipped": -0.008281,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295629,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997552,
+      "transport": {
+       "calibration_false_yes_rate": 0.002448,
+       "observed_minus_reference": -0.002448,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.547724,
+      "corrected_error_rate_unclipped": -0.547724,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.110029
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295629,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997552,
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.161923,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.059372,
+      "corrected_error_rate_unclipped": 0.059372,
+      "corrected_error_rate": 0.059372,
+      "corrected_error_ci95": [
+       0.0,
+       0.237566
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295629,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997552,
+      "transport": {
+       "calibration_false_yes_rate": 0.002448,
+       "observed_minus_reference": 0.017552,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": -0.480072,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997552,
+      "youden": 0.295629,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.141923,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.01878,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997552,
+      "youden": 0.295629,
+      "corrected_error_rate": 0.01878,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.002448,
+       "observed_minus_reference": 0.005552,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_as_yes": {
+    "stratum": "test1_substance",
+    "sensitivity": 0.298077,
+    "specificity": 0.997596,
+    "youden": 0.295673,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 1.434905,
+      "corrected_error_rate_unclipped": -0.434905,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.143965
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295673,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.12859,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.00813,
+      "corrected_error_rate_unclipped": -0.00813,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295673,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "transport": {
+       "calibration_false_yes_rate": 0.002404,
+       "observed_minus_reference": -0.002404,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.547642,
+      "corrected_error_rate_unclipped": -0.547642,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.110029
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295673,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.161923,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.059512,
+      "corrected_error_rate_unclipped": 0.059512,
+      "corrected_error_rate": 0.059512,
+      "corrected_error_ci95": [
+       0.0,
+       0.2376
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.295673,
+      "unstable_youden_below_0.3": true,
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "transport": {
+       "calibration_false_yes_rate": 0.002404,
+       "observed_minus_reference": 0.017596,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": -0.48,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "youden": 0.295673,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.298077,
+       "observed_minus_reference": 0.141923,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.018927,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.298077,
+      "calibration_specificity": 0.997596,
+      "youden": 0.295673,
+      "corrected_error_rate": 0.018927,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.002404,
+       "observed_minus_reference": 0.005596,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "test2_substance": {
+   "unsure_not_yes": {
+    "stratum": "test2_substance",
+    "sensitivity": 0.457895,
+    "specificity": 0.992105,
+    "youden": 0.45,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.930604,
+      "corrected_error_rate_unclipped": 0.069396,
+      "corrected_error_rate": 0.069396,
+      "corrected_error_ci95": [
+       0.0,
+       0.416073
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": -0.031228,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.017544,
+      "corrected_error_rate_unclipped": -0.017544,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": -0.007895,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.004678,
+      "corrected_error_rate_unclipped": -0.004678,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.390284
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": 0.002105,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.026901,
+      "corrected_error_rate_unclipped": 0.026901,
+      "corrected_error_rate": 0.026901,
+      "corrected_error_ci95": [
+       0.0,
+       0.144859
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": 0.012105,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.039766,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "youden": 0.45,
+      "corrected_error_rate": 0.039766,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": -0.017895,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.000234,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "youden": 0.45,
+      "corrected_error_rate": 0.000234,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": 0.000105,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_excluded": {
+    "stratum": "test2_substance",
+    "sensitivity": 0.457895,
+    "specificity": 0.992105,
+    "youden": 0.45,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.930604,
+      "corrected_error_rate_unclipped": 0.069396,
+      "corrected_error_rate": 0.069396,
+      "corrected_error_ci95": [
+       0.0,
+       0.416073
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": -0.031228,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.017544,
+      "corrected_error_rate_unclipped": -0.017544,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": -0.007895,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.004678,
+      "corrected_error_rate_unclipped": -0.004678,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.390284
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": 0.002105,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.026901,
+      "corrected_error_rate_unclipped": 0.026901,
+      "corrected_error_rate": 0.026901,
+      "corrected_error_ci95": [
+       0.0,
+       0.144859
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": 0.012105,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.039766,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "youden": 0.45,
+      "corrected_error_rate": 0.039766,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": -0.017895,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.000234,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "youden": 0.45,
+      "corrected_error_rate": 0.000234,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": 0.000105,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_as_yes": {
+    "stratum": "test2_substance",
+    "sensitivity": 0.457895,
+    "specificity": 0.992105,
+    "youden": 0.45,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.930604,
+      "corrected_error_rate_unclipped": 0.069396,
+      "corrected_error_rate": 0.069396,
+      "corrected_error_ci95": [
+       0.0,
+       0.416073
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": -0.031228,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.017544,
+      "corrected_error_rate_unclipped": -0.017544,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": -0.007895,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 1.004678,
+      "corrected_error_rate_unclipped": -0.004678,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.390284
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": 0.002105,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": 0.026901,
+      "corrected_error_rate_unclipped": 0.026901,
+      "corrected_error_rate": 0.026901,
+      "corrected_error_ci95": [
+       0.0,
+       0.144859
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.45,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": 0.012105,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.039766,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "youden": 0.45,
+      "corrected_error_rate": 0.039766,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.457895,
+       "observed_minus_reference": -0.017895,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": 0.000234,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.457895,
+      "calibration_specificity": 0.992105,
+      "youden": 0.45,
+      "corrected_error_rate": 0.000234,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.007895,
+       "observed_minus_reference": 0.000105,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "test1_all_partners": {
+   "unsure_not_yes": {
+    "stratum": "test1_all_partners",
+    "sensitivity": 0.494893,
+    "specificity": 0.944073,
+    "youden": 0.438966,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.844574,
+      "corrected_error_rate_unclipped": 0.155426,
+      "corrected_error_rate": 0.155426,
+      "corrected_error_ci95": [
+       0.0,
+       0.441044
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438966,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.068227,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.127407,
+      "corrected_error_rate_unclipped": -0.127407,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438966,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "transport": {
+       "calibration_false_yes_rate": 0.055927,
+       "observed_minus_reference": -0.055927,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.92051,
+      "corrected_error_rate_unclipped": 0.07949,
+      "corrected_error_rate": 0.07949,
+      "corrected_error_ci95": [
+       0.0,
+       0.422043
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438966,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.034893,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.081845,
+      "corrected_error_rate_unclipped": -0.081845,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.032386
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438966,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "transport": {
+       "calibration_false_yes_rate": 0.055927,
+       "observed_minus_reference": -0.035927,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.125051,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "youden": 0.438966,
+      "corrected_error_rate": 0.125051,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.054893,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.109182,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "youden": 0.438966,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.055927,
+       "observed_minus_reference": -0.047927,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_excluded": {
+    "stratum": "test1_all_partners",
+    "sensitivity": 0.494893,
+    "specificity": 0.943478,
+    "youden": 0.438371,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.844364,
+      "corrected_error_rate_unclipped": 0.155636,
+      "corrected_error_rate": 0.155636,
+      "corrected_error_ci95": [
+       0.0,
+       0.441894
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438371,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.943478,
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.068227,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.128936,
+      "corrected_error_rate_unclipped": -0.128936,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438371,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.943478,
+      "transport": {
+       "calibration_false_yes_rate": 0.056522,
+       "observed_minus_reference": -0.056522,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.920403,
+      "corrected_error_rate_unclipped": 0.079597,
+      "corrected_error_rate": 0.079597,
+      "corrected_error_ci95": [
+       0.0,
+       0.422101
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438371,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.943478,
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.034893,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.083312,
+      "corrected_error_rate_unclipped": -0.083312,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.031359
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438371,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.943478,
+      "transport": {
+       "calibration_false_yes_rate": 0.056522,
+       "observed_minus_reference": -0.036522,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.125221,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.943478,
+      "youden": 0.438371,
+      "corrected_error_rate": 0.125221,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.054893,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.110686,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.943478,
+      "youden": 0.438371,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.056522,
+       "observed_minus_reference": -0.048522,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_as_yes": {
+    "stratum": "test1_all_partners",
+    "sensitivity": 0.494893,
+    "specificity": 0.944073,
+    "youden": 0.438966,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.844574,
+      "corrected_error_rate_unclipped": 0.155426,
+      "corrected_error_rate": 0.155426,
+      "corrected_error_ci95": [
+       0.0,
+       0.441044
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438966,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.068227,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.127407,
+      "corrected_error_rate_unclipped": -0.127407,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438966,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "transport": {
+       "calibration_false_yes_rate": 0.055927,
+       "observed_minus_reference": -0.055927,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.92051,
+      "corrected_error_rate_unclipped": 0.07949,
+      "corrected_error_rate": 0.07949,
+      "corrected_error_ci95": [
+       0.0,
+       0.422043
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438966,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.034893,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.081845,
+      "corrected_error_rate_unclipped": -0.081845,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.032386
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.438966,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "transport": {
+       "calibration_false_yes_rate": 0.055927,
+       "observed_minus_reference": -0.035927,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.125051,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "youden": 0.438966,
+      "corrected_error_rate": 0.125051,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.494893,
+       "observed_minus_reference": -0.054893,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.109182,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.494893,
+      "calibration_specificity": 0.944073,
+      "youden": 0.438966,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.055927,
+       "observed_minus_reference": -0.047927,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "test2_all_partners": {
+   "unsure_not_yes": {
+    "stratum": "test2_all_partners",
+    "sensitivity": 0.554524,
+    "specificity": 0.946058,
+    "youden": 0.500582,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.744582,
+      "corrected_error_rate_unclipped": 0.255418,
+      "corrected_error_rate": 0.255418,
+      "corrected_error_ci95": [
+       0.0,
+       0.517404
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.500582,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.127858,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.107758,
+      "corrected_error_rate_unclipped": -0.107758,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.500582,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "transport": {
+       "calibration_false_yes_rate": 0.053942,
+       "observed_minus_reference": -0.053942,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.811171,
+      "corrected_error_rate_unclipped": 0.188829,
+      "corrected_error_rate": 0.188829,
+      "corrected_error_ci95": [
+       0.0,
+       0.501708
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.500582,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.094524,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.067805,
+      "corrected_error_rate_unclipped": -0.067805,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.031931
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.500582,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "transport": {
+       "calibration_false_yes_rate": 0.053942,
+       "observed_minus_reference": -0.033942,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.228782,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "youden": 0.500582,
+      "corrected_error_rate": 0.228782,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.114524,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.091777,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "youden": 0.500582,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.053942,
+       "observed_minus_reference": -0.045942,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_excluded": {
+    "stratum": "test2_all_partners",
+    "sensitivity": 0.554524,
+    "specificity": 0.946026,
+    "youden": 0.50055,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.744566,
+      "corrected_error_rate_unclipped": 0.255434,
+      "corrected_error_rate": 0.255434,
+      "corrected_error_ci95": [
+       0.0,
+       0.517404
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.50055,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946026,
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.127858,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.107829,
+      "corrected_error_rate_unclipped": -0.107829,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.50055,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946026,
+      "transport": {
+       "calibration_false_yes_rate": 0.053974,
+       "observed_minus_reference": -0.053974,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.811159,
+      "corrected_error_rate_unclipped": 0.188841,
+      "corrected_error_rate": 0.188841,
+      "corrected_error_ci95": [
+       0.0,
+       0.501708
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.50055,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946026,
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.094524,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.067873,
+      "corrected_error_rate_unclipped": -0.067873,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.031931
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.50055,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946026,
+      "transport": {
+       "calibration_false_yes_rate": 0.053974,
+       "observed_minus_reference": -0.033974,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.228797,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946026,
+      "youden": 0.50055,
+      "corrected_error_rate": 0.228797,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.114524,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.091847,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946026,
+      "youden": 0.50055,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.053974,
+       "observed_minus_reference": -0.045974,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   },
+   "unsure_as_yes": {
+    "stratum": "test2_all_partners",
+    "sensitivity": 0.554524,
+    "specificity": 0.946058,
+    "youden": 0.500582,
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "uncorrected_error_rate": 0.573333,
+      "uncorrected_error_cp95": [
+       0.453765,
+       0.68693
+      ],
+      "corrected_true_share_unclipped": 0.744582,
+      "corrected_error_rate_unclipped": 0.255418,
+      "corrected_error_rate": 0.255418,
+      "corrected_error_ci95": [
+       0.0,
+       0.517404
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.500582,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.127858,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "uncorrected_error_rate": 0.0,
+      "uncorrected_error_cp95": [
+       0.0,
+       0.047995
+      ],
+      "corrected_true_share_unclipped": -0.107758,
+      "corrected_error_rate_unclipped": -0.107758,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.500582,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "transport": {
+       "calibration_false_yes_rate": 0.053942,
+       "observed_minus_reference": -0.053942,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "uncorrected_error_rate": 0.54,
+      "uncorrected_error_cp95": [
+       0.393242,
+       0.681851
+      ],
+      "corrected_true_share_unclipped": 0.811171,
+      "corrected_error_rate_unclipped": 0.188829,
+      "corrected_error_rate": 0.188829,
+      "corrected_error_ci95": [
+       0.0,
+       0.501708
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.500582,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.094524,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "uncorrected_error_rate": 0.02,
+      "uncorrected_error_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "corrected_true_share_unclipped": -0.067805,
+      "corrected_error_rate_unclipped": -0.067805,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.031931
+      ],
+      "mc_draws_used": 10000,
+      "youden": 0.500582,
+      "unstable_youden_below_0.3": false,
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "transport": {
+       "calibration_false_yes_rate": 0.053942,
+       "observed_minus_reference": -0.033942,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "corrected_error_rate_unclipped": 0.228782,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "youden": 0.500582,
+      "corrected_error_rate": 0.228782,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "transport": {
+       "calibration_sensitivity": 0.554524,
+       "observed_minus_reference": -0.114524,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "corrected_error_rate_unclipped": -0.091777,
+      "note": "errors_unweighted_pool_by_class: an unweighted pool of the two cohort samples, not a population rate",
+      "cohort": "pooled_unweighted",
+      "calibration_sensitivity": 0.554524,
+      "calibration_specificity": 0.946058,
+      "youden": 0.500582,
+      "corrected_error_rate": 0.0,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "transport": {
+       "calibration_false_yes_rate": 0.053942,
+       "observed_minus_reference": -0.045942,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "length_matched_substance": {
+   "unsure_not_yes": {
+    "stratum": "substance_length_tercile_1..3",
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "tercile_counts": [
+       52,
+       17,
+       6
+      ],
+      "tercile_shares": [
+       0.693333,
+       0.226667,
+       0.08
+      ],
+      "calibration_sensitivity": 0.47912,
+      "calibration_specificity": 0.99511,
+      "youden": 0.474229,
+      "corrected_true_share_unclipped": 0.889393,
+      "corrected_error_rate_unclipped": 0.110607,
+      "corrected_error_rate": 0.110607,
+      "corrected_error_ci95": [
+       0.0,
+       0.417725
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.47912,
+       "observed_minus_reference": -0.052453,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "tercile_counts": [
+       56,
+       19,
+       0
+      ],
+      "tercile_shares": [
+       0.746667,
+       0.253333,
+       0.0
+      ],
+      "calibration_sensitivity": 0.491724,
+      "calibration_specificity": 0.99467,
+      "youden": 0.486395,
+      "corrected_true_share_unclipped": -0.010957,
+      "corrected_error_rate_unclipped": -0.010957,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.00533,
+       "observed_minus_reference": -0.00533,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "tercile_counts": [
+       28,
+       17,
+       5
+      ],
+      "tercile_shares": [
+       0.56,
+       0.34,
+       0.1
+      ],
+      "calibration_sensitivity": 0.455131,
+      "calibration_specificity": 0.994978,
+      "youden": 0.450109,
+      "corrected_true_share_unclipped": 1.010817,
+      "corrected_error_rate_unclipped": -0.010817,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.357151
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.455131,
+       "observed_minus_reference": 0.004869,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "tercile_counts": [
+       41,
+       8,
+       1
+      ],
+      "tercile_shares": [
+       0.82,
+       0.16,
+       0.02
+      ],
+      "calibration_sensitivity": 0.503622,
+      "calibration_specificity": 0.994955,
+      "youden": 0.498577,
+      "corrected_true_share_unclipped": 0.029995,
+      "corrected_error_rate_unclipped": 0.029995,
+      "corrected_error_rate": 0.029995,
+      "corrected_error_ci95": [
+       0.0,
+       0.124598
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.005045,
+       "observed_minus_reference": 0.014955,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "cohort": "pooled_unweighted",
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "tercile_counts": [
+       80,
+       34,
+       11
+      ],
+      "tercile_shares": [
+       0.64,
+       0.272,
+       0.088
+      ],
+      "calibration_sensitivity": 0.469524,
+      "calibration_specificity": 0.995057,
+      "youden": 0.464581,
+      "corrected_true_share_unclipped": 0.93645,
+      "corrected_error_rate_unclipped": 0.06355,
+      "corrected_error_rate": 0.06355,
+      "corrected_error_ci95": [
+       0.0,
+       0.349642
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.469524,
+       "observed_minus_reference": -0.029524,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "cohort": "pooled_unweighted",
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "tercile_counts": [
+       97,
+       27,
+       1
+      ],
+      "tercile_shares": [
+       0.776,
+       0.216,
+       0.008
+      ],
+      "calibration_sensitivity": 0.496483,
+      "calibration_specificity": 0.994784,
+      "youden": 0.491268,
+      "corrected_true_share_unclipped": 0.005667,
+      "corrected_error_rate_unclipped": 0.005667,
+      "corrected_error_rate": 0.005667,
+      "corrected_error_ci95": [
+       0.0,
+       0.045904
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.005216,
+       "observed_minus_reference": 0.002784,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ],
+    "tercile_calibration": {
+     "substance_length_tercile_1": {
+      "sensitivity": 0.535714,
+      "specificity": 0.995181,
+      "n_items": 471,
+      "n_positive": 56,
+      "n_negative": 415,
+      "small_class_below_20": false
+     },
+     "substance_length_tercile_2": {
+      "sensitivity": 0.362069,
+      "specificity": 0.993166,
+      "n_items": 555,
+      "n_positive": 116,
+      "n_negative": 439,
+      "small_class_below_20": false
+     },
+     "substance_length_tercile_3": {
+      "sensitivity": 0.320276,
+      "specificity": 1.0,
+      "n_items": 792,
+      "n_positive": 434,
+      "n_negative": 358,
+      "small_class_below_20": false
+     }
+    }
+   },
+   "unsure_excluded": {
+    "stratum": "substance_length_tercile_1..3",
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "tercile_counts": [
+       52,
+       17,
+       6
+      ],
+      "tercile_shares": [
+       0.693333,
+       0.226667,
+       0.08
+      ],
+      "calibration_sensitivity": 0.47912,
+      "calibration_specificity": 0.994984,
+      "youden": 0.474104,
+      "corrected_true_share_unclipped": 0.889364,
+      "corrected_error_rate_unclipped": 0.110636,
+      "corrected_error_rate": 0.110636,
+      "corrected_error_ci95": [
+       0.0,
+       0.418068
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.47912,
+       "observed_minus_reference": -0.052453,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "tercile_counts": [
+       56,
+       19,
+       0
+      ],
+      "tercile_shares": [
+       0.746667,
+       0.253333,
+       0.0
+      ],
+      "calibration_sensitivity": 0.491724,
+      "calibration_specificity": 0.994535,
+      "youden": 0.48626,
+      "corrected_true_share_unclipped": -0.011238,
+      "corrected_error_rate_unclipped": -0.011238,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.005465,
+       "observed_minus_reference": -0.005465,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "tercile_counts": [
+       28,
+       17,
+       5
+      ],
+      "tercile_shares": [
+       0.56,
+       0.34,
+       0.1
+      ],
+      "calibration_sensitivity": 0.455131,
+      "calibration_specificity": 0.994877,
+      "youden": 0.450008,
+      "corrected_true_share_unclipped": 1.01082,
+      "corrected_error_rate_unclipped": -0.01082,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.357301
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.455131,
+       "observed_minus_reference": 0.004869,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "tercile_counts": [
+       41,
+       8,
+       1
+      ],
+      "tercile_shares": [
+       0.82,
+       0.16,
+       0.02
+      ],
+      "calibration_sensitivity": 0.503622,
+      "calibration_specificity": 0.994807,
+      "youden": 0.498429,
+      "corrected_true_share_unclipped": 0.029707,
+      "corrected_error_rate_unclipped": 0.029707,
+      "corrected_error_rate": 0.029707,
+      "corrected_error_ci95": [
+       0.0,
+       0.12447
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.005193,
+       "observed_minus_reference": 0.014807,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "cohort": "pooled_unweighted",
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "tercile_counts": [
+       80,
+       34,
+       11
+      ],
+      "tercile_shares": [
+       0.64,
+       0.272,
+       0.088
+      ],
+      "calibration_sensitivity": 0.469524,
+      "calibration_specificity": 0.994941,
+      "youden": 0.464465,
+      "corrected_true_share_unclipped": 0.936434,
+      "corrected_error_rate_unclipped": 0.063566,
+      "corrected_error_rate": 0.063566,
+      "corrected_error_ci95": [
+       0.0,
+       0.349642
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.469524,
+       "observed_minus_reference": -0.029524,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "cohort": "pooled_unweighted",
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "tercile_counts": [
+       97,
+       27,
+       1
+      ],
+      "tercile_shares": [
+       0.776,
+       0.216,
+       0.008
+      ],
+      "calibration_sensitivity": 0.496483,
+      "calibration_specificity": 0.994644,
+      "youden": 0.491127,
+      "corrected_true_share_unclipped": 0.005383,
+      "corrected_error_rate_unclipped": 0.005383,
+      "corrected_error_rate": 0.005383,
+      "corrected_error_ci95": [
+       0.0,
+       0.04556
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.005356,
+       "observed_minus_reference": 0.002644,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ],
+    "tercile_calibration": {
+     "substance_length_tercile_1": {
+      "sensitivity": 0.535714,
+      "specificity": 0.995,
+      "n_items": 456,
+      "n_positive": 56,
+      "n_negative": 400,
+      "small_class_below_20": false
+     },
+     "substance_length_tercile_2": {
+      "sensitivity": 0.362069,
+      "specificity": 0.993166,
+      "n_items": 555,
+      "n_positive": 116,
+      "n_negative": 439,
+      "small_class_below_20": false
+     },
+     "substance_length_tercile_3": {
+      "sensitivity": 0.320276,
+      "specificity": 1.0,
+      "n_items": 792,
+      "n_positive": 434,
+      "n_negative": 358,
+      "small_class_below_20": false
+     }
+    }
+   },
+   "unsure_as_yes": {
+    "stratum": "substance_length_tercile_1..3",
+    "rows": [
+     {
+      "cohort": "older",
+      "label_class": 1,
+      "n": 75,
+      "yes": 32,
+      "observed_yes_rate": 0.426667,
+      "observed_yes_cp95": [
+       0.31307,
+       0.546235
+      ],
+      "tercile_counts": [
+       52,
+       17,
+       6
+      ],
+      "tercile_shares": [
+       0.693333,
+       0.226667,
+       0.08
+      ],
+      "calibration_sensitivity": 0.47912,
+      "calibration_specificity": 0.99511,
+      "youden": 0.474229,
+      "corrected_true_share_unclipped": 0.889393,
+      "corrected_error_rate_unclipped": 0.110607,
+      "corrected_error_rate": 0.110607,
+      "corrected_error_ci95": [
+       0.0,
+       0.417725
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.47912,
+       "observed_minus_reference": -0.052453,
+       "observed_yes_cp95": [
+        0.31307,
+        0.546235
+       ]
+      }
+     },
+     {
+      "cohort": "older",
+      "label_class": 0,
+      "n": 75,
+      "yes": 0,
+      "observed_yes_rate": 0.0,
+      "observed_yes_cp95": [
+       0.0,
+       0.047995
+      ],
+      "tercile_counts": [
+       56,
+       19,
+       0
+      ],
+      "tercile_shares": [
+       0.746667,
+       0.253333,
+       0.0
+      ],
+      "calibration_sensitivity": 0.491724,
+      "calibration_specificity": 0.99467,
+      "youden": 0.486395,
+      "corrected_true_share_unclipped": -0.010957,
+      "corrected_error_rate_unclipped": -0.010957,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.0
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.00533,
+       "observed_minus_reference": -0.00533,
+       "observed_yes_cp95": [
+        0.0,
+        0.047995
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 1,
+      "n": 50,
+      "yes": 23,
+      "observed_yes_rate": 0.46,
+      "observed_yes_cp95": [
+       0.318149,
+       0.606758
+      ],
+      "tercile_counts": [
+       28,
+       17,
+       5
+      ],
+      "tercile_shares": [
+       0.56,
+       0.34,
+       0.1
+      ],
+      "calibration_sensitivity": 0.455131,
+      "calibration_specificity": 0.994978,
+      "youden": 0.450109,
+      "corrected_true_share_unclipped": 1.010817,
+      "corrected_error_rate_unclipped": -0.010817,
+      "corrected_error_rate": 0.0,
+      "corrected_error_ci95": [
+       0.0,
+       0.357151
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.455131,
+       "observed_minus_reference": 0.004869,
+       "observed_yes_cp95": [
+        0.318149,
+        0.606758
+       ]
+      }
+     },
+     {
+      "cohort": "novel",
+      "label_class": 0,
+      "n": 50,
+      "yes": 1,
+      "observed_yes_rate": 0.02,
+      "observed_yes_cp95": [
+       0.000506,
+       0.10647
+      ],
+      "tercile_counts": [
+       41,
+       8,
+       1
+      ],
+      "tercile_shares": [
+       0.82,
+       0.16,
+       0.02
+      ],
+      "calibration_sensitivity": 0.503622,
+      "calibration_specificity": 0.994955,
+      "youden": 0.498577,
+      "corrected_true_share_unclipped": 0.029995,
+      "corrected_error_rate_unclipped": 0.029995,
+      "corrected_error_rate": 0.029995,
+      "corrected_error_ci95": [
+       0.0,
+       0.124598
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.005045,
+       "observed_minus_reference": 0.014955,
+       "observed_yes_cp95": [
+        0.000506,
+        0.10647
+       ]
+      }
+     },
+     {
+      "cohort": "pooled_unweighted",
+      "label_class": 1,
+      "n": 125,
+      "yes": 55,
+      "observed_yes_rate": 0.44,
+      "observed_yes_cp95": [
+       0.351358,
+       0.531551
+      ],
+      "tercile_counts": [
+       80,
+       34,
+       11
+      ],
+      "tercile_shares": [
+       0.64,
+       0.272,
+       0.088
+      ],
+      "calibration_sensitivity": 0.469524,
+      "calibration_specificity": 0.995057,
+      "youden": 0.464581,
+      "corrected_true_share_unclipped": 0.93645,
+      "corrected_error_rate_unclipped": 0.06355,
+      "corrected_error_rate": 0.06355,
+      "corrected_error_ci95": [
+       0.0,
+       0.349642
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_sensitivity": 0.469524,
+       "observed_minus_reference": -0.029524,
+       "observed_yes_cp95": [
+        0.351358,
+        0.531551
+       ]
+      }
+     },
+     {
+      "cohort": "pooled_unweighted",
+      "label_class": 0,
+      "n": 125,
+      "yes": 1,
+      "observed_yes_rate": 0.008,
+      "observed_yes_cp95": [
+       0.000203,
+       0.043767
+      ],
+      "tercile_counts": [
+       97,
+       27,
+       1
+      ],
+      "tercile_shares": [
+       0.776,
+       0.216,
+       0.008
+      ],
+      "calibration_sensitivity": 0.496483,
+      "calibration_specificity": 0.994784,
+      "youden": 0.491268,
+      "corrected_true_share_unclipped": 0.005667,
+      "corrected_error_rate_unclipped": 0.005667,
+      "corrected_error_rate": 0.005667,
+      "corrected_error_ci95": [
+       0.0,
+       0.045904
+      ],
+      "mc_draws_dropped": 0,
+      "unstable_youden_below_0.3": false,
+      "transport": {
+       "calibration_false_yes_rate": 0.005216,
+       "observed_minus_reference": 0.002784,
+       "observed_yes_cp95": [
+        0.000203,
+        0.043767
+       ]
+      }
+     }
+    ],
+    "tercile_calibration": {
+     "substance_length_tercile_1": {
+      "sensitivity": 0.535714,
+      "specificity": 0.995181,
+      "n_items": 471,
+      "n_positive": 56,
+      "n_negative": 415,
+      "small_class_below_20": false
+     },
+     "substance_length_tercile_2": {
+      "sensitivity": 0.362069,
+      "specificity": 0.993166,
+      "n_items": 555,
+      "n_positive": 116,
+      "n_negative": 439,
+      "small_class_below_20": false
+     },
+     "substance_length_tercile_3": {
+      "sensitivity": 0.320276,
+      "specificity": 1.0,
+      "n_items": 792,
+      "n_positive": 434,
+      "n_negative": 358,
+      "small_class_below_20": false
+     }
+    }
+   }
+  }
+ },
+ "c4_reproduction": [
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_not_yes",
+   "cohort": "older",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_not_yes",
+   "cohort": "older",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_not_yes",
+   "cohort": "novel",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_not_yes",
+   "cohort": "novel",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_excluded",
+   "cohort": "older",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_excluded",
+   "cohort": "older",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_excluded",
+   "cohort": "novel",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_excluded",
+   "cohort": "novel",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_as_yes",
+   "cohort": "older",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_as_yes",
+   "cohort": "older",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_as_yes",
+   "cohort": "novel",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "primary_substance_pooled",
+   "treatment": "unsure_as_yes",
+   "cohort": "novel",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_not_yes",
+   "cohort": "older",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_not_yes",
+   "cohort": "older",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_not_yes",
+   "cohort": "novel",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_not_yes",
+   "cohort": "novel",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_excluded",
+   "cohort": "older",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_excluded",
+   "cohort": "older",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_excluded",
+   "cohort": "novel",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_excluded",
+   "cohort": "novel",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_as_yes",
+   "cohort": "older",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_as_yes",
+   "cohort": "older",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_as_yes",
+   "cohort": "novel",
+   "label_class": 1,
+   "unclipped_matches": true,
+   "interval_matches": true
+  },
+  {
+   "calibration": "all_partners_pooled",
+   "treatment": "unsure_as_yes",
+   "cohort": "novel",
+   "label_class": 0,
+   "unclipped_matches": true,
+   "interval_matches": true
+  }
+ ],
+ "c4_reproduction_all_match": true,
+ "rg_draws": 10000,
+ "seed": 42
+}

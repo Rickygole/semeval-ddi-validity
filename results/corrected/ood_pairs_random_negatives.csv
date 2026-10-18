@@ -1,0 +1,445 @@
+ood_drug,semeval_drug,label,anchor,evidence,cooccurrence_sentence,first_approval_year
+abrocitinib,aspirin,1,contraindicated,"Intervention Antiplatelet drugs, except for low-dose aspirin (≤81 mg daily), during the first 3 months of treatment are contraindicated with CIBINQO [see Contraindications (4) ] .",,2022
+abrocitinib,digoxin,1,coadministration,"Clinically Significant Interactions Affecting Other Drugs P-gp Substrate Where Small Concentration Changes May Lead to Serious or Life-threatening Toxicities Clinical Impact Coadministration of CIBINQO with P-gp substrate increases plasma concentrations of P-gp substrates and may result in potential adverse reactions of the P-gp substrate where small concentration changes may lead to serious or life-threatening toxicities (e.g., digoxin) [see Clinical Pharmacology (12.3) ] .",,2022
+abrocitinib,vinorelbine,0,,,,2022
+abrocitinib,lopinavir,0,,,,2022
+abrocitinib,adefovir dipivoxil,0,,,,2022
+abrocitinib,simvastatin,0,,,,2022
+amisulpride,droperidol,1,avoid,"To avoid potential additive effects, avoid use of BARHEMSYS in patients taking droperidol.",,2020
+amisulpride,levodopa,1,avoid,"7 DRUG INTERACTIONS 7.1 Dopamine Agonists Reciprocal antagonism of effects occurs between dopamine agonists (e.g., levodopa) and BARHEMSYS.",,2020
+amisulpride,ondansetron,1,avoid,"ECG monitoring is recommended in patients taking other drugs known to prolong the QT interval (e.g., ondansetron) [see Warnings and Precautions (5.1) ] .",,2020
+amisulpride,tripelennamine,0,,,,2020
+amisulpride,fondaparinux sodium,0,,,,2020
+amisulpride,bexarotene,0,,,,2020
+amisulpride,calcium carbonate,0,,,,2020
+amisulpride,cefprozil,0,,,,2020
+amisulpride,colchicine,0,,,,2020
+atogepant,itraconazole,1,coadministration,"7.1 CYP3A4 Inhibitors Coadministration of QULIPTA with itraconazole, a strong CYP3A4 inhibitor, resulted in a significant increase in exposure of atogepant in healthy subjects [see Clinical Pharmacology ( 12.3 )] .","In Vivo Studies CYP3A4 Inhibitors Co-administration of QULIPTA with itraconazole, a strong CYP3A4 inhibitor, resulted in a clinically significant increase (C max by 2.15-fold and AUC by 5.5-fold) in the exposure of atogepant in healthy subjects [see Drug Interactions ( 7.1 )] .",2021
+atogepant,rifampin,1,coadministration,"7.2 CYP3A4 Inducers Coadministration of QULIPTA with steady-state rifampin, a strong CYP3A4 inducer and OATP1B1 and OATP1B3 inhibitor, resulted in a significant decrease in exposure of atogepant in healthy subjects [see Clinical Pharmacology ( 12.3 )] .","CYP3A4 Inducers Co-administration of QULIPTA with rifampin, a strong CYP3A4 inducer, decreased atogepant AUC by 60% and C max by 30% in healthy subjects [see Drug Interactions ( 7.2 )] .",2021
+atogepant,topiramate,1,coadministration,"Coadministration of QULIPTA with steady-state topiramate, a weak CYP3A4 inducer, resulted in decreased exposure of atogepant in healthy subjects [see Clinical Phar macology ( 12.3 )] .","Co-administration of QULIPTA with topiramate, a weak inducer of CYP3A4, decreased atogepant mean steady-state AUC 0-τ by 25% and mean steady-state C max by 24% in healthy subjects [ see Drug Interactions ( 7.2 ) ].",2021
+atogepant,heparin sodium,0,,,,2021
+atogepant,efavirenz,0,,,,2021
+atogepant,sucralfate,0,,,,2021
+atogepant,medroxyprogesterone,0,,,,2021
+atogepant,anidulafungin,0,,,,2021
+atogepant,mefloquine,0,,,,2021
+avacopan,itraconazole,1,avoid,7.2 CYP3A4 Inhibitors Avacopan exposure is increased when co-administered with strong CYP3A4 enzyme inhibitors such as itraconazole [see Clinical Pharmacology (12.3) ] .,"C max AUC CI: Confidence interval Strong CYP3A4 inhibitor: itraconazole 200 mg once daily for 4 days Avacopan 1.87 (1.70, 2.06) 2.19 (2.00, 2.41) M1 1.03 (0.95, 1.11) 1.19 (1.11, 1.28) Strong CYP3A4 inducer: rifampin 600 mg once daily for 11 days Avacopan 0.21 (0.18, 0.25) 0.07 (0.06, 0.10) M1 0.27 (0.23, 0.31) 0.07 (0.06, 0.09) Proton-pump inhibitors such as omeprazole are not expected to have a clinically relevant effect on avacopan plasma exposure.",2021
+avacopan,rifampin,1,avoid,( 7.3 ) 7.1 CYP3A4 Inducers Avacopan exposure is decreased when co-administered with strong CYP3A4 enzyme inducers such as rifampin [see Clinical Pharmacology (12.3) ] .,"C max AUC CI: Confidence interval Strong CYP3A4 inhibitor: itraconazole 200 mg once daily for 4 days Avacopan 1.87 (1.70, 2.06) 2.19 (2.00, 2.41) M1 1.03 (0.95, 1.11) 1.19 (1.11, 1.28) Strong CYP3A4 inducer: rifampin 600 mg once daily for 11 days Avacopan 0.21 (0.18, 0.25) 0.07 (0.06, 0.10) M1 0.27 (0.23, 0.31) 0.07 (0.06, 0.09) Proton-pump inhibitors such as omeprazole are not expected to have a clinically relevant effect on avacopan plasma exposure.",2021
+avacopan,dihydroergotamine,0,,,,2021
+avacopan,pyrantel,0,,,,2021
+avacopan,temazepam,0,,,,2021
+avacopan,chloroquine,0,,,,2021
+belumosudil,midazolam,1,avoid,"Concomitant use of REZUROCK with sensitive CYP3A substrates (e.g., midazolam) is predicted to increase CYP3A substrate exposure [see Clinical Pharmacology (12.3) ] , which may increase the risk of adverse reactions related to these substrates.","CYP3A Substrates: Concomitant use of belumosudil is predicted to increase midazolam (sensitive CYP3A substrate) C max and AUC approximately 1.3- and 1.7-fold, respectively.",2021
+belumosudil,pyrantel,0,,,,2021
+belumosudil,dihydroergotamine mesylate,0,,,,2021
+berotralstat,etonogestrel,1,concomitant,"Desogestrel Concomitant use of ORLADEYO with desogestrel increases exposure to etonogestrel, the active metabolite of desogestrel, and may increase the risk of desogestrel-associated adverse reactions.","In a drug interaction study conducted in healthy females of reproductive potential (N=22), concomitant administration of berotralstat 150 mg once daily with 0.15 mg/0.03 mg desogestrel/ethinyl estradiol led to a 2.6-fold increase in the AUC 0-last of etonogestrel, the active metabolite of desogestrel.",2020
+berotralstat,amphotericin b,0,,,,2020
+berotralstat,gentamicin,0,,,,2020
+bexagliflozin,lithium,1,concomitant,Lithium Clinical Impact Concomitant use with SGLT2 inhibitors such as bexagliflozin tablets may decrease serum lithium concentrations.,,2023
+bexagliflozin,amitriptyline,0,,,,2023
+bexagliflozin,ginseng,0,,,,2023
+bimekizumab-bkzx,cyclosporine,1,concomitant,"Therefore, upon initiation or discontinuation of BIMZELX in patients who are receiving concomitant drugs which are CYP450 substrates, particularly those with a narrow therapeutic index, consider monitoring for effect (e.g., for warfarin) or drug concentration (e.g., for cyclosporine) and consider dosage modification of the CYP450 substrate.",,2023
+bimekizumab-bkzx,warfarin,1,concomitant,"Therefore, upon initiation or discontinuation of BIMZELX in patients who are receiving concomitant drugs which are CYP450 substrates, particularly those with a narrow therapeutic index, consider monitoring for effect (e.g., for warfarin) or drug concentration (e.g., for cyclosporine) and consider dosage modification of the CYP450 substrate.",,2023
+bimekizumab-bkzx,lopinavir,0,,,,2023
+bimekizumab-bkzx,nitroglycerin,0,,,,2023
+bimekizumab-bkzx,nitazoxanide,0,,,,2023
+bimekizumab-bkzx,sulfacetamide,0,,,,2023
+danicopan,rosuvastatin,1,concomitant,Rosuvastatin Danicopan significantly increased rosuvastatin exposure.,"BCRP Substrates Co-administration of a single oral dose of rosuvastatin 20 mg with danicopan dosed to steady state (200 mg three times a day for 4 days) resulted in increased rosuvastatin C max and AUC 0-inf by 3.3-fold and 2.2-fold, respectively.",2024
+danicopan,castor oil,0,,,,2024
+danicopan,tazobactam,0,,,,2024
+daprodustat,gemfibrozil,1,contraindicated,"( 7.2 ) 7.1 CYP2C8 Inhibitors Concomitant administration of strong CYP2C8 inhibitors (e.g., gemfibrozil) with JESDUVROQ is contraindicated due to a marked increase in daprodustat exposure [see Contraindications ( 4 ), Clinical Pharmacology ( 12.3 )] .",Drug Interaction Studies Clinical Studies: Effect of CYP2C8 Inhibitors on the Pharmacokinetics of Daprodustat: The concomitant administration of gemfibrozil 600 mg twice a day for 5 days (strong CYP2C8 inhibitor) with a single 100 mg dose of JESDUVROQ on Day 4 of gemfibrozil administration resulted in an 18.6‑fold increase in AUC (0-∞) and a 3.9-fold increase in C max of daprodustat [see Contraindications ( 4 )] .,2023
+daprodustat,bortezomib,0,,,,2023
+daprodustat,naratriptan,0,,,,2023
+elafibranor,fenofibrate,1,avoid,"Other Peroxisome Proliferator-Activated Receptor-Alpha (PPAR-alpha) Agonists Clinical impact Co-administration of IQIRVO with other PPAR-alpha agonists (e.g., fenofibrate, fenofibric acid) may increase risk of liver injury and muscle injury.",,2024
+elafibranor,fenofibric acid,1,avoid,"Other Peroxisome Proliferator-Activated Receptor-Alpha (PPAR-alpha) Agonists Clinical impact Co-administration of IQIRVO with other PPAR-alpha agonists (e.g., fenofibrate, fenofibric acid) may increase risk of liver injury and muscle injury.",,2024
+elafibranor,gemfibrozil,1,avoid,"( 5.1 , 7.1 ) Strong CYP2C8 Inhibitors: Avoid concomitant use with strong CYP2C8 inhibitors (e.g. gemfibrozil).",,2024
+elafibranor,warfarin sodium,0,,,,2024
+elafibranor,icodextrin,0,,,,2024
+elafibranor,sumatriptan succinate,0,,,,2024
+elafibranor,aliskiren,0,,,,2024
+elafibranor,ergotamine,0,,,,2024
+elafibranor,sodium citrate,0,,,,2024
+etrasimod,amiodarone,1,concomitant,"Prevention or Management Seek the advice of a cardiologist before initiating VELSIPITY treatment with Class Ia (e.g., quinidine, procainamide), Class III anti-arrhythmic drugs (e.g., amiodarone, sotalol), or other drugs that prolong the QT interval.",,2023
+etrasimod,fluconazole,1,avoid,"Moderate to Strong Inhibitors of CYP2C9 and CYP3A4 Clinical Impact Increased exposure of etrasimod was observed with concomitant use with a drug that is a moderate inhibitor of CYP2C9 and a moderate inhibitor of CYP3A4 (i.e., fluconazole) [see Clinical Pharmacology (12.3) ] .",Drug Interaction Studies Clinical Studies Combined moderate CYP2C9 and CYP3A4 inhibitors: Concomitant use of etrasimod with steady-state fluconazole (moderate CYP2C9 and CYP3A4 inhibitor) increased etrasimod AUC by 84% [see Drug Interactions (7) ] .,2023
+etrasimod,procainamide,1,concomitant,"Prevention or Management Seek the advice of a cardiologist before initiating VELSIPITY treatment with Class Ia (e.g., quinidine, procainamide), Class III anti-arrhythmic drugs (e.g., amiodarone, sotalol), or other drugs that prolong the QT interval.",,2023
+etrasimod,quinidine,1,concomitant,"Prevention or Management Seek the advice of a cardiologist before initiating VELSIPITY treatment with Class Ia (e.g., quinidine, procainamide), Class III anti-arrhythmic drugs (e.g., amiodarone, sotalol), or other drugs that prolong the QT interval.",,2023
+etrasimod,rifampin,1,concomitant,"Rifampin Clinical Impact Concomitant use with a drug that is a combined CYP3A4 (strong), CYP2C8 (moderate) and CYP2C9 (moderate) inducer (i.e., rifampin) decreases exposure to etrasimod [see Clinical Pharmacology (12.3) ] .","Combined CYP3A4 (strong), CYP2C8 (moderate) and CYP2C9 (moderate) inducers: Concomitant use of etrasimod with rifampin (strong CYP3A4, moderate CYP2C8, and CYP2C9 inducer) decreased etrasimod AUC by 49% [see Drug Interactions (7) ].",2023
+etrasimod,sotalol,1,concomitant,"Prevention or Management Seek the advice of a cardiologist before initiating VELSIPITY treatment with Class Ia (e.g., quinidine, procainamide), Class III anti-arrhythmic drugs (e.g., amiodarone, sotalol), or other drugs that prolong the QT interval.",,2023
+etrasimod,misoprostol,0,,,,2023
+etrasimod,famotidine,0,,,,2023
+etrasimod,eszopiclone,0,,,,2023
+etrasimod,clofazimine,0,,,,2023
+etrasimod,chloramphenicol,0,,,,2023
+etrasimod,bismuth subsalicylate,0,,,,2023
+etrasimod,losartan,0,,,,2023
+etrasimod,atovaquone,0,,,,2023
+etrasimod,ipratropium bromide,0,,,,2023
+etrasimod,orlistat,0,,,,2023
+etrasimod,castor oil,0,,,,2023
+etrasimod,chlorpheniramine,0,,,,2023
+fexinidazole,dofetilide,1,avoid,"Drugs Substrates of OCT2, OAT1, OAT3, MATE1, and MATE2-K Transporters Examples (not fully inclusive): Metformin, dofetilide, adefovir, cefaclor, furosemide Clinical Impact Increased risk for adverse reactions associated with increased concentrations of the drug due to inhibition of these transporters by fexinidazole [see Clinical Pharmacology (12.3) ] .",,2021
+fexinidazole,duloxetine,1,avoid,"Drugs Metabolized by CYP1A2 or CYP2C19 Examples (not fully inclusive): CYP1A2: duloxetine, tacrine, tizanidine, theophylline CYP2C19: lansoprazole, mephenytoin, diazepam Clinical Impact Increased risk for adverse reactions associated with increased concentrations of the drug due to inhibition of either CYP1A2 or CYP2C19 by fexinidazole [see Clinical Pharmacology (12.3) ] .",,2021
+fexinidazole,fluconazole,1,avoid,"CYP450 Inhibitors Examples (not fully inclusive): Clarithromycin, itraconazole, voriconazole, erythromycin, fluconazole Clinical Impact Multiple CYP450 enzymes are involved in the metabolism of fexinidazole to its pharmacologically active M1 and M2 metabolites.",,2021
+fexinidazole,itraconazole,1,avoid,"CYP450 Inhibitors Examples (not fully inclusive): Clarithromycin, itraconazole, voriconazole, erythromycin, fluconazole Clinical Impact Multiple CYP450 enzymes are involved in the metabolism of fexinidazole to its pharmacologically active M1 and M2 metabolites.",,2021
+fexinidazole,lansoprazole,1,avoid,"Drugs Metabolized by CYP1A2 or CYP2C19 Examples (not fully inclusive): CYP1A2: duloxetine, tacrine, tizanidine, theophylline CYP2C19: lansoprazole, mephenytoin, diazepam Clinical Impact Increased risk for adverse reactions associated with increased concentrations of the drug due to inhibition of either CYP1A2 or CYP2C19 by fexinidazole [see Clinical Pharmacology (12.3) ] .",,2021
+fexinidazole,metformin,1,avoid,"Drugs Substrates of OCT2, OAT1, OAT3, MATE1, and MATE2-K Transporters Examples (not fully inclusive): Metformin, dofetilide, adefovir, cefaclor, furosemide Clinical Impact Increased risk for adverse reactions associated with increased concentrations of the drug due to inhibition of these transporters by fexinidazole [see Clinical Pharmacology (12.3) ] .",,2021
+fexinidazole,midazolam,1,avoid,"7.2 Pharmacokinetic Drug Interactions Table 3: Effect of Fexinidazole on other Drugs Drugs Metabolized by Cytochrome P450 (CYP) 3A4/5 Examples (not fully inclusive): Lovastatin, simvastatin, nisoldipine, saquinavir, midazolam, certain hormonal contraceptives (e.g., birth control pills, skin patches, implant) Clinical Impact Fexinidazole is considered a moderate CYP3A4/5 inducer [see Clinical Pharmacology (12.3) ] .","A clinical drug-drug interaction study evaluated the effect of fexinidazole following administration of 1,800 mg Fexinidazole Tablets for four days, followed by 1,200 mg on Day 5 (not an approved dosing regimen), with single dose administration of 2 mg midazolam (probe substrate of CYP3A4/5) on Day 4 in healthy subjects.",2021
+fexinidazole,phenytoin,1,avoid,"Table 4: Effect of other Drugs on Fexinidazole CYP450 Inducers Examples (not fully inclusive): Rifampin, phenytoin, St.",,2021
+fexinidazole,simvastatin,1,avoid,"7.2 Pharmacokinetic Drug Interactions Table 3: Effect of Fexinidazole on other Drugs Drugs Metabolized by Cytochrome P450 (CYP) 3A4/5 Examples (not fully inclusive): Lovastatin, simvastatin, nisoldipine, saquinavir, midazolam, certain hormonal contraceptives (e.g., birth control pills, skin patches, implant) Clinical Impact Fexinidazole is considered a moderate CYP3A4/5 inducer [see Clinical Pharmacology (12.3) ] .",,2021
+fexinidazole,voriconazole,1,avoid,"CYP450 Inhibitors Examples (not fully inclusive): Clarithromycin, itraconazole, voriconazole, erythromycin, fluconazole Clinical Impact Multiple CYP450 enzymes are involved in the metabolism of fexinidazole to its pharmacologically active M1 and M2 metabolites.",,2021
+fexinidazole,amiloride,0,,,,2021
+fexinidazole,cefprozil,0,,,,2021
+fexinidazole,topiramate,0,,,,2021
+fexinidazole,carboplatin,0,,,,2021
+fexinidazole,griseofulvin,0,,,,2021
+fexinidazole,ketorolac tromethamine,0,,,,2021
+fexinidazole,entecavir,0,,,,2021
+fexinidazole,fosfomycin,0,,,,2021
+fexinidazole,rosuvastatin,0,,,,2021
+fexinidazole,carmustine,0,,,,2021
+fexinidazole,fluphenazine,0,,,,2021
+fexinidazole,nalbuphine,0,,,,2021
+fexinidazole,verapamil hydrochloride,0,,,,2021
+fexinidazole,buspirone hcl,0,,,,2021
+fexinidazole,cocaine,0,,,,2021
+fexinidazole,heparin,0,,,,2021
+fexinidazole,anidulafungin,0,,,,2021
+fexinidazole,ethambutol,0,,,,2021
+fexinidazole,prednisone,0,,,,2021
+fexinidazole,vitamin b6,0,,,,2021
+fostemsavir,atorvastatin,1,coadministration,Statins: Rosuvastatin b Atorvastatin Fluvastatin Pitavastatin Simvastatin ↑Rosuvastatin ↑Atorvastatin ↑Fluvastatin ↑Pitavastatin ↑Simvastatin Use the lowest possible starting dose for statins and monitor for statin-associated adverse events.,,2020
+fostemsavir,carbamazepine,1,contraindicated,"Anticonvulsants: Carbamazepine Phenytoin ↓Temsavir Antimycobacterial: Rifampin b ↓Temsavir Antineoplastic: Mitotane ↓Temsavir Herbal product: St John’s wort ( Hypericum perforatum ) ↓Temsavir Hepatitis C virus direct-acting antivirals: Grazoprevir Voxilaprevir ↑Grazoprevir ↑Voxilaprevir Coadministration may increase exposures of grazoprevir or voxilaprevir; however, the magnitude of increase in exposure is unknown.","These drugs include, but are not limited to [see Drug Interactions ( 7 ), Clinical Pharmacology ( 12.3 )] : o Androgen receptor inhibitor: Enzalutamide o Anticonvulsants: Carbamazepine, phenytoin o Antimycobacterial: Rifampin o Antineoplastic: Mitotane o Herbal product: St John’s wort ( Hypericum perforatum ) • Hypersensitivity to fostemsavir or any of the components of the formulation.",2020
+fostemsavir,estradiol,1,coadministration,"When RUKOBIA was coadministered with oral contraceptives, temsavir increased concentrations of ethinyl estradiol ( Table 3 ) [see Drug Interactions ( 7.3 ), Clinical Pharmacology ( 12.3 )] .",,2020
+fostemsavir,ethinyl estradiol,1,coadministration,"When RUKOBIA was coadministered with oral contraceptives, temsavir increased concentrations of ethinyl estradiol ( Table 3 ) [see Drug Interactions ( 7.3 ), Clinical Pharmacology ( 12.3 )] .",,2020
+fostemsavir,fluvastatin,1,coadministration,Statins: Rosuvastatin b Atorvastatin Fluvastatin Pitavastatin Simvastatin ↑Rosuvastatin ↑Atorvastatin ↑Fluvastatin ↑Pitavastatin ↑Simvastatin Use the lowest possible starting dose for statins and monitor for statin-associated adverse events.,,2020
+fostemsavir,mitotane,1,contraindicated,"Anticonvulsants: Carbamazepine Phenytoin ↓Temsavir Antimycobacterial: Rifampin b ↓Temsavir Antineoplastic: Mitotane ↓Temsavir Herbal product: St John’s wort ( Hypericum perforatum ) ↓Temsavir Hepatitis C virus direct-acting antivirals: Grazoprevir Voxilaprevir ↑Grazoprevir ↑Voxilaprevir Coadministration may increase exposures of grazoprevir or voxilaprevir; however, the magnitude of increase in exposure is unknown.","These drugs include, but are not limited to [see Drug Interactions ( 7 ), Clinical Pharmacology ( 12.3 )] : o Androgen receptor inhibitor: Enzalutamide o Anticonvulsants: Carbamazepine, phenytoin o Antimycobacterial: Rifampin o Antineoplastic: Mitotane o Herbal product: St John’s wort ( Hypericum perforatum ) • Hypersensitivity to fostemsavir or any of the components of the formulation.",2020
+fostemsavir,phenytoin,1,contraindicated,"Anticonvulsants: Carbamazepine Phenytoin ↓Temsavir Antimycobacterial: Rifampin b ↓Temsavir Antineoplastic: Mitotane ↓Temsavir Herbal product: St John’s wort ( Hypericum perforatum ) ↓Temsavir Hepatitis C virus direct-acting antivirals: Grazoprevir Voxilaprevir ↑Grazoprevir ↑Voxilaprevir Coadministration may increase exposures of grazoprevir or voxilaprevir; however, the magnitude of increase in exposure is unknown.","These drugs include, but are not limited to [see Drug Interactions ( 7 ), Clinical Pharmacology ( 12.3 )] : o Androgen receptor inhibitor: Enzalutamide o Anticonvulsants: Carbamazepine, phenytoin o Antimycobacterial: Rifampin o Antineoplastic: Mitotane o Herbal product: St John’s wort ( Hypericum perforatum ) • Hypersensitivity to fostemsavir or any of the components of the formulation.",2020
+fostemsavir,rifampin,1,coadministration,"7.2 Potential for Other Drugs to Affect RUKOBIA Coadministration of RUKOBIA with rifampin, a strong CYP3A4 inducer, significantly decreases temsavir plasma concentrations.","Coadministered Drug(s) and Dose(s) Dose of RUKOBIA n Geometric Mean Ratio (90% CI) of Temsavir Pharmacokinetic Parameters with/without Coadministered Drugs No Effect = 1.00 C max AUC C tau Atazanavir + 300 mg once daily/ 600 mg twice daily 36 1.68 (1.58, 1.79) 1.54 (1.44, 1.65) 1.57 (1.28, 1.91) Ritonavir 100 mg once daily Darunavir + 600 mg twice daily/ 600 mg twice daily 14 1.52 (1.28, 1.82) 1.63 (1.42, 1.88) 1.88 (1.09, 3.22) Ritonavir 100 mg twice daily Darunavir + 600 mg twice daily/ 600 mg twice daily 18 1.53 (1.32, 1.77) 1.34 (1.17, 1.53) 1.33 (0.98, 1.81) Ritonavir + 100 mg twice daily/ Etravirine 200 mg twice daily Etravirine 200 mg twice daily 600 mg twice daily 14 0.52 (0.45, 0.59) 0.50 (0.44, 0.57) 0.48 (0.32, 0.72) Ritonavir 100 mg once daily 600 mg twice daily 18 1.53 (1.31, 1.79) 1.45 (1.29, 1.61) 1.44 (1.00, 2.08) Raltegravir + 400 mg twice daily/ 1,200 mg once daily 17 1.23 (0.92, 1.64) 1.07 (0.84, 1.34) 1.17 (0.59, 2.32) Tenofovir disoproxil fumarate 300 mg once daily Rifabutin + 150 mg once daily/ 600 mg twice daily 23 1.50 (1.38, 1.64) 1.66 (1.52, 1.81) 2.58 (1.95, 3.42) Ritonavir 100 mg once daily Rifabutin 300 mg once daily 600 mg twice daily 22 0.73 (0.65, 0.83) 0.70 (0.64, 0.76) 0.59 (0.46, 0.77) Rifampin 600 mg once daily 1,200-mg single dose 15 0.24 (0.21, 0.28) 0.18 (0.16, 0.2) NA Cobicistat 150 mg once daily 600 mg twice daily 16 1.71 (1.54, 1.90) 1.93 (1.75, 2.12) 2.36 (2.03, 2.75) Darunavir + 800 mg once daily/ 600 mg twice daily 15 1.79 (1.62, 1.98) 1.97 (1.78, 2.18) 2.24 (1.75, 2.88) Cobicistat 150 mg once daily Tenofovir disoproxil fumarate 300 mg once daily 600 mg twice daily 18 0.99 (0.86, 1.13) 1.00 (0.91, 1.11) 1.13 (0.77, 1.66) Maraviroc 300 mg twice daily 600 mg twice daily 14 1.13 (0.96, 1.32) 1.10 (0.99, 1.23) 0.90 (0.69, 1.17) Famotidine 40-mg single dose 600-mg single dose 24 1.01 (0.85, 1.21) 1.04 (0.87, 1.25) 0.90 (0.64, 1.28) 12.4 Microbiology Mechanism of Action Fostemsavir is a prodrug without significant biochemical or antiviral activity that is hydrolyzed to the active moiety, temsavir, which is an HIV-1 attachment inhibitor.",2020
+fostemsavir,rosuvastatin,1,coadministration,Statins: Rosuvastatin b Atorvastatin Fluvastatin Pitavastatin Simvastatin ↑Rosuvastatin ↑Atorvastatin ↑Fluvastatin ↑Pitavastatin ↑Simvastatin Use the lowest possible starting dose for statins and monitor for statin-associated adverse events.,,2020
+fostemsavir,simvastatin,1,coadministration,Statins: Rosuvastatin b Atorvastatin Fluvastatin Pitavastatin Simvastatin ↑Rosuvastatin ↑Atorvastatin ↑Fluvastatin ↑Pitavastatin ↑Simvastatin Use the lowest possible starting dose for statins and monitor for statin-associated adverse events.,,2020
+fostemsavir,tranylcypromine,0,,,,2020
+fostemsavir,mefenamic acid,0,,,,2020
+fostemsavir,tubocurarine,0,,,,2020
+fostemsavir,omeprazole,0,,,,2020
+fostemsavir,dantrolene sodium,0,,,,2020
+fostemsavir,succinylcholine,0,,,,2020
+fostemsavir,etonogestrel,0,,,,2020
+fostemsavir,quetiapine,0,,,,2020
+fostemsavir,paroxetine,0,,,,2020
+fostemsavir,interferon beta-1a,0,,,,2020
+fostemsavir,nitroprusside,0,,,,2020
+fostemsavir,butalbital,0,,,,2020
+fostemsavir,meperidine,0,,,,2020
+fostemsavir,baclofen,0,,,,2020
+fostemsavir,divalproex sodium,0,,,,2020
+fostemsavir,amantadine,0,,,,2020
+fostemsavir,theophylline,0,,,,2020
+fostemsavir,duloxetine,0,,,,2020
+fostemsavir,amikacin,0,,,,2020
+fostemsavir,oxacillin,0,,,,2020
+gepirone,linezolid,1,contraindicated,"Intervention EXXUA is contraindicated in patients taking MAOIs, including MAOIs such as linezolid or intravenous methylene blue or in patients who have taken MAOIs within the preceding 14 days.",,2023
+gepirone,nitazoxanide,0,,,,2023
+gepirone,cefazolin,0,,,,2023
+iptacopan,gemfibrozil,1,coadministration,"( 7.1 ) Strong CYP2C8 inhibitors (e.g., gemfibrozil): May increase iptacopan exposure.",,2023
+iptacopan,rifampin,1,coadministration,"( 7.2 ) 7.1 CYP2C8 Inducers Concomitant use of CYP2C8 inducers (e.g., rifampin) may decrease iptacopan exposure, which may result in loss of or reduced efficacy of FABHALTA.",,2023
+iptacopan,prednisone,0,,,,2023
+iptacopan,tiagabine,0,,,,2023
+iptacopan,clotrimazole,0,,,,2023
+iptacopan,alosetron,0,,,,2023
+lonafarnib,atorvastatin,1,contraindicated,"Prevention or Management HMG CoA reductase inhibitors (“Statins”) Coadministration of ZOKINVY with lovastatin, simvastatin, or atorvastatin is contraindicated [see Contraindications ( 4 )] .",,2020
+lonafarnib,digoxin,1,coadministration,"Prevention or Management When ZOKINVY is coadministered with P-gp substrates (e.g., digoxin, dabigatran) where minimal concentration changes may lead to serious or life-threatening toxicities, monitor for adverse reactions and reduce the dosage of the P-gp substrate in accordance with its approved product labeling.",,2020
+lonafarnib,loperamide,1,coadministration,Loperamide Clinical Impact Lonafarnib is a weak inhibitor of P-gp and strong inhibitor of CYP3A.,"Loperamide With coadministration of a single oral 2 mg dose of loperamide (primarily metabolized by CYP2C8 and CYP3A and a substrate of P-gp) with multiple oral doses of lonafarnib 100 mg twice daily for 5 days in healthy subjects, the C max and AUC of loperamide were increased by 214% and 299%, respectively [see Drug Interactions ( 7.2 )] .",2020
+lonafarnib,lovastatin,1,contraindicated,"Prevention or Management HMG CoA reductase inhibitors (“Statins”) Coadministration of ZOKINVY with lovastatin, simvastatin, or atorvastatin is contraindicated [see Contraindications ( 4 )] .",,2020
+lonafarnib,midazolam,1,contraindicated,"Coadministration of ZOKINVY with a CYP3A substrate increases the AUC and C max of the CYP3A substrate [see Clinical Pharmacology ( 12.3 )] which may increase the risk of the CYP3A substrate's adverse reactions, including myopathy or rhabdomyolysis (with statins), or extreme sedation or respiratory depression (with midazolam).","With coadministration of a single oral dose of 3 mg midazolam with multiple oral doses of 100 mg lonafarnib twice daily for 5 days in healthy subjects, the C max and AUC of midazolam were increased by 180% and 639%, respectively [see Dosage and Administration ( 2.3 ), Contraindications ( 4 ), Drug Interactions ( 7.2 )] .",2020
+lonafarnib,simvastatin,1,contraindicated,"Prevention or Management HMG CoA reductase inhibitors (“Statins”) Coadministration of ZOKINVY with lovastatin, simvastatin, or atorvastatin is contraindicated [see Contraindications ( 4 )] .",,2020
+lonafarnib,nadolol,0,,,,2020
+lonafarnib,magnesium salicylate,0,,,,2020
+lonafarnib,cefuroxime,0,,,,2020
+lonafarnib,deferasirox,0,,,,2020
+lonafarnib,oxytocin,0,,,,2020
+lonafarnib,vecuronium,0,,,,2020
+lonafarnib,losartan,0,,,,2020
+lonafarnib,guanfacine,0,,,,2020
+lonafarnib,eszopiclone,0,,,,2020
+lonafarnib,vardenafil,0,,,,2020
+lonafarnib,ibandronate,0,,,,2020
+lonafarnib,methenamine,0,,,,2020
+lonapegsomatropin-tcgd,antipyrine,1,avoid,Cytochrome P450-Metabolized Drugs Clinical Impact: Limited published data indicate that somatropin treatment increases cytochrome P450 (CYP450)-mediated antipyrine clearance.,,2021
+lonapegsomatropin-tcgd,ciprofloxacin,0,,,,2021
+lonapegsomatropin-tcgd,procaine,0,,,,2021
+maribavir,carbamazepine,1,coadministration,"( 5.1 , 5.3 , 7 ) Coadministration with strong CYP3A4 inducers is not recommended, except with a dose adjustment when coadministered with selected anticonvulsants (carbamazepine and phenytoin).",,2021
+maribavir,digoxin,1,concomitant,Antiarrhythmics Digoxin The interaction between LIVTENCITY and the concomitant drug was evaluated in a clinical study [see Clinical Pharmacology (12.3) ] . ↑ Digoxin Use caution when LIVTENCITY and digoxin are coadministered.,"400 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.40 (1.09, 1.67) 1.53 (1.22, 1.79) 1.05 (0.71, 1.40) Phenobarbital 100 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.80 (1.18, 2.35) 2.17 (1.69, 2.57) 0.94 (0.22, 1.97) Phenytoin 300 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.70 (1.06, 2.46) 2.05 (1.49, 2.63) 0.89 (0.26, 2.04) Antimycobacterials Rifabutin 300 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.38 (1.00, 1.74) 1.52 (1.17, 1.83) 1.06 (0.64, 1.49) Rifampin 600 mg once daily 400 mg twice daily 14 0.40 (0.36, 0.44) 0.61 (0.52, 0.72) 0.18 (0.14, 0.25) Antifungals Ketoconazole 400 mg single dose 400 mg single dose 19 1.53 (1.44, 1.63) 1.10 (1.01, 1.19) - Antacids Aluminum hydroxide and magnesium hydroxide antacid 20 mL Containing 800 mg aluminum hydroxide and 800 mg magnesium hydroxide. single dose 100 mg single dose 15 0.89 (0.83, 0.96) 0.84 (0.75, 0.94) - Table 8: Drug Interactions: Changes in Pharmacokinetics for Coadministered Drug in the Presence of 400 mg Twice Daily LIVTENCITY Coadministered Drug and Regimen N Geometric Mean Ratio (90% CI) of Coadministered Drug PK with/without LIVTENCITY [No Effect=1.00] AUC C max C tau Immunosuppressants Tacrolimus stable dose, twice daily (total daily dose: 0.5-16 mg) 20 1.51 (1.39, 1.65) 1.38 (1.20, 1.57) 1.57 (1.41, 1.74) P-gp substrate Digoxin 0.5 mg single dose 18 1.21 (1.10, 1.32) 1.25 (1.13, 1.38) - 12.4 Microbiology Mechanism of Action The antiviral activity of maribavir is mediated by competitive inhibition of the protein kinase activity of human CMV enzyme pUL97, which results in inhibition of the phosphorylation of proteins.",2021
+maribavir,phenobarbital,1,coadministration,"When coadministered with the moderate CYP3A4 inducers rifabutin (antimycobacterial) or phenobarbital (anticonvulsant), a dose adjustment is recommended.","400 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.40 (1.09, 1.67) 1.53 (1.22, 1.79) 1.05 (0.71, 1.40) Phenobarbital 100 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.80 (1.18, 2.35) 2.17 (1.69, 2.57) 0.94 (0.22, 1.97) Phenytoin 300 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.70 (1.06, 2.46) 2.05 (1.49, 2.63) 0.89 (0.26, 2.04) Antimycobacterials Rifabutin 300 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.38 (1.00, 1.74) 1.52 (1.17, 1.83) 1.06 (0.64, 1.49) Rifampin 600 mg once daily 400 mg twice daily 14 0.40 (0.36, 0.44) 0.61 (0.52, 0.72) 0.18 (0.14, 0.25) Antifungals Ketoconazole 400 mg single dose 400 mg single dose 19 1.53 (1.44, 1.63) 1.10 (1.01, 1.19) - Antacids Aluminum hydroxide and magnesium hydroxide antacid 20 mL Containing 800 mg aluminum hydroxide and 800 mg magnesium hydroxide. single dose 100 mg single dose 15 0.89 (0.83, 0.96) 0.84 (0.75, 0.94) - Table 8: Drug Interactions: Changes in Pharmacokinetics for Coadministered Drug in the Presence of 400 mg Twice Daily LIVTENCITY Coadministered Drug and Regimen N Geometric Mean Ratio (90% CI) of Coadministered Drug PK with/without LIVTENCITY [No Effect=1.00] AUC C max C tau Immunosuppressants Tacrolimus stable dose, twice daily (total daily dose: 0.5-16 mg) 20 1.51 (1.39, 1.65) 1.38 (1.20, 1.57) 1.57 (1.41, 1.74) P-gp substrate Digoxin 0.5 mg single dose 18 1.21 (1.10, 1.32) 1.25 (1.13, 1.38) - 12.4 Microbiology Mechanism of Action The antiviral activity of maribavir is mediated by competitive inhibition of the protein kinase activity of human CMV enzyme pUL97, which results in inhibition of the phosphorylation of proteins.",2021
+maribavir,phenytoin,1,coadministration,"( 5.1 , 5.3 , 7 ) Coadministration with strong CYP3A4 inducers is not recommended, except with a dose adjustment when coadministered with selected anticonvulsants (carbamazepine and phenytoin).","400 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.40 (1.09, 1.67) 1.53 (1.22, 1.79) 1.05 (0.71, 1.40) Phenobarbital 100 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.80 (1.18, 2.35) 2.17 (1.69, 2.57) 0.94 (0.22, 1.97) Phenytoin 300 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.70 (1.06, 2.46) 2.05 (1.49, 2.63) 0.89 (0.26, 2.04) Antimycobacterials Rifabutin 300 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.38 (1.00, 1.74) 1.52 (1.17, 1.83) 1.06 (0.64, 1.49) Rifampin 600 mg once daily 400 mg twice daily 14 0.40 (0.36, 0.44) 0.61 (0.52, 0.72) 0.18 (0.14, 0.25) Antifungals Ketoconazole 400 mg single dose 400 mg single dose 19 1.53 (1.44, 1.63) 1.10 (1.01, 1.19) - Antacids Aluminum hydroxide and magnesium hydroxide antacid 20 mL Containing 800 mg aluminum hydroxide and 800 mg magnesium hydroxide. single dose 100 mg single dose 15 0.89 (0.83, 0.96) 0.84 (0.75, 0.94) - Table 8: Drug Interactions: Changes in Pharmacokinetics for Coadministered Drug in the Presence of 400 mg Twice Daily LIVTENCITY Coadministered Drug and Regimen N Geometric Mean Ratio (90% CI) of Coadministered Drug PK with/without LIVTENCITY [No Effect=1.00] AUC C max C tau Immunosuppressants Tacrolimus stable dose, twice daily (total daily dose: 0.5-16 mg) 20 1.51 (1.39, 1.65) 1.38 (1.20, 1.57) 1.57 (1.41, 1.74) P-gp substrate Digoxin 0.5 mg single dose 18 1.21 (1.10, 1.32) 1.25 (1.13, 1.38) - 12.4 Microbiology Mechanism of Action The antiviral activity of maribavir is mediated by competitive inhibition of the protein kinase activity of human CMV enzyme pUL97, which results in inhibition of the phosphorylation of proteins.",2021
+maribavir,rifabutin,1,coadministration,"When coadministered with the moderate CYP3A4 inducers rifabutin (antimycobacterial) or phenobarbital (anticonvulsant), a dose adjustment is recommended.","400 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.40 (1.09, 1.67) 1.53 (1.22, 1.79) 1.05 (0.71, 1.40) Phenobarbital 100 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.80 (1.18, 2.35) 2.17 (1.69, 2.57) 0.94 (0.22, 1.97) Phenytoin 300 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.70 (1.06, 2.46) 2.05 (1.49, 2.63) 0.89 (0.26, 2.04) Antimycobacterials Rifabutin 300 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.38 (1.00, 1.74) 1.52 (1.17, 1.83) 1.06 (0.64, 1.49) Rifampin 600 mg once daily 400 mg twice daily 14 0.40 (0.36, 0.44) 0.61 (0.52, 0.72) 0.18 (0.14, 0.25) Antifungals Ketoconazole 400 mg single dose 400 mg single dose 19 1.53 (1.44, 1.63) 1.10 (1.01, 1.19) - Antacids Aluminum hydroxide and magnesium hydroxide antacid 20 mL Containing 800 mg aluminum hydroxide and 800 mg magnesium hydroxide. single dose 100 mg single dose 15 0.89 (0.83, 0.96) 0.84 (0.75, 0.94) - Table 8: Drug Interactions: Changes in Pharmacokinetics for Coadministered Drug in the Presence of 400 mg Twice Daily LIVTENCITY Coadministered Drug and Regimen N Geometric Mean Ratio (90% CI) of Coadministered Drug PK with/without LIVTENCITY [No Effect=1.00] AUC C max C tau Immunosuppressants Tacrolimus stable dose, twice daily (total daily dose: 0.5-16 mg) 20 1.51 (1.39, 1.65) 1.38 (1.20, 1.57) 1.57 (1.41, 1.74) P-gp substrate Digoxin 0.5 mg single dose 18 1.21 (1.10, 1.32) 1.25 (1.13, 1.38) - 12.4 Microbiology Mechanism of Action The antiviral activity of maribavir is mediated by competitive inhibition of the protein kinase activity of human CMV enzyme pUL97, which results in inhibition of the phosphorylation of proteins.",2021
+maribavir,rifampin,1,coadministration,Rifampin ↓ Maribavir Coadministration of LIVTENCITY and rifampin is not recommended due to potential for a decrease in efficacy of LIVTENCITY.,"400 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.40 (1.09, 1.67) 1.53 (1.22, 1.79) 1.05 (0.71, 1.40) Phenobarbital 100 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.80 (1.18, 2.35) 2.17 (1.69, 2.57) 0.94 (0.22, 1.97) Phenytoin 300 mg once daily 1,200 mg twice daily / 400 mg twice daily 200 1.70 (1.06, 2.46) 2.05 (1.49, 2.63) 0.89 (0.26, 2.04) Antimycobacterials Rifabutin 300 mg once daily 800 mg twice daily / 400 mg twice daily 200 1.38 (1.00, 1.74) 1.52 (1.17, 1.83) 1.06 (0.64, 1.49) Rifampin 600 mg once daily 400 mg twice daily 14 0.40 (0.36, 0.44) 0.61 (0.52, 0.72) 0.18 (0.14, 0.25) Antifungals Ketoconazole 400 mg single dose 400 mg single dose 19 1.53 (1.44, 1.63) 1.10 (1.01, 1.19) - Antacids Aluminum hydroxide and magnesium hydroxide antacid 20 mL Containing 800 mg aluminum hydroxide and 800 mg magnesium hydroxide. single dose 100 mg single dose 15 0.89 (0.83, 0.96) 0.84 (0.75, 0.94) - Table 8: Drug Interactions: Changes in Pharmacokinetics for Coadministered Drug in the Presence of 400 mg Twice Daily LIVTENCITY Coadministered Drug and Regimen N Geometric Mean Ratio (90% CI) of Coadministered Drug PK with/without LIVTENCITY [No Effect=1.00] AUC C max C tau Immunosuppressants Tacrolimus stable dose, twice daily (total daily dose: 0.5-16 mg) 20 1.51 (1.39, 1.65) 1.38 (1.20, 1.57) 1.57 (1.41, 1.74) P-gp substrate Digoxin 0.5 mg single dose 18 1.21 (1.10, 1.32) 1.25 (1.13, 1.38) - 12.4 Microbiology Mechanism of Action The antiviral activity of maribavir is mediated by competitive inhibition of the protein kinase activity of human CMV enzyme pUL97, which results in inhibition of the phosphorylation of proteins.",2021
+maribavir,mineral oil,0,,,,2021
+maribavir,cefoxitin,0,,,,2021
+maribavir,nafcillin,0,,,,2021
+maribavir,lithium,0,,,,2021
+maribavir,vinorelbine,0,,,,2021
+maribavir,pentobarbital,0,,,,2021
+maribavir,tripelennamine,0,,,,2021
+maribavir,fludrocortisone acetate,0,,,,2021
+maribavir,acitretin,0,,,,2021
+maribavir,ribavirin,0,,,,2021
+maribavir,ginkgo,0,,,,2021
+maribavir,vitamin d2,0,,,,2021
+mavorixafor,digoxin,1,concomitant,"Digoxin: Measure serum digoxin concentrations before initiating concomitant use with XOLREMDI, and continue monitoring serum digoxin concentrations as recommended in the Prescribing Information for digoxin [see Clinical Pharmacology (12.3) ] .",,2024
+mavorixafor,valsartan,0,,,,2024
+mavorixafor,fentanyl,0,,,,2024
+mitapivat,estradiol,1,avoid,"Co-administration of AQVESME will decrease systemic concentrations of drugs that are sensitive CYP3A substrates, including hormonal contraceptives (e.g., ethinyl estradiol) [see Clinical Pharmacology (12.3) ] .",,2022
+mitapivat,ethinyl estradiol,1,avoid,"Co-administration of AQVESME will decrease systemic concentrations of drugs that are sensitive CYP3A substrates, including hormonal contraceptives (e.g., ethinyl estradiol) [see Clinical Pharmacology (12.3) ] .",,2022
+mitapivat,levonorgestrel,1,avoid,Avoid concomitant use with hormonal contraceptives except for intrauterine systems containing levonorgestrel.,,2022
+mitapivat,cilostazol,0,,,,2022
+mitapivat,medroxyprogesterone,0,,,,2022
+mitapivat,ibandronate,0,,,,2022
+mitapivat,quinidine,0,,,,2022
+mitapivat,mycophenolate mofetil,0,,,,2022
+mitapivat,vinblastine,0,,,,2022
+momelotinib,rosuvastatin,1,concomitant,"When administered concomitantly with OJJAARA, initiate rosuvastatin (BCRP substrate) at 5 mg and do not increase to more than 10 mg once daily.",BCRP Substrates: A BCRP substrate (rosuvastatin) C max increased by 220% and AUC increased by 170% following concomitant use of a single dose of rosuvastatin at 10 mg with multiple doses of momelotinib (200 mg once daily).,2023
+momelotinib,sodium thiosulfate,0,,,,2023
+momelotinib,succinylcholine chloride,0,,,,2023
+oliceridine,butorphanol,1,avoid,"Examples: butorphanol, nalbuphine, pentazocine, buprenorphine Muscle Relaxants Clinical Impact: OLINVYK may enhance the neuromuscular blocking action of skeletal muscle relaxants and produce an increased degree of respiratory depression.",,2020
+oliceridine,carbamazepine,1,concomitant,"Examples: Rifampin, carbamazepine, phenytoin Benzodiazepines and Other Central Nervous System (CNS) Depressants Clinical Impact: Due to additive pharmacologic effect, the concomitant use of benzodiazepines or other CNS depressants, including alcohol, increases the risk of hypotension, respiratory depression, profound sedation, coma, and death [see Warnings and Precautions ( 5.3 )].",,2020
+oliceridine,erythromycin,1,concomitant,"Examples: Inhibitors of CYP3A4: Macrolide antibiotics (e.g., erythromycin), azole-antifungal agents (e.g., ketoconazole, itraconazole), anti-retroviral agents, selective serotonin re-uptake inhibitors (SSRIs), protease inhibitors (e.g., ritonavir), NS3/4A inhibitors.",,2020
+oliceridine,fluoxetine,1,concomitant,"Examples: Paroxetine, fluoxetine, quinidine, bupropion Moderate to Strong Inhibitors of CYP3A4 Clinical Impact: The concomitant administration of moderate to strong CYP3A4 inhibitors can increase the plasma concentration of oliceridine, resulting in increased or prolonged opioid adverse reactions.",,2020
+oliceridine,itraconazole,1,concomitant,"Examples: Inhibitors of CYP3A4: Macrolide antibiotics (e.g., erythromycin), azole-antifungal agents (e.g., ketoconazole, itraconazole), anti-retroviral agents, selective serotonin re-uptake inhibitors (SSRIs), protease inhibitors (e.g., ritonavir), NS3/4A inhibitors.",,2020
+oliceridine,paroxetine,1,concomitant,"Examples: Paroxetine, fluoxetine, quinidine, bupropion Moderate to Strong Inhibitors of CYP3A4 Clinical Impact: The concomitant administration of moderate to strong CYP3A4 inhibitors can increase the plasma concentration of oliceridine, resulting in increased or prolonged opioid adverse reactions.",,2020
+oliceridine,pentazocine,1,avoid,"Examples: butorphanol, nalbuphine, pentazocine, buprenorphine Muscle Relaxants Clinical Impact: OLINVYK may enhance the neuromuscular blocking action of skeletal muscle relaxants and produce an increased degree of respiratory depression.",,2020
+oliceridine,phenytoin,1,concomitant,"Examples: Rifampin, carbamazepine, phenytoin Benzodiazepines and Other Central Nervous System (CNS) Depressants Clinical Impact: Due to additive pharmacologic effect, the concomitant use of benzodiazepines or other CNS depressants, including alcohol, increases the risk of hypotension, respiratory depression, profound sedation, coma, and death [see Warnings and Precautions ( 5.3 )].",,2020
+oliceridine,quinidine,1,concomitant,"Examples: Paroxetine, fluoxetine, quinidine, bupropion Moderate to Strong Inhibitors of CYP3A4 Clinical Impact: The concomitant administration of moderate to strong CYP3A4 inhibitors can increase the plasma concentration of oliceridine, resulting in increased or prolonged opioid adverse reactions.",,2020
+oliceridine,rifampin,1,concomitant,"Examples: Rifampin, carbamazepine, phenytoin Benzodiazepines and Other Central Nervous System (CNS) Depressants Clinical Impact: Due to additive pharmacologic effect, the concomitant use of benzodiazepines or other CNS depressants, including alcohol, increases the risk of hypotension, respiratory depression, profound sedation, coma, and death [see Warnings and Precautions ( 5.3 )].",,2020
+oliceridine,caspofungin,0,,,,2020
+oliceridine,theophylline,0,,,,2020
+oliceridine,mecamylamine,0,,,,2020
+oliceridine,lincomycin,0,,,,2020
+oliceridine,atomoxetine,0,,,,2020
+oliceridine,levonorgestrel,0,,,,2020
+oliceridine,valsartan,0,,,,2020
+oliceridine,chlorpheniramine,0,,,,2020
+oliceridine,vinblastine,0,,,,2020
+oliceridine,dantrolene sodium,0,,,,2020
+oliceridine,cefixime,0,,,,2020
+oliceridine,celecoxib,0,,,,2020
+oliceridine,terazosin,0,,,,2020
+oliceridine,aspirin,0,,,,2020
+oliceridine,acebutolol,0,,,,2020
+oliceridine,nevirapine,0,,,,2020
+oliceridine,naproxen,0,,,,2020
+oliceridine,clotrimazole,0,,,,2020
+oliceridine,pentamidine,0,,,,2020
+oliceridine,dipyridamole,0,,,,2020
+opicapone,isocarboxazid,1,concomitant,"7 DRUG INTERACTIONS 7.1 Non-Selective Monoamine Oxidase (MAO) Inhibitors Both ONGENTYS and non-selective MAO inhibitors (e.g., phenelzine, isocarboxazid, and tranylcypromine) inhibit catecholamine metabolism, leading to increased levels of catecholamines.",,2020
+opicapone,phenelzine,1,concomitant,"7 DRUG INTERACTIONS 7.1 Non-Selective Monoamine Oxidase (MAO) Inhibitors Both ONGENTYS and non-selective MAO inhibitors (e.g., phenelzine, isocarboxazid, and tranylcypromine) inhibit catecholamine metabolism, leading to increased levels of catecholamines.",,2020
+opicapone,tranylcypromine,1,concomitant,"7 DRUG INTERACTIONS 7.1 Non-Selective Monoamine Oxidase (MAO) Inhibitors Both ONGENTYS and non-selective MAO inhibitors (e.g., phenelzine, isocarboxazid, and tranylcypromine) inhibit catecholamine metabolism, leading to increased levels of catecholamines.",,2020
+opicapone,ascorbic acid,0,,,,2020
+opicapone,fosinopril,0,,,,2020
+opicapone,vancomycin,0,,,,2020
+opicapone,citalopram,0,,,,2020
+opicapone,denileukin diftitox,0,,,,2020
+opicapone,ephedrine,0,,,,2020
+osilodrostat,carbamazepine,1,concomitant,"CYP3A4 and CYP2B6 Inducers Clinical Impact: Concomitant use of ISTURISA with strong CYP3A4 and/or CYP2B6 inducers (e.g., carbamazepine, rifampin, phenobarbital) may cause a decrease in osilodrostat concentration and may reduce the efficacy of ISTURISA [see Clinical Pharmacology (12.3) ] .",,2020
+osilodrostat,clarithromycin,1,concomitant,"Table 3: Effect of Other Drugs on ISTURISA CYP3A4 Inhibitors Clinical Impact: Concomitant use of ISTURISA with a strong CYP3A4 inhibitor (e.g., itraconazole, clarithromycin) may cause an increase in osilodrostat concentration and may increase the risk of ISTURISA-related adverse reactions [see Clinical Pharmacology (12.3) ] .",,2020
+osilodrostat,itraconazole,1,concomitant,"Table 3: Effect of Other Drugs on ISTURISA CYP3A4 Inhibitors Clinical Impact: Concomitant use of ISTURISA with a strong CYP3A4 inhibitor (e.g., itraconazole, clarithromycin) may cause an increase in osilodrostat concentration and may increase the risk of ISTURISA-related adverse reactions [see Clinical Pharmacology (12.3) ] .",,2020
+osilodrostat,phenobarbital,1,concomitant,"CYP3A4 and CYP2B6 Inducers Clinical Impact: Concomitant use of ISTURISA with strong CYP3A4 and/or CYP2B6 inducers (e.g., carbamazepine, rifampin, phenobarbital) may cause a decrease in osilodrostat concentration and may reduce the efficacy of ISTURISA [see Clinical Pharmacology (12.3) ] .",,2020
+osilodrostat,rifampin,1,concomitant,"CYP3A4 and CYP2B6 Inducers Clinical Impact: Concomitant use of ISTURISA with strong CYP3A4 and/or CYP2B6 inducers (e.g., carbamazepine, rifampin, phenobarbital) may cause a decrease in osilodrostat concentration and may reduce the efficacy of ISTURISA [see Clinical Pharmacology (12.3) ] .",,2020
+osilodrostat,lincomycin,0,,,,2020
+osilodrostat,daunorubicin,0,,,,2020
+osilodrostat,praziquantel,0,,,,2020
+osilodrostat,candesartan cilexetil,0,,,,2020
+osilodrostat,vecuronium,0,,,,2020
+osilodrostat,doxycycline,0,,,,2020
+osilodrostat,dorzolamide,0,,,,2020
+osilodrostat,acetaminophen,0,,,,2020
+osilodrostat,hydroxyurea,0,,,,2020
+osilodrostat,oxcarbazepine,0,,,,2020
+oteseconazole,rosuvastatin,1,concomitant,"Concomitant use of VIVJOA with BCRP substrates (e.g., rosuvastatin) may increase the exposure of BCRP substrates (e.g., rosuvastatin), which may increase the risk of adverse reactions associated with these drugs.","Drug Interaction Studies BCRP substrates: Oteseconazole increased the C max and AUC 0-24h of rosuvastatin, a BCRP substrate, by 118% and 114%, respectively .",2022
+oteseconazole,cocaine,0,,,,2022
+oteseconazole,cevimeline,0,,,,2022
+ozanimod,cyclosporine,1,concomitant,"Table 5: Clinically Relevant Interactions Affecting Drugs and Vaccines Co-administered with ZEPOSIA Anti-Neoplastic, Immune-Modulating, or Non-Corticosteroid Immunosuppressive Therapies Clinical Impact: ZEPOSIA has not been studied in combination with anti-neoplastic, immune-modulating, or non-corticosteroid immunosuppressive therapies with the exception of cyclosporine, which had no pharmacokinetic interaction [see Clinical Pharmacology (12.3) ] .",BCRP Inhibitors Co-administration of ozanimod with cyclosporine (BCRP inhibitor) had no effect on the exposure of ozanimod or the major active metabolites CC112273 and CC1084037.,2020
+ozanimod,linezolid,1,contraindicated,"Prevention or Management: Co-administration of ZEPOSIA with MAO inhibitors (e.g., selegiline, phenelzine, linezolid) is contraindicated.",,2020
+ozanimod,phenelzine,1,contraindicated,"Prevention or Management: Co-administration of ZEPOSIA with MAO inhibitors (e.g., selegiline, phenelzine, linezolid) is contraindicated.",,2020
+ozanimod,rifampin,1,avoid,"Strong CYP2C8 Inducers Clinical Impact: Co-administration of ZEPOSIA with strong CYP2C8 inducers (e.g., rifampin) reduces the exposure of the major active metabolites of ozanimod [see Clinical Pharmacology (12.3) ] , which may decrease the efficacy of ZEPOSIA.","Strong CYP2C8 Inducers Co-administration of rifampin (a strong inducer of CYP3A and P-gp, and a moderate inducer of CYP2C8) 600 mg once daily at steady state and a single dose of ZEPOSIA 0.92 mg reduced the exposure (AUC) for ozanimod, CC112273, and CC1084037 by approximately 24%, 60%, and 55%, respectively.",2020
+ozanimod,selegiline,1,contraindicated,"Prevention or Management: Co-administration of ZEPOSIA with MAO inhibitors (e.g., selegiline, phenelzine, linezolid) is contraindicated.",,2020
+ozanimod,levothyroxine,0,,,,2020
+ozanimod,castor oil,0,,,,2020
+ozanimod,amylase,0,,,,2020
+ozanimod,perphenazine,0,,,,2020
+ozanimod,nicotine,0,,,,2020
+ozanimod,salicylate,0,,,,2020
+ozanimod,phenobarbital,0,,,,2020
+ozanimod,ramipril,0,,,,2020
+ozanimod,dextran,0,,,,2020
+ozanimod,frovatriptan,0,,,,2020
+pacritinib,digoxin,1,concomitant,Digoxin: Measure serum digoxin concentrations before initiating concomitant use with VONJO and continue monitoring serum digoxin concentrations as recommended in the Prescribing Information for digoxin [see Clinical Pharmacology ( 12.3 )] .,,2022
+pacritinib,fluconazole,1,contraindicated,"Monitor patients concomitantly receiving moderate CYP3A4 inhibitors (e.g., fluconazole) for increased adverse reactions and consider VONJO dose modifications based on safety [see Dosage and Administration ( 2.5 )] .","Table 7 Change in Pharmacokinetics of Pacritinib Following Administration of a Single 400 mg Dose VONJO in the Presence of Co-administered Drugs Co-administered Drug Regimen of Co-administered Drug Ratio (90% CI) of pacritinib exposure 1 C max AUC 0-t Clarithromycin (strong CYP3A4 inhibitor) 500 mg every 12 hours for 5 days 1.30 (1.22, 1.39) 1.80 (1.67, 1.94) Rifampin (strong CYP3A4 inducer) 600 mg once daily for 10 days 0.49 (0.43, 0.55) 0.13 (0.11, 0.15) Notes: AUC 0-t = Area under the curve from zero to the last quantifiable concentration; CI = Confidence interval; CYP = Cytochrome P450 1 Ratios for C max and AUC compare co-administration of the medication with VONJO vs. administration of single dose 400 mg VONJO alone Table 8 Change in Pharmacokinetics of 200 mg VONJO BID at Steady State in the Presence of Co-administered Drugs Co-administered Drug Regimen of Co-administered Drug Ratio (90% CI) of pacritinib exposure 1 C max AUC 0-tau Fluconazole (moderate CYP3A4 inhibitor) 200 mg once daily for 7 days 1.41 (1.35, 1.48) 1.45 (1.39, 1.52) Bosentan (moderate CYP3A4 inducer) 125 mg twice daily for 7 days 0.84 (0.76, 0.92) 0.79 (0.72, 0.87) Notes: AUC 0-tau = Area under the curve for a dosing interval; BID = Twice daily; CI = Confidence interval; C max = Maximum plasma concentration; CYP = Cytochrome P450.",2022
+pacritinib,levonorgestrel,1,avoid,Hormonal Contraceptives Avoid concomitant use of VONJO with hormonal contraceptives except for intrauterine systems containing levonorgestrel.,,2022
+pacritinib,rosuvastatin,1,concomitant,Rosuvastatin: The dose of rosuvastatin should not exceed 20 mg once daily when concomitantly used with VONJO [see Clinical Pharmacology ( 12.3 )] .,,2022
+pacritinib,tacrolimus,0,,,,2022
+pacritinib,methylergonovine,0,,,,2022
+pacritinib,anidulafungin,0,,,,2022
+pacritinib,bexarotene,0,,,,2022
+pacritinib,lansoprazole,0,,,,2022
+pacritinib,cromolyn sodium,0,,,,2022
+pacritinib,miconazole,0,,,,2022
+pacritinib,thiothixene,0,,,,2022
+pafolacianine,folic acid,1,avoid,"7 DRUG INTERACTIONS Use of folate, folic acid, or folate-containing supplements may reduce binding of pafolacianine to folate receptors and could reduce the detection of lesions with CYTALUX.",,2021
+pafolacianine,primaquine,0,,,,2021
+pafolacianine,chlorthalidone,0,,,,2021
+palopegteriparatide,digitalis,1,concomitant,"( 7.2 ) 7.1 Drugs Affected by Serum Calcium Digoxin YORVIPATH increases serum calcium, therefore, concomitant use with digoxin (which has a narrow therapeutic index) may predispose patients to digitalis toxicity if hypercalcemia develops.",,2024
+palopegteriparatide,digoxin,1,concomitant,"( 7.2 ) 7.1 Drugs Affected by Serum Calcium Digoxin YORVIPATH increases serum calcium, therefore, concomitant use with digoxin (which has a narrow therapeutic index) may predispose patients to digitalis toxicity if hypercalcemia develops.",,2024
+palopegteriparatide,lovastatin,0,,,,2024
+palopegteriparatide,benazepril,0,,,,2024
+palopegteriparatide,dantrolene sodium,0,,,,2024
+palopegteriparatide,dextran,0,,,,2024
+quizartinib,atovaquone,1,concomitant,"Examples of QT prolonging drugs include but are not limited to antifungal azoles, ondansetron, granisetron, azithromycin, pentamidine, doxycycline, moxifloxacin, atovaquone, prochlorperazine, and tacrolimus.",,2023
+quizartinib,azithromycin,1,concomitant,"Examples of QT prolonging drugs include but are not limited to antifungal azoles, ondansetron, granisetron, azithromycin, pentamidine, doxycycline, moxifloxacin, atovaquone, prochlorperazine, and tacrolimus.",,2023
+quizartinib,doxycycline,1,concomitant,"Examples of QT prolonging drugs include but are not limited to antifungal azoles, ondansetron, granisetron, azithromycin, pentamidine, doxycycline, moxifloxacin, atovaquone, prochlorperazine, and tacrolimus.",,2023
+quizartinib,granisetron,1,concomitant,"Examples of QT prolonging drugs include but are not limited to antifungal azoles, ondansetron, granisetron, azithromycin, pentamidine, doxycycline, moxifloxacin, atovaquone, prochlorperazine, and tacrolimus.",,2023
+quizartinib,ondansetron,1,concomitant,"Examples of QT prolonging drugs include but are not limited to antifungal azoles, ondansetron, granisetron, azithromycin, pentamidine, doxycycline, moxifloxacin, atovaquone, prochlorperazine, and tacrolimus.",,2023
+quizartinib,pentamidine,1,concomitant,"Examples of QT prolonging drugs include but are not limited to antifungal azoles, ondansetron, granisetron, azithromycin, pentamidine, doxycycline, moxifloxacin, atovaquone, prochlorperazine, and tacrolimus.",,2023
+quizartinib,prochlorperazine,1,concomitant,"Examples of QT prolonging drugs include but are not limited to antifungal azoles, ondansetron, granisetron, azithromycin, pentamidine, doxycycline, moxifloxacin, atovaquone, prochlorperazine, and tacrolimus.",,2023
+quizartinib,tacrolimus,1,concomitant,"Examples of QT prolonging drugs include but are not limited to antifungal azoles, ondansetron, granisetron, azithromycin, pentamidine, doxycycline, moxifloxacin, atovaquone, prochlorperazine, and tacrolimus.",,2023
+quizartinib,dextran,0,,,,2023
+quizartinib,methsuximide,0,,,,2023
+quizartinib,piperacillin sodium,0,,,,2023
+quizartinib,dapsone,0,,,,2023
+quizartinib,ginkgo biloba,0,,,,2023
+quizartinib,glipizide,0,,,,2023
+quizartinib,potassium chloride,0,,,,2023
+quizartinib,flucytosine,0,,,,2023
+quizartinib,ketamine,0,,,,2023
+quizartinib,disulfiram,0,,,,2023
+quizartinib,diphenoxylate hydrochloride,0,,,,2023
+quizartinib,fluphenazine,0,,,,2023
+quizartinib,cevimeline,0,,,,2023
+quizartinib,etoposide,0,,,,2023
+quizartinib,fondaparinux sodium,0,,,,2023
+quizartinib,octreotide,0,,,,2023
+remdesivir,chloroquine,1,concomitant,"7 DRUG INTERACTIONS 7.1 Effects of Other Drugs on VEKLURY Due to potential antagonism based on data from cell culture experiments, concomitant use of VEKLURY with chloroquine phosphate or hydroxychloroquine sulfate is not recommended [see Warnings and Precautions (5.3) and Microbiology (12.4) ].",Remdesivir EC 50 values for SARS-CoV-2 in A549-hACE2 cells were not different when combined with chloroquine phosphate or hydroxychloroquine sulfate at concentrations up to 2.5 µM.,2020
+remdesivir,hydroxychloroquine,1,concomitant,"7 DRUG INTERACTIONS 7.1 Effects of Other Drugs on VEKLURY Due to potential antagonism based on data from cell culture experiments, concomitant use of VEKLURY with chloroquine phosphate or hydroxychloroquine sulfate is not recommended [see Warnings and Precautions (5.3) and Microbiology (12.4) ].",Remdesivir EC 50 values for SARS-CoV-2 in A549-hACE2 cells were not different when combined with chloroquine phosphate or hydroxychloroquine sulfate at concentrations up to 2.5 µM.,2020
+remdesivir,valproate,0,,,,2020
+remdesivir,efavirenz,0,,,,2020
+remdesivir,thimerosal,0,,,,2020
+remdesivir,rifampin,0,,,,2020
+remimazolam,propofol,1,concomitant,"7 DRUG INTERACTIONS 7.1 Opioid Analgesics and Other Sedative-Hypnotics The sedative effect of intravenous BYFAVO can be accentuated by concomitantly administered CNS depressant medications, including opioid analgesics, other benzodiazepines, and propofol.",,2020
+remimazolam,ginkgo,0,,,,2020
+remimazolam,paroxetine,0,,,,2020
+resmetirom,atorvastatin,1,concomitant,"(2.2 , 7.1) Atorvastatin, Pravastatin, Rosuvastatin and Simvastatin : Limit the daily dosage of the statin as recommended.","Atorvastatin: Atorvastatin (BCRP, OATP1B1, and OATP1B3 substrate) C max was unchanged and AUC increased 1.4-fold following concomitant use of a single oral dose of atorvastatin (20 mg) with resmetirom at steady state (100 mg/day) in healthy subjects.",2024
+resmetirom,gemfibrozil,1,concomitant,"7 DRUG INTERACTIONS Strong or Moderate CYP2C8 Inhibitors: Concomitant use not recommended (strong inhibitor [e.g., gemfibrozil]); or reduce REZDIFFRA dosage (moderate inhibitor [e.g., clopidogrel]).",,2024
+resmetirom,pravastatin,1,concomitant,"(2.2 , 7.1) Atorvastatin, Pravastatin, Rosuvastatin and Simvastatin : Limit the daily dosage of the statin as recommended.",Pravastatin: Pravastatin (OATP1B1 and OATP1B3 substrate) C max increased 1.3-fold and AUC 1.4-fold following concomitant use of a single oral dose of pravastatin (40 mg) with resmetirom at steady state (100 mg/day) in healthy subjects [see Drug Interactions (7.2) ] .,2024
+resmetirom,rosuvastatin,1,concomitant,"(2.2 , 7.1) Atorvastatin, Pravastatin, Rosuvastatin and Simvastatin : Limit the daily dosage of the statin as recommended.","Rosuvastatin: Rosuvastatin (BCRP, OATP1B1, and OATP1B3 substrate) C max increased 1.8-fold and AUC 1.4-fold following concomitant use of a single oral dose of rosuvastatin (20 mg) with resmetirom at steady state (100 mg/day) in healthy subjects [see Drug Interactions (7.2) ] .",2024
+resmetirom,simvastatin,1,concomitant,"(2.2 , 7.1) Atorvastatin, Pravastatin, Rosuvastatin and Simvastatin : Limit the daily dosage of the statin as recommended.",Simvastatin: Simvastatin (OATP1B1 and OATP1B3 substrate) C max increased 1.4-fold and AUC 1.7-fold following concomitant use of a single oral dose of simvastatin (20 mg) with resmetirom at steady state (100 mg/day) in healthy subjects [see Drug Interactions (7.2) ] .,2024
+resmetirom,phenobarbital sodium,0,,,,2024
+resmetirom,estradiol,0,,,,2024
+resmetirom,physostigmine,0,,,,2024
+resmetirom,paclitaxel,0,,,,2024
+resmetirom,efavirenz,0,,,,2024
+resmetirom,ginkgo,0,,,,2024
+resmetirom,codeine,0,,,,2024
+resmetirom,tiagabine,0,,,,2024
+resmetirom,cilostazol,0,,,,2024
+resmetirom,docetaxel,0,,,,2024
+rimegepant,amiodarone,1,avoid,"7.3 P-gp Inhibitors Concomitant administration of NURTEC ODT with potent inhibitors of P-gp (e.g., amiodarone, cyclosporine, lapatinib, quinidine, ranolazine) may result in increased exposure of rimegepant.",,2020
+rimegepant,cyclosporine,1,avoid,"7.3 P-gp Inhibitors Concomitant administration of NURTEC ODT with potent inhibitors of P-gp (e.g., amiodarone, cyclosporine, lapatinib, quinidine, ranolazine) may result in increased exposure of rimegepant.","P-gp and BCRP Inhibitors In a dedicated drug interaction study, concomitant administration of NURTEC ODT with cyclosporine (a potent P-gp and BCRP inhibitor) and with quinidine (a potent P-gp inhibitor) resulted in an increase of similar magnitude in rimegepant exposure (AUC and C max by 1.6 and 1.4 fold with cyclosporine, and by 1.6 and 1.7 fold with quinidine, respectively) [see Drug Interactions (7.3) ].",2020
+rimegepant,lapatinib,1,avoid,"7.3 P-gp Inhibitors Concomitant administration of NURTEC ODT with potent inhibitors of P-gp (e.g., amiodarone, cyclosporine, lapatinib, quinidine, ranolazine) may result in increased exposure of rimegepant.",,2020
+rimegepant,quinidine,1,avoid,"7.3 P-gp Inhibitors Concomitant administration of NURTEC ODT with potent inhibitors of P-gp (e.g., amiodarone, cyclosporine, lapatinib, quinidine, ranolazine) may result in increased exposure of rimegepant.","P-gp and BCRP Inhibitors In a dedicated drug interaction study, concomitant administration of NURTEC ODT with cyclosporine (a potent P-gp and BCRP inhibitor) and with quinidine (a potent P-gp inhibitor) resulted in an increase of similar magnitude in rimegepant exposure (AUC and C max by 1.6 and 1.4 fold with cyclosporine, and by 1.6 and 1.7 fold with quinidine, respectively) [see Drug Interactions (7.3) ].",2020
+rimegepant,enalaprilat,0,,,,2020
+rimegepant,cinacalcet,0,,,,2020
+rimegepant,nafarelin acetate,0,,,,2020
+rimegepant,divalproex sodium,0,,,,2020
+rimegepant,levorphanol,0,,,,2020
+rimegepant,primidone,0,,,,2020
+rimegepant,eptifibatide,0,,,,2020
+rimegepant,desloratadine,0,,,,2020
+ritlecitinib,rifampin,1,coadministration,"Clinically Significant Interactions Affecting LITFULO CYP3A Inducers Clinical Impact Concomitant use of strong CYP3A inducer (e.g., rifampin) may decrease AUC and C max of ritlecitinib [see Clinical Pharmacology (12.3) ] , which may result in loss of or reduced clinical response.","200 mg once daily × 5 days 30 mg 1.03 (0.83, 1.27) 1.15 (1.05, 1.27) Strong CYP enzyme inducer: Rifampin 600 mg once daily × 8 days 50 mg 0.75 (0.63, 0.89) 0.56 (0.52, 0.60) Effect of ritlecitinib on other drugs The effect of ritlecitinib on the pharmacokinetics of coadministered drugs is presented in Table 6.",2023
+ritlecitinib,omeprazole,0,,,,2023
+ritlecitinib,boric acid,0,,,,2023
+seladelpar,cyclosporine,1,concomitant,"Dual or Multiple Clinical Inhibitors of Drug Transporters OATP1B1, OATP1B3, and BCRP (e.g, cyclosporine) ↑ seladelpar Monitor patients for adverse effects during concomitant use of LIVDELZI with dual or multiple clinical inhibitors of drug transporters OATP1B1, OATP1B3, and BCRP.","Cyclosporine Seladelpar AUC 0-inf increased by 2.1-fold and C max by 2.9-fold following concomitant use of a single 10 mg seladelpar dose with 600 mg cyclosporine (OATP1B1, OATP1B3, and BCRP inhibitor) in healthy subjects.",2024
+seladelpar,fluconazole,1,concomitant,"Dual Moderate CYP2C9 and Moderate or Strong CYP3A4 Inhibitors (e.g., fluconazole) ↑ seladelpar Monitor patients for adverse effects during concomitant use of LIVDELZI with drugs that are dual moderate CYP2C9 and moderate or strong CYP3A4 inhibitors.",Fluconazole Seladelpar AUC 0-inf increased by 2.4-fold and C max by 1.4-fold following concomitant use of a single 10 mg seladelpar dose with 400 mg fluconazole (moderate CYP2C9 and CYP3A4 inhibitor) in healthy subjects.,2024
+seladelpar,probenecid,1,avoid,7 DRUG INTERACTIONS Probenecid : Avoid concomitant use.,Probenecid Seladelpar AUC 0-inf increased by 2-fold and C max by 4.69-fold following concomitant use of a single 10 mg seladelpar dose with 500 mg probenecid in healthy subjects .,2024
+seladelpar,rifampin,1,concomitant,"Rifampin ↓ seladelpar Concomitant use of LIVDELZI with rifampin, an inducer of metabolizing enzymes, may result in delayed or suboptimal LIVDELZI biochemical response.",,2024
+seladelpar,fosphenytoin,0,,,,2024
+seladelpar,niacinamide,0,,,,2024
+seladelpar,doxylamine,0,,,,2024
+seladelpar,methanol,0,,,,2024
+seladelpar,chlorpromazine,0,,,,2024
+seladelpar,piroxicam,0,,,,2024
+seladelpar,meclofenamate sodium,0,,,,2024
+seladelpar,nateglinide,0,,,,2024
+selumetinib,fluconazole,1,avoid,7 DRUG INTERACTIONS • Strong or Moderate CYP3A4 Inhibitors or Fluconazole : Avoid coadministration of strong or moderate CYP3A4 inhibitors or fluconazole with KOSELUGO.,Fluconazole: Selumetinib AUC increased by 1.5 fold and C max by 1.3 fold following concomitant administration of fluconazole (strong CYP2C19 inhibitor and moderate CYP3A4 inhibitor).,2020
+selumetinib,vitamin e,1,concomitant,Vitamin E Management • Supplemental vitamin E is not recommended if daily vitamin E intake (including the amount of vitamin E in KOSELUGO capsules and supplement) will exceed the recommended or safe limits. • Monitor for bleeding in patients administered a vitamin‑K antagonist or an anti‑platelet agent with KOSELUGO capsules.,,2020
+selumetinib,tetracycline,0,,,,2020
+selumetinib,piperacillin sodium,0,,,,2020
+selumetinib,vecuronium,0,,,,2020
+selumetinib,penciclovir,0,,,,2020
+somatrogon-ghla,antipyrine,1,avoid,Cytochrome P450-Metabolized Drugs Clinical Impact: Limited published data indicate that growth hormone treatment increases cytochrome P450 (CYP450)-mediated antipyrine clearance.,,2023
+somatrogon-ghla,tiagabine,0,,,,2023
+somatrogon-ghla,amlodipine,0,,,,2023
+sotagliflozin,digoxin,1,concomitant,( 7.3 ) 7.1 Digoxin There is an increase in the exposure of digoxin when coadministered with INPEFA 400 mg.,"The increase in exposure (C max and AUC) of digoxin, a P-gp substrate, when coadministered with sotagliflozin, requires monitoring of patients [see Drug Interactions ( 7.1 )] .",2023
+sotagliflozin,lithium,1,concomitant,7.3 Lithium Concomitant use of an SGLT2 inhibitor with lithium may decrease serum lithium concentrations.,,2023
+sotagliflozin,rifampicin,1,coadministration,"The coadministration of rifampicin, an inducer of UGTs, with a single dose of 400 mg sotagliflozin resulted in a decrease in the exposure to sotagliflozin.",Rifampicin (UGT inducer) decreases exposure to sotagliflozin [see Drug Interactions ( 7.2 )] .,2023
+sotagliflozin,chlordiazepoxide,0,,,,2023
+sotagliflozin,ferrous sulfate,0,,,,2023
+sotagliflozin,ketorolac,0,,,,2023
+sotagliflozin,erythromycin,0,,,,2023
+sotagliflozin,lamotrigine,0,,,,2023
+sotagliflozin,nevirapine,0,,,,2023
+tirzepatide,warfarin,1,concomitant,"Monitor patients on oral medications dependent on threshold concentrations for efficacy and those with a narrow therapeutic index (e.g., warfarin) when concomitantly administered with MOUNJARO.",,2022
+tirzepatide,clobazam,0,,,,2022
+tirzepatide,nefazodone,0,,,,2022
+tovorafenib,estradiol,1,coadministration,"Coadministration with hormonal contraceptives (CYP3A substrate) may decrease progestin-x and ethinyl estradiol exposure, which may lead to contraceptive failure and/or an increase in breakthrough bleeding [see Warnings and Precautions (5.5) , Use in Specific Populations (8.3) ].",,2024
+tovorafenib,ethinyl estradiol,1,coadministration,"Coadministration with hormonal contraceptives (CYP3A substrate) may decrease progestin-x and ethinyl estradiol exposure, which may lead to contraceptive failure and/or an increase in breakthrough bleeding [see Warnings and Precautions (5.5) , Use in Specific Populations (8.3) ].",,2024
+tovorafenib,ritonavir,0,,,,2024
+tovorafenib,carboplatin,0,,,,2024
+tovorafenib,formoterol fumarate,0,,,,2024
+tovorafenib,nilutamide,0,,,,2024
+triheptanoin,orlistat,1,avoid,"( 7.1 ) 7.1 Pancreatic Lipase Inhibitors Co-administration of triheptanoin with a pancreatic lipase inhibitor (e.g., orlistat) may reduce exposure to the triheptanoin metabolite, heptanoate, and reduce the clinical effect of triheptanoin [see Clinical Pharmacology (12.3) ] .",,2020
+triheptanoin,nicotinamide,0,,,,2020
+triheptanoin,dimenhydrinate,0,,,,2020
+trilaciclib,cisplatin,1,concomitant,"Co-administration of COSELA may increase the concentration or net accumulation of OCT2, MATE1, and MATE-2K substrates in the kidney (e.g., dofetilide, dalfampridine, and cisplatin) [see Clinical Pharmacology ( 12.3 )].",,2021
+trilaciclib,dofetilide,1,concomitant,"Co-administration of COSELA may increase the concentration or net accumulation of OCT2, MATE1, and MATE-2K substrates in the kidney (e.g., dofetilide, dalfampridine, and cisplatin) [see Clinical Pharmacology ( 12.3 )].",,2021
+trilaciclib,corticotropin,0,,,,2021
+trilaciclib,hydroxychloroquine,0,,,,2021
+trilaciclib,oxacillin,0,,,,2021
+trilaciclib,doxylamine,0,,,,2021
+vadadustat,simvastatin,1,concomitant,Concomitant Drug Name Recommendation Simvastatin Starting dose of simvastatin should be 5 mg/day.,,2024
+vadadustat,selenium,0,,,,2024
+vadadustat,nefazodone,0,,,,2024
+vamorolone,itraconazole,1,concomitant,"( 2.6 , 7.1 ) 7.1 Effect of Other Drugs on Vamorolone Co-administration of AGAMREE with itraconazole, a strong CYP3A4 inhibitor, increases vamorolone exposure [see Clinical Pharmacology ( 12.3 )] .","Drug Interaction Studies Effect of Strong CYP3A4 Inhibitors on Vamorolone Compared to administration of vamorolone alone, administration of vamorolone following multiple doses of a strong CYP3A4 inhibitor (itraconazole) increased vamorolone C max and AUC by 8% and 44%, respectively [see Drug Interactions ( 7.1 )].",2023
+vamorolone,l-methionine,0,,,,2023
+vamorolone,ammonium chloride,0,,,,2023
+vibegron,digoxin,1,concomitant,7 DRUG INTERACTIONS Concomitant use of GEMTESA increases digoxin maximal concentrations (C max ) and systemic exposure as assessed by area under the concentration-time curve (AUC) [see Clinical Pharmacology ( 12.3 )] .,"Drug Interaction Studies Clinical Studies Digoxin : Concomitant administration of vibegron increased digoxin C max and AUC by 21% and 11%, respectively.",2020
+vibegron,orphenadrine,0,,,,2020
+vibegron,ketorolac,0,,,,2020
+voclosporin,atorvastatin,1,concomitant,"Monitor for adverse reactions such as myopathy and rhabdomyolysis when OATP1B1/OATP1B3 substrates (e.g., simvastatin, atorvastatin, pravastatin, rosuvastatin, pitavastatin, fluvastatin) are used concomitantly with LUPKYNIS and reduce the dosage of these substrates as recommended in their prescribing information.",,2021
+voclosporin,clarithromycin,1,contraindicated,"Co-administration of LUPKYNIS with strong CYP3A4 inhibitors (e.g., ketoconazole, itraconazole, clarithromycin) is contraindicated [see Contraindications ( 4 )] .",,2021
+voclosporin,diltiazem,1,contraindicated,"Reduce LUPKYNIS dosage when co-administered with moderate CYP3A4 inhibitors (e.g., verapamil, fluconazole, diltiazem) [see Dosage and Administration ( 2.5 ] .","Co-administered Drug Regimen of Co-administered Drug Ratio (90% CI) 1 C max AUC Ketoconazole (strong CYP3A4 inhibitor) 400 mg QD for 9 days 6.45 (5.02, 8.29) 18.55 (15.89, 21.65) Verapamil (moderate CYP3A4 and strong P-gp inhibitor) 80 mg TID for 10 days 2.08 (1.89, 2.28) 2.71 (2.56, 2.87) Rifampin (strong CYP3A4 inducer) 600 mg QD for 10 days 0.32 (0.28, 0.37) 0.13 (0.11, 0.15) Moderate CYP3A inhibitors: Co-administration of multiple doses of fluconazole or diltiazem is predicted to increase voclosporin C max and AUC 0-12 approximately 2- and 3-fold, respectively.",2021
+voclosporin,fluconazole,1,contraindicated,"Reduce LUPKYNIS dosage when co-administered with moderate CYP3A4 inhibitors (e.g., verapamil, fluconazole, diltiazem) [see Dosage and Administration ( 2.5 ] .","Co-administered Drug Regimen of Co-administered Drug Ratio (90% CI) 1 C max AUC Ketoconazole (strong CYP3A4 inhibitor) 400 mg QD for 9 days 6.45 (5.02, 8.29) 18.55 (15.89, 21.65) Verapamil (moderate CYP3A4 and strong P-gp inhibitor) 80 mg TID for 10 days 2.08 (1.89, 2.28) 2.71 (2.56, 2.87) Rifampin (strong CYP3A4 inducer) 600 mg QD for 10 days 0.32 (0.28, 0.37) 0.13 (0.11, 0.15) Moderate CYP3A inhibitors: Co-administration of multiple doses of fluconazole or diltiazem is predicted to increase voclosporin C max and AUC 0-12 approximately 2- and 3-fold, respectively.",2021
+voclosporin,fluvastatin,1,concomitant,"Monitor for adverse reactions such as myopathy and rhabdomyolysis when OATP1B1/OATP1B3 substrates (e.g., simvastatin, atorvastatin, pravastatin, rosuvastatin, pitavastatin, fluvastatin) are used concomitantly with LUPKYNIS and reduce the dosage of these substrates as recommended in their prescribing information.",,2021
+voclosporin,itraconazole,1,contraindicated,"Co-administration of LUPKYNIS with strong CYP3A4 inhibitors (e.g., ketoconazole, itraconazole, clarithromycin) is contraindicated [see Contraindications ( 4 )] .",,2021
+voclosporin,ketoconazole,1,contraindicated,"Co-administration of LUPKYNIS with strong CYP3A4 inhibitors (e.g., ketoconazole, itraconazole, clarithromycin) is contraindicated [see Contraindications ( 4 )] .","Co-administered Drug Regimen of Co-administered Drug Ratio (90% CI) 1 C max AUC Ketoconazole (strong CYP3A4 inhibitor) 400 mg QD for 9 days 6.45 (5.02, 8.29) 18.55 (15.89, 21.65) Verapamil (moderate CYP3A4 and strong P-gp inhibitor) 80 mg TID for 10 days 2.08 (1.89, 2.28) 2.71 (2.56, 2.87) Rifampin (strong CYP3A4 inducer) 600 mg QD for 10 days 0.32 (0.28, 0.37) 0.13 (0.11, 0.15) Moderate CYP3A inhibitors: Co-administration of multiple doses of fluconazole or diltiazem is predicted to increase voclosporin C max and AUC 0-12 approximately 2- and 3-fold, respectively.",2021
+voclosporin,pravastatin,1,concomitant,"Monitor for adverse reactions such as myopathy and rhabdomyolysis when OATP1B1/OATP1B3 substrates (e.g., simvastatin, atorvastatin, pravastatin, rosuvastatin, pitavastatin, fluvastatin) are used concomitantly with LUPKYNIS and reduce the dosage of these substrates as recommended in their prescribing information.",,2021
+voclosporin,simvastatin,1,concomitant,"In one clinical study the concomitant administration of a single 40 mg dose of simvastatin with 23.7 mg BID voclosporin increased C max and AUC of the active metabolite simvastatin acid (an OATP1B1 substrate) by 3.1-fold and 1.8-fold, respectively [see Clinical Pharmacology ( 12.3 )] .","However, voclosporin increased the systemic exposure of OATP1B1 substrated simvastatin and simvastatin acid.",2021
+voclosporin,verapamil,1,contraindicated,"Reduce LUPKYNIS dosage when co-administered with moderate CYP3A4 inhibitors (e.g., verapamil, fluconazole, diltiazem) [see Dosage and Administration ( 2.5 ] .","Co-administered Drug Regimen of Co-administered Drug Ratio (90% CI) 1 C max AUC Ketoconazole (strong CYP3A4 inhibitor) 400 mg QD for 9 days 6.45 (5.02, 8.29) 18.55 (15.89, 21.65) Verapamil (moderate CYP3A4 and strong P-gp inhibitor) 80 mg TID for 10 days 2.08 (1.89, 2.28) 2.71 (2.56, 2.87) Rifampin (strong CYP3A4 inducer) 600 mg QD for 10 days 0.32 (0.28, 0.37) 0.13 (0.11, 0.15) Moderate CYP3A inhibitors: Co-administration of multiple doses of fluconazole or diltiazem is predicted to increase voclosporin C max and AUC 0-12 approximately 2- and 3-fold, respectively.",2021
+voclosporin,valproate,0,,,,2021
+voclosporin,mefenamic acid,0,,,,2021
+voclosporin,pyrimethamine,0,,,,2021
+voclosporin,lactulose,0,,,,2021
+voclosporin,zidovudine,0,,,,2021
+voclosporin,amikacin,0,,,,2021
+voclosporin,butorphanol,0,,,,2021
+voclosporin,cefdinir,0,,,,2021
+voclosporin,calcitriol,0,,,,2021
+voclosporin,ergocalciferol,0,,,,2021
+voclosporin,nabumetone,0,,,,2021
+voclosporin,ibutilide,0,,,,2021
+voclosporin,vardenafil,0,,,,2021
+voclosporin,niacinamide,0,,,,2021
+voclosporin,isoproterenol hydrochloride,0,,,,2021
+voclosporin,penicillin g,0,,,,2021
+voclosporin,buspirone hydrochloride,0,,,,2021
+voclosporin,cefoxitin,0,,,,2021
+voclosporin,ketoprofen,0,,,,2021
+voclosporin,amantadine,0,,,,2021

@@ -1,0 +1,453 @@
+{
+ "plan_sha256": "c1c1b72bc7344c15b23a90267bbc0f19bc3316ad66f2695baf9d1919c7b79ef1",
+ "status": "post hoc and descriptive; plan in docs/POSTHOC_REV3_PLAN.md was written before computing; changes no preregistered decision",
+ "prior_info": {
+  "overall_positive_share": 0.113859,
+  "n_train_instances": 13789,
+  "n_positive_instances": 1570,
+  "n_partners_without_train_instance": 12,
+  "n_pairs_with_partner_without_train_instance": 136
+ },
+ "views": {
+  "seen_4643": {
+   "n_pairs": 4643,
+   "prior_primary": {
+    "pooled_auroc": 0.498727,
+    "within_drug_auroc": 0.499698,
+    "within_ci95_two_way": [
+     0.46559,
+     0.535391
+    ],
+    "within_ci95_anchor_only": [
+     0.475959,
+     0.522272
+    ],
+    "n_draws_two_way": 1000,
+    "n_draws_anchor_only": 1000
+   },
+   "prior_alternative": {
+    "pooled_auroc": 0.502621,
+    "within_drug_auroc": 0.510147,
+    "within_ci95_two_way": [
+     0.470794,
+     0.547428
+    ],
+    "within_ci95_anchor_only": [
+     0.48184,
+     0.535749
+    ],
+    "n_draws_two_way": 1000,
+    "n_draws_anchor_only": 1000
+   },
+   "prior_primary_partners_with_train_instance_only": {
+    "n_pairs": 4507,
+    "pooled_auroc": 0.498632,
+    "within_drug_auroc": 0.499606,
+    "within_ci95_two_way": [
+     0.464435,
+     0.53624
+    ],
+    "within_ci95_anchor_only": [
+     0.475759,
+     0.522979
+    ],
+    "n_draws_two_way": 1000,
+    "n_draws_anchor_only": 1000
+   },
+   "families": {
+    "b2mixed": {
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "raw_within": {
+      "value": 0.45548,
+      "ci95": [
+       0.411031,
+       0.494094
+      ],
+      "ci90": [
+       0.419287,
+       0.486885
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.455413,
+      "ci95": [
+       0.411423,
+       0.495463
+      ],
+      "ci90": [
+       0.418717,
+       0.487456
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -6.7e-05,
+      "ci95": [
+       -0.01657,
+       0.016301
+      ],
+      "ci90": [
+       -0.014661,
+       0.013025
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 2.795526,
+     "paired_two_way_draws": 1000,
+     "spearman_pooled": 0.336846,
+     "spearman_pooled_anchor_bootstrap_ci95": [
+      0.30646,
+      0.367568
+     ],
+     "spearman_n_draws": 1000,
+     "mean_within_drug_spearman": 0.460144,
+     "n_anchors": 299
+    },
+    "b2sentence": {
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "raw_within": {
+      "value": 0.434816,
+      "ci95": [
+       0.395414,
+       0.473079
+      ],
+      "ci90": [
+       0.402278,
+       0.468031
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.434111,
+      "ci95": [
+       0.393512,
+       0.471552
+      ],
+      "ci90": [
+       0.401296,
+       0.466295
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.000706,
+      "ci95": [
+       -0.008863,
+       0.00591
+      ],
+      "ci90": [
+       -0.006868,
+       0.004993
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.280913,
+     "paired_two_way_draws": 1000,
+     "spearman_pooled": 0.075413,
+     "spearman_pooled_anchor_bootstrap_ci95": [
+      0.048405,
+      0.101137
+     ],
+     "spearman_n_draws": 1000,
+     "mean_within_drug_spearman": 0.074886,
+     "n_anchors": 299
+    },
+    "marker": {
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "raw_within": {
+      "value": 0.398092,
+      "ci95": [
+       0.356496,
+       0.437364
+      ],
+      "ci90": [
+       0.362588,
+       0.42998
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.398764,
+      "ci95": [
+       0.357605,
+       0.437418
+      ],
+      "ci90": [
+       0.364331,
+       0.430866
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.000672,
+      "ci95": [
+       -0.003908,
+       0.005474
+      ],
+      "ci90": [
+       -0.003197,
+       0.004472
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.052633,
+     "paired_two_way_draws": 1000,
+     "spearman_pooled": 0.039551,
+     "spearman_pooled_anchor_bootstrap_ci95": [
+      0.009745,
+      0.066656
+     ],
+     "spearman_n_draws": 1000,
+     "mean_within_drug_spearman": 0.035183,
+     "n_anchors": 299
+    }
+   }
+  },
+  "seen_not_in_semeval_train_4062": {
+   "n_pairs": 4062,
+   "prior_primary": {
+    "pooled_auroc": 0.49523,
+    "within_drug_auroc": 0.489813,
+    "within_ci95_two_way": [
+     0.447841,
+     0.533258
+    ],
+    "within_ci95_anchor_only": [
+     0.46478,
+     0.517018
+    ],
+    "n_draws_two_way": 1000,
+    "n_draws_anchor_only": 1000
+   },
+   "prior_alternative": {
+    "pooled_auroc": 0.474796,
+    "within_drug_auroc": 0.481531,
+    "within_ci95_two_way": [
+     0.436745,
+     0.526647
+    ],
+    "within_ci95_anchor_only": [
+     0.449567,
+     0.510735
+    ],
+    "n_draws_two_way": 1000,
+    "n_draws_anchor_only": 1000
+   },
+   "prior_primary_partners_with_train_instance_only": {
+    "n_pairs": 3926,
+    "pooled_auroc": 0.494383,
+    "within_drug_auroc": 0.488174,
+    "within_ci95_two_way": [
+     0.447717,
+     0.531269
+    ],
+    "within_ci95_anchor_only": [
+     0.462832,
+     0.515693
+    ],
+    "n_draws_two_way": 1000,
+    "n_draws_anchor_only": 1000
+   },
+   "families": {
+    "b2mixed": {
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "raw_within": {
+      "value": 0.439261,
+      "ci95": [
+       0.390082,
+       0.485502
+      ],
+      "ci90": [
+       0.400899,
+       0.478757
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.436024,
+      "ci95": [
+       0.389373,
+       0.483341
+      ],
+      "ci90": [
+       0.396954,
+       0.471082
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.003237,
+      "ci95": [
+       -0.023755,
+       0.016695
+      ],
+      "ci90": [
+       -0.02014,
+       0.013077
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 2.612581,
+     "paired_two_way_draws": 1000,
+     "spearman_pooled": 0.334285,
+     "spearman_pooled_anchor_bootstrap_ci95": [
+      0.300109,
+      0.367128
+     ],
+     "spearman_n_draws": 1000,
+     "mean_within_drug_spearman": 0.448579,
+     "n_anchors": 294
+    },
+    "b2sentence": {
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "raw_within": {
+      "value": 0.438928,
+      "ci95": [
+       0.395827,
+       0.484053
+      ],
+      "ci90": [
+       0.401916,
+       0.475996
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.438595,
+      "ci95": [
+       0.394296,
+       0.480781
+      ],
+      "ci90": [
+       0.401033,
+       0.475266
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.000333,
+      "ci95": [
+       -0.008674,
+       0.007541
+      ],
+      "ci90": [
+       -0.007147,
+       0.006349
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.273191,
+     "paired_two_way_draws": 1000,
+     "spearman_pooled": 0.08382,
+     "spearman_pooled_anchor_bootstrap_ci95": [
+      0.054409,
+      0.111348
+     ],
+     "spearman_n_draws": 1000,
+     "mean_within_drug_spearman": 0.085092,
+     "n_anchors": 294
+    },
+    "marker": {
+     "seeds": [
+      42,
+      1,
+      2,
+      3,
+      4
+     ],
+     "raw_within": {
+      "value": 0.416318,
+      "ci95": [
+       0.367358,
+       0.465139
+      ],
+      "ci90": [
+       0.373865,
+       0.455117
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.416413,
+      "ci95": [
+       0.367194,
+       0.464397
+      ],
+      "ci90": [
+       0.374563,
+       0.454728
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 9.5e-05,
+      "ci95": [
+       -0.004312,
+       0.004271
+      ],
+      "ci90": [
+       -0.003484,
+       0.003522
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.033334,
+     "paired_two_way_draws": 1000,
+     "spearman_pooled": 0.036072,
+     "spearman_pooled_anchor_bootstrap_ci95": [
+      0.006093,
+      0.063649
+     ],
+     "spearman_n_draws": 1000,
+     "mean_within_drug_spearman": 0.034387,
+     "n_anchors": 294
+    }
+   }
+  }
+ },
+ "n_boot": 1000,
+ "seed": 42,
+ "overlap": {
+  "match_rule": "unordered pair, each name lowercased and stripped, against every SemEval 2013 train pair",
+  "n_pairs": 4643,
+  "n_in_semeval_train": 581,
+  "n_in_semeval_train_with_a_positive_instance": 213,
+  "n_positive_and_semeval_positive": 206,
+  "n_not_in_semeval_train": 4062,
+  "n_positive_not_in_semeval_train": 1134,
+  "n_drugs_both_anchor_and_partner": 175,
+  "n_anchor_drugs": 299,
+  "n_partner_drugs": 313
+ }
+}

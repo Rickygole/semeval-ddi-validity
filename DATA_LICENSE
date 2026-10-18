@@ -1,0 +1,50 @@
+Data license notice
+
+The MIT License in LICENSE covers the source code only (ddiood/, scripts/, tests/, colab/, verify.sh). Data files in
+this repository keep the terms of the source they were derived from, as listed below. Where a file mixes sources, the
+most restrictive term applies to the whole file.
+
+1. SemEval 2013 DDI corpus (CC BY-NC 4.0)
+
+   Source: DDICorpus, https://github.com/isegura/DDICorpus, commit 819b0fa538ed83ab2a8b4f5417bba3c03249b7f3.
+   The corpus itself is NOT redistributed here. ddiood/semeval.py downloads it on demand at the pinned commit.
+   Files derived from the corpus are modified (pair extraction, label harmonization, drug vocabulary, model
+   predictions on corpus sentences, quoted sentences) and are licensed under the Creative Commons
+   Attribution-NonCommercial 4.0 International License, https://creativecommons.org/licenses/by-nc/4.0/legalcode.
+   This covers results/, artifacts/amend7/, artifacts/bundle/, runs/preds/ and any sentence or vocabulary quoted in
+   docs/. Noncommercial use only. Attribution: Herrero-Zazo M, Segura-Bedmar I, Martinez P, Declerck T. The DDI corpus:
+   an annotated corpus with pharmacological substances and drug-drug interactions. J Biomed Inform 46 (2013) 914-920;
+   Segura-Bedmar I, Martinez P, Herrero-Zazo M. Lessons learnt from the DDIExtraction-2013 Shared Task. J Biomed
+   Inform 51 (2014) 152-164. Changes were made.
+
+2. openFDA drug labels (CC0 1.0)
+
+   Source: https://open.fda.gov/. openFDA content is dedicated to the public domain under CC0 1.0,
+   https://creativecommons.org/publicdomain/zero/1.0/. Quoted label text in results/ and artifacts/amend7/ and the
+   archived label snapshot are from openFDA. Data provided by the U.S. Food and Drug Administration. FDA does not
+   endorse this work.
+
+3. FDA CDER novel drug approvals (public U.S. government data)
+
+   data/fda_novel_approvals.csv and data/prior_approvals.csv.
+
+4. RxNorm via RxNav (NLM notice)
+
+   RxCUIs and normalized names in results/. This product uses publicly available data from the U.S. National Library
+   of Medicine (NLM), National Institutes of Health, Department of Health and Human Services; NLM is not responsible
+   for the product and does not endorse or recommend this or any other product.
+
+5. DrugBank (not redistributed)
+
+   No DrugBank file, per-pair DrugBank label, per-drug DrugBank attribute (including ATC codes and name resolution
+   status) or DrugBank-derived membership list is included. Only aggregate counts and aggregate metrics computed
+   with DrugBank appear in results/. To regenerate the DrugBank-dependent outputs, obtain DrugBank under its own
+   license and pass it with --drugbank. Cite Wishart DS et al. DrugBank 5.0. Nucleic Acids Res 46 (2018) D1074-D1082.
+
+6. TAC 2018 drug interaction data (NLM, not redistributed)
+
+   Source: https://bionlp.nlm.nih.gov/tac2019druginteractions/. Only aggregate counts and aggregate metrics computed
+   with these data appear in results/revision/rev3/. The source pages state no license for the data;
+   colab/experiments/R2c_tac_calibration.ipynb downloads them from the source.
+
+Labels and predictions are for research on evaluation methods and must not be used for clinical decisions.

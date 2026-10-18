@@ -1,0 +1,2953 @@
+{
+ "status": "post hoc and descriptive; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "criteria": {
+  "a_rho_by_format": {
+   "inputs": "SemEval binary F1 per checkpoint from results/revision/post8/e9.json tiers A (and C-auto as a sensitivity); within-drug AUROC per checkpoint from results/revision/amend7/e9.json e9.panel (tier A) and from post8/e9.json tier C-auto",
+   "cohorts": [
+    "older_primary",
+    "novel"
+   ],
+   "strata": [
+    "marker",
+    "pair",
+    "all 20"
+   ],
+   "statistic": "Spearman rho (scipy.stats.spearmanr)",
+   "interval": "percentile bootstrap over checkpoints within the stratum, 10000 draws, numpy RandomState(42); draws where either vector is constant are dropped and counted",
+   "also": "two-sided permutation p over 10000 random permutations of AUROC against F1, RandomState(43)",
+   "caveat_to_state": "n = 10 per format; the AUROC values carry their own two-way bootstrap uncertainty (within-checkpoint SD about 0.03) which the checkpoint bootstrap ignores"
+  },
+  "b_partner_adjusted": {
+   "systems": "b2mixed BiomedBERT (seed mean of seeds 42, 1, 2, 3, 4, ood_empty / oodold_empty), the 20 Amendment 7 panel checkpoints (runs/preds a7-panel-*, variants marker and pair, ood_empty / oodold_empty, one seed each), Qwen2.5-7B names only (llm-qwen-names), DrugBank lookup",
+   "cohorts": "Novel (438 rows, 48 drugs) and Older-clean (1832 rows, 128 drugs), tier A",
+   "scale": "logit of P(interaction) for models, the 0/1 listing for DrugBank, as in experiment 7",
+   "partner_prior": "label-free: baselines.Context.partner_prior, the share of vocabulary Drug Interactions sections (excluding the partner's own RxCUI) that name the partner; feature iii2 of scripts/amend7_cpu_exp7_below_chance.py",
+   "adjustment": "within-drug residualization of experiment 7 (partial): demean score and prior within OOD drug, regress, subtract slope times prior from the score; adjusted within-drug AUROC on the residual",
+   "intervals": "two-way cluster bootstrap over OOD drugs and partner drugs, amend7_cpu_common.paired_draws, 1000 draws, seed 1042 Novel and 42 Older-clean, raw and adjusted in the same draws; the paired difference adjusted minus raw is reported",
+   "tetrad": "doubly matched tetrad AUROC of post7_common.tetrad_design on the additive scale, two-way weights of post7_common.scheme_weights with the same seeds; values for systems already in results/revision/post7/partner.json are checked against that file",
+   "reproduction_checks": "b2mixed, Qwen and DrugBank adjusted values must equal experiment 7 iii2 partialled values to 3 decimals; tetrad values must equal post7/partner.json"
+  }
+ },
+ "rho": [
+  {
+   "tier": "A",
+   "cohort": "older_primary",
+   "format": "marker",
+   "n_checkpoints": 10,
+   "rho": -0.478788,
+   "ci95": [
+    -0.888889,
+    0.273885
+   ],
+   "ci90": [
+    -0.823899,
+    0.1625
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.9029,
+   "perm_p_two_sided": 0.170583,
+   "auroc_range": [
+    0.424119,
+    0.506671
+   ],
+   "f1_range": [
+    0.747283,
+    0.870523
+   ]
+  },
+  {
+   "tier": "A",
+   "cohort": "older_primary",
+   "format": "pair",
+   "n_checkpoints": 10,
+   "rho": -0.309091,
+   "ci95": [
+    -0.888199,
+    0.446595
+   ],
+   "ci90": [
+    -0.826087,
+    0.328693
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.7909,
+   "perm_p_two_sided": 0.387161,
+   "auroc_range": [
+    0.423702,
+    0.508026
+   ],
+   "f1_range": [
+    0.570201,
+    0.726619
+   ]
+  },
+  {
+   "tier": "A",
+   "cohort": "older_primary",
+   "format": "all",
+   "n_checkpoints": 20,
+   "rho": -0.160902,
+   "ci95": [
+    -0.634572,
+    0.358358
+   ],
+   "ci90": [
+    -0.567531,
+    0.281167
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.7331,
+   "perm_p_two_sided": 0.492151,
+   "auroc_range": [
+    0.423702,
+    0.508026
+   ],
+   "f1_range": [
+    0.570201,
+    0.870523
+   ]
+  },
+  {
+   "tier": "A",
+   "cohort": "novel",
+   "format": "marker",
+   "n_checkpoints": 10,
+   "rho": -0.260606,
+   "ci95": [
+    -0.811321,
+    0.503106
+   ],
+   "ci90": [
+    -0.764706,
+    0.3625
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.7589,
+   "perm_p_two_sided": 0.466353,
+   "auroc_range": [
+    0.468956,
+    0.533025
+   ],
+   "f1_range": [
+    0.747283,
+    0.870523
+   ]
+  },
+  {
+   "tier": "A",
+   "cohort": "novel",
+   "format": "pair",
+   "n_checkpoints": 10,
+   "rho": -0.030303,
+   "ci95": [
+    -0.673203,
+    0.696203
+   ],
+   "ci90": [
+    -0.592593,
+    0.580247
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.5196,
+   "perm_p_two_sided": 0.946205,
+   "auroc_range": [
+    0.459709,
+    0.520476
+   ],
+   "f1_range": [
+    0.570201,
+    0.726619
+   ]
+  },
+  {
+   "tier": "A",
+   "cohort": "novel",
+   "format": "all",
+   "n_checkpoints": 20,
+   "rho": -0.015801,
+   "ci95": [
+    -0.51148,
+    0.476125
+   ],
+   "ci90": [
+    -0.441838,
+    0.401694
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.5214,
+   "perm_p_two_sided": 0.947205,
+   "auroc_range": [
+    0.459709,
+    0.533025
+   ],
+   "f1_range": [
+    0.570201,
+    0.870523
+   ]
+  },
+  {
+   "tier": "C-auto",
+   "cohort": "older_primary",
+   "format": "marker",
+   "n_checkpoints": 10,
+   "rho": -0.539394,
+   "ci95": [
+    -0.907285,
+    0.194969
+   ],
+   "ci90": [
+    -0.851852,
+    0.056604
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.9385,
+   "perm_p_two_sided": 0.116988,
+   "auroc_range": [
+    0.414103,
+    0.501235
+   ],
+   "f1_range": [
+    0.747283,
+    0.870523
+   ]
+  },
+  {
+   "tier": "C-auto",
+   "cohort": "older_primary",
+   "format": "pair",
+   "n_checkpoints": 10,
+   "rho": -0.406061,
+   "ci95": [
+    -0.961039,
+    0.396226
+   ],
+   "ci90": [
+    -0.921569,
+    0.24183
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.8473,
+   "perm_p_two_sided": 0.243976,
+   "auroc_range": [
+    0.415113,
+    0.514485
+   ],
+   "f1_range": [
+    0.570201,
+    0.726619
+   ]
+  },
+  {
+   "tier": "C-auto",
+   "cohort": "older_primary",
+   "format": "all",
+   "n_checkpoints": 20,
+   "rho": -0.16698,
+   "ci95": [
+    -0.635686,
+    0.365382
+   ],
+   "ci90": [
+    -0.564221,
+    0.278533
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.7479,
+   "perm_p_two_sided": 0.466153,
+   "auroc_range": [
+    0.414103,
+    0.514485
+   ],
+   "f1_range": [
+    0.570201,
+    0.870523
+   ]
+  },
+  {
+   "tier": "C-auto",
+   "cohort": "novel",
+   "format": "marker",
+   "n_checkpoints": 10,
+   "rho": -0.29697,
+   "ci95": [
+    -0.9125,
+    0.538462
+   ],
+   "ci90": [
+    -0.839506,
+    0.374233
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.7701,
+   "perm_p_two_sided": 0.405959,
+   "auroc_range": [
+    0.47004,
+    0.531957
+   ],
+   "f1_range": [
+    0.747283,
+    0.870523
+   ]
+  },
+  {
+   "tier": "C-auto",
+   "cohort": "novel",
+   "format": "pair",
+   "n_checkpoints": 10,
+   "rho": -0.030395,
+   "ci95": [
+    -0.703704,
+    0.673203
+   ],
+   "ci90": [
+    -0.63522,
+    0.572327
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.512,
+   "perm_p_two_sided": 0.936506,
+   "auroc_range": [
+    0.456724,
+    0.517976
+   ],
+   "f1_range": [
+    0.570201,
+    0.726619
+   ]
+  },
+  {
+   "tier": "C-auto",
+   "cohort": "novel",
+   "format": "all",
+   "n_checkpoints": 20,
+   "rho": 0.006772,
+   "ci95": [
+    -0.516868,
+    0.512322
+   ],
+   "ci90": [
+    -0.434411,
+    0.436782
+   ],
+   "n_draws": 10000,
+   "dropped_constant_draws": 0,
+   "share_draws_below_0": 0.4876,
+   "perm_p_two_sided": 0.979902,
+   "auroc_range": [
+    0.456724,
+    0.531957
+   ],
+   "f1_range": [
+    0.570201,
+    0.870523
+   ]
+  }
+ ],
+ "adjust": {
+  "novel": {
+   "n": 438,
+   "n_pos": 148,
+   "n_drugs": 48,
+   "n_partners": 74,
+   "n_tetrads": 152,
+   "prior_within_auroc": 0.522457,
+   "systems": {
+    "b2mixed BiomedBERT": {
+     "within": {
+      "value": 0.523118,
+      "ci95": [
+       0.397209,
+       0.650333
+      ],
+      "ci90": [
+       0.41133,
+       0.625726
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.511229,
+      "ci95": [
+       0.379736,
+       0.638165
+      ],
+      "ci90": [
+       0.399957,
+       0.6162
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.011889,
+      "ci95": [
+       -0.073347,
+       0.043495
+      ],
+      "ci90": [
+       -0.057327,
+       0.033256
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 2.560018,
+     "tetrad": {
+      "value": 0.480263,
+      "ci95": [
+       0.120368,
+       0.825441
+      ],
+      "ci90": [
+       0.201367,
+       0.774234
+      ],
+      "n_draws": 1000
+     }
+    },
+    "Qwen names only": {
+     "within": {
+      "value": 0.5786,
+      "ci95": [
+       0.439976,
+       0.713106
+      ],
+      "ci90": [
+       0.469717,
+       0.691289
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.590489,
+      "ci95": [
+       0.458047,
+       0.72289
+      ],
+      "ci90": [
+       0.485007,
+       0.704385
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.011889,
+      "ci95": [
+       -0.085297,
+       0.111125
+      ],
+      "ci90": [
+       -0.068278,
+       0.090727
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 15.910657,
+     "tetrad": {
+      "value": 0.664474,
+      "ci95": [
+       0.29683,
+       0.939784
+      ],
+      "ci90": [
+       0.34954,
+       0.901484
+      ],
+      "n_draws": 1000
+     }
+    },
+    "DrugBank lookup": {
+     "within": {
+      "value": 0.728534,
+      "ci95": [
+       0.642152,
+       0.808313
+      ],
+      "ci90": [
+       0.655182,
+       0.797937
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.721929,
+      "ci95": [
+       0.584269,
+       0.843399
+      ],
+      "ci90": [
+       0.603783,
+       0.828085
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.006605,
+      "ci95": [
+       -0.108259,
+       0.089757
+      ],
+      "ci90": [
+       -0.09573,
+       0.073951
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.500833,
+     "tetrad": {
+      "value": 0.884868,
+      "ci95": [
+       0.702348,
+       1.0
+      ],
+      "ci90": [
+       0.742611,
+       0.994565
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel bertbase-marker": {
+     "within": {
+      "value": 0.480845,
+      "ci95": [
+       0.352992,
+       0.6
+      ],
+      "ci90": [
+       0.374306,
+       0.586137
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.479524,
+      "ci95": [
+       0.340865,
+       0.610417
+      ],
+      "ci90": [
+       0.365724,
+       0.591355
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.001321,
+      "ci95": [
+       -0.034839,
+       0.038413
+      ],
+      "ci90": [
+       -0.028808,
+       0.029242
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.774795,
+     "tetrad": {
+      "value": 0.394737,
+      "ci95": [
+       0.092173,
+       0.775567
+      ],
+      "ci90": [
+       0.118086,
+       0.70912
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel bertbase-pair": {
+     "within": {
+      "value": 0.475561,
+      "ci95": [
+       0.346843,
+       0.600432
+      ],
+      "ci90": [
+       0.369526,
+       0.582164
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.482166,
+      "ci95": [
+       0.34123,
+       0.612977
+      ],
+      "ci90": [
+       0.366197,
+       0.59694
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.006605,
+      "ci95": [
+       -0.061885,
+       0.079218
+      ],
+      "ci90": [
+       -0.052517,
+       0.066331
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -2.120288,
+     "tetrad": {
+      "value": 0.473684,
+      "ci95": [
+       0.11192,
+       0.828211
+      ],
+      "ci90": [
+       0.164094,
+       0.765762
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biobert-marker": {
+     "within": {
+      "value": 0.472919,
+      "ci95": [
+       0.340449,
+       0.606863
+      ],
+      "ci90": [
+       0.366085,
+       0.585056
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.476222,
+      "ci95": [
+       0.348178,
+       0.610065
+      ],
+      "ci90": [
+       0.371217,
+       0.589765
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.003303,
+      "ci95": [
+       -0.050968,
+       0.0562
+      ],
+      "ci90": [
+       -0.037071,
+       0.044532
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.247159,
+     "tetrad": {
+      "value": 0.467105,
+      "ci95": [
+       0.133773,
+       0.85527
+      ],
+      "ci90": [
+       0.176431,
+       0.80494
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biobert-pair": {
+     "within": {
+      "value": 0.480845,
+      "ci95": [
+       0.350961,
+       0.613597
+      ],
+      "ci90": [
+       0.36797,
+       0.593239
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.479524,
+      "ci95": [
+       0.349699,
+       0.613597
+      ],
+      "ci90": [
+       0.36797,
+       0.593239
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.001321,
+      "ci95": [
+       -0.008969,
+       0.0
+      ],
+      "ci90": [
+       -0.00653,
+       0.0
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.061993,
+     "tetrad": {
+      "value": 0.473684,
+      "ci95": [
+       0.07575,
+       0.873065
+      ],
+      "ci90": [
+       0.130163,
+       0.795703
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biolinkbert-marker": {
+     "within": {
+      "value": 0.468956,
+      "ci95": [
+       0.351199,
+       0.596591
+      ],
+      "ci90": [
+       0.371877,
+       0.572973
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.468956,
+      "ci95": [
+       0.343693,
+       0.597203
+      ],
+      "ci90": [
+       0.366136,
+       0.57587
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.0,
+      "ci95": [
+       -0.068091,
+       0.06951
+      ],
+      "ci90": [
+       -0.05133,
+       0.055593
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 5.868482,
+     "tetrad": {
+      "value": 0.506579,
+      "ci95": [
+       0.13784,
+       0.84381
+      ],
+      "ci90": [
+       0.213916,
+       0.777236
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biolinkbert-pair": {
+     "within": {
+      "value": 0.516513,
+      "ci95": [
+       0.385762,
+       0.649627
+      ],
+      "ci90": [
+       0.408453,
+       0.628656
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.520476,
+      "ci95": [
+       0.389446,
+       0.646181
+      ],
+      "ci90": [
+       0.410817,
+       0.632533
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.003963,
+      "ci95": [
+       -0.087551,
+       0.094829
+      ],
+      "ci90": [
+       -0.073457,
+       0.072293
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 3.689207,
+     "tetrad": {
+      "value": 0.552632,
+      "ci95": [
+       0.196681,
+       0.875
+      ],
+      "ci90": [
+       0.255941,
+       0.81833
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biomedbert_abs-marker": {
+     "within": {
+      "value": 0.529062,
+      "ci95": [
+       0.410005,
+       0.656589
+      ],
+      "ci90": [
+       0.428553,
+       0.635351
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.550859,
+      "ci95": [
+       0.422314,
+       0.67897
+      ],
+      "ci90": [
+       0.445454,
+       0.653799
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.021797,
+      "ci95": [
+       -0.055021,
+       0.098401
+      ],
+      "ci90": [
+       -0.037969,
+       0.081576
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 2.930264,
+     "tetrad": {
+      "value": 0.526316,
+      "ci95": [
+       0.184105,
+       0.851906
+      ],
+      "ci90": [
+       0.25,
+       0.81824
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biomedbert_abs-pair": {
+     "within": {
+      "value": 0.520476,
+      "ci95": [
+       0.379031,
+       0.6686
+      ],
+      "ci90": [
+       0.398293,
+       0.651645
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.505945,
+      "ci95": [
+       0.363855,
+       0.655175
+      ],
+      "ci90": [
+       0.387083,
+       0.634916
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.014531,
+      "ci95": [
+       -0.068661,
+       0.029628
+      ],
+      "ci90": [
+       -0.05549,
+       0.021991
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.579065,
+     "tetrad": {
+      "value": 0.539474,
+      "ci95": [
+       0.172565,
+       0.875103
+      ],
+      "ci90": [
+       0.214258,
+       0.832037
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biomedbert_full-marker": {
+     "within": {
+      "value": 0.474901,
+      "ci95": [
+       0.319923,
+       0.616386
+      ],
+      "ci90": [
+       0.349739,
+       0.597246
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.47424,
+      "ci95": [
+       0.320018,
+       0.614585
+      ],
+      "ci90": [
+       0.350637,
+       0.592327
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.000661,
+      "ci95": [
+       -0.034425,
+       0.033294
+      ],
+      "ci90": [
+       -0.027735,
+       0.027269
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.092356,
+     "tetrad": {
+      "value": 0.592105,
+      "ci95": [
+       0.137125,
+       0.882468
+      ],
+      "ci90": [
+       0.2,
+       0.835639
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biomedbert_full-pair": {
+     "within": {
+      "value": 0.490753,
+      "ci95": [
+       0.363586,
+       0.62935
+      ],
+      "ci90": [
+       0.384076,
+       0.607799
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.494055,
+      "ci95": [
+       0.371498,
+       0.638346
+      ],
+      "ci90": [
+       0.390119,
+       0.61003
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.003303,
+      "ci95": [
+       -0.051939,
+       0.060619
+      ],
+      "ci90": [
+       -0.043582,
+       0.049462
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.976073,
+     "tetrad": {
+      "value": 0.565789,
+      "ci95": [
+       0.2,
+       0.898904
+      ],
+      "ci90": [
+       0.261509,
+       0.844226
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel clinicalbert-marker": {
+     "within": {
+      "value": 0.507266,
+      "ci95": [
+       0.378601,
+       0.646947
+      ],
+      "ci90": [
+       0.401414,
+       0.620572
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.507266,
+      "ci95": [
+       0.371447,
+       0.649439
+      ],
+      "ci90": [
+       0.39974,
+       0.624317
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.0,
+      "ci95": [
+       -0.058328,
+       0.059741
+      ],
+      "ci90": [
+       -0.049909,
+       0.049589
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -1.613622,
+     "tetrad": {
+      "value": 0.546053,
+      "ci95": [
+       0.164944,
+       0.825175
+      ],
+      "ci90": [
+       0.219938,
+       0.787246
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel clinicalbert-pair": {
+     "within": {
+      "value": 0.494055,
+      "ci95": [
+       0.356383,
+       0.630861
+      ],
+      "ci90": [
+       0.372317,
+       0.61164
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.496697,
+      "ci95": [
+       0.357553,
+       0.630149
+      ],
+      "ci90": [
+       0.374783,
+       0.609977
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.002642,
+      "ci95": [
+       -0.044489,
+       0.055487
+      ],
+      "ci90": [
+       -0.036527,
+       0.043081
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -1.359259,
+     "tetrad": {
+      "value": 0.506579,
+      "ci95": [
+       0.130365,
+       0.819838
+      ],
+      "ci90": [
+       0.191707,
+       0.771191
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel deberta-marker": {
+     "within": {
+      "value": 0.529723,
+      "ci95": [
+       0.393981,
+       0.653791
+      ],
+      "ci90": [
+       0.42621,
+       0.637889
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.535007,
+      "ci95": [
+       0.404882,
+       0.658969
+      ],
+      "ci90": [
+       0.429413,
+       0.640283
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.005284,
+      "ci95": [
+       -0.030013,
+       0.037651
+      ],
+      "ci90": [
+       -0.022734,
+       0.032311
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.191819,
+     "tetrad": {
+      "value": 0.480263,
+      "ci95": [
+       0.114872,
+       0.84625
+      ],
+      "ci90": [
+       0.164648,
+       0.809673
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel deberta-pair": {
+     "within": {
+      "value": 0.509908,
+      "ci95": [
+       0.385254,
+       0.629176
+      ],
+      "ci90": [
+       0.404967,
+       0.610521
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.520476,
+      "ci95": [
+       0.398998,
+       0.640182
+      ],
+      "ci90": [
+       0.416865,
+       0.623303
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.010568,
+      "ci95": [
+       0.0,
+       0.037274
+      ],
+      "ci90": [
+       0.0,
+       0.0296
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.356264,
+     "tetrad": {
+      "value": 0.539474,
+      "ci95": [
+       0.199972,
+       0.894118
+      ],
+      "ci90": [
+       0.245588,
+       0.83943
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel electra-marker": {
+     "within": {
+      "value": 0.483487,
+      "ci95": [
+       0.350099,
+       0.612596
+      ],
+      "ci90": [
+       0.372397,
+       0.600665
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.47424,
+      "ci95": [
+       0.340926,
+       0.609963
+      ],
+      "ci90": [
+       0.361066,
+       0.591465
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.009247,
+      "ci95": [
+       -0.067084,
+       0.045884
+      ],
+      "ci90": [
+       -0.05823,
+       0.037046
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.384057,
+     "tetrad": {
+      "value": 0.414474,
+      "ci95": [
+       0.115947,
+       0.820439
+      ],
+      "ci90": [
+       0.174968,
+       0.736455
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel electra-pair": {
+     "within": {
+      "value": 0.459709,
+      "ci95": [
+       0.338421,
+       0.583712
+      ],
+      "ci90": [
+       0.360685,
+       0.568463
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.467635,
+      "ci95": [
+       0.343939,
+       0.594525
+      ],
+      "ci90": [
+       0.364602,
+       0.575576
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.007926,
+      "ci95": [
+       -0.019988,
+       0.038549
+      ],
+      "ci90": [
+       -0.015354,
+       0.030718
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.254186,
+     "tetrad": {
+      "value": 0.447368,
+      "ci95": [
+       0.099944,
+       0.814899
+      ],
+      "ci90": [
+       0.163441,
+       0.779345
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel roberta-marker": {
+     "within": {
+      "value": 0.47424,
+      "ci95": [
+       0.346842,
+       0.605937
+      ],
+      "ci90": [
+       0.365074,
+       0.584071
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.472919,
+      "ci95": [
+       0.348822,
+       0.60517
+      ],
+      "ci90": [
+       0.363825,
+       0.581148
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.001321,
+      "ci95": [
+       -0.017478,
+       0.019174
+      ],
+      "ci90": [
+       -0.013809,
+       0.012649
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.108547,
+     "tetrad": {
+      "value": 0.440789,
+      "ci95": [
+       0.09297,
+       0.801074
+      ],
+      "ci90": [
+       0.130395,
+       0.740097
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel roberta-pair": {
+     "within": {
+      "value": 0.468956,
+      "ci95": [
+       0.324537,
+       0.613037
+      ],
+      "ci90": [
+       0.358847,
+       0.59567
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.464993,
+      "ci95": [
+       0.327977,
+       0.610552
+      ],
+      "ci90": [
+       0.350842,
+       0.59196
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.003963,
+      "ci95": [
+       -0.044668,
+       0.039177
+      ],
+      "ci90": [
+       -0.036563,
+       0.030418
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 1.194059,
+     "tetrad": {
+      "value": 0.394737,
+      "ci95": [
+       0.074074,
+       0.736956
+      ],
+      "ci90": [
+       0.111067,
+       0.692346
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel scibert-marker": {
+     "within": {
+      "value": 0.533025,
+      "ci95": [
+       0.406409,
+       0.665241
+      ],
+      "ci90": [
+       0.430689,
+       0.642247
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.55218,
+      "ci95": [
+       0.421937,
+       0.680958
+      ],
+      "ci90": [
+       0.444642,
+       0.661423
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.019155,
+      "ci95": [
+       -0.037763,
+       0.079586
+      ],
+      "ci90": [
+       -0.026985,
+       0.070177
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.826004,
+     "tetrad": {
+      "value": 0.644737,
+      "ci95": [
+       0.273318,
+       0.959204
+      ],
+      "ci90": [
+       0.342825,
+       0.902478
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel scibert-pair": {
+     "within": {
+      "value": 0.484808,
+      "ci95": [
+       0.345771,
+       0.635904
+      ],
+      "ci90": [
+       0.362468,
+       0.609788
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.483487,
+      "ci95": [
+       0.343815,
+       0.633653
+      ],
+      "ci90": [
+       0.361932,
+       0.60938
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.001321,
+      "ci95": [
+       -0.014093,
+       0.009517
+      ],
+      "ci90": [
+       -0.009903,
+       0.005964
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.0924,
+     "tetrad": {
+      "value": 0.447368,
+      "ci95": [
+       0.107768,
+       0.822924
+      ],
+      "ci90": [
+       0.159843,
+       0.760372
+      ],
+      "n_draws": 1000
+     }
+    }
+   }
+  },
+  "older_clean": {
+   "n": 1832,
+   "n_pos": 599,
+   "n_drugs": 128,
+   "n_partners": 212,
+   "n_tetrads": 1975,
+   "prior_within_auroc": 0.506393,
+   "systems": {
+    "b2mixed BiomedBERT": {
+     "within": {
+      "value": 0.451763,
+      "ci95": [
+       0.388895,
+       0.518086
+      ],
+      "ci90": [
+       0.394843,
+       0.509221
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.447114,
+      "ci95": [
+       0.384764,
+       0.511331
+      ],
+      "ci90": [
+       0.394339,
+       0.504722
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.004649,
+      "ci95": [
+       -0.031374,
+       0.023608
+      ],
+      "ci90": [
+       -0.026224,
+       0.019654
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 3.843798,
+     "tetrad": {
+      "value": 0.37519,
+      "ci95": [
+       0.233297,
+       0.541045
+      ],
+      "ci90": [
+       0.251115,
+       0.512394
+      ],
+      "n_draws": 1000
+     }
+    },
+    "Qwen names only": {
+     "within": {
+      "value": 0.601898,
+      "ci95": [
+       0.532709,
+       0.666601
+      ],
+      "ci90": [
+       0.542585,
+       0.658469
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.621271,
+      "ci95": [
+       0.55448,
+       0.690734
+      ],
+      "ci90": [
+       0.567297,
+       0.678735
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.019372,
+      "ci95": [
+       -0.027744,
+       0.0632
+      ],
+      "ci90": [
+       -0.019155,
+       0.055961
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 18.734749,
+     "tetrad": {
+      "value": 0.758481,
+      "ci95": [
+       0.618752,
+       0.882167
+      ],
+      "ci90": [
+       0.642009,
+       0.864369
+      ],
+      "n_draws": 1000
+     }
+    },
+    "DrugBank lookup": {
+     "within": {
+      "value": 0.641224,
+      "ci95": [
+       0.595375,
+       0.688846
+      ],
+      "ci90": [
+       0.600371,
+       0.68347
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.639578,
+      "ci95": [
+       0.566687,
+       0.714652
+      ],
+      "ci90": [
+       0.576755,
+       0.704328
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.001647,
+      "ci95": [
+       -0.049593,
+       0.05111
+      ],
+      "ci90": [
+       -0.041318,
+       0.042252
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.486016,
+     "tetrad": {
+      "value": 0.691139,
+      "ci95": [
+       0.576921,
+       0.801852
+      ],
+      "ci90": [
+       0.596946,
+       0.788012
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel bertbase-marker": {
+     "within": {
+      "value": 0.487602,
+      "ci95": [
+       0.429112,
+       0.543606
+      ],
+      "ci90": [
+       0.439968,
+       0.533605
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.490314,
+      "ci95": [
+       0.430702,
+       0.547489
+      ],
+      "ci90": [
+       0.444082,
+       0.536473
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.002712,
+      "ci95": [
+       -0.019738,
+       0.024517
+      ],
+      "ci90": [
+       -0.015263,
+       0.020646
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 1.467215,
+     "tetrad": {
+      "value": 0.51038,
+      "ci95": [
+       0.365232,
+       0.629469
+      ],
+      "ci90": [
+       0.39571,
+       0.611158
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel bertbase-pair": {
+     "within": {
+      "value": 0.479562,
+      "ci95": [
+       0.422478,
+       0.536684
+      ],
+      "ci90": [
+       0.430572,
+       0.528816
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.482371,
+      "ci95": [
+       0.421998,
+       0.544726
+      ],
+      "ci90": [
+       0.433078,
+       0.534987
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.002809,
+      "ci95": [
+       -0.012019,
+       0.0195
+      ],
+      "ci90": [
+       -0.009871,
+       0.01678
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.684632,
+     "tetrad": {
+      "value": 0.467342,
+      "ci95": [
+       0.320075,
+       0.609546
+      ],
+      "ci90": [
+       0.341017,
+       0.57819
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biobert-marker": {
+     "within": {
+      "value": 0.498741,
+      "ci95": [
+       0.438903,
+       0.559397
+      ],
+      "ci90": [
+       0.447276,
+       0.550618
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.499031,
+      "ci95": [
+       0.436198,
+       0.559343
+      ],
+      "ci90": [
+       0.445613,
+       0.550573
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.000291,
+      "ci95": [
+       -0.01234,
+       0.011611
+      ],
+      "ci90": [
+       -0.009613,
+       0.00975
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.102339,
+     "tetrad": {
+      "value": 0.508354,
+      "ci95": [
+       0.371777,
+       0.64949
+      ],
+      "ci90": [
+       0.385679,
+       0.625374
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biobert-pair": {
+     "within": {
+      "value": 0.476075,
+      "ci95": [
+       0.408066,
+       0.536291
+      ],
+      "ci90": [
+       0.421305,
+       0.527899
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.478884,
+      "ci95": [
+       0.416092,
+       0.541835
+      ],
+      "ci90": [
+       0.423854,
+       0.531977
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.002809,
+      "ci95": [
+       -0.018692,
+       0.025629
+      ],
+      "ci90": [
+       -0.016125,
+       0.021634
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 1.683768,
+     "tetrad": {
+      "value": 0.456709,
+      "ci95": [
+       0.322933,
+       0.601999
+      ],
+      "ci90": [
+       0.342036,
+       0.572015
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biolinkbert-marker": {
+     "within": {
+      "value": 0.4352,
+      "ci95": [
+       0.367262,
+       0.497559
+      ],
+      "ci90": [
+       0.380316,
+       0.487718
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.438783,
+      "ci95": [
+       0.373542,
+       0.504022
+      ],
+      "ci90": [
+       0.384831,
+       0.491672
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.003584,
+      "ci95": [
+       -0.022266,
+       0.034275
+      ],
+      "ci90": [
+       -0.017633,
+       0.028219
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 5.157542,
+     "tetrad": {
+      "value": 0.395949,
+      "ci95": [
+       0.265734,
+       0.537896
+      ],
+      "ci90": [
+       0.284466,
+       0.514445
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biolinkbert-pair": {
+     "within": {
+      "value": 0.464742,
+      "ci95": [
+       0.401847,
+       0.522216
+      ],
+      "ci90": [
+       0.411268,
+       0.514204
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.446339,
+      "ci95": [
+       0.384137,
+       0.509162
+      ],
+      "ci90": [
+       0.392603,
+       0.498786
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.018404,
+      "ci95": [
+       -0.063371,
+       0.027278
+      ],
+      "ci90": [
+       -0.057691,
+       0.017818
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 5.825793,
+     "tetrad": {
+      "value": 0.417215,
+      "ci95": [
+       0.287514,
+       0.557379
+      ],
+      "ci90": [
+       0.310019,
+       0.536139
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biomedbert_abs-marker": {
+     "within": {
+      "value": 0.448663,
+      "ci95": [
+       0.383508,
+       0.514679
+      ],
+      "ci90": [
+       0.392937,
+       0.50595
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.449244,
+      "ci95": [
+       0.388656,
+       0.511115
+      ],
+      "ci90": [
+       0.399352,
+       0.501977
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.000581,
+      "ci95": [
+       -0.031672,
+       0.034664
+      ],
+      "ci90": [
+       -0.027021,
+       0.029672
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 2.513183,
+     "tetrad": {
+      "value": 0.347848,
+      "ci95": [
+       0.225827,
+       0.500929
+      ],
+      "ci90": [
+       0.243185,
+       0.472941
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biomedbert_abs-pair": {
+     "within": {
+      "value": 0.481209,
+      "ci95": [
+       0.416303,
+       0.544553
+      ],
+      "ci90": [
+       0.42593,
+       0.533868
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.48024,
+      "ci95": [
+       0.414331,
+       0.543842
+      ],
+      "ci90": [
+       0.424281,
+       0.532837
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.000969,
+      "ci95": [
+       -0.011262,
+       0.009157
+      ],
+      "ci90": [
+       -0.008972,
+       0.00726
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.253311,
+     "tetrad": {
+      "value": 0.456203,
+      "ci95": [
+       0.302977,
+       0.596784
+      ],
+      "ci90": [
+       0.33486,
+       0.571167
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biomedbert_full-marker": {
+     "within": {
+      "value": 0.432003,
+      "ci95": [
+       0.37035,
+       0.498484
+      ],
+      "ci90": [
+       0.379551,
+       0.486634
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.431228,
+      "ci95": [
+       0.370647,
+       0.498174
+      ],
+      "ci90": [
+       0.379753,
+       0.485429
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.000775,
+      "ci95": [
+       -0.007206,
+       0.005531
+      ],
+      "ci90": [
+       -0.006186,
+       0.004287
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.029436,
+     "tetrad": {
+      "value": 0.338734,
+      "ci95": [
+       0.198598,
+       0.476268
+      ],
+      "ci90": [
+       0.216924,
+       0.455533
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel biomedbert_full-pair": {
+     "within": {
+      "value": 0.47162,
+      "ci95": [
+       0.401304,
+       0.536713
+      ],
+      "ci90": [
+       0.410965,
+       0.529451
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.477141,
+      "ci95": [
+       0.412426,
+       0.547284
+      ],
+      "ci90": [
+       0.422252,
+       0.535249
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.005521,
+      "ci95": [
+       -0.036376,
+       0.053966
+      ],
+      "ci90": [
+       -0.029866,
+       0.042962
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 3.128382,
+     "tetrad": {
+      "value": 0.441013,
+      "ci95": [
+       0.277133,
+       0.621605
+      ],
+      "ci90": [
+       0.298753,
+       0.586938
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel clinicalbert-marker": {
+     "within": {
+      "value": 0.492251,
+      "ci95": [
+       0.43428,
+       0.546952
+      ],
+      "ci90": [
+       0.444126,
+       0.536772
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.495351,
+      "ci95": [
+       0.439336,
+       0.549396
+      ],
+      "ci90": [
+       0.447472,
+       0.541007
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.0031,
+      "ci95": [
+       -0.015791,
+       0.0214
+      ],
+      "ci90": [
+       -0.012272,
+       0.018234
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -1.181584,
+     "tetrad": {
+      "value": 0.51038,
+      "ci95": [
+       0.370913,
+       0.634878
+      ],
+      "ci90": [
+       0.393731,
+       0.618613
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel clinicalbert-pair": {
+     "within": {
+      "value": 0.480628,
+      "ci95": [
+       0.426127,
+       0.541498
+      ],
+      "ci90": [
+       0.433085,
+       0.532304
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.482177,
+      "ci95": [
+       0.425665,
+       0.543506
+      ],
+      "ci90": [
+       0.432929,
+       0.534353
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.00155,
+      "ci95": [
+       -0.017755,
+       0.019346
+      ],
+      "ci90": [
+       -0.013169,
+       0.016102
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -1.543885,
+     "tetrad": {
+      "value": 0.498228,
+      "ci95": [
+       0.353991,
+       0.621652
+      ],
+      "ci90": [
+       0.382742,
+       0.600126
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel deberta-marker": {
+     "within": {
+      "value": 0.512011,
+      "ci95": [
+       0.447972,
+       0.572932
+      ],
+      "ci90": [
+       0.459597,
+       0.561425
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.511236,
+      "ci95": [
+       0.450997,
+       0.571004
+      ],
+      "ci90": [
+       0.458817,
+       0.560532
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.000775,
+      "ci95": [
+       -0.019606,
+       0.018485
+      ],
+      "ci90": [
+       -0.016909,
+       0.015971
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.284903,
+     "tetrad": {
+      "value": 0.498228,
+      "ci95": [
+       0.358604,
+       0.627794
+      ],
+      "ci90": [
+       0.378207,
+       0.602973
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel deberta-pair": {
+     "within": {
+      "value": 0.427644,
+      "ci95": [
+       0.367215,
+       0.488023
+      ],
+      "ci90": [
+       0.377806,
+       0.478574
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.428904,
+      "ci95": [
+       0.370148,
+       0.4896
+      ],
+      "ci90": [
+       0.377664,
+       0.479843
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.001259,
+      "ci95": [
+       -0.010138,
+       0.012875
+      ],
+      "ci90": [
+       -0.008363,
+       0.010994
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.60627,
+     "tetrad": {
+      "value": 0.326076,
+      "ci95": [
+       0.201353,
+       0.463276
+      ],
+      "ci90": [
+       0.223689,
+       0.441298
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel electra-marker": {
+     "within": {
+      "value": 0.487117,
+      "ci95": [
+       0.424106,
+       0.546377
+      ],
+      "ci90": [
+       0.433504,
+       0.53894
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.483534,
+      "ci95": [
+       0.419583,
+       0.543275
+      ],
+      "ci90": [
+       0.432809,
+       0.531846
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.003584,
+      "ci95": [
+       -0.032038,
+       0.027495
+      ],
+      "ci90": [
+       -0.027505,
+       0.021911
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.512838,
+     "tetrad": {
+      "value": 0.544304,
+      "ci95": [
+       0.37548,
+       0.696637
+      ],
+      "ci90": [
+       0.395401,
+       0.671115
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel electra-pair": {
+     "within": {
+      "value": 0.505812,
+      "ci95": [
+       0.449509,
+       0.565677
+      ],
+      "ci90": [
+       0.460641,
+       0.552816
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.507749,
+      "ci95": [
+       0.451184,
+       0.564217
+      ],
+      "ci90": [
+       0.460999,
+       0.554865
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.001937,
+      "ci95": [
+       -0.015864,
+       0.019502
+      ],
+      "ci90": [
+       -0.012609,
+       0.016544
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.509754,
+     "tetrad": {
+      "value": 0.513924,
+      "ci95": [
+       0.369054,
+       0.671547
+      ],
+      "ci90": [
+       0.394785,
+       0.652736
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel roberta-marker": {
+     "within": {
+      "value": 0.478206,
+      "ci95": [
+       0.424745,
+       0.533036
+      ],
+      "ci90": [
+       0.430928,
+       0.524009
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.474235,
+      "ci95": [
+       0.421047,
+       0.528159
+      ],
+      "ci90": [
+       0.430881,
+       0.520114
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.003971,
+      "ci95": [
+       -0.01745,
+       0.010338
+      ],
+      "ci90": [
+       -0.015311,
+       0.007799
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.354022,
+     "tetrad": {
+      "value": 0.44557,
+      "ci95": [
+       0.311459,
+       0.590644
+      ],
+      "ci90": [
+       0.330877,
+       0.565362
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel roberta-pair": {
+     "within": {
+      "value": 0.461933,
+      "ci95": [
+       0.403321,
+       0.518727
+      ],
+      "ci90": [
+       0.412372,
+       0.509851
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.461643,
+      "ci95": [
+       0.40314,
+       0.520105
+      ],
+      "ci90": [
+       0.411403,
+       0.509937
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.000291,
+      "ci95": [
+       -0.011462,
+       0.008955
+      ],
+      "ci90": [
+       -0.009363,
+       0.007155
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 1.019404,
+     "tetrad": {
+      "value": 0.447089,
+      "ci95": [
+       0.309597,
+       0.576609
+      ],
+      "ci90": [
+       0.326875,
+       0.550964
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel scibert-marker": {
+     "within": {
+      "value": 0.473654,
+      "ci95": [
+       0.409524,
+       0.535513
+      ],
+      "ci90": [
+       0.419188,
+       0.52599
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.474622,
+      "ci95": [
+       0.408673,
+       0.535607
+      ],
+      "ci90": [
+       0.419151,
+       0.527878
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": 0.000969,
+      "ci95": [
+       -0.010936,
+       0.012841
+      ],
+      "ci90": [
+       -0.008848,
+       0.010573
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": -0.171936,
+     "tetrad": {
+      "value": 0.429367,
+      "ci95": [
+       0.294536,
+       0.585597
+      ],
+      "ci90": [
+       0.319148,
+       0.555242
+      ],
+      "n_draws": 1000
+     }
+    },
+    "panel scibert-pair": {
+     "within": {
+      "value": 0.457187,
+      "ci95": [
+       0.393555,
+       0.515953
+      ],
+      "ci90": [
+       0.407619,
+       0.505627
+      ],
+      "n_draws": 1000
+     },
+     "partner_adjusted_within": {
+      "value": 0.452925,
+      "ci95": [
+       0.392677,
+       0.513028
+      ],
+      "ci90": [
+       0.403696,
+       0.501202
+      ],
+      "n_draws": 1000
+     },
+     "adjusted_minus_raw": {
+      "value": -0.004262,
+      "ci95": [
+       -0.019577,
+       0.011459
+      ],
+      "ci90": [
+       -0.015635,
+       0.008321
+      ],
+      "n_draws": 1000
+     },
+     "slope_on_prior": 0.688214,
+     "tetrad": {
+      "value": 0.443038,
+      "ci95": [
+       0.303148,
+       0.579629
+      ],
+      "ci90": [
+       0.335832,
+       0.562175
+      ],
+      "n_draws": 1000
+     }
+    }
+   }
+  }
+ },
+ "panel_summary": {
+  "novel": {
+   "within": {
+    "min": 0.459709,
+    "median": 0.484148,
+    "max": 0.533025,
+    "n_ci95_upper_below_0.5": 0,
+    "n_ci95_lower_above_0.5": 0
+   },
+   "partner_adjusted_within": {
+    "min": 0.464993,
+    "median": 0.482827,
+    "max": 0.55218,
+    "n_ci95_upper_below_0.5": 0,
+    "n_ci95_lower_above_0.5": 0
+   },
+   "tetrad": {
+    "min": 0.394737,
+    "median": 0.493421,
+    "max": 0.644737,
+    "n_ci95_upper_below_0.5": 0,
+    "n_ci95_lower_above_0.5": 0
+   },
+   "adjusted_minus_raw": {
+    "min": -0.014531,
+    "median": 0.001321,
+    "max": 0.021797
+   }
+  },
+  "older_clean": {
+   "within": {
+    "min": 0.427644,
+    "median": 0.477141,
+    "max": 0.512011,
+    "n_ci95_upper_below_0.5": 3,
+    "n_ci95_lower_above_0.5": 0
+   },
+   "partner_adjusted_within": {
+    "min": 0.428904,
+    "median": 0.478012,
+    "max": 0.511236,
+    "n_ci95_upper_below_0.5": 2,
+    "n_ci95_lower_above_0.5": 0
+   },
+   "tetrad": {
+    "min": 0.326076,
+    "median": 0.451646,
+    "max": 0.544304,
+    "n_ci95_upper_below_0.5": 2,
+    "n_ci95_lower_above_0.5": 0
+   },
+   "adjusted_minus_raw": {
+    "min": -0.018404,
+    "median": 0.000775,
+    "max": 0.005521
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "exp7 iii2 partialled, novel, b2mixed BiomedBERT",
+   "reference": 0.511229,
+   "got": 0.511229,
+   "reference_ci95": [
+    0.379736,
+    0.638165
+   ],
+   "got_ci95": [
+    0.379736,
+    0.638165
+   ],
+   "match": true
+  },
+  {
+   "check": "exp7 iii2 partialled, novel, Qwen names only",
+   "reference": 0.590489,
+   "got": 0.590489,
+   "reference_ci95": [
+    0.458047,
+    0.72289
+   ],
+   "got_ci95": [
+    0.458047,
+    0.72289
+   ],
+   "match": true
+  },
+  {
+   "check": "exp7 iii2 partialled, novel, DrugBank lookup",
+   "reference": 0.721929,
+   "got": 0.721929,
+   "reference_ci95": [
+    0.584269,
+    0.843399
+   ],
+   "got_ci95": [
+    0.584269,
+    0.843399
+   ],
+   "match": true
+  },
+  {
+   "check": "post7 tetrad, novel, b2mixed BiomedBERT",
+   "reference": 0.480263,
+   "got": 0.480263,
+   "reference_ci95": [
+    0.120368,
+    0.825441
+   ],
+   "got_ci95": [
+    0.120368,
+    0.825441
+   ],
+   "match": true
+  },
+  {
+   "check": "post7 tetrad, novel, Qwen names only",
+   "reference": 0.664474,
+   "got": 0.664474,
+   "reference_ci95": [
+    0.29683,
+    0.939784
+   ],
+   "got_ci95": [
+    0.29683,
+    0.939784
+   ],
+   "match": true
+  },
+  {
+   "check": "post7 tetrad, novel, DrugBank lookup",
+   "reference": 0.884868,
+   "got": 0.884868,
+   "reference_ci95": [
+    0.702348,
+    1.0
+   ],
+   "got_ci95": [
+    0.702348,
+    1.0
+   ],
+   "match": true
+  },
+  {
+   "check": "exp7 iii2 partialled, older_clean, b2mixed BiomedBERT",
+   "reference": 0.447114,
+   "got": 0.447114,
+   "reference_ci95": [
+    0.384764,
+    0.511331
+   ],
+   "got_ci95": [
+    0.384764,
+    0.511331
+   ],
+   "match": true
+  },
+  {
+   "check": "exp7 iii2 partialled, older_clean, Qwen names only",
+   "reference": 0.621271,
+   "got": 0.621271,
+   "reference_ci95": [
+    0.55448,
+    0.690734
+   ],
+   "got_ci95": [
+    0.55448,
+    0.690734
+   ],
+   "match": true
+  },
+  {
+   "check": "exp7 iii2 partialled, older_clean, DrugBank lookup",
+   "reference": 0.639578,
+   "got": 0.639578,
+   "reference_ci95": [
+    0.566687,
+    0.714652
+   ],
+   "got_ci95": [
+    0.566687,
+    0.714652
+   ],
+   "match": true
+  },
+  {
+   "check": "post7 tetrad, older_clean, b2mixed BiomedBERT",
+   "reference": 0.37519,
+   "got": 0.37519,
+   "reference_ci95": [
+    0.233297,
+    0.541045
+   ],
+   "got_ci95": [
+    0.233297,
+    0.541045
+   ],
+   "match": true
+  },
+  {
+   "check": "post7 tetrad, older_clean, Qwen names only",
+   "reference": 0.758481,
+   "got": 0.758481,
+   "reference_ci95": [
+    0.618752,
+    0.882167
+   ],
+   "got_ci95": [
+    0.618752,
+    0.882167
+   ],
+   "match": true
+  },
+  {
+   "check": "post7 tetrad, older_clean, DrugBank lookup",
+   "reference": 0.691139,
+   "got": 0.691139,
+   "reference_ci95": [
+    0.576921,
+    0.801852
+   ],
+   "got_ci95": [
+    0.576921,
+    0.801852
+   ],
+   "match": true
+  }
+ ]
+}

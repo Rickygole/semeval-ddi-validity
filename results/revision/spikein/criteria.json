@@ -1,0 +1,63 @@
+{
+ "status": "Post hoc sensitivity calibration, exploratory, not preregistered; it changes no preregistered decision. Written before any spike-in run.",
+ "written": "2026-10-16, before any spike-in code was run",
+ "question": "What is the smallest amount of real pair knowledge, in kappa units against the DrugBank lookup ceiling, that the H1 pipeline detects on the frozen rows?",
+ "kappa_definition": "kappa = (A_within(s) - 0.5) / (A_within(DrugBank) - 0.5), both within-drug AUROC (stats.stratified_auroc) on the same rows; A_within(DrugBank) is the real DrugBank lookup (scripts/amend7_cpu_common.drugbank_score) with ties counted one half",
+ "kappa_grid": [0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0],
+ "cohorts": {
+  "primary": "older_clean tier A (1832 rows, 128 drugs), bootstrap seed 42",
+  "secondary": ["novel tier A (438 rows, 48 drugs), bootstrap seed 1042", "older_clean tier B and novel tier B: the same synthetic scores (built on tier A) restricted to rows with dbstate == 1; the x axis stays the tier A target kappa and the tier B DrugBank ceiling is recomputed on the tier B rows"]
+ },
+ "bases": {
+  "primary": "b2mixed: the real b2mixed-biomedbert P(interaction) averaged over seeds 42, 1, 2, 3, 4 (ood_empty for Novel, oodold_empty for Older), restricted to the cohort rows",
+  "secondary": "noise: an independent standard normal draw per row and per rep, in place of b2mixed"
+ },
+ "blend": {
+  "formula": "s = w * r_db + (1 - w) * (r_base + sigma * z)",
+  "r_db": "normalised rank (rank / n) over the cohort tier A rows of the DrugBank lookup score with a uniform random tie-break drawn per rep",
+  "r_base": "normalised rank (rank / n, average ranks for ties) of the base score over the same rows; for the noise base a fresh normal draw per rep",
+  "z": "standard normal jitter per row and per rep",
+  "sigma": 0.1,
+  "calibration": "w grid 0 to 1 in steps of 0.01; for each w, 100 calibration draws (random streams disjoint from the reps) give the mean realised point-estimate kappa on the full cohort rows; the curve is made monotone by a running maximum and w for each target is found by linear interpolation; a target below the curve at w = 0 or above it at w = 1 is flagged unreachable and not run. Calibration is done separately per cohort and per base.",
+  "rep_seed": "numpy default_rng([base_id, cohort_id, grid_index, rep, 0]) for reps; [base_id, cohort_id, 999, w_index, draw, 1] for calibration"
+ },
+ "reps_per_grid_point": 200,
+ "bootstrap": {
+  "draws_per_rep": 300,
+  "method": "two-way cluster bootstrap over OOD drugs and partner drugs with the same RandomState call sequence as stats.two_way_samples and evaluate2.within_stat (seed 42 for Older, 1042 for Novel), each resampled drug copy a separate stratum (Amendment 6.6); the same draw indices are used for every rep, as the pipeline would use them for any model. Implemented as a batched within-drug AUROC that is tested to equal stats.two_way_samples(stats.stratified_auroc, ..., strat=g).",
+  "secondary": "one-way drug bootstrap with the same seed, drugs resampled with replacement, partners fixed, each drug copy a separate stratum"
+ },
+ "decisions": {
+  "auroc_rule_primary": "H1 rule of Amendments 4 and 6: equivalent if the 90% percentile interval (5th, 95th) lies strictly inside (0.40, 0.60); falsified if the 95% lower bound (2.5th percentile) is above 0.60; otherwise inconclusive. Applied to Novel as well for calibration, although the preregistration reports Novel as an estimate only.",
+  "auroc_rule_holm": "evaluate2.decide_equivalence with the Holm adjustment of evaluate2.holm over H1 (this rep's p_tost), H4 (observed 0.3387) and H6 (observed 0.1019), as in decisions.json; secondary",
+  "p_tost": "evaluate2.tost_p on the two-way draws, reported per rep",
+  "kappa_rule": "alternative margin in kappa units with paired draws (the same bootstrap draw for the synthetic score and the real DrugBank lookup): equivalent if the 97.5th percentile of the kappa draws is at most 0.25; falsified if the 2.5th percentile is above 0.25; otherwise inconclusive",
+  "detection": "signal detected if the 95% lower bound of the within-drug AUROC is above 0.50 (two-way bootstrap)"
+ },
+ "reported_curves": [
+  "P(falsified), P(equivalent), P(inconclusive) against target kappa, AUROC rule, two-way bootstrap, per cohort, base and tier",
+  "the same with the Holm rule and with the one-way drug bootstrap",
+  "P(falsified), P(equivalent), P(inconclusive) under the kappa rule",
+  "P(detected) against target kappa",
+  "mean and sd of the realised point-estimate kappa and AUROC per grid point, mean 90% and 95% bounds"
+ ],
+ "summaries": {
+  "b": "smallest grid kappa with P(falsified) >= 0.80, and the linearly interpolated crossing; 'not reached' if no grid point reaches it",
+  "c": "largest grid kappa with P(equivalent) >= 0.20, and the linearly interpolated crossing",
+  "d": "b and c under the kappa rule",
+  "e": "the observed b2mixed Older-clean result (kappa point -0.342, 95% upper 0.133, decision inconclusive) placed on the curves: decision probabilities at kappa 0.133 by linear interpolation and the grid points it excludes"
+ },
+ "middle_cohort_simulation": {
+  "design": "pooled cohort = the 128 Older-clean drugs plus 60 drugs drawn with replacement from the Older-clean drugs, each copied with all its rows (labels, partners, DrugBank score, b2mixed score) under a new drug id; 188 drugs",
+  "realisations": 3,
+  "realisation_seeds": [1, 2, 3],
+  "bases": ["b2mixed", "noise"],
+  "tier": "A",
+  "reps_per_grid_point": 200,
+  "draws_per_rep": 300,
+  "bootstrap_seed": 42,
+  "calibration": "redone on each pooled cohort",
+  "material_change": "b or c moves by at least one grid step (0.05 below 0.2, 0.1 above) in interpolated terms on the AUROC rule or the kappa rule"
+ },
+ "tests": ["kappa 0 recovers a within-drug AUROC of about 0.5 (noise base)", "kappa 1 recovers the DrugBank within-drug AUROC", "the pipeline on the real b2mixed scores reproduces the evaluate2 H1 decision, estimate and intervals", "the batched bootstrap equals stats.two_way_samples"]
+}

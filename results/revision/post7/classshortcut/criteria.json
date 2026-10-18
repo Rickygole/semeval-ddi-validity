@@ -1,0 +1,61 @@
+{
+ "status": "written 2026-10-16 before any statistic in results/revision/post7/classshortcut was computed; post hoc and exploratory; changes no preregistered decision",
+ "already_known_when_written": {
+  "e7_json": "results/revision/amend7/e7.json: E7c within-drug AUROC Older-primary tier A 0.695, tier B 0.754, Novel tier A 0.534; E7d Older-primary A 0.671; E7e Older-primary A 0.734; additive residual E7c Older-primary A 0.706; trained partner prior a7-prior-partner-train within-drug 0.497; reported kappa against DrugBank 1.284",
+  "red_team_hand_computation": "seed 42 only, not reproduced before writing: per-drug AUROC about 0.89 for adalimumab, golimumab, certolizumab, apixaban, tapentadol, trandolapril, regorafenib; about 0.51 for avanafil, axitinib, cabozantinib, teriflunomide, rabeprazole",
+  "data_structure_checked": "artifacts/amend7/train_pairs.csv has 4,643 pairs over 299 anchors (drug_a) and 313 partners (drug_b), 175 drugs on both sides; no Older drug appears in it by name; ood_old_pairs.csv carries an evidence column for all 648 positives"
+ },
+ "shared": {
+  "cohorts": "Older-primary (ddiood.amend7_analysis.Truth.cohort('older_primary')) tiers A and B, primary cell Older-primary tier A; Novel tiers A and B as secondary",
+  "statistic": "pair-weighted within-drug AUROC (ddiood.amend7_analysis.point)",
+  "interval": "two-way cluster bootstrap of ddiood.amend7_analysis.draws, 1,000 draws, seed 42 for Older-primary and 1042 for Novel; differences use the same draws (paired)",
+  "e7_scores": "P averaged over seeds 42, 1, 2, 3, 4 (ddiood.amend7_analysis.seed_average); E7c key oodold_names / ood_names, E7d and E7e oodold / ood",
+  "other_systems": "b2mixed-biomedbert seed-averaged oodold_empty / ood_empty; llm-qwen-names oodold / ood",
+  "training_graph": "training pairs are treated as unordered edges; the class-mates of a test drug d are the training anchors (drug_a) sharing a class with d; a sensitivity variant uses every training drug (drug_a or drug_b)",
+  "class_definitions": {
+   "atc4": "ATC level 4 (first 5 characters) from the local DrugBank full XML, names and synonyms lowercased, salt-stripped fallback via ddiood.drugbank.strip_salt; a drug with several codes belongs to each class",
+   "stem": "USAN stem by longest matching suffix (monoclonal antibodies by target infix) from a fixed list in the script",
+   "atc3": "ATC level 3 (first 4 characters)"
+  }
+ },
+ "analysis_1_class_scorer": {
+  "score": "for test pair (d, x): number of class-mates of d that are training-positive with x divided by the number of class-mates of d (primary); variant: divided by the number of class-mates with any training pair with x (class-conditional partner rate, also item 6); drugs without class-mates get a constant score",
+  "reported": "within-drug AUROC over all drugs and over drugs with at least one class-mate, per definition, plus the paired difference E7c minus scorer",
+  "sufficient": "the scorer is sufficient if, on Older-primary tier A over all drugs, its point estimate is at least E7c's, or the paired 95% interval of E7c minus scorer contains 0; any definition qualifying is reported with the note that best-of-three is a multiple comparison"
+ },
+ "analysis_2_split": {
+  "groups": "Older-primary drugs with at least one training anchor in the same ATC-4 class versus none; separately the same stem",
+  "reported": "within-drug AUROC per group with 95% interval and drug counts for E7c, E7d, E7e, b2mixed, Qwen names only; paired difference with-class minus without-class for E7c",
+  "dependent": "class-dependent if, for ATC-4 or stem, the E7c with-class minus without-class difference is at least 0.10 with a 95% interval excluding 0 and the without-class group 95% interval contains 0.5"
+ },
+ "analysis_3_partial": {
+  "primary": "rank residualization within drug: within-drug centered ranks of logit(E7c) regressed (no intercept, pooled slope) on the within-drug centered ranks of the three class scores jointly; residual within-drug AUROC with the residual held fixed across bootstrap draws",
+  "secondary": "the same per single class definition; a logistic adjustment (logistic regression of y on the class scores with drug fixed effects, E7c logit added as an offset-free covariate is not used; instead residual = logit(E7c) minus its linear projection on the drug-demeaned class scores)",
+  "shortcut_explains": "residual 95% interval contains 0.5 (primary)",
+  "class_share": "1 - (residual - 0.5) / (E7c - 0.5), clipped to [0, 1], primary"
+ },
+ "analysis_4_mechanism": {
+  "rule": "a positive is PK if its evidence sentence matches (case-insensitive) CYP, P-gp, P-glycoprotein, transporter, AUC, Cmax, C max, exposure, clearance, metabolism or metaboliz/metabolis; otherwise PD or other; negatives of the drug are shared by both groups",
+  "reported": "E7c within-drug AUROC per group with intervals; the class scorer the same; descriptive, no decision rule"
+ },
+ "analysis_5_drugbank": {
+  "operating_point": "DrugBank lookup (1 if listed, else 0) pooled FPR and TPR on the cell",
+  "e7c": "within-drug ROC from placement values: for each positive the share of its own drug's negatives scoring at least as high (ties half), positives weighted by their drug's negative count so the area equals the pair-weighted within-drug AUROC; TPR at DrugBank's FPR and partial AUROC from 0 to DrugBank's FPR, with DrugBank's own within-drug values by the same formula",
+  "replaces": "the kappa above 1 claim; descriptive"
+ },
+ "analysis_6_partner_prior": {
+  "partner_rate": "the partner's overall training positive rate and its spread, to check the near-constant claim; and the class-conditional partner rate (variant of analysis 1)",
+  "embedding": "frozen microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext from the local cache, mean-pooled last layer over the name tokens; score = mean of the top-k cosine similarities between d and the training-positive partners of x, k in {1, 3, 5}, k = 3 primary; descriptive"
+ },
+ "analysis_7_aliases": {
+  "red_team": ["teriflunomide/leflunomide", "balsalazide/mesalamine", "lisdexamfetamine/amphetamine"],
+  "own_check": "difflib ratio at least 0.75 or a common substring of at least 7 characters between salt-stripped Older names and training drug names, each candidate judged by hand as same moiety, prodrug, metabolite or enantiomer (alias) versus shared stem (not an alias)",
+  "reported": "E7c within-drug AUROC with the red-team aliases removed and with all confirmed aliases removed",
+  "flag": "aliases matter if removal lowers E7c Older-primary tier A by at least 0.03"
+ },
+ "verdict_rule": {
+  "b_class_shortcut_confirmed": "analysis 3 shortcut_explains holds AND (analysis 1 sufficient OR analysis 2 dependent)",
+  "a_genuine": "analysis 3 residual 95% lower bound above 0.5 AND class_share at most 0.25 AND analysis 1 not sufficient",
+  "c_mix": "otherwise, with class_share reported as the share attributable to class"
+ }
+}

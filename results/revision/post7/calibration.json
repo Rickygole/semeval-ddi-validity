@@ -1,0 +1,1188 @@
+{
+ "status": "post hoc and exploratory; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "criteria": {
+  "analysis_0_kappa_framing": {
+   "primary_statistic": "H1 kappa = (AUROC_b2mixed - 0.5) / (AUROC_DrugBank - 0.5), within-drug, Older-clean tier A, with the 95% interval from the two-way bootstrap with paired draws for b2mixed and DrugBank (seed 42, 1,000 draws); the 95% upper bound is the headline number",
+   "secondary": "the same under the one-way drug bootstrap; H1-novel and H6 rows on Novel; tier B rows are reported with the note that DrugBank is 1.0 on tier B by construction, so the tier B kappa reduces to 2 x (AUROC - 0.5)",
+   "reading": "the upper bound states the largest share of the DrugBank-lookup within-drug signal that b2mixed can carry at 95% confidence; no decision rule is attached"
+  },
+  "analysis_1a_one_way": {
+   "rows": "H1, H1-novel, H4 and H6, tiers A and B",
+   "primary_statistic": "one-way drug bootstrap 90% and 95% percentile intervals and p_TOST, beside the two-way values recomputed by the same code",
+   "equivalent_under_one_way": "90% interval inside [0.40, 0.60] (p_TOST < 0.05, unadjusted); Holm across H1, H4 and H6 under the one-way bootstrap is reported beside it",
+   "below_chance_under_one_way": "if the one-way 95% interval of a row lies entirely below 0.5 (and separately if the 90% interval does), the row is reported as significantly below chance under the one-way bootstrap (inverted information), not as equivalence",
+   "decision_effect": "none; the preregistered two-way decisions stand"
+  },
+  "analysis_1c_bayes": {
+   "rows": "H1, H1-novel, H4 (difference, region [-0.10, 0.10]) and H6, tiers A and B",
+   "primary_model": "Bayesian bootstrap over drugs (Rubin 1981): Dirichlet(1, ..., 1) weights on the cohort's drugs, AUROC = sum_d w_d U_d / sum_d w_d N_d with U_d the within-drug wins (ties 0.5) and N_d the comparisons of drug d; 20,000 posterior draws, seed 11; H4 uses independent draws per cohort",
+   "prior": "the Bayesian bootstrap is the posterior of a Dirichlet process prior on the distribution of drugs with concentration tending to 0: a noninformative prior that puts all mass on the observed drug types and no parametric prior on the AUROC; partners are fixed",
+   "secondary_model": "two-way Bayesian bootstrap: independent Dirichlet(1) weights on drugs and on partners, comparison weight w_d x w_partner(pos) x w_partner(neg); 4,000 draws, seed 12",
+   "primary_statistic": "posterior probability that the within-drug AUROC lies in [0.40, 0.60]; 90% and 95% equal-tailed credible intervals and P(AUROC < 0.5) beside it, reported next to the frequentist two-way and one-way results",
+   "practically_equivalent": "posterior probability at least 0.95",
+   "practically_not_equivalent": "posterior probability at most 0.05",
+   "undecided": "otherwise"
+  }
+ },
+ "kappa": [
+  {
+   "id": "H1",
+   "cohort": "older_clean",
+   "tier": "A",
+   "scheme": "two_way",
+   "auroc": 0.451763,
+   "drugbank": 0.641224,
+   "kappa": -0.341564,
+   "kappa_ci95": [
+    -0.793756,
+    0.133447
+   ],
+   "kappa_upper95": 0.133447,
+   "kappa_ci90": [
+    -0.729243,
+    0.067251
+   ],
+   "n_draws": 1000,
+   "note": ""
+  },
+  {
+   "id": "H1",
+   "cohort": "older_clean",
+   "tier": "A",
+   "scheme": "one_way_drug",
+   "auroc": 0.451763,
+   "drugbank": 0.641224,
+   "kappa": -0.341564,
+   "kappa_ci95": [
+    -0.626457,
+    -0.038563
+   ],
+   "kappa_upper95": -0.038563,
+   "kappa_ci90": [
+    -0.582323,
+    -0.096919
+   ],
+   "n_draws": 1000,
+   "note": ""
+  },
+  {
+   "id": "H1",
+   "cohort": "older_clean",
+   "tier": "B",
+   "scheme": "two_way",
+   "auroc": 0.396835,
+   "drugbank": 1.0,
+   "kappa": -0.206331,
+   "kappa_ci95": [
+    -0.422368,
+    0.028711
+   ],
+   "kappa_upper95": 0.028711,
+   "kappa_ci90": [
+    -0.383708,
+    -0.014573
+   ],
+   "n_draws": 1000,
+   "note": "DrugBank is 1.0 on tier B by construction; kappa = 2 x (AUROC - 0.5)"
+  },
+  {
+   "id": "H1",
+   "cohort": "older_clean",
+   "tier": "B",
+   "scheme": "one_way_drug",
+   "auroc": 0.396835,
+   "drugbank": 1.0,
+   "kappa": -0.206331,
+   "kappa_ci95": [
+    -0.334696,
+    -0.072023
+   ],
+   "kappa_upper95": -0.072023,
+   "kappa_ci90": [
+    -0.315963,
+    -0.093313
+   ],
+   "n_draws": 1000,
+   "note": "DrugBank is 1.0 on tier B by construction; kappa = 2 x (AUROC - 0.5)"
+  },
+  {
+   "id": "H1-novel",
+   "cohort": "novel",
+   "tier": "A",
+   "scheme": "two_way",
+   "auroc": 0.523118,
+   "drugbank": 0.728534,
+   "kappa": 0.101156,
+   "kappa_ci95": [
+    -0.48559,
+    0.721873
+   ],
+   "kappa_upper95": 0.721873,
+   "kappa_ci90": [
+    -0.387721,
+    0.599149
+   ],
+   "n_draws": 1000,
+   "note": ""
+  },
+  {
+   "id": "H1-novel",
+   "cohort": "novel",
+   "tier": "A",
+   "scheme": "one_way_drug",
+   "auroc": 0.523118,
+   "drugbank": 0.728534,
+   "kappa": 0.101156,
+   "kappa_ci95": [
+    -0.177163,
+    0.41206
+   ],
+   "kappa_upper95": 0.41206,
+   "kappa_ci90": [
+    -0.139099,
+    0.36375
+   ],
+   "n_draws": 1000,
+   "note": ""
+  },
+  {
+   "id": "H1-novel",
+   "cohort": "novel",
+   "tier": "B",
+   "scheme": "two_way",
+   "auroc": 0.532787,
+   "drugbank": 1.0,
+   "kappa": 0.065574,
+   "kappa_ci95": [
+    -0.285763,
+    0.428826
+   ],
+   "kappa_upper95": 0.428826,
+   "kappa_ci90": [
+    -0.233795,
+    0.364318
+   ],
+   "n_draws": 1000,
+   "note": "DrugBank is 1.0 on tier B by construction; kappa = 2 x (AUROC - 0.5)"
+  },
+  {
+   "id": "H1-novel",
+   "cohort": "novel",
+   "tier": "B",
+   "scheme": "one_way_drug",
+   "auroc": 0.532787,
+   "drugbank": 1.0,
+   "kappa": 0.065574,
+   "kappa_ci95": [
+    -0.119102,
+    0.253309
+   ],
+   "kappa_upper95": 0.253309,
+   "kappa_ci90": [
+    -0.095251,
+    0.226419
+   ],
+   "n_draws": 1000,
+   "note": "DrugBank is 1.0 on tier B by construction; kappa = 2 x (AUROC - 0.5)"
+  },
+  {
+   "id": "H6",
+   "cohort": "novel",
+   "tier": "A",
+   "scheme": "two_way",
+   "auroc": 0.519155,
+   "drugbank": 0.728534,
+   "kappa": 0.083815,
+   "kappa_ci95": [
+    -0.498771,
+    0.681765
+   ],
+   "kappa_upper95": 0.681765,
+   "kappa_ci90": [
+    -0.383722,
+    0.544969
+   ],
+   "n_draws": 1000,
+   "note": ""
+  },
+  {
+   "id": "H6",
+   "cohort": "novel",
+   "tier": "A",
+   "scheme": "one_way_drug",
+   "auroc": 0.519155,
+   "drugbank": 0.728534,
+   "kappa": 0.083815,
+   "kappa_ci95": [
+    -0.210962,
+    0.372556
+   ],
+   "kappa_upper95": 0.372556,
+   "kappa_ci90": [
+    -0.15859,
+    0.326486
+   ],
+   "n_draws": 1000,
+   "note": ""
+  },
+  {
+   "id": "H6",
+   "cohort": "novel",
+   "tier": "B",
+   "scheme": "two_way",
+   "auroc": 0.551913,
+   "drugbank": 1.0,
+   "kappa": 0.103825,
+   "kappa_ci95": [
+    -0.266714,
+    0.450999
+   ],
+   "kappa_upper95": 0.450999,
+   "kappa_ci90": [
+    -0.205351,
+    0.384683
+   ],
+   "n_draws": 1000,
+   "note": "DrugBank is 1.0 on tier B by construction; kappa = 2 x (AUROC - 0.5)"
+  },
+  {
+   "id": "H6",
+   "cohort": "novel",
+   "tier": "B",
+   "scheme": "one_way_drug",
+   "auroc": 0.551913,
+   "drugbank": 1.0,
+   "kappa": 0.103825,
+   "kappa_ci95": [
+    -0.083156,
+    0.292965
+   ],
+   "kappa_upper95": 0.292965,
+   "kappa_ci90": [
+    -0.057941,
+    0.260197
+   ],
+   "n_draws": 1000,
+   "note": "DrugBank is 1.0 on tier B by construction; kappa = 2 x (AUROC - 0.5)"
+  }
+ ],
+ "intervals": [
+  {
+   "id": "H1",
+   "tier": "A",
+   "scheme": "two_way",
+   "n": 1832,
+   "n_drugs": 128,
+   "value": 0.451763,
+   "ci90": [
+    0.394843,
+    0.509221
+   ],
+   "ci95": [
+    0.388895,
+    0.518086
+   ],
+   "p_tost": 0.060939,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.182817,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1-novel",
+   "tier": "A",
+   "scheme": "two_way",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.523118,
+   "ci90": [
+    0.41133,
+    0.625726
+   ],
+   "ci95": [
+    0.397209,
+    0.650333
+   ],
+   "p_tost": 0.116883,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "no preregistered test (estimate only)",
+   "p_holm_family_H1_H4_H6": null,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H6",
+   "tier": "A",
+   "scheme": "two_way",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.519155,
+   "ci90": [
+    0.420617,
+    0.626776
+   ],
+   "ci95": [
+    0.39324,
+    0.647088
+   ],
+   "p_tost": 0.101898,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.203796,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H4",
+   "tier": "A",
+   "scheme": "two_way",
+   "n": null,
+   "n_drugs": null,
+   "value": -0.071355,
+   "ci90": [
+    -0.192309,
+    0.045012
+   ],
+   "ci95": [
+    -0.220383,
+    0.068359
+   ],
+   "p_tost": 0.338661,
+   "n_draws": 1000,
+   "ci95_below_0.5": null,
+   "ci90_below_0.5": null,
+   "note": "Older-clean minus Novel; margin +/- 0.10; independent per-cohort draws",
+   "p_holm_family_H1_H4_H6": 0.338661,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1",
+   "tier": "A",
+   "scheme": "one_way_drug",
+   "n": 1832,
+   "n_drugs": 128,
+   "value": 0.451763,
+   "ci90": [
+    0.417041,
+    0.487264
+   ],
+   "ci95": [
+    0.411594,
+    0.494876
+   ],
+   "p_tost": 0.004995,
+   "n_draws": 1000,
+   "ci95_below_0.5": true,
+   "ci90_below_0.5": true,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.014985,
+   "equivalent_unadjusted": true
+  },
+  {
+   "id": "H1-novel",
+   "tier": "A",
+   "scheme": "one_way_drug",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.523118,
+   "ci90": [
+    0.468789,
+    0.578819
+   ],
+   "ci95": [
+    0.458482,
+    0.584883
+   ],
+   "p_tost": 0.004995,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "no preregistered test (estimate only)",
+   "p_holm_family_H1_H4_H6": null,
+   "equivalent_unadjusted": true
+  },
+  {
+   "id": "H6",
+   "tier": "A",
+   "scheme": "one_way_drug",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.519155,
+   "ci90": [
+    0.464786,
+    0.572529
+   ],
+   "ci95": [
+    0.455693,
+    0.583341
+   ],
+   "p_tost": 0.006993,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.014985,
+   "equivalent_unadjusted": true
+  },
+  {
+   "id": "H4",
+   "tier": "A",
+   "scheme": "one_way_drug",
+   "n": null,
+   "n_drugs": null,
+   "value": -0.071355,
+   "ci90": [
+    -0.138528,
+    -0.002498
+   ],
+   "ci95": [
+    -0.145981,
+    0.008526
+   ],
+   "p_tost": 0.264735,
+   "n_draws": 1000,
+   "ci95_below_0.5": null,
+   "ci90_below_0.5": null,
+   "note": "Older-clean minus Novel; margin +/- 0.10; independent per-cohort draws",
+   "p_holm_family_H1_H4_H6": 0.264735,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1",
+   "tier": "A",
+   "scheme": "partner_only",
+   "n": 1832,
+   "n_drugs": 128,
+   "value": 0.451763,
+   "ci90": [
+    0.419243,
+    0.482178
+   ],
+   "ci95": [
+    0.414688,
+    0.488041
+   ],
+   "p_tost": 0.003996,
+   "n_draws": 1000,
+   "ci95_below_0.5": true,
+   "ci90_below_0.5": true,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.011988,
+   "equivalent_unadjusted": true
+  },
+  {
+   "id": "H1-novel",
+   "tier": "A",
+   "scheme": "partner_only",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.523118,
+   "ci90": [
+    0.459742,
+    0.574656
+   ],
+   "ci95": [
+    0.445767,
+    0.586553
+   ],
+   "p_tost": 0.00999,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "no preregistered test (estimate only)",
+   "p_holm_family_H1_H4_H6": null,
+   "equivalent_unadjusted": true
+  },
+  {
+   "id": "H6",
+   "tier": "A",
+   "scheme": "partner_only",
+   "n": 438,
+   "n_drugs": 48,
+   "value": 0.519155,
+   "ci90": [
+    0.459573,
+    0.576635
+   ],
+   "ci95": [
+    0.450618,
+    0.585419
+   ],
+   "p_tost": 0.010989,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.021978,
+   "equivalent_unadjusted": true
+  },
+  {
+   "id": "H4",
+   "tier": "A",
+   "scheme": "partner_only",
+   "n": null,
+   "n_drugs": null,
+   "value": -0.071355,
+   "ci90": [
+    -0.131089,
+    0.002764
+   ],
+   "ci95": [
+    -0.144899,
+    0.021194
+   ],
+   "p_tost": 0.202797,
+   "n_draws": 1000,
+   "ci95_below_0.5": null,
+   "ci90_below_0.5": null,
+   "note": "Older-clean minus Novel; margin +/- 0.10; independent per-cohort draws",
+   "p_holm_family_H1_H4_H6": 0.202797,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1",
+   "tier": "B",
+   "scheme": "two_way",
+   "n": 1191,
+   "n_drugs": 128,
+   "value": 0.396835,
+   "ci90": [
+    0.308146,
+    0.492713
+   ],
+   "ci95": [
+    0.288816,
+    0.514355
+   ],
+   "p_tost": 0.519481,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": true,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 1.0,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1-novel",
+   "tier": "B",
+   "scheme": "two_way",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.532787,
+   "ci90": [
+    0.383102,
+    0.682159
+   ],
+   "ci95": [
+    0.357118,
+    0.714413
+   ],
+   "p_tost": 0.238761,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "no preregistered test (estimate only)",
+   "p_holm_family_H1_H4_H6": null,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H6",
+   "tier": "B",
+   "scheme": "two_way",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.551913,
+   "ci90": [
+    0.397325,
+    0.692341
+   ],
+   "ci95": [
+    0.366643,
+    0.725499
+   ],
+   "p_tost": 0.303696,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.911089,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H4",
+   "tier": "B",
+   "scheme": "two_way",
+   "n": null,
+   "n_drugs": null,
+   "value": -0.135952,
+   "ci90": [
+    -0.299362,
+    0.046241
+   ],
+   "ci95": [
+    -0.334365,
+    0.070568
+   ],
+   "p_tost": 0.624376,
+   "n_draws": 1000,
+   "ci95_below_0.5": null,
+   "ci90_below_0.5": null,
+   "note": "Older-clean minus Novel; margin +/- 0.10; independent per-cohort draws",
+   "p_holm_family_H1_H4_H6": 1.0,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1",
+   "tier": "B",
+   "scheme": "one_way_drug",
+   "n": 1191,
+   "n_drugs": 128,
+   "value": 0.396835,
+   "ci90": [
+    0.342019,
+    0.453344
+   ],
+   "ci95": [
+    0.332652,
+    0.463988
+   ],
+   "p_tost": 0.56044,
+   "n_draws": 1000,
+   "ci95_below_0.5": true,
+   "ci90_below_0.5": true,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 1.0,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1-novel",
+   "tier": "B",
+   "scheme": "one_way_drug",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.532787,
+   "ci90": [
+    0.452374,
+    0.613209
+   ],
+   "ci95": [
+    0.440449,
+    0.626655
+   ],
+   "p_tost": 0.083916,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "no preregistered test (estimate only)",
+   "p_holm_family_H1_H4_H6": null,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H6",
+   "tier": "B",
+   "scheme": "one_way_drug",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.551913,
+   "ci90": [
+    0.471029,
+    0.630099
+   ],
+   "ci95": [
+    0.458422,
+    0.646483
+   ],
+   "p_tost": 0.158841,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.476523,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H4",
+   "tier": "B",
+   "scheme": "one_way_drug",
+   "n": null,
+   "n_drugs": null,
+   "value": -0.135952,
+   "ci90": [
+    -0.236548,
+    -0.039984
+   ],
+   "ci95": [
+    -0.258258,
+    -0.020691
+   ],
+   "p_tost": 0.728272,
+   "n_draws": 1000,
+   "ci95_below_0.5": null,
+   "ci90_below_0.5": null,
+   "note": "Older-clean minus Novel; margin +/- 0.10; independent per-cohort draws",
+   "p_holm_family_H1_H4_H6": 1.0,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1",
+   "tier": "B",
+   "scheme": "partner_only",
+   "n": 1191,
+   "n_drugs": 128,
+   "value": 0.396835,
+   "ci90": [
+    0.346226,
+    0.452678
+   ],
+   "ci95": [
+    0.339238,
+    0.463846
+   ],
+   "p_tost": 0.531469,
+   "n_draws": 1000,
+   "ci95_below_0.5": true,
+   "ci90_below_0.5": true,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 1.0,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H1-novel",
+   "tier": "B",
+   "scheme": "partner_only",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.532787,
+   "ci90": [
+    0.427538,
+    0.614941
+   ],
+   "ci95": [
+    0.41084,
+    0.631856
+   ],
+   "p_tost": 0.086913,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "no preregistered test (estimate only)",
+   "p_holm_family_H1_H4_H6": null,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H6",
+   "tier": "B",
+   "scheme": "partner_only",
+   "n": 316,
+   "n_drugs": 48,
+   "value": 0.551913,
+   "ci90": [
+    0.464143,
+    0.6326
+   ],
+   "ci95": [
+    0.447615,
+    0.644076
+   ],
+   "p_tost": 0.164835,
+   "n_draws": 1000,
+   "ci95_below_0.5": false,
+   "ci90_below_0.5": false,
+   "note": "",
+   "p_holm_family_H1_H4_H6": 0.494505,
+   "equivalent_unadjusted": false
+  },
+  {
+   "id": "H4",
+   "tier": "B",
+   "scheme": "partner_only",
+   "n": null,
+   "n_drugs": null,
+   "value": -0.135952,
+   "ci90": [
+    -0.23025,
+    -0.022439
+   ],
+   "ci95": [
+    -0.254699,
+    0.007149
+   ],
+   "p_tost": 0.674326,
+   "n_draws": 1000,
+   "ci95_below_0.5": null,
+   "ci90_below_0.5": null,
+   "note": "Older-clean minus Novel; margin +/- 0.10; independent per-cohort draws",
+   "p_holm_family_H1_H4_H6": 1.0,
+   "equivalent_unadjusted": false
+  }
+ ],
+ "holm": {
+  "A:two_way": {
+   "raw": {
+    "H1": 0.060939,
+    "H4": 0.338661,
+    "H6": 0.101898
+   },
+   "holm": {
+    "H1": 0.182817,
+    "H6": 0.203796,
+    "H4": 0.338661
+   }
+  },
+  "A:one_way_drug": {
+   "raw": {
+    "H1": 0.004995,
+    "H4": 0.264735,
+    "H6": 0.006993
+   },
+   "holm": {
+    "H1": 0.014985,
+    "H6": 0.014985,
+    "H4": 0.264735
+   }
+  },
+  "A:partner_only": {
+   "raw": {
+    "H1": 0.003996,
+    "H4": 0.202797,
+    "H6": 0.010989
+   },
+   "holm": {
+    "H1": 0.011988,
+    "H6": 0.021978,
+    "H4": 0.202797
+   }
+  },
+  "B:two_way": {
+   "raw": {
+    "H1": 0.519481,
+    "H4": 0.624376,
+    "H6": 0.303696
+   },
+   "holm": {
+    "H6": 0.911089,
+    "H1": 1.0,
+    "H4": 1.0
+   }
+  },
+  "B:one_way_drug": {
+   "raw": {
+    "H1": 0.56044,
+    "H4": 0.728272,
+    "H6": 0.158841
+   },
+   "holm": {
+    "H6": 0.476523,
+    "H1": 1.0,
+    "H4": 1.0
+   }
+  },
+  "B:partner_only": {
+   "raw": {
+    "H1": 0.531469,
+    "H4": 0.674326,
+    "H6": 0.164835
+   },
+   "holm": {
+    "H6": 0.494505,
+    "H1": 1.0,
+    "H4": 1.0
+   }
+  }
+ },
+ "bayes": [
+  {
+   "id": "H1",
+   "tier": "A",
+   "model": "Bayesian bootstrap over drugs (primary)",
+   "posterior_mean": 0.451733,
+   "cri90": [
+    0.418217,
+    0.484649
+   ],
+   "cri95": [
+    0.410988,
+    0.491138
+   ],
+   "p_in_rope": 0.99265,
+   "p_below": 0.9918,
+   "verdict": "practically equivalent",
+   "n_draws": 20000
+  },
+  {
+   "id": "H1-novel",
+   "tier": "A",
+   "model": "Bayesian bootstrap over drugs (primary)",
+   "posterior_mean": 0.522895,
+   "cri90": [
+    0.466959,
+    0.575527
+   ],
+   "cri95": [
+    0.455767,
+    0.58493
+   ],
+   "p_in_rope": 0.99285,
+   "p_below": 0.23655,
+   "verdict": "practically equivalent",
+   "n_draws": 20000
+  },
+  {
+   "id": "H6",
+   "tier": "A",
+   "model": "Bayesian bootstrap over drugs (primary)",
+   "posterior_mean": 0.519191,
+   "cri90": [
+    0.464349,
+    0.570937
+   ],
+   "cri95": [
+    0.45207,
+    0.581706
+   ],
+   "p_in_rope": 0.99365,
+   "p_below": 0.268,
+   "verdict": "practically equivalent",
+   "n_draws": 20000
+  },
+  {
+   "id": "H4",
+   "tier": "A",
+   "model": "Bayesian bootstrap over drugs (primary)",
+   "posterior_mean": -0.071161,
+   "cri90": [
+    -0.133479,
+    -0.007544
+   ],
+   "cri95": [
+    -0.145173,
+    0.005833
+   ],
+   "p_in_rope": 0.76875,
+   "p_below": 0.96555,
+   "verdict": "undecided",
+   "n_draws": 20000
+  },
+  {
+   "id": "H1",
+   "tier": "B",
+   "model": "Bayesian bootstrap over drugs (primary)",
+   "posterior_mean": 0.39779,
+   "cri90": [
+    0.344728,
+    0.449792
+   ],
+   "cri95": [
+    0.332884,
+    0.460096
+   ],
+   "p_in_rope": 0.47655,
+   "p_below": 0.99935,
+   "verdict": "undecided",
+   "n_draws": 20000
+  },
+  {
+   "id": "H1-novel",
+   "tier": "B",
+   "model": "Bayesian bootstrap over drugs (primary)",
+   "posterior_mean": 0.533936,
+   "cri90": [
+    0.456594,
+    0.609626
+   ],
+   "cri95": [
+    0.441172,
+    0.623387
+   ],
+   "p_in_rope": 0.92185,
+   "p_below": 0.2309,
+   "verdict": "undecided",
+   "n_draws": 20000
+  },
+  {
+   "id": "H6",
+   "tier": "B",
+   "model": "Bayesian bootstrap over drugs (primary)",
+   "posterior_mean": 0.551828,
+   "cri90": [
+    0.472047,
+    0.625982
+   ],
+   "cri95": [
+    0.454611,
+    0.640271
+   ],
+   "p_in_rope": 0.8471,
+   "p_below": 0.1335,
+   "verdict": "undecided",
+   "n_draws": 20000
+  },
+  {
+   "id": "H4",
+   "tier": "B",
+   "model": "Bayesian bootstrap over drugs (primary)",
+   "posterior_mean": -0.136146,
+   "cri90": [
+    -0.228896,
+    -0.042918
+   ],
+   "cri95": [
+    -0.246963,
+    -0.024901
+   ],
+   "p_in_rope": 0.25865,
+   "p_below": 0.99145,
+   "verdict": "undecided",
+   "n_draws": 20000
+  },
+  {
+   "id": "H1",
+   "tier": "A",
+   "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+   "posterior_mean": 0.451709,
+   "cri90": [
+    0.396648,
+    0.50566
+   ],
+   "cri95": [
+    0.38588,
+    0.514776
+   ],
+   "p_in_rope": 0.93775,
+   "p_below": 0.92725,
+   "verdict": "undecided",
+   "n_draws": 4000
+  },
+  {
+   "id": "H1-novel",
+   "tier": "A",
+   "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+   "posterior_mean": 0.52066,
+   "cri90": [
+    0.419964,
+    0.61913
+   ],
+   "cri95": [
+    0.399835,
+    0.640785
+   ],
+   "p_in_rope": 0.87975,
+   "p_below": 0.36875,
+   "verdict": "undecided",
+   "n_draws": 4000
+  },
+  {
+   "id": "H6",
+   "tier": "A",
+   "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+   "posterior_mean": 0.518413,
+   "cri90": [
+    0.418565,
+    0.614007
+   ],
+   "cri95": [
+    0.396634,
+    0.632314
+   ],
+   "p_in_rope": 0.894,
+   "p_below": 0.374,
+   "verdict": "undecided",
+   "n_draws": 4000
+  },
+  {
+   "id": "H4",
+   "tier": "A",
+   "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+   "posterior_mean": -0.068952,
+   "cri90": [
+    -0.179717,
+    0.04848
+   ],
+   "cri95": [
+    -0.208267,
+    0.070161
+   ],
+   "p_in_rope": 0.66275,
+   "p_below": 0.83475,
+   "verdict": "undecided",
+   "n_draws": 4000
+  },
+  {
+   "id": "H1",
+   "tier": "B",
+   "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+   "posterior_mean": 0.39985,
+   "cri90": [
+    0.312394,
+    0.487178
+   ],
+   "cri95": [
+    0.299414,
+    0.506274
+   ],
+   "p_in_rope": 0.49375,
+   "p_below": 0.96925,
+   "verdict": "undecided",
+   "n_draws": 4000
+  },
+  {
+   "id": "H1-novel",
+   "tier": "B",
+   "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+   "posterior_mean": 0.531312,
+   "cri90": [
+    0.390804,
+    0.665532
+   ],
+   "cri95": [
+    0.365978,
+    0.688314
+   ],
+   "p_in_rope": 0.72175,
+   "p_below": 0.3505,
+   "verdict": "undecided",
+   "n_draws": 4000
+  },
+  {
+   "id": "H6",
+   "tier": "B",
+   "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+   "posterior_mean": 0.549161,
+   "cri90": [
+    0.410817,
+    0.682272
+   ],
+   "cri95": [
+    0.37837,
+    0.704948
+   ],
+   "p_in_rope": 0.6865,
+   "p_below": 0.268,
+   "verdict": "undecided",
+   "n_draws": 4000
+  },
+  {
+   "id": "H4",
+   "tier": "B",
+   "model": "two-way Bayesian bootstrap over drugs and partners (secondary)",
+   "posterior_mean": -0.131461,
+   "cri90": [
+    -0.295846,
+    0.032193
+   ],
+   "cri95": [
+    -0.317952,
+    0.06262
+   ],
+   "p_in_rope": 0.3665,
+   "p_below": 0.90525,
+   "verdict": "undecided",
+   "n_draws": 4000
+  }
+ ],
+ "boot": 1000
+}

@@ -1,0 +1,46 @@
+{
+ "status": "Synthetic power simulation for a possible Amendment 8, post hoc and exploratory; it changes no preregistered decision. Written before any gate8 code was run and before any gate8 statistic was computed.",
+ "written": "2026-10-17, before any gate8 run",
+ "question": "Would a validated-label Amendment 8 on a cohort of about 60 drugs be able to reach a decision?",
+ "data_rule": "Synthetic scores only. No model score of any tested system on any cohort is used. The only real score is the DrugBank lookup (scripts/amend7_cpu_common.drugbank_score), which is the kappa reference. The b2mixed base of the spike-in is therefore not used.",
+ "machinery": "scripts/spikein_core.py: real rows, real labels, real partner structure, batched within-drug AUROC, two-way cluster bootstrap over OOD drugs and partner drugs with each resampled drug copy a separate stratum, blend s = w * r_db + (1 - w) * (r_base + 0.1 * z), calibration of w by spikein_core.calibrate with 100 calibration draws.",
+ "kappa_definition": "kappa = (A_within(s) - 0.5) / (A_within(DrugBank) - 0.5), both within-drug AUROC on the same rows; per bootstrap draw the synthetic score and the DrugBank lookup are evaluated on the same draw (paired), as in spikein_core.kappa_decisions.",
+ "scorers": {
+  "null": "true kappa 0: the noise base alone (w = 0), an independent standard normal per row and rep, ranked, plus 0.1 * z jitter",
+  "positive_control": "true kappa 0.6: the DrugBank blend on the noise base, w calibrated on each design and label variant separately so that the mean realised point kappa is 0.6; stands in for a pair-trained positive control"
+ },
+ "hypotheses": {
+  "H8_primary": "supported if the one-sided 95% upper bound of kappa (95th percentile of the paired kappa draws) is at most K",
+  "positive_control": "detected if the kappa 95% lower bound is at least 0.25; primary lower bound is the 2.5th percentile of the paired kappa draws (two-sided 95% interval, conservative); the 5th percentile (one-sided) is reported as secondary and does not enter the verdict"
+ },
+ "K_values": [0.25, 0.33, 0.50],
+ "go_rule": {
+  "per_K_and_design": "GO if BOTH (a) P(H8 supported | true kappa 0) >= 0.80 AND (b) P(control lower bound >= 0.25 | true kappa 0.6) >= 0.80; otherwise NO-GO",
+  "power_estimate": "share of reps meeting the rule; for designs with several drug-resampling realisations, the reps of all realisations are pooled; per-realisation values are reported as well",
+  "governing_designs": "the verdict for a K is GO if at least one about-60-drug design on the rule-validated labels (variant validated_rule: designs novel48, novel60, older_clean60) meets both (a) and (b). The validated_rule_plus_db variant is an optimistic upper bound that uses DrugBank to clean labels; it is reported but cannot by itself produce GO; if only it passes the verdict is NO-GO with that fact stated. The as-is labels are reported for reference.",
+  "overall": "reported per K; no K is chosen after seeing results"
+ },
+ "designs": {
+  "novel48": "Novel tier A as is, 48 drugs, 438 rows, bootstrap seed 1042; proxy for about 60 drugs; one realisation",
+  "novel60": "Novel tier A resampled to 60 drugs: all 48 Novel drugs plus 12 drawn without replacement from them, each copy carrying all its real rows (labels, partners, DrugBank score) under a new drug id; realisation seeds 1, 2, 3 (numpy RandomState(seed)); bootstrap seed 1042",
+  "older_clean60": "Older-clean tier A resampled to 60 drugs: 60 of the 128 Older-clean drugs drawn without replacement with all their real rows; realisation seeds 1, 2, 3 (numpy RandomState(seed)); bootstrap seed 42",
+  "drug_selection": "drugs are chosen from the tier A drug list before any label variant is applied, so the same drugs are used under every label variant"
+ },
+ "label_variants": {
+  "as_is": "tier A labels unchanged",
+  "validated_rule": "approximation to validated labels: drop the positives flagged by the post8 rule (results/revision/post8/screen.json flagged_items with flag 1: Novel 1, Older 42; the C-auto tier of post8). The absence family is not dropped.",
+  "validated_rule_plus_db": "OPTIMISTIC UPPER BOUND, uses DrugBank: validated_rule and also drop every negative (label 0) that the DrugBank lookup lists as positive. Because the cleaning uses the reference itself, it inflates the DrugBank ceiling and narrows kappa intervals by construction."
+ },
+ "simulation": {
+  "reps_per_point": 200,
+  "bootstrap_draws_per_rep": 300,
+  "calibration_draws": 100,
+  "rep_seed": "numpy default_rng([2, cohort_id, grid_index, rep, 0]) as in spikein_core.make_scores, cohort_id unique per design, realisation and variant",
+  "tier": "A rows only"
+ },
+ "ceiling_report": {
+  "what": "DrugBank within-drug AUROC with a two-way 95% interval (1000 draws, amend7_cpu_common.paired_draws) on each label variant of the existing cohorts Novel (48 drugs) and Older-clean (128 drugs)",
+  "reading": "a ceiling of at least 0.80 would mean the kappa denominator widens; on validated_rule_plus_db the ceiling is inflated by construction and is labelled optimistic"
+ },
+ "outputs": ["results/revision/gate8/gate8.json", "results/revision/gate8/gate8.md"]
+}

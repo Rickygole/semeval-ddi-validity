@@ -1,0 +1,501 @@
+{
+ "status": "sensitivity analysis, post hoc; the preregistered DrugBank validation files and every decision are unchanged",
+ "drugbank_file": "drugbank_all_full_database.xml.zip",
+ "boot": 1000,
+ "method": "ddiood.drugbank.validate rerun on the frozen pair files with the same name lookup. 'original' is the preregistered resolution; 'salt_stripped' adds salt and hydrate words removed from a name as a fallback form (ddiood.drugbank.SALT_WORDS) when the exact forms do not resolve. 'one_sided_unresolvable' labels a pair unresolvable instead of negative when only one side resolves. The lookup score is 1 for a DrugBank positive and 0 otherwise. Positive confirmation rate is the share of FDA positives DrugBank lists, with unresolvable pairs counted as not listed, as in results/revision/eval/drugbank_lookup.md. Within-drug AUROC intervals use the two-way cluster bootstrap (Novel seed 1042, Older seed 42). kappa_margin_0_1 is 0.1 / (AUROC_DrugBank - 0.5), the H1 equivalence margin as a share of the DrugBank headroom; kappa_observed is (AUROC_H1 - 0.5) / (AUROC_DrugBank - 0.5) with the five-seed mixed-input BiomedBERT score.",
+ "cohorts": {
+  "novel": {
+   "n_rows": 438,
+   "variants": {
+    "original": {
+     "resolution": {
+      "ood_drugs_unresolved": 2,
+      "rows_ood_unresolved": 21,
+      "partner_drugs_unresolved": 1,
+      "rows_partner_unresolved": 3,
+      "rows_any_side_unresolved": 23,
+      "rows_one_side_only": 22,
+      "rows_neither_side": 1
+     },
+     "lookup": {
+      "n": 438,
+      "n_pos": 148,
+      "n_drugs": 48,
+      "listed": 239,
+      "not_listed": 198,
+      "unresolvable": 1,
+      "auroc_within": {
+       "value": 0.728534,
+       "ci95": [
+        0.642152,
+        0.808313
+       ],
+       "ci90": [
+        0.655182,
+        0.797937
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.766566,
+      "positive_confirmation_rate": 0.898649,
+      "positive_precision_resolvable": 0.898649,
+      "pos_resolvable": 148,
+      "neg_resolvable": 289,
+      "negative_contradiction_rate": 0.366782
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.728534,
+      "kappa_margin_0_1": 0.437572,
+      "h1_auroc_within": 0.523118,
+      "kappa_observed": 0.101156
+     }
+    },
+    "original_one_sided_unresolvable": {
+     "resolution": {
+      "ood_drugs_unresolved": 2,
+      "rows_ood_unresolved": 21,
+      "partner_drugs_unresolved": 1,
+      "rows_partner_unresolved": 3,
+      "rows_any_side_unresolved": 23,
+      "rows_one_side_only": 22,
+      "rows_neither_side": 1
+     },
+     "lookup": {
+      "n": 438,
+      "n_pos": 148,
+      "n_drugs": 48,
+      "listed": 239,
+      "not_listed": 176,
+      "unresolvable": 23,
+      "auroc_within": {
+       "value": 0.728534,
+       "ci95": [
+        0.642152,
+        0.808313
+       ],
+       "ci90": [
+        0.655182,
+        0.797937
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.766566,
+      "positive_confirmation_rate": 0.898649,
+      "positive_precision_resolvable": 0.923611,
+      "pos_resolvable": 144,
+      "neg_resolvable": 271,
+      "negative_contradiction_rate": 0.391144
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.728534,
+      "kappa_margin_0_1": 0.437572,
+      "h1_auroc_within": 0.523118,
+      "kappa_observed": 0.101156
+     }
+    },
+    "salt_stripped": {
+     "resolution": {
+      "ood_drugs_unresolved": 2,
+      "rows_ood_unresolved": 21,
+      "partner_drugs_unresolved": 1,
+      "rows_partner_unresolved": 3,
+      "rows_any_side_unresolved": 23,
+      "rows_one_side_only": 22,
+      "rows_neither_side": 1
+     },
+     "lookup": {
+      "n": 438,
+      "n_pos": 148,
+      "n_drugs": 48,
+      "listed": 239,
+      "not_listed": 198,
+      "unresolvable": 1,
+      "auroc_within": {
+       "value": 0.728534,
+       "ci95": [
+        0.642152,
+        0.808313
+       ],
+       "ci90": [
+        0.655182,
+        0.797937
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.766566,
+      "positive_confirmation_rate": 0.898649,
+      "positive_precision_resolvable": 0.898649,
+      "pos_resolvable": 148,
+      "neg_resolvable": 289,
+      "negative_contradiction_rate": 0.366782
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.728534,
+      "kappa_margin_0_1": 0.437572,
+      "h1_auroc_within": 0.523118,
+      "kappa_observed": 0.101156
+     }
+    },
+    "salt_stripped_one_sided_unresolvable": {
+     "resolution": {
+      "ood_drugs_unresolved": 2,
+      "rows_ood_unresolved": 21,
+      "partner_drugs_unresolved": 1,
+      "rows_partner_unresolved": 3,
+      "rows_any_side_unresolved": 23,
+      "rows_one_side_only": 22,
+      "rows_neither_side": 1
+     },
+     "lookup": {
+      "n": 438,
+      "n_pos": 148,
+      "n_drugs": 48,
+      "listed": 239,
+      "not_listed": 176,
+      "unresolvable": 23,
+      "auroc_within": {
+       "value": 0.728534,
+       "ci95": [
+        0.642152,
+        0.808313
+       ],
+       "ci90": [
+        0.655182,
+        0.797937
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.766566,
+      "positive_confirmation_rate": 0.898649,
+      "positive_precision_resolvable": 0.923611,
+      "pos_resolvable": 144,
+      "neg_resolvable": 271,
+      "negative_contradiction_rate": 0.391144
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.728534,
+      "kappa_margin_0_1": 0.437572,
+      "h1_auroc_within": 0.523118,
+      "kappa_observed": 0.101156
+     }
+    },
+    "original_excluding_unresolved_ood_drugs": {
+     "lookup": {
+      "n": 417,
+      "n_pos": 145,
+      "n_drugs": 46,
+      "listed": 239,
+      "not_listed": 178,
+      "unresolvable": 0,
+      "auroc_within": {
+       "value": 0.736662,
+       "ci95": [
+        0.640492,
+        0.82505
+       ],
+       "ci90": [
+        0.655855,
+        0.812239
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.763768,
+      "positive_confirmation_rate": 0.917241,
+      "positive_precision_resolvable": 0.917241,
+      "pos_resolvable": 145,
+      "neg_resolvable": 272,
+      "negative_contradiction_rate": 0.389706
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.736662,
+      "kappa_margin_0_1": 0.422543,
+      "h1_auroc_within": 0.525308,
+      "kappa_observed": 0.106936
+     }
+    },
+    "original_excluding_rows_with_an_unresolved_side": {
+     "lookup": {
+      "n": 415,
+      "n_pos": 144,
+      "n_drugs": 46,
+      "listed": 239,
+      "not_listed": 176,
+      "unresolvable": 0,
+      "auroc_within": {
+       "value": 0.739917,
+       "ci95": [
+        0.641384,
+        0.834225
+       ],
+       "ci90": [
+        0.659434,
+        0.816414
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.766234,
+      "positive_confirmation_rate": 0.923611,
+      "positive_precision_resolvable": 0.923611,
+      "pos_resolvable": 144,
+      "neg_resolvable": 271,
+      "negative_contradiction_rate": 0.391144
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.739917,
+      "kappa_margin_0_1": 0.416812,
+      "h1_auroc_within": 0.528512,
+      "kappa_observed": 0.118841
+     }
+    }
+   },
+   "original_reproduces_saved_csv": true
+  },
+  "older_clean": {
+   "n_rows": 1832,
+   "variants": {
+    "original": {
+     "resolution": {
+      "ood_drugs_unresolved": 16,
+      "rows_ood_unresolved": 243,
+      "partner_drugs_unresolved": 7,
+      "rows_partner_unresolved": 42,
+      "rows_any_side_unresolved": 283,
+      "rows_one_side_only": 281,
+      "rows_neither_side": 2
+     },
+     "lookup": {
+      "n": 1832,
+      "n_pos": 599,
+      "n_drugs": 128,
+      "listed": 954,
+      "not_listed": 876,
+      "unresolvable": 2,
+      "auroc_within": {
+       "value": 0.641224,
+       "ci95": [
+        0.595375,
+        0.688846
+       ],
+       "ci90": [
+        0.600371,
+        0.68347
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.679928,
+      "positive_confirmation_rate": 0.762938,
+      "positive_precision_resolvable": 0.762938,
+      "pos_resolvable": 599,
+      "neg_resolvable": 1231,
+      "negative_contradiction_rate": 0.403737
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.641224,
+      "kappa_margin_0_1": 0.708093,
+      "h1_auroc_within": 0.451763,
+      "kappa_observed": -0.341564
+     }
+    },
+    "original_one_sided_unresolvable": {
+     "resolution": {
+      "ood_drugs_unresolved": 16,
+      "rows_ood_unresolved": 243,
+      "partner_drugs_unresolved": 7,
+      "rows_partner_unresolved": 42,
+      "rows_any_side_unresolved": 283,
+      "rows_one_side_only": 281,
+      "rows_neither_side": 2
+     },
+     "lookup": {
+      "n": 1832,
+      "n_pos": 599,
+      "n_drugs": 128,
+      "listed": 954,
+      "not_listed": 595,
+      "unresolvable": 283,
+      "auroc_within": {
+       "value": 0.641224,
+       "ci95": [
+        0.595375,
+        0.688846
+       ],
+       "ci90": [
+        0.600371,
+        0.68347
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.679928,
+      "positive_confirmation_rate": 0.762938,
+      "positive_precision_resolvable": 0.868821,
+      "pos_resolvable": 526,
+      "neg_resolvable": 1023,
+      "negative_contradiction_rate": 0.485826
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.641224,
+      "kappa_margin_0_1": 0.708093,
+      "h1_auroc_within": 0.451763,
+      "kappa_observed": -0.341564
+     }
+    },
+    "salt_stripped": {
+     "resolution": {
+      "ood_drugs_unresolved": 2,
+      "rows_ood_unresolved": 26,
+      "partner_drugs_unresolved": 7,
+      "rows_partner_unresolved": 42,
+      "rows_any_side_unresolved": 68,
+      "rows_one_side_only": 68,
+      "rows_neither_side": 0
+     },
+     "lookup": {
+      "n": 1832,
+      "n_pos": 599,
+      "n_drugs": 128,
+      "listed": 1091,
+      "not_listed": 741,
+      "unresolvable": 0,
+      "auroc_within": {
+       "value": 0.659822,
+       "ci95": [
+        0.61045,
+        0.708773
+       ],
+       "ci90": [
+        0.617842,
+        0.701745
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.690105,
+      "positive_confirmation_rate": 0.851419,
+      "positive_precision_resolvable": 0.851419,
+      "pos_resolvable": 599,
+      "neg_resolvable": 1233,
+      "negative_contradiction_rate": 0.471208
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.659822,
+      "kappa_margin_0_1": 0.625697,
+      "h1_auroc_within": 0.451763,
+      "kappa_observed": -0.301818
+     }
+    },
+    "salt_stripped_one_sided_unresolvable": {
+     "resolution": {
+      "ood_drugs_unresolved": 2,
+      "rows_ood_unresolved": 26,
+      "partner_drugs_unresolved": 7,
+      "rows_partner_unresolved": 42,
+      "rows_any_side_unresolved": 68,
+      "rows_one_side_only": 68,
+      "rows_neither_side": 0
+     },
+     "lookup": {
+      "n": 1832,
+      "n_pos": 599,
+      "n_drugs": 128,
+      "listed": 1091,
+      "not_listed": 673,
+      "unresolvable": 68,
+      "auroc_within": {
+       "value": 0.659822,
+       "ci95": [
+        0.61045,
+        0.708773
+       ],
+       "ci90": [
+        0.617842,
+        0.701745
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.690105,
+      "positive_confirmation_rate": 0.851419,
+      "positive_precision_resolvable": 0.874786,
+      "pos_resolvable": 583,
+      "neg_resolvable": 1181,
+      "negative_contradiction_rate": 0.491956
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.659822,
+      "kappa_margin_0_1": 0.625697,
+      "h1_auroc_within": 0.451763,
+      "kappa_observed": -0.301818
+     }
+    },
+    "original_excluding_unresolved_ood_drugs": {
+     "lookup": {
+      "n": 1589,
+      "n_pos": 540,
+      "n_drugs": 112,
+      "listed": 954,
+      "not_listed": 635,
+      "unresolvable": 0,
+      "auroc_within": {
+       "value": 0.658858,
+       "ci95": [
+        0.609268,
+        0.709382
+       ],
+       "ci90": [
+        0.616991,
+        0.703275
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.686256,
+      "positive_confirmation_rate": 0.846296,
+      "positive_precision_resolvable": 0.846296,
+      "pos_resolvable": 540,
+      "neg_resolvable": 1049,
+      "negative_contradiction_rate": 0.473785
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.658858,
+      "kappa_margin_0_1": 0.629492,
+      "h1_auroc_within": 0.446503,
+      "kappa_observed": -0.336763
+     }
+    },
+    "original_excluding_rows_with_an_unresolved_side": {
+     "lookup": {
+      "n": 1549,
+      "n_pos": 526,
+      "n_drugs": 112,
+      "listed": 954,
+      "not_listed": 595,
+      "unresolvable": 0,
+      "auroc_within": {
+       "value": 0.658636,
+       "ci95": [
+        0.606599,
+        0.708696
+       ],
+       "ci90": [
+        0.616269,
+        0.701065
+       ],
+       "n_draws": 1000
+      },
+      "auroc_pooled": 0.691498,
+      "positive_confirmation_rate": 0.868821,
+      "positive_precision_resolvable": 0.868821,
+      "pos_resolvable": 526,
+      "neg_resolvable": 1023,
+      "negative_contradiction_rate": 0.485826
+     },
+     "kappa": {
+      "auc_drugbank_within": 0.658636,
+      "kappa_margin_0_1": 0.630374,
+      "h1_auroc_within": 0.447626,
+      "kappa_observed": -0.330154
+     }
+    }
+   },
+   "original_reproduces_saved_csv": true
+  }
+ },
+ "release_redaction": "Release note: per-drug DrugBank resolution names are removed from the public copy; the counts above are unchanged. Rerun scripts/sens_drugbank_salts.py with a licensed DrugBank copy to regenerate them."
+}

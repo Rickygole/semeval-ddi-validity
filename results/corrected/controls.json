@@ -1,0 +1,44 @@
+{
+ "n": 438,
+ "n_pos": 148,
+ "all_positive": {
+  "binary_f1": 0.5051194539249146,
+  "precision": 0.3378995433789954,
+  "recall": 1.0,
+  "specificity": 0.0,
+  "balanced_accuracy": 0.5,
+  "mcc": 0.0,
+  "tp": 148,
+  "fp": 290,
+  "fn": 0,
+  "tn": 0
+ },
+ "partner_named_in_top5_full_text": {
+  "binary_f1": 0.4412811387900356,
+  "precision": 0.46616541353383456,
+  "recall": 0.4189189189189189,
+  "specificity": 0.7551724137931034,
+  "balanced_accuracy": 0.5870456663560112,
+  "mcc": 0.17907347708165472,
+  "tp": 62,
+  "fp": 71,
+  "fn": 86,
+  "tn": 219
+ },
+ "partner_named_in_top5_first_100_chars": {
+  "binary_f1": 0.26905829596412556,
+  "precision": 0.4,
+  "recall": 0.20270270270270271,
+  "specificity": 0.8448275862068966,
+  "balanced_accuracy": 0.5237651444547996,
+  "mcc": 0.05967828945558533,
+  "tp": 30,
+  "fp": 45,
+  "fn": 118,
+  "tn": 245
+ },
+ "top5_contains_novel_drug_label_chunk_rate": {
+  "pos": 0.9121621621621622,
+  "neg": 0.9310344827586207
+ }
+}

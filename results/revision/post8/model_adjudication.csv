@@ -1,0 +1,256 @@
+item_id,adjudication,basis,quote,source,tag
+A001,yes,named,"propafenone, and verapamil), cimetidine, famotidine, oral contraceptives, acyclovir, and ticlopidine) should be avoided",evidence,named
+A002,yes,named,"Examples (not fully inclusive): Metformin, dofetilide, adefovir, cefaclor, furosemide Clinical Impact Increased risk for adverse reactions",evidence,named
+A003,yes,named,"Monitor patients for increased toxicity when MRP2 inhibitors (e.g., abacavir, adefovir, cidofovir, furosemide",evidence,named
+A004,no,none,NO MENTION,full_label,absent
+A005,no,named,has no effect on the steady-state pharmacokinetics of either alpha-adrenergic antagonist,full_label,noeffect
+A006,no,none,"The following drug interactions were reported for metronidazole, a chemically-related nitroimidazole and may therefore occur with tinidazole",evidence,third
+A007,yes,named,"Severe thrombocytopenia and gastrointestinal bleeding have been reported with concomitant use of ZOLINZA and other HDAC inhibitors (e.g., valproic acid)",evidence,named
+A008,yes,named,May reduce the analgesic effect of ULTIVA and/or precipitate withdrawal symptoms,evidence,named
+A009,yes,named,↑Fluvastatin ↑Pitavastatin ↑Simvastatin Use the lowest possible starting dose for statins and monitor for statin-associated adverse events,evidence,named
+A010,yes,named,"may increase the concentration or net accumulation of OCT2, MATE1, and MATE-2K substrates in the kidney (e.g., dofetilide, dalfampridine, and cisplatin)",evidence,named
+A011,no,none,consider prescribing naloxone for the emergency treatment of opioid overdose,evidence,other
+A012,no,none,NO MENTION,full_label,absent
+A013,no,none,NO MENTION,full_label,absent
+A014,no,none,NO MENTION,full_label,absent
+A015,yes,named,"Reciprocal interactions may occur with concomitant use of fomepizole and drugs that increase or inhibit the cytochrome P450 system (e.g., phenytoin, carbamazepine, cimetidine",evidence,named
+A016,yes,named,Therapeutic concentration monitoring is recommended for these immunosuppressants when coadministered with atazanavir,evidence,named
+A017,yes,named,Use caution and closely monitor for toxicities when administering CAPRELSA with digoxin,evidence,named
+A018,yes,named,"If concomitant use with CYP3A4 inducer is necessary, increase of the OLINVYK dosage may be considered",full_label,named
+A019,no,named,"The use of the P-gp inhibitors verapamil, amiodarone, quinidine, clarithromycin, and ticagrelor does not require a dosage adjustment of dabigatran etexilate",evidence,noeffect
+A020,yes,named,Monitor patients more frequently with ECG if co-administration of VANFLYTA with drugs known to prolong the QT interval is required,full_label,named
+A021,no,none,NO MENTION,full_label,absent
+A022,no,named,"with the exception of cyclosporine, which had no pharmacokinetic interaction",evidence,noeffect
+A023,no,named,Clinically meaningful differences in exposure (AUC) were not observed,evidence,noeffect
+A024,yes,named,"Rifabutin, phenytoin, efavirenz, cimetidine, esomeprazole* Avoid coadministration unless the benefit outweighs the risks",evidence,named
+A025,no,none,NO MENTION,full_label,absent
+A026,no,named,"febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine",evidence,noeffect
+A027,no,none,NO MENTION,full_label,absent
+A028,no,none,NO MENTION,full_label,absent
+A029,yes,named,Antineoplastic: Mitotane ↓Temsavir,evidence,named
+A030,yes,named,May reduce the analgesic effect of ULTIVA and/or precipitate withdrawal symptoms,evidence,named
+A031,yes,named,"concomitant use with other drugs that are known to cause QTc prolongation should be avoided, these including antipsychotic medications (e.g., chlorpromazine",evidence,named
+A032,no,named,"The use of the P-gp inhibitors verapamil, amiodarone, quinidine, clarithromycin, and ticagrelor does not require a dosage adjustment of dabigatran etexilate",evidence,noeffect
+A033,yes,named,do not initiate SAVELLA in a patient who is being treated with MAOIs such as linezolid,evidence,named
+A034,no,none,NO MENTION,full_label,absent
+A035,no,none,NO MENTION,full_label,absent
+A036,yes,named,Monitor patients more frequently with ECG if co-administration of VANFLYTA with drugs known to prolong the QT interval is required,full_label,named
+A037,yes,named,"Avoid co-administration of potent ENT1, CNT3, or BCRP transporter inhibitors (e.g., ritonavir, eltrombopag, curcumin, cyclosporine, dilazep, nifedipine",evidence,named
+A038,yes,named,"strong CYP3A4 and/or CYP2B6 inducers (e.g., carbamazepine, rifampin, phenobarbital) may cause a decrease in osilodrostat concentration",evidence,named
+A039,no,named,without evidence of a clinically meaningful effect of these concomitant medications on belimumab pharmacokinetics,evidence,noeffect
+A040,yes,named,"Reciprocal interactions may occur with concomitant use of fomepizole and drugs that increase or inhibit the cytochrome P450 system (e.g., phenytoin",evidence,named
+A041,yes,named,"Concomitant use of strong CYP3A4 inhibitors (e.g., ketoconazole, itraconazole",evidence,named
+A042,yes,named,"(e.g., cyclosporine, tacrolimus, levothyroxine), consider separation of the timing of the administration of the two drugs",evidence,named
+A043,no,none,NO MENTION,full_label,absent
+A044,yes,named,Do not use tapentadol extended-release tablet in patients taking MAOIs or within 14 days of stopping such treatment,full_label,named
+A045,no,none,NO MENTION,full_label,absent
+A046,yes,named,Coadministration of lamotrigine and atazanavir with ritonavir may require dosage adjustment of lamotrigine,evidence,named
+A047,yes,named,"If concomitant use with CYP3A4 inducer is necessary, increase of the OLINVYK dosage may be considered",full_label,named
+A048,yes,named,"↑ amiodarone, bepridil, lidocaine (systemic), quinidine",evidence,named
+A049,no,none,NO MENTION,full_label,absent
+A050,no,named,"Physiological changes resulting from smoking cessation, with or without treatment with varenicline, may alter the pharmacokinetics or pharmacodynamics of certain drugs",full_label,third
+A051,yes,named,"(e.g., cyclosporine, tacrolimus, levothyroxine), consider separation of the timing of the administration of the two drugs",evidence,named
+A052,no,none,NO MENTION,full_label,absent
+A053,no,named,did not significantly affect the metabolism of dextromethorphan,evidence,noeffect
+A054,yes,named,"Concomitant use of citalopram and other serotonergic drugs (including other SSRIs, SNRIs, triptans, tricyclic antidepressants, opioids, lithium",evidence,named
+A055,no,none,NO MENTION,full_label,absent
+A056,no,none,NO MENTION,full_label,absent
+A057,no,named,"No dosing adjustments are recommended in the presence of CYP2D6 inhibitors (for example, paroxetine",evidence,noeffect
+A058,unsure,named,Avoid thyroid therapy or testing for up to 6 weeks post OMNIPAQUE,full_label,other
+A059,no,named,"febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine",evidence,noeffect
+A060,yes,named,"contraindicated for use with potent CYP3A4 inhibitors such as ketoconazole, itraconazole, or ritonavir",evidence,named
+A061,no,named,"No dosing adjustments are recommended in the presence of CYP2D6 inhibitors (for example, paroxetine, fluoxetine",evidence,noeffect
+A062,no,named,pharmacokinetic data suggests that no precautions are necessary with concomitant administration with XARELTO,evidence,noeffect
+A063,no,none,NO MENTION,full_label,absent
+A064,no,named,"febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine",evidence,noeffect
+A065,no,none,NO MENTION,full_label,absent
+A066,yes,named,The potential for supine hypertension should be carefully monitored in these patients,full_label,named
+A067,yes,named,Concomitant use of PRISTIQ with other serotonergic drugs increases the risk of serotonin syndrome,full_label,named
+A068,yes,named,"(e.g., cyclosporine, tacrolimus, levothyroxine), consider separation of the timing of the administration of the two drugs",evidence,named
+A069,yes,named,Monitor for a need to adjust concomitant mycophenolate mofetil (MMF) dosage,evidence,named
+A070,no,named,does not affect the relative bioavailability of dutasteride,evidence,noeffect
+A071,no,named,raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following,evidence,noeffect
+A072,no,named,"no major impact of coadministration of SIRTURO on the pharmacokinetics of ethambutol, kanamycin, pyrazinamide, ofloxacin or cycloserine was observed",evidence,noeffect
+A073,unsure,named,Avoid thyroid therapy or testing for up to 6 weeks post ULTRAVIST,full_label,other
+A074,yes,named,In a patient who is being treated with linezolid or intravenous methylene blue,evidence,named
+A075,no,named,Dutasteride does not alter the steady-state pharmacokinetics of digoxin,evidence,noeffect
+A076,no,none,NO MENTION,full_label,absent
+A077,yes,named,can produce disulfiram-like reactions when co-administered with disulfiram,evidence,named
+A078,no,none,NO MENTION,full_label,absent
+A079,yes,named,oral contraceptives containing ethinyl estradiol and norethindrone,evidence,named
+A080,yes,named,"those with a narrow therapeutic index (e.g., warfarin) when concomitantly administered with MOUNJARO",evidence,named
+A081,yes,named,"Concomitant administration of cyclosporine, an inhibitor of P-gp and OATPs significantly increased the systemic exposure of rifaximin",evidence,named
+A082,no,none,Probenecid is known to interact with the metabolism or renal tubular excretion of many drugs,evidence,third
+A083,yes,named,Concomitant use of PRISTIQ with an antiplatelet or anticoagulant drug may potentiate the risk of bleeding,full_label,named
+A084,yes,named,"consider monitoring for effect (e.g., for warfarin)",evidence,named
+A085,no,none,NO MENTION,full_label,absent
+A086,yes,named,"(e.g., citalopram, chlorpromazine, haloperidol, methadone, erythromycin) should be monitored overnight with continuous ECG",evidence,named
+A087,no,named,raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate,evidence,noeffect
+A088,yes,named,Dextromethorphan: Risk of psychosis or bizarre behavior,evidence,named
+A089,no,named,indicating a lack of effect of asenapine on valproic and lithium plasma levels,evidence,noeffect
+A090,yes,named,"oral contraceptives, acyclovir, and ticlopidine) should be avoided",evidence,named
+A091,yes,named,"For patients taking warfarin, carefully monitor the international normalized ratio",evidence,named
+A092,no,none,NO MENTION,full_label,absent
+A093,no,none,NO MENTION,full_label,absent
+A094,yes,named,"may increase the concentration or net accumulation of OCT2, MATE1, and MATE-2K substrates in the kidney (e.g., dofetilide",evidence,named
+A095,yes,named,↑Simvastatin Use the lowest possible starting dose for statins and monitor for statin-associated adverse events,evidence,named
+A096,no,none,NO MENTION,full_label,absent
+A097,yes,named,Concomitant use of an SGLT2 inhibitor with lithium may decrease serum lithium concentrations,evidence,named
+A098,no,none,NO MENTION,full_label,absent
+A099,yes,named,"monitor for adverse reactions to concomitant narrow therapeutic index drugs (e.g., warfarin, cyclosporine, or amphotericin B)",evidence,named
+A100,yes,named,concomitant use with digoxin (which has a narrow therapeutic index) may predispose patients to digitalis toxicity,evidence,named
+A101,no,named,"febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine",evidence,noeffect
+A102,yes,named,may increase the exposure of the following drugs: Metformin extended release,evidence,named
+A103,yes,named,(like dihydroergotamine or methysergide) and MAXALT within 24 hours is contraindicated,evidence,named
+A104,no,none,NO MENTION,full_label,absent
+A105,no,none,NO MENTION,full_label,absent
+A106,no,none,NO MENTION,full_label,absent
+A107,yes,named,"phenytoin, thyroid hormone replacement therapy, warfarin, oral contraceptives",evidence,named
+A108,yes,named,co-administration with clonidine may inhibit clonidine’s anti-hypertensive effect,evidence,named
+A109,no,none,NO MENTION,full_label,absent
+A110,no,named,without evidence of a clinically meaningful effect of these concomitant medications on belimumab pharmacokinetics,evidence,noeffect
+A111,no,none,NO MENTION,full_label,absent
+A112,no,named,Clinically meaningful differences in exposure (AUC) were not observed,evidence,noeffect
+A113,no,named,raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following: ethinyl estradiol/norgestimate,evidence,noeffect
+A114,yes,named,(like dihydroergotamine or methysergide) and MAXALT within 24 hours is contraindicated,evidence,named
+A115,no,none,reported in patients who received oxaliplatin with fluorouracil/leucovorin while on anticoagulants,evidence,third
+A116,yes,named,Supplemental vitamin E is not recommended if daily vitamin E intake,evidence,named
+A117,no,none,NO MENTION,full_label,absent
+A118,yes,named,May reduce the analgesic effect of ULTIVA and/or precipitate withdrawal symptoms,evidence,named
+A119,no,named,does not alter the steady-state pharmacokinetics of the S- or R-warfarin isomers or alter the effect of warfarin on prothrombin time,evidence,noeffect
+A120,no,named,population pharmacokinetic analyses did not detect any effect of methotrexate (MTX),evidence,noeffect
+A121,yes,named,ULTRAVIST may interfere with thyroid uptake of radioactive iodine (I-131 and I-123) and decrease therapeutic and diagnostic efficacy,evidence,named
+A122,unsure,named,"Antiplatelet drugs, except for low-dose aspirin (≤81 mg daily), during the first 3 months of treatment are contraindicated",evidence,other
+A123,yes,named,"Reciprocal antagonism of effects occurs between dopamine agonists (e.g., levodopa) and BARHEMSYS",evidence,named
+A124,no,named,without evidence of a clinically meaningful effect of these concomitant medications on belimumab pharmacokinetics,evidence,noeffect
+A125,no,none,NO MENTION,full_label,absent
+A126,no,named,No dosing adjustments are recommended in the presence of CYP2D6 inhibitors,evidence,noeffect
+A127,no,none,NO MENTION,full_label,absent
+A128,no,named,raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following,evidence,noeffect
+A129,yes,named,"exposure of drugs metabolized by CYP1A2 (e.g., alosetron, duloxetine, theophylline, tizanidine) may be reduced",evidence,named
+A130,no,none,NO MENTION,full_label,absent
+A131,no,named,"The use of the P-gp inhibitors verapamil, amiodarone, quinidine, clarithromycin, and ticagrelor does not require a dosage adjustment of dabigatran etexilate",evidence,noeffect
+A132,no,none,NO MENTION,full_label,absent
+A133,yes,named,"Coadministration of almotriptan and oral ketoconazole, a potent CYP3A4 inhibitor, resulted in an approximately 60% increase in exposure of almotriptan",evidence,named
+A134,no,named,"Physiological changes resulting from smoking cessation, with or without treatment with varenicline, may alter the pharmacokinetics or pharmacodynamics of certain drugs",full_label,third
+A135,no,none,inhibits the secretion of insulin and glucagon,evidence,other
+A136,yes,named,↑Rosuvastatin ↑Atorvastatin ↑Fluvastatin ↑Pitavastatin ↑Simvastatin Use the lowest possible starting dose for statins,evidence,named
+A137,no,none,NO MENTION,full_label,absent
+A138,no,none,NO MENTION,full_label,absent
+A139,yes,named,There is an increase in the exposure of digoxin when coadministered with INPEFA 400 mg,evidence,named
+A140,no,none,NO MENTION,full_label,absent
+A141,yes,named,"or drug concentration (e.g., for cyclosporine) and consider dosage modification of the CYP450 substrate",evidence,named
+A142,yes,named,"In patients taking warfarin, the prothrombin time should be monitored more frequently after initiation or alteration of BYETTA therapy",full_label,named
+A143,yes,named,Concomitant use of GEMTESA increases digoxin maximal concentrations (C max ) and systemic exposure,evidence,named
+A144,yes,named,Use of SAVELLA concomitantly with digoxin may be associated with potentiation of adverse hemodynamic effects,evidence,named
+A145,yes,named,median increases in digoxin peak plasma concentration (49%) and in trough concentration (20%) were observed,evidence,named
+A146,yes,named,OMNIPAQUE may interfere with thyroid uptake of radioactive iodine (I-131 and I-123) and decrease therapeutic and diagnostic efficacy,evidence,named
+A147,no,named,Coadministration of alvimopan does not appear to alter the pharmacokinetics of morphine,evidence,noeffect
+A148,yes,named,the duration and mode of action of these drugs must be considered to avoid unintended additive immunosuppressive effects,evidence,named
+A149,no,named,"febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine",evidence,noeffect
+A150,no,none,NO MENTION,full_label,absent
+A151,no,named,relevant increases in midazolam and α-hydroxymidazolam Cmax and AUC were not observed,full_label,noeffect
+A152,no,named,no major impact of coadministration of SIRTURO on the pharmacokinetics of ethambutol,evidence,noeffect
+A153,yes,named,"nelfinavir, ritonavir, saquinavir, telithromycin, and voriconazole) with KADCYLA should be avoided",evidence,named
+A154,no,named,No dosage adjustment of asenapine is necessary when administered concomitantly with paroxetine,full_label,noeffect
+A155,no,none,NO MENTION,full_label,absent
+A156,yes,named,May reduce the analgesic effect of ULTIVA and/or precipitate withdrawal symptoms,evidence,named
+A157,no,named,raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following,evidence,noeffect
+A158,no,none,NO MENTION,full_label,absent
+A159,no,named,"febuxostat does not have clinically significant interactions with colchicine, naproxen, indomethacin, hydrochlorothiazide, warfarin or desipramine",evidence,noeffect
+A160,yes,named,"cimetidine, esomeprazole* Avoid coadministration unless the benefit outweighs the risks",evidence,named
+A161,yes,named,Monitor patients more frequently with ECG if co-administration of VANFLYTA with drugs known to prolong the QT interval is required,full_label,named
+A162,no,none,NO MENTION,full_label,absent
+A163,no,none,NO MENTION,full_label,absent
+A164,no,none,Probenecid is known to interact with the metabolism or renal tubular excretion of many drugs,evidence,third
+A165,no,none,NO MENTION,full_label,absent
+A166,no,none,NO MENTION,full_label,absent
+A167,no,none,NO MENTION,full_label,absent
+A168,yes,class-level,"phenytoin, thyroid hormone replacement therapy, warfarin",evidence,class
+A169,yes,named,increase the steady-state concentration in serum and should be avoided,evidence,named
+A170,yes,named,"Do not use ranolazine with CYP3A inducers such as rifampin, rifabutin, rifapentine, phenobarbital",evidence,named
+A171,no,none,NO MENTION,full_label,absent
+A172,yes,named,"Concomitant use of SAVELLA with an antiplatelet or anticoagulant drug (e.g., NSAIDs, aspirin, and warfarin) may potentiate the risk of bleeding",evidence,named
+A173,yes,named,"Lopinavir/ritonavir Initiate with rosuvastatin 5 mg once daily, and do not exceed a dose of rosuvastatin 10 mg once daily",evidence,named
+A174,yes,named,"ECG monitoring is recommended in patients taking other drugs known to prolong the QT interval (e.g., ondansetron)",evidence,named
+A175,yes,named,"Therapeutic concentration monitoring, if available, is recommended for antiarrhythmics when co-administered with darunavir/ritonavir",evidence,named
+A176,no,none,NO MENTION,full_label,absent
+A177,yes,named,"(e.g., citalopram, chlorpromazine, haloperidol, methadone, erythromycin) should be monitored overnight with continuous ECG",evidence,named
+A178,no,none,NO MENTION,full_label,absent
+A179,no,named,Concomitant use with digoxin did not affect the pharmacokinetics of either drug,full_label,noeffect
+A180,yes,class-level,"magnesium-based supplements or laxatives, and iron preparations interfere with the absorption of risedronate sodium and should not be taken together",full_label,class
+A181,no,none,NO MENTION,full_label,absent
+A182,no,none,"Methylxanthines (e.g., caffeine, aminophylline and theophylline) are non-specific adenosine receptor antagonists",evidence,other
+A183,yes,named,"the use of CIMZIA in combination with anakinra, abatacept, rituximab, or natalizumab is not recommended",evidence,named
+A184,no,none,NO MENTION,full_label,absent
+A185,no,none,NO MENTION,full_label,absent
+A186,yes,named,↑Atorvastatin ↑Fluvastatin ↑Pitavastatin ↑Simvastatin Use the lowest possible starting dose for statins,evidence,named
+A187,no,named,18% of NSAID users (any use) in both groups developed upper gastrointestinal adverse reactions,evidence,other
+A188,yes,named,Concomitant use of PRISTIQ with other serotonergic drugs increases the risk of serotonin syndrome,full_label,named
+A189,yes,named,"and sulfonylureas (glimepiride, glipizide, glyburide)",evidence,named
+A190,yes,named,"Concomitant use of citalopram and other serotonergic drugs (including other SSRIs, SNRIs, triptans, tricyclic antidepressants, opioids, lithium, buspirone",evidence,named
+A191,no,none,NO MENTION,full_label,absent
+A192,no,none,NO MENTION,full_label,absent
+A193,unsure,named,oral contraceptives containing ethinyl estradiol and norethindrone,evidence,other
+A194,unsure,named,temsavir increased concentrations of ethinyl estradiol,evidence,other
+A195,yes,named,"Strong CYP2C8 inhibitors (e.g., gemfibrozil): May increase iptacopan exposure",evidence,named
+A196,yes,named,"contraindicated for use with potent CYP3A4 inhibitors such as ketoconazole, itraconazole, or ritonavir",evidence,named
+A197,no,none,NO MENTION,full_label,absent
+A198,yes,named,concomitant use of these drugs during fingolimod initiation may be associated with severe bradycardia or heart block,full_label,named
+A199,yes,named,"If concomitant use with CYP3A4 inducer is necessary, increase of the OLINVYK dosage may be considered",full_label,named
+A200,yes,named,"the concomitant use of benzodiazepines or other CNS depressants including alcohol, increases the risk of hypotension, respiratory depression",full_label,named
+A201,yes,named,Monitor for a need to adjust concomitant mycophenolate mofetil (MMF) dosage,evidence,named
+A202,no,none,NO MENTION,full_label,absent
+A203,yes,named,"(e.g., citalopram, chlorpromazine, haloperidol, methadone, erythromycin) should be monitored overnight with continuous ECG",evidence,named
+A204,no,none,NO MENTION,full_label,absent
+A205,no,none,NO MENTION,full_label,absent
+A206,no,named,concomitant use of aspirin and warfarin increased the bleeding risk from 2.7% per year to 4.6% per year,evidence,third
+A207,no,none,NO MENTION,full_label,absent
+A208,yes,named,Concomitant use of PRISTIQ with an antiplatelet or anticoagulant drug may potentiate the risk of bleeding,full_label,named
+A209,no,none,NO MENTION,full_label,absent
+A210,no,none,NO MENTION,full_label,absent
+A211,yes,named,The risk of myopathy and rhabdomyolysis is increased with concomitant use of fibrates with rosuvastatin,full_label,named
+A212,no,none,NO MENTION,full_label,absent
+A213,yes,named,"cimetidine, famotidine, oral contraceptives, acyclovir, and ticlopidine) should be avoided",evidence,named
+A214,no,none,NO MENTION,full_label,absent
+A215,no,none,NO MENTION,full_label,absent
+A216,no,none,NO MENTION,full_label,absent
+A217,yes,named,"Increased frequency of glucose monitoring may be required when repaglinide is co-administered with these drugs. Examples: beta-blockers, clonidine",full_label,named
+A218,no,named,"Although MTX reduced the apparent adalimumab clearance, the data do not suggest the need for dose adjustment",full_label,noeffect
+A219,no,none,NO MENTION,full_label,absent
+A220,no,none,NO MENTION,full_label,absent
+A221,yes,named,coadministration of clopidogrel with warfarin increases the risk of bleeding,evidence,named
+A222,yes,named,may predispose patients to digitalis toxicity if hypercalcemia develops,evidence,named
+A223,no,none,"when dextromethorphan was given with abiraterone acetate 1,000 mg daily and prednisone 5 mg twice daily",evidence,third
+A224,no,none,NO MENTION,full_label,absent
+A225,no,named,raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following,evidence,noeffect
+A226,no,none,NO MENTION,full_label,absent
+A227,yes,named,"antiarrythmics (amiodarone, mexiletine, propafenone, and verapamil)",evidence,named
+A228,yes,named,"antiarrythmics (amiodarone, mexiletine, propafenone, and verapamil)",evidence,named
+A229,yes,named,"Doses of fesoterodine fumarate greater than 4 mg are not recommended in adult patients taking strong CYP3A4 inhibitors, such as ketoconazole, itraconazole",evidence,named
+A230,no,none,NO MENTION,full_label,absent
+A231,no,named,raltegravir did not have a clinically meaningful effect on the pharmacokinetics of the following,evidence,noeffect
+A232,no,none,NO MENTION,full_label,absent
+A233,yes,named,avoid use of BARHEMSYS in patients taking droperidol,evidence,named
+A234,no,none,NO MENTION,full_label,absent
+A235,yes,named,"Concomitant use of SAVELLA with an antiplatelet or anticoagulant drug (e.g., NSAIDs, aspirin, and warfarin) may potentiate the risk of bleeding",evidence,named
+A236,yes,named,"(e.g., citalopram, chlorpromazine, haloperidol, methadone, erythromycin) should be monitored overnight with continuous ECG",evidence,named
+A237,yes,named,"(indomethacin, heparin, cyclosporine and others) can increase the risk of hyperkalemia",evidence,named
+A238,no,named,Darifenacin (30 mg daily) did not have a significant impact on midazolam (7.5 mg) pharmacokinetics,evidence,noeffect
+A239,no,named,"The use of the P-gp inhibitors verapamil, amiodarone, quinidine, clarithromycin, and ticagrelor does not require a dosage adjustment of dabigatran etexilate",evidence,noeffect
+A240,no,named,has no effect on the steady-state pharmacokinetics of either alpha-adrenergic antagonist,full_label,noeffect
+A241,yes,named,"nifedipine, nimodipine, cilostazol, sulindac, dipyridamole, or reserpine) during the 4 to 5 day cladribine treatment cycles",evidence,named
+A242,no,named,No dose adjustment for zoledronic acid injection 4 mg is needed when coadministered with thalidomide,full_label,noeffect
+A243,no,named,without evidence of a clinically meaningful effect of these concomitant medications on belimumab pharmacokinetics,evidence,noeffect
+A244,no,none,NO MENTION,full_label,absent
+A245,no,none,NO MENTION,full_label,absent
+A246,yes,named,Concomitant use of etravirine tablets with nelfinavir without low- dose ritonavir may cause a significant alteration in the plasma concentration of nelfinavir,evidence,named
+A247,no,none,NO MENTION,full_label,absent
+A248,unsure,named,Avoid concomitant use of VONJO with hormonal contraceptives except for intrauterine systems containing levonorgestrel,evidence,other
+A249,yes,named,"cimetidine, famotidine, oral contraceptives, acyclovir, and ticlopidine) should be avoided",evidence,named
+A250,no,named,"no major impact of coadministration of SIRTURO on the pharmacokinetics of ethambutol, kanamycin, pyrazinamide, ofloxacin or cycloserine was observed",evidence,noeffect
+A251,yes,named,"Examples other SNRIs, SSRIs, triptans, tricyclic antidepressants, opioids, lithium, buspirone, amphetamines",full_label,named
+A252,yes,named,somatropin treatment increases cytochrome P450 (CYP450)-mediated antipyrine clearance,evidence,named
+A253,yes,named,"and sulfonylureas (glimepiride, glipizide, glyburide)",evidence,named
+A254,no,named,did not significantly alter the steady state pharmacokinetics of digoxin. No dose adjustment is required,full_label,noeffect
+A255,yes,named,"The daily dose of darifenacin extended-release tablet should not exceed 7.5 mg when co-administered with potent CYP3A4 inhibitors (for example, ketoconazole, itraconazole",evidence,named

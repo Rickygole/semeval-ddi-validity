@@ -1,0 +1,61 @@
+{
+ "status": "post hoc and descriptive; recount of the frozen post8 screen with the dose-adjustment patterns removed; changes no decision",
+ "plan_sha256": "7fe118a2793a11eaf7a4f1bd405e9f7335f64e3d4d97419dc24ff35a0e18d817",
+ "plan_note": "not specified in docs/POSTHOC_REV3_PLAN.md; a recount requested by the round 2 red team, reported as post hoc",
+ "dropped_patterns": [
+  "n12",
+  "n13",
+  "n14"
+ ],
+ "dropped_pattern_text": [
+  [
+   "n12",
+   "\\bno (dose|dosage|dosing) adjustments?\\b"
+  ],
+  [
+   "n13",
+   "\\b(does|do|did) not require (a |any )?(dose|dosage|dosing) adjustments?\\b"
+  ],
+  [
+   "n14",
+   "\\bwithout (a |any )?(dose|dosage|dosing) adjustments?\\b"
+  ]
+ ],
+ "full_rule_reproduces_screen_json": true,
+ "full_rule": {
+  "novel/all": {
+   "positives": 148,
+   "rule_flags": 1
+  },
+  "older/all": {
+   "positives": 648,
+   "rule_flags": 42
+  },
+  "older/older_clean": {
+   "positives": 599,
+   "rule_flags": 38
+  },
+  "older/older_primary": {
+   "positives": 562,
+   "rule_flags": 37
+  }
+ },
+ "without_dropped_patterns": {
+  "novel/all": {
+   "positives": 148,
+   "rule_flags": 1
+  },
+  "older/all": {
+   "positives": 648,
+   "rule_flags": 34
+  },
+  "older/older_clean": {
+   "positives": 599,
+   "rule_flags": 33
+  },
+  "older/older_primary": {
+   "positives": 562,
+   "rule_flags": 32
+  }
+ }
+}

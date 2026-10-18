@@ -1,0 +1,452 @@
+{
+ "seed": 42,
+ "n_bootstrap": 1000,
+ "bootstrap": "two-way cluster over novel drugs and partner drugs",
+ "threshold_rule": "binary baselines at 0.5; prior baselines predict positive when score exceeds the set mean",
+ "vocab_labels_with_di": 463,
+ "novel": {
+  "n": 438,
+  "n_pos": 148,
+  "baselines": {
+   "all_positive": {
+    "auroc": 0.5,
+    "auroc_ci95": {
+     "mean": 0.5,
+     "lower": 0.5,
+     "upper": 0.5,
+     "n_valid": 1000
+    },
+    "auprc": 0.3378995433789954,
+    "prevalence": 0.3378995433789954,
+    "binary_f1": 0.5051194539249146,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "confusion": {
+     "tp": 148,
+     "fp": 290,
+     "fn": 0,
+     "tn": 0
+    }
+   },
+   "partner_frequency_prior": {
+    "auroc": 0.5081780055917987,
+    "auroc_ci95": {
+     "mean": 0.5098458751358276,
+     "lower": 0.40334078403128065,
+     "upper": 0.6125178056431856,
+     "n_valid": 1000
+    },
+    "auprc": 0.3446027765522685,
+    "prevalence": 0.3378995433789954,
+    "binary_f1": 0.3670886075949367,
+    "mcc": 0.012238477119074713,
+    "balanced_accuracy": 0.5062907735321529,
+    "confusion": {
+     "tp": 58,
+     "fp": 110,
+     "fn": 90,
+     "tn": 180
+    }
+   },
+   "novel_drug_prior": {
+    "auroc": 0.6428937558247902,
+    "auroc_ci95": {
+     "mean": 0.6386068477763386,
+     "lower": 0.5334960536922888,
+     "upper": 0.7466206098510483,
+     "n_valid": 1000
+    },
+    "auprc": 0.4729629916674167,
+    "prevalence": 0.3378995433789954,
+    "binary_f1": 0.4878048780487805,
+    "mcc": 0.18814961062319982,
+    "balanced_accuracy": 0.597856477166822,
+    "confusion": {
+     "tp": 80,
+     "fp": 100,
+     "fn": 68,
+     "tn": 190
+    }
+   },
+   "non_di_label_string_match": {
+    "auroc": 0.7972972972972974,
+    "auroc_ci95": {
+     "mean": 0.7983323640471588,
+     "lower": 0.7085940397350994,
+     "upper": 0.8772006578947369,
+     "n_valid": 1000
+    },
+    "auprc": 0.7315808959644576,
+    "prevalence": 0.3378995433789954,
+    "binary_f1": 0.7457627118644068,
+    "mcc": 0.7019003438267378,
+    "balanced_accuracy": 0.7972972972972974,
+    "confusion": {
+     "tp": 88,
+     "fp": 0,
+     "fn": 60,
+     "tn": 290
+    }
+   },
+   "cyp3a_keyword_rule": {
+    "auroc": 0.5392124883504193,
+    "auroc_ci95": {
+     "mean": 0.538873355602391,
+     "lower": 0.4776207560806338,
+     "upper": 0.6166852168238729,
+     "n_valid": 1000
+    },
+    "auprc": 0.36122826221099,
+    "prevalence": 0.3378995433789954,
+    "binary_f1": 0.2857142857142857,
+    "mcc": 0.101823149602734,
+    "balanced_accuracy": 0.5392124883504193,
+    "confusion": {
+     "tp": 31,
+     "fp": 38,
+     "fn": 117,
+     "tn": 252
+    }
+   },
+   "drugbank_lookup_reference": {
+    "auroc": 0.7665657036346691,
+    "auroc_ci95": {
+     "mean": 0.7645541155731669,
+     "lower": 0.6905849572109376,
+     "upper": 0.8388781389864972,
+     "n_valid": 1000
+    },
+    "auprc": 0.5343313881887849,
+    "prevalence": 0.3378995433789954,
+    "binary_f1": 0.6873385012919897,
+    "mcc": 0.5064524028120945,
+    "balanced_accuracy": 0.7665657036346691,
+    "confusion": {
+     "tp": 133,
+     "fp": 106,
+     "fn": 15,
+     "tn": 184
+    },
+    "note": "tier A label is the FDA label; circular for tier B"
+   }
+  }
+ },
+ "older": {
+  "n": 1944,
+  "n_pos": 648,
+  "baselines": {
+   "all_positive": {
+    "auroc": 0.5,
+    "auroc_ci95": {
+     "mean": 0.5,
+     "lower": 0.5,
+     "upper": 0.5,
+     "n_valid": 1000
+    },
+    "auprc": 0.3333333333333333,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.5,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "confusion": {
+     "tp": 648,
+     "fp": 1296,
+     "fn": 0,
+     "tn": 0
+    }
+   },
+   "partner_frequency_prior": {
+    "auroc": 0.5,
+    "auroc_ci95": {
+     "mean": 0.5004285830119808,
+     "lower": 0.45336493865158106,
+     "upper": 0.54594776751575,
+     "n_valid": 1000
+    },
+    "auprc": 0.3333333333333332,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.3487858719646799,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "confusion": {
+     "tp": 237,
+     "fp": 474,
+     "fn": 411,
+     "tn": 822
+    }
+   },
+   "novel_drug_prior": {
+    "auroc": 0.6210139698597775,
+    "auroc_ci95": {
+     "mean": 0.6202588089384953,
+     "lower": 0.559555475772593,
+     "upper": 0.6781660804672747,
+     "n_valid": 1000
+    },
+    "auprc": 0.4460102221539538,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.4759284731774415,
+    "mcc": 0.1712909173053062,
+    "balanced_accuracy": 0.5895061728395061,
+    "confusion": {
+     "tp": 346,
+     "fp": 460,
+     "fn": 302,
+     "tn": 836
+    }
+   },
+   "non_di_label_string_match": {
+    "auroc": 0.8371913580246914,
+    "auroc_ci95": {
+     "mean": 0.8362324607037058,
+     "lower": 0.7898718571552642,
+     "upper": 0.8800654646446835,
+     "n_valid": 1000
+    },
+    "auprc": 0.7829218106995884,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.8055299539170507,
+    "mcc": 0.761551170834634,
+    "balanced_accuracy": 0.8371913580246914,
+    "confusion": {
+     "tp": 437,
+     "fp": 0,
+     "fn": 211,
+     "tn": 1296
+    }
+   },
+   "cyp3a_keyword_rule": {
+    "auroc": 0.5682870370370371,
+    "auroc_ci95": {
+     "mean": 0.5670260572605814,
+     "lower": 0.5175732612907112,
+     "upper": 0.6238383369413335,
+     "n_valid": 1000
+    },
+    "auprc": 0.38552017464619087,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.31543624161073824,
+    "mcc": 0.19365194888663753,
+    "balanced_accuracy": 0.5682870370370371,
+    "confusion": {
+     "tp": 141,
+     "fp": 105,
+     "fn": 507,
+     "tn": 1191
+    }
+   }
+  }
+ },
+ "novel_random_negatives": {
+  "n": 444,
+  "n_pos": 148,
+  "baselines": {
+   "all_positive": {
+    "auroc": 0.5,
+    "auroc_ci95": {
+     "mean": 0.5,
+     "lower": 0.5,
+     "upper": 0.5,
+     "n_valid": 1000
+    },
+    "auprc": 0.3333333333333333,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.5,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "confusion": {
+     "tp": 148,
+     "fp": 296,
+     "fn": 0,
+     "tn": 0
+    }
+   },
+   "partner_frequency_prior": {
+    "auroc": 0.8632898100803506,
+    "auroc_ci95": {
+     "mean": 0.8602075721317233,
+     "lower": 0.7817395561863986,
+     "upper": 0.9211504923004805,
+     "n_valid": 1000
+    },
+    "auprc": 0.7754156748148491,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.6840148698884758,
+    "mcc": 0.5543994030978101,
+    "balanced_accuracy": 0.7618243243243243,
+    "confusion": {
+     "tp": 92,
+     "fp": 29,
+     "fn": 56,
+     "tn": 267
+    }
+   },
+   "novel_drug_prior": {
+    "auroc": 0.5,
+    "auroc_ci95": {
+     "mean": 0.5022962225775438,
+     "lower": 0.42994134901417674,
+     "upper": 0.5808260383481908,
+     "n_valid": 1000
+    },
+    "auprc": 0.3333333333333333,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.36024844720496896,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "confusion": {
+     "tp": 58,
+     "fp": 116,
+     "fn": 90,
+     "tn": 180
+    }
+   },
+   "non_di_label_string_match": {
+    "auroc": 0.7972972972972974,
+    "auroc_ci95": {
+     "mean": 0.7966407635552563,
+     "lower": 0.6989129531094114,
+     "upper": 0.8807852564102564,
+     "n_valid": 1000
+    },
+    "auprc": 0.7297297297297297,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.7457627118644068,
+    "mcc": 0.7031230493106525,
+    "balanced_accuracy": 0.7972972972972974,
+    "confusion": {
+     "tp": 88,
+     "fp": 0,
+     "fn": 60,
+     "tn": 296
+    }
+   },
+   "cyp3a_keyword_rule": {
+    "auroc": 0.6013513513513513,
+    "auroc_ci95": {
+     "mean": 0.5993430665926746,
+     "lower": 0.5256822705107453,
+     "upper": 0.6928256032983687,
+     "n_valid": 1000
+    },
+    "auprc": 0.46027846027846026,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.3425414364640884,
+    "mcc": 0.3642993292982297,
+    "balanced_accuracy": 0.6013513513513513,
+    "confusion": {
+     "tp": 31,
+     "fp": 2,
+     "fn": 117,
+     "tn": 294
+    }
+   }
+  }
+ },
+ "older_random_negatives": {
+  "n": 1944,
+  "n_pos": 648,
+  "baselines": {
+   "all_positive": {
+    "auroc": 0.5,
+    "auroc_ci95": {
+     "mean": 0.5,
+     "lower": 0.5,
+     "upper": 0.5,
+     "n_valid": 1000
+    },
+    "auprc": 0.3333333333333333,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.5,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "confusion": {
+     "tp": 648,
+     "fp": 1296,
+     "fn": 0,
+     "tn": 0
+    }
+   },
+   "partner_frequency_prior": {
+    "auroc": 0.8762145633287609,
+    "auroc_ci95": {
+     "mean": 0.8746049713652387,
+     "lower": 0.8335185644651903,
+     "upper": 0.91059892902366,
+     "n_valid": 1000
+    },
+    "auprc": 0.7867240308931998,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.689419795221843,
+    "mcc": 0.5639798980893526,
+    "balanced_accuracy": 0.7654320987654322,
+    "confusion": {
+     "tp": 404,
+     "fp": 120,
+     "fn": 244,
+     "tn": 1176
+    }
+   },
+   "novel_drug_prior": {
+    "auroc": 0.5,
+    "auroc_ci95": {
+     "mean": 0.5008053213965982,
+     "lower": 0.4581495981345831,
+     "upper": 0.5419470205010929,
+     "n_valid": 1000
+    },
+    "auprc": 0.33333333333333326,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.37866666666666665,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "confusion": {
+     "tp": 284,
+     "fp": 568,
+     "fn": 364,
+     "tn": 728
+    }
+   },
+   "non_di_label_string_match": {
+    "auroc": 0.8371913580246914,
+    "auroc_ci95": {
+     "mean": 0.8379754912597062,
+     "lower": 0.7948511828644502,
+     "upper": 0.8809126763203394,
+     "n_valid": 1000
+    },
+    "auprc": 0.7829218106995884,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.8055299539170507,
+    "mcc": 0.761551170834634,
+    "balanced_accuracy": 0.8371913580246914,
+    "confusion": {
+     "tp": 437,
+     "fp": 0,
+     "fn": 211,
+     "tn": 1296
+    }
+   },
+   "cyp3a_keyword_rule": {
+    "auroc": 0.6057098765432097,
+    "auroc_ci95": {
+     "mean": 0.6030956513908564,
+     "lower": 0.5383091709050646,
+     "upper": 0.6754750450923066,
+     "n_valid": 1000
+    },
+    "auprc": 0.46671223796503436,
+    "prevalence": 0.3333333333333333,
+    "binary_f1": 0.35382685069008785,
+    "mcc": 0.3746366008246655,
+    "balanced_accuracy": 0.6057098765432098,
+    "confusion": {
+     "tp": 141,
+     "fp": 8,
+     "fn": 507,
+     "tn": 1288
+    }
+   }
+  }
+ }
+}

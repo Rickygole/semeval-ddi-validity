@@ -1,0 +1,258 @@
+{
+ "counts": {
+  "anchors_after_gates": 412,
+  "anchor_gate_rejections": {
+   "no_di_section": 228,
+   "excluded_ood_equivalent_or_ingredient_overlap": 16,
+   "label_identity:combination_product_label": 39,
+   "label_identity:label_is_for_another_moiety": 1
+  },
+  "equivalent_vocab_drugs": 38,
+  "built_pairs": 4890,
+  "built_positives": 1630,
+  "built_negatives": 3260,
+  "dropped": {
+   "ood_drug_as_anchor_or_partner": 96,
+   "ood_drug_as_partner": 96,
+   "duplicate_unordered_pair": 78,
+   "negative_reverse_mention": 73
+  },
+  "final_pairs": 4643,
+  "final_positives": 1542,
+  "final_negatives": 3101,
+  "anchor_drugs": 299,
+  "partner_drugs": 313,
+  "excluded_vocab_drugs": 38
+ },
+ "pairs_sha256": "608e68f05826abc4c4e109e168b32a40167f1dce403679cb6d6e5c40d76db98a",
+ "audit": {
+  "excluded_vocab": {
+   "activated charcoal": "equivalent_to_ood:trospium chloride",
+   "almotriptan": "equivalent_to_ood:almotriptan malate",
+   "aprepitant": "equivalent_to_ood:fosaprepitant dimeglumine",
+   "arginine": "equivalent_to_ood:etrasimod arginine",
+   "atazanavir": "equivalent_to_ood:atazanavir sulfate",
+   "atorvastatin": "equivalent_to_ood:atorvastatin calcium;atorvastatin calcium trihydrate",
+   "calcium acetate": "equivalent_to_ood:atorvastatin calcium;atorvastatin calcium trihydrate;pitavastatin calcium;rosuvastatin calcium",
+   "charcoal": "equivalent_to_ood:trospium chloride",
+   "citalopram": "equivalent_to_ood:citalopram hydrobromide",
+   "cobalt": "equivalent_to_ood:atazanavir sulfate;rimegepant sulfate",
+   "darifenacin": "equivalent_to_ood:darifenacin hydrobromide",
+   "dextrose": "equivalent_to_ood:tofacitinib citrate;toremifene citrate",
+   "escitalopram": "equivalent_to_ood:citalopram hydrobromide",
+   "esmolol hcl": "equivalent_to_ood:esmolol",
+   "ginseng": "equivalent_to_ood:etrasimod arginine",
+   "glutamic acid": "equivalent_to_ood:etrasimod arginine;seladelpar lysine",
+   "human growth hormone": "equivalent_to_ood:lonapegsomatropin;lonapegsomatropin-tcgd",
+   "icodextrin": "equivalent_to_ood:trospium chloride",
+   "l-arginine": "equivalent_to_ood:etrasimod arginine",
+   "l-glutamine": "equivalent_to_ood:etrasimod arginine;trospium chloride",
+   "l-histidine": "equivalent_to_ood:etrasimod arginine;lonapegsomatropin;lonapegsomatropin-tcgd;seladelpar lysine;trospium chloride",
+   "l-lysine": "equivalent_to_ood:seladelpar lysine",
+   "l-tyrosine": "equivalent_to_ood:etrasimod arginine;lonapegsomatropin;lonapegsomatropin-tcgd;seladelpar lysine;trospium chloride",
+   "methionine": "equivalent_to_ood:atorvastatin calcium;atorvastatin calcium trihydrate;calcitonin;pitavastatin calcium;rosuvastatin calcium;seladelpar lysine",
+   "methylprednisolone": "equivalent_to_ood:trospium chloride",
+   "naltrexone": "equivalent_to_ood:methylnaltrexone bromide",
+   "potassium": "equivalent_to_ood:trospium chloride",
+   "potassium chloride": "equivalent_to_ood:trospium chloride",
+   "pyridoxine": "equivalent_to_ood:atorvastatin calcium;atorvastatin calcium trihydrate;pitavastatin calcium;rosuvastatin calcium",
+   "rosuvastatin": "equivalent_to_ood:rosuvastatin calcium",
+   "sirolimus": "equivalent_to_ood:temsirolimus",
+   "sodium bicarbonate": "equivalent_to_ood:trospium chloride",
+   "sodium citrate": "equivalent_to_ood:tofacitinib citrate;toremifene citrate",
+   "somatropin": "equivalent_to_ood:lonapegsomatropin;lonapegsomatropin-tcgd",
+   "tubocurarine": "equivalent_to_ood:atazanavir sulfate;rimegepant sulfate",
+   "venlafaxine": "equivalent_to_ood:desvenlafaxine",
+   "vitamin b12": "equivalent_to_ood:atorvastatin calcium;atorvastatin calcium trihydrate;pitavastatin calcium;rosuvastatin calcium",
+   "vitamin b6": "equivalent_to_ood:atorvastatin calcium;atorvastatin calcium trihydrate;pitavastatin calcium;rosuvastatin calcium"
+  },
+  "ood_drugs": 183,
+  "ood_drugs_with_equivalent_vocab_drug": [
+   "almotriptan malate",
+   "atazanavir sulfate",
+   "atorvastatin calcium",
+   "calcitonin",
+   "citalopram hydrobromide",
+   "darifenacin hydrobromide",
+   "desvenlafaxine",
+   "esmolol",
+   "fosaprepitant dimeglumine",
+   "lonapegsomatropin-tcgd",
+   "methylnaltrexone bromide",
+   "rosuvastatin calcium",
+   "temsirolimus",
+   "toremifene citrate",
+   "trospium chloride"
+  ],
+  "equivalence_matches": {
+   "activated charcoal": [
+    "trospium chloride"
+   ],
+   "almotriptan": [
+    "almotriptan malate"
+   ],
+   "aprepitant": [
+    "fosaprepitant dimeglumine"
+   ],
+   "arginine": [
+    "etrasimod arginine"
+   ],
+   "atazanavir": [
+    "atazanavir sulfate"
+   ],
+   "atorvastatin": [
+    "atorvastatin calcium",
+    "atorvastatin calcium trihydrate"
+   ],
+   "calcium acetate": [
+    "atorvastatin calcium",
+    "atorvastatin calcium trihydrate",
+    "pitavastatin calcium",
+    "rosuvastatin calcium"
+   ],
+   "charcoal": [
+    "trospium chloride"
+   ],
+   "citalopram": [
+    "citalopram hydrobromide"
+   ],
+   "cobalt": [
+    "atazanavir sulfate",
+    "rimegepant sulfate"
+   ],
+   "darifenacin": [
+    "darifenacin hydrobromide"
+   ],
+   "dextrose": [
+    "tofacitinib citrate",
+    "toremifene citrate"
+   ],
+   "escitalopram": [
+    "citalopram hydrobromide"
+   ],
+   "esmolol hcl": [
+    "esmolol"
+   ],
+   "ginseng": [
+    "etrasimod arginine"
+   ],
+   "glutamic acid": [
+    "etrasimod arginine",
+    "seladelpar lysine"
+   ],
+   "human growth hormone": [
+    "lonapegsomatropin",
+    "lonapegsomatropin-tcgd"
+   ],
+   "icodextrin": [
+    "trospium chloride"
+   ],
+   "l-arginine": [
+    "etrasimod arginine"
+   ],
+   "l-glutamine": [
+    "etrasimod arginine",
+    "trospium chloride"
+   ],
+   "l-histidine": [
+    "etrasimod arginine",
+    "lonapegsomatropin",
+    "lonapegsomatropin-tcgd",
+    "seladelpar lysine",
+    "trospium chloride"
+   ],
+   "l-lysine": [
+    "seladelpar lysine"
+   ],
+   "l-tyrosine": [
+    "etrasimod arginine",
+    "lonapegsomatropin",
+    "lonapegsomatropin-tcgd",
+    "seladelpar lysine",
+    "trospium chloride"
+   ],
+   "methionine": [
+    "atorvastatin calcium",
+    "atorvastatin calcium trihydrate",
+    "calcitonin",
+    "pitavastatin calcium",
+    "rosuvastatin calcium",
+    "seladelpar lysine"
+   ],
+   "methylprednisolone": [
+    "trospium chloride"
+   ],
+   "naltrexone": [
+    "methylnaltrexone bromide"
+   ],
+   "potassium": [
+    "trospium chloride"
+   ],
+   "potassium chloride": [
+    "trospium chloride"
+   ],
+   "pyridoxine": [
+    "atorvastatin calcium",
+    "atorvastatin calcium trihydrate",
+    "pitavastatin calcium",
+    "rosuvastatin calcium"
+   ],
+   "rosuvastatin": [
+    "rosuvastatin calcium"
+   ],
+   "sirolimus": [
+    "temsirolimus"
+   ],
+   "sodium bicarbonate": [
+    "trospium chloride"
+   ],
+   "sodium citrate": [
+    "tofacitinib citrate",
+    "toremifene citrate"
+   ],
+   "somatropin": [
+    "lonapegsomatropin",
+    "lonapegsomatropin-tcgd"
+   ],
+   "tubocurarine": [
+    "atazanavir sulfate",
+    "rimegepant sulfate"
+   ],
+   "venlafaxine": [
+    "desvenlafaxine"
+   ],
+   "vitamin b12": [
+    "atorvastatin calcium",
+    "atorvastatin calcium trihydrate",
+    "pitavastatin calcium",
+    "rosuvastatin calcium"
+   ],
+   "vitamin b6": [
+    "atorvastatin calcium",
+    "atorvastatin calcium trihydrate",
+    "pitavastatin calcium",
+    "rosuvastatin calcium"
+   ]
+  },
+  "snapshot_training_labels": {
+   "files": 437,
+   "missing": 0,
+   "earliest": "2026-10-15",
+   "latest": "2026-10-15",
+   "by_date": {
+    "2026-10-15": 437
+   }
+  },
+  "snapshot_ood_labels": {
+   "files": 183,
+   "missing": 0,
+   "earliest": "2026-10-15",
+   "latest": "2026-10-16",
+   "by_date": {
+    "2026-10-15": 48,
+    "2026-10-16": 135
+   }
+  }
+ },
+ "construction": "ddiood.ood.build_pairs with SemEval-vocabulary anchors, partner-matched negatives, at most 10 positives per anchor, seed 42"
+}

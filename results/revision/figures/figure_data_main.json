@@ -1,0 +1,4698 @@
+{
+ "font": "Latin Modern Roman",
+ "boot": 1000,
+ "status": "Amendment 7 results are post hoc and exploratory and change no planned decision.",
+ "margin": [
+  0.4,
+  0.6
+ ],
+ "fig1_panel_d": {
+  "novel | Partner-frequency prior": {
+   "random": 0.8632898100803506,
+   "partner_matched": 0.5081780055917987,
+   "source": "baselines.json novel_random_negatives and novel; partner matched checked against tables.json baselines"
+  },
+  "novel | Novel-drug prior": {
+   "random": 0.5,
+   "partner_matched": 0.6428937558247902,
+   "source": "baselines.json novel_random_negatives and novel; partner matched checked against tables.json baselines"
+  },
+  "older | Partner-frequency prior": {
+   "random": 0.8762145633287609,
+   "partner_matched": 0.5,
+   "source": "baselines.json older_random_negatives and older; partner matched checked against tables.json baselines"
+  },
+  "older | Novel-drug prior": {
+   "random": 0.5,
+   "partner_matched": 0.6210139698597775,
+   "source": "baselines.json older_random_negatives and older; partner matched checked against tables.json baselines"
+  }
+ },
+ "fig1_values": {
+  "TrainPairs": "13,789",
+  "NovelDrugs": "48",
+  "NovelPairs": "438",
+  "OlderDrugs": "135",
+  "OlderPairs": "1,944",
+  "NovelFrom": "2020",
+  "NovelTo": "2024",
+  "OlderFrom": "1985",
+  "OlderTo": "2012",
+  "ExampleChip": "abrocitinib $+$ aspirin",
+  "Seeds": "5",
+  "OlderCleanDrugs": "128",
+  "OlderPrimaryDrugs": "121",
+  "PanelModels": "20",
+  "PanelBackbones": "10"
+ },
+ "fig2_dissociation": {
+  "series": {
+   "Mixed-input BiomedBERT": {
+    "left": {
+     "value": 0.6777677210734372,
+     "lo95": 0.6328075032402182,
+     "hi95": 0.7225974172982866,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.4608886636256124,
+     "lo95": 0.3993433467809793,
+     "hi95": 0.5200927220444782,
+     "lo90": 0.4099737046145899,
+     "hi90": 0.5112911826967449,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b2mixed/biomedbert",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      1,
+      2,
+      3,
+      4,
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   },
+   "DrugBank lookup": {
+    "left": {
+     "value": 0.524599,
+     "lo95": 0.483536,
+     "hi95": 0.569571,
+     "lo90": null,
+     "hi90": null,
+     "source": "exp5_dissociation.json auroc (sentence-cluster bootstrap)"
+    },
+    "right": {
+     "value": 0.6523906065213718,
+     "lo95": 0.6087852533721209,
+     "hi95": 0.6970764613078365,
+     "lo90": 0.6143343535282657,
+     "hi90": 0.6903496787758522,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): DrugBank lookup",
+     "n": 2270,
+     "n_drugs": 176
+    },
+    "role": "not trained on SemEval labels",
+    "left_excl": {
+     "value": 0.480261,
+     "lo95": 0.438568,
+     "hi95": 0.52081,
+     "lo90": null,
+     "hi90": null,
+     "source": "sensitivity/semeval_selfpairs.json rows 'excluding self pairs'",
+     "n": 2521,
+     "n_self_pairs": 289
+    }
+   },
+   "Qwen2.5-7B": {
+    "left": {
+     "value": 0.49519101660019293,
+     "lo95": 0.4367922843167408,
+     "hi95": 0.5519212654938144,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.5839066082968521,
+     "lo95": null,
+     "hi95": null,
+     "lo90": null,
+     "hi90": null,
+     "source": "e8.json e8_names cohorts older_primary primary prompt (planned names-only range, Older-primary)",
+     "range": [
+      0.518970189701897,
+      0.6068376068376068
+     ],
+     "n_prompts": 5,
+     "cohort": "Older-primary",
+     "n_drugs": 121
+    },
+    "role": "not trained on SemEval labels"
+   },
+   "BioMistral-7B": {
+    "left": {
+     "value": 0.5914253886474174,
+     "lo95": 0.5470141442786505,
+     "hi95": 0.6311809098380904,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.5174860618347694,
+     "lo95": 0.4611449430301433,
+     "hi95": 0.573974328117765,
+     "lo90": 0.4718484384536735,
+     "hi90": 0.5644011034396327,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): names/biomistral",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      42
+     ]
+    },
+    "role": "not trained on SemEval labels"
+   },
+   "Sentence-trained BiomedBERT": {
+    "left": {
+     "value": 0.6143403078235634,
+     "lo95": 0.5748509357351805,
+     "hi95": 0.6547247602849214,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.4578476093934786,
+     "lo95": 0.39905650625683226,
+     "hi95": 0.5198701774215373,
+     "lo90": 0.4086405658040209,
+     "hi90": 0.5102456673473896,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b2sentence/biomedbert",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      1,
+      2,
+      3,
+      4,
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   },
+   "Names-trained BiomedBERT": {
+    "left": {
+     "value": 0.6711866579582237,
+     "lo95": 0.6373325947572518,
+     "hi95": 0.7102337953832023,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.46933603649265077,
+     "lo95": 0.41034047432278525,
+     "hi95": 0.5270228408942726,
+     "lo90": 0.4177629672218997,
+     "hi90": 0.5169875469424051,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b1names/biomedbert",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      1,
+      2,
+      3,
+      4,
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   },
+   "Sentence-trained BERT-base": {
+    "left": {
+     "value": 0.6364175366821053,
+     "lo95": 0.5977148661114221,
+     "hi95": 0.6756156635938912,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.48285183307991214,
+     "lo95": 0.429523917027377,
+     "hi95": 0.5349564709953535,
+     "lo90": 0.4412881005570029,
+     "hi90": 0.5263099784969612,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b2sentence/bertbase",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      1,
+      2,
+      3,
+      4,
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   },
+   "Mixed-input BERT-base": {
+    "left": {
+     "value": 0.6327053971348339,
+     "lo95": 0.5915860660826572,
+     "hi95": 0.6732954069979145,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.5085318465957087,
+     "lo95": 0.4470399664164959,
+     "hi95": 0.5728498789733103,
+     "lo90": 0.4585761134574973,
+     "hi90": 0.5595822814386001,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b2mixed/bertbase",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      1,
+      2,
+      3,
+      4,
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   },
+   "Names-trained BERT-base": {
+    "left": {
+     "value": 0.6179253571511456,
+     "lo95": 0.5736425049377727,
+     "hi95": 0.6644407865722002,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.5144450076026356,
+     "lo95": 0.4577833128408868,
+     "hi95": 0.5719553409396424,
+     "lo90": 0.4678704840813981,
+     "hi90": 0.5610885058221077,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b1names/bertbase",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   },
+   "Sentence-trained BioBERT": {
+    "left": {
+     "value": 0.5812449094841353,
+     "lo95": 0.5327372197509892,
+     "hi95": 0.6333044334969462,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.4831897279945937,
+     "lo95": 0.4245976873130963,
+     "hi95": 0.538282410753617,
+     "lo90": 0.4340541336105713,
+     "hi90": 0.5298066450463156,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b2sentence/biobert",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   },
+   "Mixed-input BioBERT": {
+    "left": {
+     "value": 0.6347001610177827,
+     "lo95": 0.5965334761795917,
+     "hi95": 0.6743745083120307,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.4994931576279777,
+     "lo95": 0.4399159638157371,
+     "hi95": 0.5553784153240366,
+     "lo90": 0.4477513221802026,
+     "hi90": 0.5464164571159795,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b2mixed/biobert",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   },
+   "Names-trained BioBERT": {
+    "left": {
+     "value": 0.6257612980442473,
+     "lo95": 0.5901699356426148,
+     "hi95": 0.659351488089462,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "right": {
+     "value": 0.5130934279439094,
+     "lo95": 0.45982661407484193,
+     "hi95": 0.5610550440095686,
+     "lo90": 0.46894148448480844,
+     "hi90": 0.554981837917624,
+     "source": "recomputed with evaluate2.within_stat on Novel + Older-clean (the H1-pooled estimator): b1names/biobert",
+     "n": 2270,
+     "n_drugs": 176,
+     "seeds": [
+      42
+     ]
+    },
+    "role": "trained on SemEval labels"
+   }
+  },
+  "panel_b": [
+   {
+    "name": "SemEval negatives",
+    "n_resolvable": 2108,
+    "n": 2150,
+    "listed": 1609,
+    "not_listed": 499,
+    "share_of_resolvable": 0.7632827324478179,
+    "wilson95_resolvable": [
+     0.7446684409478215,
+     0.7809391965780808
+    ],
+    "medline_share_of_resolvable": 0.515306,
+    "medline_n_resolvable": 196,
+    "source": "rev2/m3b_drugbank.json listing_rates, rows without self pairs; MedLine rates from rev3/d9_listing_conventions.json self_pairs_excluded"
+   },
+   {
+    "name": "SemEval positives",
+    "n_resolvable": 362,
+    "n": 371,
+    "listed": 263,
+    "not_listed": 99,
+    "share_of_resolvable": 0.7265193370165746,
+    "wilson95_resolvable": [
+     0.6784028706081047,
+     0.7698787444080313
+    ],
+    "medline_share_of_resolvable": 0.577465,
+    "medline_n_resolvable": 71,
+    "source": "rev2/m3b_drugbank.json listing_rates, rows without self pairs; MedLine rates from rev3/d9_listing_conventions.json self_pairs_excluded"
+   }
+  ],
+  "panel_b_random": {
+   "share": 0.354988,
+   "ci95": [
+    0.345641,
+    0.364447
+   ],
+   "n_resolvable": 9944,
+   "source": "rev2/m3b_drugbank.json listing_rates, random vocabulary pairs (names)"
+  },
+  "unseen_pairs": 2270,
+  "unseen_drugs": 176,
+  "seen": {
+   "n_pairs": 4643,
+   "n_positive": 1542,
+   "n_anchor_drugs": 299,
+   "b2mixed": {
+    "value": 0.4554801424635441,
+    "lo95": 0.4110309074563677,
+    "hi95": 0.4940942093602182,
+    "lo90": 0.41928729932456565,
+    "hi90": 0.48688510431240295,
+    "source": "rev2_colab/r2a.json dissociation, cohort seen, input names_only, seed mean, two-way 95%",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "b2sentence": {
+    "value": 0.4348162085881325,
+    "lo95": 0.39541386749114177,
+    "hi95": 0.47307874440623376,
+    "lo90": 0.4022776873064833,
+    "hi90": 0.46803148921111604,
+    "source": "rev2_colab/r2a.json dissociation, cohort seen, input names_only, seed mean, two-way 95%",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "drugbank": {
+    "value": 0.610913,
+    "lo95": 0.584733,
+    "hi95": 0.639116,
+    "lo90": null,
+    "hi90": null,
+    "source": "rev3/c2_seen_reference.json cohorts.seen.rows.drugbank_lookup.within_drug_auroc, two-way 95%"
+   }
+  },
+  "seen_marks": {
+   "Mixed-input BiomedBERT": {
+    "value": 0.4554801424635441,
+    "lo95": 0.4110309074563677,
+    "hi95": 0.4940942093602182,
+    "lo90": 0.41928729932456565,
+    "hi90": 0.48688510431240295,
+    "source": "rev2_colab/r2a.json dissociation, cohort seen, input names_only, seed mean, two-way 95%",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "DrugBank lookup": {
+    "value": 0.610913,
+    "lo95": 0.584733,
+    "hi95": 0.639116,
+    "lo90": null,
+    "hi90": null,
+    "source": "rev3/c2_seen_reference.json cohorts.seen.rows.drugbank_lookup.within_drug_auroc, two-way 95%"
+   },
+   "Sentence-trained BiomedBERT": {
+    "value": 0.4348162085881325,
+    "lo95": 0.39541386749114177,
+    "hi95": 0.47307874440623376,
+    "lo90": 0.4022776873064833,
+    "hi90": 0.46803148921111604,
+    "source": "rev2_colab/r2a.json dissociation, cohort seen, input names_only, seed mean, two-way 95%",
+    "seeds": [
+     42,
+     1,
+     2,
+     3,
+     4
+    ]
+   }
+  },
+  "decision_band_drawn": false,
+  "ci90_drawn": false
+ },
+ "fig3_encoders": {
+  "BiomedBERT | Sentence | Sentence-trained": {
+   "value": 0.9677710254191491,
+   "lo95": 0.9549903196337991,
+   "hi95": 0.9782106918976097,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BiomedBERT | Sentence | Mixed-input": {
+   "value": 0.9634052000897367,
+   "lo95": 0.9505809558834256,
+   "hi95": 0.9736164055467577,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BiomedBERT | Sentence, both names\nreplaced by pseudo-words | Sentence-trained": {
+   "value": 0.9573700723530146,
+   "lo95": 0.9390932735327404,
+   "hi95": 0.9707653860276895,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BiomedBERT | Sentence, both names\nreplaced by pseudo-words | Mixed-input": {
+   "value": 0.9570412954803402,
+   "lo95": 0.9405356221719735,
+   "hi95": 0.9704382673956881,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BiomedBERT | Names only | Sentence-trained": {
+   "value": 0.6143403078235634,
+   "lo95": 0.5748509357351805,
+   "hi95": 0.6547247602849214,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BiomedBERT | Names only | Mixed-input": {
+   "value": 0.6777677210734372,
+   "lo95": 0.6328075032402182,
+   "hi95": 0.7225974172982866,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BiomedBERT | Names only | Names-trained": {
+   "value": 0.6711866579582237,
+   "lo95": 0.6373325947572518,
+   "hi95": 0.7102337953832023,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BiomedBERT | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Sentence-trained": {
+   "value": 0.4900924702774108,
+   "lo95": 0.36971932428303284,
+   "hi95": 0.6123691892487333,
+   "lo90": 0.38896174297180636,
+   "hi90": 0.5954232910520576,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2sentence/biomedbert ood_empty novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BiomedBERT | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Mixed-input": {
+   "value": 0.523117569352708,
+   "lo95": 0.39720921719361113,
+   "hi95": 0.6503325570035414,
+   "lo90": 0.41132986572500424,
+   "hi90": 0.6257255088052304,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2mixed/biomedbert ood_empty novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BiomedBERT | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Names-trained": {
+   "value": 0.5138705416116248,
+   "lo95": 0.38390242921492923,
+   "hi95": 0.6353015952143569,
+   "lo90": 0.40222689116311494,
+   "hi90": 0.616531166744196,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b1names/biomedbert ood_names novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BiomedBERT | Older-clean 1985 to 2012\n(128 drugs) | Sentence-trained": {
+   "value": 0.45311894614490505,
+   "lo95": 0.3907585111581779,
+   "hi95": 0.5181532083549139,
+   "lo90": 0.3977617897449075,
+   "hi90": 0.5078360890621534,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2sentence/biomedbert oodold_empty older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  },
+  "BiomedBERT | Older-clean 1985 to 2012\n(128 drugs) | Mixed-input": {
+   "value": 0.451762882603642,
+   "lo95": 0.38889511563623985,
+   "hi95": 0.5180861422723501,
+   "lo90": 0.3948429303217895,
+   "hi90": 0.5092207680223526,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2mixed/biomedbert oodold_empty older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  },
+  "BiomedBERT | Older-clean 1985 to 2012\n(128 drugs) | Names-trained": {
+   "value": 0.46280511429678417,
+   "lo95": 0.397920858615095,
+   "hi95": 0.5207160499337256,
+   "lo90": 0.4075445007651545,
+   "hi90": 0.5120850053649122,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b1names/biomedbert oodold_names older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  },
+  "BERT-base | Sentence | Sentence-trained": {
+   "value": 0.9527003356286932,
+   "lo95": 0.933491362713995,
+   "hi95": 0.9677912417409182,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BERT-base | Sentence | Mixed-input": {
+   "value": 0.9429900902782613,
+   "lo95": 0.920472698837254,
+   "hi95": 0.9614706230066227,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BERT-base | Sentence, both names\nreplaced by pseudo-words | Sentence-trained": {
+   "value": 0.9414887679874103,
+   "lo95": 0.9201860540207986,
+   "hi95": 0.95844274119219,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BERT-base | Sentence, both names\nreplaced by pseudo-words | Mixed-input": {
+   "value": 0.9237878632155594,
+   "lo95": 0.8947865925026754,
+   "hi95": 0.9462735369288978,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BERT-base | Names only | Sentence-trained": {
+   "value": 0.6364175366821053,
+   "lo95": 0.5977148661114221,
+   "hi95": 0.6756156635938912,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BERT-base | Names only | Mixed-input": {
+   "value": 0.6327053971348339,
+   "lo95": 0.5915860660826572,
+   "hi95": 0.6732954069979145,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BERT-base | Names only | Names-trained": {
+   "value": 0.6179253571511456,
+   "lo95": 0.5736425049377727,
+   "hi95": 0.6644407865722002,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BERT-base | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Sentence-trained": {
+   "value": 0.5257595772787318,
+   "lo95": 0.39022656888771495,
+   "hi95": 0.6560434978685024,
+   "lo90": 0.4144823440646149,
+   "hi90": 0.6320662955219526,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2sentence/bertbase ood_empty novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BERT-base | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Mixed-input": {
+   "value": 0.5138705416116248,
+   "lo95": 0.38573699256718125,
+   "hi95": 0.6436504424778761,
+   "lo90": 0.40241982367978846,
+   "hi90": 0.6101913199794556,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2mixed/bertbase ood_empty novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BERT-base | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Names-trained": {
+   "value": 0.5204755614266843,
+   "lo95": 0.3932907507850414,
+   "hi95": 0.6482555470916833,
+   "lo90": 0.4174565335843075,
+   "hi90": 0.625675349318613,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b1names/bertbase ood_names novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BERT-base | Older-clean 1985 to 2012\n(128 drugs) | Sentence-trained": {
+   "value": 0.47655947307245256,
+   "lo95": 0.42326334848150743,
+   "hi95": 0.5382525864085779,
+   "lo90": 0.4319257723547535,
+   "hi90": 0.5297587540431042,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2sentence/bertbase oodold_empty older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  },
+  "BERT-base | Older-clean 1985 to 2012\n(128 drugs) | Mixed-input": {
+   "value": 0.5077489345215033,
+   "lo95": 0.4469967230154033,
+   "hi95": 0.5672390185623077,
+   "lo90": 0.4563203253887777,
+   "hi90": 0.5577107333645597,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2mixed/bertbase oodold_empty older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  },
+  "BERT-base | Older-clean 1985 to 2012\n(128 drugs) | Names-trained": {
+   "value": 0.5135606354126308,
+   "lo95": 0.4507491098375458,
+   "hi95": 0.5711083000358705,
+   "lo90": 0.46023268518830357,
+   "hi90": 0.5616018493154947,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b1names/bertbase oodold_names older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  },
+  "BioBERT | Sentence | Sentence-trained": {
+   "value": 0.9458468573904067,
+   "lo95": 0.9238716376460396,
+   "hi95": 0.9617311295599006,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BioBERT | Sentence | Mixed-input": {
+   "value": 0.9536247788353894,
+   "lo95": 0.9350425919110339,
+   "hi95": 0.9688729615322674,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BioBERT | Sentence, both names\nreplaced by pseudo-words | Sentence-trained": {
+   "value": 0.9430486622925528,
+   "lo95": 0.9207176323979284,
+   "hi95": 0.9602199889785672,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BioBERT | Sentence, both names\nreplaced by pseudo-words | Mixed-input": {
+   "value": 0.9268733927231455,
+   "lo95": 0.8980408524827876,
+   "hi95": 0.949030041083461,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BioBERT | Names only | Sentence-trained": {
+   "value": 0.5812449094841353,
+   "lo95": 0.5327372197509892,
+   "hi95": 0.6333044334969462,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BioBERT | Names only | Mixed-input": {
+   "value": 0.6347001610177827,
+   "lo95": 0.5965334761795917,
+   "hi95": 0.6743745083120307,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BioBERT | Names only | Names-trained": {
+   "value": 0.6257612980442473,
+   "lo95": 0.5901699356426148,
+   "hi95": 0.659351488089462,
+   "lo90": null,
+   "hi90": null,
+   "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+  },
+  "BioBERT | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Sentence-trained": {
+   "value": 0.48877146631439894,
+   "lo95": 0.3554428858379212,
+   "hi95": 0.6237367065415101,
+   "lo90": 0.37427568754774637,
+   "hi90": 0.6005158003822239,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2sentence/biobert ood_empty novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BioBERT | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Mixed-input": {
+   "value": 0.4966974900924703,
+   "lo95": 0.36358078063241106,
+   "hi95": 0.628757556980892,
+   "lo90": 0.3844395872196366,
+   "hi90": 0.6090444324823552,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2mixed/biobert ood_empty novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BioBERT | Novel 2020 to 2024\n(48 drugs; no H1 decision) | Names-trained": {
+   "value": 0.5138705416116248,
+   "lo95": 0.3968931494986013,
+   "hi95": 0.6344725954660098,
+   "lo90": 0.4115029740316263,
+   "hi90": 0.6139202499253386,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b1names/biobert ood_names novel A",
+   "n": 438,
+   "n_drugs": 48
+  },
+  "BioBERT | Older-clean 1985 to 2012\n(128 drugs) | Sentence-trained": {
+   "value": 0.48237117396358,
+   "lo95": 0.4202444304834408,
+   "hi95": 0.5415901430271302,
+   "lo90": 0.43089119589485153,
+   "hi90": 0.5343108643675143,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2sentence/biobert oodold_empty older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  },
+  "BioBERT | Older-clean 1985 to 2012\n(128 drugs) | Mixed-input": {
+   "value": 0.4999031383184812,
+   "lo95": 0.43795984688087375,
+   "hi95": 0.5554860665668876,
+   "lo90": 0.4478427392589817,
+   "hi90": 0.5453084613858282,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b2mixed/biobert oodold_empty older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  },
+  "BioBERT | Older-clean 1985 to 2012\n(128 drugs) | Names-trained": {
+   "value": 0.512979465323518,
+   "lo95": 0.45099515012451563,
+   "hi95": 0.5701655653786873,
+   "lo90": 0.4634126753460664,
+   "hi90": 0.5590710236882466,
+   "source": "recomputed with evaluate2.within_stat; checked against tables.json ood_cohorts b1names/biobert oodold_names older_clean A",
+   "n": 1832,
+   "n_drugs": 128
+  }
+ },
+ "fig4_sentence_signal": {
+  "A": {
+   "Sentence-trained": {
+    "orig": {
+     "value": 0.9677710254191491,
+     "lo95": 0.9549903196337991,
+     "hi95": 0.9782106918976097,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "vocab": {
+     "value": 0.9547299111805134,
+     "lo95": 0.9340905250382,
+     "hi95": 0.9693420033908847,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "novel": {
+     "value": 0.9609114689529644,
+     "lo95": 0.9431124695968103,
+     "hi95": 0.9742600674282113,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "pseudo": {
+     "value": 0.9573700723530146,
+     "lo95": 0.9390932735327404,
+     "hi95": 0.9707653860276895,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    }
+   },
+   "Mixed-input": {
+    "orig": {
+     "value": 0.9634052000897367,
+     "lo95": 0.9505809558834256,
+     "hi95": 0.9736164055467577,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "vocab": {
+     "value": 0.953813203900233,
+     "lo95": 0.9354432124583147,
+     "hi95": 0.9677046299490961,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "novel": {
+     "value": 0.9614750864489777,
+     "lo95": 0.945663231402702,
+     "hi95": 0.9741272270626689,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "pseudo": {
+     "value": 0.9570412954803402,
+     "lo95": 0.9405356221719735,
+     "hi95": 0.9704382673956881,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    }
+   },
+   "Names-trained": {
+    "orig": {
+     "value": 0.6711866579582237,
+     "lo95": 0.6373325947572518,
+     "hi95": 0.7102337953832023,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "vocab": {
+     "value": 0.4884729170741842,
+     "lo95": 0.45511312648047636,
+     "hi95": 0.5188644487847235,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "novel": {
+     "value": 0.4859852641653101,
+     "lo95": 0.4564786575129168,
+     "hi95": 0.5159961203469082,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    },
+    "pseudo": {
+     "value": 0.5115237675287804,
+     "lo95": 0.4841236473203384,
+     "hi95": 0.5398531272148491,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json seeds (auroc); interval computed by ddiood.paperfigs"
+    }
+   }
+  },
+  "B": {
+   "Sentence-trained": {
+    "per_seed": {
+     "1": [
+      0.717068,
+      0.016043
+     ],
+     "2": [
+      0.742243,
+      0.0
+     ],
+     "3": [
+      0.721533,
+      0.062663
+     ],
+     "4": [
+      0.71831,
+      0.0
+     ],
+     "42": [
+      0.705882,
+      0.021333
+     ]
+    },
+    "median_ratio": 0.022373,
+    "ratio_range": [
+     0.0,
+     0.086847
+    ],
+    "decision": "falsified",
+    "source": "tables.json masking; decisions.json H2a"
+   },
+   "Masked-trained": {
+    "per_seed": {
+     "1": [
+      0.029598,
+      0.708543
+     ],
+     "2": [
+      0.398577,
+      0.665
+     ],
+     "3": [
+      0.524362,
+      0.715466
+     ],
+     "4": [
+      0.474576,
+      0.706559
+     ],
+     "42": [
+      0.454936,
+      0.719276
+     ]
+    },
+    "median_ratio": 1.581049,
+    "ratio_range": [
+     1.364451,
+     23.938622
+    ],
+    "decision": "supported",
+    "source": "tables.json masking; decisions.json H2b",
+    "median_text": "1.581",
+    "range_text": [
+     "1.364",
+     "23.939"
+    ]
+   }
+  },
+  "C": {
+   "Sentence input, Sentence-trained": {
+    "seen": {
+     "value": 0.9739038545682702,
+     "lo95": 0.9606302911702168,
+     "hi95": 0.9839300698430793,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+    },
+    "unseen": {
+     "value": 0.9419357474501812,
+     "lo95": 0.9094430575336955,
+     "hi95": 0.9661395955047494,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+    }
+   },
+   "Sentence input, Mixed-input": {
+    "seen": {
+     "value": 0.9673013894278001,
+     "lo95": 0.9504526740870656,
+     "hi95": 0.9806034702641064,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+    },
+    "unseen": {
+     "value": 0.9398833956568967,
+     "lo95": 0.9070091860293272,
+     "hi95": 0.9652852408571476,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+    }
+   },
+   "Names only, Mixed-input": {
+    "seen": {
+     "value": 0.6674454507178298,
+     "lo95": 0.6134918290802861,
+     "hi95": 0.722209914626493,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+    },
+    "unseen": {
+     "value": 0.6118699952896844,
+     "lo95": 0.551898250012362,
+     "hi95": 0.6698231279260486,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+    }
+   },
+   "Names only, Names-trained": {
+    "seen": {
+     "value": 0.6096166070883108,
+     "lo95": 0.5580257198284694,
+     "hi95": 0.6569823816397469,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+    },
+    "unseen": {
+     "value": 0.608596806598287,
+     "lo95": 0.5589637235194076,
+     "hi95": 0.6592448171374461,
+     "lo90": null,
+     "hi90": null,
+     "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+    }
+   }
+  },
+  "seeds": {
+   "Sentence-trained": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "Mixed-input": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "Names-trained": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ]
+  },
+  "held_out_cost": {
+   "Sentence input, Sentence-trained": 0.03196810711808906,
+   "Sentence input, Mixed-input": 0.02741799377090337,
+   "Names only, Mixed-input": 0.05557545542814535,
+   "Names only, Names-trained": 0.0010198004900238145
+  }
+ },
+ "fig5_positive_controls": {
+  "novel | Mixed-input BiomedBERT, names only": {
+   "value": 0.523117569352708,
+   "lo95": 0.39720921719361113,
+   "hi95": 0.6503325570035414,
+   "lo90": 0.41132986572500424,
+   "hi90": 0.6257255088052304,
+   "source": "classshortcut.json cells novel:A systems b2mixed"
+  },
+  "novel | H5 control, SemEval labels (pooled): falsified": {
+   "value": 0.620993,
+   "lo95": 0.556674,
+   "hi95": 0.68741,
+   "lo90": null,
+   "hi90": null,
+   "source": "decisions.json H5 (pooled AUROC)"
+  },
+  "novel | H5 control, SemEval labels (pooled): falsified | threshold": 0.75,
+  "novel | E7a, H5 input, label-mention targets (pooled): fail on AUROC, pass on MCC": {
+   "value": 0.719990680335508,
+   "lo95": 0.5978159898096488,
+   "hi95": 0.8282663086673324,
+   "lo90": 0.6219622305377943,
+   "hi90": 0.809508348391063,
+   "source": "e7.json e7a pooled_auroc"
+  },
+  "novel | E7a, H5 input, label-mention targets (pooled): fail on AUROC, pass on MCC | threshold": 0.75,
+  "novel | E7a, H5 input, label-mention targets (pooled): fail on AUROC, pass on MCC | ideal reader": 0.784716,
+  "novel | E7b, answer placed in the input (1.00 by construction)": {
+   "value": 1.0,
+   "lo95": 1.0,
+   "hi95": 1.0,
+   "lo90": 1.0,
+   "hi90": 1.0,
+   "source": "e7.json e7b novel within"
+  },
+  "novel | E7b, answer placed in the input (1.00 by construction) | threshold": 0.9,
+  "novel | E8 oracle, Qwen reads its own section: fail": {
+   "value": 0.9735799207397622,
+   "lo95": 0.9162807243276639,
+   "hi95": 1.0,
+   "lo90": 0.9304324150737913,
+   "hi90": 0.9984991742361685,
+   "source": "e8.json e8_oracle_rule novel within"
+  },
+  "novel | E8 oracle, Qwen reads its own section: fail | bar": 0.95,
+  "novel | E8 oracle, Qwen reads its own section: fail | regex": 1.0,
+  "novel | Same, tier C-auto (flagged positives dropped: 1 Novel, 37 Older-primary; post hoc)": {
+   "value": 0.973369,
+   "lo95": 0.914763,
+   "hi95": 1.0,
+   "lo90": 0.929839,
+   "hi90": 0.998498,
+   "source": "post8/sensitivity.json e8 C-auto novel within"
+  },
+  "novel | Name-masked oracle": {
+   "value": 0.773447820343461,
+   "lo95": 0.661736710196874,
+   "hi95": 0.8694947216890595,
+   "lo90": 0.6786695423855964,
+   "hi90": 0.8553190997022662,
+   "source": "e8.json e8_evidence masked novel/A within"
+  },
+  "novel | Wrong drug's section": {
+   "value": 0.4715984147952444,
+   "lo95": 0.3578593533432108,
+   "hi95": 0.603030881332408,
+   "lo90": 0.3767809952988957,
+   "hi90": 0.5755322883786445,
+   "source": "e8.json e8_evidence wrong novel/A within"
+  },
+  "novel | Partner sentences removed (confounded)": {
+   "value": 0.7305151915455746,
+   "lo95": 0.6091978243428642,
+   "hi95": 0.8444489875389408,
+   "lo90": 0.6277325612269622,
+   "hi90": 0.8299087791495199,
+   "source": "e8.json e8_evidence redacted novel/A within"
+  },
+  "novel | Partner sentences removed (confounded) | length only": 1.0,
+  "novel | DrugBank lookup": {
+   "value": 0.7285336856010568,
+   "lo95": 0.6421524000026201,
+   "hi95": 0.8083132486123283,
+   "lo90": 0.6551816918429003,
+   "hi90": 0.7979372012904508,
+   "source": "classshortcut.json novel:A drugbank_operating_point drugbank_auroc_from_placements"
+  },
+  "older_primary | Mixed-input BiomedBERT, names only": {
+   "value": 0.4467375442985199,
+   "lo95": 0.3810473904414738,
+   "hi95": 0.5167457972598882,
+   "lo90": 0.3887404453035018,
+   "hi90": 0.508145627501141,
+   "source": "classshortcut.json cells older_primary:A systems b2mixed"
+  },
+  "older_primary | H5 control, SemEval labels (pooled): falsified | not run": true,
+  "older_primary | E7a, H5 input, label-mention targets (pooled): fail on AUROC, pass on MCC | not run": true,
+  "older_primary | E7b, answer placed in the input (1.00 by construction)": {
+   "value": 1.0,
+   "lo95": 1.0,
+   "hi95": 1.0,
+   "lo90": 1.0,
+   "hi90": 1.0,
+   "source": "e7.json e7b older_primary within"
+  },
+  "older_primary | E7b, answer placed in the input (1.00 by construction) | threshold": 0.9,
+  "older_primary | E8 oracle, Qwen reads its own section: fail": {
+   "value": 0.9572649572649573,
+   "lo95": 0.9209152101434633,
+   "hi95": 0.9828097394273994,
+   "lo90": 0.9297679595519427,
+   "hi90": 0.9799939258511351,
+   "source": "e8.json e8_oracle_rule older_primary within"
+  },
+  "older_primary | E8 oracle, Qwen reads its own section: fail | bar": 0.95,
+  "older_primary | E8 oracle, Qwen reads its own section: fail | regex": 1.0,
+  "older_primary | Same, tier C-auto (flagged positives dropped: 1 Novel, 37 Older-primary; post hoc)": {
+   "value": 0.977094,
+   "lo95": 0.954176,
+   "hi95": 0.992915,
+   "lo90": 0.960079,
+   "hi90": 0.991138,
+   "source": "post8/sensitivity.json e8 C-auto older_primary within"
+  },
+  "older_primary | Name-masked oracle": {
+   "value": 0.7899728997289973,
+   "lo95": 0.7246413032453662,
+   "hi95": 0.8474589057934471,
+   "lo90": 0.7362948888514439,
+   "hi90": 0.8414016609560716,
+   "source": "e8.json e8_evidence masked older_primary/A within"
+  },
+  "older_primary | Wrong drug's section": {
+   "value": 0.5138628309360017,
+   "lo95": 0.4714650646992818,
+   "hi95": 0.5565915735790313,
+   "lo90": 0.4776277089797208,
+   "hi90": 0.5488004187797899,
+   "source": "e8.json e8_evidence wrong older_primary/A within"
+  },
+  "older_primary | Partner sentences removed (confounded)": {
+   "value": 0.6819887429643527,
+   "lo95": 0.6170842078748536,
+   "hi95": 0.7444960594575981,
+   "lo90": 0.6281945365458297,
+   "hi90": 0.7350310510562756,
+   "source": "e8.json e8_evidence redacted older_primary/A within"
+  },
+  "older_primary | Partner sentences removed (confounded) | length only": 1.0,
+  "older_primary | DrugBank lookup": {
+   "value": 0.6517615176151762,
+   "lo95": 0.6005745390452226,
+   "hi95": 0.705230468319228,
+   "lo90": 0.6127223070233045,
+   "hi90": 0.6955664310277815,
+   "source": "classshortcut.json older_primary:A drugbank_operating_point drugbank_auroc_from_placements"
+  },
+  "sensitivity": {
+   "label": "Same, tier C-auto (flagged positives dropped: 1 Novel, 37 Older-primary; post hoc)",
+   "decision": "pass",
+   "bar": {
+    "novel": 0.95,
+    "older_primary": 0.95
+   }
+  },
+  "e7a_rule": {
+   "auroc": 0.719990680335508,
+   "mcc": 0.36459212216956255,
+   "thresholds": [
+    0.75,
+    0.3
+   ],
+   "decision": "fail"
+  },
+  "e8_oracle_rule": {
+   "decision": "fail",
+   "novel": {
+    "statistic": "point",
+    "bar": 0.95,
+    "grep": 1.0,
+    "pass": true
+   },
+   "older_primary": {
+    "statistic": "lower95",
+    "bar": 0.95,
+    "grep": 1.0,
+    "pass": false
+   }
+  }
+ },
+ "figS_amend7_detail": {
+  "novel | E7c, names only": {
+   "value": 0.5336856010568032,
+   "lo95": 0.4002702316511448,
+   "hi95": 0.6979628910110904,
+   "lo90": 0.4238439611002649,
+   "hi90": 0.6663253353116885,
+   "source": "e7.json knowledge c novel/A within"
+  },
+  "novel | E7c, adjusted for drug class": {
+   "value": 0.535006605019815,
+   "lo95": 0.40045962612117886,
+   "hi95": 0.6781442105263158,
+   "lo90": 0.4262484778896646,
+   "hi90": 0.6596667833800186,
+   "source": "classshortcut.json novel:A partial rank:joint residual_within"
+  },
+  "novel | E7d, other drugs' labels retrieved": {
+   "value": 0.5178335535006605,
+   "lo95": 0.38508599525171316,
+   "hi95": 0.6681081791421363,
+   "lo90": 0.3981765885516395,
+   "hi90": 0.6501529037000735,
+   "source": "e7.json knowledge d novel/A within"
+  },
+  "novel | E7e, clean retrieval": {
+   "value": 0.6129458388375165,
+   "lo95": 0.4771228062409003,
+   "hi95": 0.757894336821267,
+   "lo90": 0.4999611197511664,
+   "hi90": 0.7322123992215736,
+   "source": "e7.json knowledge e novel/A within"
+  },
+  "novel | Names only (5 prompts: not robust) | prompt range": [
+   0.5501981505944518,
+   0.5871862615587847
+  ],
+  "novel | Names only (5 prompts: not robust)": {
+   "value": 0.5713342140026421,
+   "lo95": 0.4407572194568479,
+   "hi95": 0.6840040107714602,
+   "lo90": 0.47121750328698736,
+   "hi90": 0.6742982470538029,
+   "source": "e8.json e8_names novel primary prompt"
+  },
+  "novel | Contaminated retrieval": {
+   "value": 0.7470277410832232,
+   "lo95": 0.6117655034555428,
+   "hi95": 0.8559063875890367,
+   "lo90": 0.6423142606079736,
+   "hi90": 0.8403540280465498,
+   "source": "e8.json e8_evidence contam novel/A within"
+  },
+  "novel | Other drugs' labels": {
+   "value": 0.511889035667107,
+   "lo95": 0.4163099119557495,
+   "hi95": 0.6160924359603731,
+   "lo90": 0.43242519071666485,
+   "hi90": 0.5987755231473862,
+   "source": "e8.json e8_evidence other novel/A within"
+  },
+  "novel | Clean retrieval": {
+   "value": 0.5785997357992074,
+   "lo95": 0.4943308902508372,
+   "hi95": 0.6688779440898084,
+   "lo90": 0.5084249944109099,
+   "hi90": 0.6521260007143292,
+   "source": "e8.json e8_evidence clean novel/A within"
+  },
+  "novel | DrugBank lookup": {
+   "value": 0.7285336856010568,
+   "lo95": 0.6421524000026201,
+   "hi95": 0.8083132486123283,
+   "lo90": 0.6551816918429003,
+   "hi90": 0.7979372012904508,
+   "source": "classshortcut.json novel:A drugbank_operating_point drugbank_auroc_from_placements"
+  },
+  "older_primary | E7c, names only": {
+   "value": 0.6948092557848655,
+   "lo95": 0.6302011143079279,
+   "hi95": 0.7623686702757804,
+   "lo90": 0.6378916827436842,
+   "hi90": 0.7503333603828011,
+   "source": "e7.json knowledge c older_primary/A within"
+  },
+  "older_primary | E7c, adjusted for drug class": {
+   "value": 0.6508234313112362,
+   "lo95": 0.5869626265048032,
+   "hi95": 0.7157108707924235,
+   "lo90": 0.598029871952975,
+   "hi90": 0.7064042706634245,
+   "source": "classshortcut.json older_primary:A partial rank:joint residual_within"
+  },
+  "older_primary | E7d, other drugs' labels retrieved": {
+   "value": 0.6714613299979154,
+   "lo95": 0.6009190462965588,
+   "hi95": 0.7370463758257401,
+   "lo90": 0.6138168945042806,
+   "hi90": 0.7248105092689047,
+   "source": "e7.json knowledge d older_primary/A within"
+  },
+  "older_primary | E7e, clean retrieval": {
+   "value": 0.7344173441734417,
+   "lo95": 0.6646263387301015,
+   "hi95": 0.8016070136853595,
+   "lo90": 0.6763448538371675,
+   "hi90": 0.7894684922011002,
+   "source": "e7.json knowledge e older_primary/A within"
+  },
+  "older_primary | Names only (5 prompts: not robust) | prompt range": [
+   0.518970189701897,
+   0.6068376068376068
+  ],
+  "older_primary | Names only (5 prompts: not robust)": {
+   "value": 0.5839066082968521,
+   "lo95": 0.5102916999761867,
+   "hi95": 0.6456563385254983,
+   "lo90": 0.5209651269867743,
+   "hi90": 0.6388649878839068,
+   "source": "e8.json e8_names older_primary primary prompt"
+  },
+  "older_primary | Contaminated retrieval": {
+   "value": 0.8335417969564312,
+   "lo95": 0.7780017432423895,
+   "hi95": 0.8834619725075752,
+   "lo90": 0.7887912777891402,
+   "hi90": 0.8768370972350391,
+   "source": "e8.json e8_evidence contam older_primary/A within"
+  },
+  "older_primary | Other drugs' labels": {
+   "value": 0.5323118615801543,
+   "lo95": 0.47986237076002175,
+   "hi95": 0.586850903217611,
+   "lo90": 0.48583892174330084,
+   "hi90": 0.5792275621415062,
+   "source": "e8.json e8_evidence other older_primary/A within"
+  },
+  "older_primary | Clean retrieval": {
+   "value": 0.6114238065457578,
+   "lo95": 0.5598842429577465,
+   "hi95": 0.6637473347547974,
+   "lo90": 0.5660897632709384,
+   "hi90": 0.6557998889518949,
+   "source": "e8.json e8_evidence clean older_primary/A within"
+  },
+  "older_primary | DrugBank lookup": {
+   "value": 0.6517615176151762,
+   "lo95": 0.6005745390452226,
+   "hi95": 0.705230468319228,
+   "lo90": 0.6127223070233045,
+   "hi90": 0.6955664310277815,
+   "source": "classshortcut.json older_primary:A drugbank_operating_point drugbank_auroc_from_placements"
+  },
+  "B": {
+   "novel": {
+    "drugbank_tpr": {
+     "value": 0.7035170591718672,
+     "lo95": 0.5701299494175597,
+     "hi95": 0.8172378552214803,
+     "lo90": 0.5943548231141774,
+     "hi90": 0.7927344649641146,
+     "source": "classshortcut.json novel:A drugbank_tpr_within_at_its_fpr"
+    },
+    "e7c_tpr": {
+     "value": 0.4200792602377807,
+     "lo95": 0.20992184513177276,
+     "hi95": 0.6702993016535228,
+     "lo90": 0.24882591027906634,
+     "hi90": 0.6348199241032005,
+     "source": "classshortcut.json novel:A e7c_tpr_within_at_drugbank_fpr"
+    },
+    "difference": {
+     "value": -0.28343779893408655,
+     "lo95": -0.5009687588169306,
+     "hi95": -0.009341704367021019,
+     "lo90": -0.46788296904047594,
+     "hi90": -0.04527555292379911,
+     "source": "classshortcut.json novel:A e7c_minus_drugbank_tpr_within"
+    },
+    "drugbank_fpr": {
+     "value": 0.36551724137931035,
+     "lo95": 0.23910118241162706,
+     "hi95": 0.49407230876540337,
+     "lo90": 0.2580532763852984,
+     "hi90": 0.4726475144005034,
+     "source": "classshortcut.json novel:A drugbank_fpr_pooled"
+    }
+   },
+   "older_primary": {
+    "drugbank_tpr": {
+     "value": 0.6501470131221739,
+     "lo95": 0.561737604424529,
+     "hi95": 0.7199565832165002,
+     "lo90": 0.5758050753531674,
+     "hi90": 0.7124263606970374,
+     "source": "classshortcut.json older_primary:A drugbank_tpr_within_at_its_fpr"
+    },
+    "e7c_tpr": {
+     "value": 0.6752136752136753,
+     "lo95": 0.5712015428287041,
+     "hi95": 0.7780092199647679,
+     "lo90": 0.5907614437550305,
+     "hi90": 0.7617454285451107,
+     "source": "classshortcut.json older_primary:A e7c_tpr_within_at_drugbank_fpr"
+    },
+    "difference": {
+     "value": 0.025066662091501324,
+     "lo95": -0.07543590573445746,
+     "hi95": 0.1440502829686595,
+     "lo90": -0.058869698448958306,
+     "hi90": 0.12493865227970109,
+     "source": "classshortcut.json older_primary:A e7c_minus_drugbank_tpr_within"
+    },
+    "drugbank_fpr": {
+     "value": 0.41932700603968937,
+     "lo95": 0.35550941617129533,
+     "hi95": 0.4937153171672796,
+     "lo90": 0.36110781208762205,
+     "hi90": 0.48567515260055755,
+     "source": "classshortcut.json older_primary:A drugbank_fpr_pooled"
+    }
+   }
+  },
+  "C": {
+   "real": {
+    "value": 0.6095617529880478,
+    "lo95": 0.5137566644259876,
+    "hi95": 0.7000010072522159,
+    "lo90": 0.5332818672024687,
+    "hi90": 0.6866096417117966,
+    "source": "e8.json e8_stem_control real"
+   },
+   "preserved": {
+    "value": 0.5785947120608476,
+    "lo95": 0.48402599870447355,
+    "hi95": 0.6735717522891589,
+    "lo90": 0.49784011206848966,
+    "hi90": 0.6608638815557594,
+    "source": "e8.json e8_stem_control preserved"
+   },
+   "scrambled": {
+    "value": 0.5293371966678739,
+    "lo95": 0.44373866358412123,
+    "hi95": 0.6215987080157613,
+    "lo90": 0.4579391979932346,
+    "hi90": 0.6056748794806377,
+    "source": "e8.json e8_stem_control scrambled"
+   },
+   "difference": {
+    "value": 0.04925751539297363,
+    "lo95": -0.02066148560553481,
+    "hi95": 0.12681134987522447,
+    "lo90": -0.007455277176820829,
+    "hi90": 0.11257144147429812,
+    "source": "e8.json e8_stem_control preserved_minus_scrambled"
+   },
+   "verdict": "smaller or inconsistent drop",
+   "n_drugs": 80,
+   "expected_drop": 0.05
+  }
+ },
+ "fig6_model_panel": {
+  "models": {
+   "a7-panel-bertbase-marker": {
+    "semeval_binary_f1": 0.7779349363507779,
+    "auroc_within": 0.4863456326870961,
+    "lo95": 0.4257556109828837,
+    "hi95": 0.5493362256260843,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-bertbase-pair": {
+    "semeval_binary_f1": 0.6235632183908046,
+    "auroc_within": 0.47769439232853866,
+    "lo95": 0.4103180086521921,
+    "hi95": 0.5417257200809371,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-biobert-marker": {
+    "semeval_binary_f1": 0.8354080221300139,
+    "auroc_within": 0.49426725036481134,
+    "lo95": 0.4219511900199257,
+    "hi95": 0.5588283962233542,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-biobert-pair": {
+    "semeval_binary_f1": 0.7,
+    "auroc_within": 0.48332291015217843,
+    "lo95": 0.41655801069474985,
+    "hi95": 0.5499178715252403,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-biolinkbert-marker": {
+    "semeval_binary_f1": 0.8705234159779615,
+    "auroc_within": 0.43766937669376693,
+    "lo95": 0.3675850927415142,
+    "hi95": 0.5046245621708472,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-biolinkbert-pair": {
+    "semeval_binary_f1": 0.7266187050359713,
+    "auroc_within": 0.45653533458411505,
+    "lo95": 0.39210682591516827,
+    "hi95": 0.5205256540859824,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-biomedbert_abs-marker": {
+    "semeval_binary_f1": 0.8654646324549237,
+    "auroc_within": 0.44017094017094016,
+    "lo95": 0.377283707058936,
+    "hi95": 0.5012585219207515,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-biomedbert_abs-pair": {
+    "semeval_binary_f1": 0.697508896797153,
+    "auroc_within": 0.48676255993329165,
+    "lo95": 0.42120905514410867,
+    "hi95": 0.5545270766405604,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-biomedbert_full-marker": {
+    "semeval_binary_f1": 0.8563300142247511,
+    "auroc_within": 0.4241192411924119,
+    "lo95": 0.360733447939791,
+    "hi95": 0.48021081811955313,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-biomedbert_full-pair": {
+    "semeval_binary_f1": 0.7251908396946565,
+    "auroc_within": 0.4642484886387325,
+    "lo95": 0.39667622022776483,
+    "hi95": 0.5367320947129737,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-clinicalbert-marker": {
+    "semeval_binary_f1": 0.75,
+    "auroc_within": 0.48884719616426936,
+    "lo95": 0.4302450082494567,
+    "hi95": 0.5507233644977019,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-clinicalbert-pair": {
+    "semeval_binary_f1": 0.5702005730659025,
+    "auroc_within": 0.48509485094850946,
+    "lo95": 0.4238923254305941,
+    "hi95": 0.5488245680805023,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-deberta-marker": {
+    "semeval_binary_f1": 0.8200836820083682,
+    "auroc_within": 0.5066708359391286,
+    "lo95": 0.43989236262794107,
+    "hi95": 0.5694515416127641,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-deberta-pair": {
+    "semeval_binary_f1": 0.6966887417218544,
+    "auroc_within": 0.4237023139462164,
+    "lo95": 0.3627906601656094,
+    "hi95": 0.4838335883206131,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-electra-marker": {
+    "semeval_binary_f1": 0.7472826086956522,
+    "auroc_within": 0.4826975192828851,
+    "lo95": 0.4164927577002261,
+    "hi95": 0.5453233070635226,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-electra-pair": {
+    "semeval_binary_f1": 0.7126436781609196,
+    "auroc_within": 0.5080258494892641,
+    "lo95": 0.4547861340155931,
+    "hi95": 0.5690093859209232,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-roberta-marker": {
+    "semeval_binary_f1": 0.7660738714090287,
+    "auroc_within": 0.4708150927663123,
+    "lo95": 0.41086343712848594,
+    "hi95": 0.527914841276044,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-roberta-pair": {
+    "semeval_binary_f1": 0.7080045095828635,
+    "auroc_within": 0.46414425682718363,
+    "lo95": 0.4000415006953253,
+    "hi95": 0.5321192435792688,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-scibert-marker": {
+    "semeval_binary_f1": 0.7905604719764012,
+    "auroc_within": 0.46091307066916826,
+    "lo95": 0.39968743387625116,
+    "hi95": 0.5231663665140429,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   },
+   "a7-panel-scibert-pair": {
+    "semeval_binary_f1": 0.7238723872387238,
+    "auroc_within": 0.45882843443819055,
+    "lo95": 0.3958843740200968,
+    "hi95": 0.516392702296699,
+    "source": "e9.json panel older_primary; F1 recomputed with metrics.binary_f1 from test_sentence preds"
+   }
+  },
+  "extra": {
+   "a7-ext-pubmedbert-relation-extraction": {
+    "kind": "external",
+    "semeval_binary_f1": 0.3709090909090909,
+    "auroc_within": 0.494579945799458
+   },
+   "a7-panel-bertbase-masked": {
+    "kind": "masked",
+    "semeval_binary_f1": 0.6896551724137931,
+    "auroc_within": 0.5
+   },
+   "a7-panel-biomedbert_full-masked": {
+    "kind": "masked",
+    "semeval_binary_f1": 0.7079037800687286,
+    "auroc_within": 0.5
+   }
+  },
+  "rho": -0.1609022556390977,
+  "rho_ci95": [
+   -0.4677067669172932,
+   0.2301879699248119
+  ],
+  "n_models": 20,
+  "k_upper_at_most_bound": 20,
+  "bound": 0.6,
+  "drugbank_within": 0.6517615176151762,
+  "variance_ratio": 0.5742521940991799,
+  "variance_ratio_paired": 0.669692,
+  "novel": {
+   "rho": -0.01580135887496698,
+   "rho_lo95": -0.370157980295125,
+   "rho_hi95": 0.45298683054861943,
+   "n_models": 20
+  }
+ },
+ "graphical_abstract": {
+  "title": "Names-only AUROC against two label sources",
+  "note": "Different drugs and statistics; FDA-label targets failed their oracle check",
+  "convention": "DrugBank SemEval value excludes self pairs (0.525 with them). Bars: 95% intervals.",
+  "columns": [
+   "SemEval labels\n(pooled)",
+   "FDA label mentions\n(within-drug)"
+  ],
+  "intervals": {
+   "SemEval-trained encoder left": [
+    0.6328075032402182,
+    0.6777677210734372,
+    0.7225974172982866
+   ],
+   "SemEval-trained encoder right": [
+    0.3993433467809793,
+    0.4608886636256124,
+    0.5200927220444782
+   ],
+   "DrugBank left": [
+    0.438568,
+    0.480261,
+    0.52081
+   ],
+   "DrugBank right": [
+    0.6087852533721209,
+    0.6523906065213718,
+    0.6970764613078365
+   ]
+  },
+  "prior_title": "SemEval scores do not carry over to FDA-label targets",
+  "footer": "DrugBank draws partly on FDA labels; label mentions are not validated interactions.",
+  "old_title": "Change the label source and the ranking flips; earlier still: Same two drug names, opposite rankings: SemEval labels favour the SemEval-trained encoder; FDA label mentions favour DrugBank",
+  "encoder_above_drugbank_on_semeval_labels": true,
+  "font": "Arial",
+  "font_is_arial_or_helvetica": true,
+  "size_px": [
+   2000,
+   800
+  ],
+  "size_px_by_role": {
+   "title": 44,
+   "end_labels": 40,
+   "lines": 8
+  },
+  "labels": {
+   "SemEval-trained encoder": "SemEval-trained encoder 0.46",
+   "DrugBank": "DrugBank 0.65"
+  },
+  "n_bold": 2,
+  "seeds": 5,
+  "lines": {
+   "Mixed-input BiomedBERT": {
+    "left": 0.6777677210734372,
+    "right": 0.4608886636256124
+   },
+   "DrugBank lookup": {
+    "left": 0.480261,
+    "right": 0.6523906065213718
+   }
+  },
+  "drugbank_semeval_excl": {
+   "value": 0.480261,
+   "lo95": 0.438568,
+   "hi95": 0.52081,
+   "lo90": null,
+   "hi90": null,
+   "source": "sensitivity/semeval_selfpairs.json rows 'excluding self pairs'",
+   "n": 2521,
+   "n_self_pairs": 289
+  }
+ },
+ "ood_cohorts": {
+  "fig1_study_design": [
+   "novel",
+   "older"
+  ],
+  "fig2_dissociation": [
+   "novel",
+   "older_clean"
+  ],
+  "fig3_encoders": [
+   "novel",
+   "older_clean"
+  ],
+  "fig4_sentence_signal": [],
+  "fig5_positive_controls": [
+   "novel",
+   "older_primary"
+  ],
+  "fig6_model_panel": [
+   "older_primary",
+   "novel"
+  ],
+  "figS_amend7_detail": [
+   "novel",
+   "older_primary"
+  ],
+  "graphical_abstract": [
+   "novel",
+   "older_clean"
+  ]
+ },
+ "band_audit": {
+  "fig1_panel_d": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "fig2_dissociation": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "fig3_encoders": {
+   "bands": 1,
+   "thick_90_bars": 1
+  },
+  "fig4_sentence_signal": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "fig5_positive_controls": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "figS_amend7_detail": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "fig6_model_panel": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "graphical_abstract": {
+   "bands": 0,
+   "thick_90_bars": 0
+  }
+ },
+ "commitment8": "OOD labels are unvalidated label mentions (the E8 oracle check failed); OOD AUROC measures agreement with that target, not interaction knowledge.",
+ "roles": {
+  "SEMEVAL": "trained on SemEval labels",
+  "EXTERNAL": "not trained on SemEval labels",
+  "REF": "external reference",
+  "SHORTCUT": "shortcut baseline"
+ },
+ "checks": {
+  "tables:baselines auroc": 4,
+  "fig1:Older partner-frequency prior under partner matching is 0.500": 1,
+  "ood_summary:min_year": 4,
+  "ood_summary:n_pairs": 4,
+  "ood_summary:n_drugs": 4,
+  "ood_old_summary:n_pairs": 4,
+  "ood_old_summary:n_drugs": 4,
+  "e9:n_models": 1,
+  "r2a_seen:n_pairs overlap": 1,
+  "r2a_seen:n_pairs meta": 1,
+  "r2a_seen:n_pairs row": 2,
+  "r2a_seen:n_positive": 2,
+  "r2a_seen:n_anchor_drugs": 2,
+  "r2a_seen:n_seeds": 2,
+  "r2a_seen:n_draws": 2,
+  "r2a_seen:seed-mean AUROC within 0.02 of mean per-seed AUROC": 2,
+  "r2a_seen:c2 copy value": 2,
+  "r2a_seen:c2 copy lo95": 2,
+  "r2a_seen:c2 copy hi95": 2,
+  "r2a_seen:c2 copy lo90": 2,
+  "r2a_seen:c2 copy hi90": 2,
+  "c2_seen:drugbank n_draws": 1,
+  "ood_cohorts:auroc_within": 38,
+  "decisions:H1-pooled:value": 1,
+  "decisions:H1-pooled:lo95": 1,
+  "decisions:H1-pooled:hi95": 1,
+  "decisions:H1-pooled:lo90": 1,
+  "decisions:H1-pooled:hi90": 1,
+  "read": 1,
+  "exp5:grid DrugBank": 1,
+  "semeval_selfpairs:all auroc": 1,
+  "semeval_selfpairs:excl auroc": 1,
+  "semeval_selfpairs:excl ci95": 2,
+  "semeval_selfpairs:n": 1,
+  "semeval_selfpairs:n_self": 1,
+  "semeval_selfpairs:self positives": 1,
+  "m3b:all sources auroc": 1,
+  "m3b:no self pairs auroc": 1,
+  "drugbank_lookup:auroc_within": 2,
+  "drugbank_lookup:auroc": 2,
+  "kappa_weighting:drugbank_within": 1,
+  "exp5:grid value": 1,
+  "exp5:grid lo95": 1,
+  "exp5:grid hi95": 1,
+  "e8:names older_primary primary": 1,
+  "e8:names older_primary min": 1,
+  "e8:names older_primary max": 1,
+  "e8:names older_primary n_prompts": 1,
+  "e8:names older_primary stated range low": 1,
+  "e8:names older_primary stated range high": 1,
+  "hero:Qwen range cohort drugs": 1,
+  "hero:unseen pairs": 1,
+  "hero:unseen drugs": 1,
+  "d9:self pairs removed": 1,
+  "m3b:listed share of resolvable": 2,
+  "m3b:wilson lo": 2,
+  "m3b:wilson hi": 2,
+  "d9:one MedLine self-pair-excluded instance": 2,
+  "d9:medline listed share of resolvable": 2,
+  "d9:medline share stated": 2,
+  "m3b:negatives n without self pairs": 1,
+  "m3b:negatives n self pairs stored": 1,
+  "m3b:positives unchanged": 1,
+  "m3b:negatives listed share equals FPR": 1,
+  "m3b:positives listed share equals TPR": 1,
+  "m3b:random listed share": 1,
+  "m3b:random n": 1,
+  "hero:panel B label says instances": 2,
+  "hero:panel B share drawn at the bar end": 2,
+  "hero:panel B has no pair wording": 1,
+  "hero:Qwen cohort label drawn": 1,
+  "ood_cohorts:lo90": 18,
+  "ood_cohorts:hi90": 18,
+  "ood_cohorts:lo95": 18,
+  "ood_cohorts:hi95": 18,
+  "band rule:equivalence bands drawn in Fig 3": 1,
+  "band rule:thick 90% bars drawn in Fig 3": 1,
+  "decisions:H2a ratio": 1,
+  "decisions:H2b median": 1,
+  "decisions:H2b min": 1,
+  "decisions:H2b max": 1,
+  "fig4 panel C:arrows drawn, one per row": 1,
+  "classshortcut:b2mixed:value": 2,
+  "classshortcut:b2mixed:lo95": 2,
+  "classshortcut:b2mixed:hi95": 2,
+  "classshortcut:b2mixed:lo90": 2,
+  "classshortcut:b2mixed:hi90": 2,
+  "decisions:H1-novel": 1,
+  "e7:a:novel:point": 1,
+  "e7:b:novel:point": 1,
+  "e7:b:older_primary:point": 1,
+  "e8:oracle:novel:point": 1,
+  "e8:oracle==evidence:value": 2,
+  "e8:oracle==evidence:lo95": 2,
+  "e8:oracle==evidence:hi95": 2,
+  "e8:oracle==evidence:lo90": 2,
+  "e8:oracle==evidence:hi90": 2,
+  "e8:oracle:older_primary:point": 1,
+  "post8:e8 tier A:value": 2,
+  "post8:e8 tier A:lo95": 2,
+  "post8:e8 tier A:hi95": 2,
+  "post8:e8 tier A:lo90": 2,
+  "post8:e8 tier A:hi90": 2,
+  "post8:C-auto flagged positives dropped, Older-primary": 1,
+  "post8:C-auto flagged positives dropped, Novel": 1,
+  "post8:screen rule flags, Older-primary": 1,
+  "post8:screen rule flags, Novel": 1,
+  "e8:maskedoracle:novel:point": 1,
+  "e8:maskedoracle:older_primary:point": 1,
+  "e8:wrongoracle:novel:point": 1,
+  "e8:wrongoracle:older_primary:point": 1,
+  "e8:redactedoracle:novel:point": 1,
+  "post8:redacted qwen": 2,
+  "e8:redactedoracle:older_primary:point": 1,
+  "e7:c:novel:point": 1,
+  "classshortcut:E7c:value": 2,
+  "classshortcut:E7c:lo95": 2,
+  "classshortcut:E7c:hi95": 2,
+  "classshortcut:E7c:lo90": 2,
+  "classshortcut:E7c:hi90": 2,
+  "e7:c:older_primary:point": 1,
+  "classshortcut:E7c_within:value": 2,
+  "classshortcut:E7c_within:lo95": 2,
+  "classshortcut:E7c_within:hi95": 2,
+  "classshortcut:E7c_within:lo90": 2,
+  "classshortcut:E7c_within:hi90": 2,
+  "e7:d:novel:point": 1,
+  "classshortcut:E7d:value": 2,
+  "classshortcut:E7d:lo95": 2,
+  "classshortcut:E7d:hi95": 2,
+  "classshortcut:E7d:lo90": 2,
+  "classshortcut:E7d:hi90": 2,
+  "e7:d:older_primary:point": 1,
+  "e7:e:novel:point": 1,
+  "classshortcut:E7e:value": 2,
+  "classshortcut:E7e:lo95": 2,
+  "classshortcut:E7e:hi95": 2,
+  "classshortcut:E7e:lo90": 2,
+  "classshortcut:E7e:hi90": 2,
+  "e7:e:older_primary:point": 1,
+  "e8:names:novel:point": 5,
+  "e8:names primary": 2,
+  "e8:names min": 2,
+  "e8:names max": 2,
+  "e8:names:older_primary:point": 5,
+  "e8:contam:novel:point": 1,
+  "e8:contam:older_primary:point": 1,
+  "e8:other:novel:point": 1,
+  "e8:other:older_primary:point": 1,
+  "e8:clean:novel:point": 1,
+  "e8:clean:older_primary:point": 1,
+  "e7:drugbank_within": 3,
+  "drugbank_lookup:novel within": 1,
+  "fig4:ideal reader pooled AUROC drawn at 0.785": 1,
+  "fig4:rows marked not run in Older-primary": 1,
+  "classshortcut:tpr difference": 2,
+  "e8:stem difference": 1,
+  "post8:e9 f1": 40,
+  "post8:e9 ratio_old": 1,
+  "post8:e9 n_upper": 1,
+  "e9:rho": 1,
+  "e9:rho novel": 1,
+  "e9:upper_at_most_bound": 1,
+  "e9:external f1": 1,
+  "e9:masked f1": 2,
+  "fig5 panel:leaders drawn to masked diamonds": 1,
+  "ga:font is Arial, Helvetica or a metric-compatible clone": 1,
+  "ga:with-self-pairs value is 0.525": 1,
+  "ga:encoder leads on SemEval labels": 1,
+  "ga:drawn series are the encoder and DrugBank only": 1,
+  "ga:encoder label text": 1,
+  "ga:drugbank label text": 1,
+  "ga:all intervals inside the axis": 1,
+  "ga:intervals drawn for every plotted point": 1,
+  "ga:interval segments in the artwork": 1,
+  "ga:SemEval-trained encoder left drawn lo95": 1,
+  "ga:SemEval-trained encoder left interval brackets the point": 1,
+  "ga:SemEval-trained encoder right drawn lo95": 1,
+  "ga:SemEval-trained encoder right interval brackets the point": 1,
+  "ga:DrugBank left drawn lo95": 1,
+  "ga:DrugBank left interval brackets the point": 1,
+  "ga:DrugBank right drawn lo95": 1,
+  "ga:DrugBank right interval brackets the point": 1,
+  "ga:no range bars drawn": 1,
+  "ga:end labels at least 36 px": 1,
+  "ga:title size px": 1,
+  "ga:line width px": 1,
+  "ga:title fits one line within the canvas": 1,
+  "ga:caveat is not drawn in the image": 1,
+  "ga:width px": 1,
+  "ga:height px": 1,
+  "ga:aspect ratio 2.50": 1,
+  "ga:text inside canvas Different drugs and ": 1,
+  "ga:text inside canvas DrugBank SemEval val": 1,
+  "ga:oracle line drawn in the artwork": 1,
+  "ga:self-pair convention drawn in the artwork": 1,
+  "ga:column subtitles say pooled and within-drug": 1
+ },
+ "checks_paperfigs_cells": {
+  "seed_aggregated": 44,
+  "two_way_ci": 0,
+  "older_clean_pooled": 0,
+  "per_job": 0,
+  "disjoint": 8
+ },
+ "ledger": [
+  {
+   "kind": "tables:baselines auroc",
+   "where": "novel partner_frequency_prior",
+   "computed": 0.5081780055917987,
+   "stored": 0.508178
+  },
+  {
+   "kind": "tables:baselines auroc",
+   "where": "novel novel_drug_prior",
+   "computed": 0.6428937558247902,
+   "stored": 0.642894
+  },
+  {
+   "kind": "tables:baselines auroc",
+   "where": "older partner_frequency_prior",
+   "computed": 0.5,
+   "stored": 0.5
+  },
+  {
+   "kind": "fig1:Older partner-frequency prior under partner matching is 0.500",
+   "where": "baselines.json older",
+   "computed": 0.5,
+   "stored": 0.5
+  },
+  {
+   "kind": "tables:baselines auroc",
+   "where": "older novel_drug_prior",
+   "computed": 0.6210139698597775,
+   "stored": 0.621014
+  },
+  {
+   "kind": "ood_summary:min_year",
+   "where": "Novel first year",
+   "computed": 2020.0,
+   "stored": 2020.0
+  },
+  {
+   "kind": "ood_summary:n_pairs",
+   "where": "Novel pairs",
+   "computed": 438.0,
+   "stored": 438.0
+  },
+  {
+   "kind": "ood_summary:n_drugs",
+   "where": "Novel drugs",
+   "computed": 48.0,
+   "stored": 48.0
+  },
+  {
+   "kind": "ood_old_summary:n_pairs",
+   "where": "Older pairs",
+   "computed": 1944.0,
+   "stored": 1944.0
+  },
+  {
+   "kind": "ood_old_summary:n_drugs",
+   "where": "Older drugs",
+   "computed": 135.0,
+   "stored": 135.0
+  },
+  {
+   "kind": "e9:n_models",
+   "where": "panel size",
+   "computed": 20.0,
+   "stored": 20.0
+  },
+  {
+   "kind": "r2a_seen:n_pairs overlap",
+   "where": "r2a vs c2 overlap",
+   "computed": 4643.0,
+   "stored": 4643.0
+  },
+  {
+   "kind": "r2a_seen:n_pairs meta",
+   "where": "r2a vs c2 seen meta",
+   "computed": 4643.0,
+   "stored": 4643.0
+  },
+  {
+   "kind": "r2a_seen:n_pairs row",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 4643.0,
+   "stored": 4643.0
+  },
+  {
+   "kind": "r2a_seen:n_positive",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 1542.0,
+   "stored": 1542.0
+  },
+  {
+   "kind": "r2a_seen:n_anchor_drugs",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 299.0,
+   "stored": 299.0
+  },
+  {
+   "kind": "r2a_seen:n_seeds",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 5.0,
+   "stored": 5.0
+  },
+  {
+   "kind": "r2a_seen:n_draws",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 1000.0,
+   "stored": 1000.0
+  },
+  {
+   "kind": "r2a_seen:seed-mean AUROC within 0.02 of mean per-seed AUROC",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 0.45805389422753845,
+   "stored": 0.4554801424635441
+  },
+  {
+   "kind": "r2a_seen:c2 copy value",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 0.4554801424635441,
+   "stored": 0.45548
+  },
+  {
+   "kind": "r2a_seen:c2 copy lo95",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 0.4110309074563677,
+   "stored": 0.411031
+  },
+  {
+   "kind": "r2a_seen:c2 copy hi95",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 0.4940942093602182,
+   "stored": 0.494094
+  },
+  {
+   "kind": "r2a_seen:c2 copy lo90",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 0.41928729932456565,
+   "stored": 0.419287
+  },
+  {
+   "kind": "r2a_seen:c2 copy hi90",
+   "where": "r2a seen names_only b2mixed",
+   "computed": 0.48688510431240295,
+   "stored": 0.486885
+  },
+  {
+   "kind": "r2a_seen:n_pairs row",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 4643.0,
+   "stored": 4643.0
+  },
+  {
+   "kind": "r2a_seen:n_positive",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 1542.0,
+   "stored": 1542.0
+  },
+  {
+   "kind": "r2a_seen:n_anchor_drugs",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 299.0,
+   "stored": 299.0
+  },
+  {
+   "kind": "r2a_seen:n_seeds",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 5.0,
+   "stored": 5.0
+  },
+  {
+   "kind": "r2a_seen:n_draws",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 1000.0,
+   "stored": 1000.0
+  },
+  {
+   "kind": "r2a_seen:seed-mean AUROC within 0.02 of mean per-seed AUROC",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 0.45323566964585715,
+   "stored": 0.4348162085881325
+  },
+  {
+   "kind": "r2a_seen:c2 copy value",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 0.4348162085881325,
+   "stored": 0.434816
+  },
+  {
+   "kind": "r2a_seen:c2 copy lo95",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 0.39541386749114177,
+   "stored": 0.395414
+  },
+  {
+   "kind": "r2a_seen:c2 copy hi95",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 0.47307874440623376,
+   "stored": 0.473079
+  },
+  {
+   "kind": "r2a_seen:c2 copy lo90",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 0.4022776873064833,
+   "stored": 0.402278
+  },
+  {
+   "kind": "r2a_seen:c2 copy hi90",
+   "where": "r2a seen names_only b2sentence",
+   "computed": 0.46803148921111604,
+   "stored": 0.468031
+  },
+  {
+   "kind": "c2_seen:drugbank n_draws",
+   "where": "DrugBank seen reference",
+   "computed": 1000.0,
+   "stored": 1000.0
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/biomedbert ood_empty novel (component of pooled)",
+   "computed": 0.4900924702774108,
+   "stored": 0.490092
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/biomedbert oodold_empty older_clean (component of pooled)",
+   "computed": 0.45311894614490505,
+   "stored": 0.453119
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/biomedbert ood_empty novel (component of pooled)",
+   "computed": 0.523117569352708,
+   "stored": 0.523118
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/biomedbert oodold_empty older_clean (component of pooled)",
+   "computed": 0.451762882603642,
+   "stored": 0.451763
+  },
+  {
+   "kind": "decisions:H1-pooled:value",
+   "where": "H1-pooled",
+   "computed": 0.4608886636256124,
+   "stored": 0.460889
+  },
+  {
+   "kind": "decisions:H1-pooled:lo95",
+   "where": "H1-pooled",
+   "computed": 0.3993433467809793,
+   "stored": 0.399343
+  },
+  {
+   "kind": "decisions:H1-pooled:hi95",
+   "where": "H1-pooled",
+   "computed": 0.5200927220444782,
+   "stored": 0.520093
+  },
+  {
+   "kind": "decisions:H1-pooled:lo90",
+   "where": "H1-pooled",
+   "computed": 0.4099737046145899,
+   "stored": 0.409974
+  },
+  {
+   "kind": "decisions:H1-pooled:hi90",
+   "where": "H1-pooled",
+   "computed": 0.5112911826967449,
+   "stored": 0.511291
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/biomedbert ood_names novel (component of pooled)",
+   "computed": 0.5138705416116248,
+   "stored": 0.513871
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/biomedbert oodold_names older_clean (component of pooled)",
+   "computed": 0.46280511429678417,
+   "stored": 0.462805
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/bertbase ood_empty novel (component of pooled)",
+   "computed": 0.5257595772787318,
+   "stored": 0.52576
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/bertbase oodold_empty older_clean (component of pooled)",
+   "computed": 0.47655947307245256,
+   "stored": 0.476559
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/bertbase ood_empty novel (component of pooled)",
+   "computed": 0.5138705416116248,
+   "stored": 0.513871
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/bertbase oodold_empty older_clean (component of pooled)",
+   "computed": 0.5077489345215033,
+   "stored": 0.507749
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/bertbase ood_names novel (component of pooled)",
+   "computed": 0.5204755614266843,
+   "stored": 0.520476
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/bertbase oodold_names older_clean (component of pooled)",
+   "computed": 0.5135606354126308,
+   "stored": 0.513561
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/biobert ood_empty novel (component of pooled)",
+   "computed": 0.48877146631439894,
+   "stored": 0.488771
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/biobert oodold_empty older_clean (component of pooled)",
+   "computed": 0.48237117396358,
+   "stored": 0.482371
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/biobert ood_empty novel (component of pooled)",
+   "computed": 0.4966974900924703,
+   "stored": 0.496697
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/biobert oodold_empty older_clean (component of pooled)",
+   "computed": 0.4999031383184812,
+   "stored": 0.499903
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/biobert ood_names novel (component of pooled)",
+   "computed": 0.5138705416116248,
+   "stored": 0.513871
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/biobert oodold_names older_clean (component of pooled)",
+   "computed": 0.512979465323518,
+   "stored": 0.512979
+  },
+  {
+   "kind": "read",
+   "where": "exp5_dissociation.json auroc[0] (all pairs, unresolvable counted as not listed)",
+   "value": 0.524599
+  },
+  {
+   "kind": "exp5:grid DrugBank",
+   "where": "SemEval DrugBank",
+   "computed": 0.524599,
+   "stored": 0.524599
+  },
+  {
+   "kind": "semeval_selfpairs:all auroc",
+   "where": "all pairs vs exp5 auroc[0]",
+   "computed": 0.524599,
+   "stored": 0.524599
+  },
+  {
+   "kind": "semeval_selfpairs:excl auroc",
+   "where": "excluding self pairs",
+   "computed": 0.480261,
+   "stored": 0.480261
+  },
+  {
+   "kind": "semeval_selfpairs:excl ci95",
+   "where": "excluding self pairs",
+   "computed": 0.438568,
+   "stored": 0.438568
+  },
+  {
+   "kind": "semeval_selfpairs:excl ci95",
+   "where": "excluding self pairs",
+   "computed": 0.52081,
+   "stored": 0.52081
+  },
+  {
+   "kind": "semeval_selfpairs:n",
+   "where": "excluding self pairs",
+   "computed": 2521.0,
+   "stored": 2521.0
+  },
+  {
+   "kind": "semeval_selfpairs:n_self",
+   "where": "self pairs removed",
+   "computed": 289.0,
+   "stored": 289.0
+  },
+  {
+   "kind": "semeval_selfpairs:self positives",
+   "where": "self pairs positive",
+   "computed": 0.0,
+   "stored": 0.0
+  },
+  {
+   "kind": "m3b:all sources auroc",
+   "where": "m3b vs exp5 all pairs",
+   "computed": 0.524599,
+   "stored": 0.524599
+  },
+  {
+   "kind": "m3b:no self pairs auroc",
+   "where": "m3b vs self-pair file",
+   "computed": 0.480261,
+   "stored": 0.480261
+  },
+  {
+   "kind": "drugbank_lookup:auroc_within",
+   "where": "novel",
+   "computed": 0.7285336856010568,
+   "stored": 0.728534
+  },
+  {
+   "kind": "drugbank_lookup:auroc",
+   "where": "novel",
+   "computed": 0.7665657036346691,
+   "stored": 0.766566
+  },
+  {
+   "kind": "drugbank_lookup:auroc_within",
+   "where": "older_clean",
+   "computed": 0.6412243316543975,
+   "stored": 0.641224
+  },
+  {
+   "kind": "drugbank_lookup:auroc",
+   "where": "older_clean",
+   "computed": 0.679928158176577,
+   "stored": 0.679928
+  },
+  {
+   "kind": "kappa_weighting:drugbank_within",
+   "where": "H1-pooled DrugBank",
+   "computed": 0.6523906065213718,
+   "stored": 0.652391
+  },
+  {
+   "kind": "exp5:grid value",
+   "where": "llm-qwen-names (names only)",
+   "computed": 0.49519101660019293,
+   "stored": 0.495191
+  },
+  {
+   "kind": "exp5:grid lo95",
+   "where": "llm-qwen-names (names only)",
+   "computed": 0.4367922843167408,
+   "stored": 0.436792
+  },
+  {
+   "kind": "exp5:grid hi95",
+   "where": "llm-qwen-names (names only)",
+   "computed": 0.5519212654938144,
+   "stored": 0.551921
+  },
+  {
+   "kind": "e8:names older_primary primary",
+   "where": "hero Qwen",
+   "computed": 0.5839066082968521,
+   "stored": 0.5839066082968521
+  },
+  {
+   "kind": "e8:names older_primary min",
+   "where": "hero Qwen",
+   "computed": 0.518970189701897,
+   "stored": 0.518970189701897
+  },
+  {
+   "kind": "e8:names older_primary max",
+   "where": "hero Qwen",
+   "computed": 0.6068376068376068,
+   "stored": 0.6068376068376068
+  },
+  {
+   "kind": "e8:names older_primary n_prompts",
+   "where": "hero Qwen",
+   "computed": 5.0,
+   "stored": 5.0
+  },
+  {
+   "kind": "e8:names older_primary stated range low",
+   "where": "hero Qwen stated range",
+   "computed": 0.519,
+   "stored": 0.519
+  },
+  {
+   "kind": "e8:names older_primary stated range high",
+   "where": "hero Qwen stated range",
+   "computed": 0.607,
+   "stored": 0.607
+  },
+  {
+   "kind": "hero:Qwen range cohort drugs",
+   "where": "Older-primary cohort drug count",
+   "computed": 121.0,
+   "stored": 121.0
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "names/biomistral ood novel (component of pooled)",
+   "computed": 0.5178335535006605,
+   "stored": 0.517834
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "names/biomistral oodold older_clean (component of pooled)",
+   "computed": 0.5174351026733824,
+   "stored": 0.517435
+  },
+  {
+   "kind": "hero:unseen pairs",
+   "where": "Novel plus Older-clean pairs",
+   "computed": 2270.0,
+   "stored": 2270.0
+  },
+  {
+   "kind": "hero:unseen drugs",
+   "where": "Novel plus Older-clean drugs",
+   "computed": 176.0,
+   "stored": 176.0
+  },
+  {
+   "kind": "d9:self pairs removed",
+   "where": "d9 vs semeval_selfpairs",
+   "computed": 289.0,
+   "stored": 289.0
+  },
+  {
+   "kind": "m3b:listed share of resolvable",
+   "where": "SemEval negatives",
+   "computed": 0.7632827324478179,
+   "stored": 0.763283
+  },
+  {
+   "kind": "m3b:wilson lo",
+   "where": "SemEval negatives",
+   "computed": 0.7446684409478215,
+   "stored": 0.744668
+  },
+  {
+   "kind": "m3b:wilson hi",
+   "where": "SemEval negatives",
+   "computed": 0.7809391965780808,
+   "stored": 0.780939
+  },
+  {
+   "kind": "d9:one MedLine self-pair-excluded instance",
+   "where": "SemEval negatives MedLine",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "d9:medline listed share of resolvable",
+   "where": "SemEval negatives MedLine",
+   "computed": 0.5153061224489796,
+   "stored": 0.515306
+  },
+  {
+   "kind": "d9:medline share stated",
+   "where": "SemEval negatives MedLine stated",
+   "computed": 0.515,
+   "stored": 0.515
+  },
+  {
+   "kind": "m3b:listed share of resolvable",
+   "where": "SemEval positives",
+   "computed": 0.7265193370165746,
+   "stored": 0.726519
+  },
+  {
+   "kind": "m3b:wilson lo",
+   "where": "SemEval positives",
+   "computed": 0.6784028706081047,
+   "stored": 0.678403
+  },
+  {
+   "kind": "m3b:wilson hi",
+   "where": "SemEval positives",
+   "computed": 0.7698787444080313,
+   "stored": 0.769879
+  },
+  {
+   "kind": "d9:one MedLine self-pair-excluded instance",
+   "where": "SemEval positives MedLine",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "d9:medline listed share of resolvable",
+   "where": "SemEval positives MedLine",
+   "computed": 0.5774647887323944,
+   "stored": 0.577465
+  },
+  {
+   "kind": "d9:medline share stated",
+   "where": "SemEval positives MedLine stated",
+   "computed": 0.577,
+   "stored": 0.577
+  },
+  {
+   "kind": "m3b:negatives n without self pairs",
+   "where": "self pairs removed from negatives",
+   "computed": 289.0,
+   "stored": 289.0
+  },
+  {
+   "kind": "m3b:negatives n self pairs stored",
+   "where": "self pairs",
+   "computed": 289.0,
+   "stored": 289.0
+  },
+  {
+   "kind": "m3b:positives unchanged",
+   "where": "self pairs are all negatives",
+   "computed": 371.0,
+   "stored": 371.0
+  },
+  {
+   "kind": "m3b:negatives listed share equals FPR",
+   "where": "negatives without self pairs",
+   "computed": 0.7483720930232558,
+   "stored": 0.748372
+  },
+  {
+   "kind": "m3b:positives listed share equals TPR",
+   "where": "positives",
+   "computed": 0.7088948787061995,
+   "stored": 0.708895
+  },
+  {
+   "kind": "m3b:random listed share",
+   "where": "random vocabulary pairs",
+   "computed": 0.35498793242156074,
+   "stored": 0.354988
+  },
+  {
+   "kind": "m3b:random n",
+   "where": "random vocabulary pairs",
+   "computed": 10000.0,
+   "stored": 10000.0
+  },
+  {
+   "kind": "hero:panel B label says instances",
+   "where": "SemEval negatives",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "hero:panel B share drawn at the bar end",
+   "where": "SemEval negatives",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "hero:panel B label says instances",
+   "where": "SemEval positives",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "hero:panel B share drawn at the bar end",
+   "where": "SemEval positives",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "hero:panel B has no pair wording",
+   "where": "panel B text",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "hero:Qwen cohort label drawn",
+   "where": "panel A",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ood_summary:min_year",
+   "where": "Novel first year",
+   "computed": 2020.0,
+   "stored": 2020.0
+  },
+  {
+   "kind": "ood_summary:n_pairs",
+   "where": "Novel pairs",
+   "computed": 438.0,
+   "stored": 438.0
+  },
+  {
+   "kind": "ood_summary:n_drugs",
+   "where": "Novel drugs",
+   "computed": 48.0,
+   "stored": 48.0
+  },
+  {
+   "kind": "ood_old_summary:n_pairs",
+   "where": "Older pairs",
+   "computed": 1944.0,
+   "stored": 1944.0
+  },
+  {
+   "kind": "ood_old_summary:n_drugs",
+   "where": "Older drugs",
+   "computed": 135.0,
+   "stored": 135.0
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/biomedbert ood_empty novel",
+   "computed": 0.4900924702774108,
+   "stored": 0.490092
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2sentence/biomedbert ood_empty novel",
+   "computed": 0.38896174297180636,
+   "stored": 0.388962
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2sentence/biomedbert ood_empty novel",
+   "computed": 0.5954232910520576,
+   "stored": 0.595423
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2sentence/biomedbert ood_empty novel",
+   "computed": 0.36971932428303284,
+   "stored": 0.369719
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2sentence/biomedbert ood_empty novel",
+   "computed": 0.6123691892487333,
+   "stored": 0.612369
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/biomedbert ood_empty novel",
+   "computed": 0.523117569352708,
+   "stored": 0.523118
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2mixed/biomedbert ood_empty novel",
+   "computed": 0.41132986572500424,
+   "stored": 0.41133
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2mixed/biomedbert ood_empty novel",
+   "computed": 0.6257255088052304,
+   "stored": 0.625726
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2mixed/biomedbert ood_empty novel",
+   "computed": 0.39720921719361113,
+   "stored": 0.397209
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2mixed/biomedbert ood_empty novel",
+   "computed": 0.6503325570035414,
+   "stored": 0.650333
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/biomedbert ood_names novel",
+   "computed": 0.5138705416116248,
+   "stored": 0.513871
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b1names/biomedbert ood_names novel",
+   "computed": 0.40222689116311494,
+   "stored": 0.402227
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b1names/biomedbert ood_names novel",
+   "computed": 0.616531166744196,
+   "stored": 0.616531
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b1names/biomedbert ood_names novel",
+   "computed": 0.38390242921492923,
+   "stored": 0.383902
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b1names/biomedbert ood_names novel",
+   "computed": 0.6353015952143569,
+   "stored": 0.635302
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/biomedbert oodold_empty older_clean",
+   "computed": 0.45311894614490505,
+   "stored": 0.453119
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2sentence/biomedbert oodold_empty older_clean",
+   "computed": 0.3977617897449075,
+   "stored": 0.397762
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2sentence/biomedbert oodold_empty older_clean",
+   "computed": 0.5078360890621534,
+   "stored": 0.507836
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2sentence/biomedbert oodold_empty older_clean",
+   "computed": 0.3907585111581779,
+   "stored": 0.390759
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2sentence/biomedbert oodold_empty older_clean",
+   "computed": 0.5181532083549139,
+   "stored": 0.518153
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/biomedbert oodold_empty older_clean",
+   "computed": 0.451762882603642,
+   "stored": 0.451763
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2mixed/biomedbert oodold_empty older_clean",
+   "computed": 0.3948429303217895,
+   "stored": 0.394843
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2mixed/biomedbert oodold_empty older_clean",
+   "computed": 0.5092207680223526,
+   "stored": 0.509221
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2mixed/biomedbert oodold_empty older_clean",
+   "computed": 0.38889511563623985,
+   "stored": 0.388895
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2mixed/biomedbert oodold_empty older_clean",
+   "computed": 0.5180861422723501,
+   "stored": 0.518086
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/biomedbert oodold_names older_clean",
+   "computed": 0.46280511429678417,
+   "stored": 0.462805
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b1names/biomedbert oodold_names older_clean",
+   "computed": 0.4075445007651545,
+   "stored": 0.407545
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b1names/biomedbert oodold_names older_clean",
+   "computed": 0.5120850053649122,
+   "stored": 0.512085
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b1names/biomedbert oodold_names older_clean",
+   "computed": 0.397920858615095,
+   "stored": 0.397921
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b1names/biomedbert oodold_names older_clean",
+   "computed": 0.5207160499337256,
+   "stored": 0.520716
+  },
+  {
+   "kind": "ood_summary:min_year",
+   "where": "Novel first year",
+   "computed": 2020.0,
+   "stored": 2020.0
+  },
+  {
+   "kind": "ood_summary:n_pairs",
+   "where": "Novel pairs",
+   "computed": 438.0,
+   "stored": 438.0
+  },
+  {
+   "kind": "ood_summary:n_drugs",
+   "where": "Novel drugs",
+   "computed": 48.0,
+   "stored": 48.0
+  },
+  {
+   "kind": "ood_old_summary:n_pairs",
+   "where": "Older pairs",
+   "computed": 1944.0,
+   "stored": 1944.0
+  },
+  {
+   "kind": "ood_old_summary:n_drugs",
+   "where": "Older drugs",
+   "computed": 135.0,
+   "stored": 135.0
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/bertbase ood_empty novel",
+   "computed": 0.5257595772787318,
+   "stored": 0.52576
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2sentence/bertbase ood_empty novel",
+   "computed": 0.4144823440646149,
+   "stored": 0.414482
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2sentence/bertbase ood_empty novel",
+   "computed": 0.6320662955219526,
+   "stored": 0.632066
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2sentence/bertbase ood_empty novel",
+   "computed": 0.39022656888771495,
+   "stored": 0.390227
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2sentence/bertbase ood_empty novel",
+   "computed": 0.6560434978685024,
+   "stored": 0.656043
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/bertbase ood_empty novel",
+   "computed": 0.5138705416116248,
+   "stored": 0.513871
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2mixed/bertbase ood_empty novel",
+   "computed": 0.40241982367978846,
+   "stored": 0.40242
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2mixed/bertbase ood_empty novel",
+   "computed": 0.6101913199794556,
+   "stored": 0.610191
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2mixed/bertbase ood_empty novel",
+   "computed": 0.38573699256718125,
+   "stored": 0.385737
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2mixed/bertbase ood_empty novel",
+   "computed": 0.6436504424778761,
+   "stored": 0.64365
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/bertbase ood_names novel",
+   "computed": 0.5204755614266843,
+   "stored": 0.520476
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b1names/bertbase ood_names novel",
+   "computed": 0.4174565335843075,
+   "stored": 0.417457
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b1names/bertbase ood_names novel",
+   "computed": 0.625675349318613,
+   "stored": 0.625675
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b1names/bertbase ood_names novel",
+   "computed": 0.3932907507850414,
+   "stored": 0.393291
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b1names/bertbase ood_names novel",
+   "computed": 0.6482555470916833,
+   "stored": 0.648256
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/bertbase oodold_empty older_clean",
+   "computed": 0.47655947307245256,
+   "stored": 0.476559
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2sentence/bertbase oodold_empty older_clean",
+   "computed": 0.4319257723547535,
+   "stored": 0.431926
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2sentence/bertbase oodold_empty older_clean",
+   "computed": 0.5297587540431042,
+   "stored": 0.529759
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2sentence/bertbase oodold_empty older_clean",
+   "computed": 0.42326334848150743,
+   "stored": 0.423263
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2sentence/bertbase oodold_empty older_clean",
+   "computed": 0.5382525864085779,
+   "stored": 0.538253
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/bertbase oodold_empty older_clean",
+   "computed": 0.5077489345215033,
+   "stored": 0.507749
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2mixed/bertbase oodold_empty older_clean",
+   "computed": 0.4563203253887777,
+   "stored": 0.45632
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2mixed/bertbase oodold_empty older_clean",
+   "computed": 0.5577107333645597,
+   "stored": 0.557711
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2mixed/bertbase oodold_empty older_clean",
+   "computed": 0.4469967230154033,
+   "stored": 0.446997
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2mixed/bertbase oodold_empty older_clean",
+   "computed": 0.5672390185623077,
+   "stored": 0.567239
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/bertbase oodold_names older_clean",
+   "computed": 0.5135606354126308,
+   "stored": 0.513561
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b1names/bertbase oodold_names older_clean",
+   "computed": 0.46023268518830357,
+   "stored": 0.460233
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b1names/bertbase oodold_names older_clean",
+   "computed": 0.5616018493154947,
+   "stored": 0.561602
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b1names/bertbase oodold_names older_clean",
+   "computed": 0.4507491098375458,
+   "stored": 0.450749
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b1names/bertbase oodold_names older_clean",
+   "computed": 0.5711083000358705,
+   "stored": 0.571108
+  },
+  {
+   "kind": "ood_summary:min_year",
+   "where": "Novel first year",
+   "computed": 2020.0,
+   "stored": 2020.0
+  },
+  {
+   "kind": "ood_summary:n_pairs",
+   "where": "Novel pairs",
+   "computed": 438.0,
+   "stored": 438.0
+  },
+  {
+   "kind": "ood_summary:n_drugs",
+   "where": "Novel drugs",
+   "computed": 48.0,
+   "stored": 48.0
+  },
+  {
+   "kind": "ood_old_summary:n_pairs",
+   "where": "Older pairs",
+   "computed": 1944.0,
+   "stored": 1944.0
+  },
+  {
+   "kind": "ood_old_summary:n_drugs",
+   "where": "Older drugs",
+   "computed": 135.0,
+   "stored": 135.0
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/biobert ood_empty novel",
+   "computed": 0.48877146631439894,
+   "stored": 0.488771
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2sentence/biobert ood_empty novel",
+   "computed": 0.37427568754774637,
+   "stored": 0.374276
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2sentence/biobert ood_empty novel",
+   "computed": 0.6005158003822239,
+   "stored": 0.600516
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2sentence/biobert ood_empty novel",
+   "computed": 0.3554428858379212,
+   "stored": 0.355443
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2sentence/biobert ood_empty novel",
+   "computed": 0.6237367065415101,
+   "stored": 0.623737
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/biobert ood_empty novel",
+   "computed": 0.4966974900924703,
+   "stored": 0.496697
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2mixed/biobert ood_empty novel",
+   "computed": 0.3844395872196366,
+   "stored": 0.38444
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2mixed/biobert ood_empty novel",
+   "computed": 0.6090444324823552,
+   "stored": 0.609044
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2mixed/biobert ood_empty novel",
+   "computed": 0.36358078063241106,
+   "stored": 0.363581
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2mixed/biobert ood_empty novel",
+   "computed": 0.628757556980892,
+   "stored": 0.628758
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/biobert ood_names novel",
+   "computed": 0.5138705416116248,
+   "stored": 0.513871
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b1names/biobert ood_names novel",
+   "computed": 0.4115029740316263,
+   "stored": 0.411503
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b1names/biobert ood_names novel",
+   "computed": 0.6139202499253386,
+   "stored": 0.61392
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b1names/biobert ood_names novel",
+   "computed": 0.3968931494986013,
+   "stored": 0.396893
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b1names/biobert ood_names novel",
+   "computed": 0.6344725954660098,
+   "stored": 0.634473
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2sentence/biobert oodold_empty older_clean",
+   "computed": 0.48237117396358,
+   "stored": 0.482371
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2sentence/biobert oodold_empty older_clean",
+   "computed": 0.43089119589485153,
+   "stored": 0.430891
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2sentence/biobert oodold_empty older_clean",
+   "computed": 0.5343108643675143,
+   "stored": 0.534311
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2sentence/biobert oodold_empty older_clean",
+   "computed": 0.4202444304834408,
+   "stored": 0.420244
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2sentence/biobert oodold_empty older_clean",
+   "computed": 0.5415901430271302,
+   "stored": 0.54159
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b2mixed/biobert oodold_empty older_clean",
+   "computed": 0.4999031383184812,
+   "stored": 0.499903
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b2mixed/biobert oodold_empty older_clean",
+   "computed": 0.4478427392589817,
+   "stored": 0.447843
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b2mixed/biobert oodold_empty older_clean",
+   "computed": 0.5453084613858282,
+   "stored": 0.545308
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b2mixed/biobert oodold_empty older_clean",
+   "computed": 0.43795984688087375,
+   "stored": 0.43796
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b2mixed/biobert oodold_empty older_clean",
+   "computed": 0.5554860665668876,
+   "stored": 0.555486
+  },
+  {
+   "kind": "ood_cohorts:auroc_within",
+   "where": "b1names/biobert oodold_names older_clean",
+   "computed": 0.512979465323518,
+   "stored": 0.512979
+  },
+  {
+   "kind": "ood_cohorts:lo90",
+   "where": "b1names/biobert oodold_names older_clean",
+   "computed": 0.4634126753460664,
+   "stored": 0.463413
+  },
+  {
+   "kind": "ood_cohorts:hi90",
+   "where": "b1names/biobert oodold_names older_clean",
+   "computed": 0.5590710236882466,
+   "stored": 0.559071
+  },
+  {
+   "kind": "ood_cohorts:lo95",
+   "where": "b1names/biobert oodold_names older_clean",
+   "computed": 0.45099515012451563,
+   "stored": 0.450995
+  },
+  {
+   "kind": "ood_cohorts:hi95",
+   "where": "b1names/biobert oodold_names older_clean",
+   "computed": 0.5701655653786873,
+   "stored": 0.570166
+  },
+  {
+   "kind": "band rule:equivalence bands drawn in Fig 3",
+   "where": "only Mixed-input BiomedBERT Older-clean",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "band rule:thick 90% bars drawn in Fig 3",
+   "where": "only Mixed-input BiomedBERT Older-clean",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "decisions:H2a ratio",
+   "where": "H2a",
+   "computed": 0.0278884,
+   "stored": 0.027888
+  },
+  {
+   "kind": "decisions:H2b median",
+   "where": "H2b",
+   "computed": 1.581049,
+   "stored": 1.581
+  },
+  {
+   "kind": "decisions:H2b min",
+   "where": "H2b",
+   "computed": 1.364451,
+   "stored": 1.364
+  },
+  {
+   "kind": "decisions:H2b max",
+   "where": "H2b",
+   "computed": 23.938622,
+   "stored": 23.939
+  },
+  {
+   "kind": "fig4 panel C:arrows drawn, one per row",
+   "where": "held-out cost arrows",
+   "computed": 4.0,
+   "stored": 4.0
+  },
+  {
+   "kind": "classshortcut:b2mixed:value",
+   "where": "novel",
+   "computed": 0.523117569352708,
+   "stored": 0.523117569352708
+  },
+  {
+   "kind": "classshortcut:b2mixed:lo95",
+   "where": "novel",
+   "computed": 0.39720921719361113,
+   "stored": 0.39720921719361113
+  },
+  {
+   "kind": "classshortcut:b2mixed:hi95",
+   "where": "novel",
+   "computed": 0.6503325570035414,
+   "stored": 0.6503325570035414
+  },
+  {
+   "kind": "classshortcut:b2mixed:lo90",
+   "where": "novel",
+   "computed": 0.41132986572500424,
+   "stored": 0.41132986572500424
+  },
+  {
+   "kind": "classshortcut:b2mixed:hi90",
+   "where": "novel",
+   "computed": 0.6257255088052304,
+   "stored": 0.6257255088052304
+  },
+  {
+   "kind": "classshortcut:b2mixed:value",
+   "where": "older_primary",
+   "computed": 0.4467375442985199,
+   "stored": 0.4467375442985199
+  },
+  {
+   "kind": "classshortcut:b2mixed:lo95",
+   "where": "older_primary",
+   "computed": 0.3810473904414738,
+   "stored": 0.3810473904414738
+  },
+  {
+   "kind": "classshortcut:b2mixed:hi95",
+   "where": "older_primary",
+   "computed": 0.5167457972598882,
+   "stored": 0.5167457972598882
+  },
+  {
+   "kind": "classshortcut:b2mixed:lo90",
+   "where": "older_primary",
+   "computed": 0.3887404453035018,
+   "stored": 0.3887404453035018
+  },
+  {
+   "kind": "classshortcut:b2mixed:hi90",
+   "where": "older_primary",
+   "computed": 0.508145627501141,
+   "stored": 0.508145627501141
+  },
+  {
+   "kind": "decisions:H1-novel",
+   "where": "b2mixed Novel",
+   "computed": 0.523117569352708,
+   "stored": 0.523118
+  },
+  {
+   "kind": "e7:a:novel:point",
+   "where": "E7a novel recomputed from a7 predictions",
+   "computed": 0.719990680335508,
+   "stored": 0.719990680335508
+  },
+  {
+   "kind": "e7:b:novel:point",
+   "where": "E7b novel recomputed from a7 predictions",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "e7:b:older_primary:point",
+   "where": "E7b older_primary recomputed from a7 predictions",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "e8:oracle:novel:point",
+   "where": "E8 oracle novel recomputed from a7 predictions",
+   "computed": 0.9735799207397622,
+   "stored": 0.9735799207397622
+  },
+  {
+   "kind": "e8:oracle==evidence:value",
+   "where": "novel",
+   "computed": 0.9735799207397622,
+   "stored": 0.9735799207397622
+  },
+  {
+   "kind": "e8:oracle==evidence:lo95",
+   "where": "novel",
+   "computed": 0.9162807243276639,
+   "stored": 0.9162807243276639
+  },
+  {
+   "kind": "e8:oracle==evidence:hi95",
+   "where": "novel",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "e8:oracle==evidence:lo90",
+   "where": "novel",
+   "computed": 0.9304324150737913,
+   "stored": 0.9304324150737913
+  },
+  {
+   "kind": "e8:oracle==evidence:hi90",
+   "where": "novel",
+   "computed": 0.9984991742361685,
+   "stored": 0.9984991742361685
+  },
+  {
+   "kind": "e8:oracle:older_primary:point",
+   "where": "E8 oracle older_primary recomputed from a7 predictions",
+   "computed": 0.9572649572649573,
+   "stored": 0.9572649572649573
+  },
+  {
+   "kind": "e8:oracle==evidence:value",
+   "where": "older_primary",
+   "computed": 0.9572649572649573,
+   "stored": 0.9572649572649573
+  },
+  {
+   "kind": "e8:oracle==evidence:lo95",
+   "where": "older_primary",
+   "computed": 0.9209152101434633,
+   "stored": 0.9209152101434633
+  },
+  {
+   "kind": "e8:oracle==evidence:hi95",
+   "where": "older_primary",
+   "computed": 0.9828097394273994,
+   "stored": 0.9828097394273994
+  },
+  {
+   "kind": "e8:oracle==evidence:lo90",
+   "where": "older_primary",
+   "computed": 0.9297679595519427,
+   "stored": 0.9297679595519427
+  },
+  {
+   "kind": "e8:oracle==evidence:hi90",
+   "where": "older_primary",
+   "computed": 0.9799939258511351,
+   "stored": 0.9799939258511351
+  },
+  {
+   "kind": "post8:e8 tier A:value",
+   "where": "novel",
+   "computed": 0.9735799207397622,
+   "stored": 0.97358
+  },
+  {
+   "kind": "post8:e8 tier A:lo95",
+   "where": "novel",
+   "computed": 0.9162807243276639,
+   "stored": 0.916281
+  },
+  {
+   "kind": "post8:e8 tier A:hi95",
+   "where": "novel",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "post8:e8 tier A:lo90",
+   "where": "novel",
+   "computed": 0.9304324150737913,
+   "stored": 0.930432
+  },
+  {
+   "kind": "post8:e8 tier A:hi90",
+   "where": "novel",
+   "computed": 0.9984991742361685,
+   "stored": 0.998499
+  },
+  {
+   "kind": "post8:e8 tier A:value",
+   "where": "older_primary",
+   "computed": 0.9572649572649573,
+   "stored": 0.957265
+  },
+  {
+   "kind": "post8:e8 tier A:lo95",
+   "where": "older_primary",
+   "computed": 0.9209152101434633,
+   "stored": 0.920915
+  },
+  {
+   "kind": "post8:e8 tier A:hi95",
+   "where": "older_primary",
+   "computed": 0.9828097394273994,
+   "stored": 0.98281
+  },
+  {
+   "kind": "post8:e8 tier A:lo90",
+   "where": "older_primary",
+   "computed": 0.9297679595519427,
+   "stored": 0.929768
+  },
+  {
+   "kind": "post8:e8 tier A:hi90",
+   "where": "older_primary",
+   "computed": 0.9799939258511351,
+   "stored": 0.979994
+  },
+  {
+   "kind": "post8:C-auto flagged positives dropped, Older-primary",
+   "where": "C-auto row label",
+   "computed": 37.0,
+   "stored": 37.0
+  },
+  {
+   "kind": "post8:C-auto flagged positives dropped, Novel",
+   "where": "C-auto row label",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "post8:screen rule flags, Older-primary",
+   "where": "C-auto row label",
+   "computed": 37.0,
+   "stored": 37.0
+  },
+  {
+   "kind": "post8:screen rule flags, Novel",
+   "where": "C-auto row label",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "e8:maskedoracle:novel:point",
+   "where": "E8 maskedoracle novel recomputed from a7 predictions",
+   "computed": 0.773447820343461,
+   "stored": 0.773447820343461
+  },
+  {
+   "kind": "e8:maskedoracle:older_primary:point",
+   "where": "E8 maskedoracle older_primary recomputed from a7 predictions",
+   "computed": 0.7899728997289973,
+   "stored": 0.7899728997289973
+  },
+  {
+   "kind": "e8:wrongoracle:novel:point",
+   "where": "E8 wrongoracle novel recomputed from a7 predictions",
+   "computed": 0.4715984147952444,
+   "stored": 0.4715984147952444
+  },
+  {
+   "kind": "e8:wrongoracle:older_primary:point",
+   "where": "E8 wrongoracle older_primary recomputed from a7 predictions",
+   "computed": 0.5138628309360017,
+   "stored": 0.5138628309360017
+  },
+  {
+   "kind": "e8:redactedoracle:novel:point",
+   "where": "E8 redactedoracle novel recomputed from a7 predictions",
+   "computed": 0.7305151915455746,
+   "stored": 0.7305151915455746
+  },
+  {
+   "kind": "post8:redacted qwen",
+   "where": "novel",
+   "computed": 0.7305151915455746,
+   "stored": 0.730515
+  },
+  {
+   "kind": "e8:redactedoracle:older_primary:point",
+   "where": "E8 redactedoracle older_primary recomputed from a7 predictions",
+   "computed": 0.6819887429643527,
+   "stored": 0.6819887429643527
+  },
+  {
+   "kind": "post8:redacted qwen",
+   "where": "older_primary",
+   "computed": 0.6819887429643527,
+   "stored": 0.681989
+  },
+  {
+   "kind": "e7:c:novel:point",
+   "where": "E7c novel recomputed from a7 predictions",
+   "computed": 0.5336856010568032,
+   "stored": 0.5336856010568032
+  },
+  {
+   "kind": "classshortcut:E7c:value",
+   "where": "novel",
+   "computed": 0.5336856010568032,
+   "stored": 0.5336856010568032
+  },
+  {
+   "kind": "classshortcut:E7c:lo95",
+   "where": "novel",
+   "computed": 0.4002702316511448,
+   "stored": 0.4002702316511448
+  },
+  {
+   "kind": "classshortcut:E7c:hi95",
+   "where": "novel",
+   "computed": 0.6979628910110904,
+   "stored": 0.6979628910110904
+  },
+  {
+   "kind": "classshortcut:E7c:lo90",
+   "where": "novel",
+   "computed": 0.4238439611002649,
+   "stored": 0.4238439611002649
+  },
+  {
+   "kind": "classshortcut:E7c:hi90",
+   "where": "novel",
+   "computed": 0.6663253353116885,
+   "stored": 0.6663253353116885
+  },
+  {
+   "kind": "e7:c:older_primary:point",
+   "where": "E7c older_primary recomputed from a7 predictions",
+   "computed": 0.6948092557848655,
+   "stored": 0.6948092557848655
+  },
+  {
+   "kind": "classshortcut:E7c:value",
+   "where": "older_primary",
+   "computed": 0.6948092557848655,
+   "stored": 0.6948092557848655
+  },
+  {
+   "kind": "classshortcut:E7c:lo95",
+   "where": "older_primary",
+   "computed": 0.6302011143079279,
+   "stored": 0.6302011143079279
+  },
+  {
+   "kind": "classshortcut:E7c:hi95",
+   "where": "older_primary",
+   "computed": 0.7623686702757804,
+   "stored": 0.7623686702757804
+  },
+  {
+   "kind": "classshortcut:E7c:lo90",
+   "where": "older_primary",
+   "computed": 0.6378916827436842,
+   "stored": 0.6378916827436842
+  },
+  {
+   "kind": "classshortcut:E7c:hi90",
+   "where": "older_primary",
+   "computed": 0.7503333603828011,
+   "stored": 0.7503333603828011
+  },
+  {
+   "kind": "classshortcut:E7c_within:value",
+   "where": "novel",
+   "computed": 0.5336856010568032,
+   "stored": 0.5336856010568032
+  },
+  {
+   "kind": "classshortcut:E7c_within:lo95",
+   "where": "novel",
+   "computed": 0.4002702316511448,
+   "stored": 0.4002702316511448
+  },
+  {
+   "kind": "classshortcut:E7c_within:hi95",
+   "where": "novel",
+   "computed": 0.6979628910110904,
+   "stored": 0.6979628910110904
+  },
+  {
+   "kind": "classshortcut:E7c_within:lo90",
+   "where": "novel",
+   "computed": 0.4238439611002649,
+   "stored": 0.4238439611002649
+  },
+  {
+   "kind": "classshortcut:E7c_within:hi90",
+   "where": "novel",
+   "computed": 0.6663253353116885,
+   "stored": 0.6663253353116885
+  },
+  {
+   "kind": "classshortcut:E7c_within:value",
+   "where": "older_primary",
+   "computed": 0.6948092557848655,
+   "stored": 0.6948092557848655
+  },
+  {
+   "kind": "classshortcut:E7c_within:lo95",
+   "where": "older_primary",
+   "computed": 0.6302011143079279,
+   "stored": 0.6302011143079279
+  },
+  {
+   "kind": "classshortcut:E7c_within:hi95",
+   "where": "older_primary",
+   "computed": 0.7623686702757804,
+   "stored": 0.7623686702757804
+  },
+  {
+   "kind": "classshortcut:E7c_within:lo90",
+   "where": "older_primary",
+   "computed": 0.6378916827436842,
+   "stored": 0.6378916827436842
+  },
+  {
+   "kind": "classshortcut:E7c_within:hi90",
+   "where": "older_primary",
+   "computed": 0.7503333603828011,
+   "stored": 0.7503333603828011
+  },
+  {
+   "kind": "e7:d:novel:point",
+   "where": "E7d novel recomputed from a7 predictions",
+   "computed": 0.5178335535006605,
+   "stored": 0.5178335535006605
+  },
+  {
+   "kind": "classshortcut:E7d:value",
+   "where": "novel",
+   "computed": 0.5178335535006605,
+   "stored": 0.5178335535006605
+  },
+  {
+   "kind": "classshortcut:E7d:lo95",
+   "where": "novel",
+   "computed": 0.38508599525171316,
+   "stored": 0.38508599525171316
+  },
+  {
+   "kind": "classshortcut:E7d:hi95",
+   "where": "novel",
+   "computed": 0.6681081791421363,
+   "stored": 0.6681081791421363
+  },
+  {
+   "kind": "classshortcut:E7d:lo90",
+   "where": "novel",
+   "computed": 0.3981765885516395,
+   "stored": 0.3981765885516395
+  },
+  {
+   "kind": "classshortcut:E7d:hi90",
+   "where": "novel",
+   "computed": 0.6501529037000735,
+   "stored": 0.6501529037000735
+  },
+  {
+   "kind": "e7:d:older_primary:point",
+   "where": "E7d older_primary recomputed from a7 predictions",
+   "computed": 0.6714613299979154,
+   "stored": 0.6714613299979154
+  },
+  {
+   "kind": "classshortcut:E7d:value",
+   "where": "older_primary",
+   "computed": 0.6714613299979154,
+   "stored": 0.6714613299979154
+  },
+  {
+   "kind": "classshortcut:E7d:lo95",
+   "where": "older_primary",
+   "computed": 0.6009190462965588,
+   "stored": 0.6009190462965588
+  },
+  {
+   "kind": "classshortcut:E7d:hi95",
+   "where": "older_primary",
+   "computed": 0.7370463758257401,
+   "stored": 0.7370463758257401
+  },
+  {
+   "kind": "classshortcut:E7d:lo90",
+   "where": "older_primary",
+   "computed": 0.6138168945042806,
+   "stored": 0.6138168945042806
+  },
+  {
+   "kind": "classshortcut:E7d:hi90",
+   "where": "older_primary",
+   "computed": 0.7248105092689047,
+   "stored": 0.7248105092689047
+  },
+  {
+   "kind": "e7:e:novel:point",
+   "where": "E7e novel recomputed from a7 predictions",
+   "computed": 0.6129458388375165,
+   "stored": 0.6129458388375165
+  },
+  {
+   "kind": "classshortcut:E7e:value",
+   "where": "novel",
+   "computed": 0.6129458388375165,
+   "stored": 0.6129458388375165
+  },
+  {
+   "kind": "classshortcut:E7e:lo95",
+   "where": "novel",
+   "computed": 0.4771228062409003,
+   "stored": 0.4771228062409003
+  },
+  {
+   "kind": "classshortcut:E7e:hi95",
+   "where": "novel",
+   "computed": 0.757894336821267,
+   "stored": 0.757894336821267
+  },
+  {
+   "kind": "classshortcut:E7e:lo90",
+   "where": "novel",
+   "computed": 0.4999611197511664,
+   "stored": 0.4999611197511664
+  },
+  {
+   "kind": "classshortcut:E7e:hi90",
+   "where": "novel",
+   "computed": 0.7322123992215736,
+   "stored": 0.7322123992215736
+  },
+  {
+   "kind": "e7:e:older_primary:point",
+   "where": "E7e older_primary recomputed from a7 predictions",
+   "computed": 0.7344173441734417,
+   "stored": 0.7344173441734417
+  },
+  {
+   "kind": "classshortcut:E7e:value",
+   "where": "older_primary",
+   "computed": 0.7344173441734417,
+   "stored": 0.7344173441734417
+  },
+  {
+   "kind": "classshortcut:E7e:lo95",
+   "where": "older_primary",
+   "computed": 0.6646263387301015,
+   "stored": 0.6646263387301015
+  },
+  {
+   "kind": "classshortcut:E7e:hi95",
+   "where": "older_primary",
+   "computed": 0.8016070136853595,
+   "stored": 0.8016070136853595
+  },
+  {
+   "kind": "classshortcut:E7e:lo90",
+   "where": "older_primary",
+   "computed": 0.6763448538371675,
+   "stored": 0.6763448538371675
+  },
+  {
+   "kind": "classshortcut:E7e:hi90",
+   "where": "older_primary",
+   "computed": 0.7894684922011002,
+   "stored": 0.7894684922011002
+  },
+  {
+   "kind": "e8:names:novel:point",
+   "where": "E8 names novel recomputed from a7 predictions",
+   "computed": 0.5713342140026421,
+   "stored": 0.5713342140026421
+  },
+  {
+   "kind": "e8:names:novel:point",
+   "where": "E8 names novel recomputed from a7 predictions",
+   "computed": 0.5726552179656539,
+   "stored": 0.5726552179656539
+  },
+  {
+   "kind": "e8:names:novel:point",
+   "where": "E8 names novel recomputed from a7 predictions",
+   "computed": 0.5733157199471598,
+   "stored": 0.5733157199471598
+  },
+  {
+   "kind": "e8:names:novel:point",
+   "where": "E8 names novel recomputed from a7 predictions",
+   "computed": 0.5871862615587847,
+   "stored": 0.5871862615587847
+  },
+  {
+   "kind": "e8:names:novel:point",
+   "where": "E8 names novel recomputed from a7 predictions",
+   "computed": 0.5501981505944518,
+   "stored": 0.5501981505944518
+  },
+  {
+   "kind": "e8:names primary",
+   "where": "novel",
+   "computed": 0.5713342140026421,
+   "stored": 0.5713342140026421
+  },
+  {
+   "kind": "e8:names min",
+   "where": "novel",
+   "computed": 0.5501981505944518,
+   "stored": 0.5501981505944518
+  },
+  {
+   "kind": "e8:names max",
+   "where": "novel",
+   "computed": 0.5871862615587847,
+   "stored": 0.5871862615587847
+  },
+  {
+   "kind": "e8:names:older_primary:point",
+   "where": "E8 names older_primary recomputed from a7 predictions",
+   "computed": 0.5839066082968521,
+   "stored": 0.5839066082968521
+  },
+  {
+   "kind": "e8:names:older_primary:point",
+   "where": "E8 names older_primary recomputed from a7 predictions",
+   "computed": 0.5843235355430477,
+   "stored": 0.5843235355430477
+  },
+  {
+   "kind": "e8:names:older_primary:point",
+   "where": "E8 names older_primary recomputed from a7 predictions",
+   "computed": 0.5982905982905983,
+   "stored": 0.5982905982905983
+  },
+  {
+   "kind": "e8:names:older_primary:point",
+   "where": "E8 names older_primary recomputed from a7 predictions",
+   "computed": 0.6068376068376068,
+   "stored": 0.6068376068376068
+  },
+  {
+   "kind": "e8:names:older_primary:point",
+   "where": "E8 names older_primary recomputed from a7 predictions",
+   "computed": 0.518970189701897,
+   "stored": 0.518970189701897
+  },
+  {
+   "kind": "e8:names primary",
+   "where": "older_primary",
+   "computed": 0.5839066082968521,
+   "stored": 0.5839066082968521
+  },
+  {
+   "kind": "e8:names min",
+   "where": "older_primary",
+   "computed": 0.518970189701897,
+   "stored": 0.518970189701897
+  },
+  {
+   "kind": "e8:names max",
+   "where": "older_primary",
+   "computed": 0.6068376068376068,
+   "stored": 0.6068376068376068
+  },
+  {
+   "kind": "e8:contam:novel:point",
+   "where": "E8 contam novel recomputed from a7 predictions",
+   "computed": 0.7470277410832232,
+   "stored": 0.7470277410832232
+  },
+  {
+   "kind": "e8:contam:older_primary:point",
+   "where": "E8 contam older_primary recomputed from a7 predictions",
+   "computed": 0.8335417969564312,
+   "stored": 0.8335417969564312
+  },
+  {
+   "kind": "e8:other:novel:point",
+   "where": "E8 other novel recomputed from a7 predictions",
+   "computed": 0.511889035667107,
+   "stored": 0.511889035667107
+  },
+  {
+   "kind": "e8:other:older_primary:point",
+   "where": "E8 other older_primary recomputed from a7 predictions",
+   "computed": 0.5323118615801543,
+   "stored": 0.5323118615801543
+  },
+  {
+   "kind": "e8:clean:novel:point",
+   "where": "E8 clean novel recomputed from a7 predictions",
+   "computed": 0.5785997357992074,
+   "stored": 0.5785997357992074
+  },
+  {
+   "kind": "e8:clean:older_primary:point",
+   "where": "E8 clean older_primary recomputed from a7 predictions",
+   "computed": 0.6114238065457578,
+   "stored": 0.6114238065457578
+  },
+  {
+   "kind": "e7:drugbank_within",
+   "where": "novel",
+   "computed": 0.7285336856010568,
+   "stored": 0.7285336856010568
+  },
+  {
+   "kind": "e7:drugbank_within",
+   "where": "older_primary",
+   "computed": 0.6517615176151762,
+   "stored": 0.6517615176151762
+  },
+  {
+   "kind": "drugbank_lookup:novel within",
+   "where": "novel",
+   "computed": 0.7285336856010568,
+   "stored": 0.728534
+  },
+  {
+   "kind": "fig4:ideal reader pooled AUROC drawn at 0.785",
+   "where": "E7a row, gray open circle",
+   "computed": 0.785,
+   "stored": 0.785
+  },
+  {
+   "kind": "fig4:rows marked not run in Older-primary",
+   "where": "H5 and E7a",
+   "computed": 2.0,
+   "stored": 2.0
+  },
+  {
+   "kind": "classshortcut:tpr difference",
+   "where": "novel",
+   "computed": -0.28343779893408655,
+   "stored": -0.28343779893408655
+  },
+  {
+   "kind": "classshortcut:tpr difference",
+   "where": "older_primary",
+   "computed": 0.025066662091501324,
+   "stored": 0.025066662091501324
+  },
+  {
+   "kind": "e8:stem difference",
+   "where": "stem",
+   "computed": 0.04925751539297363,
+   "stored": 0.04925751539297363
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-bertbase-marker",
+   "computed": 0.7779349363507779,
+   "stored": 0.777935
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-bertbase-pair",
+   "computed": 0.6235632183908046,
+   "stored": 0.623563
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biobert-marker",
+   "computed": 0.8354080221300139,
+   "stored": 0.835408
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biobert-pair",
+   "computed": 0.7,
+   "stored": 0.7
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biolinkbert-marker",
+   "computed": 0.8705234159779615,
+   "stored": 0.870523
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biolinkbert-pair",
+   "computed": 0.7266187050359713,
+   "stored": 0.726619
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biomedbert_abs-marker",
+   "computed": 0.8654646324549237,
+   "stored": 0.865465
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biomedbert_abs-pair",
+   "computed": 0.697508896797153,
+   "stored": 0.697509
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biomedbert_full-marker",
+   "computed": 0.8563300142247511,
+   "stored": 0.85633
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biomedbert_full-pair",
+   "computed": 0.7251908396946565,
+   "stored": 0.725191
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-clinicalbert-marker",
+   "computed": 0.75,
+   "stored": 0.75
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-clinicalbert-pair",
+   "computed": 0.5702005730659025,
+   "stored": 0.570201
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-deberta-marker",
+   "computed": 0.8200836820083682,
+   "stored": 0.820084
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-deberta-pair",
+   "computed": 0.6966887417218544,
+   "stored": 0.696689
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-electra-marker",
+   "computed": 0.7472826086956522,
+   "stored": 0.747283
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-electra-pair",
+   "computed": 0.7126436781609196,
+   "stored": 0.712644
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-roberta-marker",
+   "computed": 0.7660738714090287,
+   "stored": 0.766074
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-roberta-pair",
+   "computed": 0.7080045095828635,
+   "stored": 0.708005
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-scibert-marker",
+   "computed": 0.7905604719764012,
+   "stored": 0.79056
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-scibert-pair",
+   "computed": 0.7238723872387238,
+   "stored": 0.723872
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-bertbase-marker",
+   "computed": 0.7779349363507779,
+   "stored": 0.777935
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-bertbase-pair",
+   "computed": 0.6235632183908046,
+   "stored": 0.623563
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biobert-marker",
+   "computed": 0.8354080221300139,
+   "stored": 0.835408
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biobert-pair",
+   "computed": 0.7,
+   "stored": 0.7
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biolinkbert-marker",
+   "computed": 0.8705234159779615,
+   "stored": 0.870523
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biolinkbert-pair",
+   "computed": 0.7266187050359713,
+   "stored": 0.726619
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biomedbert_abs-marker",
+   "computed": 0.8654646324549237,
+   "stored": 0.865465
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biomedbert_abs-pair",
+   "computed": 0.697508896797153,
+   "stored": 0.697509
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biomedbert_full-marker",
+   "computed": 0.8563300142247511,
+   "stored": 0.85633
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-biomedbert_full-pair",
+   "computed": 0.7251908396946565,
+   "stored": 0.725191
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-clinicalbert-marker",
+   "computed": 0.75,
+   "stored": 0.75
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-clinicalbert-pair",
+   "computed": 0.5702005730659025,
+   "stored": 0.570201
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-deberta-marker",
+   "computed": 0.8200836820083682,
+   "stored": 0.820084
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-deberta-pair",
+   "computed": 0.6966887417218544,
+   "stored": 0.696689
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-electra-marker",
+   "computed": 0.7472826086956522,
+   "stored": 0.747283
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-electra-pair",
+   "computed": 0.7126436781609196,
+   "stored": 0.712644
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-roberta-marker",
+   "computed": 0.7660738714090287,
+   "stored": 0.766074
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-roberta-pair",
+   "computed": 0.7080045095828635,
+   "stored": 0.708005
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-scibert-marker",
+   "computed": 0.7905604719764012,
+   "stored": 0.79056
+  },
+  {
+   "kind": "post8:e9 f1",
+   "where": "a7-panel-scibert-pair",
+   "computed": 0.7238723872387238,
+   "stored": 0.723872
+  },
+  {
+   "kind": "post8:e9 ratio_old",
+   "where": "older_primary",
+   "computed": 0.5742521940991799,
+   "stored": 0.574252
+  },
+  {
+   "kind": "post8:e9 n_upper",
+   "where": "older_primary",
+   "computed": 20.0,
+   "stored": 20.0
+  },
+  {
+   "kind": "e9:rho",
+   "where": "older_primary rho",
+   "computed": -0.1609022556390977,
+   "stored": -0.1609022556390977
+  },
+  {
+   "kind": "e9:rho novel",
+   "where": "novel rho",
+   "computed": -0.01580135887496698,
+   "stored": -0.01580135887496698
+  },
+  {
+   "kind": "e9:upper_at_most_bound",
+   "where": "older_primary count",
+   "computed": 20.0,
+   "stored": 20.0
+  },
+  {
+   "kind": "e7:drugbank_within",
+   "where": "fig6",
+   "computed": 0.6517615176151762,
+   "stored": 0.6517615176151762
+  },
+  {
+   "kind": "e9:external f1",
+   "where": "a7-ext-pubmedbert-relation-extraction",
+   "computed": 0.3709090909090909,
+   "stored": 0.3709090909090909
+  },
+  {
+   "kind": "e9:masked f1",
+   "where": "a7-panel-bertbase-masked",
+   "computed": 0.6896551724137931,
+   "stored": 0.6896551724137931
+  },
+  {
+   "kind": "e9:masked f1",
+   "where": "a7-panel-biomedbert_full-masked",
+   "computed": 0.7079037800687286,
+   "stored": 0.7079037800687286
+  },
+  {
+   "kind": "fig5 panel:leaders drawn to masked diamonds",
+   "where": "masked-trained leaders",
+   "computed": 2.0,
+   "stored": 2.0
+  },
+  {
+   "kind": "ga:font is Arial, Helvetica or a metric-compatible clone",
+   "where": "graphical abstract font Arial",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:with-self-pairs value is 0.525",
+   "where": "DrugBank SemEval value excludes self pairs (0.525 with them). Bars: 95% intervals.",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:encoder leads on SemEval labels",
+   "where": "title claim: encoder above DrugBank on SemEval, below it on label mentions",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:drawn series are the encoder and DrugBank only",
+   "where": "graphical abstract",
+   "computed": 2.0,
+   "stored": 2.0
+  },
+  {
+   "kind": "ga:encoder label text",
+   "where": "encoder end label",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:drugbank label text",
+   "where": "DrugBank end label",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:all intervals inside the axis",
+   "where": "no interval is clipped",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:intervals drawn for every plotted point",
+   "where": "2 series x 2 columns",
+   "computed": 4.0,
+   "stored": 4.0
+  },
+  {
+   "kind": "ga:interval segments in the artwork",
+   "where": "drawn vertical interval lines",
+   "computed": 4.0,
+   "stored": 4.0
+  },
+  {
+   "kind": "ga:SemEval-trained encoder left drawn lo95",
+   "where": "SemEval-trained encoder left interval [0.633, 0.723] drawn",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:SemEval-trained encoder left interval brackets the point",
+   "where": "SemEval-trained encoder left",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:SemEval-trained encoder right drawn lo95",
+   "where": "SemEval-trained encoder right interval [0.399, 0.520] drawn",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:SemEval-trained encoder right interval brackets the point",
+   "where": "SemEval-trained encoder right",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:DrugBank left drawn lo95",
+   "where": "DrugBank left interval [0.439, 0.521] drawn",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:DrugBank left interval brackets the point",
+   "where": "DrugBank left",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:DrugBank right drawn lo95",
+   "where": "DrugBank right interval [0.609, 0.697] drawn",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:DrugBank right interval brackets the point",
+   "where": "DrugBank right",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:no range bars drawn",
+   "where": "graphical abstract",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:end labels at least 36 px",
+   "where": "end label size 40.0 px",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:title size px",
+   "where": "title",
+   "computed": 44.0,
+   "stored": 44.0
+  },
+  {
+   "kind": "ga:line width px",
+   "where": "series lines",
+   "computed": 8.0,
+   "stored": 8.0
+  },
+  {
+   "kind": "ga:title fits one line within the canvas",
+   "where": "title width 963 px",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:caveat is not drawn in the image",
+   "where": "footer removed",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:width px",
+   "where": "graphical abstract pixel width",
+   "computed": 2000.0,
+   "stored": 2000.0
+  },
+  {
+   "kind": "ga:height px",
+   "where": "graphical abstract pixel height",
+   "computed": 800.0,
+   "stored": 800.0
+  },
+  {
+   "kind": "ga:aspect ratio 2.50",
+   "where": "graphical abstract",
+   "computed": 2.5,
+   "stored": 2.5
+  },
+  {
+   "kind": "ga:text inside canvas Different drugs and ",
+   "where": "width 1361 px",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:text inside canvas DrugBank SemEval val",
+   "where": "width 1344 px",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:oracle line drawn in the artwork",
+   "where": "Different drugs and statistics; FDA-label targets failed their oracle check",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:self-pair convention drawn in the artwork",
+   "where": "DrugBank SemEval value excludes self pairs ({} with them). Bars: 95% intervals.",
+   "computed": 1.0,
+   "stored": 1.0
+  },
+  {
+   "kind": "ga:column subtitles say pooled and within-drug",
+   "where": "column subtitles",
+   "computed": 1.0,
+   "stored": 1.0
+  }
+ ]
+}

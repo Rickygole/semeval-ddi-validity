@@ -1,0 +1,175 @@
+{
+ "status": "sensitivity analysis, post hoc, exploratory; changes no preregistered decision",
+ "source": "H5 input rebuilt with the functions of scripts/amend7_cpu_exp6_control_reach.py (contaminated retrieval, k 5, first 400 characters per passage, BiomedBERT tokenizer truncation at 512 tokens)",
+ "readers": {
+  "partner_visibility_rule": "1 if the partner is named in the visible evidence, else 0 (exp6 partner_in_512_tokens)",
+  "ideal_reader": "+1 if the partner is named in the visible evidence and the pair is positive, -1 if it is named and the pair is negative, 0 if it is not named. This grants a perfect judge of whether a visible mention is an interaction statement: every visible positive mention is taken as one and no visible negative mention is. It uses the labels, so it is an upper bound for a reader of this input, not a rule.",
+  "source_proxy_reader": "+1 if the partner is named in the visible part of a passage from the OOD drug's own label, -1 if it is named only in other visible passages, 0 if it is not named. Label free; it treats an own-label mention as the interaction statement."
+ },
+ "boot": 1000,
+ "boot_seed_within": 1042,
+ "variants": {
+  "contaminated": {
+   "n": 438,
+   "n_pos": 148,
+   "n_neg": 290,
+   "positives_partner_visible": 68,
+   "negatives_partner_visible": 59,
+   "positives_partner_visible_own_label": 44,
+   "negatives_partner_visible_own_label": 0,
+   "readers": {
+    "partner_visibility_rule": {
+     "auroc_within": {
+      "value": 0.634742,
+      "ci95": [
+       0.509896,
+       0.736592
+      ],
+      "ci90": [
+       0.530766,
+       0.722274
+      ],
+      "n_draws": 1000
+     },
+     "auroc_pooled": 0.628006,
+     "auroc_pooled_ci95": [
+      0.529136,
+      0.717397
+     ],
+     "positives_scored_up": 68,
+     "negatives_scored_up": 59,
+     "negatives_scored_down": 0,
+     "mcc_of_score_above_zero": 0.266874
+    },
+    "ideal_reader": {
+     "auroc_within": {
+      "value": 0.775429,
+      "ci95": [
+       0.673729,
+       0.869281
+      ],
+      "ci90": [
+       0.686901,
+       0.855101
+      ],
+      "n_draws": 1000
+     },
+     "auroc_pooled": 0.784716,
+     "auroc_pooled_ci95": [
+      0.703923,
+      0.86251
+     ],
+     "positives_scored_up": 68,
+     "negatives_scored_up": 0,
+     "negatives_scored_down": 59,
+     "mcc_of_score_above_zero": 0.600097
+    },
+    "source_proxy_reader": {
+     "auroc_within": {
+      "value": 0.677015,
+      "ci95": [
+       0.556778,
+       0.78333
+      ],
+      "ci90": [
+       0.57534,
+       0.766869
+      ],
+      "n_draws": 1000
+     },
+     "auroc_pooled": 0.639049,
+     "auroc_pooled_ci95": [
+      0.523488,
+      0.743941
+     ],
+     "positives_scored_up": 44,
+     "negatives_scored_up": 0,
+     "negatives_scored_down": 59,
+     "mcc_of_score_above_zero": 0.467785
+    }
+   },
+   "matches_exp6_partner_in_512_tokens": true
+  },
+  "hybrid": {
+   "n": 438,
+   "n_pos": 148,
+   "n_neg": 290,
+   "positives_partner_visible": 48,
+   "negatives_partner_visible": 68,
+   "positives_partner_visible_own_label": 14,
+   "negatives_partner_visible_own_label": 0,
+   "readers": {
+    "partner_visibility_rule": {
+     "auroc_within": {
+      "value": 0.501321,
+      "ci95": [
+       0.396223,
+       0.602623
+      ],
+      "ci90": [
+       0.416486,
+       0.586576
+      ],
+      "n_draws": 1000
+     },
+     "auroc_pooled": 0.544921,
+     "auroc_pooled_ci95": [
+      0.468738,
+      0.619129
+     ],
+     "positives_scored_up": 48,
+     "negatives_scored_up": 68,
+     "negatives_scored_down": 0,
+     "mcc_of_score_above_zero": 0.096305
+    },
+    "ideal_reader": {
+     "auroc_within": {
+      "value": 0.725231,
+      "ci95": [
+       0.640176,
+       0.821928
+      ],
+      "ci90": [
+       0.652248,
+       0.806251
+      ],
+      "n_draws": 1000
+     },
+     "auroc_pooled": 0.741379,
+     "auroc_pooled_ci95": [
+      0.652612,
+      0.81872
+     ],
+     "positives_scored_up": 48,
+     "negatives_scored_up": 0,
+     "negatives_scored_down": 68,
+     "mcc_of_score_above_zero": 0.491085
+    },
+    "source_proxy_reader": {
+     "auroc_within": {
+      "value": 0.573976,
+      "ci95": [
+       0.485199,
+       0.671122
+      ],
+      "ci90": [
+       0.498948,
+       0.651434
+      ],
+      "n_draws": 1000
+     },
+     "auroc_pooled": 0.538583,
+     "auroc_pooled_ci95": [
+      0.454389,
+      0.623671
+     ],
+     "positives_scored_up": 14,
+     "negatives_scored_up": 0,
+     "negatives_scored_down": 68,
+     "mcc_of_score_above_zero": 0.25436
+    }
+   },
+   "matches_exp6_partner_in_512_tokens": true
+  }
+ }
+}

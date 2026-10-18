@@ -1,0 +1,324 @@
+{
+ "status": "sensitivity analysis, post hoc; simulation of the preregistered two-way cluster bootstrap",
+ "method": "scores simulated on the real Novel and Older-clean pair structure (drugs, partners, labels); each replicate draws new scores, computes the within-drug AUROC and its two-way cluster bootstrap percentile intervals (the resampling of ddiood.stats.two_way_samples with drug-copy strata, as in ddiood.evaluate2); the true value is the mean estimate over replicates; coverage is the share of replicates whose interval contains it; halfwidth90_over_nominal is the mean 90% half-width divided by 1.645 times the replicate SD, so 1 is a calibrated interval",
+ "reps": 300,
+ "boot": 1000,
+ "seed": 1,
+ "model_shift": {
+  "novel": {
+   "null, no partner effect": {
+    "scenario": {
+     "name": "null, no partner effect",
+     "signal": 0.0,
+     "partner_sd": 0.0,
+     "drug_sd": 1.0
+    },
+    "true_value": 0.499881,
+    "sd_of_estimate": 0.036156,
+    "mean_halfwidth90": 0.11236,
+    "halfwidth90_over_sd": 3.107626,
+    "halfwidth90_over_nominal": 1.889249,
+    "coverage90": 1.0,
+    "coverage95": 1.0,
+    "equivalence_rate_90_in_040_060": 0.0
+   },
+   "null, partner effect": {
+    "scenario": {
+     "name": "null, partner effect",
+     "signal": 0.0,
+     "partner_sd": 1.0,
+     "drug_sd": 1.0
+    },
+    "true_value": 0.499014,
+    "sd_of_estimate": 0.029861,
+    "mean_halfwidth90": 0.109148,
+    "halfwidth90_over_sd": 3.655132,
+    "halfwidth90_over_nominal": 2.2221,
+    "coverage90": 1.0,
+    "coverage95": 1.0,
+    "equivalence_rate_90_in_040_060": 0.003333
+   },
+   "signal 0.37, partner effect": {
+    "scenario": {
+     "name": "signal 0.37, partner effect",
+     "signal": 0.37,
+     "partner_sd": 1.0,
+     "drug_sd": 1.0
+    },
+    "true_value": 0.57535,
+    "sd_of_estimate": 0.03218,
+    "mean_halfwidth90": 0.106798,
+    "halfwidth90_over_sd": 3.318788,
+    "halfwidth90_over_nominal": 2.017623,
+    "coverage90": 1.0,
+    "coverage95": 1.0,
+    "equivalence_rate_90_in_040_060": 0.0
+   }
+  },
+  "older_clean": {
+   "null, no partner effect": {
+    "scenario": {
+     "name": "null, no partner effect",
+     "signal": 0.0,
+     "partner_sd": 0.0,
+     "drug_sd": 1.0
+    },
+    "true_value": 0.501264,
+    "sd_of_estimate": 0.018534,
+    "mean_halfwidth90": 0.052304,
+    "halfwidth90_over_sd": 2.82209,
+    "halfwidth90_over_nominal": 1.71566,
+    "coverage90": 1.0,
+    "coverage95": 1.0,
+    "equivalence_rate_90_in_040_060": 0.996667
+   },
+   "null, partner effect": {
+    "scenario": {
+     "name": "null, partner effect",
+     "signal": 0.0,
+     "partner_sd": 1.0,
+     "drug_sd": 1.0
+    },
+    "true_value": 0.499367,
+    "sd_of_estimate": 0.013312,
+    "mean_halfwidth90": 0.049936,
+    "halfwidth90_over_sd": 3.751222,
+    "halfwidth90_over_nominal": 2.280517,
+    "coverage90": 1.0,
+    "coverage95": 1.0,
+    "equivalence_rate_90_in_040_060": 1.0
+   },
+   "signal 0.37, partner effect": {
+    "scenario": {
+     "name": "signal 0.37, partner effect",
+     "signal": 0.37,
+     "partner_sd": 1.0,
+     "drug_sd": 1.0
+    },
+    "true_value": 0.57302,
+    "sd_of_estimate": 0.014012,
+    "mean_halfwidth90": 0.049464,
+    "halfwidth90_over_sd": 3.530032,
+    "halfwidth90_over_nominal": 2.146047,
+    "coverage90": 1.0,
+    "coverage95": 1.0,
+    "equivalence_rate_90_in_040_060": 0.06
+   }
+  }
+ },
+ "model_slope": {
+  "novel": {
+   "random slopes, null mean, partner effect": {
+    "scenario": {
+     "name": "random slopes, null mean, partner effect",
+     "mu": 0.0,
+     "tau": 0.6,
+     "partner_sd": 1.0
+    },
+    "two_way": {
+     "true_value": 0.500018,
+     "sd_of_estimate": 0.035918,
+     "mean_halfwidth90": 0.114017,
+     "halfwidth90_over_sd": 3.174369,
+     "halfwidth90_over_nominal": 1.929825,
+     "coverage90": 0.996667,
+     "coverage95": 1.0,
+     "equivalence_rate_90_in_040_060": 0.0
+    },
+    "one_way_drug": {
+     "true_value": 0.500018,
+     "sd_of_estimate": 0.035918,
+     "mean_halfwidth90": 0.064421,
+     "halfwidth90_over_sd": 1.793552,
+     "halfwidth90_over_nominal": 1.090372,
+     "coverage90": 0.916667,
+     "coverage95": 0.97,
+     "equivalence_rate_90_in_040_060": 0.686667
+    }
+   },
+   "random slopes, mean 0.37, partner effect": {
+    "scenario": {
+     "name": "random slopes, mean 0.37, partner effect",
+     "mu": 0.37,
+     "tau": 0.6,
+     "partner_sd": 1.0
+    },
+    "two_way": {
+     "true_value": 0.571312,
+     "sd_of_estimate": 0.036874,
+     "mean_halfwidth90": 0.112109,
+     "halfwidth90_over_sd": 3.040357,
+     "halfwidth90_over_nominal": 1.848353,
+     "coverage90": 0.996667,
+     "coverage95": 1.0,
+     "equivalence_rate_90_in_040_060": 0.0
+    },
+    "one_way_drug": {
+     "true_value": 0.571312,
+     "sd_of_estimate": 0.036874,
+     "mean_halfwidth90": 0.063447,
+     "halfwidth90_over_sd": 1.720648,
+     "halfwidth90_over_nominal": 1.04605,
+     "coverage90": 0.906667,
+     "coverage95": 0.936667,
+     "equivalence_rate_90_in_040_060": 0.176667
+    }
+   },
+   "random slopes, null mean, no partner effect": {
+    "scenario": {
+     "name": "random slopes, null mean, no partner effect",
+     "mu": 0.0,
+     "tau": 0.6,
+     "partner_sd": 0.0
+    },
+    "two_way": {
+     "true_value": 0.499366,
+     "sd_of_estimate": 0.041838,
+     "mean_halfwidth90": 0.121028,
+     "halfwidth90_over_sd": 2.892781,
+     "halfwidth90_over_nominal": 1.758636,
+     "coverage90": 1.0,
+     "coverage95": 1.0,
+     "equivalence_rate_90_in_040_060": 0.0
+    },
+    "one_way_drug": {
+     "true_value": 0.499366,
+     "sd_of_estimate": 0.041838,
+     "mean_halfwidth90": 0.068866,
+     "halfwidth90_over_sd": 1.646024,
+     "halfwidth90_over_nominal": 1.000683,
+     "coverage90": 0.886667,
+     "coverage95": 0.946667,
+     "equivalence_rate_90_in_040_060": 0.536667
+    }
+   }
+  },
+  "older_clean": {
+   "random slopes, null mean, partner effect": {
+    "scenario": {
+     "name": "random slopes, null mean, partner effect",
+     "mu": 0.0,
+     "tau": 0.6,
+     "partner_sd": 1.0
+    },
+    "two_way": {
+     "true_value": 0.498813,
+     "sd_of_estimate": 0.018659,
+     "mean_halfwidth90": 0.054641,
+     "halfwidth90_over_sd": 2.928309,
+     "halfwidth90_over_nominal": 1.780235,
+     "coverage90": 0.993333,
+     "coverage95": 1.0,
+     "equivalence_rate_90_in_040_060": 0.986667
+    },
+    "one_way_drug": {
+     "true_value": 0.498813,
+     "sd_of_estimate": 0.018659,
+     "mean_halfwidth90": 0.033966,
+     "halfwidth90_over_sd": 1.820314,
+     "halfwidth90_over_nominal": 1.106641,
+     "coverage90": 0.92,
+     "coverage95": 0.953333,
+     "equivalence_rate_90_in_040_060": 1.0
+    }
+   },
+   "random slopes, mean 0.37, partner effect": {
+    "scenario": {
+     "name": "random slopes, mean 0.37, partner effect",
+     "mu": 0.37,
+     "tau": 0.6,
+     "partner_sd": 1.0
+    },
+    "two_way": {
+     "true_value": 0.571359,
+     "sd_of_estimate": 0.018097,
+     "mean_halfwidth90": 0.054208,
+     "halfwidth90_over_sd": 2.995488,
+     "halfwidth90_over_nominal": 1.821076,
+     "coverage90": 1.0,
+     "coverage95": 1.0,
+     "equivalence_rate_90_in_040_060": 0.083333
+    },
+    "one_way_drug": {
+     "true_value": 0.571359,
+     "sd_of_estimate": 0.018097,
+     "mean_halfwidth90": 0.033599,
+     "halfwidth90_over_sd": 1.856659,
+     "halfwidth90_over_nominal": 1.128737,
+     "coverage90": 0.94,
+     "coverage95": 0.963333,
+     "equivalence_rate_90_in_040_060": 0.413333
+    }
+   },
+   "random slopes, null mean, no partner effect": {
+    "scenario": {
+     "name": "random slopes, null mean, no partner effect",
+     "mu": 0.0,
+     "tau": 0.6,
+     "partner_sd": 0.0
+    },
+    "two_way": {
+     "true_value": 0.50079,
+     "sd_of_estimate": 0.023668,
+     "mean_halfwidth90": 0.059671,
+     "halfwidth90_over_sd": 2.52113,
+     "halfwidth90_over_nominal": 1.532695,
+     "coverage90": 0.99,
+     "coverage95": 0.996667,
+     "equivalence_rate_90_in_040_060": 0.926667
+    },
+    "one_way_drug": {
+     "true_value": 0.50079,
+     "sd_of_estimate": 0.023668,
+     "mean_halfwidth90": 0.038068,
+     "halfwidth90_over_sd": 1.608404,
+     "halfwidth90_over_nominal": 0.977813,
+     "coverage90": 0.896667,
+     "coverage95": 0.946667,
+     "equivalence_rate_90_in_040_060": 0.996667
+    }
+   }
+  }
+ },
+ "dropout": {
+  "novel": {
+   "mean_fraction_drawn_drugs_without_both_classes": 0.194338,
+   "max_fraction": 0.482759,
+   "draws": 1000
+  },
+  "older_clean": {
+   "mean_fraction_drawn_drugs_without_both_classes": 0.122892,
+   "max_fraction": 0.282051,
+   "draws": 1000
+  }
+ },
+ "summary_two_way": {
+  "coverage90_range": [
+   0.99,
+   1.0
+  ],
+  "coverage95_range": [
+   0.996667,
+   1.0
+  ],
+  "halfwidth90_over_sd_range": [
+   2.52113,
+   3.751222
+  ],
+  "halfwidth90_over_nominal_range": [
+   1.532695,
+   2.280517
+  ]
+ },
+ "summary_one_way_drug": {
+  "coverage90_range": [
+   0.886667,
+   0.94
+  ],
+  "halfwidth90_over_sd_range": [
+   1.608404,
+   1.856659
+  ]
+ },
+ "seconds": 1490.012566
+}

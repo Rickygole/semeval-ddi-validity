@@ -1,0 +1,584 @@
+{
+ "plan_sha256": "7fe118a2793a11eaf7a4f1bd405e9f7335f64e3d4d97419dc24ff35a0e18d817",
+ "status": "post hoc and descriptive; plan in docs/POSTHOC_REV3_PLAN.md was written before computing; changes no preregistered decision",
+ "drugbank_release": {
+  "file": "drugbank_all_full_database.xml.zip",
+  "version": "5.1",
+  "exported_on": "2026-03-05",
+  "root_element": "<drugbank xmlns=\"http://www.drugbank.ca\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.drugbank.ca http://www.drugbank.ca/docs/drugbank.xsd\" version=\"5.1\" exported-on=\"2026-03-05\">"
+ },
+ "table_source": "cache with matching source key",
+ "n_table_names": 55516,
+ "n_test_rows": 2810,
+ "n_self_pairs": 289,
+ "self_pairs_by_source": {
+  "DrugBank": 240,
+  "MedLine": 49
+ },
+ "instances": [
+  {
+   "convention": "self_pairs_excluded",
+   "class": "negatives",
+   "scope": "pooled",
+   "n": 2150,
+   "resolvable": 2108,
+   "listed": 1609,
+   "listed_share_of_resolvable": 0.763283,
+   "ci95_resolvable": [
+    0.744668,
+    0.780939
+   ],
+   "listed_share_of_all": 0.748372,
+   "ci95_all": [
+    0.729597,
+    0.766261
+   ],
+   "n_self_pairs_removed": 289
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "negatives",
+   "scope": "DDI-DrugBank",
+   "n": 1921,
+   "resolvable": 1912,
+   "listed": 1508,
+   "listed_share_of_resolvable": 0.788703,
+   "ci95_resolvable": [
+    0.769835,
+    0.806413
+   ],
+   "listed_share_of_all": 0.785008,
+   "ci95_all": [
+    0.766078,
+    0.8028
+   ],
+   "n_self_pairs_removed": 240
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "negatives",
+   "scope": "DDI-MedLine",
+   "n": 229,
+   "resolvable": 196,
+   "listed": 101,
+   "listed_share_of_resolvable": 0.515306,
+   "ci95_resolvable": [
+    0.445721,
+    0.584303
+   ],
+   "listed_share_of_all": 0.441048,
+   "ci95_all": [
+    0.378239,
+    0.505803
+   ],
+   "n_self_pairs_removed": 49
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "positives",
+   "scope": "pooled",
+   "n": 371,
+   "resolvable": 362,
+   "listed": 263,
+   "listed_share_of_resolvable": 0.726519,
+   "ci95_resolvable": [
+    0.678403,
+    0.769879
+   ],
+   "listed_share_of_all": 0.708895,
+   "ci95_all": [
+    0.660717,
+    0.752791
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "positives",
+   "scope": "DDI-DrugBank",
+   "n": 291,
+   "resolvable": 291,
+   "listed": 222,
+   "listed_share_of_resolvable": 0.762887,
+   "ci95_resolvable": [
+    0.710794,
+    0.808129
+   ],
+   "listed_share_of_all": 0.762887,
+   "ci95_all": [
+    0.710794,
+    0.808129
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "positives",
+   "scope": "DDI-MedLine",
+   "n": 80,
+   "resolvable": 71,
+   "listed": 41,
+   "listed_share_of_resolvable": 0.577465,
+   "ci95_resolvable": [
+    0.461507,
+    0.68547
+   ],
+   "listed_share_of_all": 0.5125,
+   "ci95_all": [
+    0.404933,
+    0.618921
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "negatives",
+   "scope": "pooled",
+   "n": 2439,
+   "resolvable": 2377,
+   "listed": 1609,
+   "listed_share_of_resolvable": 0.676904,
+   "ci95_resolvable": [
+    0.657831,
+    0.695405
+   ],
+   "listed_share_of_all": 0.659697,
+   "ci95_all": [
+    0.640655,
+    0.678236
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "negatives",
+   "scope": "DDI-DrugBank",
+   "n": 2161,
+   "resolvable": 2148,
+   "listed": 1508,
+   "listed_share_of_resolvable": 0.702048,
+   "ci95_resolvable": [
+    0.68236,
+    0.721015
+   ],
+   "listed_share_of_all": 0.697825,
+   "ci95_all": [
+    0.678127,
+    0.716821
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "negatives",
+   "scope": "DDI-MedLine",
+   "n": 278,
+   "resolvable": 229,
+   "listed": 101,
+   "listed_share_of_resolvable": 0.441048,
+   "ci95_resolvable": [
+    0.378239,
+    0.505803
+   ],
+   "listed_share_of_all": 0.363309,
+   "ci95_all": [
+    0.308992,
+    0.421353
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "positives",
+   "scope": "pooled",
+   "n": 371,
+   "resolvable": 362,
+   "listed": 263,
+   "listed_share_of_resolvable": 0.726519,
+   "ci95_resolvable": [
+    0.678403,
+    0.769879
+   ],
+   "listed_share_of_all": 0.708895,
+   "ci95_all": [
+    0.660717,
+    0.752791
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "positives",
+   "scope": "DDI-DrugBank",
+   "n": 291,
+   "resolvable": 291,
+   "listed": 222,
+   "listed_share_of_resolvable": 0.762887,
+   "ci95_resolvable": [
+    0.710794,
+    0.808129
+   ],
+   "listed_share_of_all": 0.762887,
+   "ci95_all": [
+    0.710794,
+    0.808129
+   ],
+   "n_self_pairs_removed": 0
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "positives",
+   "scope": "DDI-MedLine",
+   "n": 80,
+   "resolvable": 71,
+   "listed": 41,
+   "listed_share_of_resolvable": 0.577465,
+   "ci95_resolvable": [
+    0.461507,
+    0.68547
+   ],
+   "listed_share_of_all": 0.5125,
+   "ci95_all": [
+    0.404933,
+    0.618921
+   ],
+   "n_self_pairs_removed": 0
+  }
+ ],
+ "unique_pairs": [
+  {
+   "convention": "self_pairs_excluded",
+   "class": "negatives",
+   "scope": "pooled",
+   "n": 1559,
+   "resolvable": 1532,
+   "listed": 1147,
+   "listed_share_of_resolvable": 0.748695,
+   "ci95_resolvable": [
+    0.72637,
+    0.769775
+   ],
+   "listed_share_of_all": 0.735728,
+   "ci95_all": [
+    0.71328,
+    0.757018
+   ]
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "negatives",
+   "scope": "DDI-DrugBank",
+   "n": 1446,
+   "resolvable": 1439,
+   "listed": 1104,
+   "listed_share_of_resolvable": 0.767199,
+   "ci95_resolvable": [
+    0.74467,
+    0.788306
+   ],
+   "listed_share_of_all": 0.763485,
+   "ci95_all": [
+    0.740903,
+    0.784672
+   ]
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "negatives",
+   "scope": "DDI-MedLine",
+   "n": 118,
+   "resolvable": 98,
+   "listed": 47,
+   "listed_share_of_resolvable": 0.479592,
+   "ci95_resolvable": [
+    0.383331,
+    0.577392
+   ],
+   "listed_share_of_all": 0.398305,
+   "ci95_all": [
+    0.314527,
+    0.488496
+   ]
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "positives",
+   "scope": "pooled",
+   "n": 298,
+   "resolvable": 293,
+   "listed": 206,
+   "listed_share_of_resolvable": 0.703072,
+   "ci95_resolvable": [
+    0.6484,
+    0.752487
+   ],
+   "listed_share_of_all": 0.691275,
+   "ci95_all": [
+    0.636668,
+    0.741014
+   ]
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "positives",
+   "scope": "DDI-DrugBank",
+   "n": 249,
+   "resolvable": 249,
+   "listed": 183,
+   "listed_share_of_resolvable": 0.73494,
+   "ci95_resolvable": [
+    0.67685,
+    0.78589
+   ],
+   "listed_share_of_all": 0.73494,
+   "ci95_all": [
+    0.67685,
+    0.78589
+   ]
+  },
+  {
+   "convention": "self_pairs_excluded",
+   "class": "positives",
+   "scope": "DDI-MedLine",
+   "n": 49,
+   "resolvable": 44,
+   "listed": 23,
+   "listed_share_of_resolvable": 0.522727,
+   "ci95_resolvable": [
+    0.379355,
+    0.66245
+   ],
+   "listed_share_of_all": 0.469388,
+   "ci95_all": [
+    0.337035,
+    0.606191
+   ]
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "negatives",
+   "scope": "pooled",
+   "n": 1672,
+   "resolvable": 1635,
+   "listed": 1147,
+   "listed_share_of_resolvable": 0.701529,
+   "ci95_resolvable": [
+    0.678898,
+    0.723216
+   ],
+   "listed_share_of_all": 0.686005,
+   "ci95_all": [
+    0.663354,
+    0.707803
+   ]
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "negatives",
+   "scope": "DDI-DrugBank",
+   "n": 1538,
+   "resolvable": 1527,
+   "listed": 1104,
+   "listed_share_of_resolvable": 0.722986,
+   "ci95_resolvable": [
+    0.700002,
+    0.744852
+   ],
+   "listed_share_of_all": 0.717815,
+   "ci95_all": [
+    0.694801,
+    0.739744
+   ]
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "negatives",
+   "scope": "DDI-MedLine",
+   "n": 143,
+   "resolvable": 117,
+   "listed": 47,
+   "listed_share_of_resolvable": 0.401709,
+   "ci95_resolvable": [
+    0.31737,
+    0.492298
+   ],
+   "listed_share_of_all": 0.328671,
+   "ci95_all": [
+    0.257046,
+    0.409261
+   ]
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "positives",
+   "scope": "pooled",
+   "n": 298,
+   "resolvable": 293,
+   "listed": 206,
+   "listed_share_of_resolvable": 0.703072,
+   "ci95_resolvable": [
+    0.6484,
+    0.752487
+   ],
+   "listed_share_of_all": 0.691275,
+   "ci95_all": [
+    0.636668,
+    0.741014
+   ]
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "positives",
+   "scope": "DDI-DrugBank",
+   "n": 249,
+   "resolvable": 249,
+   "listed": 183,
+   "listed_share_of_resolvable": 0.73494,
+   "ci95_resolvable": [
+    0.67685,
+    0.78589
+   ],
+   "listed_share_of_all": 0.73494,
+   "ci95_all": [
+    0.67685,
+    0.78589
+   ]
+  },
+  {
+   "convention": "self_pairs_included",
+   "class": "positives",
+   "scope": "DDI-MedLine",
+   "n": 49,
+   "resolvable": 44,
+   "listed": 23,
+   "listed_share_of_resolvable": 0.522727,
+   "ci95_resolvable": [
+    0.379355,
+    0.66245
+   ],
+   "listed_share_of_all": 0.469388,
+   "ci95_all": [
+    0.337035,
+    0.606191
+   ]
+  }
+ ],
+ "pairs_with_both_classes": 126,
+ "reproduction": [
+  {
+   "value": "MedLine negatives, self pairs excluded, listed over resolvable",
+   "stored": {
+    "listed": 101,
+    "resolvable": 196,
+    "value": 0.515,
+    "ci95": [
+     0.446,
+     0.584
+    ]
+   },
+   "recomputed": {
+    "listed": 101,
+    "resolvable": 196,
+    "n": 229,
+    "value": 0.515306,
+    "ci95": [
+     0.445721,
+     0.584303
+    ]
+   },
+   "match": true
+  },
+  {
+   "value": "pooled negatives, self pairs excluded, listed over resolvable (0.763 in the abstract)",
+   "stored": {
+    "resolvable": 2108,
+    "value": 0.763
+   },
+   "recomputed": {
+    "listed": 1609,
+    "resolvable": 2108,
+    "n": 2150,
+    "value": 0.763283,
+    "ci95": [
+     0.744668,
+     0.780939
+    ]
+   },
+   "match": true
+  },
+  {
+   "value": "pooled positives, listed over resolvable (0.727)",
+   "stored": {
+    "resolvable": 362,
+    "value": 0.727
+   },
+   "recomputed": {
+    "listed": 263,
+    "resolvable": 362,
+    "n": 371,
+    "value": 0.726519,
+    "ci95": [
+     0.678403,
+     0.769879
+    ]
+   },
+   "match": true
+  },
+  {
+   "value": "DDI-DrugBank negatives, self pairs excluded, listed over all pairs (0.785, the AUROC table false positive rate)",
+   "stored": {
+    "value": 0.785
+   },
+   "recomputed": {
+    "listed": 1508,
+    "resolvable": 1912,
+    "n": 1921,
+    "value": 0.785008,
+    "ci95": [
+     0.766078,
+     0.8028
+    ]
+   },
+   "match": true
+  },
+  {
+   "value": "DDI-DrugBank positives, listed over all pairs (0.763, the AUROC table true positive rate)",
+   "stored": {
+    "value": 0.763
+   },
+   "recomputed": {
+    "listed": 222,
+    "resolvable": 291,
+    "n": 291,
+    "value": 0.762887,
+    "ci95": [
+     0.710794,
+     0.808129
+    ]
+   },
+   "match": true
+  }
+ ],
+ "denominator_map": [
+  {
+   "value": "0.763 (negatives)",
+   "row": "self_pairs_excluded / negatives / pooled",
+   "denominator": "resolvable pairs"
+  },
+  {
+   "value": "0.727",
+   "row": "self_pairs_excluded / positives / pooled",
+   "denominator": "resolvable pairs (positives have no self pairs)"
+  },
+  {
+   "value": "0.785",
+   "row": "self_pairs_excluded / negatives / DDI-DrugBank",
+   "denominator": "all pairs, unresolvable counted as not listed"
+  },
+  {
+   "value": "0.763 (true positive rate)",
+   "row": "self_pairs_excluded / positives / DDI-DrugBank",
+   "denominator": "all pairs; equal to the resolvable denominator here"
+  }
+ ]
+}

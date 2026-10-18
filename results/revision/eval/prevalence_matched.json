@@ -1,0 +1,6603 @@
+{
+ "sources": {
+  "preds": "results/revision/preds",
+  "jobs": [
+   "b1names-bertbase-s42",
+   "b1names-biobert-s42",
+   "b1names-biomedbert-disjoint-s42",
+   "b1names-biomedbert-s1",
+   "b1names-biomedbert-s2",
+   "b1names-biomedbert-s3",
+   "b1names-biomedbert-s4",
+   "b1names-biomedbert-s42",
+   "b2masked-biomedbert-s1",
+   "b2masked-biomedbert-s2",
+   "b2masked-biomedbert-s3",
+   "b2masked-biomedbert-s4",
+   "b2masked-biomedbert-s42",
+   "b2mixed-bertbase-s1",
+   "b2mixed-bertbase-s2",
+   "b2mixed-bertbase-s3",
+   "b2mixed-bertbase-s4",
+   "b2mixed-bertbase-s42",
+   "b2mixed-biobert-s42",
+   "b2mixed-biomedbert-disjoint-s42",
+   "b2mixed-biomedbert-s1",
+   "b2mixed-biomedbert-s2",
+   "b2mixed-biomedbert-s3",
+   "b2mixed-biomedbert-s4",
+   "b2mixed-biomedbert-s42",
+   "b2sentence-bertbase-s1",
+   "b2sentence-bertbase-s2",
+   "b2sentence-bertbase-s3",
+   "b2sentence-bertbase-s4",
+   "b2sentence-bertbase-s42",
+   "b2sentence-biobert-s42",
+   "b2sentence-biomedbert-disjoint-s42",
+   "b2sentence-biomedbert-s1",
+   "b2sentence-biomedbert-s2",
+   "b2sentence-biomedbert-s3",
+   "b2sentence-biomedbert-s4",
+   "b2sentence-biomedbert-s42",
+   "krag-bm25-k5-c400-biomedbert-s42",
+   "krag-contaminated-k5-c400-biomedbert-s1",
+   "krag-contaminated-k5-c400-biomedbert-s2",
+   "krag-contaminated-k5-c400-biomedbert-s3",
+   "krag-contaminated-k5-c400-biomedbert-s4",
+   "krag-contaminated-k5-c400-biomedbert-s42",
+   "krag-dense-k5-c400-biomedbert-s42",
+   "krag-excl_clinical_pharmacology-k5-c400-biomedbert-s42",
+   "krag-excl_mechanism_of_action-k5-c400-biomedbert-s42",
+   "krag-excl_pharmacokinetics-k5-c400-biomedbert-s42",
+   "krag-excl_warnings_and_cautions-k5-c400-biomedbert-s42",
+   "krag-hybrid-k1-c400-biomedbert-s42",
+   "krag-hybrid-k3-c400-biomedbert-s42",
+   "krag-hybrid-k5-c100-biomedbert-s42",
+   "krag-hybrid-k5-c400-biomedbert-s1",
+   "krag-hybrid-k5-c400-biomedbert-s2",
+   "krag-hybrid-k5-c400-biomedbert-s3",
+   "krag-hybrid-k5-c400-biomedbert-s4",
+   "krag-hybrid-k5-c400-biomedbert-s42",
+   "krag-masked-k5-c400-biomedbert-s42",
+   "llm-biomistral-names",
+   "llm-biomistral-rag",
+   "llm-qwen-names",
+   "llm-qwen-rag"
+  ],
+  "extra": [
+   "results/revision/cpu/b4-lr-s42.json",
+   "results/corrected/preds/krag_hybrid_k5_s42.json"
+  ],
+  "ood_hash": "61928b6d9f311ae902b468e11cbc77150c88850e20268431d8ba286773bbad0b",
+  "ood_old_hash": "b663dd650f3d836e6440b9edf2b6cb0af0e9a34a7fb2266edfe492b87577e872"
+ },
+ "target_ood_prevalence": 0.3379,
+ "target_id_prevalence": 0.132028,
+ "n_resamples": 1000,
+ "cells": [
+  {
+   "group": "b1names/bertbase",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.268398,
+   "original_mcc": 0.036387,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.117647,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.038343,
+    "balanced_accuracy": 0.478527,
+    "auroc": 0.529545,
+    "auprc": 0.166317
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.173816,
+     "lo": 0.09901,
+     "hi": 0.254545
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.025138,
+     "lo": -0.059039,
+     "hi": 0.11795
+    },
+    "balanced_accuracy": {
+     "mean": 0.514754,
+     "lo": 0.467163,
+     "hi": 0.569436
+    },
+    "auroc": {
+     "mean": 0.543907,
+     "lo": 0.476324,
+     "hi": 0.606989
+    },
+    "auprc": {
+     "mean": 0.159696,
+     "lo": 0.124112,
+     "hi": 0.201374
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/bertbase",
+   "key": "oodold_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.215842,
+   "original_mcc": -0.032704,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.151951,
+    "f1_all_positive": 0.233136,
+    "mcc": -0.006329,
+    "balanced_accuracy": 0.496301,
+    "auroc": 0.463754,
+    "auprc": 0.126963
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.137017,
+     "lo": 0.105263,
+     "hi": 0.170732
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": -0.023346,
+     "lo": -0.059392,
+     "hi": 0.015284
+    },
+    "balanced_accuracy": {
+     "mean": 0.486486,
+     "lo": 0.465844,
+     "hi": 0.508991
+    },
+    "auroc": {
+     "mean": 0.469094,
+     "lo": 0.437937,
+     "hi": 0.505581
+    },
+    "auprc": {
+     "mean": 0.126761,
+     "lo": 0.11486,
+     "hi": 0.141279
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/bertbase",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.257046,
+   "original_mcc": 0.124552,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.365971,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.132113,
+    "balanced_accuracy": 0.558728,
+    "auroc": 0.594775,
+    "auprc": 0.421246
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.377066,
+     "lo": 0.36715,
+     "hi": 0.387755
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.164908,
+     "lo": 0.135587,
+     "hi": 0.196696
+    },
+    "balanced_accuracy": {
+     "mean": 0.571252,
+     "lo": 0.560104,
+     "hi": 0.5828
+    },
+    "auroc": {
+     "mean": 0.617751,
+     "lo": 0.600042,
+     "hi": 0.63544
+    },
+    "auprc": {
+     "mean": 0.445065,
+     "lo": 0.424338,
+     "hi": 0.466908
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biobert",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.317343,
+   "original_mcc": 0.015449,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.228571,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.065595,
+    "balanced_accuracy": 0.543887,
+    "auroc": 0.527978,
+    "auprc": 0.183504
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.187045,
+     "lo": 0.121212,
+     "hi": 0.253521
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.011685,
+     "lo": -0.072202,
+     "hi": 0.098959
+    },
+    "balanced_accuracy": {
+     "mean": 0.507978,
+     "lo": 0.452978,
+     "hi": 0.566614
+    },
+    "auroc": {
+     "mean": 0.47711,
+     "lo": 0.399504,
+     "hi": 0.554222
+    },
+    "auprc": {
+     "mean": 0.158453,
+     "lo": 0.116729,
+     "hi": 0.21276
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biobert",
+   "key": "oodold_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.275265,
+   "original_mcc": 0.034482,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.17623,
+    "f1_all_positive": 0.233136,
+    "mcc": 0.022996,
+    "balanced_accuracy": 0.513458,
+    "auroc": 0.492505,
+    "auprc": 0.133139
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.178019,
+     "lo": 0.141962,
+     "hi": 0.209345
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": 0.025135,
+     "lo": -0.016229,
+     "hi": 0.061425
+    },
+    "balanced_accuracy": {
+     "mean": 0.514796,
+     "lo": 0.490615,
+     "hi": 0.536364
+    },
+    "auroc": {
+     "mean": 0.502922,
+     "lo": 0.468487,
+     "hi": 0.538823
+    },
+    "auprc": {
+     "mean": 0.134981,
+     "lo": 0.122627,
+     "hi": 0.148983
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biobert",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.218919,
+   "original_mcc": 0.100478,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.294011,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.104959,
+    "balanced_accuracy": 0.541076,
+    "auroc": 0.597087,
+    "auprc": 0.409812
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.301153,
+     "lo": 0.293478,
+     "hi": 0.308571
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.132006,
+     "lo": 0.102972,
+     "hi": 0.160613
+    },
+    "balanced_accuracy": {
+     "mean": 0.549999,
+     "lo": 0.540389,
+     "hi": 0.558958
+    },
+    "auroc": {
+     "mean": 0.625677,
+     "lo": 0.608726,
+     "hi": 0.643666
+    },
+    "auprc": {
+     "mean": 0.431873,
+     "lo": 0.412119,
+     "hi": 0.452193
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biomedbert/disjoint",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.396226,
+   "original_mcc": 0.055043,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.223529,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.043856,
+    "balanced_accuracy": 0.531426,
+    "auroc": 0.548511,
+    "auprc": 0.158145
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.220241,
+     "lo": 0.169697,
+     "hi": 0.274286
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0394,
+     "lo": -0.035733,
+     "hi": 0.122253
+    },
+    "balanced_accuracy": {
+     "mean": 0.528347,
+     "lo": 0.474608,
+     "hi": 0.588245
+    },
+    "auroc": {
+     "mean": 0.519799,
+     "lo": 0.448174,
+     "hi": 0.594246
+    },
+    "auprc": {
+     "mean": 0.154263,
+     "lo": 0.124282,
+     "hi": 0.191741
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biomedbert/disjoint",
+   "key": "oodold_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.341062,
+   "original_mcc": -0.003802,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.172222,
+    "f1_all_positive": 0.233136,
+    "mcc": -0.029078,
+    "balanced_accuracy": 0.479505,
+    "auroc": 0.444125,
+    "auprc": 0.119686
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.190951,
+     "lo": 0.164575,
+     "hi": 0.219215
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": -0.002119,
+     "lo": -0.039935,
+     "hi": 0.039031
+    },
+    "balanced_accuracy": {
+     "mean": 0.498536,
+     "lo": 0.471891,
+     "hi": 0.527729
+    },
+    "auroc": {
+     "mean": 0.49711,
+     "lo": 0.463072,
+     "hi": 0.532552
+    },
+    "auprc": {
+     "mean": 0.137228,
+     "lo": 0.12309,
+     "hi": 0.153748
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biomedbert/disjoint",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.23676,
+   "original_mcc": 0.092391,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.351852,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.090465,
+    "balanced_accuracy": 0.541534,
+    "auroc": 0.611938,
+    "auprc": 0.418637
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.363548,
+     "lo": 0.353475,
+     "hi": 0.373786
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.124972,
+     "lo": 0.095263,
+     "hi": 0.155169
+    },
+    "balanced_accuracy": {
+     "mean": 0.555785,
+     "lo": 0.54358,
+     "hi": 0.567686
+    },
+    "auroc": {
+     "mean": 0.612747,
+     "lo": 0.594651,
+     "hi": 0.630335
+    },
+    "auprc": {
+     "mean": 0.431782,
+     "lo": 0.412784,
+     "hi": 0.454008
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biomedbert",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.401146,
+   "original_mcc": 0.020169,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.258706,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.094315,
+    "balanced_accuracy": 0.569592,
+    "auroc": 0.527273,
+    "auprc": 0.175032
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.213761,
+     "lo": 0.157895,
+     "hi": 0.258706
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.016983,
+     "lo": -0.075556,
+     "hi": 0.094315
+    },
+    "balanced_accuracy": {
+     "mean": 0.512547,
+     "lo": 0.444592,
+     "hi": 0.569592
+    },
+    "auroc": {
+     "mean": 0.507143,
+     "lo": 0.433775,
+     "hi": 0.579902
+    },
+    "auprc": {
+     "mean": 0.151075,
+     "lo": 0.117449,
+     "hi": 0.196323
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biomedbert",
+   "key": "oodold_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.323437,
+   "original_mcc": -0.008542,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.162482,
+    "f1_all_positive": 0.233136,
+    "mcc": -0.035321,
+    "balanced_accuracy": 0.475628,
+    "auroc": 0.456919,
+    "auprc": 0.119332
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.183687,
+     "lo": 0.157037,
+     "hi": 0.212644
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": -0.006119,
+     "lo": -0.042725,
+     "hi": 0.034224
+    },
+    "balanced_accuracy": {
+     "mean": 0.4958,
+     "lo": 0.470552,
+     "hi": 0.523851
+    },
+    "auroc": {
+     "mean": 0.477621,
+     "lo": 0.440256,
+     "hi": 0.513549
+    },
+    "auprc": {
+     "mean": 0.12989,
+     "lo": 0.117684,
+     "hi": 0.144748
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b1names/biomedbert",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.262376,
+   "original_mcc": 0.140121,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.359322,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.154212,
+    "balanced_accuracy": 0.56514,
+    "auroc": 0.654112,
+    "auprc": 0.457859
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.368383,
+     "lo": 0.359917,
+     "hi": 0.377241
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.182606,
+     "lo": 0.156061,
+     "hi": 0.210671
+    },
+    "balanced_accuracy": {
+     "mean": 0.575055,
+     "lo": 0.565811,
+     "hi": 0.584415
+    },
+    "auroc": {
+     "mean": 0.671095,
+     "lo": 0.654464,
+     "hi": 0.687718
+    },
+    "auprc": {
+     "mean": 0.478678,
+     "lo": 0.455611,
+     "hi": 0.501187
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2masked/biomedbert",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.428135,
+    "auprc": 0.119471
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.459584,
+     "lo": 0.390253,
+     "hi": 0.526581
+    },
+    "auprc": {
+     "mean": 0.132583,
+     "lo": 0.105679,
+     "hi": 0.17041
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2masked/biomedbert",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": -0.048384,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.030232,
+    "balanced_accuracy": 0.496552,
+    "auroc": 0.410972,
+    "auprc": 0.109567
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.030232,
+     "lo": -0.030232,
+     "hi": -0.030232
+    },
+    "balanced_accuracy": {
+     "mean": 0.496552,
+     "lo": 0.496552,
+     "hi": 0.496552
+    },
+    "auroc": {
+     "mean": 0.448728,
+     "lo": 0.382049,
+     "hi": 0.517012
+    },
+    "auprc": {
+     "mean": 0.120377,
+     "lo": 0.10296,
+     "hi": 0.142407
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2masked/biomedbert",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.0,
+    "f1_all_positive": 0.233136,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.488635,
+    "auprc": 0.133574
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.461906,
+     "lo": 0.427748,
+     "hi": 0.49901
+    },
+    "auprc": {
+     "mean": 0.125868,
+     "lo": 0.112848,
+     "hi": 0.141316
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2masked/biomedbert",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": -0.010409,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.567977,
+    "auprc": 0.385864
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": -0.011493,
+     "lo": -0.030516,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.4996,
+     "lo": 0.498624,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.567245,
+     "lo": 0.549485,
+     "hi": 0.584761
+    },
+    "auprc": {
+     "mean": 0.382827,
+     "lo": 0.365799,
+     "hi": 0.401832
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2masked/biomedbert",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.716707,
+   "original_mcc": 0.673271,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.827972,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.746265,
+    "balanced_accuracy": 0.865909,
+    "auroc": 0.959185,
+    "auprc": 0.910148
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.828805,
+     "lo": 0.816552,
+     "hi": 0.842105
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.747714,
+     "lo": 0.726656,
+     "hi": 0.770657
+    },
+    "balanced_accuracy": {
+     "mean": 0.866374,
+     "lo": 0.859032,
+     "hi": 0.874163
+    },
+    "auroc": {
+     "mean": 0.95939,
+     "lo": 0.952822,
+     "hi": 0.966011
+    },
+    "auprc": {
+     "mean": 0.916976,
+     "lo": 0.900676,
+     "hi": 0.933743
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2masked/biomedbert",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": -0.007359,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.570053,
+    "auprc": 0.382494
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": -0.006233,
+     "lo": -0.021568,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.499801,
+     "lo": 0.499312,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.570191,
+     "lo": 0.550941,
+     "hi": 0.590414
+    },
+    "auprc": {
+     "mean": 0.383964,
+     "lo": 0.366753,
+     "hi": 0.403232
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2masked/biomedbert",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.508055,
+   "original_mcc": 0.428087,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.6298,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.487673,
+    "balanced_accuracy": 0.724698,
+    "auroc": 0.854421,
+    "auprc": 0.700491
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.63574,
+     "lo": 0.6231,
+     "hi": 0.647735
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.500414,
+     "lo": 0.473398,
+     "hi": 0.52622
+    },
+    "balanced_accuracy": {
+     "mean": 0.728836,
+     "lo": 0.719884,
+     "hi": 0.737095
+    },
+    "auroc": {
+     "mean": 0.854808,
+     "lo": 0.842097,
+     "hi": 0.867505
+    },
+    "auprc": {
+     "mean": 0.701686,
+     "lo": 0.66771,
+     "hi": 0.738519
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/bertbase",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.112994,
+   "original_mcc": 0.0039,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.173913,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.091053,
+    "balanced_accuracy": 0.535423,
+    "auroc": 0.550235,
+    "auprc": 0.180488
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.088125,
+     "lo": 0.030469,
+     "hi": 0.173913
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.000321,
+     "lo": -0.061861,
+     "hi": 0.091053
+    },
+    "balanced_accuracy": {
+     "mean": 0.500548,
+     "lo": 0.478321,
+     "hi": 0.535423
+    },
+    "auroc": {
+     "mean": 0.527362,
+     "lo": 0.461505,
+     "hi": 0.599165
+    },
+    "auprc": {
+     "mean": 0.153071,
+     "lo": 0.12102,
+     "hi": 0.19523
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/bertbase",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.037975,
+   "original_mcc": -0.012248,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.038462,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.00312,
+    "balanced_accuracy": 0.499295,
+    "auroc": 0.535502,
+    "auprc": 0.15769
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.034224,
+     "lo": 0.0,
+     "hi": 0.075472
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.01016,
+     "lo": -0.056991,
+     "hi": 0.044523
+    },
+    "balanced_accuracy": {
+     "mean": 0.498158,
+     "lo": 0.487931,
+     "hi": 0.510658
+    },
+    "auroc": {
+     "mean": 0.503086,
+     "lo": 0.435872,
+     "hi": 0.572502
+    },
+    "auprc": {
+     "mean": 0.139878,
+     "lo": 0.114219,
+     "hi": 0.171002
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/bertbase",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.13597,
+   "original_mcc": 0.005279,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.100313,
+    "f1_all_positive": 0.233136,
+    "mcc": -0.000707,
+    "balanced_accuracy": 0.499714,
+    "auroc": 0.467655,
+    "auprc": 0.124961
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.10473,
+     "lo": 0.063898,
+     "hi": 0.146789
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": 0.003903,
+     "lo": -0.039229,
+     "hi": 0.04806
+    },
+    "balanced_accuracy": {
+     "mean": 0.501694,
+     "lo": 0.484486,
+     "hi": 0.520019
+    },
+    "auroc": {
+     "mean": 0.471949,
+     "lo": 0.43861,
+     "hi": 0.506475
+    },
+    "auprc": {
+     "mean": 0.126741,
+     "lo": 0.115103,
+     "hi": 0.140241
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/bertbase",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.157303,
+   "original_mcc": 0.0921,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.184615,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.098648,
+    "balanced_accuracy": 0.527718,
+    "auroc": 0.609837,
+    "auprc": 0.432354
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.187137,
+     "lo": 0.183406,
+     "hi": 0.190909
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.118013,
+     "lo": 0.089849,
+     "hi": 0.148261
+    },
+    "balanced_accuracy": {
+     "mean": 0.531901,
+     "lo": 0.525655,
+     "hi": 0.538034
+    },
+    "auroc": {
+     "mean": 0.63271,
+     "lo": 0.614996,
+     "hi": 0.649153
+    },
+    "auprc": {
+     "mean": 0.454289,
+     "lo": 0.432959,
+     "hi": 0.475675
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/bertbase",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.826286,
+    "auprc": 0.655992
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.812389,
+     "lo": 0.796394,
+     "hi": 0.82789
+    },
+    "auprc": {
+     "mean": 0.644201,
+     "lo": 0.61557,
+     "hi": 0.675493
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/bertbase",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.072464,
+   "original_mcc": 0.07984,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.075949,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.090741,
+    "balanced_accuracy": 0.514026,
+    "auroc": 0.609279,
+    "auprc": 0.425754
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.076066,
+     "lo": 0.075188,
+     "hi": 0.076923
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.095422,
+     "lo": 0.067658,
+     "hi": 0.126694
+    },
+    "balanced_accuracy": {
+     "mean": 0.514432,
+     "lo": 0.511275,
+     "hi": 0.517465
+    },
+    "auroc": {
+     "mean": 0.632236,
+     "lo": 0.615025,
+     "hi": 0.64914
+    },
+    "auprc": {
+     "mean": 0.447471,
+     "lo": 0.427018,
+     "hi": 0.468256
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/bertbase",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.633609,
+   "original_mcc": 0.579472,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.716511,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.618229,
+    "balanced_accuracy": 0.781775,
+    "auroc": 0.942872,
+    "auprc": 0.87739
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.720638,
+     "lo": 0.708783,
+     "hi": 0.732484
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.62669,
+     "lo": 0.602522,
+     "hi": 0.65105
+    },
+    "balanced_accuracy": {
+     "mean": 0.784276,
+     "lo": 0.776961,
+     "hi": 0.791404
+    },
+    "auroc": {
+     "mean": 0.942911,
+     "lo": 0.933702,
+     "hi": 0.950796
+    },
+    "auprc": {
+     "mean": 0.883148,
+     "lo": 0.862892,
+     "hi": 0.903353
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biobert",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.18,
+   "original_mcc": 0.006405,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.164706,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.043131,
+    "balanced_accuracy": 0.520925,
+    "auroc": 0.522884,
+    "auprc": 0.166017
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.127941,
+     "lo": 0.05,
+     "hi": 0.206897
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.004187,
+     "lo": -0.078291,
+     "hi": 0.088162
+    },
+    "balanced_accuracy": {
+     "mean": 0.502425,
+     "lo": 0.464107,
+     "hi": 0.543652
+    },
+    "auroc": {
+     "mean": 0.483599,
+     "lo": 0.409695,
+     "hi": 0.552003
+    },
+    "auprc": {
+     "mean": 0.144206,
+     "lo": 0.110726,
+     "hi": 0.191183
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biobert",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.18,
+   "original_mcc": 0.006405,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.164706,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.043131,
+    "balanced_accuracy": 0.520925,
+    "auroc": 0.521552,
+    "auprc": 0.166654
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.126392,
+     "lo": 0.05,
+     "hi": 0.206897
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.002543,
+     "lo": -0.078291,
+     "hi": 0.088162
+    },
+    "balanced_accuracy": {
+     "mean": 0.501641,
+     "lo": 0.464107,
+     "hi": 0.543652
+    },
+    "auroc": {
+     "mean": 0.481573,
+     "lo": 0.407498,
+     "hi": 0.548005
+    },
+    "auprc": {
+     "mean": 0.14273,
+     "lo": 0.109598,
+     "hi": 0.188642
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biobert",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.209277,
+   "original_mcc": 0.01245,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.164649,
+    "f1_all_positive": 0.233136,
+    "mcc": 0.030938,
+    "balanced_accuracy": 0.516078,
+    "auroc": 0.513466,
+    "auprc": 0.150845
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.145344,
+     "lo": 0.109726,
+     "hi": 0.182254
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": 0.010068,
+     "lo": -0.028336,
+     "hi": 0.05009
+    },
+    "balanced_accuracy": {
+     "mean": 0.505274,
+     "lo": 0.485622,
+     "hi": 0.526231
+    },
+    "auroc": {
+     "mean": 0.501869,
+     "lo": 0.465965,
+     "hi": 0.536446
+    },
+    "auprc": {
+     "mean": 0.139883,
+     "lo": 0.125788,
+     "hi": 0.157115
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biobert",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.153846,
+   "original_mcc": 0.061839,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.191268,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.056644,
+    "balanced_accuracy": 0.517978,
+    "auroc": 0.602724,
+    "auprc": 0.430147
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.195415,
+     "lo": 0.190861,
+     "hi": 0.2
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.082505,
+     "lo": 0.054199,
+     "hi": 0.112375
+    },
+    "balanced_accuracy": {
+     "mean": 0.524952,
+     "lo": 0.517273,
+     "hi": 0.532421
+    },
+    "auroc": {
+     "mean": 0.634638,
+     "lo": 0.61681,
+     "hi": 0.652275
+    },
+    "auprc": {
+     "mean": 0.453392,
+     "lo": 0.433772,
+     "hi": 0.473987
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biobert",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.847488,
+    "auprc": 0.685837
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.83562,
+     "lo": 0.818688,
+     "hi": 0.852146
+    },
+    "auprc": {
+     "mean": 0.656761,
+     "lo": 0.628502,
+     "hi": 0.687521
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biobert",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.157895,
+   "original_mcc": 0.063209,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.199584,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.06947,
+    "balanced_accuracy": 0.522049,
+    "auroc": 0.605726,
+    "auprc": 0.428519
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.201953,
+     "lo": 0.197115,
+     "hi": 0.206897
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.083874,
+     "lo": 0.055099,
+     "hi": 0.114635
+    },
+    "balanced_accuracy": {
+     "mean": 0.525879,
+     "lo": 0.517905,
+     "hi": 0.533741
+    },
+    "auroc": {
+     "mean": 0.636834,
+     "lo": 0.618263,
+     "hi": 0.654726
+    },
+    "auprc": {
+     "mean": 0.453137,
+     "lo": 0.434403,
+     "hi": 0.473515
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biobert",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.662011,
+   "original_mcc": 0.613269,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.738318,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.64949,
+    "balanced_accuracy": 0.796023,
+    "auroc": 0.951421,
+    "auprc": 0.886926
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.740401,
+     "lo": 0.729231,
+     "hi": 0.751189
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.653717,
+     "lo": 0.631274,
+     "hi": 0.675555
+    },
+    "balanced_accuracy": {
+     "mean": 0.797241,
+     "lo": 0.790521,
+     "hi": 0.803589
+    },
+    "auroc": {
+     "mean": 0.953585,
+     "lo": 0.945278,
+     "hi": 0.961282
+    },
+    "auprc": {
+     "mean": 0.898284,
+     "lo": 0.878702,
+     "hi": 0.916583
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert/disjoint",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.333333,
+   "original_mcc": 0.018032,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.217687,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.046602,
+    "balanced_accuracy": 0.531818,
+    "auroc": 0.535893,
+    "auprc": 0.167049
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.192557,
+     "lo": 0.128571,
+     "hi": 0.253333
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.013113,
+     "lo": -0.071334,
+     "hi": 0.095781
+    },
+    "balanced_accuracy": {
+     "mean": 0.509114,
+     "lo": 0.452273,
+     "hi": 0.565909
+    },
+    "auroc": {
+     "mean": 0.518168,
+     "lo": 0.450623,
+     "hi": 0.584252
+    },
+    "auprc": {
+     "mean": 0.147674,
+     "lo": 0.119297,
+     "hi": 0.182325
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert/disjoint",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.236842,
+   "original_mcc": -0.000399,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.186916,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.038483,
+    "balanced_accuracy": 0.522257,
+    "auroc": 0.542947,
+    "auprc": 0.166648
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.153086,
+     "lo": 0.079208,
+     "hi": 0.220183
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.000271,
+     "lo": -0.082571,
+     "hi": 0.076857
+    },
+    "balanced_accuracy": {
+     "mean": 0.500496,
+     "lo": 0.454075,
+     "hi": 0.544984
+    },
+    "auroc": {
+     "mean": 0.507987,
+     "lo": 0.442531,
+     "hi": 0.576021
+    },
+    "auprc": {
+     "mean": 0.143922,
+     "lo": 0.117054,
+     "hi": 0.178071
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert/disjoint",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.239067,
+   "original_mcc": -0.010996,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.104167,
+    "f1_all_positive": 0.233136,
+    "mcc": -0.062317,
+    "balanced_accuracy": 0.463915,
+    "auroc": 0.442717,
+    "auprc": 0.122452
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.152127,
+     "lo": 0.115942,
+     "hi": 0.187251
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": -0.007512,
+     "lo": -0.04897,
+     "hi": 0.033161
+    },
+    "balanced_accuracy": {
+     "mean": 0.495653,
+     "lo": 0.471529,
+     "hi": 0.519752
+    },
+    "auroc": {
+     "mean": 0.47093,
+     "lo": 0.433288,
+     "hi": 0.507534
+    },
+    "auprc": {
+     "mean": 0.134342,
+     "lo": 0.117786,
+     "hi": 0.154315
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert/disjoint",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.186275,
+   "original_mcc": 0.094536,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.233607,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.109004,
+    "balanced_accuracy": 0.535554,
+    "auroc": 0.627619,
+    "auprc": 0.443565
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.236106,
+     "lo": 0.230303,
+     "hi": 0.241525
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.122517,
+     "lo": 0.091874,
+     "hi": 0.152395
+    },
+    "balanced_accuracy": {
+     "mean": 0.539061,
+     "lo": 0.53074,
+     "hi": 0.546558
+    },
+    "auroc": {
+     "mean": 0.644691,
+     "lo": 0.626861,
+     "hi": 0.662838
+    },
+    "auprc": {
+     "mean": 0.45654,
+     "lo": 0.434687,
+     "hi": 0.479261
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert/disjoint",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.072727,
+   "original_mcc": 0.181432,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.072727,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.159085,
+    "balanced_accuracy": 0.518868,
+    "auroc": 0.863223,
+    "auprc": 0.727358
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.072727,
+     "lo": 0.072727,
+     "hi": 0.072727
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.159085,
+     "lo": 0.159085,
+     "hi": 0.159085
+    },
+    "balanced_accuracy": {
+     "mean": 0.518868,
+     "lo": 0.518868,
+     "hi": 0.518868
+    },
+    "auroc": {
+     "mean": 0.851595,
+     "lo": 0.837209,
+     "hi": 0.865486
+    },
+    "auprc": {
+     "mean": 0.717184,
+     "lo": 0.692221,
+     "hi": 0.742038
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert/disjoint",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.157798,
+   "original_mcc": 0.087354,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.189845,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.11202,
+    "balanced_accuracy": 0.531129,
+    "auroc": 0.615465,
+    "auprc": 0.447086
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.189858,
+     "lo": 0.185745,
+     "hi": 0.194131
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.112436,
+     "lo": 0.082799,
+     "hi": 0.145245
+    },
+    "balanced_accuracy": {
+     "mean": 0.531112,
+     "lo": 0.524251,
+     "hi": 0.538007
+    },
+    "auroc": {
+     "mean": 0.626745,
+     "lo": 0.609374,
+     "hi": 0.644174
+    },
+    "auprc": {
+     "mean": 0.450609,
+     "lo": 0.428123,
+     "hi": 0.473131
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert/disjoint",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.692478,
+   "original_mcc": 0.650595,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.833555,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.747193,
+    "balanced_accuracy": 0.875753,
+    "auroc": 0.955003,
+    "auprc": 0.901726
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.834901,
+     "lo": 0.820446,
+     "hi": 0.849389
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.749422,
+     "lo": 0.725598,
+     "hi": 0.773355
+    },
+    "balanced_accuracy": {
+     "mean": 0.876545,
+     "lo": 0.8675,
+     "hi": 0.885382
+    },
+    "auroc": {
+     "mean": 0.955073,
+     "lo": 0.946902,
+     "hi": 0.962731
+    },
+    "auprc": {
+     "mean": 0.898765,
+     "lo": 0.875261,
+     "hi": 0.921963
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.336066,
+   "original_mcc": 0.099897,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.307692,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.179577,
+    "balanced_accuracy": 0.609718,
+    "auroc": 0.545376,
+    "auprc": 0.179661
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.218847,
+     "lo": 0.149533,
+     "hi": 0.293103
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.073653,
+     "lo": -0.006775,
+     "hi": 0.161782
+    },
+    "balanced_accuracy": {
+     "mean": 0.544025,
+     "lo": 0.496082,
+     "hi": 0.598354
+    },
+    "auroc": {
+     "mean": 0.53013,
+     "lo": 0.455084,
+     "hi": 0.608321
+    },
+    "auprc": {
+     "mean": 0.161931,
+     "lo": 0.127362,
+     "hi": 0.203185
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.11828,
+   "original_mcc": -0.031556,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.106667,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.002558,
+    "balanced_accuracy": 0.498903,
+    "auroc": 0.508934,
+    "auprc": 0.143844
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.087624,
+     "lo": 0.027778,
+     "hi": 0.155844
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.022673,
+     "lo": -0.085884,
+     "hi": 0.049031
+    },
+    "balanced_accuracy": {
+     "mean": 0.490732,
+     "lo": 0.464812,
+     "hi": 0.52163
+    },
+    "auroc": {
+     "mean": 0.503682,
+     "lo": 0.432284,
+     "hi": 0.577982
+    },
+    "auprc": {
+     "mean": 0.140232,
+     "lo": 0.114758,
+     "hi": 0.172467
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.208551,
+   "original_mcc": -0.010915,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.106729,
+    "f1_all_positive": 0.233136,
+    "mcc": -0.042876,
+    "balanced_accuracy": 0.476971,
+    "auroc": 0.43093,
+    "auprc": 0.119147
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.139106,
+     "lo": 0.102326,
+     "hi": 0.174497
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": -0.007294,
+     "lo": -0.047685,
+     "hi": 0.031871
+    },
+    "balanced_accuracy": {
+     "mean": 0.496108,
+     "lo": 0.474433,
+     "hi": 0.51758
+    },
+    "auroc": {
+     "mean": 0.452794,
+     "lo": 0.414836,
+     "hi": 0.488905
+    },
+    "auprc": {
+     "mean": 0.127211,
+     "lo": 0.113644,
+     "hi": 0.143469
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.193662,
+   "original_mcc": 0.119362,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.232558,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.136215,
+    "balanced_accuracy": 0.541799,
+    "auroc": 0.655671,
+    "auprc": 0.459414
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.234818,
+     "lo": 0.230114,
+     "hi": 0.240175
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.149718,
+     "lo": 0.122293,
+     "hi": 0.182523
+    },
+    "balanced_accuracy": {
+     "mean": 0.544891,
+     "lo": 0.538343,
+     "hi": 0.552116
+    },
+    "auroc": {
+     "mean": 0.677496,
+     "lo": 0.659253,
+     "hi": 0.695193
+    },
+    "auprc": {
+     "mean": 0.481974,
+     "lo": 0.458604,
+     "hi": 0.507604
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.010724,
+   "original_mcc": 0.068428,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.010724,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.059798,
+    "balanced_accuracy": 0.502695,
+    "auroc": 0.904051,
+    "auprc": 0.817151
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.010724,
+     "lo": 0.010724,
+     "hi": 0.010724
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.059798,
+     "lo": 0.059798,
+     "hi": 0.059798
+    },
+    "balanced_accuracy": {
+     "mean": 0.502695,
+     "lo": 0.502695,
+     "hi": 0.502695
+    },
+    "auroc": {
+     "mean": 0.902023,
+     "lo": 0.891632,
+     "hi": 0.912304
+    },
+    "auprc": {
+     "mean": 0.817305,
+     "lo": 0.794859,
+     "hi": 0.839712
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.147239,
+   "original_mcc": 0.10703,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.164009,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.104042,
+    "balanced_accuracy": 0.526509,
+    "auroc": 0.641285,
+    "auprc": 0.459112
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.166848,
+     "lo": 0.163265,
+     "hi": 0.170213
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.131632,
+     "lo": 0.097319,
+     "hi": 0.167072
+    },
+    "balanced_accuracy": {
+     "mean": 0.531619,
+     "lo": 0.525134,
+     "hi": 0.537513
+    },
+    "auroc": {
+     "mean": 0.662215,
+     "lo": 0.645375,
+     "hi": 0.679079
+    },
+    "auprc": {
+     "mean": 0.48064,
+     "lo": 0.457415,
+     "hi": 0.505272
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2mixed/biomedbert",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.705747,
+   "original_mcc": 0.663273,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.82861,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.741327,
+    "balanced_accuracy": 0.870418,
+    "auroc": 0.959539,
+    "auprc": 0.906073
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.834812,
+     "lo": 0.820856,
+     "hi": 0.848066
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.751714,
+     "lo": 0.728377,
+     "hi": 0.773939
+    },
+    "balanced_accuracy": {
+     "mean": 0.874168,
+     "lo": 0.865604,
+     "hi": 0.88211
+    },
+    "auroc": {
+     "mean": 0.963203,
+     "lo": 0.95554,
+     "hi": 0.970142
+    },
+    "auprc": {
+     "mean": 0.915412,
+     "lo": 0.896837,
+     "hi": 0.933374
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/bertbase",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.414185,
+    "auprc": 0.11592
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.450348,
+     "lo": 0.381801,
+     "hi": 0.517167
+    },
+    "auprc": {
+     "mean": 0.123936,
+     "lo": 0.103401,
+     "hi": 0.151181
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/bertbase",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.462618,
+    "auprc": 0.121921
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.444013,
+     "lo": 0.375384,
+     "hi": 0.509812
+    },
+    "auprc": {
+     "mean": 0.120884,
+     "lo": 0.10184,
+     "hi": 0.145154
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/bertbase",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.0,
+    "f1_all_positive": 0.233136,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.48407,
+    "auprc": 0.129279
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.479865,
+     "lo": 0.448377,
+     "hi": 0.512289
+    },
+    "auprc": {
+     "mean": 0.126912,
+     "lo": 0.11568,
+     "hi": 0.140366
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/bertbase",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.616528,
+    "auprc": 0.396516
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.635925,
+     "lo": 0.615984,
+     "hi": 0.654259
+    },
+    "auprc": {
+     "mean": 0.414847,
+     "lo": 0.395198,
+     "hi": 0.433641
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/bertbase",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.832131,
+    "auprc": 0.691992
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.824661,
+     "lo": 0.810414,
+     "hi": 0.838424
+    },
+    "auprc": {
+     "mean": 0.685614,
+     "lo": 0.658674,
+     "hi": 0.713103
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/bertbase",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": -0.007359,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.563344,
+    "auprc": 0.371399
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": -0.006233,
+     "lo": -0.021568,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.499801,
+     "lo": 0.499312,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.578321,
+     "lo": 0.559667,
+     "hi": 0.596193
+    },
+    "auprc": {
+     "mean": 0.38207,
+     "lo": 0.365633,
+     "hi": 0.401447
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/bertbase",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.681013,
+   "original_mcc": 0.630639,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.787701,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.698374,
+    "balanced_accuracy": 0.83296,
+    "auroc": 0.951123,
+    "auprc": 0.884825
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.785962,
+     "lo": 0.772989,
+     "hi": 0.79822
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.695201,
+     "lo": 0.671465,
+     "hi": 0.717746
+    },
+    "balanced_accuracy": {
+     "mean": 0.831891,
+     "lo": 0.824019,
+     "hi": 0.83915
+    },
+    "auroc": {
+     "mean": 0.952668,
+     "lo": 0.944072,
+     "hi": 0.960191
+    },
+    "auprc": {
+     "mean": 0.894667,
+     "lo": 0.873263,
+     "hi": 0.915488
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biobert",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.441418,
+    "auprc": 0.122749
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.486133,
+     "lo": 0.40587,
+     "hi": 0.559251
+    },
+    "auprc": {
+     "mean": 0.175856,
+     "lo": 0.119936,
+     "hi": 0.245027
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biobert",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.467437,
+    "auprc": 0.129991
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.495818,
+     "lo": 0.420819,
+     "hi": 0.56808
+    },
+    "auprc": {
+     "mean": 0.162193,
+     "lo": 0.120121,
+     "hi": 0.217872
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biobert",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.0,
+    "f1_all_positive": 0.233136,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.50021,
+    "auprc": 0.128956
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.494674,
+     "lo": 0.459216,
+     "hi": 0.529353
+    },
+    "auprc": {
+     "mean": 0.134613,
+     "lo": 0.121204,
+     "hi": 0.150432
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biobert",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.558573,
+    "auprc": 0.379146
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.580728,
+     "lo": 0.563406,
+     "hi": 0.59871
+    },
+    "auprc": {
+     "mean": 0.391922,
+     "lo": 0.375851,
+     "hi": 0.410272
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biobert",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.868508,
+    "auprc": 0.717639
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.860007,
+     "lo": 0.845826,
+     "hi": 0.874237
+    },
+    "auprc": {
+     "mean": 0.70133,
+     "lo": 0.672721,
+     "hi": 0.733769
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biobert",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.563952,
+    "auprc": 0.368276
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.588743,
+     "lo": 0.569546,
+     "hi": 0.607031
+    },
+    "auprc": {
+     "mean": 0.379421,
+     "lo": 0.363819,
+     "hi": 0.396276
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biobert",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.675462,
+   "original_mcc": 0.625077,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.760773,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.663882,
+    "balanced_accuracy": 0.813377,
+    "auroc": 0.946153,
+    "auprc": 0.882671
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.768571,
+     "lo": 0.756278,
+     "hi": 0.780488
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.678699,
+     "lo": 0.655387,
+     "hi": 0.701441
+    },
+    "balanced_accuracy": {
+     "mean": 0.818045,
+     "lo": 0.810626,
+     "hi": 0.825068
+    },
+    "auroc": {
+     "mean": 0.945706,
+     "lo": 0.937504,
+     "hi": 0.953853
+    },
+    "auprc": {
+     "mean": 0.883493,
+     "lo": 0.863242,
+     "hi": 0.904485
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert/disjoint",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.050633,
+   "original_mcc": 0.020069,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.039216,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.004811,
+    "balanced_accuracy": 0.501019,
+    "auroc": 0.47837,
+    "auprc": 0.125338
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.044922,
+     "lo": 0.0,
+     "hi": 0.113208
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.010756,
+     "lo": -0.052682,
+     "hi": 0.099194
+    },
+    "balanced_accuracy": {
+     "mean": 0.502882,
+     "lo": 0.489655,
+     "hi": 0.523746
+    },
+    "auroc": {
+     "mean": 0.52712,
+     "lo": 0.457871,
+     "hi": 0.601063
+    },
+    "auprc": {
+     "mean": 0.150458,
+     "lo": 0.123443,
+     "hi": 0.188919
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert/disjoint",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": -0.034174,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.021345,
+    "balanced_accuracy": 0.498276,
+    "auroc": 0.431897,
+    "auprc": 0.11061
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.021345,
+     "lo": -0.021345,
+     "hi": -0.021345
+    },
+    "balanced_accuracy": {
+     "mean": 0.498276,
+     "lo": 0.498276,
+     "hi": 0.498276
+    },
+    "auroc": {
+     "mean": 0.466498,
+     "lo": 0.398975,
+     "hi": 0.536844
+    },
+    "auprc": {
+     "mean": 0.12377,
+     "lo": 0.106477,
+     "hi": 0.146263
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert/disjoint",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.035036,
+   "original_mcc": -0.002662,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.017857,
+    "f1_all_positive": 0.233136,
+    "mcc": -0.023208,
+    "balanced_accuracy": 0.495431,
+    "auroc": 0.432038,
+    "auprc": 0.111551
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.031921,
+     "lo": 0.008969,
+     "hi": 0.061135
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": -0.002908,
+     "lo": -0.036775,
+     "hi": 0.037958
+    },
+    "balanced_accuracy": {
+     "mean": 0.499522,
+     "lo": 0.492893,
+     "hi": 0.508121
+    },
+    "auroc": {
+     "mean": 0.469431,
+     "lo": 0.435451,
+     "hi": 0.502994
+    },
+    "auprc": {
+     "mean": 0.123404,
+     "lo": 0.11331,
+     "hi": 0.135342
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert/disjoint",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.025974,
+   "original_mcc": 0.047056,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.026385,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.052004,
+    "balanced_accuracy": 0.504675,
+    "auroc": 0.56145,
+    "auprc": 0.395541
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.026409,
+     "lo": 0.026178,
+     "hi": 0.026596
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.057362,
+     "lo": 0.024811,
+     "hi": 0.094679
+    },
+    "balanced_accuracy": {
+     "mean": 0.504905,
+     "lo": 0.502612,
+     "hi": 0.506739
+    },
+    "auroc": {
+     "mean": 0.56963,
+     "lo": 0.552327,
+     "hi": 0.58796
+    },
+    "auprc": {
+     "mean": 0.400608,
+     "lo": 0.383338,
+     "hi": 0.419623
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert/disjoint",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.052493,
+   "original_mcc": 0.153229,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.052493,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.134204,
+    "balanced_accuracy": 0.513477,
+    "auroc": 0.822393,
+    "auprc": 0.692666
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.052493,
+     "lo": 0.052493,
+     "hi": 0.052493
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.134204,
+     "lo": 0.134204,
+     "hi": 0.134204
+    },
+    "balanced_accuracy": {
+     "mean": 0.513477,
+     "lo": 0.513477,
+     "hi": 0.513477
+    },
+    "auroc": {
+     "mean": 0.821717,
+     "lo": 0.807606,
+     "hi": 0.836214
+    },
+    "auprc": {
+     "mean": 0.695985,
+     "lo": 0.67209,
+     "hi": 0.720014
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert/disjoint",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.005376,
+   "original_mcc": 0.048377,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.005376,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.042265,
+    "balanced_accuracy": 0.501348,
+    "auroc": 0.532178,
+    "auprc": 0.388866
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.005376,
+     "lo": 0.005376,
+     "hi": 0.005376
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.042265,
+     "lo": 0.042265,
+     "hi": 0.042265
+    },
+    "balanced_accuracy": {
+     "mean": 0.501348,
+     "lo": 0.501348,
+     "hi": 0.501348
+    },
+    "auroc": {
+     "mean": 0.537554,
+     "lo": 0.520686,
+     "hi": 0.554046
+    },
+    "auprc": {
+     "mean": 0.394711,
+     "lo": 0.378177,
+     "hi": 0.413473
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert/disjoint",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.70366,
+   "original_mcc": 0.659041,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.823204,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.736835,
+    "balanced_accuracy": 0.863791,
+    "auroc": 0.956929,
+    "auprc": 0.900801
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.82532,
+     "lo": 0.811961,
+     "hi": 0.839437
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.740464,
+     "lo": 0.717664,
+     "hi": 0.764645
+    },
+    "balanced_accuracy": {
+     "mean": 0.865032,
+     "lo": 0.856896,
+     "hi": 0.873419
+    },
+    "auroc": {
+     "mean": 0.959013,
+     "lo": 0.951149,
+     "hi": 0.966512
+    },
+    "auprc": {
+     "mean": 0.903404,
+     "lo": 0.882289,
+     "hi": 0.92368
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert",
+   "key": "ood_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.41489,
+    "auprc": 0.114623
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.472281,
+     "lo": 0.402406,
+     "hi": 0.540778
+    },
+    "auprc": {
+     "mean": 0.148971,
+     "lo": 0.10943,
+     "hi": 0.205691
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert",
+   "key": "ood_names",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.0,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.427821,
+    "auprc": 0.1085
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.458566,
+     "lo": 0.388558,
+     "hi": 0.527747
+    },
+    "auprc": {
+     "mean": 0.126815,
+     "lo": 0.105485,
+     "hi": 0.15539
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert",
+   "key": "oodold_empty",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.333333,
+   "original_f1": 0.0,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 1493,
+   "n_pos": 197,
+   "frozen": {
+    "prevalence": 0.131949,
+    "f1": 0.0,
+    "f1_all_positive": 0.233136,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.466051,
+    "auprc": 0.122882
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131949,
+     "lo": 0.131949,
+     "hi": 0.131949
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.233136,
+     "lo": 0.233136,
+     "hi": 0.233136
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.446518,
+     "lo": 0.413531,
+     "hi": 0.481695
+    },
+    "auprc": {
+     "mean": 0.118571,
+     "lo": 0.10902,
+     "hi": 0.13057
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert",
+   "key": "test_empty",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.005376,
+   "original_mcc": 0.048377,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.005376,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.042265,
+    "balanced_accuracy": 0.501348,
+    "auroc": 0.602509,
+    "auprc": 0.412697
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.005376,
+     "lo": 0.005376,
+     "hi": 0.005376
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.042265,
+     "lo": 0.042265,
+     "hi": 0.042265
+    },
+    "balanced_accuracy": {
+     "mean": 0.501348,
+     "lo": 0.501348,
+     "hi": 0.501348
+    },
+    "auroc": {
+     "mean": 0.614095,
+     "lo": 0.595189,
+     "hi": 0.631999
+    },
+    "auprc": {
+     "mean": 0.425232,
+     "lo": 0.405558,
+     "hi": 0.445307
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert",
+   "key": "test_masked",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.010724,
+   "original_mcc": 0.068428,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.010724,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.059798,
+    "balanced_accuracy": 0.502695,
+    "auroc": 0.880851,
+    "auprc": 0.76444
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.010724,
+     "lo": 0.010724,
+     "hi": 0.010724
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.059798,
+     "lo": 0.059798,
+     "hi": 0.059798
+    },
+    "balanced_accuracy": {
+     "mean": 0.502695,
+     "lo": 0.502695,
+     "hi": 0.502695
+    },
+    "auroc": {
+     "mean": 0.873838,
+     "lo": 0.861105,
+     "hi": 0.886535
+    },
+    "auprc": {
+     "mean": 0.757718,
+     "lo": 0.733077,
+     "hi": 0.783052
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert",
+   "key": "test_names",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.0,
+   "original_mcc": -0.007359,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.0,
+    "f1_all_positive": 0.505106,
+    "mcc": -0.021568,
+    "balanced_accuracy": 0.499312,
+    "auroc": 0.587781,
+    "auprc": 0.394815
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": -0.006557,
+     "lo": -0.021568,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.499791,
+     "lo": 0.499312,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.593792,
+     "lo": 0.576045,
+     "hi": 0.612667
+    },
+    "auprc": {
+     "mean": 0.399958,
+     "lo": 0.381954,
+     "hi": 0.420454
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b2sentence/biomedbert",
+   "key": "test_sentence",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.734831,
+   "original_mcc": 0.700228,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.860526,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.78729,
+    "balanced_accuracy": 0.89806,
+    "auroc": 0.965449,
+    "auprc": 0.921247
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.865735,
+     "lo": 0.851535,
+     "hi": 0.880215
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.795664,
+     "lo": 0.772874,
+     "hi": 0.818965
+    },
+    "balanced_accuracy": {
+     "mean": 0.901168,
+     "lo": 0.892541,
+     "hi": 0.909752
+    },
+    "auroc": {
+     "mean": 0.967615,
+     "lo": 0.96112,
+     "hi": 0.973456
+    },
+    "auprc": {
+     "mean": 0.928863,
+     "lo": 0.911884,
+     "hi": 0.945701
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/bm25-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.266667,
+   "original_mcc": -0.024212,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.15748,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.019136,
+    "balanced_accuracy": 0.487774,
+    "auroc": 0.460031,
+    "auprc": 0.138639
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.157123,
+     "lo": 0.081967,
+     "hi": 0.21374
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.019199,
+     "lo": -0.110386,
+     "hi": 0.051211
+    },
+    "balanced_accuracy": {
+     "mean": 0.48799,
+     "lo": 0.430956,
+     "hi": 0.533229
+    },
+    "auroc": {
+     "mean": 0.458509,
+     "lo": 0.380902,
+     "hi": 0.530816
+    },
+    "auprc": {
+     "mean": 0.137039,
+     "lo": 0.106713,
+     "hi": 0.177185
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/bm25-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.258252,
+   "original_mcc": 0.114115,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.387755,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.113092,
+    "balanced_accuracy": 0.554073,
+    "auroc": 0.581137,
+    "auprc": 0.398934
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.402565,
+     "lo": 0.391176,
+     "hi": 0.413686
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.153292,
+     "lo": 0.12243,
+     "hi": 0.183299
+    },
+    "balanced_accuracy": {
+     "mean": 0.571344,
+     "lo": 0.5582,
+     "hi": 0.583647
+    },
+    "auroc": {
+     "mean": 0.600055,
+     "lo": 0.583839,
+     "hi": 0.617355
+    },
+    "auprc": {
+     "mean": 0.420584,
+     "lo": 0.401811,
+     "hi": 0.442922
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/contaminated-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.186047,
+   "original_mcc": 0.167355,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.237288,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.214746,
+    "balanced_accuracy": 0.565752,
+    "auroc": 0.689028,
+    "auprc": 0.308476
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.167944,
+     "lo": 0.037736,
+     "hi": 0.266667
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.140682,
+     "lo": -0.010149,
+     "hi": 0.244245
+    },
+    "balanced_accuracy": {
+     "mean": 0.540957,
+     "lo": 0.497571,
+     "hi": 0.577116
+    },
+    "auroc": {
+     "mean": 0.622017,
+     "lo": 0.544273,
+     "hi": 0.698593
+    },
+    "auprc": {
+     "mean": 0.239721,
+     "lo": 0.173887,
+     "hi": 0.314593
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/contaminated-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.201365,
+   "original_mcc": 0.121072,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.246347,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.145532,
+    "balanced_accuracy": 0.545815,
+    "auroc": 0.623763,
+    "auprc": 0.455913
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.247466,
+     "lo": 0.241803,
+     "hi": 0.252677
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.151878,
+     "lo": 0.121486,
+     "hi": 0.181073
+    },
+    "balanced_accuracy": {
+     "mean": 0.547262,
+     "lo": 0.539625,
+     "hi": 0.554068
+    },
+    "auroc": {
+     "mean": 0.638349,
+     "lo": 0.622247,
+     "hi": 0.655313
+    },
+    "auprc": {
+     "mean": 0.469802,
+     "lo": 0.445387,
+     "hi": 0.494028
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/dense-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.343234,
+   "original_mcc": -0.00378,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.1625,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.04242,
+    "balanced_accuracy": 0.470141,
+    "auroc": 0.467555,
+    "auprc": 0.134708
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.189785,
+     "lo": 0.138944,
+     "hi": 0.25
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.003011,
+     "lo": -0.075428,
+     "hi": 0.085472
+    },
+    "balanced_accuracy": {
+     "mean": 0.498016,
+     "lo": 0.44713,
+     "hi": 0.56105
+    },
+    "auroc": {
+     "mean": 0.52396,
+     "lo": 0.457678,
+     "hi": 0.593278
+    },
+    "auprc": {
+     "mean": 0.147681,
+     "lo": 0.121128,
+     "hi": 0.182325
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/dense-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.228324,
+   "original_mcc": 0.121019,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.296435,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.13173,
+    "balanced_accuracy": 0.549385,
+    "auroc": 0.63242,
+    "auprc": 0.429313
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.302457,
+     "lo": 0.294776,
+     "hi": 0.310413
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.155671,
+     "lo": 0.125275,
+     "hi": 0.188034
+    },
+    "balanced_accuracy": {
+     "mean": 0.556624,
+     "lo": 0.547322,
+     "hi": 0.565891
+    },
+    "auroc": {
+     "mean": 0.646829,
+     "lo": 0.630545,
+     "hi": 0.663848
+    },
+    "auprc": {
+     "mean": 0.448794,
+     "lo": 0.427322,
+     "hi": 0.471341
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/excl_clinical_pharmacology-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.171123,
+   "original_mcc": 0.047827,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.112676,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.014391,
+    "balanced_accuracy": 0.505799,
+    "auroc": 0.522962,
+    "auprc": 0.156095
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.13296,
+     "lo": 0.057971,
+     "hi": 0.213333
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.035507,
+     "lo": -0.043512,
+     "hi": 0.119476
+    },
+    "balanced_accuracy": {
+     "mean": 0.515027,
+     "lo": 0.483072,
+     "hi": 0.551254
+    },
+    "auroc": {
+     "mean": 0.525697,
+     "lo": 0.447085,
+     "hi": 0.603374
+    },
+    "auprc": {
+     "mean": 0.162712,
+     "lo": 0.125586,
+     "hi": 0.212864
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/excl_clinical_pharmacology-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.2,
+   "original_mcc": 0.091411,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.259542,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.090649,
+    "balanced_accuracy": 0.533185,
+    "auroc": 0.620982,
+    "auprc": 0.424547
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.266301,
+     "lo": 0.260524,
+     "hi": 0.272559
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.120314,
+     "lo": 0.094875,
+     "hi": 0.148568
+    },
+    "balanced_accuracy": {
+     "mean": 0.54228,
+     "lo": 0.534543,
+     "hi": 0.550396
+    },
+    "auroc": {
+     "mean": 0.639678,
+     "lo": 0.622382,
+     "hi": 0.656491
+    },
+    "auprc": {
+     "mean": 0.447601,
+     "lo": 0.427163,
+     "hi": 0.469562
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/excl_mechanism_of_action-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.261682,
+   "original_mcc": 0.07689,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.197802,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.071497,
+    "balanced_accuracy": 0.536755,
+    "auroc": 0.535188,
+    "auprc": 0.158873
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.184099,
+     "lo": 0.093023,
+     "hi": 0.273684
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.05691,
+     "lo": -0.040929,
+     "hi": 0.154597
+    },
+    "balanced_accuracy": {
+     "mean": 0.529585,
+     "lo": 0.479937,
+     "hi": 0.58221
+    },
+    "auroc": {
+     "mean": 0.52371,
+     "lo": 0.449999,
+     "hi": 0.601812
+    },
+    "auprc": {
+     "mean": 0.169315,
+     "lo": 0.125288,
+     "hi": 0.228259
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/excl_mechanism_of_action-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.225108,
+   "original_mcc": 0.117119,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.291045,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.119886,
+    "balanced_accuracy": 0.545286,
+    "auroc": 0.636354,
+    "auprc": 0.454757
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.298876,
+     "lo": 0.291589,
+     "hi": 0.306483
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.151076,
+     "lo": 0.122012,
+     "hi": 0.182226
+    },
+    "balanced_accuracy": {
+     "mean": 0.554888,
+     "lo": 0.545974,
+     "hi": 0.563856
+    },
+    "auroc": {
+     "mean": 0.660242,
+     "lo": 0.643974,
+     "hi": 0.676788
+    },
+    "auprc": {
+     "mean": 0.48069,
+     "lo": 0.457575,
+     "hi": 0.50728
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/excl_pharmacokinetics-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.266667,
+   "original_mcc": 0.010822,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.142857,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.021063,
+    "balanced_accuracy": 0.487461,
+    "auroc": 0.514381,
+    "auprc": 0.14033
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.166925,
+     "lo": 0.091743,
+     "hi": 0.237288
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.007318,
+     "lo": -0.079669,
+     "hi": 0.090628
+    },
+    "balanced_accuracy": {
+     "mean": 0.504722,
+     "lo": 0.45337,
+     "hi": 0.555643
+    },
+    "auroc": {
+     "mean": 0.503682,
+     "lo": 0.431579,
+     "hi": 0.578771
+    },
+    "auprc": {
+     "mean": 0.141623,
+     "lo": 0.116103,
+     "hi": 0.174436
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/excl_pharmacokinetics-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.201835,
+   "original_mcc": 0.076598,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.284133,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.102069,
+    "balanced_accuracy": 0.539124,
+    "auroc": 0.579483,
+    "auprc": 0.406062
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.284211,
+     "lo": 0.276481,
+     "hi": 0.29222
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.102475,
+     "lo": 0.072651,
+     "hi": 0.133962
+    },
+    "balanced_accuracy": {
+     "mean": 0.539153,
+     "lo": 0.528808,
+     "hi": 0.549441
+    },
+    "auroc": {
+     "mean": 0.594766,
+     "lo": 0.577544,
+     "hi": 0.611714
+    },
+    "auprc": {
+     "mean": 0.412766,
+     "lo": 0.393513,
+     "hi": 0.434522
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/excl_warnings_and_cautions-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.204444,
+   "original_mcc": -0.038274,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.115385,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.043912,
+    "balanced_accuracy": 0.475078,
+    "auroc": 0.476489,
+    "auprc": 0.153281
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.129867,
+     "lo": 0.059406,
+     "hi": 0.201835
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.027384,
+     "lo": -0.106102,
+     "hi": 0.054496
+    },
+    "balanced_accuracy": {
+     "mean": 0.484681,
+     "lo": 0.440987,
+     "hi": 0.531897
+    },
+    "auroc": {
+     "mean": 0.495678,
+     "lo": 0.430562,
+     "hi": 0.564442
+    },
+    "auprc": {
+     "mean": 0.144091,
+     "lo": 0.113715,
+     "hi": 0.188654
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/excl_warnings_and_cautions-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.238606,
+   "original_mcc": 0.122075,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.3213,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.140362,
+    "balanced_accuracy": 0.555297,
+    "auroc": 0.622176,
+    "auprc": 0.438118
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.326518,
+     "lo": 0.317857,
+     "hi": 0.334586
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.159067,
+     "lo": 0.12823,
+     "hi": 0.188341
+    },
+    "balanced_accuracy": {
+     "mean": 0.56132,
+     "lo": 0.55117,
+     "hi": 0.570428
+    },
+    "auroc": {
+     "mean": 0.63844,
+     "lo": 0.621244,
+     "hi": 0.655258
+    },
+    "auprc": {
+     "mean": 0.45768,
+     "lo": 0.434678,
+     "hi": 0.482772
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/hybrid-k1-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.283582,
+   "original_mcc": -0.027576,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.2,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.026472,
+    "balanced_accuracy": 0.517712,
+    "auroc": 0.474451,
+    "auprc": 0.132329
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.165381,
+     "lo": 0.104904,
+     "hi": 0.225352
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.018142,
+     "lo": -0.095047,
+     "hi": 0.060074
+    },
+    "balanced_accuracy": {
+     "mean": 0.488189,
+     "lo": 0.437882,
+     "hi": 0.540439
+    },
+    "auroc": {
+     "mean": 0.462416,
+     "lo": 0.385558,
+     "hi": 0.536052
+    },
+    "auprc": {
+     "mean": 0.131747,
+     "lo": 0.107416,
+     "hi": 0.163754
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/hybrid-k1-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.207578,
+   "original_mcc": 0.120682,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.254032,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.125878,
+    "balanced_accuracy": 0.542265,
+    "auroc": 0.628468,
+    "auprc": 0.440009
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.259327,
+     "lo": 0.253012,
+     "hi": 0.265263
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.152375,
+     "lo": 0.120943,
+     "hi": 0.183196
+    },
+    "balanced_accuracy": {
+     "mean": 0.549183,
+     "lo": 0.540889,
+     "hi": 0.556708
+    },
+    "auroc": {
+     "mean": 0.647357,
+     "lo": 0.630154,
+     "hi": 0.663984
+    },
+    "auprc": {
+     "mean": 0.464931,
+     "lo": 0.443324,
+     "hi": 0.488116
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/hybrid-k3-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.247104,
+   "original_mcc": -0.06111,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.136364,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.052106,
+    "balanced_accuracy": 0.466066,
+    "auroc": 0.484953,
+    "auprc": 0.158209
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.143969,
+     "lo": 0.078125,
+     "hi": 0.20438
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.042213,
+     "lo": -0.123767,
+     "hi": 0.034533
+    },
+    "balanced_accuracy": {
+     "mean": 0.472679,
+     "lo": 0.420611,
+     "hi": 0.522884
+    },
+    "auroc": {
+     "mean": 0.478197,
+     "lo": 0.402886,
+     "hi": 0.551691
+    },
+    "auprc": {
+     "mean": 0.137585,
+     "lo": 0.110503,
+     "hi": 0.176472
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/hybrid-k3-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.205047,
+   "original_mcc": 0.109277,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.257426,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.11602,
+    "balanced_accuracy": 0.540146,
+    "auroc": 0.628175,
+    "auprc": 0.43221
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.262564,
+     "lo": 0.25641,
+     "hi": 0.269151
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.14044,
+     "lo": 0.111334,
+     "hi": 0.172773
+    },
+    "balanced_accuracy": {
+     "mean": 0.546891,
+     "lo": 0.53877,
+     "hi": 0.555276
+    },
+    "auroc": {
+     "mean": 0.652184,
+     "lo": 0.633503,
+     "hi": 0.671007
+    },
+    "auprc": {
+     "mean": 0.458491,
+     "lo": 0.43578,
+     "hi": 0.481832
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/hybrid-k5-c100",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.383234,
+   "original_mcc": 0.011237,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.243386,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.069626,
+    "balanced_accuracy": 0.551019,
+    "auroc": 0.564263,
+    "auprc": 0.157452
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.205653,
+     "lo": 0.145251,
+     "hi": 0.252632
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.008537,
+     "lo": -0.086309,
+     "hi": 0.085067
+    },
+    "balanced_accuracy": {
+     "mean": 0.506314,
+     "lo": 0.437382,
+     "hi": 0.562382
+    },
+    "auroc": {
+     "mean": 0.505945,
+     "lo": 0.440746,
+     "hi": 0.577145
+    },
+    "auprc": {
+     "mean": 0.136945,
+     "lo": 0.114798,
+     "hi": 0.165684
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/hybrid-k5-c100",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.254408,
+   "original_mcc": 0.132738,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.34471,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.137584,
+    "balanced_accuracy": 0.557714,
+    "auroc": 0.64827,
+    "auprc": 0.456826
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.355601,
+     "lo": 0.347079,
+     "hi": 0.364621
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.172771,
+     "lo": 0.145173,
+     "hi": 0.202362
+    },
+    "balanced_accuracy": {
+     "mean": 0.569993,
+     "lo": 0.560465,
+     "hi": 0.579722
+    },
+    "auroc": {
+     "mean": 0.669023,
+     "lo": 0.651437,
+     "hi": 0.685837
+    },
+    "auprc": {
+     "mean": 0.476747,
+     "lo": 0.453808,
+     "hi": 0.499133
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/hybrid-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.287879,
+   "original_mcc": -0.013087,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.151515,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.032009,
+    "balanced_accuracy": 0.479154,
+    "auroc": 0.503527,
+    "auprc": 0.137842
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.169864,
+     "lo": 0.108527,
+     "hi": 0.231884
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.008441,
+     "lo": -0.085313,
+     "hi": 0.071199
+    },
+    "balanced_accuracy": {
+     "mean": 0.494733,
+     "lo": 0.445063,
+     "hi": 0.547335
+    },
+    "auroc": {
+     "mean": 0.49557,
+     "lo": 0.426321,
+     "hi": 0.568141
+    },
+    "auprc": {
+     "mean": 0.13024,
+     "lo": 0.11077,
+     "hi": 0.154688
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/hybrid-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.212034,
+   "original_mcc": 0.10106,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.278719,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.10881,
+    "balanced_accuracy": 0.540583,
+    "auroc": 0.634385,
+    "auprc": 0.450629
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.284255,
+     "lo": 0.277154,
+     "hi": 0.291339
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.131635,
+     "lo": 0.102487,
+     "hi": 0.161456
+    },
+    "balanced_accuracy": {
+     "mean": 0.547635,
+     "lo": 0.53852,
+     "hi": 0.556402
+    },
+    "auroc": {
+     "mean": 0.644223,
+     "lo": 0.628154,
+     "hi": 0.659802
+    },
+    "auprc": {
+     "mean": 0.46627,
+     "lo": 0.444882,
+     "hi": 0.490548
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/masked-k5-c400",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.14,
+   "original_mcc": -0.053286,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.114943,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.017569,
+    "balanced_accuracy": 0.491301,
+    "auroc": 0.494201,
+    "auprc": 0.156694
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.094563,
+     "lo": 0.024096,
+     "hi": 0.157303
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.039209,
+     "lo": -0.114062,
+     "hi": 0.027791
+    },
+    "balanced_accuracy": {
+     "mean": 0.481074,
+     "lo": 0.445846,
+     "hi": 0.514028
+    },
+    "auroc": {
+     "mean": 0.52205,
+     "lo": 0.456567,
+     "hi": 0.58567
+    },
+    "auprc": {
+     "mean": 0.147127,
+     "lo": 0.119268,
+     "hi": 0.184075
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag/biomedbert/masked-k5-c400",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.205371,
+   "original_mcc": 0.109941,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.255403,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.106714,
+    "balanced_accuracy": 0.537395,
+    "auroc": 0.647052,
+    "auprc": 0.461708
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.262574,
+     "lo": 0.255906,
+     "hi": 0.269151
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.14049,
+     "lo": 0.109015,
+     "hi": 0.172773
+    },
+    "balanced_accuracy": {
+     "mean": 0.546902,
+     "lo": 0.538083,
+     "hi": 0.555276
+    },
+    "auroc": {
+     "mean": 0.67868,
+     "lo": 0.662027,
+     "hi": 0.695624
+    },
+    "auprc": {
+     "mean": 0.490909,
+     "lo": 0.467829,
+     "hi": 0.514839
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "llm-biomistral-names",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.505119,
+   "original_mcc": 0.0,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.232804,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.0,
+    "balanced_accuracy": 0.5,
+    "auroc": 0.422571,
+    "auprc": 0.116111
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    },
+    "balanced_accuracy": {
+     "mean": 0.5,
+     "lo": 0.5,
+     "hi": 0.5
+    },
+    "auroc": {
+     "mean": 0.471456,
+     "lo": 0.397983,
+     "hi": 0.546049
+    },
+    "auprc": {
+     "mean": 0.140205,
+     "lo": 0.110209,
+     "hi": 0.180615
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "llm-biomistral-names",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.23348,
+   "original_mcc": 0.01275,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.50545,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.021568,
+    "balanced_accuracy": 0.500688,
+    "auroc": 0.584149,
+    "auprc": 0.392161
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.505425,
+     "lo": 0.505106,
+     "hi": 0.506139
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.016601,
+     "lo": 0.0,
+     "hi": 0.037392
+    },
+    "balanced_accuracy": {
+     "mean": 0.500638,
+     "lo": 0.5,
+     "hi": 0.502063
+    },
+    "auroc": {
+     "mean": 0.59115,
+     "lo": 0.57245,
+     "hi": 0.609759
+    },
+    "auprc": {
+     "mean": 0.393616,
+     "lo": 0.375781,
+     "hi": 0.411346
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "llm-biomistral-rag",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.499109,
+   "original_mcc": 0.009311,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.233983,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.019224,
+    "balanced_accuracy": 0.506583,
+    "auroc": 0.476254,
+    "auprc": 0.135003
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.232068,
+     "lo": 0.219101,
+     "hi": 0.243767
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.007808,
+     "lo": -0.075011,
+     "hi": 0.090203
+    },
+    "balanced_accuracy": {
+     "mean": 0.502219,
+     "lo": 0.472492,
+     "hi": 0.52931
+    },
+    "auroc": {
+     "mean": 0.435512,
+     "lo": 0.360656,
+     "hi": 0.506843
+    },
+    "auprc": {
+     "mean": 0.123051,
+     "lo": 0.100081,
+     "hi": 0.151621
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "llm-biomistral-rag",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.234786,
+   "original_mcc": 0.024987,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.492447,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.022714,
+    "balanced_accuracy": 0.508129,
+    "auroc": 0.561079,
+    "auprc": 0.388265
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.495008,
+     "lo": 0.489489,
+     "hi": 0.500768
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.034804,
+     "lo": 0.00752,
+     "hi": 0.061271
+    },
+    "balanced_accuracy": {
+     "mean": 0.512808,
+     "lo": 0.502627,
+     "hi": 0.52326
+    },
+    "auroc": {
+     "mean": 0.559405,
+     "lo": 0.5426,
+     "hi": 0.57612
+    },
+    "auprc": {
+     "mean": 0.378762,
+     "lo": 0.362531,
+     "hi": 0.396362
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "llm-qwen-names",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.514085,
+   "original_mcc": 0.099261,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.238227,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.049925,
+    "balanced_accuracy": 0.516223,
+    "auroc": 0.561599,
+    "auprc": 0.187175
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.24022,
+     "lo": 0.233333,
+     "hi": 0.243094
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.065449,
+     "lo": 0.014555,
+     "hi": 0.087372
+    },
+    "balanced_accuracy": {
+     "mean": 0.520882,
+     "lo": 0.504859,
+     "hi": 0.527586
+    },
+    "auroc": {
+     "mean": 0.599616,
+     "lo": 0.52619,
+     "hi": 0.672572
+    },
+    "auprc": {
+     "mean": 0.211706,
+     "lo": 0.152914,
+     "hi": 0.28379
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "llm-qwen-names",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.239241,
+   "original_mcc": 0.047423,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.508279,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.066906,
+    "balanced_accuracy": 0.518382,
+    "auroc": 0.477662,
+    "auprc": 0.305766
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.508633,
+     "lo": 0.504286,
+     "hi": 0.513081
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.068468,
+     "lo": 0.042165,
+     "hi": 0.09283
+    },
+    "balanced_accuracy": {
+     "mean": 0.519027,
+     "lo": 0.510817,
+     "hi": 0.527323
+    },
+    "auroc": {
+     "mean": 0.494945,
+     "lo": 0.474261,
+     "hi": 0.514082
+    },
+    "auprc": {
+     "mean": 0.314596,
+     "lo": 0.303564,
+     "hi": 0.325693
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "llm-qwen-rag",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.490775,
+   "original_mcc": -0.002126,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.226744,
+    "f1_all_positive": 0.232804,
+    "mcc": -0.015252,
+    "balanced_accuracy": 0.493182,
+    "auroc": 0.5,
+    "auprc": 0.159392
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.229917,
+     "lo": 0.211144,
+     "hi": 0.247126
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": 0.001615,
+     "lo": -0.088165,
+     "hi": 0.091402
+    },
+    "balanced_accuracy": {
+     "mean": 0.500284,
+     "lo": 0.459091,
+     "hi": 0.538636
+    },
+    "auroc": {
+     "mean": 0.48557,
+     "lo": 0.421311,
+     "hi": 0.558341
+    },
+    "auprc": {
+     "mean": 0.137454,
+     "lo": 0.112175,
+     "hi": 0.170949
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "llm-qwen-rag",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.228788,
+   "original_mcc": 0.006472,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.477848,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.001319,
+    "balanced_accuracy": 0.500543,
+    "auroc": 0.496617,
+    "auprc": 0.358528
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.47968,
+     "lo": 0.473354,
+     "hi": 0.486704
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.008948,
+     "lo": -0.019162,
+     "hi": 0.038158
+    },
+    "balanced_accuracy": {
+     "mean": 0.503819,
+     "lo": 0.49229,
+     "hi": 0.516362
+    },
+    "auroc": {
+     "mean": 0.506037,
+     "lo": 0.490062,
+     "hi": 0.522688
+    },
+    "auprc": {
+     "mean": 0.351166,
+     "lo": 0.337218,
+     "hi": 0.36684
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b4/pubmedbert-embeddings-logreg",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.255056,
+   "original_mcc": 0.086144,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.467078,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.092571,
+    "balanced_accuracy": 0.548708,
+    "auroc": 0.567495,
+    "auprc": 0.419216
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.477586,
+     "lo": 0.466598,
+     "hi": 0.487648
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.120021,
+     "lo": 0.09128,
+     "hi": 0.145533
+    },
+    "balanced_accuracy": {
+     "mean": 0.563334,
+     "lo": 0.548021,
+     "hi": 0.576907
+    },
+    "auroc": {
+     "mean": 0.577062,
+     "lo": 0.561943,
+     "hi": 0.593208
+    },
+    "auprc": {
+     "mean": 0.423623,
+     "lo": 0.403155,
+     "hi": 0.446548
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "b4/pubmedbert-embeddings-logreg",
+   "key": "ood",
+   "direction": "OOD resampled to SemEval test prevalence",
+   "original_prevalence": 0.3379,
+   "original_f1": 0.405,
+   "original_mcc": -0.040533,
+   "target_prevalence": 0.132028,
+   "n": 334,
+   "n_pos": 44,
+   "frozen": {
+    "prevalence": 0.131737,
+    "f1": 0.237705,
+    "f1_all_positive": 0.232804,
+    "mcc": 0.047912,
+    "balanced_accuracy": 0.534718,
+    "auroc": 0.531309,
+    "auprc": 0.160562
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.131737,
+     "lo": 0.131737,
+     "hi": 0.131737
+    },
+    "f1": {
+     "mean": 0.200896,
+     "lo": 0.162393,
+     "hi": 0.237705
+    },
+    "f1_all_positive": {
+     "mean": 0.232804,
+     "lo": 0.232804,
+     "hi": 0.232804
+    },
+    "mcc": {
+     "mean": -0.029606,
+     "lo": -0.107789,
+     "hi": 0.047912
+    },
+    "balanced_accuracy": {
+     "mean": 0.478343,
+     "lo": 0.421082,
+     "hi": 0.534718
+    },
+    "auroc": {
+     "mean": 0.454478,
+     "lo": 0.389172,
+     "hi": 0.518633
+    },
+    "auprc": {
+     "mean": 0.136666,
+     "lo": 0.106576,
+     "hi": 0.181446
+    }
+   },
+   "n_resamples": 1000
+  },
+  {
+   "group": "krag-schema1/biomedbert/hybrid-k5-c100 (random-negative 444-pair set, superseded)",
+   "key": "test",
+   "direction": "SemEval test resampled to Novel OOD prevalence",
+   "original_prevalence": 0.132028,
+   "original_f1": 0.283566,
+   "original_mcc": 0.152804,
+   "target_prevalence": 0.3379,
+   "n": 1098,
+   "n_pos": 371,
+   "frozen": {
+    "prevalence": 0.337887,
+    "f1": 0.411215,
+    "f1_all_positive": 0.505106,
+    "mcc": 0.180569,
+    "balanced_accuracy": 0.582299
+   },
+   "resampled": {
+    "prevalence": {
+     "mean": 0.337887,
+     "lo": 0.337887,
+     "hi": 0.337887
+    },
+    "f1": {
+     "mean": 0.418516,
+     "lo": 0.408021,
+     "hi": 0.429286
+    },
+    "f1_all_positive": {
+     "mean": 0.505106,
+     "lo": 0.505106,
+     "hi": 0.505106
+    },
+    "mcc": {
+     "mean": 0.200341,
+     "lo": 0.171927,
+     "hi": 0.229566
+    },
+    "balanced_accuracy": {
+     "mean": 0.589922,
+     "lo": 0.578843,
+     "hi": 0.600886
+    }
+   },
+   "n_resamples": 1000
+  }
+ ],
+ "drops": [
+  {
+   "group": "b2sentence/biomedbert",
+   "id_key": "test_sentence",
+   "ood_key": "ood_empty",
+   "id_f1_original": 0.734831,
+   "id_f1_at_ood_prevalence": 0.865735,
+   "ood_f1": 0.0,
+   "f1_drop_original": 0.734831,
+   "f1_drop_prevalence_matched": 0.865735,
+   "id_mcc": 0.700228,
+   "ood_mcc": 0.0,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "b2mixed/biomedbert",
+   "id_key": "test_sentence",
+   "ood_key": "ood_empty",
+   "id_f1_original": 0.705747,
+   "id_f1_at_ood_prevalence": 0.834812,
+   "ood_f1": 0.336066,
+   "f1_drop_original": 0.369682,
+   "f1_drop_prevalence_matched": 0.498747,
+   "id_mcc": 0.663273,
+   "ood_mcc": 0.099897,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "b2masked/biomedbert",
+   "id_key": "test_masked",
+   "ood_key": "ood_empty",
+   "id_f1_original": 0.716707,
+   "id_f1_at_ood_prevalence": 0.828805,
+   "ood_f1": 0.0,
+   "f1_drop_original": 0.716707,
+   "f1_drop_prevalence_matched": 0.828805,
+   "id_mcc": 0.673271,
+   "ood_mcc": 0.0,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "b1names/biomedbert",
+   "id_key": "test_names",
+   "ood_key": "ood_names",
+   "id_f1_original": 0.262376,
+   "id_f1_at_ood_prevalence": 0.368383,
+   "ood_f1": 0.401146,
+   "f1_drop_original": -0.13877,
+   "f1_drop_prevalence_matched": -0.032763,
+   "id_mcc": 0.140121,
+   "ood_mcc": 0.020169,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "b2sentence/bertbase",
+   "id_key": "test_sentence",
+   "ood_key": "ood_empty",
+   "id_f1_original": 0.681013,
+   "id_f1_at_ood_prevalence": 0.785962,
+   "ood_f1": 0.0,
+   "f1_drop_original": 0.681013,
+   "f1_drop_prevalence_matched": 0.785962,
+   "id_mcc": 0.630639,
+   "ood_mcc": 0.0,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "b2mixed/bertbase",
+   "id_key": "test_sentence",
+   "ood_key": "ood_empty",
+   "id_f1_original": 0.633609,
+   "id_f1_at_ood_prevalence": 0.720638,
+   "ood_f1": 0.112994,
+   "f1_drop_original": 0.520614,
+   "f1_drop_prevalence_matched": 0.607643,
+   "id_mcc": 0.579472,
+   "ood_mcc": 0.0039,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "b4/pubmedbert-embeddings-logreg",
+   "id_key": "test",
+   "ood_key": "ood",
+   "id_f1_original": 0.255056,
+   "id_f1_at_ood_prevalence": 0.477586,
+   "ood_f1": 0.405,
+   "f1_drop_original": -0.149944,
+   "f1_drop_prevalence_matched": 0.072586,
+   "id_mcc": 0.086144,
+   "ood_mcc": -0.040533,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "llm-biomistral-names",
+   "id_key": "test",
+   "ood_key": "ood",
+   "id_f1_original": 0.23348,
+   "id_f1_at_ood_prevalence": 0.505425,
+   "ood_f1": 0.505119,
+   "f1_drop_original": -0.271639,
+   "f1_drop_prevalence_matched": 0.000306,
+   "id_mcc": 0.01275,
+   "ood_mcc": 0.0,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "llm-qwen-names",
+   "id_key": "test",
+   "ood_key": "ood",
+   "id_f1_original": 0.239241,
+   "id_f1_at_ood_prevalence": 0.508633,
+   "ood_f1": 0.514085,
+   "f1_drop_original": -0.274844,
+   "f1_drop_prevalence_matched": -0.005451,
+   "id_mcc": 0.047423,
+   "ood_mcc": 0.099261,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "llm-biomistral-rag",
+   "id_key": "test",
+   "ood_key": "ood",
+   "id_f1_original": 0.234786,
+   "id_f1_at_ood_prevalence": 0.495008,
+   "ood_f1": 0.499109,
+   "f1_drop_original": -0.264323,
+   "f1_drop_prevalence_matched": -0.0041,
+   "id_mcc": 0.024987,
+   "ood_mcc": 0.009311,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  },
+  {
+   "group": "llm-qwen-rag",
+   "id_key": "test",
+   "ood_key": "ood",
+   "id_f1_original": 0.228788,
+   "id_f1_at_ood_prevalence": 0.47968,
+   "ood_f1": 0.490775,
+   "f1_drop_original": -0.261987,
+   "f1_drop_prevalence_matched": -0.011095,
+   "id_mcc": 0.006472,
+   "ood_mcc": -0.002126,
+   "f1_all_positive_id": 0.23326,
+   "f1_all_positive_ood": 0.505119
+  }
+ ]
+}

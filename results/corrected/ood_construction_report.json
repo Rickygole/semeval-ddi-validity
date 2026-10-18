@@ -1,0 +1,2258 @@
+{
+ "abrocitinib": {
+  "drug": "abrocitinib",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "abrocitinib"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 5
+ },
+ "acoramidis": {
+  "drug": "acoramidis",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "acoramidis"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "adagrasib": {
+  "drug": "adagrasib",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "adagrasib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "amisulpride": {
+  "drug": "amisulpride",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "amisulpride"
+  ],
+  "di_section": true,
+  "candidates": 3,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 3,
+  "positives": 3,
+  "negatives": 7
+ },
+ "amivantamab-vmjw": {
+  "drug": "amivantamab-vmjw",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "amivantamab"
+  ],
+  "di_section": false
+ },
+ "anacaulase-bcdb": {
+  "drug": "anacaulase-bcdb",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "anacaulase-bcdb"
+  ],
+  "di_section": false
+ },
+ "ansuvimab-zykl": {
+  "drug": "ansuvimab-zykl",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "ansuvimab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "aprocitentan": {
+  "drug": "aprocitentan",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "aprocitentan"
+  ],
+  "di_section": false
+ },
+ "arimoclomol": {
+  "drug": "arimoclomol",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "arimoclomol citrate"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "asparaginase erwinia chrysanthemi -rywn": {
+  "drug": "asparaginase erwinia chrysanthemi -rywn",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "asparaginase"
+  ],
+  "di_section": false
+ },
+ "atogepant": {
+  "drug": "atogepant",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "atogepant"
+  ],
+  "di_section": true,
+  "candidates": 3,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 3,
+  "positives": 3,
+  "negatives": 6
+ },
+ "atoltivimab": {
+  "drug": "atoltivimab",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "atoltivimab",
+   "maftivimab",
+   "odesivimab"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "avacopan": {
+  "drug": "avacopan",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "avacopan"
+  ],
+  "di_section": true,
+  "candidates": 3,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 6
+ },
+ "avalglucosidase alfa-ngpt": {
+  "drug": "avalglucosidase alfa-ngpt",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "avalglucosidase alfa"
+  ],
+  "di_section": false
+ },
+ "belumosudil": {
+  "drug": "belumosudil",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "belumosudil"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 5
+ },
+ "bempedoic acid": {
+  "drug": "bempedoic acid",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "bempedoic acid",
+   "ezetimibe"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "berdazimer": {
+  "drug": "berdazimer",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "berdazimer"
+  ],
+  "di_section": false
+ },
+ "berotralstat": {
+  "drug": "berotralstat",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "berotralstat"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 9
+ },
+ "bexagliflozin": {
+  "drug": "bexagliflozin",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "bexagliflozin"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 7
+ },
+ "bimekizumab-bkzx": {
+  "drug": "bimekizumab-bkzx",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "bimekizumab"
+  ],
+  "di_section": true,
+  "candidates": 3,
+  "null_effect_sentences_skipped": 1,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 8
+ },
+ "birch triterpenes": {
+  "drug": "birch triterpenes",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "birch triterpenes"
+  ],
+  "di_section": false
+ },
+ "cabotegravir": {
+  "drug": "cabotegravir",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "cabotegravir",
+   "rilpivirine"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "capmatinib": {
+  "drug": "capmatinib",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "capmatinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "casimersen": {
+  "drug": "casimersen",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "casimersen"
+  ],
+  "di_section": false
+ },
+ "cedazuridine": {
+  "drug": "cedazuridine",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "cedazuridine",
+   "decitabine"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "cipaglucosidase alfa-atga": {
+  "drug": "cipaglucosidase alfa-atga",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "cipaglucosidase alfa"
+  ],
+  "di_section": false
+ },
+ "clascoterone": {
+  "drug": "clascoterone",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "clascoterone"
+  ],
+  "di_section": false
+ },
+ "concizumab-mtci": {
+  "drug": "concizumab-mtci",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "concizumab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "copper cu 64 dotatate": {
+  "drug": "copper cu 64 dotatate",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "copper oxodotreotide cu-64"
+  ],
+  "excluded": "label_is_for_another_moiety"
+ },
+ "crovalimab-akkz": {
+  "drug": "crovalimab-akkz",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "crovalimab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "danicopan": {
+  "drug": "danicopan",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "danicopan"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 9
+ },
+ "daprodustat": {
+  "drug": "daprodustat",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "daprodustat"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 5
+ },
+ "daridorexant": {
+  "drug": "daridorexant",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "daridorexant"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "dasiglucagon": {
+  "drug": "dasiglucagon",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "dasiglucagon"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "deucravacitinib": {
+  "drug": "deucravacitinib",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "deucravacitinib"
+  ],
+  "di_section": false
+ },
+ "deutivacaftor": {
+  "drug": "deutivacaftor",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "deutivacaftor",
+   "tezacaftor",
+   "vanzacaftor"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "difelikefalin": {
+  "drug": "difelikefalin",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "difelikefalin"
+  ],
+  "di_section": false
+ },
+ "donanemab-azbt": {
+  "drug": "donanemab-azbt",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "donanemab"
+  ],
+  "di_section": false
+ },
+ "dostarlimab-gxly": {
+  "drug": "dostarlimab-gxly",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "dostarlimab"
+  ],
+  "di_section": false
+ },
+ "efbemalenograstim alfa-vuxw": {
+  "drug": "efbemalenograstim alfa-vuxw",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "efbemalenograstim alfa"
+  ],
+  "di_section": false
+ },
+ "efgartigimod alfa-fcab": {
+  "drug": "efgartigimod alfa-fcab",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "efgartigimod alfa",
+   "hyaluronidase"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "eflapegrastim-xnst": {
+  "drug": "eflapegrastim-xnst",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "eflapegrastim"
+  ],
+  "di_section": false
+ },
+ "elacestrant": {
+  "drug": "elacestrant",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "elacestrant"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "elafibranor": {
+  "drug": "elafibranor",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "elafibranor"
+  ],
+  "di_section": true,
+  "candidates": 7,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 3,
+  "positives": 3,
+  "negatives": 5
+ },
+ "elranatamab-bcmm": {
+  "drug": "elranatamab-bcmm",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "elranatamab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "ensartinib": {
+  "drug": "ensartinib",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "ensartinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "ensifentrine": {
+  "drug": "ensifentrine",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "ensifentrine"
+  ],
+  "di_section": false
+ },
+ "epcoritamab-bysp": {
+  "drug": "epcoritamab-bysp",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "epcoritamab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "eplontersen": {
+  "drug": "eplontersen",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "eplontersen"
+  ],
+  "di_section": false
+ },
+ "eptinezumab-jjmr": {
+  "drug": "eptinezumab-jjmr",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "eptinezumab"
+  ],
+  "di_section": false
+ },
+ "estetrol": {
+  "drug": "estetrol",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "drospirenone",
+   "estetrol"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "etrasimod": {
+  "drug": "etrasimod",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "etrasimod arginine"
+  ],
+  "di_section": true,
+  "candidates": 6,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 6,
+  "positives": 6,
+  "negatives": 4
+ },
+ "faricimab-svoa": {
+  "drug": "faricimab-svoa",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "faricimab"
+  ],
+  "di_section": false
+ },
+ "fexinidazole": {
+  "drug": "fexinidazole",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "fexinidazole"
+  ],
+  "di_section": true,
+  "candidates": 25,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 24,
+  "positives": 10,
+  "negatives": 3
+ },
+ "fezolinetant": {
+  "drug": "fezolinetant",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "fezolinetant"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "flortaucipir f 18": {
+  "drug": "flortaucipir f 18",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "flortaucipir f-18"
+  ],
+  "excluded": "label_is_for_another_moiety"
+ },
+ "flotufolastat f 18": {
+  "drug": "flotufolastat f 18",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "flotufolastat f-18"
+  ],
+  "excluded": "label_is_for_another_moiety"
+ },
+ "fluoroestradiol f 18": {
+  "drug": "fluoroestradiol f 18",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "fluoroestradiol f-18"
+  ],
+  "excluded": "label_is_for_another_moiety"
+ },
+ "fosdenopterin": {
+  "drug": "fosdenopterin",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "fosdenopterin hydrobromide"
+  ],
+  "di_section": false
+ },
+ "fostemsavir": {
+  "drug": "fostemsavir",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "fostemsavir tromethamine"
+  ],
+  "di_section": true,
+  "candidates": 19,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 10,
+  "positives": 10,
+  "negatives": 3
+ },
+ "fruquintinib": {
+  "drug": "fruquintinib",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "fruquintinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "futibatinib": {
+  "drug": "futibatinib",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "futibatinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "gadopiclenol": {
+  "drug": "gadopiclenol",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "gadopiclenol"
+  ],
+  "di_section": false
+ },
+ "gepirone": {
+  "drug": "gepirone",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "gepirone"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 4
+ },
+ "givinostat": {
+  "drug": "givinostat",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "givinostat"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "glofitamab-gxbm": {
+  "drug": "glofitamab-gxbm",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "glofitamab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "imetelstat": {
+  "drug": "imetelstat",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "imetelstat"
+  ],
+  "di_section": false
+ },
+ "inavolisib": {
+  "drug": "inavolisib",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "inavolisib"
+  ],
+  "di_section": false
+ },
+ "inclisiran": {
+  "drug": "inclisiran",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "inclisiran"
+  ],
+  "di_section": false
+ },
+ "iomeprol": {
+  "drug": "iomeprol",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "iomeprol"
+  ],
+  "di_section": false
+ },
+ "iptacopan": {
+  "drug": "iptacopan",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "iptacopan"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 9
+ },
+ "isatuximab-irfc": {
+  "drug": "isatuximab-irfc",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "isatuximab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "landiolol": {
+  "drug": "landiolol",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "landiolol"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "lazertinib": {
+  "drug": "lazertinib",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "lazertinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "lecanemab-irmb": {
+  "drug": "lecanemab-irmb",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "lecanemab",
+   "lecanemab-irmb"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "lenacapavir": {
+  "drug": "lenacapavir",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "bictegravir",
+   "lenacapavir"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "letibotulinumtoxina-wlbg": {
+  "drug": "letibotulinumtoxina-wlbg",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "letibotulinumtoxina"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "lonafarnib": {
+  "drug": "lonafarnib",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "lonafarnib"
+  ],
+  "di_section": true,
+  "candidates": 6,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 6,
+  "positives": 6,
+  "negatives": 3
+ },
+ "lonapegsomatropin-tcgd": {
+  "drug": "lonapegsomatropin-tcgd",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "lonapegsomatropin"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 8
+ },
+ "loncastuximab tesirine-lpyl": {
+  "drug": "loncastuximab tesirine-lpyl",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "loncastuximab tesirine"
+  ],
+  "di_section": false
+ },
+ "lotilaner": {
+  "drug": "lotilaner",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "lotilaner"
+  ],
+  "di_section": false
+ },
+ "lumasiran": {
+  "drug": "lumasiran",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "lumasiran"
+  ],
+  "di_section": false
+ },
+ "lutetium lu 177 vipivotide tetraxetan": {
+  "drug": "lutetium lu 177 vipivotide tetraxetan",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "lutetium lu-177 vipivotide tetraxetan"
+  ],
+  "excluded": "label_is_for_another_moiety"
+ },
+ "maftivimab": {
+  "drug": "maftivimab",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "atoltivimab",
+   "maftivimab",
+   "odesivimab"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "maralixibat": {
+  "drug": "maralixibat",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "maralixibat chloride"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "margetuximab-cmkb": {
+  "drug": "margetuximab-cmkb",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "margetuximab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "maribavir": {
+  "drug": "maribavir",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "maribavir"
+  ],
+  "di_section": true,
+  "candidates": 17,
+  "null_effect_sentences_skipped": 5,
+  "after_anchor": 6,
+  "positives": 6,
+  "negatives": 5
+ },
+ "marstacimab-hncq": {
+  "drug": "marstacimab-hncq",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "marstacimab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "mavorixafor": {
+  "drug": "mavorixafor",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "mavorixafor"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 6
+ },
+ "mirikizumab-mrkz": {
+  "drug": "mirikizumab-mrkz",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "mirikizumab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "mirvetuximab soravtansine-gynx": {
+  "drug": "mirvetuximab soravtansine-gynx",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "mirvetuximab soravtansine"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "mitapivat": {
+  "drug": "mitapivat",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "mitapivat"
+  ],
+  "di_section": true,
+  "candidates": 3,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 3,
+  "positives": 3,
+  "negatives": 6
+ },
+ "momelotinib": {
+  "drug": "momelotinib",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "momelotinib dihydrochloride monohydrate"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 4
+ },
+ "mosunetuzumab-axgb": {
+  "drug": "mosunetuzumab-axgb",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "mosunetuzumab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "motixafortide": {
+  "drug": "motixafortide",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "motixafortide"
+  ],
+  "di_section": false
+ },
+ "naxitamab-gqgk": {
+  "drug": "naxitamab-gqgk",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "naxitamab"
+  ],
+  "di_section": false
+ },
+ "nedosiran": {
+  "drug": "nedosiran",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "nedosiran"
+  ],
+  "di_section": false
+ },
+ "nemolizumab-ilto": {
+  "drug": "nemolizumab-ilto",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "nemolizumab"
+  ],
+  "di_section": false
+ },
+ "nifurtimox": {
+  "drug": "nifurtimox",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "nifurtimox"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "nirmatrelvir": {
+  "drug": "nirmatrelvir",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "nirmatrelvir",
+   "ritonavir"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "nirogacestat": {
+  "drug": "nirogacestat",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "nirogacestat"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "nirsevimab-alip": {
+  "drug": "nirsevimab-alip",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "nirsevimab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "nogapendekin alfa inbakicept-pmln": {
+  "drug": "nogapendekin alfa inbakicept-pmln",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "nogapendekin alfa inbakicept-pmln"
+  ],
+  "di_section": false
+ },
+ "odesivimab-ebgn": {
+  "drug": "odesivimab-ebgn",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "atoltivimab",
+   "maftivimab",
+   "odesivimab"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "odevixibat": {
+  "drug": "odevixibat",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "odevixibat"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "olezarsen": {
+  "drug": "olezarsen",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "olezarsen"
+  ],
+  "di_section": false
+ },
+ "oliceridine": {
+  "drug": "oliceridine",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "oliceridine"
+  ],
+  "di_section": true,
+  "candidates": 20,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 16,
+  "positives": 10,
+  "negatives": 4
+ },
+ "olipudase alfa-rpcp": {
+  "drug": "olipudase alfa-rpcp",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "olipudase alfa"
+  ],
+  "di_section": false
+ },
+ "olutasidenib": {
+  "drug": "olutasidenib",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "olutasidenib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "omaveloxolone": {
+  "drug": "omaveloxolone",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "omaveloxolone"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "omidenepag isopropyl": {
+  "drug": "omidenepag isopropyl",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "omidenepag isopropyl"
+  ],
+  "di_section": false
+ },
+ "opicapone": {
+  "drug": "opicapone",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "opicapone"
+  ],
+  "di_section": true,
+  "candidates": 3,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 3,
+  "positives": 3,
+  "negatives": 5
+ },
+ "osilodrostat": {
+  "drug": "osilodrostat",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "osilodrostat"
+  ],
+  "di_section": true,
+  "candidates": 6,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 5,
+  "positives": 5,
+  "negatives": 5
+ },
+ "oteseconazole": {
+  "drug": "oteseconazole",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "oteseconazole"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 6
+ },
+ "ozanimod": {
+  "drug": "ozanimod",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "ozanimod"
+  ],
+  "di_section": true,
+  "candidates": 13,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 5,
+  "positives": 5,
+  "negatives": 6
+ },
+ "pacritinib": {
+  "drug": "pacritinib",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "pacritinib"
+  ],
+  "di_section": true,
+  "candidates": 4,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 4,
+  "positives": 4,
+  "negatives": 2
+ },
+ "pafolacianine": {
+  "drug": "pafolacianine",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "pafolacianine"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 8
+ },
+ "palopegteriparatide": {
+  "drug": "palopegteriparatide",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "palopegteriparatide"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 11
+ },
+ "pegcetacoplan": {
+  "drug": "pegcetacoplan",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "pegcetacoplan"
+  ],
+  "di_section": false
+ },
+ "pegulicianine": {
+  "drug": "pegulicianine",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "pegulicianine"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "pegunigalsidase alfa-iwxj": {
+  "drug": "pegunigalsidase alfa-iwxj",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "pegunigalsidase alfa"
+  ],
+  "di_section": false
+ },
+ "pemigatinib": {
+  "drug": "pemigatinib",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "pemigatinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "perfluorohexyloctane": {
+  "drug": "perfluorohexyloctane",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "perfluorohexyloctane"
+  ],
+  "di_section": false
+ },
+ "piflufolastat f 18": {
+  "drug": "piflufolastat f 18",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "piflufolastat f-18"
+  ],
+  "excluded": "label_is_for_another_moiety"
+ },
+ "pirtobrutinib": {
+  "drug": "pirtobrutinib",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "pirtobrutinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "ponesimod": {
+  "drug": "ponesimod",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "ponesimod"
+  ],
+  "di_section": true,
+  "candidates": 8,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "pozelimab-bbfg": {
+  "drug": "pozelimab-bbfg",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "pozelimab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "pralsetinib": {
+  "drug": "pralsetinib",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "pralsetinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "quizartinib": {
+  "drug": "quizartinib",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "quizartinib dihydrochloride"
+  ],
+  "di_section": true,
+  "candidates": 8,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 8,
+  "positives": 8,
+  "negatives": 2
+ },
+ "relatlimab-rmbw": {
+  "drug": "relatlimab-rmbw",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "nivolumab",
+   "relatlimab"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "relugolix": {
+  "drug": "relugolix",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "relugolix"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "remdesivir": {
+  "drug": "remdesivir",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "remdesivir"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 8
+ },
+ "remimazolam": {
+  "drug": "remimazolam",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "remimazolam"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 8
+ },
+ "repotrectinib": {
+  "drug": "repotrectinib",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "repotrectinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "resmetirom": {
+  "drug": "resmetirom",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "resmetirom"
+  ],
+  "di_section": true,
+  "candidates": 5,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 5,
+  "positives": 5,
+  "negatives": 10
+ },
+ "revumenib": {
+  "drug": "revumenib",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "revumenib citrate"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "rezafungin": {
+  "drug": "rezafungin",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "rezafungin"
+  ],
+  "di_section": false
+ },
+ "rimegepant": {
+  "drug": "rimegepant",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "rimegepant sulfate"
+  ],
+  "di_section": true,
+  "candidates": 4,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 4,
+  "positives": 4,
+  "negatives": 6
+ },
+ "ripretinib": {
+  "drug": "ripretinib",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "ripretinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "ritlecitinib": {
+  "drug": "ritlecitinib",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "ritlecitinib"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 2
+ },
+ "ropeginterferon alfa-2b-njft": {
+  "drug": "ropeginterferon alfa-2b-njft",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "ropeginterferon alfa-2b"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "rozanolixizumab-noli": {
+  "drug": "rozanolixizumab-noli",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "rozanolixizumab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "sacituzumab govitecan-hziy": {
+  "drug": "sacituzumab govitecan-hziy",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "sacituzumab govitecan"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "samidorphan": {
+  "drug": "samidorphan",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "olanzapine",
+   "samidorphan l-malate"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "satralizumab-mwge": {
+  "drug": "satralizumab-mwge",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "satralizumab"
+  ],
+  "di_section": false
+ },
+ "seladelpar": {
+  "drug": "seladelpar",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "seladelpar lysine"
+  ],
+  "di_section": true,
+  "candidates": 4,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 4,
+  "positives": 4,
+  "negatives": 2
+ },
+ "selumetinib": {
+  "drug": "selumetinib",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "selumetinib"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 4
+ },
+ "serdexmethylphenidate": {
+  "drug": "serdexmethylphenidate",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "dexmethylphenidate",
+   "serdexmethylphenidate chloride"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "setmelanotide": {
+  "drug": "setmelanotide",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "setmelanotide"
+  ],
+  "di_section": false
+ },
+ "sofpironium": {
+  "drug": "sofpironium",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "sofpironium bromide"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "somapacitan-beco": {
+  "drug": "somapacitan-beco",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "somapacitan"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "somatrogon-ghla": {
+  "drug": "somatrogon-ghla",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "somatrogon"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 10
+ },
+ "sotagliflozin": {
+  "drug": "sotagliflozin",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "sotagliflozin"
+  ],
+  "di_section": true,
+  "candidates": 4,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 3,
+  "positives": 3,
+  "negatives": 11
+ },
+ "sotorasib": {
+  "drug": "sotorasib",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "sotorasib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "sparsentan": {
+  "drug": "sparsentan",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "sparsentan"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "spesolimab-sbzo": {
+  "drug": "spesolimab-sbzo",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "spesolimab"
+  ],
+  "di_section": false
+ },
+ "sulopenem etzadroxil": {
+  "drug": "sulopenem etzadroxil",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "probenecid",
+   "sulopenem etzadroxil"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "sutimlimab-jome": {
+  "drug": "sutimlimab-jome",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "sutimlimab"
+  ],
+  "di_section": false
+ },
+ "tafasitamab-cxix": {
+  "drug": "tafasitamab-cxix",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "tafasitamab"
+  ],
+  "di_section": false
+ },
+ "talquetamab-tgvs": {
+  "drug": "talquetamab-tgvs",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "talquetamab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "tapinarof": {
+  "drug": "tapinarof",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "tapinarof"
+  ],
+  "di_section": false
+ },
+ "taurolidine": {
+  "drug": "taurolidine",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "heparin",
+   "taurolidine"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "tazemetostat": {
+  "drug": "tazemetostat",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "tazemetostat hydrobromide"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "tebentafusp-tebn": {
+  "drug": "tebentafusp-tebn",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "tebentafusp"
+  ],
+  "di_section": false
+ },
+ "teclistamab-cqyv": {
+  "drug": "teclistamab-cqyv",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "teclistamab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "teplizumab-mzwv": {
+  "drug": "teplizumab-mzwv",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "teplizumab"
+  ],
+  "di_section": false
+ },
+ "tepotinib": {
+  "drug": "tepotinib",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "tepotinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "terlipressin": {
+  "drug": "terlipressin",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "terlipressin"
+  ],
+  "di_section": false
+ },
+ "tezepelumab-ekko": {
+  "drug": "tezepelumab-ekko",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "tezepelumab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "tirbanibulin": {
+  "drug": "tirbanibulin",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "tirbanibulin"
+  ],
+  "di_section": false
+ },
+ "tirzepatide": {
+  "drug": "tirzepatide",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "tirzepatide"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 9
+ },
+ "tisotumab vedotin-tftv": {
+  "drug": "tisotumab vedotin-tftv",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "tisotumab vedotin"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "tofersen": {
+  "drug": "tofersen",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "tofersen"
+  ],
+  "di_section": false
+ },
+ "toripalimab-tpzi": {
+  "drug": "toripalimab-tpzi",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "toripalimab"
+  ],
+  "di_section": false
+ },
+ "tovorafenib": {
+  "drug": "tovorafenib",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "tovorafenib"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 6
+ },
+ "tralokinumab-ldrm": {
+  "drug": "tralokinumab-ldrm",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "tralokinumab"
+  ],
+  "di_section": false
+ },
+ "tremelimumab-actl": {
+  "drug": "tremelimumab-actl",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "tremelimumab"
+  ],
+  "di_section": false
+ },
+ "triheptanoin": {
+  "drug": "triheptanoin",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "triheptanoin"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 9
+ },
+ "trilaciclib": {
+  "drug": "trilaciclib",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "trilaciclib dihydrochloride"
+  ],
+  "di_section": true,
+  "candidates": 2,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 2,
+  "positives": 2,
+  "negatives": 7
+ },
+ "trofinetide": {
+  "drug": "trofinetide",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "trofinetide"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "tucatinib": {
+  "drug": "tucatinib",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "tucatinib"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "ublituximab-xiiy": {
+  "drug": "ublituximab-xiiy",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "ublituximab"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 0,
+  "positives": 0
+ },
+ "vadadustat": {
+  "drug": "vadadustat",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "vadadustat"
+  ],
+  "di_section": true,
+  "candidates": 11,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 6
+ },
+ "vamorolone": {
+  "drug": "vamorolone",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "vamorolone"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 5
+ },
+ "vanzacaftor": {
+  "drug": "vanzacaftor",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "deutivacaftor",
+   "tezacaftor",
+   "vanzacaftor"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "velmanase alfa-tycv": {
+  "drug": "velmanase alfa-tycv",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "velmanase alfa-tycv"
+  ],
+  "di_section": false
+ },
+ "vericiguat": {
+  "drug": "vericiguat",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "vericiguat"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "vibegron": {
+  "drug": "vibegron",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "vibegron"
+  ],
+  "di_section": true,
+  "candidates": 1,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 1,
+  "positives": 1,
+  "negatives": 6
+ },
+ "viltolarsen": {
+  "drug": "viltolarsen",
+  "first_approval_year": 2020,
+  "label_found": true,
+  "label_ingredients": [
+   "viltolarsen"
+  ],
+  "di_section": false
+ },
+ "voclosporin": {
+  "drug": "voclosporin",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "voclosporin"
+  ],
+  "di_section": true,
+  "candidates": 11,
+  "null_effect_sentences_skipped": 0,
+  "after_anchor": 11,
+  "positives": 10,
+  "negatives": 5
+ },
+ "vonoprazan": {
+  "drug": "vonoprazan",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "amoxicillin",
+   "clarithromycin",
+   "vonoprazan"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "vosoritide": {
+  "drug": "vosoritide",
+  "first_approval_year": 2021,
+  "label_found": true,
+  "label_ingredients": [
+   "vosoritide"
+  ],
+  "di_section": false
+ },
+ "vutrisiran": {
+  "drug": "vutrisiran",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "vutrisiran"
+  ],
+  "di_section": false
+ },
+ "xanomeline": {
+  "drug": "xanomeline",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "trospium chloride",
+   "xanomeline"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "xenon xe 129 hyperpolarized": {
+  "drug": "xenon xe 129 hyperpolarized",
+  "first_approval_year": 2022,
+  "label_found": true,
+  "label_ingredients": [
+   "helium",
+   "hyperpolarized",
+   "nitrogen",
+   "xenon xe-129"
+  ],
+  "excluded": "combination_product_label"
+ },
+ "zanidatamab-hrii": {
+  "drug": "zanidatamab-hrii",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "zanidatamab"
+  ],
+  "di_section": false
+ },
+ "zavegepant": {
+  "drug": "zavegepant",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "zavegepant"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ },
+ "zenocutuzumab-zbco": {
+  "drug": "zenocutuzumab-zbco",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "zenocutuzumab"
+  ],
+  "di_section": false
+ },
+ "zilucoplan": {
+  "drug": "zilucoplan",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "zilucoplan"
+  ],
+  "di_section": false
+ },
+ "zolbetuximab-clzb": {
+  "drug": "zolbetuximab-clzb",
+  "first_approval_year": 2024,
+  "label_found": true,
+  "label_ingredients": [
+   "zolbetuximab"
+  ],
+  "di_section": false
+ },
+ "zuranolone": {
+  "drug": "zuranolone",
+  "first_approval_year": 2023,
+  "label_found": true,
+  "label_ingredients": [
+   "zuranolone"
+  ],
+  "di_section": true,
+  "candidates": 0,
+  "excluded": "risk_signal_without_semeval_match"
+ }
+}

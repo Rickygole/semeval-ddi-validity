@@ -1,0 +1,889 @@
+{
+ "font": "Latin Modern Roman",
+ "boot": 1000,
+ "seeds": {
+  "b1names/bertbase": [
+   42
+  ],
+  "b1names/biobert": [
+   42
+  ],
+  "b1names/biomedbert/disjoint": [
+   42
+  ],
+  "b1names/biomedbert": [
+   1,
+   2,
+   3,
+   4,
+   42
+  ],
+  "b2masked/biomedbert": [
+   1,
+   2,
+   3,
+   4,
+   42
+  ],
+  "b2mixed/bertbase": [
+   1,
+   2,
+   3,
+   4,
+   42
+  ],
+  "b2mixed/biobert": [
+   42
+  ],
+  "b2mixed/biomedbert/disjoint": [
+   42
+  ],
+  "b2mixed/biomedbert": [
+   1,
+   2,
+   3,
+   4,
+   42
+  ],
+  "b2sentence/bertbase": [
+   1,
+   2,
+   3,
+   4,
+   42
+  ],
+  "b2sentence/biobert": [
+   42
+  ],
+  "b2sentence/biomedbert/disjoint": [
+   42
+  ],
+  "b2sentence/biomedbert": [
+   1,
+   2,
+   3,
+   4,
+   42
+  ],
+  "krag/biomedbert/bm25-k5-c400": [
+   42
+  ],
+  "krag/biomedbert/contaminated-k5-c400": [
+   1,
+   2,
+   3,
+   4,
+   42
+  ],
+  "krag/biomedbert/dense-k5-c400": [
+   42
+  ],
+  "krag/biomedbert/excl_clinical_pharmacology-k5-c400": [
+   42
+  ],
+  "krag/biomedbert/excl_mechanism_of_action-k5-c400": [
+   42
+  ],
+  "krag/biomedbert/excl_pharmacokinetics-k5-c400": [
+   42
+  ],
+  "krag/biomedbert/excl_warnings_and_cautions-k5-c400": [
+   42
+  ],
+  "krag/biomedbert/hybrid-k1-c400": [
+   42
+  ],
+  "krag/biomedbert/hybrid-k3-c400": [
+   42
+  ],
+  "krag/biomedbert/hybrid-k5-c100": [
+   42
+  ],
+  "krag/biomedbert/hybrid-k5-c400": [
+   1,
+   2,
+   3,
+   4,
+   42
+  ],
+  "krag/biomedbert/masked-k5-c400": [
+   42
+  ],
+  "names/biomistral": [
+   42
+  ],
+  "rag/biomistral": [
+   42
+  ],
+  "names/qwen": [
+   42
+  ],
+  "rag/qwen": [
+   42
+  ]
+ },
+ "figS_reference_systems": {
+  "novel | DrugBank lookup": {
+   "auroc": 0.766566,
+   "lo": 0.690585,
+   "hi": 0.838878,
+   "n": 438,
+   "source": "drugbank_lookup.json cohort novel (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | Label string match": {
+   "auroc": 0.7972972972972974,
+   "lo": 0.7085940397350994,
+   "hi": 0.8772006578947369,
+   "n": 438,
+   "source": "results/corrected/baselines.json novel.baselines.non_di_label_string_match (auroc, auroc_ci95)"
+  },
+  "novel | Novel-drug prior (shortcut)": {
+   "auroc": 0.6428937558247902,
+   "lo": 0.5334960536922888,
+   "hi": 0.7466206098510483,
+   "n": 438,
+   "source": "results/corrected/baselines.json novel.baselines.novel_drug_prior (auroc, auroc_ci95)"
+  },
+  "novel | Qwen2.5-7B, names only": {
+   "auroc": 0.6002562907735322,
+   "lo": 0.5030938896618102,
+   "hi": 0.6954944664810814,
+   "n": 438,
+   "seeds": [
+    42
+   ],
+   "group": "names/qwen",
+   "key": "ood",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | BioMistral-7B, names only": {
+   "auroc": 0.469524697110904,
+   "lo": 0.3779718659623472,
+   "hi": 0.5747270366479925,
+   "n": 438,
+   "seeds": [
+    42
+   ],
+   "group": "names/biomistral",
+   "key": "ood",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | Qwen2.5-7B, with passages": {
+   "auroc": 0.4837604846225536,
+   "lo": 0.3765977632789704,
+   "hi": 0.5958304027493952,
+   "n": 438,
+   "seeds": [
+    42
+   ],
+   "group": "rag/qwen",
+   "key": "ood",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | BioMistral-7B, with passages": {
+   "auroc": 0.4348671947809879,
+   "lo": 0.3387239624249058,
+   "hi": 0.5280939031617128,
+   "n": 438,
+   "seeds": [
+    42
+   ],
+   "group": "rag/biomistral",
+   "key": "ood",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | Mixed-input, names only": {
+   "auroc": 0.5286113699906804,
+   "lo": 0.41036973472730254,
+   "hi": 0.6365341014297416,
+   "n": 438,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b2mixed/biomedbert",
+   "key": "ood_empty",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | Retrieval-augmented (H6)": {
+   "auroc": 0.4957595526561044,
+   "lo": 0.399533627670281,
+   "hi": 0.5912619771083132,
+   "n": 438,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "krag/biomedbert/hybrid-k5-c400",
+   "key": "ood",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | Positive control (H5)": {
+   "auroc": 0.6209925442684063,
+   "lo": 0.5187864009626076,
+   "hi": 0.7209109433112671,
+   "n": 438,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "krag/biomedbert/contaminated-k5-c400",
+   "key": "ood",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older | DrugBank lookup": {
+   "auroc": 0.66088,
+   "lo": 0.610869,
+   "hi": 0.708349,
+   "n": 1944,
+   "source": "drugbank_lookup.json cohort older_full (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older | Label string match": {
+   "auroc": 0.8371913580246914,
+   "lo": 0.7898718571552642,
+   "hi": 0.8800654646446835,
+   "n": 1944,
+   "source": "results/corrected/baselines.json older.baselines.non_di_label_string_match (auroc, auroc_ci95)"
+  },
+  "older | Novel-drug prior (shortcut)": {
+   "auroc": 0.6210139698597775,
+   "lo": 0.559555475772593,
+   "hi": 0.6781660804672747,
+   "n": 1944,
+   "source": "results/corrected/baselines.json older.baselines.novel_drug_prior (auroc, auroc_ci95)"
+  },
+  "older | Qwen2.5-7B, names only": {
+   "auroc": 0.6579122847126962,
+   "lo": 0.6103092487957706,
+   "hi": 0.711294459479031,
+   "n": 1944,
+   "seeds": [
+    42
+   ],
+   "group": "names/qwen",
+   "key": "oodold",
+   "cohort": "oodold",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older | BioMistral-7B, names only": {
+   "auroc": 0.5216900767794543,
+   "lo": 0.47444047528566335,
+   "hi": 0.5691193280228612,
+   "n": 1944,
+   "seeds": [
+    42
+   ],
+   "group": "names/biomistral",
+   "key": "oodold",
+   "cohort": "oodold",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older | Mixed-input, names only": {
+   "auroc": 0.4520551125971651,
+   "lo": 0.39859294245523114,
+   "hi": 0.5044596875809785,
+   "n": 1944,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b2mixed/biomedbert",
+   "key": "oodold_empty",
+   "cohort": "oodold",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older_clean | DrugBank lookup": {
+   "auroc": 0.679928,
+   "lo": 0.63048,
+   "hi": 0.723172,
+   "n": 1832,
+   "source": "drugbank_lookup.json cohort older_clean (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older_clean | Label string match": {
+   "auroc": 0.832220367278798,
+   "lo": 0.7893546403025195,
+   "hi": 0.8770520165636168,
+   "n": 1832,
+   "source": "computed by ddiood.paperfigs from results/corrected/baseline_scores.json, two-way cluster bootstrap"
+  },
+  "older_clean | Novel-drug prior (shortcut)": {
+   "auroc": 0.6168580507929544,
+   "lo": 0.5569478170794675,
+   "hi": 0.6731613272620809,
+   "n": 1832,
+   "source": "computed by ddiood.paperfigs from results/corrected/baseline_scores.json, two-way cluster bootstrap"
+  },
+  "older_clean | Qwen2.5-7B, names only": {
+   "auroc": 0.6533205518253591,
+   "lo": 0.6043833021705011,
+   "hi": 0.705290620324759,
+   "n": 1832,
+   "seeds": [
+    42
+   ],
+   "group": "names/qwen",
+   "key": "oodold",
+   "cohort": "older_clean",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "computed by ddiood.paperfigs (pooled AUROC check: tables.json ood_cohorts auroc_pooled)"
+  },
+  "older_clean | BioMistral-7B, names only": {
+   "auroc": 0.5314792022930892,
+   "lo": 0.48114851389959773,
+   "hi": 0.584310572289911,
+   "n": 1832,
+   "seeds": [
+    42
+   ],
+   "group": "names/biomistral",
+   "key": "oodold",
+   "cohort": "older_clean",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "computed by ddiood.paperfigs (pooled AUROC check: tables.json ood_cohorts auroc_pooled)"
+  },
+  "older_clean | Mixed-input, names only": {
+   "auroc": 0.4442014062366718,
+   "lo": 0.3888500257714584,
+   "hi": 0.4966900996605633,
+   "n": 1832,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b2mixed/biomedbert",
+   "key": "oodold_empty",
+   "cohort": "older_clean",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "computed by ddiood.paperfigs (pooled AUROC check: tables.json ood_cohorts auroc_pooled)"
+  }
+ },
+ "figS_disjoint": {
+  "Sentence-trained | sentence | seen": {
+   "auroc": 0.9739038545682702,
+   "lo": 0.9606302911702168,
+   "hi": 0.9839300698430793,
+   "n": 1539,
+   "job": "b2sentence-biomedbert-disjoint-s42",
+   "key": "test_sentence",
+   "subset": "seen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Sentence-trained | sentence | unseen": {
+   "auroc": 0.9419357474501812,
+   "lo": 0.9094430575336955,
+   "hi": 0.9661395955047494,
+   "n": 1271,
+   "job": "b2sentence-biomedbert-disjoint-s42",
+   "key": "test_sentence",
+   "subset": "unseen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Mixed-input | sentence | seen": {
+   "auroc": 0.9673013894278001,
+   "lo": 0.9504526740870656,
+   "hi": 0.9806034702641064,
+   "n": 1539,
+   "job": "b2mixed-biomedbert-disjoint-s42",
+   "key": "test_sentence",
+   "subset": "seen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Mixed-input | sentence | unseen": {
+   "auroc": 0.9398833956568967,
+   "lo": 0.9070091860293272,
+   "hi": 0.9652852408571476,
+   "n": 1271,
+   "job": "b2mixed-biomedbert-disjoint-s42",
+   "key": "test_sentence",
+   "subset": "unseen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Sentence-trained | names only | seen": {
+   "auroc": 0.5913344450957244,
+   "lo": 0.5390746210485466,
+   "hi": 0.6493802359294572,
+   "n": 1539,
+   "job": "b2sentence-biomedbert-disjoint-s42",
+   "key": "test_empty",
+   "subset": "seen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Sentence-trained | names only | unseen": {
+   "auroc": 0.5424192757649456,
+   "lo": 0.48744198868667055,
+   "hi": 0.6044679610732835,
+   "n": 1271,
+   "job": "b2sentence-biomedbert-disjoint-s42",
+   "key": "test_empty",
+   "subset": "unseen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Mixed-input | names only | seen": {
+   "auroc": 0.6674454507178298,
+   "lo": 0.6134918290802861,
+   "hi": 0.722209914626493,
+   "n": 1539,
+   "job": "b2mixed-biomedbert-disjoint-s42",
+   "key": "test_empty",
+   "subset": "seen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Mixed-input | names only | unseen": {
+   "auroc": 0.6118699952896844,
+   "lo": 0.551898250012362,
+   "hi": 0.6698231279260486,
+   "n": 1271,
+   "job": "b2mixed-biomedbert-disjoint-s42",
+   "key": "test_empty",
+   "subset": "unseen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Names-trained | names only | seen": {
+   "auroc": 0.6096166070883108,
+   "lo": 0.5580257198284694,
+   "hi": 0.6569823816397469,
+   "n": 1539,
+   "job": "b1names-biomedbert-disjoint-s42",
+   "key": "test_names",
+   "subset": "seen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  },
+  "Names-trained | names only | unseen": {
+   "auroc": 0.608596806598287,
+   "lo": 0.5589637235194076,
+   "hi": 0.6592448171374461,
+   "n": 1271,
+   "job": "b1names-biomedbert-disjoint-s42",
+   "key": "test_names",
+   "subset": "unseen",
+   "source": "tables.json disjoint (auroc); interval computed by ddiood.paperfigs"
+  }
+ },
+ "figS_masking": {
+  "Sentence-trained | f1_sentence": {
+   "seeds": {
+    "1": 0.717068,
+    "2": 0.742243,
+    "3": 0.721533,
+    "4": 0.71831,
+    "42": 0.705882
+   },
+   "mean": 0.7210072000000001,
+   "source": "tables.json masking"
+  },
+  "Sentence-trained | f1_masked": {
+   "seeds": {
+    "1": 0.016043,
+    "2": 0.0,
+    "3": 0.062663,
+    "4": 0.0,
+    "42": 0.021333
+   },
+   "mean": 0.0200078,
+   "source": "tables.json masking"
+  },
+  "H2a decision": {
+   "value": {
+    "ratio": 0.027888,
+    "vocab": 0.056584,
+    "novel": 0.053594,
+    "pseudo": 0.059431
+   },
+   "decision": "falsified",
+   "source": "decisions.json H2a",
+   "median_ratio": 0.022373,
+   "ratio_range": [
+    0.0,
+    0.086847
+   ],
+   "ratio_source": "tables.json masking"
+  },
+  "Masked-trained | f1_sentence": {
+   "seeds": {
+    "1": 0.029598,
+    "2": 0.398577,
+    "3": 0.524362,
+    "4": 0.474576,
+    "42": 0.454936
+   },
+   "mean": 0.37640979999999996,
+   "source": "tables.json masking"
+  },
+  "Masked-trained | f1_masked": {
+   "seeds": {
+    "1": 0.708543,
+    "2": 0.665,
+    "3": 0.715466,
+    "4": 0.706559,
+    "42": 0.719276
+   },
+   "mean": 0.7029688000000001,
+   "source": "tables.json masking"
+  },
+  "H2b decision": {
+   "value": {
+    "ratio": 6.008276,
+    "vocab": 0.063986,
+    "novel": 0.072171,
+    "pseudo": 0.072313
+   },
+   "decision": "supported",
+   "source": "decisions.json H2b",
+   "median_ratio": 1.581049,
+   "ratio_range": [
+    1.364451,
+    23.938622
+   ],
+   "ratio_source": "tables.json masking"
+  },
+  "Sentence-trained | flip vocab": {
+   "seeds": [
+    0.049822,
+    0.048754,
+    0.050178,
+    0.054093,
+    0.080071
+   ],
+   "mean": 0.0565836,
+   "source": "tables.json swap (flip_rate); mean equals decisions.json H2a"
+  },
+  "Masked-trained | flip vocab": {
+   "seeds": [
+    0.027758,
+    0.047331,
+    0.062989,
+    0.090036,
+    0.091815
+   ],
+   "mean": 0.06398580000000001,
+   "source": "tables.json swap (flip_rate); mean equals decisions.json H2b"
+  },
+  "Sentence-trained | flip novel": {
+   "seeds": [
+    0.048043,
+    0.042349,
+    0.039858,
+    0.042349,
+    0.095374
+   ],
+   "mean": 0.053594600000000006,
+   "source": "tables.json swap (flip_rate); mean equals decisions.json H2a"
+  },
+  "Masked-trained | flip novel": {
+   "seeds": [
+    0.024199,
+    0.042705,
+    0.075801,
+    0.107829,
+    0.11032
+   ],
+   "mean": 0.07217080000000001,
+   "source": "tables.json swap (flip_rate); mean equals decisions.json H2b"
+  },
+  "Sentence-trained | flip pseudo": {
+   "seeds": [
+    0.05089,
+    0.046975,
+    0.043416,
+    0.062278,
+    0.093594
+   ],
+   "mean": 0.0594306,
+   "source": "tables.json swap (flip_rate); mean equals decisions.json H2a"
+  },
+  "Masked-trained | flip pseudo": {
+   "seeds": [
+    0.030605,
+    0.048754,
+    0.072954,
+    0.103203,
+    0.10605
+   ],
+   "mean": 0.07231320000000001,
+   "source": "tables.json swap (flip_rate); mean equals decisions.json H2b"
+  }
+ },
+ "seed_strip": {
+  "Sentence-trained, BiomedBERT": {
+   "per_seed": {
+    "1": 0.5463187325256291,
+    "2": 0.47034016775396087,
+    "3": 0.49963886300093197,
+    "4": 0.4559063373718546,
+    "42": 0.4739748369058714
+   },
+   "seed_auroc_mean": 0.489236,
+   "seed_auroc_sd": 0.035593,
+   "source": "tables.json per_job (auroc) and seeds (seed_auroc_mean)"
+  },
+  "Mixed-input, BiomedBERT": {
+   "per_seed": {
+    "1": 0.525955265610438,
+    "2": 0.5011649580615097,
+    "3": 0.4876281453867661,
+    "4": 0.5336672879776329,
+    "42": 0.5184063373718546
+   },
+   "seed_auroc_mean": 0.513364,
+   "seed_auroc_sd": 0.018757,
+   "source": "tables.json per_job (auroc) and seeds (seed_auroc_mean)"
+  },
+  "Names-trained, BiomedBERT": {
+   "per_seed": {
+    "1": 0.5099021435228331,
+    "2": 0.5340167753960857,
+    "3": 0.4712255358807083,
+    "4": 0.49811276794035414,
+    "42": 0.5110205032618825
+   },
+   "seed_auroc_mean": 0.504856,
+   "seed_auroc_sd": 0.02286,
+   "source": "tables.json per_job (auroc) and seeds (seed_auroc_mean)"
+  },
+  "Sentence-trained, BERT-base": {
+   "per_seed": {
+    "1": 0.46393289841565705,
+    "2": 0.4315820130475303,
+    "3": 0.42943849021435226,
+    "4": 0.45481127679403544,
+    "42": 0.4450838769804287
+   },
+   "seed_auroc_mean": 0.44497,
+   "seed_auroc_sd": 0.014806,
+   "source": "tables.json per_job (auroc) and seeds (seed_auroc_mean)"
+  },
+  "Mixed-input, BERT-base": {
+   "per_seed": {
+    "1": 0.49327819198508854,
+    "2": 0.49102982292637465,
+    "3": 0.5366379310344828,
+    "4": 0.5154007455731594,
+    "42": 0.5462255358807083
+   },
+   "seed_auroc_mean": 0.516514,
+   "seed_auroc_sd": 0.024891,
+   "source": "tables.json per_job (auroc) and seeds (seed_auroc_mean)"
+  },
+  "Masked-trained, BiomedBERT": {
+   "per_seed": {
+    "1": 0.5202003727865797,
+    "2": 0.4672297297297297,
+    "3": 0.5298695246971109,
+    "4": 0.49801957129543334,
+    "42": 0.44771668219944083
+   },
+   "seed_auroc_mean": 0.492607,
+   "seed_auroc_sd": 0.034779,
+   "source": "tables.json per_job (auroc) and seeds (seed_auroc_mean)"
+  },
+  "Retrieval-augmented (H6)": {
+   "per_seed": {
+    "1": 0.4740563839701771,
+    "2": 0.4962837837837838,
+    "3": 0.466076421248835,
+    "4": 0.49860205032618826,
+    "42": 0.49764678471575025
+   },
+   "seed_auroc_mean": 0.486533,
+   "seed_auroc_sd": 0.015317,
+   "source": "tables.json per_job (auroc) and seeds (seed_auroc_mean)"
+  },
+  "Positive control (H5)": {
+   "per_seed": {
+    "1": 0.5730661696178938,
+    "2": 0.6043103448275862,
+    "3": 0.5777726001863933,
+    "4": 0.5931383970177073,
+    "42": 0.56071761416589
+   },
+   "seed_auroc_mean": 0.581801,
+   "seed_auroc_sd": 0.017119,
+   "source": "tables.json per_job (auroc) and seeds (seed_auroc_mean)"
+  }
+ },
+ "figS_roc": {
+  "novel | Sentence-trained": {
+   "auroc": 0.47240214352283316,
+   "lo": 0.36519491259571074,
+   "hi": 0.5686709363567708,
+   "n": 438,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b2sentence/biomedbert",
+   "key": "ood_empty",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | Mixed-input": {
+   "auroc": 0.5286113699906804,
+   "lo": 0.41036973472730254,
+   "hi": 0.6365341014297416,
+   "n": 438,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b2mixed/biomedbert",
+   "key": "ood_empty",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | Names-trained": {
+   "auroc": 0.5048928238583411,
+   "lo": 0.4148475312624232,
+   "hi": 0.5940683601056707,
+   "n": 438,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b1names/biomedbert",
+   "key": "ood_names",
+   "cohort": "ood",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "novel | label string match": {
+   "auroc": 0.7972972972972973,
+   "lo": 0.7085940397350993,
+   "hi": 0.8772006578947368,
+   "n": 438,
+   "source": "computed by ddiood.paperfigs from results/corrected/baseline_scores.json, two-way cluster bootstrap"
+  },
+  "older | Sentence-trained": {
+   "auroc": 0.446415132982777,
+   "lo": 0.39927473569624755,
+   "hi": 0.4977661682569969,
+   "n": 1944,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b2sentence/biomedbert",
+   "key": "oodold_empty",
+   "cohort": "oodold",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older | Mixed-input": {
+   "auroc": 0.4520551125971651,
+   "lo": 0.39859294245523114,
+   "hi": 0.5044596875809785,
+   "n": 1944,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b2mixed/biomedbert",
+   "key": "oodold_empty",
+   "cohort": "oodold",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older | Names-trained": {
+   "auroc": 0.4771721631611035,
+   "lo": 0.4234013257593683,
+   "hi": 0.5289305165921703,
+   "n": 1944,
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    42
+   ],
+   "group": "b1names/biomedbert",
+   "key": "oodold_names",
+   "cohort": "oodold",
+   "ci": "two-way cluster bootstrap over OOD drugs and partners",
+   "source": "tables.json seeds (auroc, auroc2_lo, auroc2_hi)"
+  },
+  "older | label string match": {
+   "auroc": 0.8371913580246914,
+   "lo": 0.7898718571552641,
+   "hi": 0.8800654646446835,
+   "n": 1944,
+   "source": "computed by ddiood.paperfigs from results/corrected/baseline_scores.json, two-way cluster bootstrap"
+  }
+ },
+ "band_audit": {
+  "figS_reference_systems": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "figS_disjoint": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "figS_masking": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "seed_strip": {
+   "bands": 0,
+   "thick_90_bars": 0
+  },
+  "figS_roc": {
+   "bands": 0,
+   "thick_90_bars": 0
+  }
+ },
+ "checks_against_eval": {
+  "seed_aggregated": 16,
+  "two_way_ci": 16,
+  "older_clean_pooled": 3,
+  "per_job": 40,
+  "disjoint": 10
+ }
+}

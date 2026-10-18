@@ -1,0 +1,19 @@
+{
+ "n_pairs": 438,
+ "n_pos": 148,
+ "n_neg": 290,
+ "n_ood_drugs": 48,
+ "max_pairs_per_drug": 15,
+ "years": {
+  "2022": 11,
+  "2020": 54,
+  "2021": 36,
+  "2023": 28,
+  "2024": 19
+ },
+ "b2_applicable": 50,
+ "sha256": "245aa99d3439deba4f461976eb0094da84528d509a1d4616882271f259ba80aa",
+ "source_sha256": "31e0d9129357916540d508426b1a9cc3a799d26ea7c165f9b2e4373d8517ab6b",
+ "max_pos_per_drug": 10,
+ "novel_drugs_with_label": 201
+}

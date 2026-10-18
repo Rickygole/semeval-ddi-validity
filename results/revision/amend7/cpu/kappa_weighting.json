@@ -1,0 +1,231 @@
+{
+ "status": "Amendment 7 additions, exploratory; kappa and the drug-weighted AUROC are sensitivity and context rows, not preregistered, and change no decision",
+ "method": "kappa = (AUROC - 0.5) / (AUROC_DrugBank - 0.5), both within-drug on tier A of the same cohort; its interval uses the same two-way draws for the model and the DrugBank lookup. The pair-weighted within-drug AUROC is the preregistered statistic (stats.stratified_auroc weights each drug by its positive-negative pair count) and reproduces decisions.json. The drug-weighted version averages per-drug AUROCs with equal weight per drug (and per resampled drug copy), over the same draws (Novel seed 1042, Older seed 42, pooled seed 42). H4 is a difference between cohorts and has no single kappa; the per-cohort kappas of H1 and H1-novel apply.",
+ "rows": [
+  {
+   "id": "H1",
+   "cohort": "Older-clean",
+   "n": 1832,
+   "n_drugs": 128,
+   "decision": "inconclusive",
+   "pair_weighted": {
+    "value": 0.451763,
+    "ci90": [
+     0.394843,
+     0.509221
+    ],
+    "ci95": [
+     0.388895,
+     0.518086
+    ],
+    "p_tost": 0.060939,
+    "n_draws": 1000
+   },
+   "drugbank_within": 0.641224,
+   "kappa": {
+    "value": -0.341564,
+    "ci95": [
+     -0.793756,
+     0.133447
+    ],
+    "margin_0.60": 0.708093,
+    "margin_0.40": -0.708093
+   },
+   "drug_weighted_sensitivity": {
+    "value": 0.440217,
+    "ci90": [
+     0.388607,
+     0.494906
+    ],
+    "ci95": [
+     0.379369,
+     0.508041
+    ],
+    "p_tost": 0.103896,
+    "n_draws": 1000,
+    "drugbank": 0.63648,
+    "kappa": -0.438034
+   }
+  },
+  {
+   "id": "H1-sensitivity",
+   "cohort": "Older-clean sensitivity",
+   "n": 1754,
+   "n_drugs": 123,
+   "decision": "sensitivity, not preregistered (no decision rule)",
+   "pair_weighted": {
+    "value": 0.452619,
+    "ci90": [
+     0.393585,
+     0.511125
+    ],
+    "ci95": [
+     0.378697,
+     0.522102
+    ],
+    "p_tost": 0.077922,
+    "n_draws": 1000
+   },
+   "drugbank_within": 0.648359,
+   "kappa": {
+    "value": -0.319368,
+    "ci95": [
+     -0.826907,
+     0.153074
+    ],
+    "margin_0.60": 0.674038,
+    "margin_0.40": -0.674038
+   },
+   "drug_weighted_sensitivity": {
+    "value": 0.440999,
+    "ci90": [
+     0.387225,
+     0.498463
+    ],
+    "ci95": [
+     0.374398,
+     0.508179
+    ],
+    "p_tost": 0.098901,
+    "n_draws": 1000,
+    "drugbank": 0.640301,
+    "kappa": -0.420534
+   }
+  },
+  {
+   "id": "H1-novel",
+   "cohort": "Novel",
+   "n": 438,
+   "n_drugs": 48,
+   "decision": "estimate only (no equivalence test)",
+   "pair_weighted": {
+    "value": 0.523118,
+    "ci90": [
+     0.41133,
+     0.625726
+    ],
+    "ci95": [
+     0.397209,
+     0.650333
+    ],
+    "p_tost": 0.116883,
+    "n_draws": 1000
+   },
+   "drugbank_within": 0.728534,
+   "kappa": {
+    "value": 0.101156,
+    "ci95": [
+     -0.48559,
+     0.721873
+    ],
+    "margin_0.60": 0.437572,
+    "margin_0.40": -0.437572
+   },
+   "drug_weighted_sensitivity": {
+    "value": 0.50597,
+    "ci90": [
+     0.395424,
+     0.615975
+    ],
+    "ci95": [
+     0.371559,
+     0.635311
+    ],
+    "p_tost": 0.087912,
+    "n_draws": 1000,
+    "drugbank": 0.730198,
+    "kappa": 0.025934
+   }
+  },
+  {
+   "id": "H6",
+   "cohort": "Novel",
+   "n": 438,
+   "n_drugs": 48,
+   "decision": "inconclusive",
+   "pair_weighted": {
+    "value": 0.519155,
+    "ci90": [
+     0.420617,
+     0.626776
+    ],
+    "ci95": [
+     0.39324,
+     0.647088
+    ],
+    "p_tost": 0.101898,
+    "n_draws": 1000
+   },
+   "drugbank_within": 0.728534,
+   "kappa": {
+    "value": 0.083815,
+    "ci95": [
+     -0.498771,
+     0.681765
+    ],
+    "margin_0.60": 0.437572,
+    "margin_0.40": -0.437572
+   },
+   "drug_weighted_sensitivity": {
+    "value": 0.536426,
+    "ci90": [
+     0.428529,
+     0.629271
+    ],
+    "ci95": [
+     0.402539,
+     0.65229
+    ],
+    "p_tost": 0.10989,
+    "n_draws": 1000,
+    "drugbank": 0.730198,
+    "kappa": 0.15824
+   }
+  },
+  {
+   "id": "H1-pooled",
+   "cohort": "Novel + Older-clean",
+   "n": 2270,
+   "n_drugs": 176,
+   "decision": "descriptive, secondary (no pre-registered decision rule)",
+   "pair_weighted": {
+    "value": 0.460889,
+    "ci90": [
+     0.409974,
+     0.511291
+    ],
+    "ci95": [
+     0.399343,
+     0.520093
+    ],
+    "p_tost": 0.027972,
+    "n_draws": 1000
+   },
+   "drugbank_within": 0.652391,
+   "kappa": {
+    "value": -0.256652,
+    "ci95": [
+     -0.675096,
+     0.136747
+    ],
+    "margin_0.60": 0.656208,
+    "margin_0.40": -0.656208
+   },
+   "drug_weighted_sensitivity": {
+    "value": 0.45815,
+    "ci90": [
+     0.412507,
+     0.510444
+    ],
+    "ci95": [
+     0.402533,
+     0.517352
+    ],
+    "p_tost": 0.017982,
+    "n_draws": 1000,
+    "drugbank": 0.66204,
+    "kappa": -0.258273
+   }
+  }
+ ]
+}

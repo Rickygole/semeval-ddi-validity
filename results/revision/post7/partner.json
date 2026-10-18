@@ -1,0 +1,4226 @@
+{
+ "status": "post hoc and exploratory; criteria in criteria.json were written before computing; changes no preregistered decision",
+ "criteria": {
+  "analysis_2a_partner_decomposition": {
+   "framing": "a decomposition of the within-drug AUROC by partner structure, never a replacement for H1",
+   "statistics": {
+    "partner_stratified": "positives and negatives that share the same partner (pairs (d1, p) positive and (d2, p) negative, d1 != d2) are compared within partner and combined across partners with weights equal to the number of comparisons (Mann-Whitney pooled over partner strata); this is the statistic the request defines and it is the primary one; it removes partner effects but compares different drugs",
+    "doubly_matched_tetrad": "every set of two drugs and two partners with (d1, p1) and (d2, p2) positive and (d1, p2) and (d2, p1) negative; a tetrad is a win when s(d1, p1) + s(d2, p2) > s(d1, p2) + s(d2, p1), ties 0.5; additive drug and partner effects cancel exactly; secondary"
+   },
+   "intervals": "two-way cluster bootstrap (primary) and one-way drug bootstrap, on the same draws as the within-drug AUROC so that shifts are paired; comparison weights: within drug w_d w_p w_p', within partner w_p w_d w_d', tetrad w_d1 w_d2 w_p1 w_p2",
+   "systems_and_cells": "DrugBank lookup first, then b2mixed, Qwen names only, b1names, b2sentence; Older-clean and Novel; tiers A and B",
+   "validity_condition": "a statistic is a valid decomposition on a cohort and tier only if the DrugBank lookup keeps its signal under it: its two-way 95% lower bound is above 0.5; on tier B DrugBank is 1.0 by construction and the condition is checked on tier A; a statistic that fails the condition on Older-clean tier A yields no explained verdict",
+   "primary_cell": "b2mixed, Older-clean, tier A, partner-stratified",
+   "explained": "the partner-controlled statistic's two-way 95% interval contains 0.5 AND |S - 0.5| <= |W - 0.5| - 0.03, where S is the statistic and W the within-drug AUROC of the same system and cell (for W = 0.452: S in [0.482, 0.518]), AND the validity condition holds",
+   "secondary_verdicts": "the same rule for the tetrad statistic and for the one-way intervals; tier B and the other systems are reported without a decision",
+   "not_used": "the leave-one-drug-out partialling of exp7 is not used as an explanation because it drives DrugBank to 0.398"
+  },
+  "analysis_2b_popularity_simulation": {
+   "feature": "label-free partner popularity pop(p) = share of vocabulary Drug Interactions sections naming the partner (baselines.Context.partner_prior, as exp7 iii2), converted to normal scores of its ranks in the cohort",
+   "scorer": "s = lambda x z(pop) + e, e standard normal, lambda in {-5, -2, -1, -0.5, -0.25, 0, 0.25, 0.5, 1, 2, 5} and the noise-free limits +inf and -inf; 300 noise replicates per lambda, seed 21, on the exact frozen Older-clean and Novel designs, tiers A and B",
+   "primary_statistic": "mean within-drug AUROC of the scorer at each lambda; the lambda at which the mean within-drug Spearman with popularity equals the measured b2mixed value (computed in this analysis on the same rows; exp7 gave 0.257 on Older-clean tier A), found by linear interpolation, and the scorer's AUROC there; and the lambda, if any, at which the scorer's AUROC equals the measured b2mixed within-drug AUROC",
+   "popularity_explains": "the popularity scorer matched to b2mixed's Spearman reaches at least half of b2mixed's gap from 0.5 (for 0.452: an AUROC of at most 0.476)",
+   "contrast": "the same simulation with the label-derived leave-one-drug-out partner positive rate instead of popularity, reported without a decision as an upper bound on what partner structure can do"
+  },
+  "analysis_2c_decomposition": {
+   "partner_component_from_2a": "within-drug AUROC minus the partner-stratified AUROC (and minus the tetrad AUROC), with paired two-way and one-way intervals; residual = partner-controlled AUROC minus 0.5",
+   "popularity_component_from_2b": "AUROC of the matched popularity scorer minus 0.5; residual = b2mixed within-drug AUROC minus that value; interval from 1,000 one-way drug bootstrap draws (seed 42 Older-clean, 1042 Novel) in which b2mixed's within-drug AUROC and Spearman are recomputed and the Spearman is mapped through the simulated curve",
+   "reported_for": "b2mixed, Older-clean and Novel, tiers A and B; primary b2mixed Older-clean tier A",
+   "no_decision": "descriptive"
+  }
+ },
+ "decomposition": {
+  "older_clean:A": {
+   "n": 1832,
+   "n_drugs": 128,
+   "n_comparisons": {
+    "within": 5162,
+    "partner_stratified": 10643,
+    "tetrad": 1975
+   },
+   "n_drugs_in_tetrads": 125,
+   "systems": {
+    "DrugBank lookup": {
+     "within": {
+      "value": 0.641224,
+      "two_way": {
+       "value": 0.641224,
+       "ci90": [
+        0.600371,
+        0.68347
+       ],
+       "ci95": [
+        0.595375,
+        0.688846
+       ],
+       "p_tost": 0.95005,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.641224,
+       "ci90": [
+        0.616042,
+        0.666582
+       ],
+       "ci95": [
+        0.610629,
+        0.670445
+       ],
+       "p_tost": 0.996004,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.698816,
+      "two_way": {
+       "value": 0.698816,
+       "ci90": [
+        0.638747,
+        0.753274
+       ],
+       "ci95": [
+        0.626765,
+        0.764074
+       ],
+       "p_tost": 0.996004,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.057592,
+        "ci90": [
+         -0.112622,
+         0.002945
+        ],
+        "ci95": [
+         -0.122998,
+         0.011518
+        ],
+        "n_draws": 1000
+       }
+      },
+      "one_way_drug": {
+       "value": 0.698816,
+       "ci90": [
+        0.657382,
+        0.738243
+       ],
+       "ci95": [
+        0.649154,
+        0.745331
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.057592,
+        "ci90": [
+         -0.094379,
+         -0.016924
+        ],
+        "ci95": [
+         -0.099514,
+         -0.010021
+        ],
+        "n_draws": 1000
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.691139,
+      "two_way": {
+       "value": 0.691139,
+       "ci90": [
+        0.596946,
+        0.788012
+       ],
+       "ci95": [
+        0.576921,
+        0.801852
+       ],
+       "p_tost": 0.942058,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.049915,
+        "ci90": [
+         -0.127583,
+         0.024271
+        ],
+        "ci95": [
+         -0.139659,
+         0.040618
+        ],
+        "n_draws": 1000
+       }
+      },
+      "one_way_drug": {
+       "value": 0.691139,
+       "ci90": [
+        0.629516,
+        0.74902
+       ],
+       "ci95": [
+        0.618529,
+        0.758861
+       ],
+       "p_tost": 0.99001,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.049915,
+        "ci90": [
+         -0.090503,
+         -0.003534
+        ],
+        "ci95": [
+         -0.099674,
+         0.001926
+        ],
+        "n_draws": 1000
+       }
+      }
+     }
+    },
+    "b2mixed": {
+     "within": {
+      "value": 0.451763,
+      "two_way": {
+       "value": 0.451763,
+       "ci90": [
+        0.394843,
+        0.509221
+       ],
+       "ci95": [
+        0.388895,
+        0.518086
+       ],
+       "p_tost": 0.060939,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.451763,
+       "ci90": [
+        0.417041,
+        0.487264
+       ],
+       "ci95": [
+        0.411594,
+        0.494876
+       ],
+       "p_tost": 0.004995,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.460678,
+      "two_way": {
+       "value": 0.460678,
+       "ci90": [
+        0.38202,
+        0.527214
+       ],
+       "ci95": [
+        0.367911,
+        0.542827
+       ],
+       "p_tost": 0.102897,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.008915,
+        "ci90": [
+         -0.086081,
+         0.072495
+        ],
+        "ci95": [
+         -0.102161,
+         0.08952
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.460678,
+       "ci90": [
+        0.396882,
+        0.517055
+       ],
+       "ci95": [
+        0.385524,
+        0.527657
+       ],
+       "p_tost": 0.058941,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.008915,
+        "ci90": [
+         -0.072147,
+         0.052709
+        ],
+        "ci95": [
+         -0.084175,
+         0.064996
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.37519,
+      "two_way": {
+       "value": 0.37519,
+       "ci90": [
+        0.251115,
+        0.512394
+       ],
+       "ci95": [
+        0.233297,
+        0.541045
+       ],
+       "p_tost": 0.652348,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.076573,
+        "ci90": [
+         -0.04175,
+         0.180038
+        ],
+        "ci95": [
+         -0.067876,
+         0.203728
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.37519,
+       "ci90": [
+        0.300368,
+        0.451411
+       ],
+       "ci95": [
+        0.29018,
+        0.464849
+       ],
+       "p_tost": 0.702298,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.076573,
+        "ci90": [
+         0.010738,
+         0.138869
+        ],
+        "ci95": [
+         -0.000145,
+         0.152795
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "Qwen names only": {
+     "within": {
+      "value": 0.601898,
+      "two_way": {
+       "value": 0.601898,
+       "ci90": [
+        0.542585,
+        0.658469
+       ],
+       "ci95": [
+        0.532709,
+        0.666601
+       ],
+       "p_tost": 0.536464,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.601898,
+       "ci90": [
+        0.565747,
+        0.638064
+       ],
+       "ci95": [
+        0.557405,
+        0.644817
+       ],
+       "p_tost": 0.553447,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.717232,
+      "two_way": {
+       "value": 0.717232,
+       "ci90": [
+        0.651992,
+        0.778071
+       ],
+       "ci95": [
+        0.640482,
+        0.789802
+       ],
+       "p_tost": 0.999001,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.115333,
+        "ci90": [
+         -0.194127,
+         -0.032937
+        ],
+        "ci95": [
+         -0.205497,
+         -0.017967
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.717232,
+       "ci90": [
+        0.668828,
+        0.762236
+       ],
+       "ci95": [
+        0.65987,
+        0.768451
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.115333,
+        "ci90": [
+         -0.169919,
+         -0.058661
+        ],
+        "ci95": [
+         -0.180699,
+         -0.04881
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.758481,
+      "two_way": {
+       "value": 0.758481,
+       "ci90": [
+        0.642009,
+        0.864369
+       ],
+       "ci95": [
+        0.618752,
+        0.882167
+       ],
+       "p_tost": 0.982018,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.156583,
+        "ci90": [
+         -0.270447,
+         -0.036306
+        ],
+        "ci95": [
+         -0.297331,
+         -0.007922
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.758481,
+       "ci90": [
+        0.697404,
+        0.819267
+       ],
+       "ci95": [
+        0.683077,
+        0.830137
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.156583,
+        "ci90": [
+         -0.223826,
+         -0.08983
+        ],
+        "ci95": [
+         -0.236939,
+         -0.072115
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "b1names": {
+     "within": {
+      "value": 0.462805,
+      "two_way": {
+       "value": 0.462805,
+       "ci90": [
+        0.407545,
+        0.512085
+       ],
+       "ci95": [
+        0.397921,
+        0.520716
+       ],
+       "p_tost": 0.02997,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.462805,
+       "ci90": [
+        0.428272,
+        0.495516
+       ],
+       "ci95": [
+        0.422845,
+        0.503668
+       ],
+       "p_tost": 0.001998,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.451095,
+      "two_way": {
+       "value": 0.451095,
+       "ci90": [
+        0.37112,
+        0.518312
+       ],
+       "ci95": [
+        0.358144,
+        0.534984
+       ],
+       "p_tost": 0.12987,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.01171,
+        "ci90": [
+         -0.065769,
+         0.085778
+        ],
+        "ci95": [
+         -0.079128,
+         0.105623
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.451095,
+       "ci90": [
+        0.390848,
+        0.505267
+       ],
+       "ci95": [
+        0.377727,
+        0.514368
+       ],
+       "p_tost": 0.080919,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.01171,
+        "ci90": [
+         -0.047111,
+         0.069381
+        ],
+        "ci95": [
+         -0.058141,
+         0.084306
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.348354,
+      "two_way": {
+       "value": 0.348354,
+       "ci90": [
+        0.24484,
+        0.465331
+       ],
+       "ci95": [
+        0.219679,
+        0.497081
+       ],
+       "p_tost": 0.778222,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.114451,
+        "ci90": [
+         -0.008026,
+         0.213296
+        ],
+        "ci95": [
+         -0.033452,
+         0.225942
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.348354,
+       "ci90": [
+        0.278167,
+        0.415695
+       ],
+       "ci95": [
+        0.270814,
+        0.423827
+       ],
+       "p_tost": 0.902098,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.114451,
+        "ci90": [
+         0.051303,
+         0.174017
+        ],
+        "ci95": [
+         0.03992,
+         0.186255
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "b2sentence": {
+     "within": {
+      "value": 0.453119,
+      "two_way": {
+       "value": 0.453119,
+       "ci90": [
+        0.397762,
+        0.507836
+       ],
+       "ci95": [
+        0.390759,
+        0.518153
+       ],
+       "p_tost": 0.062937,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.453119,
+       "ci90": [
+        0.417695,
+        0.48539
+       ],
+       "ci95": [
+        0.412712,
+        0.491165
+       ],
+       "p_tost": 0.006993,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.427041,
+      "two_way": {
+       "value": 0.427041,
+       "ci90": [
+        0.366672,
+        0.491774
+       ],
+       "ci95": [
+        0.358197,
+        0.499697
+       ],
+       "p_tost": 0.244755,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.026078,
+        "ci90": [
+         -0.047856,
+         0.097409
+        ],
+        "ci95": [
+         -0.06134,
+         0.110989
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.427041,
+       "ci90": [
+        0.381796,
+        0.47315
+       ],
+       "ci95": [
+        0.371504,
+        0.481055
+       ],
+       "p_tost": 0.17982,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.026078,
+        "ci90": [
+         -0.02724,
+         0.079777
+        ],
+        "ci95": [
+         -0.03396,
+         0.088591
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.432911,
+      "two_way": {
+       "value": 0.432911,
+       "ci90": [
+        0.294465,
+        0.56941
+       ],
+       "ci95": [
+        0.269448,
+        0.594801
+       ],
+       "p_tost": 0.363636,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.020208,
+        "ci90": [
+         -0.099136,
+         0.147482
+        ],
+        "ci95": [
+         -0.129923,
+         0.170488
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.432911,
+       "ci90": [
+        0.352401,
+        0.519168
+       ],
+       "ci95": [
+        0.341605,
+        0.53723
+       ],
+       "p_tost": 0.240759,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.020208,
+        "ci90": [
+         -0.050252,
+         0.088639
+        ],
+        "ci95": [
+         -0.068566,
+         0.101579
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    }
+   },
+   "validity": {
+    "partner_stratified": {
+     "drugbank_tier_A_value": 0.698816,
+     "drugbank_tier_A_lower95_two_way": 0.626765,
+     "valid": true
+    },
+    "tetrad": {
+     "drugbank_tier_A_value": 0.691139,
+     "drugbank_tier_A_lower95_two_way": 0.576921,
+     "valid": true
+    }
+   }
+  },
+  "older_clean:B": {
+   "n": 1191,
+   "n_drugs": 128,
+   "n_comparisons": {
+    "within": 1706,
+    "partner_stratified": 5092,
+    "tetrad": 172
+   },
+   "n_drugs_in_tetrads": 66,
+   "systems": {
+    "DrugBank lookup": {
+     "within": {
+      "value": 1.0,
+      "two_way": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 1.0,
+      "two_way": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.0,
+        "ci90": [
+         0.0,
+         0.0
+        ],
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "n_draws": 1000
+       }
+      },
+      "one_way_drug": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.0,
+        "ci90": [
+         0.0,
+         0.0
+        ],
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "n_draws": 1000
+       }
+      }
+     },
+     "tetrad": {
+      "value": 1.0,
+      "two_way": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.0,
+        "ci90": [
+         0.0,
+         0.0
+        ],
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "n_draws": 1000
+       }
+      },
+      "one_way_drug": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.0,
+        "ci90": [
+         0.0,
+         0.0
+        ],
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "n_draws": 1000
+       }
+      }
+     }
+    },
+    "b2mixed": {
+     "within": {
+      "value": 0.396835,
+      "two_way": {
+       "value": 0.396835,
+       "ci90": [
+        0.308146,
+        0.492713
+       ],
+       "ci95": [
+        0.288816,
+        0.514355
+       ],
+       "p_tost": 0.519481,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.396835,
+       "ci90": [
+        0.342019,
+        0.453344
+       ],
+       "ci95": [
+        0.332652,
+        0.463988
+       ],
+       "p_tost": 0.56044,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.39454,
+      "two_way": {
+       "value": 0.39454,
+       "ci90": [
+        0.298354,
+        0.476308
+       ],
+       "ci95": [
+        0.277776,
+        0.492222
+       ],
+       "p_tost": 0.57043,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.002294,
+        "ci90": [
+         -0.106511,
+         0.128614
+        ],
+        "ci95": [
+         -0.12811,
+         0.151019
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.39454,
+       "ci90": [
+        0.320853,
+        0.467269
+       ],
+       "ci95": [
+        0.306695,
+        0.482665
+       ],
+       "p_tost": 0.574426,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.002294,
+        "ci90": [
+         -0.078809,
+         0.084217
+        ],
+        "ci95": [
+         -0.097129,
+         0.096487
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.226744,
+      "two_way": {
+       "value": 0.226744,
+       "ci90": [
+        0.02939,
+        0.471755
+       ],
+       "ci95": [
+        0.0,
+        0.550803
+       ],
+       "p_tost": 0.906094,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.170091,
+        "ci90": [
+         -0.070807,
+         0.370815
+        ],
+        "ci95": [
+         -0.143848,
+         0.399602
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.226744,
+       "ci90": [
+        0.128767,
+        0.32948
+       ],
+       "ci95": [
+        0.107143,
+        0.35032
+       ],
+       "p_tost": 0.994006,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.170091,
+        "ci90": [
+         0.066147,
+         0.267964
+        ],
+        "ci95": [
+         0.04096,
+         0.288997
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "Qwen names only": {
+     "within": {
+      "value": 0.660317,
+      "two_way": {
+       "value": 0.660317,
+       "ci90": [
+        0.560191,
+        0.750916
+       ],
+       "ci95": [
+        0.54343,
+        0.766619
+       ],
+       "p_tost": 0.86014,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.660317,
+       "ci90": [
+        0.606703,
+        0.714029
+       ],
+       "ci95": [
+        0.593499,
+        0.723246
+       ],
+       "p_tost": 0.963037,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.860075,
+      "two_way": {
+       "value": 0.860075,
+       "ci90": [
+        0.795334,
+        0.912475
+       ],
+       "ci95": [
+        0.783467,
+        0.92013
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.199758,
+        "ci90": [
+         -0.312323,
+         -0.085615
+        ],
+        "ci95": [
+         -0.32943,
+         -0.069603
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.860075,
+       "ci90": [
+        0.823543,
+        0.8941
+       ],
+       "ci95": [
+        0.816969,
+        0.901771
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.199758,
+        "ci90": [
+         -0.264462,
+         -0.136729
+        ],
+        "ci95": [
+         -0.276402,
+         -0.123197
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.936047,
+      "two_way": {
+       "value": 0.936047,
+       "ci90": [
+        0.733333,
+        1.0
+       ],
+       "ci95": [
+        0.628514,
+        1.0
+       ],
+       "p_tost": 0.984016,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.27573,
+        "ci90": [
+         -0.404403,
+         -0.066411
+        ],
+        "ci95": [
+         -0.437857,
+         0.019377
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.936047,
+       "ci90": [
+        0.854976,
+        0.991939
+       ],
+       "ci95": [
+        0.823519,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.27573,
+        "ci90": [
+         -0.357991,
+         -0.174799
+        ],
+        "ci95": [
+         -0.37694,
+         -0.146274
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "b1names": {
+     "within": {
+      "value": 0.419109,
+      "two_way": {
+       "value": 0.419109,
+       "ci90": [
+        0.335854,
+        0.510492
+       ],
+       "ci95": [
+        0.319938,
+        0.531083
+       ],
+       "p_tost": 0.353646,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.419109,
+       "ci90": [
+        0.362494,
+        0.475178
+       ],
+       "ci95": [
+        0.354967,
+        0.485845
+       ],
+       "p_tost": 0.301698,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.387471,
+      "two_way": {
+       "value": 0.387471,
+       "ci90": [
+        0.303929,
+        0.474833
+       ],
+       "ci95": [
+        0.289755,
+        0.493716
+       ],
+       "p_tost": 0.626374,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.031638,
+        "ci90": [
+         -0.078343,
+         0.147028
+        ],
+        "ci95": [
+         -0.099919,
+         0.167741
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.387471,
+       "ci90": [
+        0.314938,
+        0.462322
+       ],
+       "ci95": [
+        0.305239,
+        0.474159
+       ],
+       "p_tost": 0.62038,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.031638,
+        "ci90": [
+         -0.048585,
+         0.109666
+        ],
+        "ci95": [
+         -0.070537,
+         0.119693
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.232558,
+      "two_way": {
+       "value": 0.232558,
+       "ci90": [
+        0.043463,
+        0.529007
+       ],
+       "ci95": [
+        0.020995,
+        0.602184
+       ],
+       "p_tost": 0.863137,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.186551,
+        "ci90": [
+         -0.095789,
+         0.399465
+        ],
+        "ci95": [
+         -0.199141,
+         0.424147
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.232558,
+       "ci90": [
+        0.128706,
+        0.367532
+       ],
+       "ci95": [
+        0.111903,
+        0.392916
+       ],
+       "p_tost": 0.979021,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.186551,
+        "ci90": [
+         0.051882,
+         0.303924
+        ],
+        "ci95": [
+         0.0209,
+         0.322426
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "b2sentence": {
+     "within": {
+      "value": 0.393318,
+      "two_way": {
+       "value": 0.393318,
+       "ci90": [
+        0.30978,
+        0.485273
+       ],
+       "ci95": [
+        0.296151,
+        0.501412
+       ],
+       "p_tost": 0.545455,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.393318,
+       "ci90": [
+        0.340609,
+        0.442973
+       ],
+       "ci95": [
+        0.333328,
+        0.452432
+       ],
+       "p_tost": 0.594406,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.395326,
+      "two_way": {
+       "value": 0.395326,
+       "ci90": [
+        0.316844,
+        0.487426
+       ],
+       "ci95": [
+        0.301123,
+        0.503037
+       ],
+       "p_tost": 0.531469,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.002008,
+        "ci90": [
+         -0.114585,
+         0.118503
+        ],
+        "ci95": [
+         -0.138583,
+         0.137823
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.395326,
+       "ci90": [
+        0.331649,
+        0.460721
+       ],
+       "ci95": [
+        0.320776,
+        0.472665
+       ],
+       "p_tost": 0.554446,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.002008,
+        "ci90": [
+         -0.082462,
+         0.080516
+        ],
+        "ci95": [
+         -0.096872,
+         0.095036
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.337209,
+      "two_way": {
+       "value": 0.337209,
+       "ci90": [
+        0.087146,
+        0.619573
+       ],
+       "ci95": [
+        0.043831,
+        0.681137
+       ],
+       "p_tost": 0.68032,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.056108,
+        "ci90": [
+         -0.225063,
+         0.291127
+        ],
+        "ci95": [
+         -0.300863,
+         0.345222
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.337209,
+       "ci90": [
+        0.215671,
+        0.478446
+       ],
+       "ci95": [
+        0.19275,
+        0.518615
+       ],
+       "p_tost": 0.789211,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.056108,
+        "ci90": [
+         -0.074956,
+         0.174029
+        ],
+        "ci95": [
+         -0.106927,
+         0.192492
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    }
+   },
+   "validity": {
+    "partner_stratified": {
+     "drugbank_tier_A_value": 0.698816,
+     "drugbank_tier_A_lower95_two_way": 0.626765,
+     "valid": true
+    },
+    "tetrad": {
+     "drugbank_tier_A_value": 0.691139,
+     "drugbank_tier_A_lower95_two_way": 0.576921,
+     "valid": true
+    }
+   }
+  },
+  "novel:A": {
+   "n": 438,
+   "n_drugs": 48,
+   "n_comparisons": {
+    "within": 757,
+    "partner_stratified": 1046,
+    "tetrad": 152
+   },
+   "n_drugs_in_tetrads": 46,
+   "systems": {
+    "DrugBank lookup": {
+     "within": {
+      "value": 0.728534,
+      "two_way": {
+       "value": 0.728534,
+       "ci90": [
+        0.655182,
+        0.797937
+       ],
+       "ci95": [
+        0.642152,
+        0.808313
+       ],
+       "p_tost": 0.998002,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.728534,
+       "ci90": [
+        0.682689,
+        0.773802
+       ],
+       "ci95": [
+        0.675115,
+        0.779256
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.785373,
+      "two_way": {
+       "value": 0.785373,
+       "ci90": [
+        0.69111,
+        0.863418
+       ],
+       "ci95": [
+        0.680447,
+        0.87971
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.056839,
+        "ci90": [
+         -0.139055,
+         0.040855
+        ],
+        "ci95": [
+         -0.158396,
+         0.055989
+        ],
+        "n_draws": 1000
+       }
+      },
+      "one_way_drug": {
+       "value": 0.785373,
+       "ci90": [
+        0.735038,
+        0.832618
+       ],
+       "ci95": [
+        0.72464,
+        0.843476
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.056839,
+        "ci90": [
+         -0.122461,
+         0.00443
+        ],
+        "ci95": [
+         -0.130892,
+         0.017184
+        ],
+        "n_draws": 1000
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.884868,
+      "two_way": {
+       "value": 0.884868,
+       "ci90": [
+        0.742611,
+        0.994565
+       ],
+       "ci95": [
+        0.702348,
+        1.0
+       ],
+       "p_tost": 0.994006,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.156335,
+        "ci90": [
+         -0.282268,
+         -0.013027
+        ],
+        "ci95": [
+         -0.30109,
+         0.020084
+        ],
+        "n_draws": 1000
+       }
+      },
+      "one_way_drug": {
+       "value": 0.884868,
+       "ci90": [
+        0.81424,
+        0.953855
+       ],
+       "ci95": [
+        0.80317,
+        0.962261
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.156335,
+        "ci90": [
+         -0.230851,
+         -0.079019
+        ],
+        "ci95": [
+         -0.246009,
+         -0.065277
+        ],
+        "n_draws": 1000
+       }
+      }
+     }
+    },
+    "b2mixed": {
+     "within": {
+      "value": 0.523118,
+      "two_way": {
+       "value": 0.523118,
+       "ci90": [
+        0.41133,
+        0.625726
+       ],
+       "ci95": [
+        0.397209,
+        0.650333
+       ],
+       "p_tost": 0.116883,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.523118,
+       "ci90": [
+        0.468789,
+        0.578819
+       ],
+       "ci95": [
+        0.458482,
+        0.584883
+       ],
+       "p_tost": 0.004995,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.540153,
+      "two_way": {
+       "value": 0.540153,
+       "ci90": [
+        0.401491,
+        0.667564
+       ],
+       "ci95": [
+        0.373664,
+        0.686149
+       ],
+       "p_tost": 0.236763,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.017035,
+        "ci90": [
+         -0.156785,
+         0.124139
+        ],
+        "ci95": [
+         -0.186241,
+         0.15531
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.540153,
+       "ci90": [
+        0.452098,
+        0.641794
+       ],
+       "ci95": [
+        0.426876,
+        0.662384
+       ],
+       "p_tost": 0.160839,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.017035,
+        "ci90": [
+         -0.116417,
+         0.073562
+        ],
+        "ci95": [
+         -0.135029,
+         0.087653
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.480263,
+      "two_way": {
+       "value": 0.480263,
+       "ci90": [
+        0.201367,
+        0.774234
+       ],
+       "ci95": [
+        0.120368,
+        0.825441
+       ],
+       "p_tost": 0.312687,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.042854,
+        "ci90": [
+         -0.237951,
+         0.305997
+        ],
+        "ci95": [
+         -0.299482,
+         0.357898
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.480263,
+       "ci90": [
+        0.351337,
+        0.649594
+       ],
+       "ci95": [
+        0.333286,
+        0.695652
+       ],
+       "p_tost": 0.176823,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.042854,
+        "ci90": [
+         -0.102192,
+         0.157088
+        ],
+        "ci95": [
+         -0.138369,
+         0.186999
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "Qwen names only": {
+     "within": {
+      "value": 0.5786,
+      "two_way": {
+       "value": 0.5786,
+       "ci90": [
+        0.469717,
+        0.691289
+       ],
+       "ci95": [
+        0.439976,
+        0.713106
+       ],
+       "p_tost": 0.382617,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.5786,
+       "ci90": [
+        0.518399,
+        0.63899
+       ],
+       "ci95": [
+        0.502924,
+        0.650673
+       ],
+       "p_tost": 0.306693,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.662524,
+      "two_way": {
+       "value": 0.662524,
+       "ci90": [
+        0.560891,
+        0.769728
+       ],
+       "ci95": [
+        0.543329,
+        0.786963
+       ],
+       "p_tost": 0.833167,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.083924,
+        "ci90": [
+         -0.220804,
+         0.067163
+        ],
+        "ci95": [
+         -0.248097,
+         0.101721
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.662524,
+       "ci90": [
+        0.589715,
+        0.728638
+       ],
+       "ci95": [
+        0.575734,
+        0.740666
+       ],
+       "p_tost": 0.925075,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.083924,
+        "ci90": [
+         -0.168665,
+         0.002662
+        ],
+        "ci95": [
+         -0.183651,
+         0.021488
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.664474,
+      "two_way": {
+       "value": 0.664474,
+       "ci90": [
+        0.34954,
+        0.901484
+       ],
+       "ci95": [
+        0.29683,
+        0.939784
+       ],
+       "p_tost": 0.68032,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.085874,
+        "ci90": [
+         -0.308397,
+         0.217083
+        ],
+        "ci95": [
+         -0.353779,
+         0.275416
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.664474,
+       "ci90": [
+        0.517826,
+        0.782609
+       ],
+       "ci95": [
+        0.477464,
+        0.801986
+       ],
+       "p_tost": 0.761239,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.085874,
+        "ci90": [
+         -0.200719,
+         0.056296
+        ],
+        "ci95": [
+         -0.225556,
+         0.079527
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "b1names": {
+     "within": {
+      "value": 0.513871,
+      "two_way": {
+       "value": 0.513871,
+       "ci90": [
+        0.402227,
+        0.616531
+       ],
+       "ci95": [
+        0.383902,
+        0.635302
+       ],
+       "p_tost": 0.084915,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.513871,
+       "ci90": [
+        0.455256,
+        0.5718
+       ],
+       "ci95": [
+        0.443087,
+        0.583671
+       ],
+       "p_tost": 0.004995,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.533461,
+      "two_way": {
+       "value": 0.533461,
+       "ci90": [
+        0.421046,
+        0.641541
+       ],
+       "ci95": [
+        0.39398,
+        0.657761
+       ],
+       "p_tost": 0.150849,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.01959,
+        "ci90": [
+         -0.154541,
+         0.112473
+        ],
+        "ci95": [
+         -0.178824,
+         0.138422
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.533461,
+       "ci90": [
+        0.46666,
+        0.609176
+       ],
+       "ci95": [
+        0.4532,
+        0.627393
+       ],
+       "p_tost": 0.078921,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.01959,
+        "ci90": [
+         -0.102532,
+         0.065657
+        ],
+        "ci95": [
+         -0.123324,
+         0.080978
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.546053,
+      "two_way": {
+       "value": 0.546053,
+       "ci90": [
+        0.235282,
+        0.812213
+       ],
+       "ci95": [
+        0.181818,
+        0.858899
+       ],
+       "p_tost": 0.37962,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.032182,
+        "ci90": [
+         -0.290352,
+         0.24629
+        ],
+        "ci95": [
+         -0.331423,
+         0.316685
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.546053,
+       "ci90": [
+        0.40376,
+        0.698008
+       ],
+       "ci95": [
+        0.362199,
+        0.724528
+       ],
+       "p_tost": 0.26973,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.032182,
+        "ci90": [
+         -0.16964,
+         0.102358
+        ],
+        "ci95": [
+         -0.19501,
+         0.130373
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "b2sentence": {
+     "within": {
+      "value": 0.490092,
+      "two_way": {
+       "value": 0.490092,
+       "ci90": [
+        0.388962,
+        0.595423
+       ],
+       "ci95": [
+        0.369719,
+        0.612369
+       ],
+       "p_tost": 0.066933,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.490092,
+       "ci90": [
+        0.441138,
+        0.542728
+       ],
+       "ci95": [
+        0.42945,
+        0.553979
+       ],
+       "p_tost": 0.001998,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.506692,
+      "two_way": {
+       "value": 0.506692,
+       "ci90": [
+        0.401295,
+        0.612159
+       ],
+       "ci95": [
+        0.376034,
+        0.632983
+       ],
+       "p_tost": 0.071928,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.0166,
+        "ci90": [
+         -0.142334,
+         0.118327
+        ],
+        "ci95": [
+         -0.165902,
+         0.135978
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.506692,
+       "ci90": [
+        0.431499,
+        0.582194
+       ],
+       "ci95": [
+        0.414457,
+        0.590304
+       ],
+       "p_tost": 0.015984,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.0166,
+        "ci90": [
+         -0.093452,
+         0.054785
+        ],
+        "ci95": [
+         -0.102896,
+         0.069838
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.565789,
+      "two_way": {
+       "value": 0.565789,
+       "ci90": [
+        0.271554,
+        0.846207
+       ],
+       "ci95": [
+        0.20398,
+        0.887505
+       ],
+       "p_tost": 0.423576,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.075697,
+        "ci90": [
+         -0.352763,
+         0.225136
+        ],
+        "ci95": [
+         -0.405174,
+         0.3062
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.565789,
+       "ci90": [
+        0.408287,
+        0.70313
+       ],
+       "ci95": [
+        0.374911,
+        0.728862
+       ],
+       "p_tost": 0.371628,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.075697,
+        "ci90": [
+         -0.219686,
+         0.086959
+        ],
+        "ci95": [
+         -0.243767,
+         0.116273
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    }
+   },
+   "validity": {
+    "partner_stratified": {
+     "drugbank_tier_A_value": 0.785373,
+     "drugbank_tier_A_lower95_two_way": 0.680447,
+     "valid": true
+    },
+    "tetrad": {
+     "drugbank_tier_A_value": 0.884868,
+     "drugbank_tier_A_lower95_two_way": 0.702348,
+     "valid": true
+    }
+   }
+  },
+  "novel:B": {
+   "n": 316,
+   "n_drugs": 48,
+   "n_comparisons": {
+    "within": 366,
+    "partner_stratified": 619,
+    "tetrad": 35
+   },
+   "n_drugs_in_tetrads": 29,
+   "systems": {
+    "DrugBank lookup": {
+     "within": {
+      "value": 1.0,
+      "two_way": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 1.0,
+      "two_way": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.0,
+        "ci90": [
+         0.0,
+         0.0
+        ],
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "n_draws": 1000
+       }
+      },
+      "one_way_drug": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.0,
+        "ci90": [
+         0.0,
+         0.0
+        ],
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "n_draws": 1000
+       }
+      }
+     },
+     "tetrad": {
+      "value": 1.0,
+      "two_way": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 958,
+       "partner_component_within_minus_this": {
+        "value": 0.0,
+        "ci90": [
+         0.0,
+         0.0
+        ],
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "n_draws": 958
+       }
+      },
+      "one_way_drug": {
+       "value": 1.0,
+       "ci90": [
+        1.0,
+        1.0
+       ],
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.0,
+        "ci90": [
+         0.0,
+         0.0
+        ],
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "n_draws": 1000
+       }
+      }
+     }
+    },
+    "b2mixed": {
+     "within": {
+      "value": 0.532787,
+      "two_way": {
+       "value": 0.532787,
+       "ci90": [
+        0.383102,
+        0.682159
+       ],
+       "ci95": [
+        0.357118,
+        0.714413
+       ],
+       "p_tost": 0.238761,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.532787,
+       "ci90": [
+        0.452374,
+        0.613209
+       ],
+       "ci95": [
+        0.440449,
+        0.626655
+       ],
+       "p_tost": 0.083916,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.534733,
+      "two_way": {
+       "value": 0.534733,
+       "ci90": [
+        0.360481,
+        0.693421
+       ],
+       "ci95": [
+        0.339078,
+        0.712066
+       ],
+       "p_tost": 0.24975,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.001947,
+        "ci90": [
+         -0.189301,
+         0.197075
+        ],
+        "ci95": [
+         -0.231427,
+         0.241759
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.534733,
+       "ci90": [
+        0.420794,
+        0.656619
+       ],
+       "ci95": [
+        0.384414,
+        0.678729
+       ],
+       "p_tost": 0.210789,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.001947,
+        "ci90": [
+         -0.138175,
+         0.130936
+        ],
+        "ci95": [
+         -0.168385,
+         0.163641
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.571429,
+      "two_way": {
+       "value": 0.571429,
+       "ci90": [
+        0.0,
+        1.0
+       ],
+       "ci95": [
+        0.0,
+        1.0
+       ],
+       "p_tost": 0.497393,
+       "n_draws": 958,
+       "partner_component_within_minus_this": {
+        "value": -0.038642,
+        "ci90": [
+         -0.494788,
+         0.529031
+        ],
+        "ci95": [
+         -0.564432,
+         0.588926
+        ],
+        "n_draws": 958
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.571429,
+       "ci90": [
+        0.285714,
+        0.818182
+       ],
+       "ci95": [
+        0.212081,
+        0.875125
+       ],
+       "p_tost": 0.436563,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.038642,
+        "ci90": [
+         -0.276354,
+         0.244489
+        ],
+        "ci95": [
+         -0.334197,
+         0.304867
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "Qwen names only": {
+     "within": {
+      "value": 0.576503,
+      "two_way": {
+       "value": 0.576503,
+       "ci90": [
+        0.427454,
+        0.716515
+       ],
+       "ci95": [
+        0.39691,
+        0.736012
+       ],
+       "p_tost": 0.394605,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.576503,
+       "ci90": [
+        0.491308,
+        0.653019
+       ],
+       "ci95": [
+        0.471126,
+        0.667303
+       ],
+       "p_tost": 0.327672,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.733441,
+      "two_way": {
+       "value": 0.733441,
+       "ci90": [
+        0.616257,
+        0.845524
+       ],
+       "ci95": [
+        0.593827,
+        0.861218
+       ],
+       "p_tost": 0.968032,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.156938,
+        "ci90": [
+         -0.336638,
+         0.023534
+        ],
+        "ci95": [
+         -0.367527,
+         0.07212
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.733441,
+       "ci90": [
+        0.631436,
+        0.822614
+       ],
+       "ci95": [
+        0.60946,
+        0.83537
+       ],
+       "p_tost": 0.98002,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.156938,
+        "ci90": [
+         -0.281882,
+         -0.031598
+        ],
+        "ci95": [
+         -0.306284,
+         0.002577
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": false,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.657143,
+      "two_way": {
+       "value": 0.657143,
+       "ci90": [
+        0.0,
+        1.0
+       ],
+       "ci95": [
+        0.0,
+        1.0
+       ],
+       "p_tost": 0.591241,
+       "n_draws": 958,
+       "partner_component_within_minus_this": {
+        "value": -0.08064,
+        "ci90": [
+         -0.436958,
+         0.516415
+        ],
+        "ci95": [
+         -0.482662,
+         0.587877
+        ],
+        "n_draws": 958
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.657143,
+       "ci90": [
+        0.391184,
+        0.862235
+       ],
+       "ci95": [
+        0.333065,
+        0.894737
+       ],
+       "p_tost": 0.68032,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.08064,
+        "ci90": [
+         -0.279128,
+         0.179056
+        ],
+        "ci95": [
+         -0.316626,
+         0.228981
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "b1names": {
+     "within": {
+      "value": 0.530055,
+      "two_way": {
+       "value": 0.530055,
+       "ci90": [
+        0.364304,
+        0.693366
+       ],
+       "ci95": [
+        0.341348,
+        0.724378
+       ],
+       "p_tost": 0.224775,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.530055,
+       "ci90": [
+        0.441796,
+        0.622081
+       ],
+       "ci95": [
+        0.422897,
+        0.634977
+       ],
+       "p_tost": 0.108891,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.52504,
+      "two_way": {
+       "value": 0.52504,
+       "ci90": [
+        0.395753,
+        0.665752
+       ],
+       "ci95": [
+        0.369961,
+        0.691182
+       ],
+       "p_tost": 0.186813,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.005014,
+        "ci90": [
+         -0.184715,
+         0.18648
+        ],
+        "ci95": [
+         -0.222853,
+         0.220106
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.52504,
+       "ci90": [
+        0.430211,
+        0.629837
+       ],
+       "ci95": [
+        0.40585,
+        0.643157
+       ],
+       "p_tost": 0.137862,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.005014,
+        "ci90": [
+         -0.118714,
+         0.12747
+        ],
+        "ci95": [
+         -0.143202,
+         0.155339
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.771429,
+      "two_way": {
+       "value": 0.771429,
+       "ci90": [
+        0.034903,
+        1.0
+       ],
+       "ci95": [
+        0.0,
+        1.0
+       ],
+       "p_tost": 0.727842,
+       "n_draws": 958,
+       "partner_component_within_minus_this": {
+        "value": -0.241374,
+        "ci90": [
+         -0.561897,
+         0.409009
+        ],
+        "ci95": [
+         -0.60078,
+         0.480811
+        ],
+        "n_draws": 958
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.771429,
+       "ci90": [
+        0.444315,
+        0.955604
+       ],
+       "ci95": [
+        0.368421,
+        0.975664
+       ],
+       "p_tost": 0.847153,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": -0.241374,
+        "ci90": [
+         -0.431271,
+         0.085539
+        ],
+        "ci95": [
+         -0.453702,
+         0.181745
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    },
+    "b2sentence": {
+     "within": {
+      "value": 0.47541,
+      "two_way": {
+       "value": 0.47541,
+       "ci90": [
+        0.337331,
+        0.615427
+       ],
+       "ci95": [
+        0.308071,
+        0.644081
+       ],
+       "p_tost": 0.177822,
+       "n_draws": 1000
+      },
+      "one_way_drug": {
+       "value": 0.47541,
+       "ci90": [
+        0.420807,
+        0.530871
+       ],
+       "ci95": [
+        0.410772,
+        0.540777
+       ],
+       "p_tost": 0.011988,
+       "n_draws": 1000
+      }
+     },
+     "partner_stratified": {
+      "value": 0.473344,
+      "two_way": {
+       "value": 0.473344,
+       "ci90": [
+        0.333333,
+        0.60145
+       ],
+       "ci95": [
+        0.31097,
+        0.624341
+       ],
+       "p_tost": 0.200799,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.002066,
+        "ci90": [
+         -0.174166,
+         0.200638
+        ],
+        "ci95": [
+         -0.197875,
+         0.235176
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.473344,
+       "ci90": [
+        0.377387,
+        0.575139
+       ],
+       "ci95": [
+        0.353194,
+        0.597029
+       ],
+       "p_tost": 0.112887,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.002066,
+        "ci90": [
+         -0.111881,
+         0.118858
+        ],
+        "ci95": [
+         -0.127502,
+         0.1458
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     },
+     "tetrad": {
+      "value": 0.428571,
+      "two_way": {
+       "value": 0.428571,
+       "ci90": [
+        0.0,
+        1.0
+       ],
+       "ci95": [
+        0.0,
+        1.0
+       ],
+       "p_tost": 0.504692,
+       "n_draws": 958,
+       "partner_component_within_minus_this": {
+        "value": 0.046838,
+        "ci90": [
+         -0.49922,
+         0.526561
+        ],
+        "ci95": [
+         -0.575304,
+         0.562184
+        ],
+        "n_draws": 958
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      },
+      "one_way_drug": {
+       "value": 0.428571,
+       "ci90": [
+        0.181551,
+        0.695652
+       ],
+       "ci95": [
+        0.137892,
+        0.75
+       ],
+       "p_tost": 0.462537,
+       "n_draws": 1000,
+       "partner_component_within_minus_this": {
+        "value": 0.046838,
+        "ci90": [
+         -0.223913,
+         0.318864
+        ],
+        "ci95": [
+         -0.289985,
+         0.35878
+        ],
+        "n_draws": 1000
+       },
+       "verdict": {
+        "contains_0.5": true,
+        "moved_at_least_0.03_toward_0.5": false,
+        "valid": true,
+        "explained": false
+       }
+      }
+     }
+    }
+   },
+   "validity": {
+    "partner_stratified": {
+     "drugbank_tier_A_value": 0.785373,
+     "drugbank_tier_A_lower95_two_way": 0.680447,
+     "valid": true
+    },
+    "tetrad": {
+     "drugbank_tier_A_value": 0.884868,
+     "drugbank_tier_A_lower95_two_way": 0.702348,
+     "valid": true
+    }
+   }
+  }
+ },
+ "simulation": {
+  "older_clean:A": {
+   "b2mixed_within_auroc": 0.451763,
+   "features": {
+    "label-free popularity": {
+     "feature_within_auroc": 0.506393,
+     "curve": [
+      {
+       "lambda": "-inf",
+       "mean_within_auroc": 0.493607,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": -1.0
+      },
+      {
+       "lambda": -5.0,
+       "mean_within_auroc": 0.49322,
+       "sd_within_auroc": 0.004299,
+       "mean_within_spearman": -0.963425
+      },
+      {
+       "lambda": -2.0,
+       "mean_within_auroc": 0.49492,
+       "sd_within_auroc": 0.008257,
+       "mean_within_spearman": -0.858479
+      },
+      {
+       "lambda": -1.0,
+       "mean_within_auroc": 0.495542,
+       "sd_within_auroc": 0.012848,
+       "mean_within_spearman": -0.659704
+      },
+      {
+       "lambda": -0.5,
+       "mean_within_auroc": 0.497593,
+       "sd_within_auroc": 0.015251,
+       "mean_within_spearman": -0.407083
+      },
+      {
+       "lambda": -0.25,
+       "mean_within_auroc": 0.498116,
+       "sd_within_auroc": 0.0168,
+       "mean_within_spearman": -0.216212
+      },
+      {
+       "lambda": 0.0,
+       "mean_within_auroc": 0.500288,
+       "sd_within_auroc": 0.015887,
+       "mean_within_spearman": 0.001942
+      },
+      {
+       "lambda": 0.25,
+       "mean_within_auroc": 0.500451,
+       "sd_within_auroc": 0.016102,
+       "mean_within_spearman": 0.215425
+      },
+      {
+       "lambda": 0.5,
+       "mean_within_auroc": 0.502513,
+       "sd_within_auroc": 0.015631,
+       "mean_within_spearman": 0.408471
+      },
+      {
+       "lambda": 1.0,
+       "mean_within_auroc": 0.504406,
+       "sd_within_auroc": 0.012016,
+       "mean_within_spearman": 0.661648
+      },
+      {
+       "lambda": 2.0,
+       "mean_within_auroc": 0.504913,
+       "sd_within_auroc": 0.008209,
+       "mean_within_spearman": 0.858208
+      },
+      {
+       "lambda": 5.0,
+       "mean_within_auroc": 0.506208,
+       "sd_within_auroc": 0.004363,
+       "mean_within_spearman": 0.963284
+      },
+      {
+       "lambda": "+inf",
+       "mean_within_auroc": 0.506393,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": 1.0
+      }
+     ],
+     "b2mixed_within_spearman": 0.256966,
+     "matched_auroc": 0.500895,
+     "matched_reachable": true,
+     "auroc_equal_to_b2mixed": {
+      "reachable": false,
+      "auroc_range_over_lambda": [
+       0.49322,
+       0.506393
+      ]
+     },
+     "share_of_gap_reproduced": -0.018545,
+     "popularity_explains": false,
+     "decomposition": {
+      "popularity_component": {
+       "value": 0.000895,
+       "ci90": [
+        0.000465,
+        0.001291
+       ],
+       "ci95": [
+        0.000446,
+        0.001397
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "residual": {
+       "value": -0.049132,
+       "ci90": [
+        -0.083637,
+        -0.013892
+       ],
+       "ci95": [
+        -0.089218,
+        -0.005629
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "draws_outside_curve_clipped": 0,
+      "bootstrap": "one-way drug, 1000 draws, seed 42"
+     }
+    },
+    "leave-one-drug-out partner positive rate (label-derived contrast)": {
+     "feature_within_auroc": 0.088144,
+     "curve": [
+      {
+       "lambda": "-inf",
+       "mean_within_auroc": 0.911856,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": -1.0
+      },
+      {
+       "lambda": -5.0,
+       "mean_within_auroc": 0.905062,
+       "sd_within_auroc": 0.003136,
+       "mean_within_spearman": -0.962601
+      },
+      {
+       "lambda": -2.0,
+       "mean_within_auroc": 0.869183,
+       "sd_within_auroc": 0.006271,
+       "mean_within_spearman": -0.853242
+      },
+      {
+       "lambda": -1.0,
+       "mean_within_auroc": 0.785729,
+       "sd_within_auroc": 0.011026,
+       "mean_within_spearman": -0.64888
+      },
+      {
+       "lambda": -0.5,
+       "mean_within_auroc": 0.676619,
+       "sd_within_auroc": 0.014321,
+       "mean_within_spearman": -0.395185
+      },
+      {
+       "lambda": -0.25,
+       "mean_within_auroc": 0.593683,
+       "sd_within_auroc": 0.017555,
+       "mean_within_spearman": -0.209976
+      },
+      {
+       "lambda": 0.0,
+       "mean_within_auroc": 0.500229,
+       "sd_within_auroc": 0.017656,
+       "mean_within_spearman": 5.3e-05
+      },
+      {
+       "lambda": 0.25,
+       "mean_within_auroc": 0.406415,
+       "sd_within_auroc": 0.015705,
+       "mean_within_spearman": 0.210312
+      },
+      {
+       "lambda": 0.5,
+       "mean_within_auroc": 0.325432,
+       "sd_within_auroc": 0.014791,
+       "mean_within_spearman": 0.393892
+      },
+      {
+       "lambda": 1.0,
+       "mean_within_auroc": 0.215076,
+       "sd_within_auroc": 0.010611,
+       "mean_within_spearman": 0.64786
+      },
+      {
+       "lambda": 2.0,
+       "mean_within_auroc": 0.130256,
+       "sd_within_auroc": 0.006593,
+       "mean_within_spearman": 0.853623
+      },
+      {
+       "lambda": 5.0,
+       "mean_within_auroc": 0.094845,
+       "sd_within_auroc": 0.00292,
+       "mean_within_spearman": 0.962544
+      },
+      {
+       "lambda": "+inf",
+       "mean_within_auroc": 0.088144,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": 1.0
+      }
+     ],
+     "b2mixed_within_spearman": 0.055014,
+     "matched_auroc": 0.475706,
+     "matched_reachable": true,
+     "auroc_equal_to_b2mixed": {
+      "between_lambda": [
+       0.0,
+       0.25
+      ],
+      "reachable": true
+     },
+     "share_of_gap_reproduced": 0.503633
+    }
+   }
+  },
+  "older_clean:B": {
+   "b2mixed_within_auroc": 0.396835,
+   "features": {
+    "label-free popularity": {
+     "feature_within_auroc": 0.533705,
+     "curve": [
+      {
+       "lambda": "-inf",
+       "mean_within_auroc": 0.466295,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": -1.0
+      },
+      {
+       "lambda": -5.0,
+       "mean_within_auroc": 0.467694,
+       "sd_within_auroc": 0.007238,
+       "mean_within_spearman": -0.95481
+      },
+      {
+       "lambda": -2.0,
+       "mean_within_auroc": 0.474002,
+       "sd_within_auroc": 0.012627,
+       "mean_within_spearman": -0.843977
+      },
+      {
+       "lambda": -1.0,
+       "mean_within_auroc": 0.479338,
+       "sd_within_auroc": 0.018116,
+       "mean_within_spearman": -0.644706
+      },
+      {
+       "lambda": -0.5,
+       "mean_within_auroc": 0.485422,
+       "sd_within_auroc": 0.022358,
+       "mean_within_spearman": -0.398028
+      },
+      {
+       "lambda": -0.25,
+       "mean_within_auroc": 0.492501,
+       "sd_within_auroc": 0.025074,
+       "mean_within_spearman": -0.209396
+      },
+      {
+       "lambda": 0.0,
+       "mean_within_auroc": 0.500068,
+       "sd_within_auroc": 0.025007,
+       "mean_within_spearman": -0.002616
+      },
+      {
+       "lambda": 0.25,
+       "mean_within_auroc": 0.505991,
+       "sd_within_auroc": 0.025162,
+       "mean_within_spearman": 0.214018
+      },
+      {
+       "lambda": 0.5,
+       "mean_within_auroc": 0.510733,
+       "sd_within_auroc": 0.023161,
+       "mean_within_spearman": 0.397294
+      },
+      {
+       "lambda": 1.0,
+       "mean_within_auroc": 0.51985,
+       "sd_within_auroc": 0.018,
+       "mean_within_spearman": 0.645411
+      },
+      {
+       "lambda": 2.0,
+       "mean_within_auroc": 0.527313,
+       "sd_within_auroc": 0.012622,
+       "mean_within_spearman": 0.843036
+      },
+      {
+       "lambda": 5.0,
+       "mean_within_auroc": 0.532517,
+       "sd_within_auroc": 0.006959,
+       "mean_within_spearman": 0.955063
+      },
+      {
+       "lambda": "+inf",
+       "mean_within_auroc": 0.533705,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": 1.0
+      }
+     ],
+     "b2mixed_within_spearman": 0.227538,
+     "matched_auroc": 0.50634,
+     "matched_reachable": true,
+     "auroc_equal_to_b2mixed": {
+      "reachable": false,
+      "auroc_range_over_lambda": [
+       0.466295,
+       0.533705
+      ]
+     },
+     "share_of_gap_reproduced": -0.061459,
+     "popularity_explains": false,
+     "decomposition": {
+      "popularity_component": {
+       "value": 0.00634,
+       "ci90": [
+        0.004733,
+        0.007742
+       ],
+       "ci95": [
+        0.004522,
+        0.00802
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "residual": {
+       "value": -0.109506,
+       "ci90": [
+        -0.163881,
+        -0.053227
+       ],
+       "ci95": [
+        -0.173486,
+        -0.042357
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "draws_outside_curve_clipped": 0,
+      "bootstrap": "one-way drug, 1000 draws, seed 42"
+     }
+    },
+    "leave-one-drug-out partner positive rate (label-derived contrast)": {
+     "feature_within_auroc": 0.052755,
+     "curve": [
+      {
+       "lambda": "-inf",
+       "mean_within_auroc": 0.947245,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": -1.0
+      },
+      {
+       "lambda": -5.0,
+       "mean_within_auroc": 0.939945,
+       "sd_within_auroc": 0.004038,
+       "mean_within_spearman": -0.952273
+      },
+      {
+       "lambda": -2.0,
+       "mean_within_auroc": 0.905217,
+       "sd_within_auroc": 0.009388,
+       "mean_within_spearman": -0.828096
+      },
+      {
+       "lambda": -1.0,
+       "mean_within_auroc": 0.819918,
+       "sd_within_auroc": 0.016178,
+       "mean_within_spearman": -0.621981
+      },
+      {
+       "lambda": -0.5,
+       "mean_within_auroc": 0.697569,
+       "sd_within_auroc": 0.023078,
+       "mean_within_spearman": -0.377101
+      },
+      {
+       "lambda": -0.25,
+       "mean_within_auroc": 0.60788,
+       "sd_within_auroc": 0.025967,
+       "mean_within_spearman": -0.201721
+      },
+      {
+       "lambda": 0.0,
+       "mean_within_auroc": 0.498193,
+       "sd_within_auroc": 0.026787,
+       "mean_within_spearman": 0.003691
+      },
+      {
+       "lambda": 0.25,
+       "mean_within_auroc": 0.392653,
+       "sd_within_auroc": 0.026029,
+       "mean_within_spearman": 0.201339
+      },
+      {
+       "lambda": 0.5,
+       "mean_within_auroc": 0.299894,
+       "sd_within_auroc": 0.023406,
+       "mean_within_spearman": 0.375234
+      },
+      {
+       "lambda": 1.0,
+       "mean_within_auroc": 0.179361,
+       "sd_within_auroc": 0.016425,
+       "mean_within_spearman": 0.621179
+      },
+      {
+       "lambda": 2.0,
+       "mean_within_auroc": 0.094412,
+       "sd_within_auroc": 0.008771,
+       "mean_within_spearman": 0.829136
+      },
+      {
+       "lambda": 5.0,
+       "mean_within_auroc": 0.059781,
+       "sd_within_auroc": 0.003997,
+       "mean_within_spearman": 0.952297
+      },
+      {
+       "lambda": "+inf",
+       "mean_within_auroc": 0.052755,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": 1.0
+      }
+     ],
+     "b2mixed_within_spearman": 0.068188,
+     "matched_auroc": 0.463753,
+     "matched_reachable": true,
+     "auroc_equal_to_b2mixed": {
+      "between_lambda": [
+       0.0,
+       0.25
+      ],
+      "reachable": true
+     },
+     "share_of_gap_reproduced": 0.351348
+    }
+   }
+  },
+  "novel:A": {
+   "b2mixed_within_auroc": 0.523118,
+   "features": {
+    "label-free popularity": {
+     "feature_within_auroc": 0.522457,
+     "curve": [
+      {
+       "lambda": "-inf",
+       "mean_within_auroc": 0.477543,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": -1.0
+      },
+      {
+       "lambda": -5.0,
+       "mean_within_auroc": 0.476609,
+       "sd_within_auroc": 0.009346,
+       "mean_within_spearman": -0.959568
+      },
+      {
+       "lambda": -2.0,
+       "mean_within_auroc": 0.484328,
+       "sd_within_auroc": 0.01793,
+       "mean_within_spearman": -0.842923
+      },
+      {
+       "lambda": -1.0,
+       "mean_within_auroc": 0.489089,
+       "sd_within_auroc": 0.026119,
+       "mean_within_spearman": -0.631919
+      },
+      {
+       "lambda": -0.5,
+       "mean_within_auroc": 0.493311,
+       "sd_within_auroc": 0.031608,
+       "mean_within_spearman": -0.383973
+      },
+      {
+       "lambda": -0.25,
+       "mean_within_auroc": 0.494315,
+       "sd_within_auroc": 0.033731,
+       "mean_within_spearman": -0.20568
+      },
+      {
+       "lambda": 0.0,
+       "mean_within_auroc": 0.500365,
+       "sd_within_auroc": 0.036038,
+       "mean_within_spearman": -0.001614
+      },
+      {
+       "lambda": 0.25,
+       "mean_within_auroc": 0.50528,
+       "sd_within_auroc": 0.035865,
+       "mean_within_spearman": 0.199883
+      },
+      {
+       "lambda": 0.5,
+       "mean_within_auroc": 0.509568,
+       "sd_within_auroc": 0.033064,
+       "mean_within_spearman": 0.385146
+      },
+      {
+       "lambda": 1.0,
+       "mean_within_auroc": 0.51107,
+       "sd_within_auroc": 0.026181,
+       "mean_within_spearman": 0.631734
+      },
+      {
+       "lambda": 2.0,
+       "mean_within_auroc": 0.51587,
+       "sd_within_auroc": 0.017578,
+       "mean_within_spearman": 0.839787
+      },
+      {
+       "lambda": 5.0,
+       "mean_within_auroc": 0.522673,
+       "sd_within_auroc": 0.008632,
+       "mean_within_spearman": 0.959043
+      },
+      {
+       "lambda": "+inf",
+       "mean_within_auroc": 0.522457,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": 1.0
+      }
+     ],
+     "b2mixed_within_spearman": 0.224941,
+     "matched_auroc": 0.50586,
+     "matched_reachable": true,
+     "auroc_equal_to_b2mixed": {
+      "reachable": false,
+      "auroc_range_over_lambda": [
+       0.476609,
+       0.522673
+      ]
+     },
+     "share_of_gap_reproduced": 0.253474,
+     "popularity_explains": false,
+     "decomposition": {
+      "popularity_component": {
+       "value": 0.00586,
+       "ci90": [
+        0.003787,
+        0.007821
+       ],
+       "ci95": [
+        0.003338,
+        0.008263
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "residual": {
+       "value": 0.017258,
+       "ci90": [
+        -0.038359,
+        0.07348
+       ],
+       "ci95": [
+        -0.04817,
+        0.080352
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "draws_outside_curve_clipped": 0,
+      "bootstrap": "one-way drug, 1000 draws, seed 1042"
+     }
+    },
+    "leave-one-drug-out partner positive rate (label-derived contrast)": {
+     "feature_within_auroc": 0.027741,
+     "curve": [
+      {
+       "lambda": "-inf",
+       "mean_within_auroc": 0.972259,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": -1.0
+      },
+      {
+       "lambda": -5.0,
+       "mean_within_auroc": 0.962246,
+       "sd_within_auroc": 0.00503,
+       "mean_within_spearman": -0.946222
+      },
+      {
+       "lambda": -2.0,
+       "mean_within_auroc": 0.920189,
+       "sd_within_auroc": 0.012223,
+       "mean_within_spearman": -0.830765
+      },
+      {
+       "lambda": -1.0,
+       "mean_within_auroc": 0.822783,
+       "sd_within_auroc": 0.023251,
+       "mean_within_spearman": -0.618611
+      },
+      {
+       "lambda": -0.5,
+       "mean_within_auroc": 0.696358,
+       "sd_within_auroc": 0.029728,
+       "mean_within_spearman": -0.365856
+      },
+      {
+       "lambda": -0.25,
+       "mean_within_auroc": 0.603549,
+       "sd_within_auroc": 0.036186,
+       "mean_within_spearman": -0.192984
+      },
+      {
+       "lambda": 0.0,
+       "mean_within_auroc": 0.497129,
+       "sd_within_auroc": 0.03467,
+       "mean_within_spearman": 0.007351
+      },
+      {
+       "lambda": 0.25,
+       "mean_within_auroc": 0.393981,
+       "sd_within_auroc": 0.036303,
+       "mean_within_spearman": 0.19897
+      },
+      {
+       "lambda": 0.5,
+       "mean_within_auroc": 0.301598,
+       "sd_within_auroc": 0.031707,
+       "mean_within_spearman": 0.368986
+      },
+      {
+       "lambda": 1.0,
+       "mean_within_auroc": 0.175112,
+       "sd_within_auroc": 0.021905,
+       "mean_within_spearman": 0.615048
+      },
+      {
+       "lambda": 2.0,
+       "mean_within_auroc": 0.079555,
+       "sd_within_auroc": 0.012822,
+       "mean_within_spearman": 0.829778
+      },
+      {
+       "lambda": 5.0,
+       "mean_within_auroc": 0.037926,
+       "sd_within_auroc": 0.005321,
+       "mean_within_spearman": 0.946859
+      },
+      {
+       "lambda": "+inf",
+       "mean_within_auroc": 0.027741,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": 1.0
+      }
+     ],
+     "b2mixed_within_spearman": -0.046019,
+     "matched_auroc": 0.52548,
+     "matched_reachable": true,
+     "auroc_equal_to_b2mixed": {
+      "between_lambda": [
+       -0.25,
+       0.0
+      ],
+      "reachable": true
+     },
+     "share_of_gap_reproduced": 1.102185
+    }
+   }
+  },
+  "novel:B": {
+   "b2mixed_within_auroc": 0.532787,
+   "features": {
+    "label-free popularity": {
+     "feature_within_auroc": 0.535519,
+     "curve": [
+      {
+       "lambda": "-inf",
+       "mean_within_auroc": 0.464481,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": -1.0
+      },
+      {
+       "lambda": -5.0,
+       "mean_within_auroc": 0.45837,
+       "sd_within_auroc": 0.013324,
+       "mean_within_spearman": -0.955827
+      },
+      {
+       "lambda": -2.0,
+       "mean_within_auroc": 0.464053,
+       "sd_within_auroc": 0.024376,
+       "mean_within_spearman": -0.835259
+      },
+      {
+       "lambda": -1.0,
+       "mean_within_auroc": 0.471995,
+       "sd_within_auroc": 0.036406,
+       "mean_within_spearman": -0.633493
+      },
+      {
+       "lambda": -0.5,
+       "mean_within_auroc": 0.483925,
+       "sd_within_auroc": 0.046012,
+       "mean_within_spearman": -0.373878
+      },
+      {
+       "lambda": -0.25,
+       "mean_within_auroc": 0.488752,
+       "sd_within_auroc": 0.044508,
+       "mean_within_spearman": -0.203321
+      },
+      {
+       "lambda": 0.0,
+       "mean_within_auroc": 0.493078,
+       "sd_within_auroc": 0.049241,
+       "mean_within_spearman": -0.001322
+      },
+      {
+       "lambda": 0.25,
+       "mean_within_auroc": 0.510137,
+       "sd_within_auroc": 0.044529,
+       "mean_within_spearman": 0.204018
+      },
+      {
+       "lambda": 0.5,
+       "mean_within_auroc": 0.515237,
+       "sd_within_auroc": 0.045235,
+       "mean_within_spearman": 0.384496
+      },
+      {
+       "lambda": 1.0,
+       "mean_within_auroc": 0.526639,
+       "sd_within_auroc": 0.035891,
+       "mean_within_spearman": 0.630453
+      },
+      {
+       "lambda": 2.0,
+       "mean_within_auroc": 0.535893,
+       "sd_within_auroc": 0.025629,
+       "mean_within_spearman": 0.835784
+      },
+      {
+       "lambda": 5.0,
+       "mean_within_auroc": 0.542432,
+       "sd_within_auroc": 0.012687,
+       "mean_within_spearman": 0.955411
+      },
+      {
+       "lambda": "+inf",
+       "mean_within_auroc": 0.535519,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": 1.0
+      }
+     ],
+     "b2mixed_within_spearman": 0.281186,
+     "matched_auroc": 0.512317,
+     "matched_reachable": true,
+     "auroc_equal_to_b2mixed": {
+      "between_lambda": [
+       1.0,
+       2.0
+      ],
+      "reachable": true
+     },
+     "share_of_gap_reproduced": 0.375679,
+     "popularity_explains": false,
+     "decomposition": {
+      "popularity_component": {
+       "value": 0.012317,
+       "ci90": [
+        0.0067,
+        0.015535
+       ],
+       "ci95": [
+        0.004825,
+        0.01669
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "residual": {
+       "value": 0.02047,
+       "ci90": [
+        -0.060918,
+        0.102285
+       ],
+       "ci95": [
+        -0.072517,
+        0.116992
+       ],
+       "p_tost": 1.0,
+       "n_draws": 1000
+      },
+      "draws_outside_curve_clipped": 0,
+      "bootstrap": "one-way drug, 1000 draws, seed 1042"
+     }
+    },
+    "leave-one-drug-out partner positive rate (label-derived contrast)": {
+     "feature_within_auroc": 0.02459,
+     "curve": [
+      {
+       "lambda": "-inf",
+       "mean_within_auroc": 0.97541,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": -1.0
+      },
+      {
+       "lambda": -5.0,
+       "mean_within_auroc": 0.963515,
+       "sd_within_auroc": 0.006884,
+       "mean_within_spearman": -0.933268
+      },
+      {
+       "lambda": -2.0,
+       "mean_within_auroc": 0.922477,
+       "sd_within_auroc": 0.017429,
+       "mean_within_spearman": -0.791138
+      },
+      {
+       "lambda": -1.0,
+       "mean_within_auroc": 0.82224,
+       "sd_within_auroc": 0.029519,
+       "mean_within_spearman": -0.567766
+      },
+      {
+       "lambda": -0.5,
+       "mean_within_auroc": 0.694262,
+       "sd_within_auroc": 0.043117,
+       "mean_within_spearman": -0.334037
+      },
+      {
+       "lambda": -0.25,
+       "mean_within_auroc": 0.600683,
+       "sd_within_auroc": 0.046459,
+       "mean_within_spearman": -0.171407
+      },
+      {
+       "lambda": 0.0,
+       "mean_within_auroc": 0.501366,
+       "sd_within_auroc": 0.044109,
+       "mean_within_spearman": 0.003578
+      },
+      {
+       "lambda": 0.25,
+       "mean_within_auroc": 0.397714,
+       "sd_within_auroc": 0.045868,
+       "mean_within_spearman": 0.174089
+      },
+      {
+       "lambda": 0.5,
+       "mean_within_auroc": 0.296976,
+       "sd_within_auroc": 0.043592,
+       "mean_within_spearman": 0.340865
+      },
+      {
+       "lambda": 1.0,
+       "mean_within_auroc": 0.173443,
+       "sd_within_auroc": 0.031009,
+       "mean_within_spearman": 0.57351
+      },
+      {
+       "lambda": 2.0,
+       "mean_within_auroc": 0.077022,
+       "sd_within_auroc": 0.017661,
+       "mean_within_spearman": 0.796904
+      },
+      {
+       "lambda": 5.0,
+       "mean_within_auroc": 0.037295,
+       "sd_within_auroc": 0.007582,
+       "mean_within_spearman": 0.932072
+      },
+      {
+       "lambda": "+inf",
+       "mean_within_auroc": 0.02459,
+       "sd_within_auroc": 0.0,
+       "mean_within_spearman": 1.0
+      }
+     ],
+     "b2mixed_within_spearman": -0.030482,
+     "matched_auroc": 0.520697,
+     "matched_reachable": true,
+     "auroc_equal_to_b2mixed": {
+      "between_lambda": [
+       -0.25,
+       0.0
+      ],
+      "reachable": true
+     },
+     "share_of_gap_reproduced": 0.63127
+    }
+   }
+  }
+ },
+ "boot": 1000,
+ "reps": 300,
+ "primary": {
+  "cell": "b2mixed, Older-clean, tier A",
+  "within": 0.451763,
+  "partner_stratified": {
+   "value": 0.460678,
+   "ci90": [
+    0.38202,
+    0.527214
+   ],
+   "ci95": [
+    0.367911,
+    0.542827
+   ],
+   "p_tost": 0.102897,
+   "n_draws": 1000,
+   "partner_component_within_minus_this": {
+    "value": -0.008915,
+    "ci90": [
+     -0.086081,
+     0.072495
+    ],
+    "ci95": [
+     -0.102161,
+     0.08952
+    ],
+    "n_draws": 1000
+   },
+   "verdict": {
+    "contains_0.5": true,
+    "moved_at_least_0.03_toward_0.5": false,
+    "valid": true,
+    "explained": false
+   }
+  },
+  "tetrad": {
+   "value": 0.37519,
+   "ci90": [
+    0.251115,
+    0.512394
+   ],
+   "ci95": [
+    0.233297,
+    0.541045
+   ],
+   "p_tost": 0.652348,
+   "n_draws": 1000,
+   "partner_component_within_minus_this": {
+    "value": 0.076573,
+    "ci90": [
+     -0.04175,
+     0.180038
+    ],
+    "ci95": [
+     -0.067876,
+     0.203728
+    ],
+    "n_draws": 1000
+   },
+   "verdict": {
+    "contains_0.5": true,
+    "moved_at_least_0.03_toward_0.5": false,
+    "valid": true,
+    "explained": false
+   }
+  },
+  "popularity": {
+   "matched_auroc": 0.500895,
+   "share_of_gap_reproduced": -0.018545,
+   "popularity_explains": false,
+   "b2mixed_within_spearman": 0.256966
+  }
+ }
+}
