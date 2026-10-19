@@ -2,7 +2,7 @@ import re
 
 AMEND = "Amendment 7 results (E7, E8, E9 and the CPU and post hoc analyses that follow it) are post hoc and exploratory and change no planned decision."
 NONE7 = "This figure shows no Amendment 7 result; Amendment 7 results elsewhere are post hoc and exploratory."
-C8 = ("OOD labels are unvalidated label mentions (the E8 oracle check failed); OOD AUROC measures agreement with that "
+C8 = ("OOD labels are unvalidated label mentions (the targets narrowly missed the oracle criterion); OOD AUROC measures agreement with that "
       "target, not interaction knowledge.")
 SAMPLING = ("SemEval intervals are one-way cluster bootstrap over sentences, OOD intervals two-way cluster bootstrap over OOD "
             "drugs and partner drugs, 1,000 draws.")
@@ -53,7 +53,7 @@ def fig1(D):
            f"and Older drugs ({v['OlderFrom']} to {v['OlderTo']}, {v['OlderDrugs']} drugs, {v['OlderPairs']} pairs). Two "
            f"Older subsets recur: Older-clean ({v['OlderCleanDrugs']} drugs) for the H1 decisions, and Older-primary "
            f"({v['OlderPrimaryDrugs']} drugs) for the Amendment 7 analyses. A pair is positive when the partner is named "
-           f"under Drug Interactions in the drug's label; this is a label mention, not a validated interaction (E8 oracle "
+           f"under Drug Interactions in the drug's label; this is a label mention, not a validated interaction (see the oracle "
            f"check). (C) The same name pair, for example {v['ExampleChip'].replace(' $+$ ', ' + ')}, goes to every "
            f"system. (D) Pooled AUROC of two shortcut baselines: with random negatives the partner-frequency prior reaches "
            f"{f3(pf['random'])} (Novel) and {f3(po['random'])} (Older); partner matching brings it to "
@@ -214,7 +214,7 @@ def fig5(D):
     t = D["fig5_positive_controls"]
     g = lambda c, lab: t[f"{c} | {lab}"]
     key = lambda prefix: [k.split(" | ")[1] for k in t if k.startswith("novel | " + prefix) and k.count(" | ") == 1][0]
-    e7a, e7b, ora = key("E7a"), key("E7b"), key("E8 oracle")
+    e7a, e7b, ora = key("Pair-label training, retrieved"), key("Pair-label training, answer"), key("Oracle, own")
     a = g("novel", e7a)
     rule = t["e7a_rule"]
     thr = t[f"novel | {e7a} | threshold"]
@@ -228,26 +228,26 @@ def fig5(D):
     ctrl = {lab: (g("novel", lab), g("older_primary", lab)) for lab in
             ("Name-masked oracle", "Wrong drug's section", "Partner sentences removed (confounded)")}
     sens = t["sensitivity"]
-    sens_drop = re.search(r"(\d+) Older-primary", sens["label"]).group(1)
+    sens_drop = re.search(r"(\d+) Older", sens["label"]).group(1)
     can, cao = g("novel", sens["label"]), g("older_primary", sens["label"])
     red = "Partner sentences removed (confounded)"
     red_len = t.get(f"older_primary | {red} | length only")
     db = (g("novel", "DrugBank lookup"), g("older_primary", "DrugBank lookup"))
     mix = (g("novel", "Mixed-input BiomedBERT, names only"), g("older_primary", "Mixed-input BiomedBERT, names only"))
-    h5 = key("H5")
+    h5 = key("Retrieval model, Drug Interactions indexed")
     h5c = g("novel", h5)
     cap = (f"Integrity and oracle controls for the label-mention target. Trained on the label-mention targets, "
            f"BiomedBERT scores within-drug AUROC {f3(bn['value'])} on Novel and {f3(bo['value'])} on Older-primary when "
-           f"the answer is placed in its input (E7b). E7b and the regex baseline score 1.000 by construction, because the "
+           f"the answer is placed in its input (the answer-in-input row). That row and the regex baseline score 1.000 by construction, because the "
            f"labels were defined by the same text match; they show the rule was applied consistently, not that it is "
-           f"correct. E7a, the H5 input with label-mention targets, reaches pooled AUROC {f3(a['value'])} {ci(a)} against "
+           f"correct. The retrieved-passages row, the H5 input with label-mention targets, reaches pooled AUROC {f3(a['value'])} {ci(a)} against "
            f"the {thr:.2f} threshold: {word(rule['auroc'] >= rule['thresholds'][0])} on AUROC, "
            f"{word(rule['mcc'] >= rule['thresholds'][1])} on MCC ({f3(rule['mcc'])} against {rule['thresholds'][1]:.2f}); "
-           f"an ideal reader of the same input reaches pooled {f3(ideal)} (gray open circle on the E7a row, legend ideal reader (E7a), {f3(ideal)}). Given its own Drug "
+           f"an ideal reader of the same input reaches pooled {f3(ideal)} (gray open circle on the retrieved-passages row, legend ideal reader, {f3(ideal)}). Given its own Drug "
            f"Interactions section, Qwen2.5-7B scores {f3(on['value'])} on Novel, where the rule is a point rule at "
            f"{bar_n:.2f}, and {f3(oo['value'])} {ci(oo)} on Older-primary, where the rule needs the 95% lower bound to "
-           f"reach {bar_o:.3f}: the lower bound is {f3(oo['lo95'])}, so the pre-specified E8 oracle check "
-           f"{orule['decision']}s and tier A stays primary. On a post hoc corrected tier (C-auto, with the {sens_drop} flagged Older-primary positives dropped; gray label, "
+           f"reach {bar_o:.3f}: the lower bound is {f3(oo['lo95'])}, so the pre-specified oracle check "
+           f"{orule['decision']}s and tier A stays primary. On a post hoc screened-target oracle (with the {sens_drop} flagged Older-primary positives dropped; gray label, "
            f"open marker) the oracle scores {f3(can['value'])} and {f3(cao['value'])} {ci(cao)}, and the check would "
            f"{sens['decision']}; this is a sensitivity analysis only, and tier A stays primary. Oracle controls: "
            f"name-masked {two(ctrl['Name-masked oracle'])}, wrong drug's section " + two(ctrl["Wrong drug's section"])
@@ -258,8 +258,8 @@ def fig5(D):
            f"pentagon) {f3(h5c['value'])} {ci(h5c)} against {t[f'novel | {h5} | threshold']:.2f}, "
            f"{h5.split(': ')[1]}. External reference: DrugBank lookup {two(db)}. Black ticks mark a pass threshold or "
            f"bar; gray ticks mark the regex baseline (oracle) and the length-only score (redacted), both 1.000 because they "
-           f"separate the labels perfectly, and the gray open circle marks the ideal reader (E7a). H5 and E7a were not run on Older-primary, and that panel prints not run at 0.5 on their rows. Whiskers are 95% two-way cluster bootstrap intervals over OOD drugs and partners, 1,000 draws; "
-           f"the dashed line is chance, and no equivalence test applies in this figure. E7a and H5 are pooled AUROC; "
+           f"separate the labels perfectly, and the gray open circle marks the ideal reader. H5 and the retrieved-passages row were not run on Older-primary, and that panel prints not run at 0.5 on their rows. Whiskers are 95% two-way cluster bootstrap intervals over OOD drugs and partners, 1,000 draws; "
+           f"the dashed line is chance, and no equivalence test applies in this figure. The retrieved-passages row and H5 are pooled AUROC; "
            f"every other row is within-drug, tier A. E7 arms average 5 seeds; Qwen is a single run. The pair-label arms "
            f"(E7c to E7e), the Qwen arms without the answer, the DrugBank operating-point comparison and the stem control "
            f"are in Figure S5. The E9 'no pair signal' and E7 'signal' labels are superseded by Commitment 8. {AMEND}")
@@ -285,17 +285,17 @@ def figS(D):
     t = D["figS_amend7_detail"]
     g = lambda c, lab: t[f"{c} | {lab}"]
     pair = lambda lab: (g("novel", lab), g("older_primary", lab))
-    qn = [k.split(" | ")[1] for k in t if k.startswith("novel | Names only") and k.count(" | ") == 1][0]
+    qn = [k.split(" | ")[1] for k in t if k.startswith("novel | Names only (") and k.count(" | ") == 1][0]
     rn, ro = t[f"novel | {qn} | prompt range"], t[f"older_primary | {qn} | prompt range"]
     B, C = t["B"], t["C"]
     arms = [k.split(" | ")[1] for k in t if k.startswith("novel | ") and k.count(" | ") == 1
             and k.split(" | ")[1] != "DrugBank lookup"]
     up = sum(g("older_primary", k)["value"] > g("novel", k)["value"] for k in arms)
     cap = (f"Amendment 7 detail moved from Figure 5. (A) Pair-label arms (E7, exploratory, no pass rule), BiomedBERT "
-           f"trained on the label-mention targets: E7c, names only, {two(pair('E7c, names only'))}; "
-           f"{two(pair('E7c, adjusted for drug class'))} after adjusting for drug class (rank residual on the joint class "
-           f"score); E7d, other drugs' labels retrieved, " + two(pair("E7d, other drugs' labels retrieved"))
-           + f"; E7e, clean retrieval, {two(pair('E7e, clean retrieval'))}. Qwen2.5-7B arms (E8, exploratory): names only "
+           f"trained on the label-mention targets: E7c, names only, {two(pair('Names only'))}; "
+           f"{two(pair('Names only, adjusted for drug class'))} after adjusting for drug class (rank residual on the joint class "
+           f"score); E7d, other drugs' labels retrieved, " + two(pair("Other drugs' labels retrieved"))
+           + f"; E7e, clean retrieval, {two(pair('Clean-index retrieval'))}. Qwen2.5-7B arms (E8, exploratory): names only "
            f"{two(pair(qn))} with the primary prompt; the pale vermilion bar behind the marker is the range over 5 frozen prompts, "
            f"{rn[0]:.3f} to {rn[1]:.3f} on Novel and {ro[0]:.3f} to {ro[1]:.3f} on Older-primary, so the result is "
            f"{qn.split(': ')[1].rstrip(')')}; contaminated retrieval {two(pair('Contaminated retrieval'))}; other drugs' "

@@ -1,6 +1,6 @@
 # Redactions in the public copy
 
-Source commit `a3e1010938fd5ad607f9c5d293f10b92acf4f708`. These files were edited only to remove DrugBank-derived per-drug content; every aggregate value is unchanged. Each file records the removal in a `release_redaction` field or a closing note.
+Source commit `373c7307b60b6ce960ee14400d08cc6f2cbba782`. These files were edited only to remove DrugBank-derived per-drug content; every aggregate value is unchanged. Each file records the removal in a `release_redaction` field or a closing note.
 
 | file | removed | SHA-256 in the source commit | SHA-256 here |
 |---|---|---|---|

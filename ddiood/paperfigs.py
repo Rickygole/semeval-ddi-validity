@@ -490,7 +490,7 @@ def fig_masking(data, out):
                ncol=2, handlelength=2.0, handletextpad=0.4, columnspacing=1.2, borderpad=0, borderaxespad=0)
     fig.text(2 / W_DOUBLE, 1 - 1.2 / H, "BiomedBERT, open marks are seeds 1, 2, 3, 4, 42; bars are seed means",
              ha="left", va="top", fontsize=SMALL, color=INK2)
-    fig.text(2 / W_DOUBLE, 0.8 / H, f"* Planned H2b statistic: seed-mean ratio {data.decisions['H2b']['value']['ratio']:.3f}, "
+    fig.text(2 / W_DOUBLE, 0.8 / H, f"* H2b statistic: seed-mean ratio {data.decisions['H2b']['value']['ratio']:.3f}, "
              "inflated by seed 1; the decision is the same.", ha="left", va="bottom", fontsize=SMALL, color=INK2)
     save(fig, out, "figS_masking")
     return table

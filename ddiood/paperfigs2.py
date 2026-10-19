@@ -37,7 +37,7 @@ ROLE_LABEL = {"SEMEVAL": "trained on SemEval labels", "EXTERNAL": "not trained o
 BAND_HYPOTHESES = ("H1", "H1-pooled", "H1-novel", "H4", "H6")
 BAND_LABEL = "equivalence margin"
 H1_CELL = ("b2mixed", "biomedbert", "older_clean", "names")
-C8 = ("OOD labels are unvalidated label mentions (the E8 oracle check failed); OOD AUROC measures agreement with that "
+C8 = ("OOD labels are unvalidated label mentions (the targets narrowly missed the oracle criterion); OOD AUROC measures agreement with that "
       "target, not interaction knowledge.")
 
 MARKER = {"b2sentence": ("o", False), "b2mixed": ("s", False), "b1names": ("^", True), "b2masked": ("D", True),
@@ -48,6 +48,11 @@ MARKER = {"b2sentence": ("o", False), "b2mixed": ("s", False), "b1names": ("^", 
 MM = 1 / 25.4
 W_SINGLE, W_ONEHALF, W_DOUBLE = pf.W_SINGLE, pf.W_ONEHALF, pf.W_DOUBLE
 BASE, SMALL, LETTER = 8, 7, 9
+HS, HB, HL = 7.5, 8.3, 9.6
+F4_W, F4_S, F4_B = 137.07, 7.3, 8.0
+F5_W, F5_S = 90.0, 7.3
+F6_W, F6_S, F6_B = 130.2, 7.3, 8.0
+HERO_W, HERO_H, HERO_AH, HERO_BY, HERO_N1, HERO_N2 = 123.4, 164, 64, 121, -0.27, -0.44
 PT = 1.0
 LW_BOLD, LW_THIN, LW_GHOST, LW_95, LW_90 = 1.4, 0.9, 0.6, 0.8, 2.2
 MS_BOLD, MS = 5, 4
@@ -254,14 +259,14 @@ def draw_band(ax, hypothesis, vertical=True, lo=None, hi=None, label=None, label
         ax.text(x, y, label, ha=ha, va=va, fontsize=SMALL, color=TEXT2, zorder=2)
 
 
-def chance(ax, vertical=True, label_at=None, ha="left", va="bottom", span=None):
+def chance(ax, vertical=True, label_at=None, ha="left", va="bottom", span=None, size=SMALL):
     kw = dict(color=RULE, lw=0.5, ls=(0, (3, 2)), zorder=2)
     if vertical:
         ax.axvline(0.5, **kw) if span is None else ax.plot([0.5, 0.5], span, **kw)
     else:
         ax.axhline(0.5, **kw) if span is None else ax.plot(span, [0.5, 0.5], **kw)
     if label_at is not None:
-        ax.text(label_at[0], label_at[1], "chance", ha=ha, va=va, fontsize=SMALL, color=TEXT2, zorder=2)
+        ax.text(label_at[0], label_at[1], "chance", ha=ha, va=va, fontsize=size, color=TEXT2, zorder=2)
 
 
 def mark(ax, pos, c, color, marker, hollow=False, ms=MS, horizontal=True, ci90=False, zorder=3, lw95=LW_95, alpha=1.0,
@@ -286,11 +291,11 @@ def mark(ax, pos, c, color, marker, hollow=False, ms=MS, horizontal=True, ci90=F
         ax.plot(x, y, marker, ms=ms, mfc=color, mec=SURFACE, mew=0.6, zorder=zorder + 1, alpha=alpha)
 
 
-def panel_label(ax, letter, title, dy=4):
+def panel_label(ax, letter, title, dy=4, sizes=(LETTER, BASE)):
     ax.annotate(letter, xy=(0, 1), xycoords="axes fraction", xytext=(-4 * PT, dy), textcoords="offset points",
-                fontsize=LETTER, fontweight="bold", ha="left", va="bottom")
+                fontsize=sizes[0], fontweight="bold", ha="left", va="bottom")
     ax.annotate(title, xy=(0, 1), xycoords="axes fraction", xytext=(7, dy), textcoords="offset points",
-                fontsize=BASE, ha="left", va="bottom")
+                fontsize=sizes[1], ha="left", va="bottom")
 
 
 def pending_frame(ax, what, final):
@@ -310,7 +315,22 @@ def spread(values, gap):
     return out + shift
 
 
+MINUS_FIXED = {}
+NEG_NUMBER = re.compile(r"(?<![\w.)\]$])-(?=\.?\d)")
+
+
+def true_minus(fig, name):
+    for t in fig.findobj(lambda a: hasattr(a, "get_text") and hasattr(a, "set_text")):
+        s = t.get_text()
+        if s and "-" in s:
+            fixed = NEG_NUMBER.sub(chr(0x2212), s)
+            if fixed != s:
+                t.set_text(fixed)
+                MINUS_FIXED.setdefault(name, []).append((s, fixed))
+
+
 def save(fig, out, name, bands=0, thick=0, min_pt=None):
+    true_minus(fig, name)
     lint(fig, name, min_pt)
     pf.save(fig, Path(out), name, bands, thick)
 
@@ -506,10 +526,10 @@ def qwen_unseen(src):
     src.L.check("e8:names older_primary stated range high", round(c["max"], 3), 0.607, "hero Qwen stated range", tol=1e-12)
     if c["robust"]:
         raise AssertionError("e8 names-only Older-primary is no longer reported as not robust")
-    out = summ(c["primary"], source="e8.json e8_names cohorts older_primary primary prompt (planned names-only range, Older-primary)")
+    out = summ(c["primary"], source="e8.json e8_names cohorts older_primary primary prompt (names-only range, Older-primary)")
     out["range"] = (c["min"], c["max"])
     out["n_prompts"] = len(vals)
-    out["cohort"] = "Older-primary"
+    out["cohort"] = "Older-strict"
     out["n_drugs"] = src.cs["cells"]["older_primary:A"]["n_drugs"]
     src.L.check("hero:Qwen range cohort drugs", out["n_drugs"], 121, "Older-primary cohort drug count", tol=0)
     return out
@@ -645,11 +665,11 @@ def seen_label(name):
 
 
 def draw_slope(ax, series):
-    xs = {"left": 0.075, "right": 0.335, "rule": 0.745, "seen": 0.82}
+    xs = {"left": 0.05, "right": 0.25, "rule": 0.72, "seen": 0.78}
     ax.set_xlim(0, 1)
     ax.set_ylim(0.3, 0.8)
-    chance(ax, vertical=False, span=(0.0, 0.715))
-    chance(ax, vertical=False, span=(0.775, 1.0))
+    chance(ax, vertical=False, span=(0.0, 0.70))
+    chance(ax, vertical=False, span=(0.745, 1.0))
     ax.plot([xs["rule"]] * 2, [0.3, 0.8], color=SPINE, lw=0.5, zorder=1)
     for s in series["ghost"]:
         if s["right"] is None:
@@ -678,9 +698,9 @@ def draw_slope(ax, series):
             ax.plot(xs["left"] + o + step * 0.9, s["left"]["value"], "D", ms=MS - 0.8, mfc=SURFACE, mec=SHORTCUT, mew=0.7,
                     zorder=4)
     h_mm = ax.get_position().height * ax.figure.get_figheight() / MM
-    gap = 3.4 / h_mm * 0.5
+    gap = 4.6 / h_mm * 0.5
     ys = spread([s["right"]["value"] for s in bold], gap)
-    xr = xs["right"] + offs.max() + 0.04
+    xr = xs["right"] + offs.max() + 0.025
     drawn_labels = []
     for s, y in zip(bold, ys):
         r = s["right"]
@@ -692,30 +712,30 @@ def draw_slope(ax, series):
             m_, h_ = MARKER[s["marker"]]
             ax.plot(xr + 0.008, y, m_, ms=MS, mfc=SURFACE if h_ else s["color"], mec=s["color"] if h_ else SURFACE, mew=0.6,
                     zorder=6, clip_on=False)
-        ax.text(xr + (0.03 if glyph else 0.0), y, txt, ha="left", va="center", fontsize=SMALL, color=s["text_color"],
+        ax.text(xr + (0.03 if glyph else 0.0), y, txt, ha="left", va="center", fontsize=HS, color=s["text_color"],
                 clip_on=False, zorder=6, linespacing=1.15)
         drawn_labels.append(txt)
     enc = bold[0]
     ax.text(xs["left"] + offs[0], enc["left"]["value"] + 0.045, f2(enc["left"]["value"]), ha="center", va="bottom",
-            fontsize=SMALL, color=TEXT2)
+            fontsize=HS, color=TEXT2)
     db_i = [i for i, s in enumerate(bold) if "left_excl" in s][0]
     db = bold[db_i]
     note_db = f"DrugBank {f3(db['left_excl']['value'])} without\nself pairs; {f3(db['left']['value'])} with\nthem (gray, open)"
     if f3(db["left"]["value"]) != "0.525":
         raise AssertionError("the DrugBank with-self-pairs note is no longer 0.525")
-    ax.text(xs["left"] + offs[db_i] - step * 0.2, 0.385, note_db, ha="left", va="top", fontsize=SMALL, color=TEXT2,
+    ax.text(xs["left"] + offs[db_i] - step * 0.2, 0.385, note_db, ha="left", va="top", fontsize=HS, color=TEXT2,
             linespacing=1.15)
     sm = series["seen"]
     marks = [("Mixed-input", sm["b2mixed"], SEMEVAL, "s", False), ("Sentence-trained", sm["b2sentence"], SEMEVAL, "o", False),
              ("DrugBank", sm["drugbank"], DRUGBANK, "D", False)]
-    sy = spread([m[1]["value"] for m in marks], 3.2 / h_mm * 0.5)
+    sy = spread([m[1]["value"] for m in marks], 3.6 / h_mm * 0.5)
     for (lab, c, color, mk, hollow), y in zip(marks, sy):
         mark(ax, xs["seen"], c, color, mk, hollow, MS_BOLD, horizontal=False, zorder=4)
-        ax.text(xs["seen"] + 0.035, y, f"{lab} {f2(c['value'])}", ha="left", va="center", fontsize=SMALL, color=color if color != DRUGBANK else TEXT,
+        ax.text(xs["seen"] + 0.035, y, f"{lab} {f2(c['value'])}", ha="left", va="center", fontsize=HS, color=color if color != DRUGBANK else TEXT,
                 clip_on=False, zorder=6)
     qlab = [t for t in drawn_labels if t.startswith("Qwen2.5-7B")]
     qr = [s_ for s_ in bold if s_["label"] == "Qwen2.5-7B"][0]["right"]
-    if len(qlab) != 1 or f"({qr['cohort']}, {qr['n_drugs']} drugs)" not in qlab[0] or "Older-primary, 121 drugs" not in qlab[0]:
+    if len(qlab) != 1 or f"({qr['cohort']}, {qr['n_drugs']} drugs)" not in qlab[0] or "Older-strict, 121 drugs" not in qlab[0]:
         raise AssertionError(f"the Qwen label does not name its cohort: {qlab}")
     return xs
 
@@ -723,32 +743,32 @@ def draw_slope(ax, series):
 def fig_hero(src, out):
     series = hero_series(src)
     bars = hero_bars(src)
-    W, H = W_DOUBLE, 92
+    W, H = HERO_W, HERO_H
     fig = figure(W, H)
     bg = canvas(fig)
-    ax = axes_mm(fig, 14, 12, 106, 58)
+    ax = axes_mm(fig, 12, 13, 100, HERO_AH)
     spines(ax, bottom=False)
     xs = draw_slope(ax, series)
     ax.set_yticks(np.round(np.arange(0.3, 0.81, 0.1), 1))
     ax.set_ylabel("AUROC, names only")
     seen = series["seen"]
     ax.set_xticks([xs["left"], xs["right"]], ["SemEval test\ninstances\n(2,810)",
-                                            f"Unseen-drug pairs\n({series['unseen_pairs']:,} pairs,\n{series['unseen_drugs']} drugs)"])
-    ax.tick_params(axis="x", length=0, labelsize=SMALL, pad=3)
-    ax.text(xs["left"], -0.215, "scored against\nSemEval labels", transform=ax.get_xaxis_transform(), ha="center", va="top",
-            fontsize=SMALL, color=TEXT2, linespacing=1.15)
-    ax.text(xs["right"], -0.215, "against FDA label\nmentions", transform=ax.get_xaxis_transform(),
-            ha="center", va="top", fontsize=SMALL, color=TEXT2, linespacing=1.15)
-    ax.text((xs["rule"] + 1.0) / 2 + 0.03, 1.02, f"Seen-drug pairs, retrained\nmodels (R2a), {seen['n_pairs']:,} pairs",
-            transform=ax.transAxes, ha="center", va="bottom", fontsize=SMALL, color=TEXT, linespacing=1.15)
-    ax.text(0.40, 0.345, f"{len(series['ghost'])} other encoder configurations\n(light lines, stored models)", ha="left", va="center",
-            fontsize=SMALL, color=TEXT2, linespacing=1.2)
-    ax.text(0.995, 0.503, "chance", ha="right", va="bottom", fontsize=SMALL, color=TEXT2)
+                                            f"Unseen-drug\npairs\n({series['unseen_pairs']:,} pairs,\n{series['unseen_drugs']} drugs)"])
+    ax.tick_params(axis="x", length=0, labelsize=HS, pad=3)
+    ax.text(xs["left"], HERO_N1, "scored against\nSemEval labels", transform=ax.get_xaxis_transform(), ha="center", va="top",
+            fontsize=HS, color=TEXT2, linespacing=1.15)
+    ax.text(xs["right"], HERO_N1, "against FDA\nlabel mentions", transform=ax.get_xaxis_transform(),
+            ha="center", va="top", fontsize=HS, color=TEXT2, linespacing=1.15)
+    ax.text((xs["rule"] + 1.0) / 2 + 0.03, 1.02, f"Seen-drug pairs, retrained\nmodels, {seen['n_pairs']:,} pairs",
+            transform=ax.transAxes, ha="center", va="bottom", fontsize=HS, color=TEXT, linespacing=1.15)
+    ax.text(0.17, 0.765, f"{len(series['ghost'])} other encoder configurations\n(light lines, models of Table 1)", ha="left", va="center",
+            fontsize=HS, color=TEXT2, linespacing=1.2)
+    ax.text(0.995, 0.503, "chance", ha="right", va="bottom", fontsize=HS, color=TEXT2)
     qrange = [s_ for s_ in series["bold"] if s_["label"] == "Qwen2.5-7B"][0]["right"]
-    ax.text(0.0, -0.40, f"Qwen2.5-7B unseen-drug value: planned names-only range over {qrange['n_prompts']} prompts, "
-            "Older-primary cohort.", transform=ax.get_xaxis_transform(), ha="left", va="top", fontsize=SMALL, color=TEXT2)
-    panel_label(ax, "A", "Same name-only input, two kinds of label")
-    bx = axes_mm(fig, 139, 22, 43, 30)
+    ax.text(0.0, HERO_N2, f"Qwen2.5-7B unseen-drug value: names-only range over {qrange['n_prompts']}\nprompts, "
+            "Older-strict cohort.", transform=ax.get_xaxis_transform(), ha="left", va="top", fontsize=HS, color=TEXT2)
+    panel_label(ax, "A", "Same name-only input, two kinds of label", sizes=(HL, HB))
+    bx = axes_mm(fig, 12, HERO_BY, 60, 32)
     draw_bars(bx, bars, bg)
     texts = {t.get_text() for t in fig.findobj(lambda o: hasattr(o, "get_text"))}
     for b_ in bars["bars"]:
@@ -758,7 +778,7 @@ def fig_hero(src, out):
                     b_["name"], tol=0)
     src.L.check("hero:panel B has no pair wording", float(not [t for t in texts if "resolvable pairs" in t or "a SemEval test pair" in t
                                                              or "pairs listed" in t]), 1.0, "panel B text", tol=0)
-    src.L.check("hero:Qwen cohort label drawn", float(any("Older-primary, 121 drugs" in t for t in texts)), 1.0, "panel A", tol=0)
+    src.L.check("hero:Qwen cohort label drawn", float(any("Older-strict, 121 drugs" in t for t in texts)), 1.0, "panel A", tol=0)
     table = {"series": {s["name"]: {k: s[k] for k in ("left", "right", "role", "left_excl") if k in s}
                         for s in series["bold"] + series["ghost"]},
              "panel_b": bars["bars"], "panel_b_random": bars["random"],
@@ -779,34 +799,34 @@ def draw_bars(bx, bars, bg):
         share = b["share_of_resolvable"]
         bx.barh(y, share, left=0, height=0.9, color=DRUGBANK, edgecolor=SURFACE, lw=0.8, zorder=2)
         bx.barh(y, 1 - share, left=share, height=0.9, color=NEUTRAL, edgecolor=SURFACE, lw=0.8, zorder=2)
-        bx.text(share - 0.02, y, two_sig_percent(share), ha="right", va="center", fontsize=SMALL, color=SURFACE,
+        bx.text(share - 0.02, y, two_sig_percent(share), ha="right", va="center", fontsize=HS, color=SURFACE,
                 zorder=3)
         lo, hi = b["wilson95_resolvable"]
         bx.plot([lo, hi], [y + 0.75, y + 0.75], color=TEXT, lw=0.8, zorder=3)
         for e in (lo, hi):
             bx.plot([e, e], [y + 0.62, y + 0.88], color=TEXT, lw=0.8, zorder=3)
-        bx.text(0, y - 0.62, f"{b['name']} ({b['n_resolvable']:,} instances)", ha="left", va="bottom", fontsize=SMALL,
+        bx.text(0, y - 0.62, f"{b['name']} ({b['n_resolvable']:,} instances)", ha="left", va="bottom", fontsize=HS,
                 color=TEXT, zorder=5, bbox=dict(fc=SURFACE, ec="none", pad=0.6))
     bx.plot([ref, ref], [-1.45, 3.2], color=SHORTCUT, lw=0.9, ls=(0, (3, 2)), zorder=4)
     ref_text = f"random vocabulary pairs: {100 * ref:.1f}%"
     if ref_text != "random vocabulary pairs: 35.5%":
         raise AssertionError(f"reference label {ref_text!r} differs from the stated 35.5%")
-    bx.text(ref + 0.02, -1.5, ref_text.replace("vocabulary pairs", "vocabulary\npairs"), ha="left", va="bottom", fontsize=SMALL,
+    bx.text(ref + 0.02, -1.5, ref_text.replace("vocabulary pairs", "vocabulary\npairs"), ha="left", va="bottom", fontsize=HS,
             color=TEXT2, zorder=4, linespacing=1.15)
     bx.set_ylim(3.3, -3.2)
     bx.set_yticks([])
     bx.set_xlim(0, 1)
     bx.set_xticks([0, 0.5, 1.0], ["0%", "50%", "100%"])
-    bx.set_xlabel("Share of resolvable instances listed", fontsize=SMALL)
-    ytitle = 12 - 4 * PT * 25.4 / 72
-    bg.text(131, ytitle, "B", ha="left", va="bottom", fontsize=LETTER, fontweight="bold")
-    bg.text(135.5, ytitle, "How often DrugBank lists", ha="left", va="bottom", fontsize=BASE)
-    bg.text(135.5, ytitle + 3.8, "a SemEval test instance", ha="left", va="bottom", fontsize=BASE)
+    bx.tick_params(axis="x", labelsize=HS)
+    bx.set_xlabel("Share of resolvable instances listed", fontsize=HS)
+    ytitle = HERO_BY - 1.5
+    bg.text(4, ytitle, "B", ha="left", va="bottom", fontsize=HL, fontweight="bold")
+    bg.text(8.5, ytitle, "How often DrugBank lists a SemEval test instance", ha="left", va="bottom", fontsize=HB)
     neg, pos = rows
-    bg.text(139, 64, "DDI-MedLine abstracts only:\n"
-            f"{two_sig_percent(neg['medline_share_of_resolvable'])} of negatives, "
+    bg.text(80, HERO_BY + 4, "DDI-MedLine abstracts\nonly: "
+            f"{two_sig_percent(neg['medline_share_of_resolvable'])} of negatives,\n"
             f"{two_sig_percent(pos['medline_share_of_resolvable'])} of positives.\nSelf pairs removed.", ha="left", va="top",
-            fontsize=SMALL, color=TEXT2, linespacing=1.2)
+            fontsize=HS, color=TEXT2, linespacing=1.2)
 
 
 def signal_rows(src, model):
@@ -1111,7 +1131,7 @@ def flat(label):
 def fig5_rows(src):
     cs = src.cs["cells"]
     rows = []
-    rows.append(header("SemEval labels"))
+    rows.append(header("SemEval-trained models"))
     b2 = {c: from_stat(cs[f"{c}:A"]["systems"]["b2mixed"], f"classshortcut.json cells {c}:A systems b2mixed") for c in ("novel", "older_primary")}
     tr = src.a7truth()
     for cname, key in (("novel", "ood_empty"), ("older_primary", "oodold_empty")):
@@ -1124,10 +1144,10 @@ def fig5_rows(src):
     rows.append(row("Mixed-input BiomedBERT, names only", SEMEVAL, "b2mixed", b2))
     h5 = src.d.decisions["H5"]
     h5c = summ(h5["value"][0], h5["interval"][0], h5["interval"][1], source="decisions.json H5 (pooled AUROC)")
-    rows.append(row(f"H5 control, SemEval labels (pooled): {h5['decision']}", SEMEVAL, "h5", {"novel": h5c},
+    rows.append(row(f"Retrieval model, Drug Interactions indexed\n(H5, pooled): {h5['decision']}", SEMEVAL, "h5", {"novel": h5c},
                     thr={"novel": [(aa.H5_AUROC, "threshold")]}))
     if src.e7 is None:
-        rows.append(header("Label-mention targets (E7) pending"))
+        rows.append(header("Label-mention targets pending"))
         return rows
     e7 = src.e7
     rows.append(header("Integrity controls (answer supplied)"))
@@ -1139,7 +1159,7 @@ def fig5_rows(src):
     if (auc_ok and mcc_ok) != a["pass"] or a["decision"] != ("pass" if a["pass"] else "fail"):
         raise AssertionError("E7a decision does not follow from its AUROC and MCC thresholds")
     word = lambda ok: "pass" if ok else "fail"
-    rows.append(row(f"E7a, H5 input, label-mention targets\n(pooled): {word(auc_ok)} on AUROC, {word(mcc_ok)} on MCC",
+    rows.append(row(f"Pair-label training, retrieved passages\n(retrieval model, Drug Interactions indexed, pooled): {word(auc_ok)} on AUROC, {word(mcc_ok)} on MCC",
                     EXTERNAL, "e7", {"novel": from_stat(a["pooled_auroc"], "e7.json e7a pooled_auroc")},
                     thr={"novel": [(a["thresholds"][0], "threshold")]}, ideals={"novel": [(ideal, "ideal reader")]}))
     b = e7["e7b"]
@@ -1148,7 +1168,7 @@ def fig5_rows(src):
     vals = [b[c]["within"]["value"] for c in ("novel", "older_primary")]
     if min(vals) < 1.0 - 5e-4:
         raise AssertionError(f"E7b no longer scores 1.000 in both cohorts: {vals}")
-    rows.append(row(f"E7b, answer placed in the input\n({f2(min(vals))} by construction)", EXTERNAL, "e7",
+    rows.append(row(f"Pair-label training, answer in input\n({f2(min(vals))} by construction)", EXTERNAL, "e7",
                     {c: from_stat(b[c]["within"], f"e7.json e7b {c} within") for c in ("novel", "older_primary")},
                     thr={c: [(b[c]["threshold"], "threshold")] for c in ("novel", "older_primary")}))
     jobs = {"masked": "maskedoracle", "wrong": "wrongoracle", "redacted": "redactedoracle", "contam": "contam",
@@ -1163,7 +1183,7 @@ def fig5_rows(src):
         if op["statistic"] != "lower95" or (op["within"]["lo95"] >= op["bar"]) != op["pass"]:
             raise AssertionError("E8 Older-primary oracle rule is not the lower-bound rule the figure draws")
         rel = "<" if op["within"]["lo95"] < op["bar"] else "\u2265"
-        rows.append(row(f"E8 oracle, Qwen reads its own\nsection: {o['decision']}", EXTERNAL, "e8",
+        rows.append(row(f"Oracle, own Drug Interactions\nsection: {o['decision']}", EXTERNAL, "e8",
                         {c: from_stat(o[c]["within"], f"e8.json e8_oracle_rule {c} within") for c in ("novel", "older_primary")},
                         thr={c: [(o[c]["bar"], "bar")] for c in ("novel", "older_primary")},
                         ticks={c: [(o[c]["grep"], "regex")] for c in ("novel", "older_primary")},
@@ -1182,13 +1202,13 @@ def fig5_rows(src):
                 src.L.check("post8:screen rule flags, Older-primary", sc["older/older_primary"]["rule_flags"], drop["older_primary"],
                             "C-auto row label", tol=0)
                 src.L.check("post8:screen rule flags, Novel", sc["novel/all"]["rule_flags"], drop["novel"], "C-auto row label", tol=0)
-            r = row(f"Same, tier C-auto (flagged positives dropped:\n{drop['novel']} Novel, {drop['older_primary']} Older-primary; post hoc)",
+            r = row(f"Same oracle, screened targets\n(not independent; dropped {drop['novel']} Novel, {drop['older_primary']} Older)",
                     EXTERNAL, "e8s",
                     {c: from_stat(ca[c]["within"], f"post8/sensitivity.json e8 C-auto {c} within")
                      for c in ("novel", "older_primary")}, style="sens")
             r["sens"] = {"decision": ca["decision"], "bar": {c: ca[c]["bar"] for c in ("novel", "older_primary")}}
             rows.append(r)
-        rows.append(header("Oracle controls (E8)"))
+        rows.append(header("Oracle controls"))
         names = {"masked": "Name-masked oracle", "wrong": "Wrong drug's section",
                  "redacted": "Partner sentences removed (confounded)"}
         for k, lab in names.items():
@@ -1204,9 +1224,9 @@ def fig5_rows(src):
                             {c: from_stat(evd[f"{c}/A"]["within"], f"e8.json e8_evidence {k} {c}/A within")
                              for c in ("novel", "older_primary")}, ticks=ticks))
     else:
-        rows.append(header("Evidence reader (E8) pending"))
-    rows.append(header("Pair-label arms (E7, exploratory)", "supp"))
-    for arm, lab in (("c", "E7c, names only"), ("d", "E7d, other drugs' labels retrieved"), ("e", "E7e, clean retrieval")):
+        rows.append(header("Evidence reader pending"))
+    rows.append(header("Pair-label training arms", "supp"))
+    for arm, lab in (("c", "Names only"), ("d", "Other drugs' labels retrieved"), ("e", "Clean-index retrieval")):
         cells = {}
         for cname, ki in (("novel", 1), ("older_primary", 2)):
             st = e7["knowledge"][arm][f"{cname}/A"]["within"]
@@ -1221,9 +1241,9 @@ def fig5_rows(src):
             for c in ("novel", "older_primary"):
                 src.L.check_cell("classshortcut:E7c_within", cs[f"{c}:A"]["partial"]["E7c_within"], cs[f"{c}:A"]["systems"]["E7c"],
                                  c, tol=TOL)
-            rows.append(row("E7c, adjusted for drug class", EXTERNAL, "e7h", adj, group="supp"))
+            rows.append(row("Names only, adjusted for drug class", EXTERNAL, "e7h", adj, group="supp"))
     if src.e8 is not None:
-        rows.append(header("Qwen2.5-7B arms (E8, exploratory)", "supp"))
+        rows.append(header("Qwen2.5-7B arms", "supp"))
         nm = src.e8["e8_names"]["cohorts"]
         from .amend7_prompts import PRIMARY
         cells, ranges = {}, {}
@@ -1257,47 +1277,55 @@ def fig5_rows(src):
     return rows
 
 
-def row_layout(rows, single=5.2, double=7.4, hgap=5.0):
+def line_height(label, single, double, triple):
+    n = label.count("\n") + 1
+    return single if n == 1 else (double if n == 2 or triple is None else triple)
+
+
+def row_layout(rows, single=5.2, double=7.4, hgap=5.0, triple=None):
     ys, y = [], 0.0
     for r in rows:
         if r["kind"] == "header":
             y += hgap if ys else 3.2
             ys.append(y - 1.2)
         else:
-            h = double if "\n" in r["label"] else single
+            h = line_height(r["label"], single, double, triple)
             y += h
             ys.append(y - h / 2)
     return ys, y + 0.8
 
 
-def draw_rows(fig, bg, rows, ys, total, TOP, LBL, PW, GAP, cohorts, letter="A", value_col=False):
+def draw_rows(fig, bg, rows, ys, total, TOP, LBL, PW, GAP, cohorts, letter="A", value_col=False, small=SMALL, base=BASE,
+              header_size=None, single=5.2, double=7.4, triple=None, note_box=False):
+    header_size = SMALL + 0.5 if header_size is None else header_size
     table = {}
     for ci, (cname, ctitle) in enumerate(cohorts):
         ax = axes_mm(fig, LBL + ci * (PW + GAP), TOP, PW, total)
         spines(ax, left=False)
         ax.set_ylim(total, 0)
         auroc_x(ax, 0.3, 1.0, label="")
+        ax.tick_params(axis="x", labelsize=small)
         ax.set_xlim(0.3, 1.025)
         ax.set_yticks([])
-        chance(ax, label_at=(0.51, 0.2) if ci == 0 else None, va="top")
+        chance(ax, label_at=(0.51, 0.2) if ci == 0 else None, va="top", size=small)
         for k, (r, yv) in enumerate(zip(rows, ys)):
             if r["kind"] == "header":
                 if ci == 0:
-                    bg.text(2, TOP + yv, r["label"], ha="left", va="center", fontsize=SMALL + 0.5, fontweight="bold")
+                    bg.text(2, TOP + yv, r["label"], ha="left", va="center", fontsize=header_size, fontweight="bold")
                 ax.axhline(yv - 1.6, color=NEUTRAL, lw=0.4, zorder=1)
                 continue
             label, color, mk, cells = r["label"], r["color"], r["mk"], r["cells"]
             sens = r["style"] == "sens"
-            rh = 7.4 if "\n" in label else 5.2
+            rh = line_height(label, single, double, triple)
             if ci == 0:
-                bg.text(4, TOP + yv, label, ha="left", va="center", fontsize=SMALL, color=TEXT2 if sens else TEXT,
+                bg.text(4, TOP + yv, label, ha="left", va="center", fontsize=small, color=TEXT2 if sens else TEXT,
                         linespacing=1.1)
             if cname in r["ranges"]:
                 lo, hi = r["ranges"][cname]
                 table[f"{cname} | {flat(label)} | prompt range"] = [lo, hi]
                 ax.plot([lo, hi], [yv, yv], color=r["color"], lw=5.0, alpha=0.45, zorder=2, solid_capstyle="butt")
             if cname not in cells:
-                ax.text(0.5, yv, "not run", ha="center", va="center", fontsize=SMALL, color=TEXT2, zorder=6,
+                ax.text(0.5, yv, "Novel only", ha="center", va="center", fontsize=small, color=TEXT2, zorder=6,
                         bbox=dict(fc=SURFACE, ec="none", pad=0.8))
                 table[f"{cname} | {flat(label)} | not run"] = True
                 continue
@@ -1318,16 +1346,16 @@ def draw_rows(fig, bg, rows, ys, total, TOP, LBL, PW, GAP, cohorts, letter="A", 
             tc = TEXT2
             if value_col:
                 ax.text(1.025 + 0.012, yv, f2(c["value"]), transform=ax.get_yaxis_transform(), ha="left", va="center",
-                        fontsize=SMALL, color=TEXT2 if sens else tc)
+                        fontsize=small, color=TEXT2 if sens else tc)
                 if cname in r["notes"]:
-                    ax.text(c["lo95"] - 0.015, yv, r["notes"][cname], ha="right", va="center", fontsize=SMALL, color=TEXT,
-                            linespacing=1.1)
+                    ax.text(c["lo95"] - 0.015, yv, r["notes"][cname], ha="right", va="center", fontsize=small, color=TEXT,
+                            linespacing=1.1, zorder=6, bbox=dict(fc=SURFACE, ec="none", pad=0.8) if note_box else None)
                 continue
             if cname in r["notes"]:
-                ax.text(c["lo95"] - 0.015, yv, r["notes"][cname], ha="right", va="center", fontsize=SMALL, color=TEXT,
-                        linespacing=1.1)
+                ax.text(c["lo95"] - 0.015, yv, r["notes"][cname], ha="right", va="center", fontsize=small, color=TEXT,
+                        linespacing=1.1, zorder=6, bbox=dict(fc=SURFACE, ec="none", pad=0.8) if note_box else None)
             elif c.get("hi95") is not None and c["hi95"] < 0.9 and not r["thr"].get(cname):
-                ax.text(c["hi95"] + 0.015, yv, f2(c["value"]), ha="left", va="center", fontsize=SMALL, color=tc)
+                ax.text(c["hi95"] + 0.015, yv, f2(c["value"]), ha="left", va="center", fontsize=small, color=tc)
             else:
                 marks = ([t for t, _ in r["thr"].get(cname, [])] + [t for t, _ in r["ideals"].get(cname, [])]
                          + [t for t, _ in r["ticks"].get(cname, [])])
@@ -1335,20 +1363,20 @@ def draw_rows(fig, bg, rows, ys, total, TOP, LBL, PW, GAP, cohorts, letter="A", 
                 right = max([c["hi95"] if c.get("hi95") is not None else c["value"]] + marks)
                 w = 4.0 / PW * (1.025 - 0.3)
                 if left - 0.015 - w < 0.52 and right + 0.015 + w < 1.025:
-                    ax.text(right + 0.015, yv, f2(c["value"]), ha="left", va="center", fontsize=SMALL, color=tc)
+                    ax.text(right + 0.015, yv, f2(c["value"]), ha="left", va="center", fontsize=small, color=tc)
                 else:
-                    ax.text(left - 0.015, yv, f2(c["value"]), ha="right", va="center", fontsize=SMALL, color=tc)
+                    ax.text(left - 0.015, yv, f2(c["value"]), ha="right", va="center", fontsize=small, color=tc)
         if ci == 0 and letter is not None:
             panel_label(ax, letter, ctitle)
         else:
             ax.annotate(ctitle, xy=(0, 1), xycoords="axes fraction", xytext=(0, 4), textcoords="offset points",
-                        fontsize=BASE, ha="left", va="bottom")
+                        fontsize=base, ha="left", va="bottom")
     return table
 
 
 def fig5_cohorts(src):
     n = {c: src.cs["cells"][f"{c}:A"]["n_drugs"] for c in ("novel", "older_primary")}
-    return (("novel", f"Novel ({n['novel']} drugs)"), ("older_primary", f"Older-primary ({n['older_primary']} drugs)"))
+    return (("novel", f"Novel ({n['novel']} drugs)"), ("older_primary", f"Older-strict ({n['older_primary']} drugs)"))
 
 
 def draw_thr(ax, x, y, half, zorder=5):
@@ -1363,26 +1391,29 @@ def draw_ideal(ax, x, y):
     ax.plot(x, y, "o", ms=MS, mfc=SURFACE, mec=SHORTCUT, mew=0.8, zorder=6)
 
 
-def draw_tick_key(bg, x, y, ideal_text):
+def draw_tick_key(bg, x, y, ideal_text, small=SMALL, dy=(4.7, 10.2)):
     draw_thr(bg, x + 1.5, y, 2.1)
-    bg.text(x + 5, y, "pass threshold or bar", ha="left", va="center", fontsize=SMALL, color=TEXT)
-    draw_ref(bg, x + 1.5, y + 4.7)
-    bg.text(x + 5, y + 4.7, "trivial reference score: regex baseline\nor length only, both 1.000", ha="left", va="center",
-            fontsize=SMALL, color=TEXT, linespacing=1.15)
-    draw_ideal(bg, x + 1.5, y + 10.2)
-    bg.text(x + 5, y + 10.2, ideal_text, ha="left", va="center", fontsize=SMALL, color=TEXT)
+    bg.text(x + 5, y, "pass threshold or bar", ha="left", va="center", fontsize=small, color=TEXT)
+    draw_ref(bg, x + 1.5, y + dy[0])
+    bg.text(x + 5, y + dy[0], "trivial reference score: label-mention rule\nor length only, both 1.000", ha="left", va="center",
+            fontsize=small, color=TEXT, linespacing=1.15)
+    draw_ideal(bg, x + 1.5, y + dy[1])
+    bg.text(x + 5, y + dy[1], ideal_text, ha="left", va="center", fontsize=small, color=TEXT)
 
 
 def fig_controls(src, out):
     allrows = fig5_rows(src)
     rows = [r for r in allrows if r["group"] == "main"]
-    ys, total = row_layout(rows)
-    W, TOP = W_DOUBLE, 12
-    H = TOP + total + 19
+    rows = [r if r["kind"] == "header" else dict(r, label=textwrap.fill(flat(r["label"]), 34, break_on_hyphens=False))
+            for r in rows]
+    ys, total = row_layout(rows, single=5.6, double=9.0, hgap=5.5, triple=12.4)
+    W, TOP = F4_W, 12
+    H = TOP + total + 28
     fig = figure(W, H)
     bg = canvas(fig)
-    LBL, PW, GAP = 62, 50, 15
-    table = draw_rows(fig, bg, rows, ys, total, TOP, LBL, PW, GAP, fig5_cohorts(src), letter=None, value_col=True)
+    LBL, PW, GAP = 50, 33.5, 11
+    table = draw_rows(fig, bg, rows, ys, total, TOP, LBL, PW, GAP, fig5_cohorts(src), letter=None, value_col=True, small=F4_S,
+                      base=F4_B, header_size=F4_S, single=5.6, double=9.0, triple=12.4, note_box=True)
     for r in rows:
         if r.get("sens"):
             table["sensitivity"] = {"label": flat(r["label"]), **r["sens"]}
@@ -1394,57 +1425,57 @@ def fig_controls(src, out):
         o = src.e8["e8_oracle_rule"]
         table["e8_oracle_rule"] = {"decision": o["decision"],
                                    **{c: {k: o[c][k] for k in ("statistic", "bar", "grep", "pass")} for c in ("novel", "older_primary")}}
-    bg.text(LBL + PW + GAP / 2, TOP + total + 9, "AUROC, within-drug (E7a and H5 rows: pooled)", ha="center", va="center",
-            fontsize=BASE)
+    bg.text(LBL + PW + GAP / 2, TOP + total + 9, "AUROC, within-drug (H5 and retrieved-passage rows: pooled)", ha="center", va="center",
+            fontsize=F4_B)
     ideal_value = [c for k, c in table.items() if k.endswith("| ideal reader")]
-    ideal_text = "ideal reader (E7a), n/a" if not ideal_value else f"ideal reader (E7a), {f3(ideal_value[0])}"
+    ideal_text = "ideal reader, n/a" if not ideal_value else f"ideal reader, {f3(ideal_value[0])}"
     if src.e7 is not None:
-        src.L.check("fig4:ideal reader pooled AUROC drawn at 0.785", round(ideal_value[0], 3), 0.785, "E7a row, gray open circle",
+        src.L.check("fig4:ideal reader pooled AUROC drawn at 0.785", round(ideal_value[0], 3), 0.785, "pair-label row, gray open circle",
                     tol=1e-12)
-        if ideal_text != "ideal reader (E7a), 0.785":
+        if ideal_text != "ideal reader, 0.785":
             raise AssertionError(ideal_text)
         not_run = sorted(k.split(" | ")[1] for k in table if k.startswith("older_primary | ") and k.endswith(" | not run"))
         want = sorted(flat(r["label"]) for r in rows if r["kind"] == "row"
                       and "older_primary" not in r["cells"])
-        src.L.check("fig4:rows marked not run in Older-primary", len(not_run), 2, "H5 and E7a", tol=0)
-        if not_run != want or not all(k.startswith(("H5", "E7a")) for k in not_run):
+        src.L.check("fig4:rows marked not run in Older-primary", len(not_run), 2, "H5 and pair-label rows", tol=0)
+        if not_run != want or not all(k.startswith(("Retrieval model, Drug Interactions indexed", "Pair-label training, retrieved")) for k in not_run):
             raise AssertionError(f"not-run rows {not_run} differ from the rows without an Older-primary cell {want}")
-    draw_tick_key(bg, 2, TOP + total + 5.5, ideal_text)
-    save(fig, out, "fig5_positive_controls")
+    draw_tick_key(bg, 2, TOP + total + 14, ideal_text, small=F4_S, dy=(4.9, 10.8))
+    save(fig, out, "fig5_positive_controls", min_pt=F4_S)
     return table, allrows
 
 
 def fig_amend7_detail(src, out, allrows):
     rows = [r for r in allrows if r["group"] == "supp"]
-    ys, total = row_layout(rows)
-    W, TOP = W_DOUBLE, 12
-    H = max(TOP + total + 12, TOP + 108)
-    fig = figure(W, H)
+    ys, total = row_layout(rows, single=5.6, double=9.0, hgap=5.5)
+    W, TOP = F6_W, 12
+    S = F6_S
+    fig = figure(W, 146)
     bg = canvas(fig)
-    LBL, PW, GAP = 50, 34, 4
-    table = draw_rows(fig, bg, rows, ys, total, TOP, LBL, PW, GAP, fig5_cohorts(src))
-    bg.text(LBL + PW + GAP / 2, TOP + total + 9, "Within-drug AUROC", ha="center", va="center", fontsize=BASE)
-    X0 = LBL + 2 * PW + GAP + 24
-    bw = W - X0 - 6
-    ytitle = TOP - 4 * 0.3528
+    LBL, PW, GAP = 50, 36, 4
+    table = draw_rows(fig, bg, rows, ys, total, TOP, LBL, PW, GAP, fig5_cohorts(src), small=S, base=F6_B, header_size=S,
+                      single=5.6, double=9.0)
+    bg.text(LBL + PW + GAP / 2, TOP + total + 9, "Within-drug AUROC", ha="center", va="center", fontsize=F6_B)
+    y0 = TOP + total + 16
+    XB, XC, AW = 25.0, 88.0, 38.0
     if src.e7 is not None:
-        bx = axes_mm(fig, X0, TOP + 9, bw, 30)
-        table["B"] = draw_fair(bx, src)
-        bg.text(X0 - 19.5, ytitle, "B", ha="left", va="bottom", fontsize=LETTER, fontweight="bold")
-        bg.text(X0 - 15, ytitle, "E7c and DrugBank at the", ha="left", va="bottom", fontsize=BASE)
-        bg.text(X0 - 15, ytitle + 3.8, "same false positive rate", ha="left", va="bottom", fontsize=BASE)
+        bx = axes_mm(fig, XB, y0 + 9, AW, 30)
+        table["B"] = draw_fair(bx, src, small=S)
+        bg.text(XB - 20.5, y0, "B", ha="left", va="bottom", fontsize=LETTER, fontweight="bold")
+        bg.text(XB - 16, y0, "Names-only arm and DrugBank at the", ha="left", va="bottom", fontsize=F6_B)
+        bg.text(XB - 16, y0 + 3.8, "same false positive rate", ha="left", va="bottom", fontsize=F6_B)
     if src.e8 is not None:
-        cx = axes_mm(fig, X0, TOP + 66, bw, 20)
-        table["C"] = draw_stem(cx, src)
+        cx = axes_mm(fig, XC, y0 + 9, AW, 20)
+        table["C"] = draw_stem(cx, src, small=S)
         n = table["C"]["n_drugs"]
-        bg.text(X0 - 19.5, TOP + 56, "C", ha="left", va="bottom", fontsize=LETTER, fontweight="bold")
-        bg.text(X0 - 15, TOP + 56, f"E8 stem control, {n} stem-bearing", ha="left", va="bottom", fontsize=BASE)
-        bg.text(X0 - 15, TOP + 59.8, "drugs (Novel and Older-primary)", ha="left", va="bottom", fontsize=BASE)
-    save(fig, out, "figS_amend7_detail")
+        bg.text(XC - 20.5, y0, "C", ha="left", va="bottom", fontsize=LETTER, fontweight="bold")
+        bg.text(XC - 16, y0, f"Stem control, {n} stem-bearing", ha="left", va="bottom", fontsize=F6_B)
+        bg.text(XC - 16, y0 + 3.8, "drugs (Novel and Older-strict)", ha="left", va="bottom", fontsize=F6_B)
+    save(fig, out, "figS_amend7_detail", min_pt=S)
     return table
 
 
-def draw_fair(bx, src):
+def draw_fair(bx, src, small=SMALL):
     spines(bx, left=False)
     out = {}
     yt = []
@@ -1458,24 +1489,25 @@ def draw_fair(bx, src):
         mark(bx, y0, db, DRUGBANK, "D", False, MS)
         mark(bx, y0 + 0.7, e7c, EXTERNAL, "s", False, MS)
         bx.text(-0.55, y0 + 1.35, f"difference {diff['value']:.3f} {ci_text(diff)}", ha="left", va="center",
-                fontsize=SMALL, color=TEXT2, transform=bx.get_yaxis_transform())
-        bx.text(-0.55, y0 - 0.55, "Novel" if c == "novel" else "Older-primary", ha="left", va="center", fontsize=SMALL,
+                fontsize=small, color=TEXT2, transform=bx.get_yaxis_transform())
+        bx.text(-0.55, y0 - 0.55, "Novel" if c == "novel" else "Older-strict", ha="left", va="center", fontsize=small,
                 fontweight="bold", transform=bx.get_yaxis_transform())
-        yt += [(y0, "DrugBank"), (y0 + 0.7, "E7c")]
+        yt += [(y0, "DrugBank"), (y0 + 0.7, "Names only")]
         out[c] = {"drugbank_tpr": db, "e7c_tpr": e7c, "difference": diff,
                   "drugbank_fpr": from_stat(op["drugbank_fpr_pooled"], f"classshortcut.json {c}:A drugbank_fpr_pooled")}
     bx.set_ylim(4.5, -1.0)
     bx.set_yticks([])
     for yv, t in yt:
-        bx.text(-0.02, yv, t, ha="right", va="center", fontsize=SMALL, transform=bx.get_yaxis_transform())
+        bx.text(-0.02, yv, t, ha="right", va="center", fontsize=small, transform=bx.get_yaxis_transform())
     bx.set_xlim(0, 1)
+    bx.tick_params(axis="x", labelsize=small)
     bx.set_xticks([0, 0.5, 1.0], ["0.0", "0.5", "1.0"])
     bx.grid(axis="x", color=GRID, lw=0.4, zorder=0)
-    bx.set_xlabel("True positive rate", fontsize=SMALL)
+    bx.set_xlabel("True positive rate", fontsize=small)
     return out
 
 
-def draw_stem(cx, src):
+def draw_stem(cx, src, small=SMALL):
     spines(cx, left=False)
     s = src.e8["e8_stem_control"]
     rows = [("Real names", "real"), ("Stem kept", "preserved"), ("Stem scrambled", "scrambled")]
@@ -1484,17 +1516,18 @@ def draw_stem(cx, src):
     for i, (lab, k) in enumerate(rows):
         c = from_stat(s[k], f"e8.json e8_stem_control {k}")
         mark(cx, i, c, EXTERNAL, "v", k != "real", MS)
-        cx.text(-0.02, i, lab, ha="right", va="center", fontsize=SMALL, transform=cx.get_yaxis_transform())
+        cx.text(-0.02, i, lab, ha="right", va="center", fontsize=small, transform=cx.get_yaxis_transform())
         out[k] = c
     d = from_stat(s["preserved_minus_scrambled"], "e8.json e8_stem_control preserved_minus_scrambled")
     src.L.check("e8:stem difference", s["preserved"]["value"] - s["scrambled"]["value"], d["value"], "stem", tol=1e-9)
     verdict = s["decision"]
     cx.text(-0.55, 4.6, f"kept minus scrambled {d['value']:.3f} {ci_text(d)}:\n{verdict}", ha="left", va="top",
-            fontsize=SMALL, color=TEXT2, transform=cx.get_yaxis_transform(), linespacing=1.15)
+            fontsize=small, color=TEXT2, transform=cx.get_yaxis_transform(), linespacing=1.15)
     cx.set_ylim(2.6, -0.6)
     cx.set_yticks([])
     auroc_x(cx, 0.3, 1.0, label="")
-    cx.set_xlabel("Within-drug AUROC", fontsize=SMALL)
+    cx.tick_params(axis="x", labelsize=small)
+    cx.set_xlabel("Within-drug AUROC", fontsize=small)
     out["difference"] = d
     out["verdict"] = verdict
     out["n_drugs"] = s["n_drugs"]
@@ -1512,15 +1545,15 @@ def panel_f1(src, names):
 
 
 def fig_panel(src, out):
-    W, H = W_SINGLE, 82
+    W, H = F5_W, 82
     fig = figure(W, H)
     bg = canvas(fig)
-    ax = axes_mm(fig, 15, 8, 70, 58)
+    ax = axes_mm(fig, 16, 8, 70, 62)
     spines(ax)
     table = {}
     if src.e9 is None or not src.a7preds.exists():
         pending_frame(ax, "E9", src.final)
-        save(fig, out, "fig6_model_panel")
+        save(fig, out, "fig6_model_panel", min_pt=F5_S)
         return {"pending": True}
     e9 = src.e9["e9"]
     p = e9["panel"]["older_primary"]
@@ -1540,7 +1573,7 @@ def fig_panel(src, out):
         src.L.check("e9:rho novel", spearman([f1[n] for n in q["names"]], q["auroc"]), q["rho"], "novel rho", tol=1e-9)
     src.L.check("e9:upper_at_most_bound", sum(h <= p["bound"] for h in p["hi95"]), sum(p["upper_at_most_bound"]),
                 "older_primary count", tol=0)
-    chance(ax, vertical=False, label_at=(0.45, 0.503), ha="center")
+    chance(ax, vertical=False, label_at=(0.45, 0.503), ha="center", size=F5_S)
     db = src.cs["cells"]["older_primary:A"]["drugbank_operating_point"]["drugbank_auroc_from_placements"]["value"]
     src.L.check("e7:drugbank_within", db, src.e7["knowledge"]["c"]["older_primary/A"]["drugbank_within"], "fig6", tol=1e-9)
     ax.axhline(db, color=DRUGBANK, lw=0.8, zorder=2)
@@ -1566,32 +1599,33 @@ def fig_panel(src, out):
     lo_x = np.floor(min(allx) * 20) / 20 - 0.02
     hi_x = np.ceil(max(allx) * 20) / 20 + 0.01
     ax.set_xlim(lo_x, hi_x)
+    ax.tick_params(axis="x", labelsize=F5_S)
     ax.set_ylim(0.3, 0.75)
     ticks = np.round(np.arange(0.3, 0.751, 0.05), 2)
     ax.set_yticks(ticks)
     ax.set_yticklabels([f"{v:.2f}" for v in ticks])
-    ax.tick_params(axis="y", labelsize=SMALL)
+    ax.tick_params(axis="y", labelsize=F5_S)
     ax.grid(axis="y", color=GRID, lw=0.4, zorder=0)
-    ax.set_xlabel("SemEval test binary F1, with sentence", fontsize=SMALL)
-    ax.set_ylabel("Older-primary within-drug AUROC,\nnames only", fontsize=SMALL, linespacing=1.15)
-    ax.text(hi_x, db + 0.006, f"DrugBank lookup {f2(db)}", ha="right", va="bottom", fontsize=SMALL, color=TEXT)
-    ax.text(hi_x, p["bound"] + 0.006, f"E9 rule: 95% upper bound at most {p['bound']:.2f}", ha="right", va="bottom",
-            fontsize=SMALL, color=TEXT2)
+    ax.set_xlabel("SemEval test binary F1, with sentence", fontsize=F5_S)
+    ax.set_ylabel("Older-strict within-drug AUROC,\nnames only", fontsize=F5_S, linespacing=1.15)
+    ax.text(hi_x, db + 0.006, f"DrugBank lookup {f2(db)}", ha="right", va="bottom", fontsize=F5_S, color=TEXT)
+    ax.text(hi_x, p["bound"] + 0.006, f"Outcome bar: 95% upper bound at most {p['bound']:.2f}", ha="right", va="bottom",
+            fontsize=F5_S, color=TEXT2)
     k = sum(p["upper_at_most_bound"])
     ax.text(lo_x + 0.005, 0.745, f"Spearman $\\rho$ = {p['rho']:.2f} [{p['rho_lo95']:.2f}, {p['rho_hi95']:.2f}], n = {p['n_models']}\n"
-            f"{k} of {p['n_models']} upper bounds at most {p['bound']:.2f}", ha="left", va="top", fontsize=SMALL,
+            f"{k} of {p['n_models']} upper bounds at most {p['bound']:.2f}", ha="left", va="top", fontsize=F5_S,
             color=TEXT, linespacing=1.2)
     if ext:
         e = ext[0]
         ax.text(e["semeval_binary_f1"], e["auroc_within"] - 0.025, "public\ncheckpoint", ha="center", va="top",
-                fontsize=SMALL, color=TEXT2, linespacing=1.1)
+                fontsize=F5_S, color=TEXT2, linespacing=1.1)
     if msk:
-        ax.text(0.46, 0.565, f"masked-trained\n({len(msk)} models)", ha="center", va="center", fontsize=SMALL, color=TEXT2)
+        ax.text(0.46, 0.565, f"masked-trained\n({len(msk)} models)", ha="center", va="center", fontsize=F5_S, color=TEXT2)
         for v in msk:
             ax.annotate("", xy=(v["semeval_binary_f1"], v["auroc_within"] + 0.012), xytext=(0.52, 0.555), textcoords="data",
                         arrowprops=dict(arrowstyle="-", color=SHORTCUT, lw=0.5, shrinkA=0.0, shrinkB=3.2), zorder=11)
         src.L.check("fig5 panel:leaders drawn to masked diamonds", len(msk), 2, "masked-trained leaders", tol=0)
-    save(fig, out, "fig6_model_panel")
+    save(fig, out, "fig6_model_panel", min_pt=F5_S)
     return {"models": table, "extra": extra, "rho": p["rho"], "rho_ci95": [p["rho_lo95"], p["rho_hi95"]],
             "n_models": p["n_models"], "k_upper_at_most_bound": k, "bound": p["bound"], "drugbank_within": db,
             "variance_ratio": p["variance_ratio"],
@@ -1771,10 +1805,11 @@ def enc_seeds(series):
 
 
 def fig1_panel(src, out):
-    W, H = 58, 36
+    W, H = 62, 45
+    fs = 7.6
     fig = figure(W, H)
     bg = canvas(fig)
-    ax = axes_mm(fig, 31, 6, 25, 20)
+    ax = axes_mm(fig, 37, 7, 23, 26)
     spines(ax, left=False)
     rows = [("partner_frequency_prior", "Partner-frequency prior"), ("novel_drug_prior", "Novel-drug prior")]
     bl = {(r["set"], r["baseline"]): r for r in src.d.tables["baselines"]}
@@ -1800,21 +1835,21 @@ def fig1_panel(src, out):
                                           "source": f"baselines.json {cohort}_random_negatives and {cohort}; partner matched checked against tables.json baselines"}
             ys.append(("row", yv, lab))
             yv += 1
-    chance(ax, label_at=(0.51, -0.6), va="top")
+    chance(ax, label_at=(0.51, -0.6), va="top", size=fs)
     ax.set_ylim(yv - 0.4, -0.6)
     ax.set_yticks([])
     ax.set_xlim(0.4, 0.9)
     ax.set_xticks([0.4, 0.5, 0.6, 0.7, 0.8, 0.9], ["0.4", "", "0.6", "", "0.8", ""])
-    ax.tick_params(axis="x", labelsize=SMALL)
+    ax.tick_params(axis="x", labelsize=fs)
     ax.grid(axis="x", color=GRID, lw=0.4, zorder=0)
-    ax.set_xlabel("Pooled AUROC", fontsize=SMALL, labelpad=1)
+    ax.set_xlabel("Pooled AUROC", fontsize=fs, labelpad=1)
     for kind, y, lab in ys:
-        bg.text(2 if kind == "header" else 4, 6 + (y + 0.6) / (yv - 0.4 + 0.6) * 20, lab, ha="left", va="center",
-                fontsize=SMALL, fontweight="bold" if kind == "header" else "normal", color=TEXT)
-    bg.plot(3, 2.6, "o", ms=MS, mfc=SURFACE, mec=SHORTCUT, mew=0.8)
-    bg.text(5, 2.6, "random negatives", ha="left", va="center", fontsize=SMALL, color=TEXT)
-    bg.plot(28, 2.6, "o", ms=MS, mfc=EXTERNAL, mec=SURFACE, mew=0.6)
-    bg.text(30, 2.6, "partner-matched", ha="left", va="center", fontsize=SMALL, color=TEXT)
+        bg.text(2 if kind == "header" else 4, 7 + (y + 0.6) / (yv - 0.4 + 0.6) * 26, lab, ha="left", va="center",
+                fontsize=fs, fontweight="bold" if kind == "header" else "normal", color=TEXT)
+    bg.plot(2, 2.6, "o", ms=MS, mfc=SURFACE, mec=SHORTCUT, mew=0.8)
+    bg.text(4, 2.6, "random negatives", ha="left", va="center", fontsize=fs, color=TEXT)
+    bg.plot(32, 2.6, "o", ms=MS, mfc=EXTERNAL, mec=SURFACE, mew=0.6)
+    bg.text(34, 2.6, "partner-matched", ha="left", va="center", fontsize=fs, color=TEXT)
     save(fig, out, "fig1_panel_d")
     return table
 

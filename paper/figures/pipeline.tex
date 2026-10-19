@@ -24,16 +24,16 @@
 \newcommand{\mopendiamond}{\tikz[baseline=-0.6ex,sharp corners]\draw[semeval, line width=0.8pt] (0,1.3mm) -- (1.1mm,0) -- (0,-1.3mm) -- (-1.1mm,0) -- cycle;}
 \newcommand{\mrow}[2]{\makebox[2.8mm][c]{#1}\hspace{1.2mm}\parbox[t]{51.6mm}{#2}}
 \newcommand{\note}[1]{{\color{ink2}#1}}
-\newcommand{\chip}[1]{{\fontsize{7.5}{9}\ttfamily\selectfont #1}}
+\newcommand{\chip}[1]{{\fontsize{7.6}{9.2}\ttfamily\selectfont #1}}
 \tikzset{
   box/.style={draw=boxline, line width=0.5pt, rounded corners=1.5mm, fill=boxfill, align=left, inner sep=3mm,
-              anchor=north west, font=\fontsize{7}{8.6}\selectfont, text=ink},
-  head/.style={font=\fontsize{8}{9.6}\selectfont, text=ink, anchor=north west, inner sep=0pt},
+              anchor=north west, font=\fontsize{7.3}{8.9}\selectfont, text=ink},
+  head/.style={font=\fontsize{8.6}{10.2}\selectfont, text=ink, anchor=north west, inner sep=0pt},
   abox/.style={box, draw=semeval, fill=semevalfill, line width=0.8pt},
   bbox/.style={box, draw=pair, fill=pairfill, line width=0.8pt},
   arr/.style={-{Latex[length=1.8mm,width=1.3mm]}, line width=0.6pt, draw=ink2},
   sys/.style={draw=boxline, line width=0.5pt, rounded corners=1.5mm, fill=boxfill, inner sep=1.6mm, anchor=west,
-              font=\fontsize{7}{8.4}\selectfont, text=ink, minimum width=24mm, align=left},
+              font=\fontsize{7.3}{8.8}\selectfont, text=ink, minimum width=24mm, align=left},
 }
 \newsavebox\figbox
 \hyphenpenalty=10000
@@ -41,9 +41,9 @@
 \begin{document}
 \sbox\figbox{%
 \begin{tikzpicture}
-\useasboundingbox (0,0) rectangle (190mm,-86mm);
-\node[head] at (2mm,-2mm) {{\fontsize{9}{10}\selectfont\bfseries\color{semeval}A}\hspace{1.5mm}Trained on SemEval 2013};
-\node[abox, text width=56mm] (a1) at (2mm,-8mm) {\textbf{\valTrainPairs{} training instances}, annotated sentences};
+\useasboundingbox (0,0) rectangle (130.2mm,-143mm);
+\node[head] at (0.8mm,-2mm) {{\fontsize{9.6}{11}\selectfont\bfseries\color{semeval}A}\hspace{1.5mm}Trained on SemEval 2013};
+\node[abox, text width=56mm] (a1) at (0.8mm,-8mm) {\textbf{\valTrainPairs{} training instances}, annotated sentences};
 \node[abox, text width=56mm] (a2) at ($(a1.south west)+(0,-3mm)$) {\textbf{Training regimes}\\[2pt]
 \mrow{\mfilledcircle}{Sentence-trained: the annotated sentence}\\[1.5pt]
 \mrow{\mfilledsquare}{Mixed-input: sentence plus names-only copies}\\[1.5pt]
@@ -51,37 +51,38 @@
 \mrow{\mopendiamond}{Masked-trained: drug mentions masked}};
 \node[abox, text width=56mm] (a3) at ($(a2.south west)+(0,-3mm)$) {\textbf{Encoders}\\[2pt]
 BiomedBERT, BERT-base, BioBERT\\[1.5pt]
-E9 panel:\\ \valPanelModels{} models over \valPanelBackbones{} backbones};
+20-model panel:\\ \valPanelModels{} models over \valPanelBackbones{} backbones};
 \draw[arr, draw=semeval] (a1.south) -- (a2.north);
 \draw[arr, draw=semeval] (a2.south) -- (a3.north);
 
-\node[head] at (68mm,-2mm) {{\fontsize{9}{10}\selectfont\bfseries\color{pair}B}\hspace{1.5mm}Tested on drugs SemEval never saw};
-\node[bbox, text width=56mm] (b1) at (68mm,-8mm) {FDA approvals \valOlderFrom{} to \valNovelTo{}, minus SemEval drugs};
+\node[head] at (67.4mm,-2mm) {{\fontsize{9.6}{11}\selectfont\bfseries\color{pair}B}\hspace{1.5mm}Tested on drugs SemEval never saw};
+\node[bbox, text width=56mm] (b1) at (67.4mm,-8mm) {FDA approvals \valOlderFrom{} to \valNovelTo{}, minus SemEval drugs};
 \node[bbox, text width=56mm] (b2) at ($(b1.south west)+(0,-3mm)$) {\textbf{Novel} \valNovelFrom{} to \valNovelTo{} (\valNovelDrugs{} drugs, \valNovelPairs{} pairs)\\
 \textbf{Older} \valOlderFrom{} to \valOlderTo{} (\valOlderDrugs{} drugs, \valOlderPairs{} pairs)\\[1pt]
-\note{Older-clean \valOlderCleanDrugs{} drugs (H1); Older-primary \valOlderPrimaryDrugs{} drugs (Amendment 7)}};
+\note{Older-clean, \valOlderCleanDrugs{} drugs (hypothesis tests); Older-strict, \valOlderPrimaryDrugs{} drugs (validity checks)}};
 \node[bbox, text width=56mm] (b3) at ($(b2.south west)+(0,-3mm)$) {\textbf{Positive:} partner named under Drug Interactions in the drug's label.\\[1pt]
-\note{A mention, not a validated interaction (see the E8 oracle check).}\\[1.5pt]
+\note{A mention, not a validated interaction (see the oracle check).}\\[1.5pt]
 \textbf{Negative:} the same partner with another cohort drug whose label never names it.};
 \draw[arr, draw=pair] (b1.south) -- (b2.north);
 \draw[arr, draw=pair] (b2.south) -- (b3.north);
-\node[anchor=north west, inner sep=0pt, text width=62mm, font=\fontsize{7}{8.4}\selectfont, text=ink2] at ($(b3.south west)+(0,-3mm)$)
-  {Drug Interactions section held out from retrieval, except in the positive controls. Private, version-controlled analysis plan, every amendment disclosed.};
+\node[anchor=north west, inner sep=0pt, text width=62mm, font=\fontsize{7.3}{8.8}\selectfont, text=ink2] at ($(b3.south west)+(0,-3mm)$)
+  {Drug Interactions section held out from retrieval, except in the positive controls.};
 
-\node[head] at (132mm,-2mm) {{\fontsize{9}{10}\selectfont\bfseries\color{ink}C}\hspace{1.5mm}Same two names to every system};
-\node[draw=boxline, line width=0.5pt, rounded corners=1.5mm, fill=white, inner sep=1.8mm, anchor=north] (chip) at (161mm,-8mm) {\chip{\valExampleChip}};
-\node[sys, draw=semeval, fill=semevalfill, line width=0.8pt, anchor=north west, inner sep=1.2mm, minimum width=0mm, text width=20.5mm, align=center, minimum height=9mm] (s1) at (132mm,-21mm) {\mbox{SemEval-trained}\\encoders};
-\node[sys, draw=drugbank, fill=drugbankfill, line width=0.8pt, anchor=north west, inner sep=1.2mm, minimum width=0mm, text width=12.5mm, align=center, minimum height=9mm] (s2) at (156.5mm,-21mm) {DrugBank lookup};
-\node[sys, draw=pair, fill=pairfill, line width=0.8pt, anchor=north west, inner sep=1.2mm, minimum width=0mm, text width=12.5mm, align=center, minimum height=9mm] (s3) at (173mm,-21mm) {Prompted LLM};
+\def\cy{-95mm}
+\node[head] at (0.8mm,\cy) {{\fontsize{9.6}{11}\selectfont\bfseries\color{ink}C}\hspace{1.5mm}Same two names to every system};
+\node[draw=boxline, line width=0.5pt, rounded corners=1.5mm, fill=white, inner sep=1.8mm, anchor=north] (chip) at (31.8mm,\cy-6mm) {\chip{\valExampleChip}};
+\node[sys, draw=semeval, fill=semevalfill, line width=0.8pt, anchor=north west, inner sep=1.2mm, minimum width=0mm, text width=22.5mm, align=center, minimum height=9mm] (s1) at (0.8mm,\cy-19mm) {\mbox{SemEval-trained}\\encoders};
+\node[sys, draw=drugbank, fill=drugbankfill, line width=0.8pt, anchor=north west, inner sep=1.2mm, minimum width=0mm, text width=13.5mm, align=center, minimum height=9mm] (s2) at (28.2mm,\cy-19mm) {DrugBank lookup};
+\node[sys, draw=pair, fill=pairfill, line width=0.8pt, anchor=north west, inner sep=1.2mm, minimum width=0mm, text width=13.5mm, align=center, minimum height=9mm] (s3) at (46.6mm,\cy-19mm) {Prompted LLM};
 \draw[arr, draw=semeval] (chip.south) -- (s1.north);
 \draw[arr, draw=drugbank] (chip.south) -- (s2.north);
 \draw[arr, draw=pair] (chip.south) -- (s3.north);
 
-\node[head] at (132mm,-39mm) {{\fontsize{9}{10}\selectfont\bfseries D}\hspace{1.5mm}Why partner-matched negatives};
-\node[anchor=north west, inner sep=0pt] at (132mm,-43mm) {\includegraphics[width=58mm]{fig1_panel_d.pdf}};
+\node[head] at (67.4mm,\cy) {{\fontsize{9.6}{11}\selectfont\bfseries D}\hspace{1.5mm}Why partner-matched negatives};
+\node[anchor=north west, inner sep=0pt] at (67.4mm,\cy-4mm) {\includegraphics[width=62mm]{fig1_panel_d.pdf}};
 \end{tikzpicture}}
 \pdfhorigin=0pt\pdfvorigin=0pt
-\pdfpagewidth=190mm
+\pdfpagewidth=130.2mm
 \pdfpageheight=\dimexpr\ht\figbox+\dp\figbox\relax
-\shipout\hbox to 190mm{\usebox\figbox\hss}
+\shipout\hbox to 130.2mm{\usebox\figbox\hss}
 \end{document}
